@@ -1,0 +1,284 @@
+html, body { width: 100%; height: 100%; margin: 0; padding: 0; }
+body {
+  font-size: 0.9em;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+  background: #2c2a2a;
+}
+
+/* BUTTONS */
+.button {
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+}
+
+/* BUTTONS: Modifiers */
+.button-default {
+  padding: 0.3em;
+  color: #fff;
+  background-color: #363636;
+}
+.button-default > .icon {
+  width: 2em;
+  height: 2em;
+  padding: 0 0.2em;
+}
+.button-default > .text {
+  padding: 0 0.4em;
+}
+.reversed {
+  flex-direction: row-reverse;
+}
+
+/* BUTTONS: Modifiers: Help Ukraine */
+.button-help-Ukraine {
+  flex-grow: 1;
+  justify-content: center;
+  padding: 0.2em;
+  background: rgb(0,1,3);
+  background: linear-gradient(180deg, rgba(0,1,3,0) 0%, rgba(44,83,209,1) 0%, rgba(26,75,238,1) 50%, rgba(184,182,34,1) 50%, rgba(184,173,59,1) 100%, rgba(166,186,57,0) 100%);
+  box-shadow: inset 0 0 18px #000;
+}
+.button-help-Ukraine > .text {
+  font-weight: bold;
+  text-align: center;
+}
+.button-help-Ukraine > .text > .top {
+  color: #fff;
+}
+.button-help-Ukraine > .text > .bottom {
+  color: #000;
+}
+
+@media (max-width: 460px) {
+  .button-help-Ukraine.small {
+    display: none;
+  }
+}
+@media (min-width: 461px) {
+  .button-help-Ukraine.wide {
+    display: none;
+  }
+}
+
+/* ICONS */
+.icon {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* ICONS: Modifiers */
+.icon-debug {
+  background-color: #5a4130;
+}
+.icon-download {
+  background-image: url(./Resources/Icons/Icon_Download.png);
+}
+.icon-fullscreen {
+  background-image: url(./Resources/Icons/Icon_Fullscreen.png);
+}
+.icon-chessknight {
+  background-image: url(./Resources/Icons/Icon_Chessknight.png);
+}
+.icon-play {
+  background-image: url(./Resources/Icons/Icon_Play.png);
+}
+.icon-back {
+  background-image: url(./Resources/Icons/Icon_Back.png);
+}
+
+/* LAYOUT */
+.align-end {
+  justify-content: flex-end;
+}
+.layout-row {
+  flex-direction: row;
+}
+.layout-columns {
+  flex-direction: column;
+}
+.cover {
+  width: 100%;
+  height: 100%;
+}
+.overflow-hide {
+  overflow: hidden;
+}
+
+/* PANELS */
+.panel {
+  display: flex;
+}
+.growable {
+  flex-grow: 1;
+}
+.panel-debug {
+  background: #5a6e5b;
+}
+
+/* PAGES */
+.page-help-Ukraine .player {
+  display: none;
+}
+.page-help-Ukraine .toolbar {
+  display: none;
+}
+.page-help-Ukraine .overflow-hide {
+  overflow: unset;
+}
+.page-player .content-help-Ukraine {
+  display: none;
+}
+
+/* TOOLBAR modes */
+.mode-downloads-open .downloads {
+  display: flex;
+}
+.mode-downloads-open .player-buttons {
+  display: none;
+}
+
+.mode-downloads-closed .downloads {
+  display: none;
+}
+.mode-downloads-closed .player-buttons {
+  display: flex;
+}
+.button-download > .icon-back {
+  transform: rotate(180deg);
+}
+#unity-fullscreen-button {
+  cursor: default;
+}
+#unity-fullscreen-button > .icon, #unity-fullscreen-button > .text {
+  filter: brightness(0.4);
+}
+.started #unity-fullscreen-button > .icon, .started #unity-fullscreen-button > .text {
+  cursor: pointer;
+  filter: none;
+}
+
+@media (max-width: 460px) {
+  .mode-downloads-open .button-download > .text {
+    display: none;
+  }
+}
+
+/* PLAYER */
+.player {
+  overflow: hidden;
+  background: #161616;
+}
+.player > canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* HELP UKRAINE CONTENT */
+.content-help-Ukraine {
+  color: #000000;
+  padding: 2em;
+  background: #b5b5b5;
+}
+.content-help-Ukraine .section > h3 {
+  color: #4c2700;
+}
+.content-help-Ukraine .section > .props {
+  padding: 0 2em;
+}
+
+.content-help-Ukraine .section > .props .highlighted {
+  color: #3362ff;
+  font-weight: bold;
+}
+
+/* NAVBAR */
+@media (max-width: 460px) {
+  .navbar > .panel.growable {
+    display: none;
+  }
+  .navbar > .button {
+    flex-grow: 1;
+  }
+}
+
+/* PLAY BUTTON */
+.button-play {
+  flex-grow: 1;
+  justify-content: center;
+  padding: 0.3em;
+  color: #fff;
+}
+.button-play > .icon {
+  width: 4em;
+  height: 4em;
+  padding: 0 0.2em;
+}
+.button-play > .text {
+  padding: 0 0.4em;
+}
+
+/* DOWNLOAD */
+a {
+  color: #1768af;
+}
+a.dark {
+  color: #97afff;
+}
+
+/* SCENE */
+.scene {
+  justify-content: center;
+/* box-shadow: 0 0 10px #efefef; */}
+.root {
+  max-width: 1000px;
+  box-shadow: 0 0 10px #545454;
+}
+
+/* WEBGL */
+.logo-webgl-container {
+  padding: 0.3em;
+  background: #3a3a3a;
+}
+.logo-webgl {
+  flex-grow: 1;
+  background: url(./Resources/Logo_WebGL.png) no-repeat center;
+  background-size: contain;
+  /* background: red; */
+}
+
+/* WEBGL MOBILE WARNING */
+#unity-mobile-warning {
+  display: none;
+  color: #eee;
+  position: absolute;
+  min-width: 80%;top: 27%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: #564e46;
+  padding: 0.4em 1em;
+  border-radius: 1em;
+  box-shadow: 0 0 10px #b5b5b5;
+}
+
+#unity-loading-bar {
+  display: none;
+  /* width: 100px; */
+  /* height: 100px; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#unity-logo { width: 154px; height: 130px; background: url('./Resources/unity-logo-dark.png') no-repeat center }
+#unity-progress-bar-empty { width: 141px; height: 18px; margin-top: 10px; background: url('./Resources/progress-bar-empty-dark.png') no-repeat center }
+#unity-progress-bar-full { width: 0%; height: 18px; margin-top: 10px; background: url('./Resources/progress-bar-full-dark.png') no-repeat center }
+
+
+.button-not-clickable {
+  cursor: default;
+}

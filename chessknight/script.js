@@ -1,7 +1,7 @@
 "use strict";
 var ChessKnight;
 (function (ChessKnight) {
-    var pathPrefix = "WebGL/0.10/";
+    var pathPrefix = "WebGL/1.1.1.0/";
     var buildUrl = pathPrefix + "Build/";
     var loaderUrl = buildUrl + "ChessKnight.loader.js";
     var config = {
@@ -11,7 +11,7 @@ var ChessKnight;
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Freewebtime",
         productName: "ChessKnight",
-        productVersion: "1.1.0.10",
+        productVersion: "1.1.1.0",
         // By default Unity keeps WebGL canvas render target size matched with
         // the DOM size of the canvas element (scaled by window.devicePixelRatio)
         // Set this to false if you want to decouple this synchronization from

@@ -11,7 +11,7 @@ var ChessKnight;
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Freewebtime",
         productName: "ChessKnight",
-        productVersion: "1.1.1.1",
+        productVersion: "1.1.1.6",
         // By default Unity keeps WebGL canvas render target size matched with
         // the DOM size of the canvas element (scaled by window.devicePixelRatio)
         // Set this to false if you want to decouple this synchronization from

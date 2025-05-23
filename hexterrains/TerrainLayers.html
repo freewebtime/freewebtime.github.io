@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title> | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content=" | Hex Terrains ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p><strong>Hex Terrains Framework - Instruction Part 2: Main Terrain Layers Overview</strong></p>
+<hr>
+<h3 id="introduction">Introduction</h3>
+<p>The Hex Terrains framework organizes its logic and simulation data into <strong>terrain layers</strong>. Each terrain layer is composed of one or more <strong>data layers</strong> that store and manage information about the terrain, such as elevation, biome types, or cell-specific content like props and buildings. These layers are modular, job-friendly, and optimized for performance in Unity DOTS.</p>
+<p>Below is an overview of the most important terrain layer types and their key responsibilities.</p>
+<hr>
+<h3 id="1-hexsurfacedata">1. HexSurfaceData</h3>
+<p>Represents a surface such as <strong>ground</strong> or <strong>water</strong>.</p>
+<p><strong>Includes the following data layers:</strong></p>
+<ul>
+<li><code>HeightMapDataLayer</code>: byte per cell for height</li>
+<li><code>BiomeMapDataLayer</code>: byte per cell for biome index</li>
+<li><code>CellMetricsMap</code>: per-cell struct with spatial and environmental metadata</li>
+<li><code>ColorMap</code>: color per cell used for visualization</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Associated with a <code>HexSurfaceRenderData</code> that stores mesh and mesh source data for each terrain chunk.</li>
+<li>Contains a <strong>biome color palette</strong>, a <code>NativeArray&lt;Color32&gt;</code>, used to translate biome indices into displayable colors for minimaps and materials.</li>
+<li>Colors are rendered into a texture via the color map, making this layer critical for both visualization and simulation.</li>
+</ul>
+<hr>
+<h3 id="2-hexareadata">2. HexAreaData</h3>
+<p>Used to represent conceptual groupings like <strong>countries</strong> or <strong>provinces</strong>.</p>
+<p><strong>Includes the following data layers:</strong></p>
+<ul>
+<li><code>AreaDataLayer</code>: byte per cell storing area index</li>
+<li><code>ColorMap</code>: visual representation of area boundaries</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Includes a color palette (byte index -&gt; Color32) to paint regions.</li>
+<li>Supports multiple view modes, allowing toggling between different abstract overlays like political zones or administrative regions.</li>
+<li>Implements dirty flags per chunk to ensure only changed areas are updated.</li>
+</ul>
+<hr>
+<h3 id="3-cellitemsdata">3. CellItemsData</h3>
+<p>Used to represent lightweight <strong>visual cell objects</strong> like forests, props, or decorations.</p>
+<p><strong>Includes the following data layers:</strong></p>
+<ul>
+<li><code>CellItemDataLayer</code>: struct with <code>Index</code> and <code>State</code> per cell</li>
+<li><code>ItemsColorMap</code>: per-cell color for rendering and minimap</li>
+<li><code>CellTransforms</code>: used for position and orientation on terrain</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>A palette of <code>CellItemConfig</code> is used to define render settings per index/state.</li>
+<li>Rendering is handled using <code>RenderEntitiesConfig</code> via <code>Graphics.DrawMeshInstanced</code>, making this extremely performant.</li>
+<li>Internal MultiHashMap manages batched render calls per unique configuration.</li>
+</ul>
+<hr>
+<h3 id="4-cellentitiesdata">4. CellEntitiesData</h3>
+<p>Used to represent <strong>entity-based cell contents</strong> such as buildings or units.</p>
+<p><strong>Includes the following data layers:</strong></p>
+<ul>
+<li><code>CellEntityDataLayer</code>: index/state pair per cell</li>
+<li><code>CellEntityViews</code>: actual entities instantiated in the scene</li>
+<li><code>EntitiesColorMap</code>: per-cell color used for visualization</li>
+<li><code>CellTransforms</code>: used to track terrain-relative position</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Uses a palette of <code>HexCellEntityConfig</code> that maps each index/state pair to a prefab.</li>
+<li>On update, entities are created/destroyed to match the cell data.</li>
+<li>View transforms are kept in sync with terrain height.</li>
+<li>High-performance usage of <code>EntityCommandBuffer</code> and <code>JobHandle</code> to manage entity lifecycle.</li>
+</ul>
+<hr>
+<h3 id="5-chunksgriddata">5. ChunksGridData</h3>
+<p>Special terrain layer that tracks data <strong>per chunk</strong> (not per cell).</p>
+<p><strong>Includes the following data layers:</strong></p>
+<ul>
+<li><code>ChunkVisibilityDataLayer</code>: tracks if and where a chunk is visible (e.g., via looping camera)</li>
+<li><code>ChunkMetricsDataLayer</code>: holds calculated spatial metrics for each chunk</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Visibility is used to filter calculations across all other terrain layers.</li>
+<li>Supports wrap-around logic for cylindrical terrain navigation (e.g., Civ-style map looping).</li>
+<li>Key part of the chunking system that drives partial updates and rendering culling.</li>
+</ul>
+<hr>
+<h3 id="6-hexsurfacerenderdata">6. HexSurfaceRenderData</h3>
+<p>Stores <strong>rendering structures</strong> for a <code>HexSurfaceData</code>.</p>
+<p><strong>Includes:</strong></p>
+<ul>
+<li><code>HexMeshDataLayer</code>: one mesh per chunk</li>
+<li><code>HexMeshSourceDataLayer</code>: job-friendly mesh source (vertices, triangles, UVs)</li>
+</ul>
+<p><strong>Features:</strong></p>
+<ul>
+<li>Built entirely in jobs.</li>
+<li>Source data is filled in parallel jobs, then uploaded to Unity Meshes for rendering.</li>
+<li>Each surface (e.g., water and ground) has its own render data.</li>
+</ul>
+<hr>
+<h3 id="merging-chunk-dirty-flags">Merging Chunk Dirty Flags</h3>
+<p>Some data layers track dirty flags <strong>per chunk</strong> using an internal grid. This is especially true for all chunked layers like <code>ChunkedDataLayer</code> and its descendants.</p>
+<p>To optimize job execution:</p>
+<ul>
+<li>Only dirty chunks are processed.</li>
+<li><code>MergeChunkDirtyGrids()</code> merges dirty flags from dependencies.</li>
+<li>The result allows a dependent layer to update only where source layers have changed.</li>
+</ul>
+<p>This mechanism ensures that the cost of processing is proportional to actual changes, leading to efficient and scalable terrain updates.</p>
+<hr>
+<h3 id="summary">Summary</h3>
+<p>Each terrain layer in the Hex Terrains framework is designed with modularity, performance, and flexibility in mind. Whether you are rendering a visual mesh, instantiating dynamic entities, or calculating simulation metrics, the layered architecture ensures that each concern is handled cleanly and efficiently.</p>
+<p>These layers integrate tightly with the ECS job system, allowing massive terrains to be updated and rendered with minimal CPU/GPU cost.</p>
+<p>Next section: <em>Working with User Tools, View Modes, and UI Integration.</em></p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=TerrainLayers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

@@ -138,6 +138,40 @@ cellMetrics.AddWriteDependency(handle);
 <pre><code class="lang-csharp">heightMap.OpenToRead();
 float height = heightMap.GetValue(cellIndex);
 </code></pre>
+<h3 id="chunk-dirty-grids-and-merging">Chunk Dirty Grids and Merging</h3>
+<p>Some data layers — particularly those derived from <code>ChunkedDataLayer</code> — split the terrain into <strong>chunks</strong> (a fixed-size region of cells, e.g., 16×16). These layers use a <strong>ChunkDirtyGrid</strong> to efficiently track which parts of the terrain have changed. Each boolean in the grid corresponds to a terrain chunk, and a value of <code>true</code> means that chunk is &quot;dirty&quot; (i.e., it must be updated).</p>
+<p>This mechanism allows systems to process <strong>only the affected chunks</strong>, avoiding redundant computation and significantly boosting performance on large terrains.</p>
+<p>The base class <code>ChunkedDataLayer</code> provides:</p>
+<ul>
+<li><code>ChunkSize</code>: the dimensions (in cells) of each chunk</li>
+<li><code>CellsGridSize</code>: the total dimensions of the terrain in cells</li>
+<li><code>SetCellDirty(index)</code>: marks the chunk containing the specified cell as dirty</li>
+<li><code>SetAllChunksDirty()</code>: marks all chunks as dirty</li>
+<li><code>ChunkDirtyGrid</code>: an internal bool array tracking dirty state per chunk</li>
+</ul>
+<h4 id="merging-dirty-grids-from-dependencies">Merging Dirty Grids from Dependencies</h4>
+<p>In some cases, a data layer depends on multiple other data layers. For instance, <strong>cell metrics</strong> might need to be recalculated if either <strong>biomes</strong> or <strong>heightmap</strong> changes. In such situations, dirty chunk states from multiple data layers need to be merged.</p>
+<p>To handle this, <code>ChunkedDataLayer</code> includes several overloads of:</p>
+<pre><code class="lang-csharp">MergeChunkDirtyGrids(sourceDirty1, sourceDirty2, ...);
+</code></pre>
+<p>These functions return a job handle for job that merges chunks dirty grids. This job marks a chunk as dirty if <strong>any</strong> of the source grids had that chunk marked as dirty.</p>
+<p>This enables dependent layers to react precisely to changes in their inputs, ensuring minimal processing while preserving correctness.</p>
+<h4 id="example-conditional-recalculation">Example: Conditional Recalculation</h4>
+<pre><code class="lang-csharp">var mergeDirtyChunksHandle = ChunkedDataLayer.MergeChunkDirtyGrids(
+    heightMap.ChunkDirtyGrid, biomeMap.ChunkDirtyGrid, combined_write_dependency_for_all_affected_layers);
+
+// complete the jobs that work with chunks
+mergeDirtyChunksHandle.Complete();
+
+foreach (var chunkIndex in terrain.AllChunks)
+{
+    if (!mergedDirtyGrid[chunkIndex])
+        continue;
+
+    // Schedule job to recalculate metrics for this chunk
+}
+</code></pre>
+<p>This pattern avoids unnecessary updates, enabling a highly <strong>data-oriented and performance-scalable design</strong>.</p>
 <hr>
 <p>This architecture ensures a reactive, modular, and scalable update cycle that plays well with DOTS and allows systems to operate in parallel safely.</p>
 <p>Next section: <em>Creating and Extending Data Layers, Using Terrain Layers in Your Project</em>.</p>

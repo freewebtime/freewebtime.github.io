@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class ChunkVisibilityDataLayer | Hex Terrains ">
     
-    
+    <meta name="description" content="DataLayer with Visibility info for each terrain chunk">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer" class="text-break">Class ChunkVisibilityDataLayer</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>DataLayer with Visibility info for each terrain chunk</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -313,7 +314,8 @@
 
 
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_NewInvisibleChunks" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.NewInvisibleChunks">NewInvisibleChunks</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This is a set of chunks that just became invisible this frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -337,7 +339,8 @@
 
 
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_NewVisibleChunks" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.NewVisibleChunks">NewVisibleChunks</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This is a set of chunks that just became visible this frame</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -361,7 +364,8 @@
 
 
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_VisibleChunks" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.VisibleChunks">VisibleChunks</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This is a set of chunks that are visible at the moment.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -388,7 +392,7 @@
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_CellsGridSize_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.CellsGridSize*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_CellsGridSize" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.CellsGridSize">CellsGridSize</h4>
-  <div class="markdown level1 summary"><p>Width and Height of the grid of cells.</p>
+  <div class="markdown level1 summary"><p>Size of the ChunkVisibilityDataLayer (equals to the chunks count)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -416,7 +420,8 @@
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_ChunkGridSize_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.ChunkGridSize*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_ChunkGridSize" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.ChunkGridSize">ChunkGridSize</h4>
-  <div class="markdown level1 summary"><p>Width and Height of the grid of chunks.</p>
+  <div class="markdown level1 summary"><p>Size of the chunks grid. For this particular layer is equals to the CellsGridSize,
+because we have one item per chunk here</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -444,7 +449,8 @@
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_ChunkSize_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.ChunkSize*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_ChunkSize" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.ChunkSize">ChunkSize</h4>
-  <div class="markdown level1 summary"><p>Width and Height of the chunk in cells.</p>
+  <div class="markdown level1 summary"><p>Size of the DataLayer chunk (not the same as terrain chunk).
+Because this layer contains one item per chunk, the size of the DataLayer chunk is 1x1</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -472,10 +478,7 @@
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_IsConnectedHorizontally_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.IsConnectedHorizontally*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_IsConnectedHorizontally" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.IsConnectedHorizontally">IsConnectedHorizontally</h4>
-  <div class="markdown level1 summary"><p>True if left and right edges of the chunk are connected (like in civilization games).
-Needed for wrapping the grid.
-If SetCellDirty(cellIndex, checkEdges) is called with checkEdges == true, the chunk of the cell is marked dirty
-and also all adjacent chunks are also marked dirty. So if the left edge is dirty, the right edge is also dirty.</p>
+  <div class="markdown level1 summary"><p>If true, the terrain edges are connected horizontally (left-right)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -503,10 +506,7 @@ and also all adjacent chunks are also marked dirty. So if the left edge is dirty
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_IsConnectedVertically_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.IsConnectedVertically*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_IsConnectedVertically" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.IsConnectedVertically">IsConnectedVertically</h4>
-  <div class="markdown level1 summary"><p>True if top and bottom edges of the chunk are connected (like in civilization games).
-Needed for wrapping the grid.
-If SetCellDirty(cellIndex, checkEdges) is called with checkEdges == true, the chunk of the cell is marked dirty
-and also all adjacent chunks are also marked dirty. So if the top edge is dirty, the bottom edge is also dirty.</p>
+  <div class="markdown level1 summary"><p>If true, the terrain edges are connected vertically (top-down)</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -534,8 +534,8 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_IsDisposableItems_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.IsDisposableItems*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_IsDisposableItems" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.IsDisposableItems">IsDisposableItems</h4>
-  <div class="markdown level1 summary"><p>If true, means when layer is resized or disposed, all items that are removed will be disposed
-(see nested classes description for details as the process may be different from layer to layer)</p>
+  <div class="markdown level1 summary"><p>If true, the items in this layer are disposable.
+In this particular case the items are not disposable, because they are not created in the heap</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -565,7 +565,9 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_Cleanup_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.Cleanup*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_Cleanup" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.Cleanup">Cleanup()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Cleans up the layer. Called every frame.
+Usually it clears the dirty flags.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -577,7 +579,9 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.CleanupAsync*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_CleanupAsync" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.CleanupAsync">CleanupAsync()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Async version of Cleanup. Instead of waiting for cleanup jobs to complete,
+this one just schedules jobs and returns the job handle.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -594,7 +598,8 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
     <tbody>
       <tr>
         <td><span class="xref">JobHandle</span></td>
-        <td></td>
+        <td><p>JobHandle for the scheduled cleanup jobs</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -617,7 +622,7 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
 
   <a id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_Init_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.Init*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_ChunkVisibilityDataLayer_Init_System_Int32_" data-uid="Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.Init(System.Int32)">Init(int)</h4>
-  <div class="markdown level1 summary"><p>Initializes/Reinitializes the data layer with the specified size.</p>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the layer with the given size</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -637,8 +642,7 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">layerSize</span></td>
-        <td><p>amount of cells in the data layer</p>
-</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

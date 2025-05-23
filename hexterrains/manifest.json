@@ -81,6 +81,16 @@
       "version": ""
     },
     {
+      "type": "Conceptual",
+      "source_relative_path": "TerrainLayers.md",
+      "output": {
+        ".html": {
+          "relative_path": "TerrainLayers.html"
+        }
+      },
+      "version": ""
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/Fwt.Core.BinaryReaderExtensions.yml",
       "output": {
@@ -4488,7 +4498,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.ChunksGridData",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.ChunksGridData.yml\" sourcestartlinenumber=\"1\">Container for data related to Terrain Chunks Grid.\nChunk visibility, Chunk Metrics per chunk, not per cell.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5118,7 +5128,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.DataLayers.ChunkMetricsDataLayer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.DataLayers.ChunkMetricsDataLayer.yml\" sourcestartlinenumber=\"1\">DataLayer with Metrics info for each terrain chunk</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5132,7 +5142,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.DataLayers.ChunkVisibilityDataLayer.yml\" sourcestartlinenumber=\"1\">DataLayer with Visibility info for each terrain chunk</p>\n"
     },
     {
       "type": "ManagedReference",

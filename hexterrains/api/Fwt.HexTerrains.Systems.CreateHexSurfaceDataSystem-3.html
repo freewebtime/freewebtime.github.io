@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CreateHexSurfaceDataSystem&lt;TRequest, TSurfaceData, TRenderData&gt; | Hex Terrains ">
     
-    
+    <meta name="description" content="Base class for systems that create hex surface data.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_CreateHexSurfaceDataSystem_3" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem`3" class="text-break">Class CreateHexSurfaceDataSystem&lt;TRequest, TSurfaceData, TRenderData&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Base class for systems that create hex surface data.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -308,15 +309,18 @@ public abstract class CreateHexSurfaceDataSystem&lt;TRequest, TSurfaceData, TRen
     <tbody>
       <tr>
         <td><span class="parametername">TRequest</span></td>
-        <td></td>
+        <td><p>type of request IComponentData with configuration of surface data</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">TSurfaceData</span></td>
-        <td></td>
+        <td><p>type of surface data to create</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">TRenderData</span></td>
-        <td></td>
+        <td><p>type of render data for this surface data</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -589,12 +593,12 @@ public abstract class CreateHexSurfaceDataSystem&lt;TRequest, TSurfaceData, TRen
 
 
   <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceDataSystem_3_GenerateRandomData_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem`3.GenerateRandomData*"></a>
-  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceDataSystem_3_GenerateRandomData__1_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem`3.GenerateRandomData(`1)">GenerateRandomData(TSurfaceData)</h4>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceDataSystem_3_GenerateRandomData__1__0_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem`3.GenerateRandomData(`1,`0)">GenerateRandomData(TSurfaceData, TRequest)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void GenerateRandomData(TSurfaceData surfaceData)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void GenerateRandomData(TSurfaceData surfaceData, TRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -609,6 +613,11 @@ public abstract class CreateHexSurfaceDataSystem&lt;TRequest, TSurfaceData, TRen
       <tr>
         <td><span class="xref">TSurfaceData</span></td>
         <td><span class="parametername">surfaceData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">request</span></td>
         <td></td>
       </tr>
     </tbody>

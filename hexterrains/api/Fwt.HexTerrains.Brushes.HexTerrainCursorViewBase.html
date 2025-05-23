@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class HexTerrainCursorViewBase | Hex Terrains ">
     
-    
+    <meta name="description" content="Base class for the HexTerrainCursorView. This is a game object that is used to visualize the brush on the terrain. Expected to use a Projector to project the brush material on the terrain.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,10 @@
 
 
   <h1 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase" class="text-break">Class HexTerrainCursorViewBase</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Base class for the HexTerrainCursorView.
+This is a game object that is used to visualize the brush on the terrain.
+Expected to use a Projector to project the brush material on the terrain.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -521,7 +524,11 @@
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_BaseRotationAngle" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.BaseRotationAngle">BaseRotationAngle</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Base rotation angle of the brush in degrees (initial rotation of the brush).
+If brush size is more than 1, the brush is rotated by 30 degrees (for visual purposes).
+Because the hexagon that covers an area of hexagons is rotated by 30 degrees
+relative to the single hexagon.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -545,7 +552,8 @@
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SizeMultiplier" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SizeMultiplier">SizeMultiplier</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Size of the brush will be multiplied by this value</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -569,7 +577,8 @@
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase__brushColor" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase._brushColor">_brushColor</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The brush color.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -594,7 +603,8 @@ protected Color32 _brushColor</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase__brushOpacity" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase._brushOpacity">_brushOpacity</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The brush opacity (0-1).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -619,7 +629,8 @@ protected int _brushOpacity</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase__brushSize" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase._brushSize">_brushSize</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The brush size in cells.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -644,7 +655,8 @@ protected int _brushSize</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase__isResizable" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase._isResizable">_isResizable</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The brush is resizable if this value is true.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -669,7 +681,8 @@ protected bool _isResizable</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase__terrainSettings" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase._terrainSettings">_terrainSettings</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Settings of the terrain this brush is painted on.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -697,7 +710,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushColor_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushColor*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushColor" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushColor">GetBrushColor()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the brush color.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -714,7 +728,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">Color32</span></td>
-        <td></td>
+        <td><p>Color of the brush</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -722,7 +737,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushMaterial_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushMaterial*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushMaterial" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushMaterial">GetBrushMaterial()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the brush material (used to set color and opacity).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -739,7 +755,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><span class="xref">Material</span></td>
-        <td></td>
+        <td><p>Material from the brush</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -747,7 +764,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushOpacity_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushOpacity*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushOpacity" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushOpacity">GetBrushOpacity()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the brush opacity (0-1).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -764,7 +782,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
-        <td></td>
+        <td><p>Opacity of the brush (0-1)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -772,7 +791,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushSize_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushSize*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushSize" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetBrushSize">GetBrushSize()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the size of the brush in cells.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -797,7 +817,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetIsResizable_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetIsResizable*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetIsResizable" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.GetIsResizable">GetIsResizable()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns true if the brush is resizable, otherwise - false</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -814,7 +835,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>True if brush is resizable, othewise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -822,7 +844,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetBrushColor_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetBrushColor*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetBrushColor_UnityEngine_Color32_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetBrushColor(UnityEngine.Color32)">SetBrushColor(Color32)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the brush color.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -856,7 +879,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if value wa set, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -907,7 +931,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetBrushOpacity_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetBrushOpacity*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetBrushOpacity_System_Single_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetBrushOpacity(System.Single)">SetBrushOpacity(float)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the brush opacity (0-1).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -941,7 +966,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if value wa set, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -992,7 +1018,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetIsResizable_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetIsResizable*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetIsResizable_System_Boolean_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetIsResizable(System.Boolean)">SetIsResizable(bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the brush resizable property.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1011,7 +1038,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><span class="parametername">isResizable</span></td>
-        <td></td>
+        <td><p>new value for IsResizable brush</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1026,7 +1054,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if data was set</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1034,7 +1063,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
 
   <a id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetTerrainSettings_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetTerrainSettings*"></a>
   <h4 id="Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_SetTerrainSettings_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.SetTerrainSettings(Fwt.HexTerrains.Data.HexTerrainSettings)">SetTerrainSettings(HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the settings of the terrain this brush is painted on.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1068,7 +1098,8 @@ protected HexTerrainSettings _terrainSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if value wa set, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>

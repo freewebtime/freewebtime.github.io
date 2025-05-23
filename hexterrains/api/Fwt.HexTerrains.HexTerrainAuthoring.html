@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class HexTerrainAuthoring | Hex Terrains ">
     
-    
+    <meta name="description" content="Authoring component for the HexTerrain. This component is used to create a HexTerrain entity in the ECS world.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_HexTerrainAuthoring" data-uid="Fwt.HexTerrains.HexTerrainAuthoring" class="text-break">Class HexTerrainAuthoring</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Authoring component for the HexTerrain. This component is used to create a HexTerrain entity in the ECS world.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -520,11 +521,14 @@
 
 
   <h4 id="Fwt_HexTerrains_HexTerrainAuthoring_ColorMapTextures" data-uid="Fwt.HexTerrains.HexTerrainAuthoring.ColorMapTextures">ColorMapTextures</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The ColorMap textures to fill with colors from different data layers.
+Expected that this textures are used in terrain materials and also are present on UI (for example, minimap).</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ColorMapTexturesSource ColorMapTextures</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;The ColorMap textures to fill with colors from different data layers.\r\nExpected that this textures are used in terrain materials and also are present on UI (for example, minimap).&quot;)]
+public ColorMapTexturesSource ColorMapTextures</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -544,11 +548,13 @@
 
 
   <h4 id="Fwt_HexTerrains_HexTerrainAuthoring_TerrainSettings" data-uid="Fwt.HexTerrains.HexTerrainAuthoring.TerrainSettings">TerrainSettings</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The terrain settings (HexLayout, HexRotation, CellRadius, etc.)</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public HexTerrainSettings TerrainSettings</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;The terrain settings (HexLayout, HexRotation, CellRadius, etc.)&quot;)]
+public HexTerrainSettings TerrainSettings</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -568,11 +574,13 @@
 
 
   <h4 id="Fwt_HexTerrains_HexTerrainAuthoring_ViewMode" data-uid="Fwt.HexTerrains.HexTerrainAuthoring.ViewMode">ViewMode</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Initial View Mode of the terrain.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Range(0, 255)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Initial View Mode of the terrain.&quot;)]
+[Range(0, 255)]
 public int ViewMode</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>

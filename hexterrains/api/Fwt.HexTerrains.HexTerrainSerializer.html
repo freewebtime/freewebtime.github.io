@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class HexTerrainSerializer | Hex Terrains ">
     
-    
+    <meta name="description" content="HexTerrainSerializer is a static class that provides methods to serialize and deserialize HexTerrain data entity.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_HexTerrainSerializer" data-uid="Fwt.HexTerrains.HexTerrainSerializer" class="text-break">Class HexTerrainSerializer</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>HexTerrainSerializer is a static class that provides methods to serialize and deserialize HexTerrain data entity.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -123,7 +124,9 @@
 
 
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Version" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Version">Version</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Version of the serializer. Used for backward compatibility.
+Will be incremented when changes are added to the serialization/deserialization process.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -150,7 +153,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_Deserialize_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Deserialize*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Deserialize_System_IO_BinaryReader_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomDeserializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Deserialize(System.IO.BinaryReader,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback)">Deserialize(BinaryReader, Entity, EntityManager, CustomDeserializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Deserializes the terrain entity from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -169,7 +173,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
@@ -179,12 +184,14 @@
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback.html">CustomDeserializerCallback</a></td>
         <td><span class="parametername">customDeserializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own load data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -199,7 +206,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -207,7 +215,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_Deserialize_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Deserialize*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Deserialize_System_IO_Stream_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomDeserializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Deserialize(System.IO.Stream,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback)">Deserialize(Stream, Entity, EntityManager, CustomDeserializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Deserializes the terrain entity from a stream.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -226,7 +235,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
         <td><span class="parametername">stream</span></td>
-        <td></td>
+        <td><p>stream to deserialize data from</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
@@ -236,12 +246,14 @@
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback.html">CustomDeserializerCallback</a></td>
         <td><span class="parametername">customDeserializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own load data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -256,7 +268,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -264,7 +277,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_LoadTerrainFromFile_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.LoadTerrainFromFile*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_LoadTerrainFromFile_System_String_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomDeserializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.LoadTerrainFromFile(System.String,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback)">LoadTerrainFromFile(string, Entity, EntityManager, CustomDeserializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Loads the terrain entity from a file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -283,22 +297,26 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">fileName</span></td>
-        <td></td>
+        <td><p>full file path</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>entity to put the extracted data on</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback.html">CustomDeserializerCallback</a></td>
         <td><span class="parametername">customDeserializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own load data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -313,7 +331,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -321,7 +340,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadCellEntitiesData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadCellEntitiesData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadCellEntitiesData_System_IO_BinaryReader_Fwt_HexTerrains_CellEntities_Data_CellEntitiesData_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadCellEntitiesData(System.IO.BinaryReader,Fwt.HexTerrains.CellEntities.Data.CellEntitiesData,Fwt.HexTerrains.Data.HexTerrainSettings)">ReadCellEntitiesData(BinaryReader, CellEntitiesData, HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the cell entities data from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -340,17 +360,20 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesData.html">CellEntitiesData</a></td>
         <td><span class="parametername">entitiesData</span></td>
-        <td></td>
+        <td><p>Entities data to deserialize data into</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>Deserialized settings of the terrain</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -365,7 +388,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -373,7 +397,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadCellItemsData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadCellItemsData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadCellItemsData_System_IO_BinaryReader_Fwt_HexTerrains_CellItems_Data_CellItemsData_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadCellItemsData(System.IO.BinaryReader,Fwt.HexTerrains.CellItems.Data.CellItemsData,Fwt.HexTerrains.Data.HexTerrainSettings)">ReadCellItemsData(BinaryReader, CellItemsData, HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the cell items data from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -392,17 +417,20 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItemsData.html">CellItemsData</a></td>
         <td><span class="parametername">itemsData</span></td>
-        <td></td>
+        <td><p>Items data to deserialize data into</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>Deserialized settings of the terrain</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -417,7 +445,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -425,7 +454,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadSurfaceData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadSurfaceData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadSurfaceData_System_IO_BinaryReader_Fwt_HexTerrains_Data_HexSurfaceData_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadSurfaceData(System.IO.BinaryReader,Fwt.HexTerrains.Data.HexSurfaceData,Fwt.HexTerrains.Data.HexTerrainSettings)">ReadSurfaceData(BinaryReader, HexSurfaceData, HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the surface data from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -444,17 +474,20 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceData.html">HexSurfaceData</a></td>
         <td><span class="parametername">surfaceData</span></td>
-        <td></td>
+        <td><p>Surface data to deserialize data into</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>Deserialized settings of the terrain</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -469,7 +502,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -477,7 +511,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainAreasData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainAreasData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainAreasData_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainAreasData(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData,Fwt.HexTerrains.Data.HexTerrainSettings)">ReadTerrainAreasData(BinaryReader, HexTerrainAreasData, HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the terrain areas data from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -496,17 +531,20 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html">HexTerrainAreasData</a></td>
         <td><span class="parametername">areasData</span></td>
-        <td></td>
+        <td><p>Areas data to deserialize data into</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>Deserialized settings of the terrain</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -521,7 +559,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -529,7 +568,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainSettings*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainSettings_System_IO_BinaryReader_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainSettings(System.IO.BinaryReader)">ReadTerrainSettings(BinaryReader)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the terrain settings from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -548,7 +588,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -563,7 +604,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
-        <td></td>
+        <td><p>deserialized terrain settings</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -571,7 +613,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadToNativeList_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadToNativeList*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadToNativeList_System_IO_BinaryReader_Unity_Collections_NativeList_Fwt_HexTerrains_CellEntities_Data_CellEntity__" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadToNativeList(System.IO.BinaryReader,Unity.Collections.NativeList{Fwt.HexTerrains.CellEntities.Data.CellEntity})">ReadToNativeList(BinaryReader, NativeList&lt;CellEntity&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads a native list of CellEntity from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -590,12 +633,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a>&gt;</td>
         <td><span class="parametername">list</span></td>
-        <td></td>
+        <td><p>List to deserialize data into</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -610,7 +655,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -618,7 +664,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadToNativeList_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadToNativeList*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadToNativeList_System_IO_BinaryReader_Unity_Collections_NativeList_Fwt_HexTerrains_CellItems_Data_CellItem__" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadToNativeList(System.IO.BinaryReader,Unity.Collections.NativeList{Fwt.HexTerrains.CellItems.Data.CellItem})">ReadToNativeList(BinaryReader, NativeList&lt;CellItem&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads a native list of CellItem from a binary reader.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -637,12 +684,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItem.html">CellItem</a>&gt;</td>
         <td><span class="parametername">list</span></td>
-        <td></td>
+        <td><p>List to deserialize data into</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -657,7 +706,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -665,7 +715,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadVersion1_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadVersion1*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadVersion1_System_IO_BinaryReader_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_Data_HexTerrainSettings_Fwt_HexTerrains_HexTerrainSerializer_CustomDeserializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadVersion1(System.IO.BinaryReader,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback)">ReadVersion1(BinaryReader, Entity, EntityManager, HexTerrainSettings, CustomDeserializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Reads the terrain entity data from a binary reader. Called if the data was saved by a Serializer of version 1 or more.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -684,7 +735,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
         <td><span class="parametername">reader</span></td>
-        <td></td>
+        <td><p>binary reader that deserializes a terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
@@ -694,17 +746,20 @@
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>Deserialized settings of the terrain that is being deserialized</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback.html">CustomDeserializerCallback</a></td>
         <td><span class="parametername">customDeserializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own load data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -719,7 +774,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -727,7 +783,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_SaveTerrainToFile_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.SaveTerrainToFile*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_SaveTerrainToFile_System_String_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomSerializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.SaveTerrainToFile(System.String,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback)">SaveTerrainToFile(string, Entity, EntityManager, CustomSerializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Saves the terrain entity to a file.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -746,22 +803,26 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
         <td><span class="parametername">filePath</span></td>
-        <td></td>
+        <td><p>full path to the file</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>terrain entity to save</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback.html">CustomSerializerCallback</a></td>
         <td><span class="parametername">customSerializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own save data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -776,7 +837,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -784,7 +846,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_Serialize_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Serialize*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Serialize_System_IO_BinaryWriter_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomSerializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Serialize(System.IO.BinaryWriter,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback)">Serialize(BinaryWriter, Entity, EntityManager, CustomSerializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Serializes the terrain entity using a binary writer</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -803,22 +866,26 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>terrain entity to serialize</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback.html">CustomSerializerCallback</a></td>
         <td><span class="parametername">customSerializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own save data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -833,7 +900,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -841,7 +909,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_Serialize_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Serialize*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Serialize_System_IO_Stream_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomSerializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Serialize(System.IO.Stream,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback)">Serialize(Stream, Entity, EntityManager, CustomSerializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Serializes the terrain entity to a stream.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -860,22 +929,26 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.stream">Stream</a></td>
         <td><span class="parametername">stream</span></td>
-        <td></td>
+        <td><p>stream to serialize an entity into</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>terrain entity to serialize</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback.html">CustomSerializerCallback</a></td>
         <td><span class="parametername">customSerializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own save data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -890,7 +963,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -898,7 +972,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_Write_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Write*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Write_System_IO_BinaryWriter_Fwt_HexTerrains_CellEntities_Data_CellEntity_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Write(System.IO.BinaryWriter,Fwt.HexTerrains.CellEntities.Data.CellEntity)">Write(BinaryWriter, CellEntity)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a CellEntity to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -917,7 +992,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a></td>
@@ -937,7 +1013,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -945,7 +1022,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_Write_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Write*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_Write_System_IO_BinaryWriter_Fwt_HexTerrains_CellItems_Data_CellItem_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.Write(System.IO.BinaryWriter,Fwt.HexTerrains.CellItems.Data.CellItem)">Write(BinaryWriter, CellItem)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a CellItem to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -964,12 +1042,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItem.html">CellItem</a></td>
         <td><span class="parametername">cellItem</span></td>
-        <td></td>
+        <td><p>data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -984,7 +1064,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -992,7 +1073,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteCellEntitiesData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteCellEntitiesData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteCellEntitiesData_System_IO_BinaryWriter_Fwt_HexTerrains_CellEntities_Data_CellEntitiesData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteCellEntitiesData(System.IO.BinaryWriter,Fwt.HexTerrains.CellEntities.Data.CellEntitiesData)">WriteCellEntitiesData(BinaryWriter, CellEntitiesData)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the cell entities data to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1011,12 +1093,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesData.html">CellEntitiesData</a></td>
         <td><span class="parametername">entitiesData</span></td>
-        <td></td>
+        <td><p>entities data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1024,7 +1108,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteCellItemsData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteCellItemsData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteCellItemsData_System_IO_BinaryWriter_Fwt_HexTerrains_CellItems_Data_CellItemsData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteCellItemsData(System.IO.BinaryWriter,Fwt.HexTerrains.CellItems.Data.CellItemsData)">WriteCellItemsData(BinaryWriter, CellItemsData)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the cell items data to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1043,12 +1128,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItemsData.html">CellItemsData</a></td>
         <td><span class="parametername">itemsData</span></td>
-        <td></td>
+        <td><p>items data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1056,7 +1143,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteNativeArray_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteNativeArray*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteNativeArray_System_IO_BinaryWriter_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntity__" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteNativeArray(System.IO.BinaryWriter,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntity})">WriteNativeArray(BinaryWriter, NativeArray&lt;CellEntity&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a native array of CellEntity to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1075,12 +1163,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a>&gt;</td>
         <td><span class="parametername">array</span></td>
-        <td></td>
+        <td><p>data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1095,7 +1185,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1103,7 +1194,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteNativeArray_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteNativeArray*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteNativeArray_System_IO_BinaryWriter_Unity_Collections_NativeArray_Fwt_HexTerrains_CellItems_Data_CellItem__" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteNativeArray(System.IO.BinaryWriter,Unity.Collections.NativeArray{Fwt.HexTerrains.CellItems.Data.CellItem})">WriteNativeArray(BinaryWriter, NativeArray&lt;CellItem&gt;)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes a native array of CellItem to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1122,12 +1214,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItem.html">CellItem</a>&gt;</td>
         <td><span class="parametername">array</span></td>
-        <td></td>
+        <td><p>data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1142,7 +1236,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1150,7 +1245,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteSurfaceData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteSurfaceData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteSurfaceData_System_IO_BinaryWriter_Fwt_HexTerrains_Data_HexSurfaceData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteSurfaceData(System.IO.BinaryWriter,Fwt.HexTerrains.Data.HexSurfaceData)">WriteSurfaceData(BinaryWriter, HexSurfaceData)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the surface data to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1169,12 +1265,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceData.html">HexSurfaceData</a></td>
         <td><span class="parametername">surfaceData</span></td>
-        <td></td>
+        <td><p>surface data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1189,7 +1287,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1197,7 +1296,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainAreasData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainAreasData*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainAreasData_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainAreasData(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)">WriteTerrainAreasData(BinaryWriter, HexTerrainAreasData)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the terrain areas data to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1216,12 +1316,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html">HexTerrainAreasData</a></td>
         <td><span class="parametername">areasData</span></td>
-        <td></td>
+        <td><p>area data to serialize</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1229,7 +1331,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainSettings*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainSettings_Fwt_HexTerrains_Data_HexTerrainSettings_System_IO_BinaryWriter_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainSettings(Fwt.HexTerrains.Data.HexTerrainSettings,System.IO.BinaryWriter)">WriteTerrainSettings(HexTerrainSettings, BinaryWriter)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the terrain settings to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1248,12 +1351,14 @@
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>terrain settings to write</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1268,7 +1373,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1276,7 +1382,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteTypeHash_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTypeHash*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteTypeHash_System_IO_BinaryWriter_Unity_Entities_ComponentType_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTypeHash(System.IO.BinaryWriter,Unity.Entities.ComponentType)">WriteTypeHash(BinaryWriter, ComponentType)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the type hash of the component type to the binary writer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1295,12 +1402,14 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">ComponentType</span></td>
         <td><span class="parametername">componentType</span></td>
-        <td></td>
+        <td><p>type of the component data that is being serialized</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1308,7 +1417,8 @@
 
   <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteVersion1_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteVersion1*"></a>
   <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteVersion1_System_IO_BinaryWriter_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_HexTerrainSerializer_CustomSerializerCallback_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteVersion1(System.IO.BinaryWriter,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback)">WriteVersion1(BinaryWriter, Entity, EntityManager, CustomSerializerCallback)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Writes the terrain entity data to a binary writer. Called if the Serializer version is 1 or more.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -1327,22 +1437,26 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
         <td><span class="parametername">writer</span></td>
-        <td></td>
+        <td><p>binary writer that serializes the terrain data</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>terrain entity to serialize</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">EntityManager</span></td>
         <td><span class="parametername">entityManager</span></td>
-        <td></td>
+        <td><p>entity manager from the world the terrain entity lives</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a>.<a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback.html">CustomSerializerCallback</a></td>
         <td><span class="parametername">customSerializer</span></td>
-        <td></td>
+        <td><p>If provided, this function is called to give the user an ability to insert their own save data layer logic</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1357,7 +1471,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>

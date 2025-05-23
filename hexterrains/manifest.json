@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "GettingStarted.md",
+      "output": {
+        ".html": {
+          "relative_path": "GettingStarted.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Packages/Fwt.Core.Ecs/README.md",
       "output": {
         ".html": {
@@ -2452,7 +2462,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.Core.VersionValue<T>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.Core.VersionValue-1.yml\" sourcestartlinenumber=\"1\">Wrapper around a value with a version number and dirty flag.\nWhenever the value is set, the version number is incremented and the dirty flag is set to true.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3138,7 +3148,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.yml\" sourcestartlinenumber=\"1\">Base class for the HexTerrainCursorView.\nThis is a game object that is used to visualize the brush on the terrain.\nExpected to use a Projector to project the brush material on the terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4370,7 +4380,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.ChunksGridDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ChunksGridDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for ChunksGridData. This class is used to create chunks grid data in the Unity Editor.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4384,7 +4394,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.ChunksGridDataBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ChunksGridDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for ChunksGridData. This class is used to convert the ChunksGridDataAuthoring component into a ChunksGridData component at runtime.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4398,7 +4408,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CreateHexTerrainsGroup",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CreateHexTerrainsGroup.yml\" sourcestartlinenumber=\"1\">System group where all the creation systems for HexTerrains are executed.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4482,7 +4492,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.ColorMapTexture",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.ColorMapTexture.yml\" sourcestartlinenumber=\"1\">Buffer of all ColorMap textures to fill with colors from different data layers.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4496,7 +4506,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.ColorMapTexturesCache",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.ColorMapTexturesCache.yml\" sourcestartlinenumber=\"1\">Contains cached ViewMode and ColorMap verions.\nWhen ViewMode's or ColorMap's version is different from cached values,\nthe update logic is applied (like update UI),\notherwise the step is skipped</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4552,7 +4562,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateColorMapTexturesRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateColorMapTexturesRequest.yml\" sourcestartlinenumber=\"1\">Request to create ColorMap textures on Terrain entity from the source.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4580,7 +4590,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateHexGroundRenderDataRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexGroundRenderDataRequest.yml\" sourcestartlinenumber=\"1\">Request to create HexGroundRenderData.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4594,7 +4604,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateHexSurfaceRenderDataRequestArgs",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexSurfaceRenderDataRequestArgs.yml\" sourcestartlinenumber=\"1\">Arguments for request to create hex surface render data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4608,7 +4618,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateHexSurfaceRequestArgs",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexSurfaceRequestArgs.yml\" sourcestartlinenumber=\"1\">Args for request to create a surface data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4622,7 +4632,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateHexWaterDataRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexWaterDataRequest.yml\" sourcestartlinenumber=\"1\">Request component for creating hex water data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4636,7 +4646,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateHexWaterRenderDataRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexWaterRenderDataRequest.yml\" sourcestartlinenumber=\"1\">Request to create HexWaterRenderData.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4734,7 +4744,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.HexGroundRenderConfig",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexGroundRenderConfig.yml\" sourcestartlinenumber=\"1\">Configuration for rendering the HexSurface layer. Used to provide materials and other render settings when rendering a HexSurface.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4888,7 +4898,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.HexTerrainViewMode",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexTerrainViewMode.yml\" sourcestartlinenumber=\"1\">Contains the current view mode of the terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5266,7 +5276,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexGroundDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexGroundDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for HexGroundData. This class is used to create hex ground data in the Unity Editor.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5280,7 +5290,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexGroundDataBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexGroundDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for HexGroundData. This class is used to convert the HexGroundDataAuthoring component into a HexGroundData component at runtime.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5294,7 +5304,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexGroundRenderDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexGroundRenderDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for Ground HexRenderData.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5308,7 +5318,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexSurfaceDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceDataAuthoring.yml\" sourcestartlinenumber=\"1\">Base class for authoring components that create hex surface data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5322,7 +5332,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexSurfaceDataBaker<TAuthoring, TRequest>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceDataBaker-2.yml\" sourcestartlinenumber=\"1\">Base class for baker components that create hex surface data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5336,7 +5346,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexSurfaceRenderDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceRenderDataAuthoring.yml\" sourcestartlinenumber=\"1\">Base class for authoring components that create hex surface render data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5350,7 +5360,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexSurfaceRenderDataBaker<TAuthoring, TRequest, TRenderConfig>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceRenderDataBaker-3.yml\" sourcestartlinenumber=\"1\">Base class for baker components that create hex surface render data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5364,7 +5374,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for the HexTerrain. This component is used to create a HexTerrain entity in the ECS world.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5378,7 +5388,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainBaker.yml\" sourcestartlinenumber=\"1\">Baker for the HexTerrainAuthoring component. This class is used to convert the authoring component into an entity with the appropriate components.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5392,7 +5402,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainRenderDataBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainRenderDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for Ground HexRenderData.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5434,7 +5444,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainSerializer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainSerializer.yml\" sourcestartlinenumber=\"1\">HexTerrainSerializer is a static class that provides methods to serialize and deserialize HexTerrain data entity.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5448,7 +5458,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsCleanupBarrier",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsCleanupBarrier.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains cleanup systems (executes the last of all cleanup systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5462,7 +5472,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsCleanupGroup",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsCleanupGroup.yml\" sourcestartlinenumber=\"1\">System group for the HexTerrains cleanup systems.\nThis systems usually reset the dirty flags.\nThis system group is executed at the very beginning of the frame</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5476,7 +5486,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsCreateAllBarrier",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsCreateAllBarrier.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains creation systems (executes the last of all creation systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5490,7 +5500,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsFinishPreRenderBarrier",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsFinishPreRenderBarrier.yml\" sourcestartlinenumber=\"1\">Barrier system for the HexTerrains finish pre-render systems (executes the last of all Finish Pre Render Systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5504,7 +5514,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsFinishPreRenderGroup",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsFinishPreRenderGroup.yml\" sourcestartlinenumber=\"1\">System group for the HexTerrains finish pre-render systems</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5518,7 +5528,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsInitializationBuffer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsInitializationBuffer.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains initialization systems (executes the last of all initialization systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5532,7 +5542,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsInitializationGroup",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsInitializationGroup.yml\" sourcestartlinenumber=\"1\">System Group where all HexTerrains initialization systems are executed.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5546,7 +5556,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsRenderBuffer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsRenderBuffer.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains render systems (executes the last of all Render Systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5560,7 +5570,21 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsRenderGroup",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsRenderGroup.yml\" sourcestartlinenumber=\"1\">System Group where HexTerrains are rendered.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains start pre-render systems (executes the last of all Start Pre Render Systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5588,7 +5612,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsStartPreRenderGroup",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsStartPreRenderGroup.yml\" sourcestartlinenumber=\"1\">System Group where the HexTerrains start pre-render systems are executed.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5602,7 +5626,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexWaterDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for hex water data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5616,7 +5640,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexWaterDataBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterDataBaker.yml\" sourcestartlinenumber=\"1\">Baker class for hex water data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5630,7 +5654,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexWaterRenderDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterRenderDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for hex water render data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5644,7 +5668,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexWaterRenderDataBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterRenderDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for hex water render data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5840,7 +5864,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.yml\" sourcestartlinenumber=\"1\">State for creating a new terrain using the CreateNewTerrainUserTool.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5854,7 +5878,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Data.CreateSamplesUserToolsDataRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Data.CreateSamplesUserToolsDataRequest.yml\" sourcestartlinenumber=\"1\">Request to create a new sample UserTools.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5868,7 +5892,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Data.SamplesUserToolStateMachine",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Data.SamplesUserToolStateMachine.yml\" sourcestartlinenumber=\"1\">Samples project's state machine for the user tools.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5882,7 +5906,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Data.SamplesUserToolsData",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Data.SamplesUserToolsData.yml\" sourcestartlinenumber=\"1\">Samples project implementation of the UserToolsData</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5910,7 +5934,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.HexTerrainCursorView",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.HexTerrainCursorView.yml\" sourcestartlinenumber=\"1\">This class is used to visualize the brush size and rotation in the scene view.\nUses a Projector to project the brush material on the terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5924,7 +5948,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.LoadTerrainUserToolState",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.LoadTerrainUserToolState.yml\" sourcestartlinenumber=\"1\">State for loading terrain using the LoadTerrainUserTool.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5938,7 +5962,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.ResizeTerrainUserToolState",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.yml\" sourcestartlinenumber=\"1\">State for the Resize Terrain User Tool.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5952,7 +5976,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.SamplesCameraControllerComponent",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.yml\" sourcestartlinenumber=\"1\">A simple camera controller that allows zooming in and out using the mouse scroll wheel\nand moving the camera using the WASD keys.\nPrevents moving out of terrain bounds.\nIf terrain's edges are connected, teleports to the opposite side of the terrain\nif the camera moves past the terrain edge.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5966,7 +5990,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for the SamplesUserToolData.\nThis component is used to create a SamplesUserToolData entity in the ECS world.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5980,7 +6004,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.SamplesUserToolDataBaker",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for the SamplesUserToolDataAuthoring component.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5994,7 +6018,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.SaveTerrainUserToolState",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.SaveTerrainUserToolState.yml\" sourcestartlinenumber=\"1\">State for saving terrain using the user tool.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6022,7 +6046,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Scripts.UI.UserToolParameterElement",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Scripts.UI.UserToolParameterElement.yml\" sourcestartlinenumber=\"1\">UI Toolkit visual element that takes a visual element to display a provided parameter by parameter object type.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6050,7 +6074,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Systems.CreateSamplesUserToolsDataSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Systems.CreateSamplesUserToolsDataSystem.yml\" sourcestartlinenumber=\"1\">System to create user tools data for the samples.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6064,7 +6088,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Systems.SamplesUISystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Systems.SamplesUISystem.yml\" sourcestartlinenumber=\"1\">Samples implementation of the UISystem.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6078,7 +6102,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Systems.UpdateSamplesCameraControllerSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Systems.UpdateSamplesCameraControllerSystem.yml\" sourcestartlinenumber=\"1\">System that updates the camera controller data for the minimap.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6092,7 +6116,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Systems.UpdateSamplesColorMapTexturesSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Systems.UpdateSamplesColorMapTexturesSystem.yml\" sourcestartlinenumber=\"1\">This system is responsible for updating the color map textures of the samples.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6106,7 +6130,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Systems.UpdateSamplesMinimapScreen",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Systems.UpdateSamplesMinimapScreen.yml\" sourcestartlinenumber=\"1\">System that updates the minimap screen in the UI.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6120,7 +6144,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.Systems.UpdateSamplesUserToolsStateMachineSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.Systems.UpdateSamplesUserToolsStateMachineSystem.yml\" sourcestartlinenumber=\"1\">System that updates the state machine of the user tools.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6148,7 +6172,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.CreateNewTerrainScreen",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.CreateNewTerrainScreen.yml\" sourcestartlinenumber=\"1\">Sample implementation of a screen that shows user a dialog with options to create a new terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6162,7 +6186,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.LoadGameScreen",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.LoadGameScreen.yml\" sourcestartlinenumber=\"1\">Sample implementation of a screen that allows the user to load a saved terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6176,7 +6200,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.ResizeTerrainScreen",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.ResizeTerrainScreen.yml\" sourcestartlinenumber=\"1\">Sample implementation of the resize terrain screen.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6204,7 +6228,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.SamplesMinimapCameraIndicator",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.SamplesMinimapCameraIndicator.yml\" sourcestartlinenumber=\"1\">UI Toolkit visual element that displays a camera indicator on the minimap,\nso on the minimap it is visible where the camera is relative to the terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6218,7 +6242,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.yml\" sourcestartlinenumber=\"1\">Sample implementation of the minimap UIScreen.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6232,7 +6256,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.SaveGameScreen",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.SaveGameScreen.yml\" sourcestartlinenumber=\"1\">Save game UIScreen that allows user to choose file to save a terrain into.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6638,7 +6662,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem<TRequest, TSurfaceData, TRenderData>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem-3.yml\" sourcestartlinenumber=\"1\">Base class for systems that create hex surface data.</p>\n"
     },
     {
       "type": "ManagedReference",

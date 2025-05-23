@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class HexTerrainCursorView | Hex Terrains ">
     
-    
+    <meta name="description" content="This class is used to visualize the brush size and rotation in the scene view. Uses a Projector to project the brush material on the terrain.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,9 @@
 
 
   <h1 id="Fwt_HexTerrains_Samples_HexTerrainCursorView" data-uid="Fwt.HexTerrains.Samples.HexTerrainCursorView" class="text-break">Class HexTerrainCursorView</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>This class is used to visualize the brush size and rotation in the scene view.
+Uses a Projector to project the brush material on the terrain.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -568,10 +570,11 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=11">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=18">View Source</a>
   </span>
   <h4 id="Fwt_HexTerrains_Samples_HexTerrainCursorView_Projector" data-uid="Fwt.HexTerrains.Samples.HexTerrainCursorView.Projector">Projector</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The projector used to project the brush material on the terrain.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -596,11 +599,12 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=13">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=24">View Source</a>
   </span>
   <a id="Fwt_HexTerrains_Samples_HexTerrainCursorView_GetBrushMaterial_" data-uid="Fwt.HexTerrains.Samples.HexTerrainCursorView.GetBrushMaterial*"></a>
   <h4 id="Fwt_HexTerrains_Samples_HexTerrainCursorView_GetBrushMaterial" data-uid="Fwt.HexTerrains.Samples.HexTerrainCursorView.GetBrushMaterial">GetBrushMaterial()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns the brush material used by the projector.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -625,11 +629,11 @@
   <div><a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainCursorViewBase.html#Fwt_HexTerrains_Brushes_HexTerrainCursorViewBase_GetBrushMaterial">HexTerrainCursorViewBase.GetBrushMaterial()</a></div>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=23">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=39">View Source</a>
   </span>
   <a id="Fwt_HexTerrains_Samples_HexTerrainCursorView_SetBrushSize_" data-uid="Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushSize*"></a>
   <h4 id="Fwt_HexTerrains_Samples_HexTerrainCursorView_SetBrushSize_System_Int32_" data-uid="Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushSize(System.Int32)">SetBrushSize(int)</h4>
-  <div class="markdown level1 summary"><p>Returns true if value has been changed</p>
+  <div class="markdown level1 summary"><p>Sets the size of brush so it covers the needed area of cells.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -649,7 +653,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">size</span></td>
-        <td></td>
+        <td><p>size of the brush in cells</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -664,7 +669,8 @@
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>True if value was changed and set, otherwise - false</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -701,7 +707,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=9" class="contribution-link">View Source</a>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains_HDRP/Scripts/HexTerrainCursorView.cs&amp;version=GBmain&amp;line=13" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

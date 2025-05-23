@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Struct VersionValue&lt;T&gt; | Hex Terrains ">
     
-    
+    <meta name="description" content="Wrapper around a value with a version number and dirty flag. Whenever the value is set, the version number is incremented and the dirty flag is set to true.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,9 @@
 
 
   <h1 id="Fwt_Core_VersionValue_1" data-uid="Fwt.Core.VersionValue`1" class="text-break">Struct VersionValue&lt;T&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Wrapper around a value with a version number and dirty flag.
+Whenever the value is set, the version number is incremented and the dirty flag is set to true.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -121,7 +123,8 @@
     <tbody>
       <tr>
         <td><span class="parametername">T</span></td>
-        <td></td>
+        <td><p>Type of value this wrapper is for</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -130,7 +133,8 @@
 
 
   <h4 id="Fwt_Core_VersionValue_1_IsDirty" data-uid="Fwt.Core.VersionValue`1.IsDirty">IsDirty</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Flag indicating whether the value has been modified since this flag was last reset.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -154,7 +158,8 @@
 
 
   <h4 id="Fwt_Core_VersionValue_1_Value" data-uid="Fwt.Core.VersionValue`1.Value">Value</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The value itself. This is the value that is being wrapped.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -178,7 +183,8 @@
 
 
   <h4 id="Fwt_Core_VersionValue_1_Version" data-uid="Fwt.Core.VersionValue`1.Version">Version</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Version number of the value. This number is incremented whenever the value is set.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -205,7 +211,8 @@
 
   <a id="Fwt_Core_VersionValue_1_ResetVersion_" data-uid="Fwt.Core.VersionValue`1.ResetVersion*"></a>
   <h4 id="Fwt_Core_VersionValue_1_ResetVersion" data-uid="Fwt.Core.VersionValue`1.ResetVersion">ResetVersion()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the dirty flag and version number.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -215,7 +222,8 @@
 
   <a id="Fwt_Core_VersionValue_1_SetDirty_" data-uid="Fwt.Core.VersionValue`1.SetDirty*"></a>
   <h4 id="Fwt_Core_VersionValue_1_SetDirty_System_Boolean_" data-uid="Fwt.Core.VersionValue`1.SetDirty(System.Boolean)">SetDirty(bool)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the dirty flag and increments the version number if the flag is set to true.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -234,7 +242,8 @@
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><span class="parametername">isDirty</span></td>
-        <td></td>
+        <td><p>if true, sets the dirty flag and increments verison. If false, resets the dirty flag</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -242,7 +251,8 @@
 
   <a id="Fwt_Core_VersionValue_1_SetValue_" data-uid="Fwt.Core.VersionValue`1.SetValue*"></a>
   <h4 id="Fwt_Core_VersionValue_1_SetValue__0_" data-uid="Fwt.Core.VersionValue`1.SetValue(`0)">SetValue(T)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the value and increments the version number.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -261,7 +271,8 @@
       <tr>
         <td><span class="xref">T</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>value to set</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class CreateHexTerrainsGroup | Hex Terrains </title>
+      <title>Class HexTerrainsStartPreRenderBarrier | Hex Terrains </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class CreateHexTerrainsGroup | Hex Terrains ">
+      <meta name="title" content="Class HexTerrainsStartPreRenderBarrier | Hex Terrains ">
     
-    <meta name="description" content="System group where all the creation systems for HexTerrains are executed.">
+    <meta name="description" content="Buffer system for the HexTerrains start pre-render systems (executes the last of all Start Pre Render Systems).">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -76,12 +76,12 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.CreateHexTerrainsGroup">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier">
 
 
 
-  <h1 id="Fwt_HexTerrains_CreateHexTerrainsGroup" data-uid="Fwt.HexTerrains.CreateHexTerrainsGroup" class="text-break">Class CreateHexTerrainsGroup</h1>
-  <div class="markdown level0 summary"><p>System group where all the creation systems for HexTerrains are executed.</p>
+  <h1 id="Fwt_HexTerrains_HexTerrainsStartPreRenderBarrier" data-uid="Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier" class="text-break">Class HexTerrainsStartPreRenderBarrier</h1>
+  <div class="markdown level0 summary"><p>Buffer system for the HexTerrains start pre-render systems (executes the last of all Start Pre Render Systems).</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -89,61 +89,37 @@
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
-    <div class="level3"><span class="xref">ComponentSystemGroup</span></div>
-    <div class="level4"><span class="xref">CreateHexTerrainsGroup</span></div>
+    <div class="level3"><span class="xref">EntityCommandBufferSystem</span></div>
+    <div class="level4"><span class="xref">HexTerrainsStartPreRenderBarrier</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <span class="xref">ComponentSystemGroup.EnableSystemSorting</span>
+      <span class="xref">EntityCommandBufferSystem.m_PendingBuffers</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.Created</span>
+      <span class="xref">EntityCommandBufferSystem.PendingBuffers</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.ManagedSystems</span>
+      <span class="xref">EntityCommandBufferSystem.CreateCommandBuffer()</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.GetUnmanagedSystems(Allocator)</span>
+      <span class="xref">EntityCommandBufferSystem.AddJobHandleForProducer(JobHandle)</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.GetAllSystems(Allocator)</span>
+      <span class="xref">EntityCommandBufferSystem.OnCreate()</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.OnCreate()</span>
+      <span class="xref">EntityCommandBufferSystem.OnDestroy()</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.OnDestroy()</span>
+      <span class="xref">EntityCommandBufferSystem.OnUpdate()</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.AddSystemToUpdateList(ComponentSystemBase)</span>
+      <span class="xref">EntityCommandBufferSystem.CreateCommandBuffer(ref UnsafeList&lt;EntityCommandBuffer&gt;, AllocatorManager.AllocatorHandle, WorldUnmanaged)</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemGroup.AddSystemToUpdateList(SystemHandle)</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.RemoveSystemFromUpdateList(ComponentSystemBase)</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.RemoveSystemFromUpdateList(SystemHandle)</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.SortSystems()</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.FixedRateManager</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.RateManager</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.SetRateManagerCreateAllocator(IRateManager)</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.RateGroupAllocators</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemGroup.OnUpdate()</span>
+      <span class="xref">EntityCommandBufferSystem.CreateCommandBuffer(ref UnsafeList&lt;EntityCommandBuffer&gt;, WorldUnmanaged)</span>
     </div>
     <div>
       <span class="xref">SystemBase.Dependency</span>
@@ -334,11 +310,10 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a></h6>
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
-  <h5 id="Fwt_HexTerrains_CreateHexTerrainsGroup_syntax">Syntax</h5>
+  <h5 id="Fwt_HexTerrains_HexTerrainsStartPreRenderBarrier_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(InitializationSystemGroup))]
-[UpdateAfter(typeof(HexTerrainsCleanupGroup))]
-public class CreateHexTerrainsGroup : ComponentSystemGroup</code></pre>
+    <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsStartPreRenderGroup), OrderLast = true)]
+public class HexTerrainsStartPreRenderBarrier : EntityCommandBufferSystem</code></pre>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>

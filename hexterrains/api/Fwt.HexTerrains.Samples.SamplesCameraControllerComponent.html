@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class SamplesCameraControllerComponent | Hex Terrains ">
     
-    
+    <meta name="description" content="A simple camera controller that allows zooming in and out using the mouse scroll wheel and moving the camera using the WASD keys. Prevents moving out of terrain bounds. If terrain&#39;s edges are connected, teleports to the opposite side of the terrain if the camera moves past the terrain edge.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,12 @@
 
 
   <h1 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent" class="text-break">Class SamplesCameraControllerComponent</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>A simple camera controller that allows zooming in and out using the mouse scroll wheel
+and moving the camera using the WASD keys.
+Prevents moving out of terrain bounds.
+If terrain's edges are connected, teleports to the opposite side of the terrain
+if the camera moves past the terrain edge.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -541,10 +546,11 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=12">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=25">View Source</a>
   </span>
   <h4 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_Camera" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Camera">Camera</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The camera to control.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -567,10 +573,11 @@
   </table>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=14">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=30">View Source</a>
   </span>
   <h4 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_PreventZoomKeys" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.PreventZoomKeys">PreventZoomKeys</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>If any of these keys are pressed, zooming is ignored.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -593,10 +600,11 @@
   </table>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=10">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=20">View Source</a>
   </span>
   <h4 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_TargetTransform" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.TargetTransform">TargetTransform</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The transform of the target object to follow.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -621,11 +629,12 @@
 </h3>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=20">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=40">View Source</a>
   </span>
   <a id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_SetTarget_" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget*"></a>
   <h4 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_SetTarget_UnityEngine_Transform_" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget(UnityEngine.Transform)">SetTarget(Transform)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the target transform to follow.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -644,7 +653,8 @@
       <tr>
         <td><span class="xref">Transform</span></td>
         <td><span class="parametername">targetTransform</span></td>
-        <td></td>
+        <td><p>Target transform to follow</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -652,11 +662,12 @@
   <div><a class="xref" href="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_SetTarget_UnityEngine_Transform_">CameraControllerComponentBase.SetTarget(Transform)</a></div>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=26">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=49">View Source</a>
   </span>
   <a id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_Update_" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update*"></a>
   <h4 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_Update" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update">Update()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates the camera position based on the target transform and zoom level.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -664,11 +675,12 @@
   </div>
 
   <span class="small pull-right mobile-hide">
-    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=47">View Source</a>
+    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=73">View Source</a>
   </span>
   <a id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_UpdatePosition_" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition*"></a>
   <h4 id="Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_UpdatePosition" data-uid="Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition">UpdatePosition()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates the camera position based on the target transform and zoom level.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -707,7 +719,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=8" class="contribution-link">View Source</a>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=Assets/Samples/HexTerrains/Scripts/SamplesCameraControllerComponent.cs&amp;version=GBmain&amp;line=15" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

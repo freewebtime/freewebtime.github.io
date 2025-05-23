@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title> | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content=" | Hex Terrains ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p><strong>Hex Terrains Framework - Instruction Part 1: Understanding Data Layers and Terrain Layers</strong></p>
+<hr>
+<h3 id="what-are-data-layers">What Are Data Layers?</h3>
+<p>A <strong>data layer</strong> is the foundational structure of the Hex Terrains framework. It represents a grid of values mapped to the terrain's hexagonal cells. Each data layer handles a specific type of data (e.g., height, biome index, cell item, or color) and is designed to be efficient, modular, and job-safe for use in Unity's ECS and Burst system.</p>
+<p>Data layers provide:</p>
+<ul>
+<li><strong>Efficient memory layout</strong> using native collections</li>
+<li><strong>Dirty chunk tracking</strong> for minimal updates</li>
+<li><strong>Job-safe API</strong> to safely read and write data in parallel</li>
+<li><strong>Support for multiple terrain surfaces</strong> (e.g., ground, water)</li>
+</ul>
+<h3 id="reading-and-writing-data">Reading and Writing Data</h3>
+<p>To use data layers safely within Unity Jobs, the API provides a standardized mechanism to manage read/write access:</p>
+<pre><code class="lang-csharp">JobHandle readHandle = dataLayer.PrepareToRead();
+JobHandle writeHandle = dataLayer.PrepareToWrite();
+</code></pre>
+<p>These functions return job handles representing the current state of the data. Jobs that read or write the data should be scheduled with these handles as dependencies.</p>
+<p>Once a job is scheduled, its handle must be registered with the data layer:</p>
+<pre><code class="lang-csharp">dataLayer.AddReadDependency(jobHandle);
+dataLayer.AddWriteDependency(jobHandle);
+</code></pre>
+<p>This ensures that other jobs respect the read/write timing and Unity's job safety rules are upheld.</p>
+<p>If you need to <strong>synchronously access data</strong>, use:</p>
+<pre><code class="lang-csharp">dataLayer.OpenToRead();
+dataLayer.OpenToWrite();
+</code></pre>
+<p>These calls complete all outstanding dependencies, allowing immediate access to data.</p>
+<hr>
+<h3 id="what-are-terrain-layers">What Are Terrain Layers?</h3>
+<p>A <strong>terrain layer</strong> is a higher-level structure that contains multiple data layers for a single surface type (e.g., ground or water). For example:</p>
+<p><strong>Ground Surface</strong> might include:</p>
+<ul>
+<li><code>HeightMapDataLayer</code></li>
+<li><code>BiomeMapDataLayer</code></li>
+<li><code>CellMetricsDataLayer</code></li>
+</ul>
+<p>Each terrain layer encapsulates the logic and access patterns for its component data layers. The terrain entity contains references to these terrain layers, and systems iterate over them to perform updates, rendering, or logic.</p>
+<hr>
+<h3 id="system-workflow-example">System Workflow Example</h3>
+<p>A typical system that processes a data layer:</p>
+<ol>
+<li><strong>Prepare to read/write</strong> from the data layer:</li>
+</ol>
+<pre><code class="lang-csharp">var readHandle = heightMap.PrepareToRead();
+</code></pre>
+<ol start="2">
+<li><strong>Schedule a job</strong> that uses the data:</li>
+</ol>
+<pre><code class="lang-csharp">var job = new RecalculateCellMetricsJob
+{
+    HeightMap = heightMap.Data,
+    Metrics = cellMetrics.Data
+};
+JobHandle handle = job.Schedule(readHandle);
+</code></pre>
+<ol start="3">
+<li><strong>Register job handle</strong>:</li>
+</ol>
+<pre><code class="lang-csharp">heightMap.AddReadDependency(handle);
+cellMetrics.AddWriteDependency(handle);
+</code></pre>
+<ol start="4">
+<li>Or <strong>complete before accessing directly</strong>:</li>
+</ol>
+<pre><code class="lang-csharp">heightMap.OpenToRead();
+float height = heightMap.GetValue(cellIndex);
+</code></pre>
+<hr>
+<p>This architecture ensures a reactive, modular, and scalable update cycle that plays well with DOTS and allows systems to operate in parallel safely.</p>
+<p>Next section: <em>Creating and Extending Data Layers, Using Terrain Layers in Your Project</em>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=DataLayers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

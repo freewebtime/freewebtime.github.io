@@ -12,6 +12,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "DataLayers.md",
+      "output": {
+        ".html": {
+          "relative_path": "DataLayers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "GettingStarted.md",
       "output": {
         ".html": {

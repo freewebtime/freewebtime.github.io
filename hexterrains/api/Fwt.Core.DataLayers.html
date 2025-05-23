@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace Fwt.Core.DataLayers | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace Fwt.Core.DataLayers | Hex Terrains ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.DataLayers">
+
+  <h1 id="Fwt_Core_DataLayers" data-uid="Fwt.Core.DataLayers" class="text-break">Namespace Fwt.Core.DataLayers</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.ArrayChunkedDataLayer-1.html">ArrayChunkedDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for data layers that use array as a data storage and track changes per chunk.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.ArrayDataLayer-1.html">ArrayDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that use an array as a data container.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></h4>
+      <section><p>Base class for all chunked data layers (<a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a>).
+Chunked data layer is a container for data that tracks changes per chunk.
+When intializing the data layer, it creates a grid of chunks. Each cell in this grid is a dirty flag for the chunk.
+When a cell is modified, the corresponding chunk is marked as dirty and also the whole layer is marked as dirty.
+The layer contains a dirty flags per chunk in ChunkDirtyGrid NativeList.
+The layer contains indexes of dirty chunks in DirtyChunks NativeParallelHashSet.
+To divide a layer into chunks, the layer must be initialized with a size of the layer (width and height) and a size of the chunks.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a></h4>
+      <section><p>Base class for all data layers.
+Data Layer is a container for data that can be read and written to.
+Data Layer allows for parallel reading and writing of data.
+It tracks dependencies for reading and writing jobs.</p>
+<p>If you want to read data immediately, call DataLayer.OpenToRead() before reading.
+If you want to write data immediately, call DataLayer.OpenToWrite() before writing.
+If you want to schedule a job that reads data, call DataLayer.PrepareToRead() before scheduling the job (returns a JobHandle to use as dependency in your job)
+If you want to schedule a job that writes data, call DataLayer.PrepareToWrite() before scheduling the job (returns a JobHandle to use as dependency in your job)</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.DictionaryDataLayer-2.html">DictionaryDataLayer&lt;TKey, TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that use a dictionary as a data structure.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.HashSetDataLayer-1.html">HashSetDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that use HashSet as a data structure.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html">ListChunkedDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for data layers that use Array{T} as a data storage and track changes per chunk.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.ListDataLayer-1.html">ListDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on Array{T}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeArrayChunkedDataLayer-1.html">NativeArrayChunkedDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for data layers that use NativeArray{T} as a data storage and track changes per chunk.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeArrayDataLayer-1.html">NativeArrayDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeArray{T}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeHashMapDataLayer-2.html">NativeHashMapDataLayer&lt;TKey, TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeHashMap{TItem, TItem}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeHashSetDataLayer-1.html">NativeHashSetDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeHashSet{T}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html">NativeListChunkedDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeList{T}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeListDataLayer-1.html">NativeListDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeList{T}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeParallelHashMapDataLayer-2.html">NativeParallelHashMapDataLayer&lt;TKey, TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeParallelHashMap{TItem, TItem}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeParallelHashSetDataLayer-1.html">NativeParallelHashSetDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeParallelHashSet{T}.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer-2.html">NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt;</a></h4>
+      <section><p>Base class for all data layers that are based on NativeParallelMultiHashMap{TItem, TItem}.</p>
+</section>
+    <h3 id="structs">
+Structs
+</h3>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.ClearNativeParallelHashSetJob-1.html">ClearNativeParallelHashSetJob&lt;TItem&gt;</a></h4>
+      <section><p>Job that clears the dirty chunks hash set.
+Used to schedule this operation after all jobs that read/write to the data layer are completed</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.FillDirtyChunksJob.html">FillDirtyChunksJob</a></h4>
+      <section><p>Job that fills the dirty chunks list with chunk indexes.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.MergeDataLayerDirtyGridsJob1.html">MergeDataLayerDirtyGridsJob1</a></h4>
+      <section><p>Job that merges dirty grids from 4 sources into a target grid.
+If the source or target grid is dirty, the target grid is marked as dirty.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.MergeDataLayerDirtyGridsJob2.html">MergeDataLayerDirtyGridsJob2</a></h4>
+      <section><p>Job that merges dirty grids from 2 sources into a target grid.
+If any of the source/target grids is dirty, the target grid is marked as dirty.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.MergeDataLayerDirtyGridsJob3.html">MergeDataLayerDirtyGridsJob3</a></h4>
+      <section><p>Job that merges dirty grids from 3 sources into a target grid.
+If any of the source/target grids is dirty, the target grid is marked as dirty.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.MergeDataLayerDirtyGridsJob4.html">MergeDataLayerDirtyGridsJob4</a></h4>
+      <section><p>Job that merges dirty grids from 4 sources into a target grid.
+If any of the source/target grids is dirty, the target grid is marked as dirty.</p>
+</section>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.SetChunksDirtyJob.html">SetChunksDirtyJob</a></h4>
+      <section><p>Job that sets the dirty flag for the chunks with indexes provided in DirtyChunks collection.</p>
+</section>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+      <h4><a class="xref" href="Fwt.Core.DataLayers.IListDataLayer-1.html">IListDataLayer&lt;TItem&gt;</a></h4>
+      <section><p>Interface for all the data layers that have length and allows to get/set value.</p>
+</section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

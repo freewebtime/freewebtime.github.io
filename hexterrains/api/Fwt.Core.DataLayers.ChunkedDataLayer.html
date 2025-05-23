@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ChunkedDataLayer | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ChunkedDataLayer | Hex Terrains ">
+    
+    <meta name="description" content="Base class for all chunked data layers (). Chunked data layer is a container for data that tracks changes per chunk. When intializing the data layer, it creates a grid of chunks. Each cell in this grid is a dirty flag for the chunk. When a cell is modified, the corresponding chunk is marked as dirty and also the whole layer is marked as dirty. The layer contains a dirty flags per chunk in ChunkDirtyGrid NativeList. The layer contains indexes of dirty chunks in DirtyChunks NativeParallelHashSet. To divide a layer into chunks, the layer must be initialized with a size of the layer (width and height) and a size of the chunks.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer">
+
+
+
+  <h1 id="Fwt_Core_DataLayers_ChunkedDataLayer" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer" class="text-break">Class ChunkedDataLayer</h1>
+  <div class="markdown level0 summary"><p>Base class for all chunked data layers (<a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a>).
+Chunked data layer is a container for data that tracks changes per chunk.
+When intializing the data layer, it creates a grid of chunks. Each cell in this grid is a dirty flag for the chunk.
+When a cell is modified, the corresponding chunk is marked as dirty and also the whole layer is marked as dirty.
+The layer contains a dirty flags per chunk in ChunkDirtyGrid NativeList.
+The layer contains indexes of dirty chunks in DirtyChunks NativeParallelHashSet.
+To divide a layer into chunks, the layer must be initialized with a size of the layer (width and height) and a size of the chunks.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a></div>
+    <div class="level2"><span class="xref">ChunkedDataLayer</span></div>
+      <div class="level3"><a class="xref" href="Fwt.Core.DataLayers.ArrayChunkedDataLayer-1.html">ArrayChunkedDataLayer&lt;TItem&gt;</a></div>
+      <div class="level3"><a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html">ListChunkedDataLayer&lt;TItem&gt;</a></div>
+      <div class="level3"><a class="xref" href="Fwt.Core.DataLayers.NativeArrayChunkedDataLayer-1.html">NativeArrayChunkedDataLayer&lt;TItem&gt;</a></div>
+      <div class="level3"><a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html">NativeListChunkedDataLayer&lt;TItem&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDisposableItems">DataLayer.IsDisposableItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__readJobsDependency">DataLayer._readJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_ReadDependency">DataLayer.ReadDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__writeJobsDependency">DataLayer._writeJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_WriteDependency">DataLayer.WriteDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CombinedDependency">DataLayer.CombinedDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__isDirty">DataLayer._isDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDirty">DataLayer.IsDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__version">DataLayer._version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Version">DataLayer.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Length">DataLayer.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddReadDependency_Unity_Jobs_JobHandle_">DataLayer.AddReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddWriteDependency_Unity_Jobs_JobHandle_">DataLayer.AddWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetReadDependency_Unity_Jobs_JobHandle_">DataLayer.SetReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetWriteDependency_Unity_Jobs_JobHandle_">DataLayer.SetWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToWrite">DataLayer.PrepareToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToRead">DataLayer.PrepareToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToRead">DataLayer.OpenToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToWrite">DataLayer.OpenToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteReadJobs">DataLayer.CompleteReadJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteWriteJobs">DataLayer.CompleteWriteJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteAllJobs">DataLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CommitChanges">DataLayer.CommitChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetDirty_System_Boolean_">DataLayer.SetDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_DisposeAllItems">DataLayer.DisposeAllItems()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.DataLayers.html">DataLayers</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_DataLayers_ChunkedDataLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ChunkedDataLayer : DataLayer, IDisposable, ICommitChanges</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_CellsGridSize_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.CellsGridSize*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_CellsGridSize" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.CellsGridSize">CellsGridSize</h4>
+  <div class="markdown level1 summary"><p>Width and Height of the grid of cells.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int2 CellsGridSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunkDirtyGrid_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunkDirtyGrid*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunkDirtyGrid" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunkDirtyGrid">ChunkDirtyGrid</h4>
+  <div class="markdown level1 summary"><p>The grid of dirty flags for the chunks.
+Index in this list = chunk index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;bool&gt; ChunkDirtyGrid { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunkGridSize_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunkGridSize*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunkGridSize" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunkGridSize">ChunkGridSize</h4>
+  <div class="markdown level1 summary"><p>Width and Height of the grid of chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int2 ChunkGridSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunkSize_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunkSize*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunkSize" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunkSize">ChunkSize</h4>
+  <div class="markdown level1 summary"><p>Width and Height of the chunk in cells.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int2 ChunkSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunksCount_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunksCount*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ChunksCount" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ChunksCount">ChunksCount</h4>
+  <div class="markdown level1 summary"><p>Returns the number of chunks in the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int ChunksCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_DirtyChunks_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.DirtyChunks*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_DirtyChunks" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.DirtyChunks">DirtyChunks</h4>
+  <div class="markdown level1 summary"><p>The hash set of dirty chunks. Value = chunk index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeParallelHashSet&lt;int&gt; DirtyChunks { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelHashSet</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_IsConnectedHorizontally_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.IsConnectedHorizontally*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_IsConnectedHorizontally" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.IsConnectedHorizontally">IsConnectedHorizontally</h4>
+  <div class="markdown level1 summary"><p>True if left and right edges of the chunk are connected (like in civilization games).
+Needed for wrapping the grid.
+If SetCellDirty(cellIndex, checkEdges) is called with checkEdges == true, the chunk of the cell is marked dirty
+and also all adjacent chunks are also marked dirty. So if the left edge is dirty, the right edge is also dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsConnectedHorizontally { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_IsConnectedVertically_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.IsConnectedVertically*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_IsConnectedVertically" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.IsConnectedVertically">IsConnectedVertically</h4>
+  <div class="markdown level1 summary"><p>True if top and bottom edges of the chunk are connected (like in civilization games).
+Needed for wrapping the grid.
+If SetCellDirty(cellIndex, checkEdges) is called with checkEdges == true, the chunk of the cell is marked dirty
+and also all adjacent chunks are also marked dirty. So if the top edge is dirty, the bottom edge is also dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsConnectedVertically { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ClearAllChunksDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ClearAllChunksDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ClearAllChunksDirty" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ClearAllChunksDirty">ClearAllChunksDirty()</h4>
+  <div class="markdown level1 summary"><p>Clears dirty flag for all chunks in the layer immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ClearAllChunksDirty()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_Dispose_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.Dispose*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_Dispose" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes the layer and calls DisposeAllItems() under the hood</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Dispose">DataLayer.Dispose()</a></div>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetCellCoord_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetCellCoord*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetCellCoord_System_Int32_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetCellCoord(System.Int32)">GetCellCoord(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the cell coordinate (in a cells grid) for the provided cell index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int2 GetCellCoord(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>Cell index to calculate a cell coordinate for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>Coordinate of the cell with provided cell index (in a cells grid)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetCellIndex_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetCellIndex*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetCellIndex_Unity_Mathematics_int2_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetCellIndex(Unity.Mathematics.int2)">GetCellIndex(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns the cell index for the provided cell coordinate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int GetCellIndex(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td><p>Coordinate of the cell to calculate a cell index for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>Cell index (in a cells grid) of the cell at provided coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkCoord*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_System_Int32_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkCoord(System.Int32)">GetChunkCoord(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the chunk coordinate (in a chunks grid) for the provided chunk index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int2 GetChunkCoord(int chunkIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td><p>Chunk index to calculate a chunk coordinate for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkCoord*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_Unity_Mathematics_int2_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkCoord(Unity.Mathematics.int2)">GetChunkCoord(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns the chunk coordinate (in a chunks grid) for the provided cell coordinate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int2 GetChunkCoord(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td><p>Cell coordinate to calculate a chunk coordinate for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>Chunk coordinate of the cell with provided coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndex_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkIndex*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndex_Unity_Mathematics_int2_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkIndex(Unity.Mathematics.int2)">GetChunkIndex(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns the chunk index for the provided chunk coordinate.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int GetChunkIndex(int2 chunkCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">chunkCoord</span></td>
+        <td><p>Chunk coordinate (in a chunks grid) to calculate a chunk index for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>Chunk index of the chunk at provided chunk coordinate (in a chunks grid)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndexByCellIndex_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkIndexByCellIndex*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndexByCellIndex_System_Int32_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetChunkIndexByCellIndex(System.Int32)">GetChunkIndexByCellIndex(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the chunk index for the cell index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int GetChunkIndexByCellIndex(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to calculate a chunk index for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>chunk index of the cell with provided cell index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_GetIsChunkDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetIsChunkDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_GetIsChunkDirty_System_Int32_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.GetIsChunkDirty(System.Int32)">GetIsChunkDirty(int)</h4>
+  <div class="markdown level1 summary"><p>Returns true if the chunk with provided index is dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool GetIsChunkDirty(int chunkIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_Init_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.Init*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_Init_System_Int32_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.Init(System.Int32)">Init(int)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the layer with a size of the layer (cells count) and a size of the chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(int layerSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerSize</span></td>
+        <td><p>Amount of items (cells) in the data layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids(Fwt.Core.DataLayers.ChunkedDataLayer,Fwt.Core.DataLayers.ChunkedDataLayer,Fwt.Core.DataLayers.ChunkedDataLayer,Fwt.Core.DataLayers.ChunkedDataLayer,Unity.Jobs.JobHandle)">MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Merges dirty chunks data with respective dirty chunks data from other layers.
+other layers must be the same size as this layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle MergeChunkDirtyGrids(ChunkedDataLayer other1, ChunkedDataLayer other2, ChunkedDataLayer other3, ChunkedDataLayer other4, JobHandle inputDeps)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other1</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other2</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other3</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other4</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">inputDeps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids(Fwt.Core.DataLayers.ChunkedDataLayer,Fwt.Core.DataLayers.ChunkedDataLayer,Fwt.Core.DataLayers.ChunkedDataLayer,Unity.Jobs.JobHandle)">MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Merges dirty chunks data with respective dirty chunks data from other layers.
+other layers must be the same size as this layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle MergeChunkDirtyGrids(ChunkedDataLayer other1, ChunkedDataLayer other2, ChunkedDataLayer other3, JobHandle inputDeps)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other1</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other2</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other3</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">inputDeps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids(Fwt.Core.DataLayers.ChunkedDataLayer,Fwt.Core.DataLayers.ChunkedDataLayer,Unity.Jobs.JobHandle)">MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Merges dirty chunks data with respective dirty chunks data from other layers.
+other layers must be the same size as this layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle MergeChunkDirtyGrids(ChunkedDataLayer other1, ChunkedDataLayer other2, JobHandle inputDeps)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other1</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other2</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">inputDeps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.MergeChunkDirtyGrids(Fwt.Core.DataLayers.ChunkedDataLayer,Unity.Jobs.JobHandle)">MergeChunkDirtyGrids(ChunkedDataLayer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Merges dirty chunks data with respective dirty chunks data from other layers.
+other layer must be the same size as this layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle MergeChunkDirtyGrids(ChunkedDataLayer other1, JobHandle inputDeps)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></td>
+        <td><span class="parametername">other1</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">inputDeps</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ResolveCellCoord_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ResolveCellCoord*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ResolveCellCoord_Unity_Mathematics_int2_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ResolveCellCoord(Unity.Mathematics.int2)">ResolveCellCoord(int2)</h4>
+  <div class="markdown level1 summary"><p>Resolves the cell coordinate (in a cells grid) for the provided cell coordinate
+taking in account if the grid is connected horizontally and/or vertically.
+If the edges of the grid are not connected, returns the cell coordinate as is.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int2 ResolveCellCoord(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td><p>Raw cell coordinate (for grids with connected edges may be off bounds)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>cell coordinate inside the cells grid bounds or raw cell coordinate if grid edges are not connected.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_ResolveChunkCoord_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ResolveChunkCoord*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_ResolveChunkCoord_Unity_Mathematics_int2_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.ResolveChunkCoord(Unity.Mathematics.int2)">ResolveChunkCoord(int2)</h4>
+  <div class="markdown level1 summary"><p>Resolves the chunk coordinate (in a chunks grid) for the provided chunk coordinate
+taking in account if the grid is connected horizontally and/or vertically.
+If the edges of the grid are not connected, returns the chunk coordinate as is.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int2 ResolveChunkCoord(int2 chunkCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">chunkCoord</span></td>
+        <td><p>Raw chunk coordinate (for grids with connected edges may be off bounds)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>chunk coordinate inside the chunks grid bounds or raw chunk coordinate if grid edges are not connected</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetAllChunksDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetAllChunksDirty">SetAllChunksDirty()</h4>
+  <div class="markdown level1 summary"><p>Sets dirty flag for all chunks in the layer immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetAllChunksDirty()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetAllChunksDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty_System_Boolean_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetAllChunksDirty(System.Boolean)">SetAllChunksDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets dirty flag for all chunks in the layer.
+If isDirty is true, all chunks are marked dirty and added to the DirtyChunks hash set.
+If isDirty is false, marks all chunks not dirty and clears the DirtyChunks hash set.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetAllChunksDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>IsDirty value to set for all chunks</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirtyAsync_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetAllChunksDirtyAsync*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirtyAsync_System_Boolean_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetAllChunksDirtyAsync(System.Boolean,Unity.Jobs.JobHandle)">SetAllChunksDirtyAsync(bool, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Sets dirty flag for all chunks in the layer in a corresponding job.
+Returns a job handle that can be used to wait for the job to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle SetAllChunksDirtyAsync(bool isDirty, JobHandle jobHandle)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>dirty value to set for all chunks</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">jobHandle</span></td>
+        <td><p>job handle to put as dependency to FillDirtyChunksJob</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetCellDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_System_Int32_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetCellDirty(System.Int32)">SetCellDirty(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the cell dirty and marks the chunk as dirty.
+Does not mark adjucent chunks as dirty, only marks the affected chunk dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellDirty(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetCellDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_System_Int32_System_Boolean_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetCellDirty(System.Int32,System.Boolean)">SetCellDirty(int, bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the cell dirty and marks the chunk as dirty.
+Allows to mark adjucent chunks dirty.
+If the cell is on the edge of the chunk, the chunks adjacent to the cell are also marked dirty.
+If IsConnectedHorizontally or IsConnectedVertically is true, the respective chunks on the opposite side of the grid are also marked dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellDirty(int cellIndex, bool checkEdges)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">checkEdges</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_ChunkedDataLayer_SetChunkDirty_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetChunkDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_ChunkedDataLayer_SetChunkDirty_System_Int32_System_Boolean_" data-uid="Fwt.Core.DataLayers.ChunkedDataLayer.SetChunkDirty(System.Int32,System.Boolean)">SetChunkDirty(int, bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the chunk dirty flag.
+Returns the result of operation, true if the value was set, false otherwise</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetChunkDirty(int chunkIndex, bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td><p>Index of the chunk to set a dirty flag for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>If true, marks a chunk dirty, adds the chunk index to the DirtyChunks hash set.
+If false - clears the dirty flag and removes the chunk id from the DirtyChunks set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value was set.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

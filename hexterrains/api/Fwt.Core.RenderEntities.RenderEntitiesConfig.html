@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class RenderEntitiesConfig | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class RenderEntitiesConfig | Hex Terrains ">
+    
+    <meta name="description" content="Config for render meshes in bulk. Contains meshes, materials and property blocks.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig">
+
+
+
+  <h1 id="Fwt_Core_RenderEntities_RenderEntitiesConfig" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig" class="text-break">Class RenderEntitiesConfig</h1>
+  <div class="markdown level0 summary"><p>Config for render meshes in bulk. Contains meshes, materials and property blocks.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Object</span></div>
+    <div class="level2"><span class="xref">ScriptableObject</span></div>
+    <div class="level3"><span class="xref">RenderEntitiesConfig</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">ScriptableObject.SetDirty()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.CreateInstance&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetHashCode()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Scene)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <span class="xref">Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">Object.name</span>
+    </div>
+    <div>
+      <span class="xref">Object.hideFlags</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.RenderEntities.html">RenderEntities</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateAssetMenu(menuName = &quot;Fwt/Configs/Render Entities&quot;)]
+public class RenderEntitiesConfig : ScriptableObject</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_AddedMaterialProperties" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.AddedMaterialProperties">AddedMaterialProperties</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, int&gt; AddedMaterialProperties</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_AddedMaterials" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.AddedMaterials">AddedMaterials</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, int&gt; AddedMaterials</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_AddedMeshes" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.AddedMeshes">AddedMeshes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, int&gt; AddedMeshes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_AddedPropertyBlocks" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.AddedPropertyBlocks">AddedPropertyBlocks</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, int&gt; AddedPropertyBlocks</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_Materials" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.Materials">Materials</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Material&gt; Materials</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Material</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_Meshes" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.Meshes">Meshes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;Mesh&gt; Meshes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Mesh</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_PropertyBlocks" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.PropertyBlocks">PropertyBlocks</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;MaterialPropertyBlock&gt; PropertyBlocks</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">MaterialPropertyBlock</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig__maxTransformsPerPass" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig._maxTransformsPerPass">_maxTransformsPerPass</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected const int _maxTransformsPerPass = 1023</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig__transforms" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig._transforms">_transforms</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Matrix4x4&gt; _transforms</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Matrix4x4</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_ClearAll_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.ClearAll*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_ClearAll" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.ClearAll">ClearAll()</h4>
+  <div class="markdown level1 summary"><p>Clears everything</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ClearAll()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_InitAll_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.InitAll*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_InitAll" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.InitAll">InitAll()</h4>
+  <div class="markdown level1 summary"><p>Ensures all lists and dictionaries are created</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitAll()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_OnDisable_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.OnDisable*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_OnDisable" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.OnDisable">OnDisable()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnDisable()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_OnEnable_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.OnEnable*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_OnEnable" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.OnEnable">OnEnable()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnEnable()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RecalcAssetIndexes_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RecalcAssetIndexes*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RecalcAssetIndexes" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RecalcAssetIndexes">RecalcAssetIndexes()</h4>
+  <div class="markdown level1 summary"><p>Goes over materials and meshes and recalculates the mesh index for every of them</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Recalculate Asset Indexes&quot;)]
+public virtual void RecalcAssetIndexes()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterMaterial_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterMaterial*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterMaterial_UnityEngine_Material_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterMaterial(UnityEngine.Material)">RegisterMaterial(Material)</h4>
+  <div class="markdown level1 summary"><p>Registers a material. Returns the index of material it's registered under.
+Returns -1 if failed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int RegisterMaterial(Material material)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Material</span></td>
+        <td><span class="parametername">material</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterMaterialProperties_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterMaterialProperties*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterMaterialProperties_Fwt_Core_RenderEntities_MaterialProperties_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterMaterialProperties(Fwt.Core.RenderEntities.MaterialProperties)">RegisterMaterialProperties(MaterialProperties)</h4>
+  <div class="markdown level1 summary"><p>Registers a material property block created from given material properties.
+Creates a material property block from given materialProperties</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int RegisterMaterialProperties(MaterialProperties materialProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.RenderEntities.MaterialProperties.html">MaterialProperties</a></td>
+        <td><span class="parametername">materialProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterMesh_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterMesh*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterMesh_UnityEngine_Mesh_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterMesh(UnityEngine.Mesh)">RegisterMesh(Mesh)</h4>
+  <div class="markdown level1 summary"><p>Registers a mesh. Returns the index of mesh it's registered under.
+Returns -1 if failed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int RegisterMesh(Mesh mesh)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterPropertyBlock_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterPropertyBlock*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterPropertyBlock_UnityEngine_MaterialPropertyBlock_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterPropertyBlock(UnityEngine.MaterialPropertyBlock)">RegisterPropertyBlock(MaterialPropertyBlock)</h4>
+  <div class="markdown level1 summary"><p>Registers a property block. Returns the index of property block it's registered under.
+Returns -1 if failed</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int RegisterPropertyBlock(MaterialPropertyBlock propertyBlock)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MaterialPropertyBlock</span></td>
+        <td><span class="parametername">propertyBlock</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterRenderer_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterRenderer*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RegisterRenderer_UnityEngine_Renderer_UnityEngine_MeshFilter_System_Collections_Generic_IList_Fwt_Core_RenderEntities_RenderEntitySettings__System_Int32_System_Int32_System_Int32_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RegisterRenderer(UnityEngine.Renderer,UnityEngine.MeshFilter,System.Collections.Generic.IList{Fwt.Core.RenderEntities.RenderEntitySettings},System.Int32,System.Int32,System.Int32)">RegisterRenderer(Renderer, MeshFilter, IList&lt;RenderEntitySettings&gt;, int, int, int)</h4>
+  <div class="markdown level1 summary"><p>Fills the &quot;result&quot; list with render result extracted from given renderer.
+Returns the amount of render entities added (assuming it can fill not empty results list)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int RegisterRenderer(Renderer renderer, MeshFilter meshFilter, IList&lt;RenderEntitySettings&gt; result, int maxSubmeshCount = -1, int maxMaterials = -1, int maxRenderEntities = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Renderer</span></td>
+        <td><span class="parametername">renderer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">MeshFilter</span></td>
+        <td><span class="parametername">meshFilter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a>&gt;</td>
+        <td><span class="parametername">result</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxSubmeshCount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxMaterials</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxRenderEntities</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_Render_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.Render*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_Render_UnityEngine_Camera_Fwt_Core_RenderEntities_RenderEntitySettings_System_Collections_Generic_List_UnityEngine_Matrix4x4__" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.Render(UnityEngine.Camera,Fwt.Core.RenderEntities.RenderEntitySettings,System.Collections.Generic.List{UnityEngine.Matrix4x4})">Render(Camera, RenderEntitySettings, List&lt;Matrix4x4&gt;)</h4>
+  <div class="markdown level1 summary"><p>Renders Instanced the mesh from given settings on given camera using transforms list as a list of render transforms</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Render(Camera camera, RenderEntitySettings settings, List&lt;Matrix4x4&gt; transforms)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Matrix4x4</span>&gt;</td>
+        <td><span class="parametername">transforms</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_Render_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.Render*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_Render_UnityEngine_Camera_Fwt_Core_RenderEntities_RenderEntitySettings_Unity_Collections_NativeList_UnityEngine_Matrix4x4__UnityEngine_Bounds_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.Render(UnityEngine.Camera,Fwt.Core.RenderEntities.RenderEntitySettings,Unity.Collections.NativeList{UnityEngine.Matrix4x4},UnityEngine.Bounds)">Render(Camera, RenderEntitySettings, NativeList&lt;Matrix4x4&gt;, Bounds)</h4>
+  <div class="markdown level1 summary"><p>Renders Instanced the mesh from given settings on given camera using transforms list as a list of render transforms</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Render(Camera camera, RenderEntitySettings settings, NativeList&lt;Matrix4x4&gt; transforms, Bounds worldBounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">Matrix4x4</span>&gt;</td>
+        <td><span class="parametername">transforms</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntities_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntities*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntities_Unity_Collections_NativeList_Fwt_Core_RenderEntities_RenderEntity__UnityEngine_Camera_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntities(Unity.Collections.NativeList{Fwt.Core.RenderEntities.RenderEntity},UnityEngine.Camera,Unity.Jobs.JobHandle)">RenderEntities(NativeList&lt;RenderEntity&gt;, Camera, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Sorts and renders entities. Depndency is passed to SortRenderEntitiesJob</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RenderEntities(NativeList&lt;RenderEntity&gt; renderEntities, Camera camera, JobHandle dependency = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntities_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntities*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_RenderEntities_RenderEntitySettings_Fwt_Core_RenderEntities_RenderEntity__UnityEngine_Camera_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.RenderEntities.RenderEntitySettings,Fwt.Core.RenderEntities.RenderEntity},UnityEngine.Camera)">RenderEntities(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt;, Camera)</h4>
+  <div class="markdown level1 summary"><p>Renders sorted entities</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RenderEntities(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt; renderEntities, Camera camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a>, <a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntities_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntities*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_RenderEntities_RenderEntitySettings_Fwt_Core_RenderEntities_RenderEntity__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.RenderEntities.RenderEntitySettings,Fwt.Core.RenderEntities.RenderEntity},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)">RenderEntities(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt;, Camera, Bounds, int)</h4>
+  <div class="markdown level1 summary"><p>Renders sorted entities.
+maxEntitiesPerKey is used to limit the amount of entities per key
+(it will not render more entities per key than this value).
+Needed for allocating memory for extract transforms job.
+-1 means no limit (equals to renderEntities.Count())</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RenderEntities(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt; renderEntities, Camera camera, Bounds worldBounds, int maxEntitiesPerKey = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a>, <a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxEntitiesPerKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntitiesFast_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntitiesFast*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntitiesFast_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_RenderEntities_RenderEntitySettings_Fwt_Core_RenderEntities_RenderEntity__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntitiesFast(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.RenderEntities.RenderEntitySettings,Fwt.Core.RenderEntities.RenderEntity},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)">RenderEntitiesFast(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt;, Camera, Bounds, int)</h4>
+  <div class="markdown level1 summary"><p>Renders sorted entities.
+maxEntitiesPerKey is used to limit the amount of entities per key
+(it will not render more entities per key than this value).
+Needed for allocating memory for extract transforms job.
+-1 means no limit (equals to renderEntities.Count())</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RenderEntitiesFast(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt; renderEntities, Camera camera, Bounds worldBounds, int maxEntitiesPerKey = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a>, <a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxEntitiesPerKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntitiesFastSlow_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntitiesFastSlow*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_RenderEntitiesFastSlow_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_RenderEntities_RenderEntitySettings_Fwt_Core_RenderEntities_RenderEntity__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.RenderEntitiesFastSlow(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.RenderEntities.RenderEntitySettings,Fwt.Core.RenderEntities.RenderEntity},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)">RenderEntitiesFastSlow(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt;, Camera, Bounds, int)</h4>
+  <div class="markdown level1 summary"><p>Renders sorted entities.
+maxEntitiesPerKey is used to limit the amount of entities per key
+(it will not render more entities per key than this value).
+Needed for allocating memory for extract transforms job.
+-1 means no limit (equals to renderEntities.Count())</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RenderEntitiesFastSlow(NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt; renderEntities, Camera camera, Bounds worldBounds, int maxEntitiesPerKey = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a>, <a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxEntitiesPerKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_RenderEntities_RenderEntitiesConfig_SortEntities_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.SortEntities*"></a>
+  <h4 id="Fwt_Core_RenderEntities_RenderEntitiesConfig_SortEntities_Unity_Collections_NativeList_Fwt_Core_RenderEntities_RenderEntity__Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_RenderEntities_RenderEntitySettings_Fwt_Core_RenderEntities_RenderEntity__Unity_Jobs_JobHandle_" data-uid="Fwt.Core.RenderEntities.RenderEntitiesConfig.SortEntities(Unity.Collections.NativeList{Fwt.Core.RenderEntities.RenderEntity},Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.RenderEntities.RenderEntitySettings,Fwt.Core.RenderEntities.RenderEntity},Unity.Jobs.JobHandle)">SortEntities(NativeList&lt;RenderEntity&gt;, NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt;, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Sorts given entities and puts them into sorted entities multi hash map</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual JobHandle SortEntities(NativeList&lt;RenderEntity&gt; renderEntities, NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt; sortedEntities, JobHandle dependency = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.RenderEntities.RenderEntitySettings.html">RenderEntitySettings</a>, <a class="xref" href="Fwt.Core.RenderEntities.RenderEntity.html">RenderEntity</a>&gt;</td>
+        <td><span class="parametername">sortedEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDisableGameObject__1___0_">Extensions_UnityObject.SmartDisableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartEnableGameObject__1___0_">Extensions_UnityObject.SmartEnableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

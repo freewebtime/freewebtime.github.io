@@ -1,0 +1,2762 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class Extensions_Collections | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class Extensions_Collections | Hex Terrains ">
+    
+    <meta name="description" content="Extensions for collections (Clear, SetItemsCount, Fill, etc.)">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.Extensions_Collections">
+
+
+
+  <h1 id="Fwt_Core_Extensions_Collections" data-uid="Fwt.Core.Extensions_Collections" class="text-break">Class Extensions_Collections</h1>
+  <div class="markdown level0 summary"><p>Extensions for collections (Clear, SetItemsCount, Fill, etc.)</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Extensions_Collections</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_Extensions_Collections_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static class Extensions_Collections</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_Extensions_Collections_ClearNativeHashMapAsync_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeHashMapAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_ClearNativeHashMapAsync__2_Unity_Collections_NativeHashMap___0___1__Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeHashMapAsync``2(Unity.Collections.NativeHashMap{``0,``1},Unity.Jobs.JobHandle)">ClearNativeHashMapAsync&lt;TKey, TItem&gt;(NativeHashMap&lt;TKey, TItem&gt;, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Clears a NativeList. Schedules a job and returns a JobHandle to it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle ClearNativeHashMapAsync&lt;TKey, TItem&gt;(this NativeHashMap&lt;TKey, TItem&gt; items, JobHandle dependency) where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>the collection to clear</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for a job that will be scheduled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the scheduled job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a HashMap</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_ClearNativeHashSetAsync_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeHashSetAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_ClearNativeHashSetAsync__1_Unity_Collections_NativeHashSet___0__Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeHashSetAsync``1(Unity.Collections.NativeHashSet{``0},Unity.Jobs.JobHandle)">ClearNativeHashSetAsync&lt;TKey&gt;(NativeHashSet&lt;TKey&gt;, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Clears a NativeList. Schedules a job and returns a JobHandle to it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle ClearNativeHashSetAsync&lt;TKey&gt;(this NativeHashSet&lt;TKey&gt; items, JobHandle dependency) where TKey : unmanaged, IEquatable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeHashSet</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>the collection to clear</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for a job that will be scheduled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the scheduled job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a HashSet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_ClearNativeParallelHashMapAsync_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeParallelHashMapAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_ClearNativeParallelHashMapAsync__2_Unity_Collections_NativeParallelHashMap___0___1__Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeParallelHashMapAsync``2(Unity.Collections.NativeParallelHashMap{``0,``1},Unity.Jobs.JobHandle)">ClearNativeParallelHashMapAsync&lt;TKey, TItem&gt;(NativeParallelHashMap&lt;TKey, TItem&gt;, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Clears a NativeParallelHashMap. Schedules a job and returns a JobHandle to it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle ClearNativeParallelHashMapAsync&lt;TKey, TItem&gt;(this NativeParallelHashMap&lt;TKey, TItem&gt; items, JobHandle dependency) where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>the collection to clear</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for a job that will be scheduled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the scheduled job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a HashMap</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_ClearNativeParallelHashSetAsync_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeParallelHashSetAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_ClearNativeParallelHashSetAsync__1_Unity_Collections_NativeParallelHashSet___0__Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeParallelHashSetAsync``1(Unity.Collections.NativeParallelHashSet{``0},Unity.Jobs.JobHandle)">ClearNativeParallelHashSetAsync&lt;TKey&gt;(NativeParallelHashSet&lt;TKey&gt;, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Clears a NativeParallelHashSet. Schedules a job and returns a JobHandle to it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle ClearNativeParallelHashSetAsync&lt;TKey&gt;(this NativeParallelHashSet&lt;TKey&gt; items, JobHandle dependency) where TKey : unmanaged, IEquatable&lt;TKey&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelHashSet</span>&lt;TKey&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>the collection to clear</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for a job that will be scheduled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the scheduled job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a HashSet</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_ClearNativeParallelMultiHashMapAsync_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeParallelMultiHashMapAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_ClearNativeParallelMultiHashMapAsync__2_Unity_Collections_NativeParallelMultiHashMap___0___1__Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.ClearNativeParallelMultiHashMapAsync``2(Unity.Collections.NativeParallelMultiHashMap{``0,``1},Unity.Jobs.JobHandle)">ClearNativeParallelMultiHashMapAsync&lt;TKey, TItem&gt;(NativeParallelMultiHashMap&lt;TKey, TItem&gt;, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Clears a NativeParallelMultiHashMap. Schedules a job and returns a JobHandle to it.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle ClearNativeParallelMultiHashMapAsync&lt;TKey, TItem&gt;(this NativeParallelMultiHashMap&lt;TKey, TItem&gt; items, JobHandle dependency) where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>the collection to clear</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for a job that will be scheduled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the scheduled job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a HashMap</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_Clone_" data-uid="Fwt.Core.Extensions_Collections.Clone*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_Clone__1_Unity_Collections_NativeArray___0__Unity_Collections_Allocator_" data-uid="Fwt.Core.Extensions_Collections.Clone``1(Unity.Collections.NativeArray{``0},Unity.Collections.Allocator)">Clone&lt;TItem&gt;(NativeArray&lt;TItem&gt;, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Clone a NativeArray to a new NativeArray with the same items</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static NativeArray&lt;TItem&gt; Clone&lt;TItem&gt;(this NativeArray&lt;TItem&gt; source, Allocator allocator) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Where to copy data from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td><p>Allocator to create a new collection with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><p>newly created collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of items in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_Clone_" data-uid="Fwt.Core.Extensions_Collections.Clone*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_Clone__1_Unity_Collections_NativeList___0__Unity_Collections_Allocator_" data-uid="Fwt.Core.Extensions_Collections.Clone``1(Unity.Collections.NativeList{``0},Unity.Collections.Allocator)">Clone&lt;TItem&gt;(NativeList&lt;TItem&gt;, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Clone a NativeList to a new NativeList with the same items</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static NativeList&lt;TItem&gt; Clone&lt;TItem&gt;(this NativeList&lt;TItem&gt; source, Allocator allocator) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Where to copy data from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td><p>Allocator to create a new collection with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><p>newly created collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of items in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_CopyToAndConvert_Reverse_" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert_Reverse*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_CopyToAndConvert_Reverse__2_Unity_Collections_NativeList___0__Unity_Collections_NativeList___1__" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert_Reverse``2(Unity.Collections.NativeList{``0},Unity.Collections.NativeList{``1})">CopyToAndConvert_Reverse&lt;TSource, TTarget&gt;(NativeList&lt;TSource&gt;, NativeList&lt;TTarget&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another, converting values while copying.
+If the collections are not created or have different lengths, it will do nothing.
+Copies data in reverse. Schedules a job and waits for it to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool CopyToAndConvert_Reverse&lt;TSource, TTarget&gt;(this NativeList&lt;TSource&gt; source, NativeList&lt;TTarget&gt; target) where TSource : unmanaged, IConvertableFrom&lt;TSource, TTarget&gt; where TTarget : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TSource&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>source collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TTarget&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>target collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSource</span></td>
+        <td><p>Type of item in a source collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TTarget</span></td>
+        <td><p>Type of item in a target collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_CopyToAndConvert_Reverse_" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert_Reverse*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_CopyToAndConvert_Reverse__2_Unity_Collections_NativeList___0__Unity_Collections_NativeList___1__Unity_Jobs_JobHandle__" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert_Reverse``2(Unity.Collections.NativeList{``0},Unity.Collections.NativeList{``1},Unity.Jobs.JobHandle@)">CopyToAndConvert_Reverse&lt;TSource, TTarget&gt;(NativeList&lt;TSource&gt;, NativeList&lt;TTarget&gt;, out JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another, converting values while copying.
+If the collections are not created or have different lengths, it will do nothing.
+Copies data in reverse. Schedules a job and waits for it to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool CopyToAndConvert_Reverse&lt;TSource, TTarget&gt;(this NativeList&lt;TSource&gt; source, NativeList&lt;TTarget&gt; target, out JobHandle jobHandle) where TSource : unmanaged, IConvertableFrom&lt;TSource, TTarget&gt; where TTarget : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TSource&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>source collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TTarget&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>target collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">jobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSource</span></td>
+        <td><p>Type of item in a source collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TTarget</span></td>
+        <td><p>Type of item in a target collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_CopyToAndConvert_" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_CopyToAndConvert__2_Unity_Collections_NativeList___0__Unity_Collections_NativeList___1__" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert``2(Unity.Collections.NativeList{``0},Unity.Collections.NativeList{``1})">CopyToAndConvert&lt;TSource, TTarget&gt;(NativeList&lt;TSource&gt;, NativeList&lt;TTarget&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another, converting values while copying.
+If the collections are not created or have different lengths, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool CopyToAndConvert&lt;TSource, TTarget&gt;(this NativeList&lt;TSource&gt; source, NativeList&lt;TTarget&gt; target) where TSource : unmanaged where TTarget : unmanaged, IConvertableTo&lt;TSource&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TSource&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>source collection to copy data FROM</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TTarget&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>target collection to copy data TO</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSource</span></td>
+        <td><p>Type of item in a source collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TTarget</span></td>
+        <td><p>Type of item in a target collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_CopyToAndConvert_" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_CopyToAndConvert__2_Unity_Collections_NativeList___0__Unity_Collections_NativeList___1__Unity_Jobs_JobHandle__" data-uid="Fwt.Core.Extensions_Collections.CopyToAndConvert``2(Unity.Collections.NativeList{``0},Unity.Collections.NativeList{``1},Unity.Jobs.JobHandle@)">CopyToAndConvert&lt;TSource, TTarget&gt;(NativeList&lt;TSource&gt;, NativeList&lt;TTarget&gt;, out JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another, converting values while copying.
+If the collections are not created or have different lengths, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool CopyToAndConvert&lt;TSource, TTarget&gt;(this NativeList&lt;TSource&gt; source, NativeList&lt;TTarget&gt; target, out JobHandle jobHandle) where TSource : unmanaged where TTarget : unmanaged, IConvertableTo&lt;TSource&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TSource&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>source collection to copy data FROM</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TTarget&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>target collection to copy data TO</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">jobHandle</span></td>
+        <td><p>Schedules a job. This is a job handle of the scheduled job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSource</span></td>
+        <td><p>Type of item in a source collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TTarget</span></td>
+        <td><p>Type of item in a target collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_FillArrayAsync_" data-uid="Fwt.Core.Extensions_Collections.FillArrayAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_FillArrayAsync__1_Unity_Collections_NativeArray___0____0_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.FillArrayAsync``1(Unity.Collections.NativeArray{``0},``0,Unity.Jobs.JobHandle)">FillArrayAsync&lt;TItem&gt;(NativeArray&lt;TItem&gt;, TItem, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Fill every cell in collection with provided value.
+Schedules a job and returns a JobHandle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle FillArrayAsync&lt;TItem&gt;(this NativeArray&lt;TItem&gt; target, TItem item, JobHandle dependency) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>collection to fill</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>item value to put in every cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>function schedules a job, so this JobHandle is used as dependency in that job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the job that fills a collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_FillArray_" data-uid="Fwt.Core.Extensions_Collections.FillArray*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_FillArray__1_Unity_Collections_NativeArray___0____0_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.FillArray``1(Unity.Collections.NativeArray{``0},``0,Unity.Jobs.JobHandle)">FillArray&lt;TItem&gt;(NativeArray&lt;TItem&gt;, TItem, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Fill every cell in collection with provided value.
+Schedules a job and waits for it to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void FillArray&lt;TItem&gt;(this NativeArray&lt;TItem&gt; target, TItem item, JobHandle dependency = default) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>collection to fill</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>item value to put in every cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>function schedules a job, so this JobHandle is used as dependency in that job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_FillListAsync_" data-uid="Fwt.Core.Extensions_Collections.FillListAsync*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_FillListAsync__1_Unity_Collections_NativeList___0____0_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.FillListAsync``1(Unity.Collections.NativeList{``0},``0,Unity.Jobs.JobHandle)">FillListAsync&lt;TItem&gt;(NativeList&lt;TItem&gt;, TItem, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Fill every cell in collection with provided value.
+Schedules a job and returns a JobHandle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static JobHandle FillListAsync&lt;TItem&gt;(this NativeList&lt;TItem&gt; target, TItem item, JobHandle dependency) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>collection to fill</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>item value to put in every cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>function schedules a job, so this JobHandle is used as dependency in that job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>JobHandle to the job that fills a collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_FillList_" data-uid="Fwt.Core.Extensions_Collections.FillList*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_FillList__1_System_Collections_Generic_List___0____0_" data-uid="Fwt.Core.Extensions_Collections.FillList``1(System.Collections.Generic.List{``0},``0)">FillList&lt;TItem&gt;(List&lt;TItem&gt;, TItem)</h4>
+  <div class="markdown level1 summary"><p>Fill every cell in collection with provided value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FillList&lt;TItem&gt;(this List&lt;TItem&gt; target, TItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>collection to fill</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>item value to put in every cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_FillList_" data-uid="Fwt.Core.Extensions_Collections.FillList*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_FillList__1_Unity_Collections_NativeList___0____0_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.Extensions_Collections.FillList``1(Unity.Collections.NativeList{``0},``0,Unity.Jobs.JobHandle)">FillList&lt;TItem&gt;(NativeList&lt;TItem&gt;, TItem, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Fill every cell in collection with provided value.
+Schedules a job and waits for it to complete.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void FillList&lt;TItem&gt;(this NativeList&lt;TItem&gt; target, TItem item, JobHandle dependency = default) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>collection to fill</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>item value to put in every cell</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>function schedules a job, so this JobHandle is used as dependency in that job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_GetRandom_" data-uid="Fwt.Core.Extensions_Collections.GetRandom*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_GetRandom__1_System_Collections_Generic_IList___0__" data-uid="Fwt.Core.Extensions_Collections.GetRandom``1(System.Collections.Generic.IList{``0})">GetRandom&lt;TItem&gt;(IList&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Get a random item from the list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static TItem GetRandom&lt;TItem&gt;(this IList&lt;TItem&gt; list)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TItem&gt;</td>
+        <td><span class="parametername">list</span></td>
+        <td><p>list to get an item from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><p>random item from the list. If list is null or empty, returns default</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the list</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_SetItemsCount_" data-uid="Fwt.Core.Extensions_Collections.SetItemsCount*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_SetItemsCount__1_System_Collections_Generic_List___0__System_Int32_System_Boolean_" data-uid="Fwt.Core.Extensions_Collections.SetItemsCount``1(System.Collections.Generic.List{``0},System.Int32,System.Boolean)">SetItemsCount&lt;TItem&gt;(List&lt;TItem&gt;, int, bool)</h4>
+  <div class="markdown level1 summary"><p>Set the count of items in a Array. If the count is less than the current length, it will remove items from the end.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetItemsCount&lt;TItem&gt;(this List&lt;TItem&gt; buffer, int count, bool changeCapacity = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;TItem&gt;</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>collection to resize</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>target count of items in the collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">changeCapacity</span></td>
+        <td><p>If true, sets the Capacity equals to the items count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if succesfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of items in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_SetItemsCount_" data-uid="Fwt.Core.Extensions_Collections.SetItemsCount*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_SetItemsCount__1_Unity_Collections_NativeList___0__System_Int32_System_Boolean_" data-uid="Fwt.Core.Extensions_Collections.SetItemsCount``1(Unity.Collections.NativeList{``0},System.Int32,System.Boolean)">SetItemsCount&lt;TItem&gt;(NativeList&lt;TItem&gt;, int, bool)</h4>
+  <div class="markdown level1 summary"><p>Set the count of items in a NativeList. If the count is less than the current length, it will remove items from the end.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool SetItemsCount&lt;TItem&gt;(this NativeList&lt;TItem&gt; buffer, int count, bool changeCapacity = true) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">buffer</span></td>
+        <td><p>collection to resize</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">count</span></td>
+        <td><p>target count of items in the collection</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">changeCapacity</span></td>
+        <td><p>If true, sets the Capacity equals to the items count</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if succesfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of items in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryCloneToList_" data-uid="Fwt.Core.Extensions_Collections.TryCloneToList*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryCloneToList__1_Unity_Collections_NativeArray___0__Unity_Collections_Allocator_" data-uid="Fwt.Core.Extensions_Collections.TryCloneToList``1(Unity.Collections.NativeArray{``0},Unity.Collections.Allocator)">TryCloneToList&lt;TItem&gt;(NativeArray&lt;TItem&gt;, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Tries to clone a collection (if it is created) to a new collection with the same items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static NativeList&lt;TItem&gt; TryCloneToList&lt;TItem&gt;(this NativeArray&lt;TItem&gt; source, Allocator allocator) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to clone</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td><p>allocator to create a clone collection with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><p>newly created collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryClone_" data-uid="Fwt.Core.Extensions_Collections.TryClone*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryClone__1_Unity_Collections_NativeArray___0__Unity_Collections_Allocator_" data-uid="Fwt.Core.Extensions_Collections.TryClone``1(Unity.Collections.NativeArray{``0},Unity.Collections.Allocator)">TryClone&lt;TItem&gt;(NativeArray&lt;TItem&gt;, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Tries to clone a collection (if it is created) to a new collection with the same items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static NativeArray&lt;TItem&gt; TryClone&lt;TItem&gt;(this NativeArray&lt;TItem&gt; source, Allocator allocator) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to clone</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td><p>allocator to create a clone collection with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><p>newly created collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryClone_" data-uid="Fwt.Core.Extensions_Collections.TryClone*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryClone__1_Unity_Collections_NativeList___0__Unity_Collections_Allocator_" data-uid="Fwt.Core.Extensions_Collections.TryClone``1(Unity.Collections.NativeList{``0},Unity.Collections.Allocator)">TryClone&lt;TItem&gt;(NativeList&lt;TItem&gt;, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Tries to clone a collection (if it is created) to a new collection with the same items.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static NativeList&lt;TItem&gt; TryClone&lt;TItem&gt;(this NativeList&lt;TItem&gt; source, Allocator allocator) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to clone</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td><p>allocator to create a clone collection with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><p>newly created collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryCopy_" data-uid="Fwt.Core.Extensions_Collections.TryCopy*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryCopy__1_Unity_Collections_NativeArray___0__Unity_Collections_NativeArray___0__" data-uid="Fwt.Core.Extensions_Collections.TryCopy``1(Unity.Collections.NativeArray{``0},Unity.Collections.NativeArray{``0})">TryCopy&lt;TItem&gt;(NativeArray&lt;TItem&gt;, NativeArray&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another. If the collections are not created or have different lengths, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryCopy&lt;TItem&gt;(this NativeArray&lt;TItem&gt; target, NativeArray&lt;TItem&gt; source) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Collection to copy TO</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Collection to copy FROM</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryCopy_" data-uid="Fwt.Core.Extensions_Collections.TryCopy*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryCopy__1_Unity_Collections_NativeList___0__Unity_Collections_NativeArray___0__" data-uid="Fwt.Core.Extensions_Collections.TryCopy``1(Unity.Collections.NativeList{``0},Unity.Collections.NativeArray{``0})">TryCopy&lt;TItem&gt;(NativeList&lt;TItem&gt;, NativeArray&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another. If the collections are not created or have different lengths, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryCopy&lt;TItem&gt;(this NativeList&lt;TItem&gt; target, NativeArray&lt;TItem&gt; source) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Collection to copy TO</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Collection to copy FROM</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryCopy_" data-uid="Fwt.Core.Extensions_Collections.TryCopy*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryCopy__1_Unity_Collections_NativeList___0__Unity_Collections_NativeList___0__" data-uid="Fwt.Core.Extensions_Collections.TryCopy``1(Unity.Collections.NativeList{``0},Unity.Collections.NativeList{``0})">TryCopy&lt;TItem&gt;(NativeList&lt;TItem&gt;, NativeList&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Tries to copy items from one collection to another. If the collections are not created or have different lengths, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryCopy&lt;TItem&gt;(this NativeList&lt;TItem&gt; target, NativeList&lt;TItem&gt; source) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">target</span></td>
+        <td><p>Collection to copy TO</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>Collection to copy FROM</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__1_Unity_Collections_NativeArray___0__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``1(Unity.Collections.NativeArray{``0})">TryDispose&lt;TItem&gt;(NativeArray&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeArray. If the array is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TItem&gt;(this NativeArray&lt;TItem&gt; source) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__1_Unity_Collections_NativeHashSet___0__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``1(Unity.Collections.NativeHashSet{``0})">TryDispose&lt;TItem&gt;(NativeHashSet&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeHashSet. If the set is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TItem&gt;(this NativeHashSet&lt;TItem&gt; source) where TItem : unmanaged, IEquatable&lt;TItem&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeHashSet</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>a collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a hash set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__1_Unity_Collections_NativeList___0__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``1(Unity.Collections.NativeList{``0})">TryDispose&lt;TItem&gt;(NativeList&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeList. If the list is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TItem&gt;(this NativeList&lt;TItem&gt; source) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__1_Unity_Collections_NativeParallelHashSet___0__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``1(Unity.Collections.NativeParallelHashSet{``0})">TryDispose&lt;TItem&gt;(NativeParallelHashSet&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeHashSet. If the set is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TItem&gt;(this NativeParallelHashSet&lt;TItem&gt; source) where TItem : unmanaged, IEquatable&lt;TItem&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelHashSet</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>a collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a hash set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__2_Unity_Collections_NativeHashMap___0___1__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``2(Unity.Collections.NativeHashMap{``0,``1})">TryDispose&lt;TKey, TItem&gt;(NativeHashMap&lt;TKey, TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeHashMap. If the map is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TKey, TItem&gt;(this NativeHashMap&lt;TKey, TItem&gt; source) where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>a collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a hash set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a hash set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__2_Unity_Collections_NativeParallelHashMap___0___1__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``2(Unity.Collections.NativeParallelHashMap{``0,``1})">TryDispose&lt;TKey, TItem&gt;(NativeParallelHashMap&lt;TKey, TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeHashMap. If the map is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TKey, TItem&gt;(this NativeParallelHashMap&lt;TKey, TItem&gt; source) where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>a collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a hash set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a hash set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryDispose_" data-uid="Fwt.Core.Extensions_Collections.TryDispose*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryDispose__2_Unity_Collections_NativeParallelMultiHashMap___0___1__" data-uid="Fwt.Core.Extensions_Collections.TryDispose``2(Unity.Collections.NativeParallelMultiHashMap{``0,``1})">TryDispose&lt;TKey, TItem&gt;(NativeParallelMultiHashMap&lt;TKey, TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Try to dispose a NativeHashSet. If the set is not created, it will do nothing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static void TryDispose&lt;TKey, TItem&gt;(this NativeParallelMultiHashMap&lt;TKey, TItem&gt; source) where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>a collection to dispose</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of key in a hash set</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in a hash set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault__1_System_Collections_Generic_IList___0__System_Int32_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault``1(System.Collections.Generic.IList{``0},System.Int32)">TryGetItemOrDefault&lt;TItem&gt;(IList&lt;TItem&gt;, int)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return default(TItem).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static TItem TryGetItemOrDefault&lt;TItem&gt;(this IList&lt;TItem&gt; source, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><p>item at requested index or default(TItem) if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault__1_Unity_Collections_NativeArray___0__System_Int32_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault``1(Unity.Collections.NativeArray{``0},System.Int32)">TryGetItemOrDefault&lt;TItem&gt;(NativeArray&lt;TItem&gt;, int)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return default(TItem).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static TItem TryGetItemOrDefault&lt;TItem&gt;(this NativeArray&lt;TItem&gt; source, int index) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><p>item at requested index or default(TItem) if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault__1_Unity_Collections_NativeList___0__System_Int32_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault``1(Unity.Collections.NativeList{``0},System.Int32)">TryGetItemOrDefault&lt;TItem&gt;(NativeList&lt;TItem&gt;, int)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return default(TItem).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static TItem TryGetItemOrDefault&lt;TItem&gt;(this NativeList&lt;TItem&gt; source, int index) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><p>item at requested index or default(TItem) if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItemOrDefault__1___0___System_Int32_" data-uid="Fwt.Core.Extensions_Collections.TryGetItemOrDefault``1(``0[],System.Int32)">TryGetItemOrDefault&lt;TItem&gt;(TItem[], int)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return default(TItem).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static TItem TryGetItemOrDefault&lt;TItem&gt;(this TItem[] source, int index)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TItem[]</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><p>item at requested index or default(TItem) if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItem_" data-uid="Fwt.Core.Extensions_Collections.TryGetItem*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItem__1_System_Collections_Generic_IList___0__System_Int32___0__" data-uid="Fwt.Core.Extensions_Collections.TryGetItem``1(System.Collections.Generic.IList{``0},System.Int32,``0@)">TryGetItem&lt;TItem&gt;(IList&lt;TItem&gt;, int, out TItem)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool TryGetItem&lt;TItem&gt;(this IList&lt;TItem&gt; source, int index, out TItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>result value. Default if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItem_" data-uid="Fwt.Core.Extensions_Collections.TryGetItem*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItem__1_Unity_Collections_NativeArray___0__System_Int32___0__" data-uid="Fwt.Core.Extensions_Collections.TryGetItem``1(Unity.Collections.NativeArray{``0},System.Int32,``0@)">TryGetItem&lt;TItem&gt;(NativeArray&lt;TItem&gt;, int, out TItem)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool TryGetItem&lt;TItem&gt;(this NativeArray&lt;TItem&gt; source, int index, out TItem item) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>result value. Default if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItem_" data-uid="Fwt.Core.Extensions_Collections.TryGetItem*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItem__1_Unity_Collections_NativeList___0__System_Int32___0__" data-uid="Fwt.Core.Extensions_Collections.TryGetItem``1(Unity.Collections.NativeList{``0},System.Int32,``0@)">TryGetItem&lt;TItem&gt;(NativeList&lt;TItem&gt;, int, out TItem)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool TryGetItem&lt;TItem&gt;(this NativeList&lt;TItem&gt; source, int index, out TItem item) where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;TItem&gt;</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>result value. Default if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Extensions_Collections_TryGetItem_" data-uid="Fwt.Core.Extensions_Collections.TryGetItem*"></a>
+  <h4 id="Fwt_Core_Extensions_Collections_TryGetItem__1___0___System_Int32___0__" data-uid="Fwt.Core.Extensions_Collections.TryGetItem``1(``0[],System.Int32,``0@)">TryGetItem&lt;TItem&gt;(TItem[], int, out TItem)</h4>
+  <div class="markdown level1 summary"><p>Tries to get an item from a collection.
+If the collection is not created or the index is out of range, it will return false.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static bool TryGetItem&lt;TItem&gt;(this TItem[] source, int index, out TItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>TItem[]</td>
+        <td><span class="parametername">source</span></td>
+        <td><p>collection to get an item from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">index</span></td>
+        <td><p>index of item to get</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>result value. Default if nothing found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of item in the collection</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

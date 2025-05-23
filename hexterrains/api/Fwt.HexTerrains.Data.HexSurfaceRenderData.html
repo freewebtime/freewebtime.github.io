@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexSurfaceRenderData | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexSurfaceRenderData | Hex Terrains ">
+    
+    <meta name="description" content="Base class for surface types of HexTerrain layers">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData">
+
+
+
+  <h1 id="Fwt_HexTerrains_Data_HexSurfaceRenderData" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData" class="text-break">Class HexSurfaceRenderData</h1>
+  <div class="markdown level0 summary"><p>Base class for surface types of HexTerrain layers</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">HexSurfaceRenderData</span></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceRenderData-1.html">HexSurfaceRenderData&lt;TSurfaceData&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class HexSurfaceRenderData : IDisposable</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_ChunkMeshSources" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.ChunkMeshSources">ChunkMeshSources</h4>
+  <div class="markdown level1 summary"><p>Data layer that stores mesh sources for the hex terrain chunks.
+Mesh sources are filled in respected Jobs and then used to generate/fill meshes for the chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkMeshSourcesDataLayer ChunkMeshSources</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMeshSourcesDataLayer.html">ChunkMeshSourcesDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_ChunkMeshes" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.ChunkMeshes">ChunkMeshes</h4>
+  <div class="markdown level1 summary"><p>Data layer that stores meshes for the hex terrain chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkMeshesDataLayer ChunkMeshes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.html">ChunkMeshesDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_DefaultRenderConfig" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.DefaultRenderConfig">DefaultRenderConfig</h4>
+  <div class="markdown level1 summary"><p>Fallback render config for the hex terrain chunks.
+When getting a render config for view mode, if the config is not found, this one will be used instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainRenderConfigAsset DefaultRenderConfig</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset.html">HexTerrainRenderConfigAsset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_IsVisible" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.IsVisible">IsVisible</h4>
+  <div class="markdown level1 summary"><p>When set to false, the terrain will not be rendered</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public VersionValue&lt;bool&gt; IsVisible</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.VersionValue-1.html">VersionValue</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_OffsetTransform" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.OffsetTransform">OffsetTransform</h4>
+  <div class="markdown level1 summary"><p>Surface is rendered with this offset from the terrain's origin</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 OffsetTransform</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Matrix4x4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_RenderConfigs" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.RenderConfigs">RenderConfigs</h4>
+  <div class="markdown level1 summary"><p>List of render configs for the hex terrain chunks.
+Config index = view mode. So if you have 3 view modes, you will have 3 configs in this list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;HexTerrainRenderConfigAsset&gt; RenderConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset.html">HexTerrainRenderConfigAsset</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_RenderSettings_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.RenderSettings*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_RenderSettings" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.RenderSettings">RenderSettings</h4>
+  <div class="markdown level1 summary"><p>Render settings of the object. Provides materials to render a HexSurface terrain layers</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainRenderSettings RenderSettings { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainRenderSettings.html">HexTerrainRenderSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_Settings_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.Settings*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_Settings" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.Settings">Settings</h4>
+  <div class="markdown level1 summary"><p>Settings of the terrain this object is connected to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSettings Settings { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_Cleanup_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_Cleanup" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Every frame on the Cleanup stage this method is called to clean up the data layers.
+Usually, cleans up the dirty flags</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Cleanup()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_CompleteAllJobs_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.CompleteAllJobs*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_CompleteAllJobs" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.CompleteAllJobs">CompleteAllJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs for all the data layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void CompleteAllJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_Dispose_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_Dispose" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_GetChunkMesh_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.GetChunkMesh*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_GetChunkMesh_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.GetChunkMesh(System.Int32)">GetChunkMesh(int)</h4>
+  <div class="markdown level1 summary"><p>Returns a mesh for the Chunk with given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Mesh GetChunkMesh(int chunkIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_GetRenderConfigAsset_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.GetRenderConfigAsset*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_GetRenderConfigAsset_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.GetRenderConfigAsset(System.Int32)">GetRenderConfigAsset(int)</h4>
+  <div class="markdown level1 summary"><p>Returns a render config asset for provided view mode <a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Data_HexSurfaceRenderData_RenderConfigs">RenderConfigs</a>
+If nothing is found, returns a DefaultRenderConfig <a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Data_HexSurfaceRenderData_DefaultRenderConfig">DefaultRenderConfig</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainRenderConfigAsset GetRenderConfigAsset(int viewMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">viewMode</span></td>
+        <td><p>view mode to get a render config for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset.html">HexTerrainRenderConfigAsset</a></td>
+        <td><p>render config asset</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_InitRenderConfigs_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.InitRenderConfigs*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_InitRenderConfigs__1_Unity_Collections_NativeArray___0__" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.InitRenderConfigs``1(Unity.Collections.NativeArray{``0})">InitRenderConfigs&lt;TRenderDataConfig&gt;(NativeArray&lt;TRenderDataConfig&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copies render configs from the given array of render data configs.
+Basically, extracts a config assets from render data config.
+Does not change or cache the provided array of configs, only copies data from it,
+so it is safe to dispose a provided array after this method call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitRenderConfigs&lt;TRenderDataConfig&gt;(NativeArray&lt;TRenderDataConfig&gt; renderDataConfigs) where TRenderDataConfig : unmanaged, IBufferElementData, IHexSurfaceRenderConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;TRenderDataConfig&gt;</td>
+        <td><span class="parametername">renderDataConfigs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TRenderDataConfig</span></td>
+        <td><p>render configs array to copy from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_OpenAllToWrite_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.OpenAllToWrite*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_OpenAllToWrite" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.OpenAllToWrite">OpenAllToWrite()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs for all the data layers.
+Opens all data layers to write.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void OpenAllToWrite()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_ReInit_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.ReInit*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_ReInit" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.ReInit">ReInit()</h4>
+  <div class="markdown level1 summary"><p>Expected that the Surface data this object is connected to is already initialized/resized,
+So to reflect changes we need simply reinitialize the render data</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void ReInit()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_SetAllDirty_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>If isDirty == false, marks all data as clean, so it will not be recalculated.
+If isDirty == true, marks all data as dirty, so it will be recalculated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetAllDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>new dirty state</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_SetChunkMesh_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.SetChunkMesh*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_SetChunkMesh_System_Int32_UnityEngine_Mesh_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.SetChunkMesh(System.Int32,UnityEngine.Mesh)">SetChunkMesh(int, Mesh)</h4>
+  <div class="markdown level1 summary"><p>Sets a mesh for the chunk with a given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetChunkMesh(int chunkIndex, Mesh mesh)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexSurfaceRenderData_SetIsVisible_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.SetIsVisible*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexSurfaceRenderData_SetIsVisible_System_Boolean_" data-uid="Fwt.HexTerrains.Data.HexSurfaceRenderData.SetIsVisible(System.Boolean)">SetIsVisible(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets a visibility of the surface. If the value is changed, returns true.
+If surface is not visible, it will not be rendered</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetIsVisible(bool isVisible)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isVisible</span></td>
+        <td><p>visibility flag for render data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has changed (new value != old value), otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

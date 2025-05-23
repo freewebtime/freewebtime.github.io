@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CreateNewTerrainUserToolStateBase&lt;TScreen, TCallback&gt; | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CreateNewTerrainUserToolStateBase&lt;TScreen, TCallback&gt; | Hex Terrains ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2">
+
+
+
+  <h1 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2" class="text-break">Class CreateNewTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.StateMachines.SmState.html">SmState</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html">UserToolState</a></div>
+    <div class="level3"><span class="xref">CreateNewTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</span></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.html">CreateNewSampleTerrainUserToolState</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_Settings">UserToolState.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_IsSubstatesVisible">UserToolState.IsSubstatesVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_SubStateMachine">UserToolState.SubStateMachine</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_UserToolAPI">UserToolState.UserToolAPI</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_HasSubtools">UserToolState.HasSubtools</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_IsChangeViewMode">UserToolState.IsChangeViewMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_RequiredViewMode">UserToolState.RequiredViewMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_OriginalViewMode">UserToolState.OriginalViewMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_Tick">UserToolState.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_ShowSettingsScreen__2___0_">UserToolState.ShowSettingsScreen&lt;TViewData, TScreen&gt;(TViewData)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_GetUIScreen__1">UserToolState.GetUIScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_HideSettingsScreen__1">UserToolState.HideSettingsScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_SetupPlanetCursor_System_Boolean_System_Int32_">UserToolState.SetupPlanetCursor(bool, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_SetupPlanetCursor_System_Boolean_System_Int32_UnityEngine_Color32_">UserToolState.SetupPlanetCursor(bool, int, Color32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_SetupPlanetCursor_System_Boolean_System_Int32_UnityEngine_Color32_System_Boolean_">UserToolState.SetupPlanetCursor(bool, int, Color32, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_SetupPlanetCursor_System_Boolean_">UserToolState.SetupPlanetCursor(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_TrySetViewMode">UserToolState.TrySetViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_TryRestoreViewMode">UserToolState.TryRestoreViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.TerrainEditors.html">TerrainEditors</a>.<a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.html">UserTools</a>.<a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.html">StateMachines</a>.<a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.html">States</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CreateNewTerrainUserToolStateBase&lt;TScreen, TCallback&gt; : UserToolState, ISmState where TScreen : UIScreen, IViewDataReceiver&lt;TCallback&gt; where TCallback : CreateNewTerrainCallbackDataSource, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TCallback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2__ctor_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2__ctor_Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolStateMachine_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine,Unity.Entities.Entity)">CreateNewTerrainUserToolStateBase(IUserToolAPI, UserToolStateMachine, Entity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected CreateNewTerrainUserToolStateBase(IUserToolAPI userToolAPI, UserToolStateMachine parentStateMachine, Entity terrainPrefab)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html">IUserToolAPI</a></td>
+        <td><span class="parametername">userToolAPI</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine.html">UserToolStateMachine</a></td>
+        <td><span class="parametername">parentStateMachine</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainPrefab</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_Screen" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.Screen">Screen</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected TScreen Screen</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_TerrainPrefab" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.TerrainPrefab">TerrainPrefab</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Entity TerrainPrefab</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CallbackDataSource_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CallbackDataSource*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CallbackDataSource" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CallbackDataSource">CallbackDataSource</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TCallback CallbackDataSource { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCallback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_ParentStateMachine_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.ParentStateMachine*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_ParentStateMachine" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.ParentStateMachine">ParentStateMachine</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected UserToolStateMachine ParentStateMachine { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine.html">UserToolStateMachine</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_UserToolType_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.UserToolType*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_UserToolType" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.UserToolType">UserToolType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int UserToolType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_UserToolType">UserToolState.UserToolType</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CancelResizing_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CancelResizing*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CancelResizing" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CancelResizing">CancelResizing()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CancelResizing()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CreateScreenCallback_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CreateScreenCallback*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CreateScreenCallback" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CreateScreenCallback">CreateScreenCallback()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TCallback CreateScreenCallback()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCallback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CreateTerrain_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CreateTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_CreateTerrain_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.CreateTerrain(Unity.Entities.Entity)">CreateTerrain(Entity)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CreateTerrain(Entity terrainPrefab)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainPrefab</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_GetCallbackDataSource_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.GetCallbackDataSource*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_GetCallbackDataSource__0_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.GetCallbackDataSource(`0)">GetCallbackDataSource(TScreen)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TCallback GetCallbackDataSource(TScreen screen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><span class="parametername">screen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCallback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_GetUIScreen_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.GetUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_GetUIScreen" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.GetUIScreen">GetUIScreen()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TScreen GetUIScreen()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_HideUIScreen_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.HideUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_HideUIScreen" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.HideUIScreen">HideUIScreen()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void HideUIScreen()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_PrepareToRun_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.PrepareToRun*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_PrepareToRun" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.PrepareToRun">PrepareToRun()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PrepareToRun()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_PrepareToRun">UserToolState.PrepareToRun()</a></div>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_PrepareToStop_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.PrepareToStop*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_PrepareToStop" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.PrepareToStop">PrepareToStop()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PrepareToStop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolState_PrepareToStop">UserToolState.PrepareToStop()</a></div>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_ShowUIScreen_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.ShowUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2_ShowUIScreen" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.ShowUIScreen">ShowUIScreen()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ShowUIScreen()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

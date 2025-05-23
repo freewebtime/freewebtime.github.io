@@ -1,0 +1,1447 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Struct HexTerrainSettings | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Struct HexTerrainSettings | Hex Terrains ">
+    
+    <meta name="description" content="Struct for storing hex terrain settings like TerrainSize, ChunkSize, HexRotation, HexLayout, etc. Has methods for converting between pixel and cell coordinates, getting cell index by coordinates, etc.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings">
+
+
+
+  <h1 id="Fwt_HexTerrains_Data_HexTerrainSettings" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings" class="text-break">Struct HexTerrainSettings</h1>
+  <div class="markdown level0 summary"><p>Struct for storing hex terrain settings like TerrainSize, ChunkSize, HexRotation, HexLayout, etc.
+Has methods for converting between pixel and cell coordinates, getting cell index by coordinates, etc.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable</a>&lt;<a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Data_HexTerrainSettings_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+[Serializable]
+public struct HexTerrainSettings : IEquatable&lt;HexTerrainSettings&gt;</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ChunkSize" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ChunkSize">ChunkSize</h4>
+  <div class="markdown level1 summary"><p>Size of the chunk in cells (usually it's 16x16, because the chunk has one mesh and the amount of vertexes must be under 64000)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int2 ChunkSize</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_HexHeight" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.HexHeight">HexHeight</h4>
+  <div class="markdown level1 summary"><p>Height of the hexagon in world space.
+Cell Height is a byte value that is multiplied by this value to get the height of the cell in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HexHeight</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_HexLayout" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.HexLayout">HexLayout</h4>
+  <div class="markdown level1 summary"><p>HexLayout of the hexagon the terrain is composed of.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexLayouts HexLayout</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_HexRadius" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.HexRadius">HexRadius</h4>
+  <div class="markdown level1 summary"><p>Radius of the hexagon in world space. The half of the distance between two opposite corners of the hexagon.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float HexRadius</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_HexRotation" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.HexRotation">HexRotation</h4>
+  <div class="markdown level1 summary"><p>HexRotation of the hexagon the terrain is composed of.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexRotations HexRotation</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_IsConnectedHorizontally" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.IsConnectedHorizontally">IsConnectedHorizontally</h4>
+  <div class="markdown level1 summary"><p>If true, the top and bottom edges of the terrain are seamlessly connected</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsConnectedHorizontally</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_IsConnectedVertically" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.IsConnectedVertically">IsConnectedVertically</h4>
+  <div class="markdown level1 summary"><p>If true, the right and left edges of the terrain are seamlessly connected</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsConnectedVertically</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_TerrainSize" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.TerrainSize">TerrainSize</h4>
+  <div class="markdown level1 summary"><p>Size of the terrain in cells (width and height).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int2 TerrainSize</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_CellsCount_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CellsCount*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_CellsCount" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CellsCount">CellsCount</h4>
+  <div class="markdown level1 summary"><p>Total mount of cells on terrain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int CellsCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_ChunksCount_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ChunksCount*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ChunksCount" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ChunksCount">ChunksCount</h4>
+  <div class="markdown level1 summary"><p>Total number of chunks in the terrain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ChunksCount { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_ChunksGridSize_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ChunksGridSize*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ChunksGridSize" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ChunksGridSize">ChunksGridSize</h4>
+  <div class="markdown level1 summary"><p>Size of the chunks grid (one item = one chunk)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int2 ChunksGridSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_Default_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.Default*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_Default" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.Default">Default</h4>
+  <div class="markdown level1 summary"><p>returns a default HexTerrainSettings</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static HexTerrainSettings Default { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_TerrainAreaSize_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.TerrainAreaSize*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_TerrainAreaSize" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.TerrainAreaSize">TerrainAreaSize</h4>
+  <div class="markdown level1 summary"><p>Size of the rectangle area that the whole terrain occupies in world space.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float2 TerrainAreaSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_CellIndexToPixel_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CellIndexToPixel*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_CellIndexToPixel_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CellIndexToPixel(System.Int32)">CellIndexToPixel(int)</h4>
+  <div class="markdown level1 summary"><p>Calculates a cell coordinate by cell index,
+then converts a cell coord to the world point (assuming the terrain origin is 0:0:0).
+Clamps the coordinate to the terrain size, meaning takes into account if terrain's edges are connected or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float3 CellIndexToPixel(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float3</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_ClampCoordinate_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ClampCoordinate*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ClampCoordinate_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ClampCoordinate(Unity.Mathematics.int2)">ClampCoordinate(int2)</h4>
+  <div class="markdown level1 summary"><p>Takes a cell coordinate and wraps it around the terrain size
+taking into account if terrain's edges are connected or not.
+So if IsConnectedHorizontally is true, the x coordinate will be wrapped around the terrain's width,
+If IsConnectedVertically is true, the y coordinate will be wrapped around the terrain's height.
+Negative cell coordinates are also wrapped around.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 ClampCoordinate(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td><p>raw cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>clamped cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_CoordToPixel_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CoordToPixel*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_CoordToPixel_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CoordToPixel(Unity.Mathematics.int2)">CoordToPixel(int2)</h4>
+  <div class="markdown level1 summary"><p>Converts a cell coordinate to the world point (assuming the terrain origin is 0:0:0).
+Clamps the coordinate to the terrain size, meaning takes into account if terrain's edges are connected or not
+<a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html#Fwt_HexTerrains_Data_HexTerrainSettings_ClampCoordinate_Unity_Mathematics_int2_">ClampCoordinate(int2)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float3 CoordToPixel(int2 coord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">coord</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float3</span></td>
+        <td><p>world point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_CoordToPixelRaw_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CoordToPixelRaw*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_CoordToPixelRaw_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.CoordToPixelRaw(Unity.Mathematics.int2)">CoordToPixelRaw(int2)</h4>
+  <div class="markdown level1 summary"><p>Converts a cell coordinate to the world point (assuming the terrain origin is 0:0:0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float3 CoordToPixelRaw(int2 coord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">coord</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float3</span></td>
+        <td><p>world point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_Equals_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.Equals*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_Equals_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.Equals(Fwt.HexTerrains.Data.HexTerrainSettings)">Equals(HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Equals(HexTerrainSettings other)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">other</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellCoord_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellCoord*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellCoord_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellCoord(System.Int32)">GetCellCoord(int)</h4>
+  <div class="markdown level1 summary"><p>Converts a cell index into a cell coordinate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 GetCellCoord(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellHeightInMeters_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellHeightInMeters*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellHeightInMeters_System_Byte_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellHeightInMeters(System.Byte)">GetCellHeightInMeters(byte)</h4>
+  <div class="markdown level1 summary"><p>Calculates a cell height in meters from the heightmap value</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float GetCellHeightInMeters(byte cellHeight)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">cellHeight</span></td>
+        <td><p>heightmap value of the cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><p>cell height in meters</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellIndex_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellIndex_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellIndex(Unity.Mathematics.int2)">GetCellIndex(int2)</h4>
+  <div class="markdown level1 summary"><p>Converts a cell coordinate to the cell index.
+Takes into account if terrain's edges are connected or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int GetCellIndex(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>cell index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellIndexRaw_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellIndexRaw*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetCellIndexRaw_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetCellIndexRaw(Unity.Mathematics.int2)">GetCellIndexRaw(int2)</h4>
+  <div class="markdown level1 summary"><p>Converts a cell coordinate to the cell index.
+Does NOT take into account if terrain's edges are connected or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int GetCellIndexRaw(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>cell index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkCoord_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkCoord*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkCoord_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkCoord(System.Int32)">GetChunkCoord(int)</h4>
+  <div class="markdown level1 summary"><p>Converts a chunk index into a chunk coordinate (in chunks grid, not cells grid)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 GetChunkCoord(int chunkIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td><p>chunk index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>chunk coordinate in a chunks grid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkCoordByCellCoord_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkCoordByCellCoord*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkCoordByCellCoord_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkCoordByCellCoord(Unity.Mathematics.int2)">GetChunkCoordByCellCoord(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns chunk coordinate (in chunks grid) by cell coordinate (in cells grid)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 GetChunkCoordByCellCoord(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkCoordByCellCoordRaw_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkCoordByCellCoordRaw*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkCoordByCellCoordRaw_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkCoordByCellCoordRaw(Unity.Mathematics.int2)">GetChunkCoordByCellCoordRaw(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns chunk coordinate for cell with a giving coord</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 GetChunkCoordByCellCoordRaw(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndex_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndex_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndex(Unity.Mathematics.int2)">GetChunkIndex(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns a chunk index of giving chunk coordinate (in chunks grid, not cells grid)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int GetChunkIndex(int2 chunkCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">chunkCoord</span></td>
+        <td><p>chunk coordinate in a chunks grid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>chunk index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndexByCellCoord_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndexByCellCoord*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndexByCellCoord_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndexByCellCoord(Unity.Mathematics.int2)">GetChunkIndexByCellCoord(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns a chunk index for cell at provided cell coordinate (not chunk coordinate)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int GetChunkIndexByCellCoord(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndexByCellCoordRaw_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndexByCellCoordRaw*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndexByCellCoordRaw_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndexByCellCoordRaw(Unity.Mathematics.int2)">GetChunkIndexByCellCoordRaw(int2)</h4>
+  <div class="markdown level1 summary"><p>Returns a chunk index for cell with a giving coordinate</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int GetChunkIndexByCellCoordRaw(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndexByCellIndex_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndexByCellIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_GetChunkIndexByCellIndex_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.GetChunkIndexByCellIndex(System.Int32)">GetChunkIndexByCellIndex(int)</h4>
+  <div class="markdown level1 summary"><p>Returns a chunk index for giving cell index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int GetChunkIndexByCellIndex(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_IsCellInsideTheTerrain_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.IsCellInsideTheTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_IsCellInsideTheTerrain_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.IsCellInsideTheTerrain(Unity.Mathematics.int2)">IsCellInsideTheTerrain(int2)</h4>
+  <div class="markdown level1 summary"><p>Checks if the cell coordinate is inside the terrain.
+Takes into account if terrain's edges are connected or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public bool IsCellInsideTheTerrain(int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_PixelToCoord_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.PixelToCoord*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_PixelToCoord_Unity_Mathematics_float2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.PixelToCoord(Unity.Mathematics.float2)">PixelToCoord(float2)</h4>
+  <div class="markdown level1 summary"><p>Converts a world point to a cell coordinate (assuming the terrain origin is 0:0:0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 PixelToCoord(float2 pixel)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>world point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_PixelToCoordRaw_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.PixelToCoordRaw*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_PixelToCoordRaw_Unity_Mathematics_float2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.PixelToCoordRaw(Unity.Mathematics.float2)">PixelToCoordRaw(float2)</h4>
+  <div class="markdown level1 summary"><p>Converts a world 2D point (without height) to a cell coordinate (assuming the terrain origin is 0:0:0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 PixelToCoordRaw(float2 pixel)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>world point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_PixelToCoordRaw_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.PixelToCoordRaw*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_PixelToCoordRaw_Unity_Mathematics_float3_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.PixelToCoordRaw(Unity.Mathematics.float3)">PixelToCoordRaw(float3)</h4>
+  <div class="markdown level1 summary"><p>Converts a world point to a cell coordinate (assuming the terrain origin is 0:0:0).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int2 PixelToCoordRaw(float3 pixel)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float3</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>world point</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>cell coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_ToString_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ToString*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ToString" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ToString">ToString()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override string ToString()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.iequatable-1">IEquatable&lt;T&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_ValueType__1___0_System_Int32_">HashExtensions.GetHashCode_ValueType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

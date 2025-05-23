@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ChunkMeshesDataLayer | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ChunkMeshesDataLayer | Hex Terrains ">
+    
+    <meta name="description" content="Data layer for storing meshes of the hex terrain chunks">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer" class="text-break">Class ChunkMeshesDataLayer</h1>
+  <div class="markdown level0 summary"><p>Data layer for storing meshes of the hex terrain chunks</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a></div>
+    <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></div>
+    <div class="level3"><a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html">ListChunkedDataLayer</a>&lt;<span class="xref">Mesh</span>&gt;</div>
+    <div class="level4"><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html">HexTerrainListChunkedDataLayer</a>&lt;<span class="xref">Mesh</span>&gt;</div>
+    <div class="level5"><span class="xref">ChunkMeshesDataLayer</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a></div>
+    <div><a class="xref" href="Fwt.Core.DataLayers.IListDataLayer-1.html">IListDataLayer</a>&lt;<span class="xref">Mesh</span>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1__settings">HexTerrainListChunkedDataLayer&lt;Mesh&gt;._settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_Settings">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_Length">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_Init_System_Int32_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.Init(int, HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1__data">ListChunkedDataLayer&lt;Mesh&gt;._data</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_Data">ListChunkedDataLayer&lt;Mesh&gt;.Data</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_Init_System_Int32_">ListChunkedDataLayer&lt;Mesh&gt;.Init(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_GetData_System_Int32_">ListChunkedDataLayer&lt;Mesh&gt;.GetData(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_SetData_System_Int32__0_">ListChunkedDataLayer&lt;Mesh&gt;.SetData(int, Mesh)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_TryGetData_System_Int32__0__">ListChunkedDataLayer&lt;Mesh&gt;.TryGetData(int, out Mesh)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_TrySetData_System_Int32__0_">ListChunkedDataLayer&lt;Mesh&gt;.TrySetData(int, Mesh)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_GetDataOrDefault_System_Int32_">ListChunkedDataLayer&lt;Mesh&gt;.GetDataOrDefault(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_DisposeAllItems">ListChunkedDataLayer&lt;Mesh&gt;.DisposeAllItems()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_Dispose">ListChunkedDataLayer&lt;Mesh&gt;.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ChunksCount">ChunkedDataLayer.ChunksCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ChunkDirtyGrid">ChunkedDataLayer.ChunkDirtyGrid</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_DirtyChunks">ChunkedDataLayer.DirtyChunks</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_System_Int32_">ChunkedDataLayer.SetCellDirty(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_System_Int32_System_Boolean_">ChunkedDataLayer.SetCellDirty(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetIsChunkDirty_System_Int32_">ChunkedDataLayer.GetIsChunkDirty(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetChunkDirty_System_Int32_System_Boolean_">ChunkedDataLayer.SetChunkDirty(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty_System_Boolean_">ChunkedDataLayer.SetAllChunksDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirtyAsync_System_Boolean_Unity_Jobs_JobHandle_">ChunkedDataLayer.SetAllChunksDirtyAsync(bool, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty">ChunkedDataLayer.SetAllChunksDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ClearAllChunksDirty">ChunkedDataLayer.ClearAllChunksDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndexByCellIndex_System_Int32_">ChunkedDataLayer.GetChunkIndexByCellIndex(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_Unity_Mathematics_int2_">ChunkedDataLayer.GetChunkCoord(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_System_Int32_">ChunkedDataLayer.GetChunkCoord(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndex_Unity_Mathematics_int2_">ChunkedDataLayer.GetChunkIndex(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetCellCoord_System_Int32_">ChunkedDataLayer.GetCellCoord(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetCellIndex_Unity_Mathematics_int2_">ChunkedDataLayer.GetCellIndex(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ResolveCellCoord_Unity_Mathematics_int2_">ChunkedDataLayer.ResolveCellCoord(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ResolveChunkCoord_Unity_Mathematics_int2_">ChunkedDataLayer.ResolveChunkCoord(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__readJobsDependency">DataLayer._readJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_ReadDependency">DataLayer.ReadDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__writeJobsDependency">DataLayer._writeJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_WriteDependency">DataLayer.WriteDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CombinedDependency">DataLayer.CombinedDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__isDirty">DataLayer._isDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDirty">DataLayer.IsDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__version">DataLayer._version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Version">DataLayer.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddReadDependency_Unity_Jobs_JobHandle_">DataLayer.AddReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddWriteDependency_Unity_Jobs_JobHandle_">DataLayer.AddWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetReadDependency_Unity_Jobs_JobHandle_">DataLayer.SetReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetWriteDependency_Unity_Jobs_JobHandle_">DataLayer.SetWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToWrite">DataLayer.PrepareToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToRead">DataLayer.PrepareToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToRead">DataLayer.OpenToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToWrite">DataLayer.OpenToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteReadJobs">DataLayer.CompleteReadJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteWriteJobs">DataLayer.CompleteWriteJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteAllJobs">DataLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CommitChanges">DataLayer.CommitChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetDirty_System_Boolean_">DataLayer.SetDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.DataLayers.html">DataLayers</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class ChunkMeshesDataLayer : HexTerrainListChunkedDataLayer&lt;Mesh&gt;, IDisposable, ICommitChanges, IListDataLayer&lt;Mesh&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_CellsGridSize_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.CellsGridSize*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_CellsGridSize" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.CellsGridSize">CellsGridSize</h4>
+  <div class="markdown level1 summary"><p>Width and Height of the grid of cells.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int2 CellsGridSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_CellsGridSize">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.CellsGridSize</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_ChunkGridSize_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.ChunkGridSize*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_ChunkGridSize" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.ChunkGridSize">ChunkGridSize</h4>
+  <div class="markdown level1 summary"><p>Width and Height of the grid of chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int2 ChunkGridSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_ChunkGridSize">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.ChunkGridSize</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_ChunkSize_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.ChunkSize*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_ChunkSize" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.ChunkSize">ChunkSize</h4>
+  <div class="markdown level1 summary"><p>Width and Height of the chunk in cells.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int2 ChunkSize { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_ChunkSize">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.ChunkSize</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_IsConnectedHorizontally_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.IsConnectedHorizontally*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_IsConnectedHorizontally" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.IsConnectedHorizontally">IsConnectedHorizontally</h4>
+  <div class="markdown level1 summary"><p>True if left and right edges of the chunk are connected (like in civilization games).
+Needed for wrapping the grid.
+If SetCellDirty(cellIndex, checkEdges) is called with checkEdges == true, the chunk of the cell is marked dirty
+and also all adjacent chunks are also marked dirty. So if the left edge is dirty, the right edge is also dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsConnectedHorizontally { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_IsConnectedHorizontally">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.IsConnectedHorizontally</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_IsConnectedVertically_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.IsConnectedVertically*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_IsConnectedVertically" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.IsConnectedVertically">IsConnectedVertically</h4>
+  <div class="markdown level1 summary"><p>True if top and bottom edges of the chunk are connected (like in civilization games).
+Needed for wrapping the grid.
+If SetCellDirty(cellIndex, checkEdges) is called with checkEdges == true, the chunk of the cell is marked dirty
+and also all adjacent chunks are also marked dirty. So if the top edge is dirty, the bottom edge is also dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsConnectedVertically { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_IsConnectedVertically">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.IsConnectedVertically</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_IsDisposableItems_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.IsDisposableItems*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_IsDisposableItems" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.IsDisposableItems">IsDisposableItems</h4>
+  <div class="markdown level1 summary"><p>If true, means when layer is resized or disposed, all items that are removed will be disposed
+(see nested classes description for details as the process may be different from layer to layer)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsDisposableItems { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDisposableItems">DataLayer.IsDisposableItems</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_Cleanup_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_Cleanup" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Cleanup()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainListChunkedDataLayer_1_Cleanup">HexTerrainListChunkedDataLayer&lt;Mesh&gt;.Cleanup()</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_DisposeDataItem_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.DisposeDataItem*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_DisposeDataItem_UnityEngine_Mesh_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.DisposeDataItem(UnityEngine.Mesh)">DisposeDataItem(Mesh)</h4>
+  <div class="markdown level1 summary"><p>Disposes data item if it is IDisposable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void DisposeDataItem(Mesh item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_DisposeDataItem__0_">ListChunkedDataLayer&lt;Mesh&gt;.DisposeDataItem(Mesh)</a></div>
+
+
+  <a id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_DisposeExcessItems_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.DisposeExcessItems*"></a>
+  <h4 id="Fwt_HexTerrains_DataLayers_ChunkMeshesDataLayer_DisposeExcessItems_System_Int32_" data-uid="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.DisposeExcessItems(System.Int32)">DisposeExcessItems(int)</h4>
+  <div class="markdown level1 summary"><p>Disposes items at cells greater than layerSize</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DisposeExcessItems(int layerSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerSize</span></td>
+        <td><p>items count to keep, dispose all other items</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.ListChunkedDataLayer-1.html#Fwt_Core_DataLayers_ListChunkedDataLayer_1_DisposeExcessItems_System_Int32_">ListChunkedDataLayer&lt;Mesh&gt;.DisposeExcessItems(int)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.DataLayers.IListDataLayer-1.html">IListDataLayer&lt;TItem&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

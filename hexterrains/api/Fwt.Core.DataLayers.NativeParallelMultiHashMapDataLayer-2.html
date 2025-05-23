@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt; | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt; | Hex Terrains ">
+    
+    <meta name="description" content="Base class for all data layers that are based on NativeParallelMultiHashMap{TItem, TItem}.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2">
+
+
+
+  <h1 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2" class="text-break">Class NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt;</h1>
+  <div class="markdown level0 summary"><p>Base class for all data layers that are based on NativeParallelMultiHashMap{TItem, TItem}.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a></div>
+    <div class="level2"><span class="xref">NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt;</span></div>
+      <div class="level3"><a class="xref" href="Fwt.HexTerrains.Areas.DataLayers.AreaCellsDataLayer.html">AreaCellsDataLayer</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDisposableItems">DataLayer.IsDisposableItems</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__readJobsDependency">DataLayer._readJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_ReadDependency">DataLayer.ReadDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__writeJobsDependency">DataLayer._writeJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_WriteDependency">DataLayer.WriteDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CombinedDependency">DataLayer.CombinedDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__isDirty">DataLayer._isDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDirty">DataLayer.IsDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__version">DataLayer._version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Version">DataLayer.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddReadDependency_Unity_Jobs_JobHandle_">DataLayer.AddReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddWriteDependency_Unity_Jobs_JobHandle_">DataLayer.AddWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetReadDependency_Unity_Jobs_JobHandle_">DataLayer.SetReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetWriteDependency_Unity_Jobs_JobHandle_">DataLayer.SetWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToWrite">DataLayer.PrepareToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToRead">DataLayer.PrepareToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToRead">DataLayer.OpenToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToWrite">DataLayer.OpenToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteReadJobs">DataLayer.CompleteReadJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteWriteJobs">DataLayer.CompleteWriteJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteAllJobs">DataLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CommitChanges">DataLayer.CommitChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetDirty_System_Boolean_">DataLayer.SetDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.DataLayers.html">DataLayers</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt; : DataLayer, IDisposable, ICommitChanges where TKey : unmanaged, IEquatable&lt;TKey&gt; where TItem : unmanaged</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TKey</span></td>
+        <td><p>Type of the key to store a data under</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TItem</span></td>
+        <td><p>Type of the data to store in the layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2__data" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2._data">_data</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected NativeParallelMultiHashMap&lt;TKey, TItem&gt; _data</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Data_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Data*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Data" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Data">Data</h4>
+  <div class="markdown level1 summary"><p>The container for data in the layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeParallelMultiHashMap&lt;TKey, TItem&gt; Data { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;TKey, TItem&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Length_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Length*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Length" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Number of items in the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Length">DataLayer.Length</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Clear_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Clear*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Clear" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Clear">Clear()</h4>
+  <div class="markdown level1 summary"><p>Clears the underlying multi hash map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Clear()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Dispose_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Dispose*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Dispose" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes the layer and all of it's data, calls DisposeAllItems() <a class="xref" href="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer-2.html#Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_DisposeAllItems">DisposeAllItems()</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Dispose">DataLayer.Dispose()</a></div>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_DisposeAllItems_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.DisposeAllItems*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_DisposeAllItems" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.DisposeAllItems">DisposeAllItems()</h4>
+  <div class="markdown level1 summary"><p>Disposes all items in the layer by calling DisposeDataItem method for each item. <a class="xref" href="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer-2.html#Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_DisposeDataItem__1_">DisposeDataItem(TItem)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void DisposeAllItems()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_DisposeAllItems">DataLayer.DisposeAllItems()</a></div>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_DisposeDataItem_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.DisposeDataItem*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_DisposeDataItem__1_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.DisposeDataItem(`1)">DisposeDataItem(TItem)</h4>
+  <div class="markdown level1 summary"><p>Disposes the item if it is IDisposable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void DisposeDataItem(TItem item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">item</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Init_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Init*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_Init_System_Int32_Unity_Collections_Allocator_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.Init(System.Int32,Unity.Collections.Allocator)">Init(int, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the data layer with the specified size.
+Requires a layer size, because in Jobs we need to know how much memory to allocate,
+so the underlying native multi hash map is created with capacity of layerSize.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(int layerSize, Allocator allocator = Allocator.Persistent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerSize</span></td>
+        <td><p>max amount of cells in the layer</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td><p>allocator to create an underlying collection with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_RemoveData_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.RemoveData*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_RemoveData__0_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.RemoveData(`0)">RemoveData(TKey)</h4>
+  <div class="markdown level1 summary"><p>Removes a data stored under the provided key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RemoveData(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>key to remove a stored data under</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_SetData_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.SetData*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_SetData__0__1_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.SetData(`0,`1)">SetData(TKey, TItem)</h4>
+  <div class="markdown level1 summary"><p>Puts a data under the provided key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetData(TKey key, TItem value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>Key to put data under</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>data to put under a provided key</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_TryRemoveData_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.TryRemoveData*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_TryRemoveData__0_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.TryRemoveData(`0)">TryRemoveData(TKey)</h4>
+  <div class="markdown level1 summary"><p>Tries to remove a data stored under the provided key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TryRemoveData(TKey key)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>key to remove a stored data under</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if data was in the layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_TrySetData_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.TrySetData*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeParallelMultiHashMapDataLayer_2_TrySetData__0__1_" data-uid="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer`2.TrySetData(`0,`1)">TrySetData(TKey, TItem)</h4>
+  <div class="markdown level1 summary"><p>Gets data stored under the provided key.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool TrySetData(TKey key, TItem value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TKey</span></td>
+        <td><span class="parametername">key</span></td>
+        <td><p>key to search data under</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TItem</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value found under provided key. If nothing is found, then default value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if data was found, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

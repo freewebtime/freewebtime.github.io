@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class DataLayer | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class DataLayer | Hex Terrains ">
+    
+    <meta name="description" content="Base class for all data layers. Data Layer is a container for data that can be read and written to. Data Layer allows for parallel reading and writing of data. It tracks dependencies for reading and writing jobs. If you want to read data immediately, call DataLayer.OpenToRead() before reading. If you want to write data immediately, call DataLayer.OpenToWrite() before writing. If you want to schedule a job that reads data, call DataLayer.PrepareToRead() before scheduling the job (returns a JobHandle to use as dependency in your job) If you want to schedule a job that writes data, call DataLayer.PrepareToWrite() before scheduling the job (returns a JobHandle to use as dependency in your job)">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.DataLayers.DataLayer">
+
+
+
+  <h1 id="Fwt_Core_DataLayers_DataLayer" data-uid="Fwt.Core.DataLayers.DataLayer" class="text-break">Class DataLayer</h1>
+  <div class="markdown level0 summary"><p>Base class for all data layers.
+Data Layer is a container for data that can be read and written to.
+Data Layer allows for parallel reading and writing of data.
+It tracks dependencies for reading and writing jobs.</p>
+<p>If you want to read data immediately, call DataLayer.OpenToRead() before reading.
+If you want to write data immediately, call DataLayer.OpenToWrite() before writing.
+If you want to schedule a job that reads data, call DataLayer.PrepareToRead() before scheduling the job (returns a JobHandle to use as dependency in your job)
+If you want to schedule a job that writes data, call DataLayer.PrepareToWrite() before scheduling the job (returns a JobHandle to use as dependency in your job)</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">DataLayer</span></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.ArrayDataLayer-1.html">ArrayDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.DictionaryDataLayer-2.html">DictionaryDataLayer&lt;TKey, TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.HashSetDataLayer-1.html">HashSetDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.ListDataLayer-1.html">ListDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeArrayDataLayer-1.html">NativeArrayDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeHashMapDataLayer-2.html">NativeHashMapDataLayer&lt;TKey, TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeHashSetDataLayer-1.html">NativeHashSetDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeListDataLayer-1.html">NativeListDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeParallelHashMapDataLayer-2.html">NativeParallelHashMapDataLayer&lt;TKey, TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeParallelHashSetDataLayer-1.html">NativeParallelHashSetDataLayer&lt;TItem&gt;</a></div>
+      <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.NativeParallelMultiHashMapDataLayer-2.html">NativeParallelMultiHashMapDataLayer&lt;TKey, TItem&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.DataLayers.html">DataLayers</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_DataLayers_DataLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DataLayer : IDisposable, ICommitChanges</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_Core_DataLayers_DataLayer__isDirty" data-uid="Fwt.Core.DataLayers.DataLayer._isDirty">_isDirty</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool _isDirty</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_DataLayers_DataLayer__readJobsDependency" data-uid="Fwt.Core.DataLayers.DataLayer._readJobsDependency">_readJobsDependency</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected JobHandle _readJobsDependency</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_DataLayers_DataLayer__version" data-uid="Fwt.Core.DataLayers.DataLayer._version">_version</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected long _version</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_DataLayers_DataLayer__writeJobsDependency" data-uid="Fwt.Core.DataLayers.DataLayer._writeJobsDependency">_writeJobsDependency</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected JobHandle _writeJobsDependency</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_CombinedDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.CombinedDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_CombinedDependency" data-uid="Fwt.Core.DataLayers.DataLayer.CombinedDependency">CombinedDependency</h4>
+  <div class="markdown level1 summary"><p>Returns a combined (Read+Write) dependency</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle CombinedDependency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_IsDirty_" data-uid="Fwt.Core.DataLayers.DataLayer.IsDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_IsDirty" data-uid="Fwt.Core.DataLayers.DataLayer.IsDirty">IsDirty</h4>
+  <div class="markdown level1 summary"><p>True if the layer has been modified since the last time the flag was removed.
+To set a flag call SetDirty(isDirty) of the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsDirty { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_IsDisposableItems_" data-uid="Fwt.Core.DataLayers.DataLayer.IsDisposableItems*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_IsDisposableItems" data-uid="Fwt.Core.DataLayers.DataLayer.IsDisposableItems">IsDisposableItems</h4>
+  <div class="markdown level1 summary"><p>If true, means when layer is resized or disposed, all items that are removed will be disposed
+(see nested classes description for details as the process may be different from layer to layer)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool IsDisposableItems { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_Length_" data-uid="Fwt.Core.DataLayers.DataLayer.Length*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_Length" data-uid="Fwt.Core.DataLayers.DataLayer.Length">Length</h4>
+  <div class="markdown level1 summary"><p>Returns the number of items in the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract int Length { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_ReadDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.ReadDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_ReadDependency" data-uid="Fwt.Core.DataLayers.DataLayer.ReadDependency">ReadDependency</h4>
+  <div class="markdown level1 summary"><p>Returns a dependency that must be completed before reading from the layer (Read dependency)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ReadDependency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_Version_" data-uid="Fwt.Core.DataLayers.DataLayer.Version*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_Version" data-uid="Fwt.Core.DataLayers.DataLayer.Version">Version</h4>
+  <div class="markdown level1 summary"><p>Every time the layer is set isDirty, the version is incremented.
+This allows to track changes in the layer and to invalidate caches that depend on the layer.
+If you see that the version is the same as your cached version, you can skip the update.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long Version { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_WriteDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.WriteDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_WriteDependency" data-uid="Fwt.Core.DataLayers.DataLayer.WriteDependency">WriteDependency</h4>
+  <div class="markdown level1 summary"><p>Returns a dependency that must be completed before writing to the layer (Write dependency)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle WriteDependency { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_AddReadDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.AddReadDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_AddReadDependency_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.DataLayer.AddReadDependency(Unity.Jobs.JobHandle)">AddReadDependency(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Adds a read dependency to the layer.
+If you schedule a job that reads from the layer, call this method with JobHandle of your job as a parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle AddReadDependency(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>Read data JobHandle to be added to the ReadDependency</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_AddWriteDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.AddWriteDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_AddWriteDependency_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.DataLayer.AddWriteDependency(Unity.Jobs.JobHandle)">AddWriteDependency(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Adds a write dependency to the layer.
+If you schedule a job that writes to the layer, call this method with JobHandle of your job as a parameter.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle AddWriteDependency(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>Write data JobHandle to be added to the WriteDependency</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_CommitChanges_" data-uid="Fwt.Core.DataLayers.DataLayer.CommitChanges*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_CommitChanges" data-uid="Fwt.Core.DataLayers.DataLayer.CommitChanges">CommitChanges()</h4>
+  <div class="markdown level1 summary"><p>Sets the isDirty flag to true and increments the version.
+Call this function after you have modified the layer and want to mark the layer isDirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CommitChanges()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_CompleteAllJobs_" data-uid="Fwt.Core.DataLayers.DataLayer.CompleteAllJobs*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_CompleteAllJobs" data-uid="Fwt.Core.DataLayers.DataLayer.CompleteAllJobs">CompleteAllJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all reading and writing jobs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CompleteAllJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_CompleteReadJobs_" data-uid="Fwt.Core.DataLayers.DataLayer.CompleteReadJobs*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_CompleteReadJobs" data-uid="Fwt.Core.DataLayers.DataLayer.CompleteReadJobs">CompleteReadJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all reading jobs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CompleteReadJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_CompleteWriteJobs_" data-uid="Fwt.Core.DataLayers.DataLayer.CompleteWriteJobs*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_CompleteWriteJobs" data-uid="Fwt.Core.DataLayers.DataLayer.CompleteWriteJobs">CompleteWriteJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all writing jobs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CompleteWriteJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_Dispose_" data-uid="Fwt.Core.DataLayers.DataLayer.Dispose*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_Dispose" data-uid="Fwt.Core.DataLayers.DataLayer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs and disposes the layer.
+If IsDisposableItems is true, all items in the layer will be disposed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_DisposeAllItems_" data-uid="Fwt.Core.DataLayers.DataLayer.DisposeAllItems*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_DisposeAllItems" data-uid="Fwt.Core.DataLayers.DataLayer.DisposeAllItems">DisposeAllItems()</h4>
+  <div class="markdown level1 summary"><p>Disposes all items in the layer.
+Called on Dispose() if IsDisposableItems is true.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract void DisposeAllItems()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_OpenToRead_" data-uid="Fwt.Core.DataLayers.DataLayer.OpenToRead*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_OpenToRead" data-uid="Fwt.Core.DataLayers.DataLayer.OpenToRead">OpenToRead()</h4>
+  <div class="markdown level1 summary"><p>Completes all writing jobs.
+Call this method if you want to read from the layer immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OpenToRead()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_OpenToWrite_" data-uid="Fwt.Core.DataLayers.DataLayer.OpenToWrite*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_OpenToWrite" data-uid="Fwt.Core.DataLayers.DataLayer.OpenToWrite">OpenToWrite()</h4>
+  <div class="markdown level1 summary"><p>Completes all reading and writing jobs.
+Call this method if you want to write to the layer immediately.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OpenToWrite()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_PrepareToRead_" data-uid="Fwt.Core.DataLayers.DataLayer.PrepareToRead*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_PrepareToRead" data-uid="Fwt.Core.DataLayers.DataLayer.PrepareToRead">PrepareToRead()</h4>
+  <div class="markdown level1 summary"><p>Returns a dependency that must be completed before reading from the layer (Write dependency)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle PrepareToRead()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_PrepareToWrite_" data-uid="Fwt.Core.DataLayers.DataLayer.PrepareToWrite*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_PrepareToWrite" data-uid="Fwt.Core.DataLayers.DataLayer.PrepareToWrite">PrepareToWrite()</h4>
+  <div class="markdown level1 summary"><p>Returns a dependency that must be completed before writing to the layer (Read and Write dependencies combined)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle PrepareToWrite()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_SetDirty_" data-uid="Fwt.Core.DataLayers.DataLayer.SetDirty*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_SetDirty_System_Boolean_" data-uid="Fwt.Core.DataLayers.DataLayer.SetDirty(System.Boolean)">SetDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the isDirty flag. If isDirty is true, the version is incremented.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>value to set a dirty flag to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_SetReadDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.SetReadDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_SetReadDependency_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.DataLayer.SetReadDependency(Unity.Jobs.JobHandle)">SetReadDependency(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Ovewrites a read dependency with a provided one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetReadDependency(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>JobHandle to ovewrite the ReadDependency with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_DataLayer_SetWriteDependency_" data-uid="Fwt.Core.DataLayers.DataLayer.SetWriteDependency*"></a>
+  <h4 id="Fwt_Core_DataLayers_DataLayer_SetWriteDependency_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.DataLayer.SetWriteDependency(Unity.Jobs.JobHandle)">SetWriteDependency(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Overwrites a write dependency with a provided one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetWriteDependency(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>JobHandle to overwrite the WriteDependency with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

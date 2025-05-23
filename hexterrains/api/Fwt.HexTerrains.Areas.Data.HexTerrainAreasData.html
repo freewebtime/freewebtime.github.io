@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexTerrainAreasData | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexTerrainAreasData | Hex Terrains ">
+    
+    <meta name="description" content="Base class for HexTerrain layers that have a byte value per cell">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData">
+
+
+
+  <h1 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData" class="text-break">Class HexTerrainAreasData</h1>
+  <div class="markdown level0 summary"><p>Base class for HexTerrain layers that have a byte value per cell</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">HexTerrainAreasData</span></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexCountriesData.html">HexCountriesData</a></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexProvincesData.html">HexProvincesData</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Areas.html">Areas</a>.<a class="xref" href="Fwt.HexTerrains.Areas.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class HexTerrainAreasData : IDisposable</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Settings" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Settings">Settings</h4>
+  <div class="markdown level1 summary"><p>Settings of the HexTerrain this area is attached to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSettings Settings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaCells_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreaCells*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaCells" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreaCells">AreaCells</h4>
+  <div class="markdown level1 summary"><p>Cell indexes per area</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AreaCellsDataLayer AreaCells { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Areas.DataLayers.AreaCellsDataLayer.html">AreaCellsDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaColors_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreaColors*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaColors" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreaColors">AreaColors</h4>
+  <div class="markdown level1 summary"><p>Palette of colors for the areas.
+Index in this list = area index.
+Used to calculate the AreasColorMap data layer <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html#Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreasColorMap">AreasColorMap</a>,
+which is used to fill a ColorTexture to be placed on UI or in terrain materials.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;Color32&gt; AreaColors { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaSizes_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreaSizes*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaSizes" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreaSizes">AreaSizes</h4>
+  <div class="markdown level1 summary"><p>Size per area</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public AreaSizesDataLayer AreaSizes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Areas.DataLayers.AreaSizesDataLayer.html">AreaSizesDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreasColorMap_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreasColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreasColorMap" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.AreasColorMap">AreasColorMap</h4>
+  <div class="markdown level1 summary"><p>Cell Area color per cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellColorsDataLayer AreasColorMap { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellColorsDataLayer.html">CellColorsDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_CellAreaMap_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.CellAreaMap*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_CellAreaMap" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.CellAreaMap">CellAreaMap</h4>
+  <div class="markdown level1 summary"><p>Area index per cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellAreaDataLayer CellAreaMap { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.html">CellAreaDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_ColorMapTextureIndex_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.ColorMapTextureIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_ColorMapTextureIndex" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.ColorMapTextureIndex">ColorMapTextureIndex</h4>
+  <div class="markdown level1 summary"><p>Index of the texture in the list of ColorMapTextures.
+Used externally in systems.
+Systems read this value to know which texture to fill with colors from AreasColorMap data layer <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html#Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreasColorMap">AreasColorMap</a>.
+That texture is expected to be used in materials or/and UI like minimap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ColorMapTextureIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Cleanup_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Cleanup" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Cleanup()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_CleanupAsync_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_CleanupAsync" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.CleanupAsync">CleanupAsync()</h4>
+  <div class="markdown level1 summary"><p>Async version of Cleanup() <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html#Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Cleanup">Cleanup()</a>
+Difference between regular Cleanup() is that it schedules jobs that clean up data layers,
+so you don't have to wait for the results and can continue working.
+Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CleanupAsync()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_CompleteAllJobs_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.CompleteAllJobs*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_CompleteAllJobs" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.CompleteAllJobs">CompleteAllJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs that affect data layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CompleteAllJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Dispose_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Dispose" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_GetCellArea_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.GetCellArea*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_GetCellArea_System_Int32_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.GetCellArea(System.Int32)">GetCellArea(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the area index of the cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellArea(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to take area index from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>?</td>
+        <td><p>area index if found, otherwise - null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Init_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the area data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Init_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{UnityEngine.Color32})">Init(HexTerrainSettings, NativeArray&lt;Color32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the areas data.
+Calls InitAreaColors() internally to copy the color palette from the given array <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html#Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__">InitAreaColors(NativeArray&lt;Color32&gt;)</a>.
+Only copies data from the copyAreaColorsFrom array, does not change or cache,
+so it is safe to dispose it after this call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, NativeArray&lt;Color32&gt; copyAreaColorsFrom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td><span class="parametername">copyAreaColorsFrom</span></td>
+        <td><p>array of colors per area to copy a AreaColors palette from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_InitAreaColors_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.InitAreaColors*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.InitAreaColors(Unity.Collections.NativeArray{UnityEngine.Color32})">InitAreaColors(NativeArray&lt;Color32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copies an AreaColors palette from the given array <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html#Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_AreaColors">AreaColors</a>.
+Does not change or cache the array, so it is safe to dispose it after this call.
+copyFrom array is expected to have the areas count length, so there is one color per possible area index.
+AreaIndex == index in copyFrom array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitAreaColors(NativeArray&lt;Color32&gt; copyFrom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td><span class="parametername">copyFrom</span></td>
+        <td><p>array of colors to copy into the AreaColors palette</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Resize_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Resize*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Resize_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.Resize(Unity.Mathematics.int2)">Resize(int2)</h4>
+  <div class="markdown level1 summary"><p>Resizes the terrain to a new size.
+Internally calls Init() to reinitialize the data layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Resize(int2 terrainSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">terrainSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_SetAllCellsArea_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.SetAllCellsArea*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_SetAllCellsArea_System_Byte_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.SetAllCellsArea(System.Byte)">SetAllCellsArea(byte)</h4>
+  <div class="markdown level1 summary"><p>Sets the area index of all cells to the given value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsArea(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>area index to set for every cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if data vas set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_SetAllDirty_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets all data layers dirty value.
+If isDirty is true, all data layers will be marked as dirty and will be recalculated on the next frame.
+If isDirty is false, all data layers will be marked as clean and will not be recalculated on the next frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void SetAllDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_SetCellArea_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.SetCellArea*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_SetCellArea_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.SetCellArea(System.Int32,System.Byte)">SetCellArea(int, byte)</h4>
+  <div class="markdown level1 summary"><p>Sets the area index of the cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellArea(int cellIndex, byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to put area index to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>area index to put into the cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if data has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

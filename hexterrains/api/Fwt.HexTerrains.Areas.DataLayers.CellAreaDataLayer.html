@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CellAreaDataLayer | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CellAreaDataLayer | Hex Terrains ">
+    
+    <meta name="description" content="value = area index of the cell">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer" class="text-break">Class CellAreaDataLayer</h1>
+  <div class="markdown level0 summary"><p>value = area index of the cell</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html">DataLayer</a></div>
+    <div class="level2"><a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html">ChunkedDataLayer</a></div>
+    <div class="level3"><a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html">NativeListChunkedDataLayer</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</div>
+    <div class="level4"><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html">HexTerrainNativeListChunkedDataLayer</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</div>
+    <div class="level5"><span class="xref">CellAreaDataLayer</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a></div>
+    <div><a class="xref" href="Fwt.Core.DataLayers.IListDataLayer-1.html">IListDataLayer</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1__settings">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;._settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_Settings">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_CellsGridSize">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.CellsGridSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_ChunkGridSize">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.ChunkGridSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_ChunkSize">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.ChunkSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_IsConnectedHorizontally">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.IsConnectedHorizontally</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_IsConnectedVertically">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.IsConnectedVertically</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_Init_System_Int32_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.Init(int, HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1__data">NativeListChunkedDataLayer&lt;byte&gt;._data</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_Data">NativeListChunkedDataLayer&lt;byte&gt;.Data</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_Length">NativeListChunkedDataLayer&lt;byte&gt;.Length</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_Init_System_Int32_">NativeListChunkedDataLayer&lt;byte&gt;.Init(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_GetData_System_Int32_">NativeListChunkedDataLayer&lt;byte&gt;.GetData(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_SetData_System_Int32__0_">NativeListChunkedDataLayer&lt;byte&gt;.SetData(int, byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_SetData__0___">NativeListChunkedDataLayer&lt;byte&gt;.SetData(byte[])</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_FillData__0_">NativeListChunkedDataLayer&lt;byte&gt;.FillData(byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_TryGetData_System_Int32__0__">NativeListChunkedDataLayer&lt;byte&gt;.TryGetData(int, out byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_TrySetData_System_Int32__0_">NativeListChunkedDataLayer&lt;byte&gt;.TrySetData(int, byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_DisposeAllItems">NativeListChunkedDataLayer&lt;byte&gt;.DisposeAllItems()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_DisposeExcessItems_System_Int32_">NativeListChunkedDataLayer&lt;byte&gt;.DisposeExcessItems(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_DisposeDataItem__0_">NativeListChunkedDataLayer&lt;byte&gt;.DisposeDataItem(byte)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.NativeListChunkedDataLayer-1.html#Fwt_Core_DataLayers_NativeListChunkedDataLayer_1_Dispose">NativeListChunkedDataLayer&lt;byte&gt;.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ChunksCount">ChunkedDataLayer.ChunksCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ChunkDirtyGrid">ChunkedDataLayer.ChunkDirtyGrid</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_DirtyChunks">ChunkedDataLayer.DirtyChunks</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_System_Int32_">ChunkedDataLayer.SetCellDirty(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetCellDirty_System_Int32_System_Boolean_">ChunkedDataLayer.SetCellDirty(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetIsChunkDirty_System_Int32_">ChunkedDataLayer.GetIsChunkDirty(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetChunkDirty_System_Int32_System_Boolean_">ChunkedDataLayer.SetChunkDirty(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty_System_Boolean_">ChunkedDataLayer.SetAllChunksDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirtyAsync_System_Boolean_Unity_Jobs_JobHandle_">ChunkedDataLayer.SetAllChunksDirtyAsync(bool, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_SetAllChunksDirty">ChunkedDataLayer.SetAllChunksDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ClearAllChunksDirty">ChunkedDataLayer.ClearAllChunksDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_MergeChunkDirtyGrids_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Fwt_Core_DataLayers_ChunkedDataLayer_Unity_Jobs_JobHandle_">ChunkedDataLayer.MergeChunkDirtyGrids(ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, ChunkedDataLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndexByCellIndex_System_Int32_">ChunkedDataLayer.GetChunkIndexByCellIndex(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_Unity_Mathematics_int2_">ChunkedDataLayer.GetChunkCoord(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkCoord_System_Int32_">ChunkedDataLayer.GetChunkCoord(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetChunkIndex_Unity_Mathematics_int2_">ChunkedDataLayer.GetChunkIndex(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetCellCoord_System_Int32_">ChunkedDataLayer.GetCellCoord(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_GetCellIndex_Unity_Mathematics_int2_">ChunkedDataLayer.GetCellIndex(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ResolveCellCoord_Unity_Mathematics_int2_">ChunkedDataLayer.ResolveCellCoord(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.ChunkedDataLayer.html#Fwt_Core_DataLayers_ChunkedDataLayer_ResolveChunkCoord_Unity_Mathematics_int2_">ChunkedDataLayer.ResolveChunkCoord(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__readJobsDependency">DataLayer._readJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_ReadDependency">DataLayer.ReadDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__writeJobsDependency">DataLayer._writeJobsDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_WriteDependency">DataLayer.WriteDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CombinedDependency">DataLayer.CombinedDependency</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__isDirty">DataLayer._isDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDirty">DataLayer.IsDirty</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer__version">DataLayer._version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_Version">DataLayer.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddReadDependency_Unity_Jobs_JobHandle_">DataLayer.AddReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_AddWriteDependency_Unity_Jobs_JobHandle_">DataLayer.AddWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetReadDependency_Unity_Jobs_JobHandle_">DataLayer.SetReadDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetWriteDependency_Unity_Jobs_JobHandle_">DataLayer.SetWriteDependency(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToWrite">DataLayer.PrepareToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_PrepareToRead">DataLayer.PrepareToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToRead">DataLayer.OpenToRead()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_OpenToWrite">DataLayer.OpenToWrite()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteReadJobs">DataLayer.CompleteReadJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteWriteJobs">DataLayer.CompleteWriteJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CompleteAllJobs">DataLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_CommitChanges">DataLayer.CommitChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_SetDirty_System_Boolean_">DataLayer.SetDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Areas.html">Areas</a>.<a class="xref" href="Fwt.HexTerrains.Areas.DataLayers.html">DataLayers</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CellAreaDataLayer : HexTerrainNativeListChunkedDataLayer&lt;byte&gt;, IDisposable, ICommitChanges, IListDataLayer&lt;byte&gt;</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_IsDisposableItems_" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.IsDisposableItems*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_IsDisposableItems" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.IsDisposableItems">IsDisposableItems</h4>
+  <div class="markdown level1 summary"><p>If true, means when layer is resized or disposed, all items that are removed will be disposed
+(see nested classes description for details as the process may be different from layer to layer)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsDisposableItems { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.DataLayers.DataLayer.html#Fwt_Core_DataLayers_DataLayer_IsDisposableItems">DataLayer.IsDisposableItems</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_Cleanup_" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_Cleanup" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Cleanup()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_Cleanup">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.Cleanup()</a></div>
+
+
+  <a id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_DataLayers_CellAreaDataLayer_CleanupAsync" data-uid="Fwt.HexTerrains.Areas.DataLayers.CellAreaDataLayer.CleanupAsync">CleanupAsync()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JobHandle CleanupAsync()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer-1.html#Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_CleanupAsync">HexTerrainNativeListChunkedDataLayer&lt;byte&gt;.CleanupAsync()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.DataLayers.IListDataLayer-1.html">IListDataLayer&lt;TItem&gt;</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class System_DataTag&lt;TComponent&gt; | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class System_DataTag&lt;TComponent&gt; | Hex Terrains ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.Registries.System_DataTag`1">
+
+
+
+  <h1 id="Fwt_Core_Registries_System_DataTag_1" data-uid="Fwt.Core.Registries.System_DataTag`1" class="text-break">Class System_DataTag&lt;TComponent&gt;</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">ComponentSystemBase</span></div>
+    <div class="level2"><span class="xref">SystemBase</span></div>
+    <div class="level3"><span class="xref">System_DataTag&lt;TComponent&gt;</span></div>
+      <div class="level4"><a class="xref" href="Fwt.Core.Registries.System_DataTag_C-1.html">System_DataTag_C&lt;TComponent&gt;</a></div>
+      <div class="level4"><a class="xref" href="Fwt.Core.Registries.System_DataTag_S-1.html">System_DataTag_S&lt;TComponent&gt;</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">SystemBase.Dependency</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.CheckedStateRef</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.CompleteDependency()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Entities</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Job</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Update()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.OnUpdate()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.GetComponent&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.SetComponent&lt;T&gt;(Entity, T)</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.HasComponent&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.HasBuffer&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetComponentLookup&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetComponentDataFromEntity&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetBuffer&lt;T&gt;(Entity, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetBufferLookup&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetBufferFromEntity&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">SystemBase.GetEntityStorageInfoLookup()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.GetStorageInfoFromEntity()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Exists(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.Enabled</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.EntityQueries</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GlobalSystemVersion</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.LastSystemVersion</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.EntityManager</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.World</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.SystemHandle</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.SystemHandleUntyped</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.Time</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.WorldUpdateAllocator</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.OnStartRunning()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.OnStopRunning()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.ShouldRunSystem()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">ComponentSystemBase.GetComponentTypeHandle&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetDynamicComponentTypeHandle(ComponentType)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">ComponentSystemBase.GetBufferTypeHandle&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSharedComponentTypeHandle&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetDynamicSharedComponentTypeHandle(ComponentType)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityTypeHandle()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireForUpdate(EntityQuery)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireAnyForUpdate(params EntityQuery[])</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireAnyForUpdate(NativeArray&lt;EntityQuery&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireForUpdate&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireSingletonForUpdate&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.HasSingleton&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSingleton&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSingletonRW&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">ComponentSystemBase.GetSingletonBuffer&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.TryGetSingleton&lt;T&gt;(out T)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.TryGetSingletonBuffer&lt;T&gt;(out DynamicBuffer&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.SetSingleton&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSingletonEntity&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.TryGetSingletonEntity&lt;T&gt;(out Entity)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(params ComponentType[])</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(NativeArray&lt;ComponentType&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(params EntityQueryDesc[])</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(in EntityQueryBuilder)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.Registries.html">Registries</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.ecs.dll</h6>
+  <h5 id="Fwt_Core_Registries_System_DataTag_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class System_DataTag&lt;TComponent&gt; : SystemBase</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TComponent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_AllTags" data-uid="Fwt.Core.Registries.System_DataTag`1.AllTags">AllTags</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected NativeList&lt;ComponentType&gt; AllTags</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">ComponentType</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_TagByData" data-uid="Fwt.Core.Registries.System_DataTag`1.TagByData">TagByData</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;TComponent, ComponentType&gt; TagByData</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;TComponent, <span class="xref">ComponentType</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_Registries_System_DataTag_1__query" data-uid="Fwt.Core.Registries.System_DataTag`1._query">_query</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected EntityQuery _query</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_Registries_System_DataTag_1_CheckEntity_" data-uid="Fwt.Core.Registries.System_DataTag`1.CheckEntity*"></a>
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_CheckEntity_Unity_Entities_Entity__0__Unity_Entities_EntityCommandBuffer_" data-uid="Fwt.Core.Registries.System_DataTag`1.CheckEntity(Unity.Entities.Entity,`0@,Unity.Entities.EntityCommandBuffer)">CheckEntity(Entity, in TComponent, EntityCommandBuffer)</h4>
+  <div class="markdown level1 summary"><p>Returns true if there was changes</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool CheckEntity(Entity entity, in TComponent data, EntityCommandBuffer commandBuffer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TComponent</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityCommandBuffer</span></td>
+        <td><span class="parametername">commandBuffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Registries_System_DataTag_1_OnCreate_" data-uid="Fwt.Core.Registries.System_DataTag`1.OnCreate*"></a>
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_OnCreate" data-uid="Fwt.Core.Registries.System_DataTag`1.OnCreate">OnCreate()</h4>
+  <div class="markdown level1 summary"><p>Called when this system is created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnCreate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Unity.Entities.ComponentSystemBase.OnCreate()</span></div>
+  <h5 id="Fwt_Core_Registries_System_DataTag_1_OnCreate_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Implement an OnCreate() function to set up system resources when it is created.</p>
+<p>OnCreate is invoked before the the first time <span class="xref">Unity.Entities.ComponentSystemBase.OnStartRunning()</span> and OnUpdate are invoked.</p>
+</div>
+
+
+  <a id="Fwt_Core_Registries_System_DataTag_1_OnDestroy_" data-uid="Fwt.Core.Registries.System_DataTag`1.OnDestroy*"></a>
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_OnDestroy" data-uid="Fwt.Core.Registries.System_DataTag`1.OnDestroy">OnDestroy()</h4>
+  <div class="markdown level1 summary"><p>Called when this system is destroyed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnDestroy()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Unity.Entities.ComponentSystemBase.OnDestroy()</span></div>
+  <h5 id="Fwt_Core_Registries_System_DataTag_1_OnDestroy_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Systems are destroyed when the application shuts down, the World is destroyed, or you
+call <span class="xref">Unity.Entities.World.DestroySystem(Unity.Entities.SystemHandle)</span>. In the Unity Editor, system destruction occurs when you exit
+Play Mode and when scripts are reloaded.</p>
+</div>
+
+
+  <a id="Fwt_Core_Registries_System_DataTag_1_RegisterDataTag_" data-uid="Fwt.Core.Registries.System_DataTag`1.RegisterDataTag*"></a>
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_RegisterDataTag__0_Unity_Entities_ComponentType_" data-uid="Fwt.Core.Registries.System_DataTag`1.RegisterDataTag(`0,Unity.Entities.ComponentType)">RegisterDataTag(TComponent, ComponentType)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void RegisterDataTag(TComponent data, ComponentType tag)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TComponent</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">ComponentType</span></td>
+        <td><span class="parametername">tag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Registries_System_DataTag_1_RegisterDataTag_" data-uid="Fwt.Core.Registries.System_DataTag`1.RegisterDataTag*"></a>
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_RegisterDataTag__1__0_" data-uid="Fwt.Core.Registries.System_DataTag`1.RegisterDataTag``1(`0)">RegisterDataTag&lt;TDataTag&gt;(TComponent)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void RegisterDataTag&lt;TDataTag&gt;(TComponent data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TComponent</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TDataTag</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_Registries_System_DataTag_1_SetupDataTags_" data-uid="Fwt.Core.Registries.System_DataTag`1.SetupDataTags*"></a>
+  <h4 id="Fwt_Core_Registries_System_DataTag_1_SetupDataTags" data-uid="Fwt.Core.Registries.System_DataTag`1.SetupDataTags">SetupDataTags()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract void SetupDataTags()</code></pre>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

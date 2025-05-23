@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexMath | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexMath | Hex Terrains ">
+    
+    <meta name="description" content="Hexagon math helper class. Coordinate conversions and hexagon geometry calculations. Supports axial, cube and offset coordinates. Supports flat top and pointy top hexagons. Supports odd and even layouts.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.HexMath">
+
+
+
+  <h1 id="Fwt_Core_HexMath" data-uid="Fwt.Core.HexMath" class="text-break">Class HexMath</h1>
+  <div class="markdown level0 summary"><p>Hexagon math helper class. Coordinate conversions and hexagon geometry calculations.
+Supports axial, cube and offset coordinates.
+Supports flat top and pointy top hexagons.
+Supports odd and even layouts.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">HexMath</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_HexMath_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public static class HexMath</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_Core_HexMath_Directions_Axial" data-uid="Fwt.Core.HexMath.Directions_Axial">Directions_Axial</h4>
+  <div class="markdown level1 summary"><p>All directions for axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly FixedArray8&lt;int2&gt; Directions_Axial</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray8-1.html">FixedArray8</a>&lt;<span class="xref">int2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_HexMath_Directions_Cube" data-uid="Fwt.Core.HexMath.Directions_Cube">Directions_Cube</h4>
+  <div class="markdown level1 summary"><p>All directions for cube coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly FixedArray8&lt;int3&gt; Directions_Cube</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray8-1.html">FixedArray8</a>&lt;<span class="xref">int3</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_HexMath_Directions_Offset_Even_Flat" data-uid="Fwt.Core.HexMath.Directions_Offset_Even_Flat">Directions_Offset_Even_Flat</h4>
+  <div class="markdown level1 summary"><p>All directions for even layout flat top hexagons</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly FixedArray16&lt;int2&gt; Directions_Offset_Even_Flat</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray16-1.html">FixedArray16</a>&lt;<span class="xref">int2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_HexMath_Directions_Offset_Even_Point" data-uid="Fwt.Core.HexMath.Directions_Offset_Even_Point">Directions_Offset_Even_Point</h4>
+  <div class="markdown level1 summary"><p>All directions for even layout pointy top hexagons</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly FixedArray16&lt;int2&gt; Directions_Offset_Even_Point</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray16-1.html">FixedArray16</a>&lt;<span class="xref">int2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_HexMath_Directions_Offset_Odd_Flat" data-uid="Fwt.Core.HexMath.Directions_Offset_Odd_Flat">Directions_Offset_Odd_Flat</h4>
+  <div class="markdown level1 summary"><p>All directions for odd layout flat top hexagons</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly FixedArray16&lt;int2&gt; Directions_Offset_Odd_Flat</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray16-1.html">FixedArray16</a>&lt;<span class="xref">int2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_HexMath_Directions_Offset_Odd_Point" data-uid="Fwt.Core.HexMath.Directions_Offset_Odd_Point">Directions_Offset_Odd_Point</h4>
+  <div class="markdown level1 summary"><p>All directions for odd layout pointy top hexagons</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly FixedArray16&lt;int2&gt; Directions_Offset_Odd_Point</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray16-1.html">FixedArray16</a>&lt;<span class="xref">int2</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_HexMath_Sqrt3" data-uid="Fwt.Core.HexMath.Sqrt3">Sqrt3</h4>
+  <div class="markdown level1 summary"><p>Square root of 3 (used for calculations with hexagons)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static readonly float Sqrt3</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_HexMath_AxialToCube_" data-uid="Fwt.Core.HexMath.AxialToCube*"></a>
+  <h4 id="Fwt_Core_HexMath_AxialToCube_Unity_Mathematics_int2__" data-uid="Fwt.Core.HexMath.AxialToCube(Unity.Mathematics.int2@)">AxialToCube(in int2)</h4>
+  <div class="markdown level1 summary"><p>Converts axial coordinates to cube coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 AxialToCube(in int2 axialCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">axialCoord</span></td>
+        <td><p>Axial coordinate to be converted</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>Converted cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_AxialToPixel_" data-uid="Fwt.Core.HexMath.AxialToPixel*"></a>
+  <h4 id="Fwt_Core_HexMath_AxialToPixel_Unity_Mathematics_int2__System_Single__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.AxialToPixel(Unity.Mathematics.int2@,System.Single@,Fwt.Core.HexRotations@)">AxialToPixel(in int2, in float, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>Converts axial coordinates to pixel coordinates (point in world)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 AxialToPixel(in int2 axial, in float sideSize, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">axial</span></td>
+        <td><p>axial coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>pixel coordinate (point in world)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_AxialToPixel_" data-uid="Fwt.Core.HexMath.AxialToPixel*"></a>
+  <h4 id="Fwt_Core_HexMath_AxialToPixel_Unity_Mathematics_int2__System_Single__System_Boolean__" data-uid="Fwt.Core.HexMath.AxialToPixel(Unity.Mathematics.int2@,System.Single@,System.Boolean@)">AxialToPixel(in int2, in float, in bool)</h4>
+  <div class="markdown level1 summary"><p>Converts axial coordinates to pixel coordinates (point in world)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 AxialToPixel(in int2 axial, in float sideSize, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">axial</span></td>
+        <td><p>axial coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>true = flat top, false = point top</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>pixel coordinate (point in world)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_CellCoordAdd_Cube_" data-uid="Fwt.Core.HexMath.CellCoordAdd_Cube*"></a>
+  <h4 id="Fwt_Core_HexMath_CellCoordAdd_Cube_Unity_Mathematics_int3_Unity_Mathematics_int3_" data-uid="Fwt.Core.HexMath.CellCoordAdd_Cube(Unity.Mathematics.int3,Unity.Mathematics.int3)">CellCoordAdd_Cube(int3, int3)</h4>
+  <div class="markdown level1 summary"><p>Adds offset to the cell coordinates (cube coordinates)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 CellCoordAdd_Cube(int3 origin, int3 offset)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">origin</span></td>
+        <td><p>origin cube coordinates</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>target cube coordinates</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_CubeToAxial_" data-uid="Fwt.Core.HexMath.CubeToAxial*"></a>
+  <h4 id="Fwt_Core_HexMath_CubeToAxial_Unity_Mathematics_int3__" data-uid="Fwt.Core.HexMath.CubeToAxial(Unity.Mathematics.int3@)">CubeToAxial(in int3)</h4>
+  <div class="markdown level1 summary"><p>Converts cube coordinates to axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 CubeToAxial(in int3 cubeCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">cubeCoord</span></td>
+        <td><p>Cube coordinate to be converted</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>Converted axial coordinates</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_CubeToOffset_" data-uid="Fwt.Core.HexMath.CubeToOffset*"></a>
+  <h4 id="Fwt_Core_HexMath_CubeToOffset_Unity_Mathematics_int3__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.CubeToOffset(Unity.Mathematics.int3@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">CubeToOffset(in int3, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Converts cube coordinates to offset coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 CubeToOffset(in int3 cubeCoord, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">cubeCoord</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>layout of hexagons (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_CubeToOffset_" data-uid="Fwt.Core.HexMath.CubeToOffset*"></a>
+  <h4 id="Fwt_Core_HexMath_CubeToOffset_Unity_Mathematics_int3__System_Boolean__System_Boolean__" data-uid="Fwt.Core.HexMath.CubeToOffset(Unity.Mathematics.int3@,System.Boolean@,System.Boolean@)">CubeToOffset(in int3, in bool, in bool)</h4>
+  <div class="markdown level1 summary"><p>Converts cube coordinates to offset coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 CubeToOffset(in int3 cubeCoord, in bool isFlatTop, in bool isOddLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">cubeCoord</span></td>
+        <td><p>Cube coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>if true - flat top, false - point top</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isOddLayout</span></td>
+        <td><p>true - odd layout, flase - even layout</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_CubeToPixel_" data-uid="Fwt.Core.HexMath.CubeToPixel*"></a>
+  <h4 id="Fwt_Core_HexMath_CubeToPixel_Unity_Mathematics_int3__System_Single__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.CubeToPixel(Unity.Mathematics.int3@,System.Single@,Fwt.Core.HexRotations@)">CubeToPixel(in int3, in float, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>Converts cube coordinates to pixel coordinates (point in world)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 CubeToPixel(in int3 cube, in float sideSize, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">cube</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>pixel coordinate (point in world)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_DistanceBetweenCells_Axial_" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Axial*"></a>
+  <h4 id="Fwt_Core_HexMath_DistanceBetweenCells_Axial_Unity_Mathematics_int2__Unity_Mathematics_int2__" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Axial(Unity.Mathematics.int2@,Unity.Mathematics.int2@)">DistanceBetweenCells_Axial(in int2, in int2)</h4>
+  <div class="markdown level1 summary"><p>Calculates distance between two cells in axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DistanceBetweenCells_Axial(in int2 from_axial, in int2 to_axial)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">from_axial</span></td>
+        <td><p>origin axial coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">to_axial</span></td>
+        <td><p>target axial coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>Axial coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_DistanceBetweenCells_Cube_" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Cube*"></a>
+  <h4 id="Fwt_Core_HexMath_DistanceBetweenCells_Cube_Unity_Mathematics_int3__Unity_Mathematics_int3__" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Cube(Unity.Mathematics.int3@,Unity.Mathematics.int3@)">DistanceBetweenCells_Cube(in int3, in int3)</h4>
+  <div class="markdown level1 summary"><p>Calculates distance between two cells in cube coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DistanceBetweenCells_Cube(in int3 from_cube, in int3 to_cube)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">from_cube</span></td>
+        <td><p>origin cube coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">to_cube</span></td>
+        <td><p>target cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_DistanceBetweenCells_Offset_" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_DistanceBetweenCells_Offset_Unity_Mathematics_int2__Unity_Mathematics_int2__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Offset(Unity.Mathematics.int2@,Unity.Mathematics.int2@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">DistanceBetweenCells_Offset(in int2, in int2, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Calculates distance between two cells in offset coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int DistanceBetweenCells_Offset(in int2 from_offset, in int2 to_offset, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">from_offset</span></td>
+        <td><p>origin offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">to_offset</span></td>
+        <td><p>target offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>hexagon rotation (flat/point top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>laout rotation (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_DistanceBetweenCells_Offset_F_" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Offset_F*"></a>
+  <h4 id="Fwt_Core_HexMath_DistanceBetweenCells_Offset_F_Unity_Mathematics_int2__Unity_Mathematics_int2__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.DistanceBetweenCells_Offset_F(Unity.Mathematics.int2@,Unity.Mathematics.int2@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">DistanceBetweenCells_Offset_F(in int2, in int2, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Calculates distance between two cells in offset coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float DistanceBetweenCells_Offset_F(in int2 from_offset, in int2 to_offset, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">from_offset</span></td>
+        <td><p>origin offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">to_offset</span></td>
+        <td><p>target offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>hexagon rotation (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>laoyout rotation (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetAdjacentCell_Axial_" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Axial*"></a>
+  <h4 id="Fwt_Core_HexMath_GetAdjacentCell_Axial_Unity_Mathematics_int2__System_Int32__" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Axial(Unity.Mathematics.int2@,System.Int32@)">GetAdjacentCell_Axial(in int2, in int)</h4>
+  <div class="markdown level1 summary"><p>Returns adjacent cell for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 GetAdjacentCell_Axial(in int2 cell, in int neighbourIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td><p>axial coordinate of the cell to find neighbour for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">neighbourIndex</span></td>
+        <td><p>index of neighbour (6 neighbors)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>axial coordinate of the neighbour</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetAdjacentCell_Cube_" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Cube*"></a>
+  <h4 id="Fwt_Core_HexMath_GetAdjacentCell_Cube_Unity_Mathematics_int3__System_Int32__" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Cube(Unity.Mathematics.int3@,System.Int32@)">GetAdjacentCell_Cube(in int3, in int)</h4>
+  <div class="markdown level1 summary"><p>Returns adjacent cell for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 GetAdjacentCell_Cube(in int3 cell, in int neighbourIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td><p>cube coordinate of the cell to find neighbour for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">neighbourIndex</span></td>
+        <td><p>index of neighbour (6 neighbors)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>cube coordinate of the neighbour</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetAdjacentCell_Offset_" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_GetAdjacentCell_Offset_Unity_Mathematics_int2__System_Int32__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Offset(Unity.Mathematics.int2@,System.Int32@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">GetAdjacentCell_Offset(in int2, in int, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Returns adjacent cell for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 GetAdjacentCell_Offset(in int2 cell, in int neighbourIndex, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td><p>offset coordinate of the cell to get neighbour for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">neighbourIndex</span></td>
+        <td><p>index of neighbour (6 neighbors)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>hexagon rotation (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>layout of hexagons (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate of adjacent cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetAdjacentCell_Offset_" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_GetAdjacentCell_Offset_Unity_Mathematics_int2__System_Int32__System_Boolean__System_Boolean__" data-uid="Fwt.Core.HexMath.GetAdjacentCell_Offset(Unity.Mathematics.int2@,System.Int32@,System.Boolean@,System.Boolean@)">GetAdjacentCell_Offset(in int2, in int, in bool, in bool)</h4>
+  <div class="markdown level1 summary"><p>Returns adjacent cell for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 GetAdjacentCell_Offset(in int2 cell, in int neighbourIndex, in bool isOddLayout, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td><p>offset coordinate of the cell to get neighbour for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">neighbourIndex</span></td>
+        <td><p>index of neighbour (6 neighbors)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isOddLayout</span></td>
+        <td><p>true = odd layout, false = even layout</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>true = flat top, false = point top</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate of adjacent cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetCellsRange_Axial_" data-uid="Fwt.Core.HexMath.GetCellsRange_Axial*"></a>
+  <h4 id="Fwt_Core_HexMath_GetCellsRange_Axial_Unity_Mathematics_int2__System_Int32_Unity_Collections_Allocator_" data-uid="Fwt.Core.HexMath.GetCellsRange_Axial(Unity.Mathematics.int2@,System.Int32,Unity.Collections.Allocator)">GetCellsRange_Axial(in int2, int, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Creates a results list with given allocator, Calculates range and fills results list with them</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NativeList&lt;int2&gt; GetCellsRange_Axial(in int2 center, int rangeSize, Allocator allocator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">rangeSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int2</span>&gt;</td>
+        <td><p>axial coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetCellsRange_Axial_" data-uid="Fwt.Core.HexMath.GetCellsRange_Axial*"></a>
+  <h4 id="Fwt_Core_HexMath_GetCellsRange_Axial_Unity_Mathematics_int2__System_Int32_Unity_Collections_NativeList_Unity_Mathematics_int2__" data-uid="Fwt.Core.HexMath.GetCellsRange_Axial(Unity.Mathematics.int2@,System.Int32,Unity.Collections.NativeList{Unity.Mathematics.int2})">GetCellsRange_Axial(in int2, int, NativeList&lt;int2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Calculates range and fills given list with coordinates. Returns filled list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NativeList&lt;int2&gt; GetCellsRange_Axial(in int2 center, int rangeSize, NativeList&lt;int2&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">rangeSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int2</span>&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int2</span>&gt;</td>
+        <td><p>axial coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetCellsRange_Cube_" data-uid="Fwt.Core.HexMath.GetCellsRange_Cube*"></a>
+  <h4 id="Fwt_Core_HexMath_GetCellsRange_Cube_Unity_Mathematics_int3__System_Int32_Unity_Collections_Allocator_" data-uid="Fwt.Core.HexMath.GetCellsRange_Cube(Unity.Mathematics.int3@,System.Int32,Unity.Collections.Allocator)">GetCellsRange_Cube(in int3, int, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Creates a results list with given allocator, Calculates range and fills results list with them</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NativeList&lt;int3&gt; GetCellsRange_Cube(in int3 center, int rangeSize, Allocator allocator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">rangeSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int3</span>&gt;</td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetCellsRange_Cube_" data-uid="Fwt.Core.HexMath.GetCellsRange_Cube*"></a>
+  <h4 id="Fwt_Core_HexMath_GetCellsRange_Cube_Unity_Mathematics_int3__System_Int32_Unity_Collections_NativeList_Unity_Mathematics_int3__" data-uid="Fwt.Core.HexMath.GetCellsRange_Cube(Unity.Mathematics.int3@,System.Int32,Unity.Collections.NativeList{Unity.Mathematics.int3})">GetCellsRange_Cube(in int3, int, NativeList&lt;int3&gt;)</h4>
+  <div class="markdown level1 summary"><p>Calculates range and fills given list with coordinates. Returns filled list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NativeList&lt;int3&gt; GetCellsRange_Cube(in int3 center, int rangeSize, NativeList&lt;int3&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">rangeSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int3</span>&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int3</span>&gt;</td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetCellsRange_Offset_" data-uid="Fwt.Core.HexMath.GetCellsRange_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_GetCellsRange_Offset_Unity_Mathematics_int2__System_Int32_Fwt_Core_HexRotations__Fwt_Core_HexLayouts__Unity_Collections_Allocator_" data-uid="Fwt.Core.HexMath.GetCellsRange_Offset(Unity.Mathematics.int2@,System.Int32,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@,Unity.Collections.Allocator)">GetCellsRange_Offset(in int2, int, in HexRotations, in HexLayouts, Allocator)</h4>
+  <div class="markdown level1 summary"><p>Creates a results list with given allocator, Calculates range and fills results list with them</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NativeList&lt;int2&gt; GetCellsRange_Offset(in int2 center, int rangeSize, in HexRotations hexRotation, in HexLayouts hexLayout, Allocator allocator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">rangeSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Allocator</span></td>
+        <td><span class="parametername">allocator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int2</span>&gt;</td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetCellsRange_Offset_" data-uid="Fwt.Core.HexMath.GetCellsRange_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_GetCellsRange_Offset_Unity_Mathematics_int2__System_Int32_Fwt_Core_HexRotations__Fwt_Core_HexLayouts__Unity_Collections_NativeList_Unity_Mathematics_int2__" data-uid="Fwt.Core.HexMath.GetCellsRange_Offset(Unity.Mathematics.int2@,System.Int32,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@,Unity.Collections.NativeList{Unity.Mathematics.int2})">GetCellsRange_Offset(in int2, int, in HexRotations, in HexLayouts, NativeList&lt;int2&gt;)</h4>
+  <div class="markdown level1 summary"><p>Calculates range and fills given list with coordinates. Returns filled list</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static NativeList&lt;int2&gt; GetCellsRange_Offset(in int2 center, int rangeSize, in HexRotations hexRotation, in HexLayouts hexLayout, NativeList&lt;int2&gt; results)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">rangeSize</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int2</span>&gt;</td>
+        <td><span class="parametername">results</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">int2</span>&gt;</td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetDirection_Axial_" data-uid="Fwt.Core.HexMath.GetDirection_Axial*"></a>
+  <h4 id="Fwt_Core_HexMath_GetDirection_Axial_System_Int32__" data-uid="Fwt.Core.HexMath.GetDirection_Axial(System.Int32@)">GetDirection_Axial(in int)</h4>
+  <div class="markdown level1 summary"><p>Returns direction for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 GetDirection_Axial(in int directionIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">directionIndex</span></td>
+        <td><p>index of neihbour to find direction towards (6 neigbours)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>direction towards the adjacent cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetDirection_Cube_" data-uid="Fwt.Core.HexMath.GetDirection_Cube*"></a>
+  <h4 id="Fwt_Core_HexMath_GetDirection_Cube_System_Int32__" data-uid="Fwt.Core.HexMath.GetDirection_Cube(System.Int32@)">GetDirection_Cube(in int)</h4>
+  <div class="markdown level1 summary"><p>Returns direction for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 GetDirection_Cube(in int directionIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">directionIndex</span></td>
+        <td><p>index of neighbour to find direction towards (6 neigbours)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetDirection_Offset_" data-uid="Fwt.Core.HexMath.GetDirection_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_GetDirection_Offset_Unity_Mathematics_int2__System_Int32__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.GetDirection_Offset(Unity.Mathematics.int2@,System.Int32@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">GetDirection_Offset(in int2, in int, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Returns direction for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 GetDirection_Offset(in int2 cell, in int neighbourIndex, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td><p>offset coordinate of the cell to get neighbour for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">neighbourIndex</span></td>
+        <td><p>index of neighbour (6 neighbors)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>hexagon rotation (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>layout of hexagon (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>direction towards the adjacent cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetDirection_Offset_" data-uid="Fwt.Core.HexMath.GetDirection_Offset*"></a>
+  <h4 id="Fwt_Core_HexMath_GetDirection_Offset_Unity_Mathematics_int2__System_Int32__System_Boolean__System_Boolean__" data-uid="Fwt.Core.HexMath.GetDirection_Offset(Unity.Mathematics.int2@,System.Int32@,System.Boolean@,System.Boolean@)">GetDirection_Offset(in int2, in int, in bool, in bool)</h4>
+  <div class="markdown level1 summary"><p>Returns direction for given cell and neighbour index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 GetDirection_Offset(in int2 cell, in int neighbourIndex, in bool isOddLayout, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cell</span></td>
+        <td><p>cell to find a direction from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">neighbourIndex</span></td>
+        <td><p>index of neighbour to find a direction towards (6 neigbours)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isOddLayout</span></td>
+        <td><p>true = odd layout, false = even layout</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>true = flat top, false = point top</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>direction towards the adjacent cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetHexGridSize_" data-uid="Fwt.Core.HexMath.GetHexGridSize*"></a>
+  <h4 id="Fwt_Core_HexMath_GetHexGridSize_System_Single__Unity_Mathematics_int2__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.GetHexGridSize(System.Single@,Unity.Mathematics.int2@,Fwt.Core.HexRotations@)">GetHexGridSize(in float, in int2, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>Returns size of the rectangle for hexagon grid with given sideLength and hexCount</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 GetHexGridSize(in float sideLength, in int2 hexCount, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideLength</span></td>
+        <td><p>Side length (radius) of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">hexCount</span></td>
+        <td><p>Size of the grid of hexagons</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>hexagon rotation (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>size of the hexagons grid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetHexGridSize_" data-uid="Fwt.Core.HexMath.GetHexGridSize*"></a>
+  <h4 id="Fwt_Core_HexMath_GetHexGridSize_System_Single__Unity_Mathematics_int2__System_Boolean__" data-uid="Fwt.Core.HexMath.GetHexGridSize(System.Single@,Unity.Mathematics.int2@,System.Boolean@)">GetHexGridSize(in float, in int2, in bool)</h4>
+  <div class="markdown level1 summary"><p>Returns size of the rectangle for hexagon grid with given sideLength and hexCount</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 GetHexGridSize(in float sideLength, in int2 hexCount, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideLength</span></td>
+        <td><p>Side length (radius) of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">hexCount</span></td>
+        <td><p>Size of the grid of hexagons</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>if true - flat top, false - point top</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>size of the hexagons grid</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetHexagonSize_" data-uid="Fwt.Core.HexMath.GetHexagonSize*"></a>
+  <h4 id="Fwt_Core_HexMath_GetHexagonSize_System_Single__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.GetHexagonSize(System.Single@,Fwt.Core.HexRotations@)">GetHexagonSize(in float, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>Returns size of the rectangle for hexagon with provided sideLength</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 GetHexagonSize(in float sideLength, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideLength</span></td>
+        <td><p>Side length (radius) of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>Rotation of the hexagon (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>Size of the hexagon</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_GetHexagonSize_" data-uid="Fwt.Core.HexMath.GetHexagonSize*"></a>
+  <h4 id="Fwt_Core_HexMath_GetHexagonSize_System_Single__System_Boolean__" data-uid="Fwt.Core.HexMath.GetHexagonSize(System.Single@,System.Boolean@)">GetHexagonSize(in float, in bool)</h4>
+  <div class="markdown level1 summary"><p>Returns size of the rectangle for hexagon with gived sideLength</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 GetHexagonSize(in float sideLenght, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideLenght</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>size of the hexagon</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_HexCornerPosition_" data-uid="Fwt.Core.HexMath.HexCornerPosition*"></a>
+  <h4 id="Fwt_Core_HexMath_HexCornerPosition_Unity_Mathematics_float2__System_Single__System_Int32__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.HexCornerPosition(Unity.Mathematics.float2@,System.Single@,System.Int32@,Fwt.Core.HexRotations@)">HexCornerPosition(in float2, in float, in int, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>returns position of hexagon's corner of given index for flat top and pointy top hexagon orientation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 HexCornerPosition(in float2 center, in float sideSize, in int cornerIndex, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td><p>center of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>size of the side of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cornerIndex</span></td>
+        <td><p>every next corner adds 60 degrees from starting point</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of the hexagon (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>corner position</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_HexCornerPosition_" data-uid="Fwt.Core.HexMath.HexCornerPosition*"></a>
+  <h4 id="Fwt_Core_HexMath_HexCornerPosition_Unity_Mathematics_float2__System_Single__System_Int32__System_Boolean__" data-uid="Fwt.Core.HexMath.HexCornerPosition(Unity.Mathematics.float2@,System.Single@,System.Int32@,System.Boolean@)">HexCornerPosition(in float2, in float, in int, in bool)</h4>
+  <div class="markdown level1 summary"><p>returns position of hexagon's corner of given index for flat top and pointy top hexagon orientation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 HexCornerPosition(in float2 center, in float sideSize, in int cornerIndex, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td><p>center of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>size of the side of the hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cornerIndex</span></td>
+        <td><p>every next corner adds 60 degrees from starting point</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>true - hexagon with flat top; false - hexagon with pointy top</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>corner position</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_HexCornerPosition_" data-uid="Fwt.Core.HexMath.HexCornerPosition*"></a>
+  <h4 id="Fwt_Core_HexMath_HexCornerPosition_Unity_Mathematics_float2__System_Single__System_Single__" data-uid="Fwt.Core.HexMath.HexCornerPosition(Unity.Mathematics.float2@,System.Single@,System.Single@)">HexCornerPosition(in float2, in float, in float)</h4>
+  <div class="markdown level1 summary"><p>Gives position for hexagon corner (point on circle around center) with given angle in radians</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 HexCornerPosition(in float2 center, in float size, in float angle_rad)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">center</span></td>
+        <td><p>center of the circle</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>radius of the circle</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">angle_rad</span></td>
+        <td><p>angle of the point in radians</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>corner position</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_OffsetToAxial_" data-uid="Fwt.Core.HexMath.OffsetToAxial*"></a>
+  <h4 id="Fwt_Core_HexMath_OffsetToAxial_Unity_Mathematics_int2__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.OffsetToAxial(Unity.Mathematics.int2@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">OffsetToAxial(in int2, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Converts offset coordinates to axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 OffsetToAxial(in int2 offset, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>hexagon rotation (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_OffsetToAxial_" data-uid="Fwt.Core.HexMath.OffsetToAxial*"></a>
+  <h4 id="Fwt_Core_HexMath_OffsetToAxial_Unity_Mathematics_int2__System_Boolean__System_Boolean__" data-uid="Fwt.Core.HexMath.OffsetToAxial(Unity.Mathematics.int2@,System.Boolean@,System.Boolean@)">OffsetToAxial(in int2, in bool, in bool)</h4>
+  <div class="markdown level1 summary"><p>Converts offset coordinates to axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 OffsetToAxial(in int2 offset, in bool isFlatTop, in bool isOddLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isOddLayout</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_OffsetToCube_" data-uid="Fwt.Core.HexMath.OffsetToCube*"></a>
+  <h4 id="Fwt_Core_HexMath_OffsetToCube_Unity_Mathematics_int2__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.OffsetToCube(Unity.Mathematics.int2@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">OffsetToCube(in int2, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Converts offset coordinates to cube coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 OffsetToCube(in int2 offsetCoord, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">offsetCoord</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagons (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>layout of hexagons (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_OffsetToCube_" data-uid="Fwt.Core.HexMath.OffsetToCube*"></a>
+  <h4 id="Fwt_Core_HexMath_OffsetToCube_Unity_Mathematics_int2__System_Boolean__System_Boolean__" data-uid="Fwt.Core.HexMath.OffsetToCube(Unity.Mathematics.int2@,System.Boolean@,System.Boolean@)">OffsetToCube(in int2, in bool, in bool)</h4>
+  <div class="markdown level1 summary"><p>Converts offset coordinates to cube coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 OffsetToCube(in int2 offsetCoord, in bool isFlatTop, in bool isOddLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">offsetCoord</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>true = flat top, false = point top</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isOddLayout</span></td>
+        <td><p>true = odd layout, false = even layout</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_OffsetToPixel_" data-uid="Fwt.Core.HexMath.OffsetToPixel*"></a>
+  <h4 id="Fwt_Core_HexMath_OffsetToPixel_Unity_Mathematics_int2__System_Single__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.OffsetToPixel(Unity.Mathematics.int2@,System.Single@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">OffsetToPixel(in int2, in float, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Converts offset coordinates to pixel coordinates (point in world)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static float2 OffsetToPixel(in int2 offset, in float sideSize, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">offset</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>layout of hexagon (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><p>pixel coordinate (point in world)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_PixelToAxial_" data-uid="Fwt.Core.HexMath.PixelToAxial*"></a>
+  <h4 id="Fwt_Core_HexMath_PixelToAxial_Unity_Mathematics_float2__System_Single__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.PixelToAxial(Unity.Mathematics.float2@,System.Single@,Fwt.Core.HexRotations@)">PixelToAxial(in float2, in float, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>Converts pixel coordinates to axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 PixelToAxial(in float2 pixel, in float sideSize, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>pixel coordinate (point in the world)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>axial coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_PixelToAxial_" data-uid="Fwt.Core.HexMath.PixelToAxial*"></a>
+  <h4 id="Fwt_Core_HexMath_PixelToAxial_Unity_Mathematics_float2__System_Single__System_Boolean__" data-uid="Fwt.Core.HexMath.PixelToAxial(Unity.Mathematics.float2@,System.Single@,System.Boolean@)">PixelToAxial(in float2, in float, in bool)</h4>
+  <div class="markdown level1 summary"><p>Converts pixel coordinates to axial coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 PixelToAxial(in float2 pixel, in float sideSize, in bool isFlatTop)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>pixel coordinate (point in the world)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isFlatTop</span></td>
+        <td><p>true = flat top, false = point top</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>axial coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_PixelToCube_" data-uid="Fwt.Core.HexMath.PixelToCube*"></a>
+  <h4 id="Fwt_Core_HexMath_PixelToCube_Unity_Mathematics_float2__System_Single__Fwt_Core_HexRotations__" data-uid="Fwt.Core.HexMath.PixelToCube(Unity.Mathematics.float2@,System.Single@,Fwt.Core.HexRotations@)">PixelToCube(in float2, in float, in HexRotations)</h4>
+  <div class="markdown level1 summary"><p>Converts pixel coordinates to cube coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int3 PixelToCube(in float2 pixel, in float sideSize, in HexRotations hexRotation)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>pixel coordinate (point in the world)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int3</span></td>
+        <td><p>cube coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_HexMath_PixelToOffset_" data-uid="Fwt.Core.HexMath.PixelToOffset*"></a>
+  <h4 id="Fwt_Core_HexMath_PixelToOffset_Unity_Mathematics_float2__System_Single__Fwt_Core_HexRotations__Fwt_Core_HexLayouts__" data-uid="Fwt.Core.HexMath.PixelToOffset(Unity.Mathematics.float2@,System.Single@,Fwt.Core.HexRotations@,Fwt.Core.HexLayouts@)">PixelToOffset(in float2, in float, in HexRotations, in HexLayouts)</h4>
+  <div class="markdown level1 summary"><p>Converts pixel coordinates to offset coordinates</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int2 PixelToOffset(in float2 pixel, in float sideSize, in HexRotations hexRotation, in HexLayouts hexLayout)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">pixel</span></td>
+        <td><p>pixel coordinate (point in the world)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">sideSize</span></td>
+        <td><p>side length (radius) of hexagon</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexRotations.html">HexRotations</a></td>
+        <td><span class="parametername">hexRotation</span></td>
+        <td><p>rotation of hexagon (point/flat top)</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.HexLayouts.html">HexLayouts</a></td>
+        <td><span class="parametername">hexLayout</span></td>
+        <td><p>layout of hexagons (odd/even)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><p>offset coordinate</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

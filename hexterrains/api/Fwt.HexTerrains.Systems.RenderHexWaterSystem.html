@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class RenderHexWaterSystem | Hex Terrains ">
     
-    
+    <meta name="description" content="System that renders the">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,20 +81,21 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_RenderHexWaterSystem" data-uid="Fwt.HexTerrains.Systems.RenderHexWaterSystem" class="text-break">Class RenderHexWaterSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>System that renders the <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterLayer.html">HexWaterLayer</a></p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
-    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html">RenderHexSurfaceSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.Data.HexWaterData.html">HexWaterData</a>, <a class="xref" href="Fwt.HexTerrains.Data.HexWaterRenderData.html">HexWaterRenderData</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html">RenderHexSurfaceSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterLayer.html">HexWaterLayer</a>, <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterRenderData.html">HexWaterRenderData</a>&gt;</div>
     <div class="level4"><span class="xref">RenderHexWaterSystem</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html#Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__">RenderHexSurfaceSystem&lt;HexWaterData, HexWaterRenderData&gt;.RenderSurface(in LocalToWorld, in HexWaterRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)</a>
+      <a class="xref" href="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html#Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__">RenderHexSurfaceSystem&lt;HexWaterLayer, HexWaterRenderData&gt;.RenderSurface(in LocalToWorld, in HexWaterRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)</a>
     </div>
     <div>
       <span class="xref">SystemBase.Dependency</span>
@@ -294,7 +295,7 @@
   <h5 id="Fwt_HexTerrains_Systems_RenderHexWaterSystem_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsRenderGroup), OrderLast = true)]
-public class RenderHexWaterSystem : RenderHexSurfaceSystem&lt;HexWaterData, HexWaterRenderData&gt;</code></pre>
+public class RenderHexWaterSystem : RenderHexSurfaceSystem&lt;HexWaterLayer, HexWaterRenderData&gt;</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>

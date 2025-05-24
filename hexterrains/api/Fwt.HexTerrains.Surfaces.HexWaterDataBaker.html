@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexWaterDataBaker | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexWaterDataBaker | Hex Terrains ">
+    
+    <meta name="description" content="Baker class for hex water data.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Surfaces.HexWaterDataBaker">
+
+
+
+  <h1 id="Fwt_HexTerrains_Surfaces_HexWaterDataBaker" data-uid="Fwt.HexTerrains.Surfaces.HexWaterDataBaker" class="text-break">Class HexWaterDataBaker</h1>
+  <div class="markdown level0 summary"><p>Baker class for hex water data.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">IBaker</span></div>
+    <div class="level2"><span class="xref">Baker</span>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.HexWaterDataAuthoring.html">HexWaterDataAuthoring</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Surfaces.HexSurfaceDataBaker-2.html">HexSurfaceDataBaker</a>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.HexWaterDataAuthoring.html">HexWaterDataAuthoring</a>, <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.CreateHexWaterLayerRequest.html">CreateHexWaterLayerRequest</a>&gt;</div>
+    <div class="level4"><span class="xref">HexWaterDataBaker</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Surfaces.HexSurfaceDataBaker-2.html#Fwt_HexTerrains_Surfaces_HexSurfaceDataBaker_2_BakeData__0_">HexSurfaceDataBaker&lt;HexWaterDataAuthoring, CreateHexWaterLayerRequest&gt;.BakeData(HexWaterDataAuthoring)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetSceneGUID()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponent&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponent&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponents&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponents&lt;T&gt;(Component, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponents&lt;T&gt;(GameObject, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponents&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponents&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponents&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentInParent&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentInParent&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponentsInParent&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponentsInParent&lt;T&gt;(Component, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponentsInParent&lt;T&gt;(GameObject, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentsInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentsInParent&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentsInParent&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentInChildren&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentInChildren&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponentsInChildren&lt;T&gt;(Component, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetComponentsInChildren&lt;T&gt;(GameObject, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentsInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentsInChildren&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetComponentsInChildren&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetParent()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetParent(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetParent(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetParents()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetParents(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetParents(GameObject)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetParents(List&lt;GameObject&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetParents(Component, List&lt;GameObject&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetParents(GameObject, List&lt;GameObject&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">IBaker.GetChild(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">IBaker.GetChild(Component, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">IBaker.GetChild(GameObject, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.GetChildren(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.GetChildren(Component, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.GetChildren(GameObject, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetChildren(List&lt;GameObject&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetChildren(Component, List&lt;GameObject&gt;, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">IBaker.GetChildren(GameObject, List&lt;GameObject&gt;, bool)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetChildCount()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetChildCount(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetChildCount(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetName()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetName(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetName(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetLayer()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetLayer(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetLayer(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetTag()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetTag(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetTag(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntity()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntity(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntity(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntity(TransformUsageFlags)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntity(GameObject, TransformUsageFlags)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntity(Component, TransformUsageFlags)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetEntityWithoutDependency()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsActive()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsActive(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsActive(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsActiveAndEnabled()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsActiveAndEnabled(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsStatic()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsStatic(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsStatic(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsClient()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsServer()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOn&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentInParent&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentInParent&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentsInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentsInParent&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentsInParent&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentInChildren&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentInChildren&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentsInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentsInChildren&lt;T&gt;(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnComponentsInChildren&lt;T&gt;(Component)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.DependsOnLightBaking()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddBlobAsset&lt;T&gt;(ref BlobAssetReference&lt;T&gt;, out Hash128)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddBlobAssetWithCustomHash&lt;T&gt;(ref BlobAssetReference&lt;T&gt;, Hash128)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.TryGetBlobAssetReference&lt;T&gt;(Hash128, out BlobAssetReference&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent&lt;T&gt;(in T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent&lt;T&gt;(Entity, in T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent(ComponentType)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent(Entity, ComponentType)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent(in ComponentTypeSet)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponent(Entity, in ComponentTypeSet)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponentObject&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddComponentObject&lt;T&gt;(Entity, T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddSharedComponentManaged&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddSharedComponentManaged&lt;T&gt;(Entity, T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddSharedComponent&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddSharedComponent&lt;T&gt;(Entity, T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddBuffer&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddBuffer&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.SetComponent&lt;T&gt;(Entity, in T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.SetComponentEnabled&lt;T&gt;(Entity, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.SetComponentEnabled&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.SetSharedComponentManaged&lt;T&gt;(Entity, in T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.SetSharedComponent&lt;T&gt;(Entity, in T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.SetBuffer&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.SetBuffer&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AppendToBuffer&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AppendToBuffer&lt;T&gt;(Entity, T)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.CreateAdditionalEntity()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.CreateAdditionalEntity(TransformUsageFlags, bool, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">IBaker.CreateAdditionalEntities(NativeArray&lt;Entity&gt;, TransformUsageFlags, bool)</a>
+    </div>
+    <div>
+      <span class="xref">IBaker.RegisterPrefabForBaking(GameObject)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddTransformUsageFlags(TransformUsageFlags)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.AddTransformUsageFlags(Entity, TransformUsageFlags)</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.IsBakingForEditor()</span>
+    </div>
+    <div>
+      <span class="xref">IBaker.GetDotsSettings()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Surfaces.html">Surfaces</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Surfaces_HexWaterDataBaker_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HexWaterDataBaker : HexSurfaceDataBaker&lt;HexWaterDataAuthoring, CreateHexWaterLayerRequest&gt;</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_HexWaterDataBaker_Bake_" data-uid="Fwt.HexTerrains.Surfaces.HexWaterDataBaker.Bake*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_HexWaterDataBaker_Bake_Fwt_HexTerrains_Surfaces_HexWaterDataAuthoring_" data-uid="Fwt.HexTerrains.Surfaces.HexWaterDataBaker.Bake(Fwt.HexTerrains.Surfaces.HexWaterDataAuthoring)">Bake(HexWaterDataAuthoring)</h4>
+  <div class="markdown level1 summary"><p>Called in the baking process to bake the authoring component</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Bake(HexWaterDataAuthoring authoring)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Surfaces.HexWaterDataAuthoring.html">HexWaterDataAuthoring</a></td>
+        <td><span class="parametername">authoring</span></td>
+        <td><p>The authoring component to bake</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Surfaces.HexWaterDataAuthoring.html">Baker&lt;HexWaterDataAuthoring&gt;.Bake(HexWaterDataAuthoring)</a></div>
+  <h5 id="Fwt_HexTerrains_Surfaces_HexWaterDataBaker_Bake_Fwt_HexTerrains_Surfaces_HexWaterDataAuthoring__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will be called for every instance of TAuthoringType in order to bake that instance.</p>
+</div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

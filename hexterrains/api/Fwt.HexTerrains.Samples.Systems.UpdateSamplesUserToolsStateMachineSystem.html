@@ -295,8 +295,8 @@
   <h5 id="Fwt_HexTerrains_Samples_Systems_UpdateSamplesUserToolsStateMachineSystem_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsInitializationGroup), OrderFirst = true)]
-[UpdateBefore(typeof(CalcHexGroundCellMetricsSystem))]
-[UpdateBefore(typeof(CalcHexWaterCellMetricsSystem))]
+[UpdateBefore(typeof(CalcGroundCellMetricsSystem))]
+[UpdateBefore(typeof(CalcWaterCellMetricsSystem))]
 [UpdateBefore(typeof(CalcHexTerrainCountriesDataSystem))]
 [UpdateBefore(typeof(CalcHexTerrainProvincesDataSystem))]
 public class UpdateSamplesUserToolsStateMachineSystem : UpdateUserToolsStateMachineSystem&lt;SamplesUserToolsData&gt;</code></pre>

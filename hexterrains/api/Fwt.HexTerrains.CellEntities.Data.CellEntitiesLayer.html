@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CellEntitiesLayer | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CellEntitiesLayer | Hex Terrains ">
+    
+    <meta name="description" content="Base class for HexTerrain layers that contain an Entity per cell.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer" class="text-break">Class CellEntitiesLayer</h1>
+  <div class="markdown level0 summary"><p>Base class for HexTerrain layers that contain an Entity per cell.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">CellEntitiesLayer</span></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData.html">CellEntityPropsData</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.CellEntities.html">CellEntities</a>.<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class CellEntitiesLayer : IDisposable</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CellEntities" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CellEntities">CellEntities</h4>
+  <div class="markdown level1 summary"><p>Data layer for storing a CellEntity per cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexCellEntityDataLayer CellEntities</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.DataLayers.HexCellEntityDataLayer.html">HexCellEntityDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CellEntityViews" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CellEntityViews">CellEntityViews</h4>
+  <div class="markdown level1 summary"><p>Data layer for storing a CellEntityView (Entity instances) per cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexCellEntityViewDataLayer CellEntityViews</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.DataLayers.HexCellEntityViewDataLayer.html">HexCellEntityViewDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CellTransforms" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CellTransforms">CellTransforms</h4>
+  <div class="markdown level1 summary"><p>Data layer for storing a CellTransform per cell (taken from the HexSurfaceLayer layer)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellTransformDataLayer CellTransforms</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellTransformDataLayer.html">CellTransformDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_EntitiesColorMap" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.EntitiesColorMap">EntitiesColorMap</h4>
+  <div class="markdown level1 summary"><p>Data layer for storing a Color per cell</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellColorsDataLayer EntitiesColorMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellColorsDataLayer.html">CellColorsDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_EntityManager" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.EntityManager">EntityManager</h4>
+  <div class="markdown level1 summary"><p>Cached EntityManager used to destroy CellEntity instances when the terrain is destroyed or resized</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityManager EntityManager</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_ItemConfigs" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.ItemConfigs">ItemConfigs</h4>
+  <div class="markdown level1 summary"><p>List of configs for every possible CellEntity index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;HexCellEntityConfig&gt; ItemConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig.html">HexCellEntityConfig</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetChunkIndexCommandBuffer" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetChunkIndexCommandBuffer">SetChunkIndexCommandBuffer</h4>
+  <div class="markdown level1 summary"><p>CommandBuffer that holds commands for updating the CellEntity instances (entities)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityCommandBuffer SetChunkIndexCommandBuffer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityCommandBuffer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetChunkIndexCommandBufferDependency" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetChunkIndexCommandBufferDependency">SetChunkIndexCommandBufferDependency</h4>
+  <div class="markdown level1 summary"><p>Job handle for the job that updates chunk index of every CellEntity instance</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle SetChunkIndexCommandBufferDependency</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_ColorMapTextureIndex_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.ColorMapTextureIndex*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_ColorMapTextureIndex" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.ColorMapTextureIndex">ColorMapTextureIndex</h4>
+  <div class="markdown level1 summary"><p>Index of the texture in the list of ColorMapTextures.
+Used externally in systems.
+Systems read this value to know which texture to fill with colors from EntitiesColorMap data layer <a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_EntitiesColorMap">EntitiesColorMap</a>.
+That texture is expected to be used in materials or/and UI like minimap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ColorMapTextureIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Settings_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Settings*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Settings" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Settings">Settings</h4>
+  <div class="markdown level1 summary"><p>Settings of the Terrain this layer is attached to</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSettings Settings { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Cleanup_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Cleanup" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Cleanup()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CleanupAsync" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CleanupAsync">CleanupAsync()</h4>
+  <div class="markdown level1 summary"><p>Async version of Cleanup() <a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Cleanup">Cleanup()</a>
+Difference between regular Cleanup() is that it schedules jobs that clean up data layers,
+so you don't have to wait for the results and can continue working.
+Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CleanupAsync()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CompleteAllJobs_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CompleteAllJobs*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_CompleteAllJobs" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.CompleteAllJobs">CompleteAllJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs that are scheduled for this layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CompleteAllJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Dispose_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Dispose" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_GetCellEntity_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.GetCellEntity*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_GetCellEntity_System_Int32_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.GetCellEntity(System.Int32)">GetCellEntity(int)</h4>
+  <div class="markdown level1 summary"><p>Gets the CellEntity value from the cell at the given index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual CellEntity? GetCellEntity(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index where to get data from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a>?</td>
+        <td><p>CellEntity if found, otherwise - null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the CellEntities data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig})">Init(HexTerrainSettings, NativeArray&lt;HexCellEntityConfig&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the cell entities data.
+Calls InitCellEntitiesConfigs() internally to copy the color palette
+from the given array <a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_InitCellEntitiesConfigs_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__">InitCellEntitiesConfigs(NativeArray&lt;HexCellEntityConfig&gt;)</a>.
+Only copies data from the copyItemConfigsFrom array, does not change or cache,
+so it is safe to dispose it after this call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, NativeArray&lt;HexCellEntityConfig&gt; copyItemConfigsFrom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig.html">HexCellEntityConfig</a>&gt;</td>
+        <td><span class="parametername">copyItemConfigsFrom</span></td>
+        <td><p>array of colors per CellEntity index to copy a ItemConfigs from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Entities_EntityManager_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Entities.EntityManager)">Init(HexTerrainSettings, EntityManager)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the CellEntities data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, EntityManager entityManager)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>EntityManager used to destroy CellEntities instances when the terrain is destroyed or resized</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_InitCellEntitiesConfigs_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.InitCellEntitiesConfigs*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_InitCellEntitiesConfigs_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.InitCellEntitiesConfigs(Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig})">InitCellEntitiesConfigs(NativeArray&lt;HexCellEntityConfig&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copies an ItemConfigs from the given array.
+Does not change or cache the array, so it is safe to dispose it after this call.
+copyFrom array is expected to have the CellEntity indexes length, so there is one config per possible CellEntity index.
+CellEntity.Index == index in copyFrom array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void InitCellEntitiesConfigs(NativeArray&lt;HexCellEntityConfig&gt; copyFrom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig.html">HexCellEntityConfig</a>&gt;</td>
+        <td><span class="parametername">copyFrom</span></td>
+        <td><p>array of configs to copy into the ItemConfigs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Resize_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Resize*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Resize_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Resize(Unity.Mathematics.int2)">Resize(int2)</h4>
+  <div class="markdown level1 summary"><p>Resizes the CellEntities data.
+Calls Init() method to reinitialize the CellEntities data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Resize(int2 terrainSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">terrainSize</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetAllCellsEntity_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetAllCellsEntity*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetAllCellsEntity_Fwt_HexTerrains_CellEntities_Data_CellEntity_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetAllCellsEntity(Fwt.HexTerrains.CellEntities.Data.CellEntity)">SetAllCellsEntity(CellEntity)</h4>
+  <div class="markdown level1 summary"><p>Sets the CellEntity value to all cells in the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsEntity(CellEntity value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set to every cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if data was set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the dirty flag for all the data layers.
+If isDirty is true, all data layers will be marked as dirty and will be recalculated.
+If isDirty is false, all data layers will be marked as clean and will not be recalculated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetAllDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetCellEntity_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetCellEntity*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_SetCellEntity_System_Int32_Fwt_HexTerrains_CellEntities_Data_CellEntity_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.SetCellEntity(System.Int32,Fwt.HexTerrains.CellEntities.Data.CellEntity)">SetCellEntity(int, CellEntity)</h4>
+  <div class="markdown level1 summary"><p>Sets the CellEntity value to the cell at the given index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellEntity(int cellIndex, CellEntity item)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index of the cell to set data to</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>data to set into the cell at cellIndex index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if data was set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

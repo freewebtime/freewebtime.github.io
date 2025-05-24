@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class RenderHexSurfaceSystem&lt;TSurfaceData, TRenderData&gt; | Hex Terrains ">
     
-    
+    <meta name="description" content="Base class for systems that render HexSurface layers.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2" class="text-break">Class RenderHexSurfaceSystem&lt;TSurfaceData, TRenderData&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Base class for systems that render HexSurface layers.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -294,7 +295,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class RenderHexSurfaceSystem&lt;TSurfaceData, TRenderData&gt; : SystemBase where TSurfaceData : HexSurfaceData where TRenderData : HexSurfaceRenderData&lt;TSurfaceData&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class RenderHexSurfaceSystem&lt;TSurfaceData, TRenderData&gt; : SystemBase where TSurfaceData : HexSurfaceLayer where TRenderData : HexSurfaceRenderData&lt;TSurfaceData&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -307,11 +308,13 @@
     <tbody>
       <tr>
         <td><span class="parametername">TSurfaceData</span></td>
-        <td></td>
+        <td><p>Type of the HexSurface layer</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">TRenderData</span></td>
-        <td></td>
+        <td><p>Type of the render data</p>
+</td>
       </tr>
     </tbody>
   </table>

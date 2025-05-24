@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexSurfaceLayer | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexSurfaceLayer | Hex Terrains ">
+    
+    <meta name="description" content="Base class for all HexTerrain surfaces like a ground or water, etc. Create a new class that inherits from this one to create a new surface type.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer" class="text-break">Class HexSurfaceLayer</h1>
+  <div class="markdown level0 summary"><p>Base class for all HexTerrain surfaces like a ground or water, etc.
+Create a new class that inherits from this one to create a new surface type.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">HexSurfaceLayer</span></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundLayer.html">HexGroundLayer</a></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterLayer.html">HexWaterLayer</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Surfaces.html">Surfaces</a>.<a class="xref" href="Fwt.HexTerrains.Surfaces.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class HexSurfaceLayer : IDisposable</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_BiomeColors_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.BiomeColors*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_BiomeColors" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.BiomeColors">BiomeColors</h4>
+  <div class="markdown level1 summary"><p>Color palette for biomes. Used to paint the terrain with a color (CellColorMap).
+index in this array == Biome index.
+value in this array == Color of the biome in CellColorMap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;Color32&gt; BiomeColors { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_BiomesMap_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.BiomesMap*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_BiomesMap" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.BiomesMap">BiomesMap</h4>
+  <div class="markdown level1 summary"><p>BiomesMap data layer. Contains biome index per cell <a class="xref" href="Fwt.HexTerrains.DataLayers.CellBiomesDataLayer.html">CellBiomesDataLayer</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellBiomesDataLayer BiomesMap { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellBiomesDataLayer.html">CellBiomesDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CellColorMap_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CellColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CellColorMap" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CellColorMap">CellColorMap</h4>
+  <div class="markdown level1 summary"><p>CellColorMap data layer. Contains color value per cell <a class="xref" href="Fwt.HexTerrains.DataLayers.CellColorsDataLayer.html">CellColorsDataLayer</a>
+Usually used for painting the terrain with a color (fill a Texture2D with this colors so it can be used in materials or UI like minimap).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellColorsDataLayer CellColorMap { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellColorsDataLayer.html">CellColorsDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CellMetrics*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CellMetrics" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CellMetrics">CellMetrics</h4>
+  <div class="markdown level1 summary"><p>CellMetrics data layer. Contains cell metrics metrics per cell <a class="xref" href="Fwt.HexTerrains.DataLayers.CellMetricsDataLayer.html">CellMetricsDataLayer</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellMetricsDataLayer CellMetrics { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellMetricsDataLayer.html">CellMetricsDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_ColorMapTextureIndex_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.ColorMapTextureIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_ColorMapTextureIndex" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.ColorMapTextureIndex">ColorMapTextureIndex</h4>
+  <div class="markdown level1 summary"><p>Index of the texture in the list of ColorMapTextures.
+Used externally in systems.
+Systems read this value to know which texture to fill with colors from CellColorMap data layer <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CellColorMap">CellColorMap</a>.
+That texture is expected to be used in materials or/and UI like minimap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ColorMapTextureIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_HeightMap_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.HeightMap*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_HeightMap" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.HeightMap">HeightMap</h4>
+  <div class="markdown level1 summary"><p>HeightMap data layer. Contains a byte height value per cell <a class="xref" href="Fwt.HexTerrains.DataLayers.HeightMapDataLayer.html">HeightMapDataLayer</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HeightMapDataLayer HeightMap { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.HeightMapDataLayer.html">HeightMapDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Settings_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Settings*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Settings" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Settings">Settings</h4>
+  <div class="markdown level1 summary"><p>Settings of the terrain this surface is from</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSettings Settings { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_TerrainMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.TerrainMetrics*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_TerrainMetrics" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.TerrainMetrics">TerrainMetrics</h4>
+  <div class="markdown level1 summary"><p>Metrics of the whole terrain. Recalculated when terrain settings are changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainMetrics TerrainMetrics { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainMetrics.html">HexTerrainMetrics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Cleanup_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Cleanup" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Cleanup()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CleanupAsync" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CleanupAsync">CleanupAsync()</h4>
+  <div class="markdown level1 summary"><p>Async version of Cleanup() <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Cleanup">Cleanup()</a>
+Difference between regular Cleanup() is that it schedules jobs that clean up data layers,
+so you don't have to wait for the results and can continue working.
+Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CleanupAsync()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CompleteAllJobs_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CompleteAllJobs*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_CompleteAllJobs" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.CompleteAllJobs">CompleteAllJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs that affect data layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CompleteAllJobs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Dispose_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Dispose" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_GetCellBiome_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.GetCellBiome*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_GetCellBiome_System_Int32_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.GetCellBiome(System.Int32)">GetCellBiome(int)</h4>
+  <div class="markdown level1 summary"><p>Returns given cell biome.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellBiome(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_GetCellHeight_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.GetCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_GetCellHeight_System_Int32_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.GetCellHeight(System.Int32)">GetCellHeight(int)</h4>
+  <div class="markdown level1 summary"><p>Returns given cell height.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellHeight(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_GetCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.GetCellMetrics*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_GetCellMetrics_System_Int32_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.GetCellMetrics(System.Int32)">GetCellMetrics(int)</h4>
+  <div class="markdown level1 summary"><p>Returns cell metrics of a cell at given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexCellMetrics? GetCellMetrics(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Init_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the surface data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Init_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{UnityEngine.Color32})">Init(HexTerrainSettings, NativeArray&lt;Color32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the surface data.
+Calls InitBiomeColors() internally to copy the color palette from the given array <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_InitBiomeColors_Unity_Collections_NativeArray_UnityEngine_Color32__">InitBiomeColors(NativeArray&lt;Color32&gt;)</a>.
+Only copies data from the copyColorPaletteFrom array, does not change or cache,
+so it is safe to dispose it after this call.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, NativeArray&lt;Color32&gt; copyColorPaletteFrom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td><span class="parametername">copyColorPaletteFrom</span></td>
+        <td><p>array of colors per biome to copy a BiomeColors palette from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_InitBiomeColors_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.InitBiomeColors*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_InitBiomeColors_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.InitBiomeColors(Unity.Collections.NativeArray{UnityEngine.Color32})">InitBiomeColors(NativeArray&lt;Color32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copies a BiomeColors palette from the given array.
+Does not change or cache the array, so it is safe to dispose it after this call.
+copyFrom array is expected to have the biomes count length, so there is one color per biome.
+BiomeIndex == index in copyFrom array.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitBiomeColors(NativeArray&lt;Color32&gt; copyFrom)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td><span class="parametername">copyFrom</span></td>
+        <td><p>array of colors to copy into the BiomeColors palette</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_OpenAllToRead_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.OpenAllToRead*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_OpenAllToRead" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.OpenAllToRead">OpenAllToRead()</h4>
+  <div class="markdown level1 summary"><p>Opens all data layers to read (Completes all the write jobs).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OpenAllToRead()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_OpenAllToWrite_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.OpenAllToWrite*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_OpenAllToWrite" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.OpenAllToWrite">OpenAllToWrite()</h4>
+  <div class="markdown level1 summary"><p>Opens all data layers to write (Completes all the read and write jobs).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OpenAllToWrite()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Resize_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Resize*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Resize_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.Resize(Unity.Mathematics.int2)">Resize(int2)</h4>
+  <div class="markdown level1 summary"><p>Resizes the terrain to a new size.
+Internally calls Init() to reinitialize the data layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Resize(int2 size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>new terrain size</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetAllCellsBiome_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetAllCellsBiome*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetAllCellsBiome_System_Byte_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetAllCellsBiome(System.Byte)">SetAllCellsBiome(byte)</h4>
+  <div class="markdown level1 summary"><p>Paints terrain with given color.
+Does NOT mark anything dirty. It's recommended to call MarkAllChunksDirty() after call this function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsBiome(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetAllCellsHeight_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetAllCellsHeight*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetAllCellsHeight_System_Byte_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetAllCellsHeight(System.Byte)">SetAllCellsHeight(byte)</h4>
+  <div class="markdown level1 summary"><p>Flatterns terrain at given height.
+Does NOT mark anything dirty. It's recommended to call MarkAllChunksDirty() after call this function</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsHeight(byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets all chunks dirty.
+If isDirty == true, everything will be marked dirty and recalculated.
+If isDirty == false, everything will be marked clean and not recalculated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetAllDirty(bool isDirty = true)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>new dirty state</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetBiomesMap_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetBiomesMap*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetBiomesMap_System_Byte___" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetBiomesMap(System.Byte[])">SetBiomesMap(byte[])</h4>
+  <div class="markdown level1 summary"><p>Applies given Colormap
+Does NOT make every chunk dirty,
+so it's recommended to call MarkAllChunksDirty() function after changes are applied</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetBiomesMap(byte[] biomes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td><span class="parametername">biomes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetCellBiome_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetCellBiome*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetCellBiome_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetCellBiome(System.Int32,System.Byte)">SetCellBiome(int, byte)</h4>
+  <div class="markdown level1 summary"><p>Sets given cell color.
+Does NOT mark anything dirty, so it's recommended
+to call RegisterCellChange() function after all changes are applied</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellBiome(int cellIndex, byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetCellHeight_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetCellHeight_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetCellHeight(System.Int32,System.Byte)">SetCellHeight(int, byte)</h4>
+  <div class="markdown level1 summary"><p>Sets given cell height.
+Does NOT mark anything dirty, so it's recommended
+to call RegisterCellChange() function after all changes are applied</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellHeight(int cellIndex, byte value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetHeightMap_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetHeightMap*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_SetHeightMap_System_Byte___" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.SetHeightMap(System.Byte[])">SetHeightMap(byte[])</h4>
+  <div class="markdown level1 summary"><p>Applies given Heightmap1.
+Does NOT make every chunk dirty,
+so it's recommended to call MarkAllChunksDirty() function after changes are applied</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetHeightMap(byte[] heights)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>[]</td>
+        <td><span class="parametername">heights</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

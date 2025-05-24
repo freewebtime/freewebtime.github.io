@@ -312,7 +312,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_PaintCellItemsUserToolState_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class PaintCellItemsUserToolState&lt;TBrushTarget, THexSurface&gt; : BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;, ISmState where TBrushTarget : CellItemsData where THexSurface : HexSurfaceData</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class PaintCellItemsUserToolState&lt;TBrushTarget, THexSurface&gt; : BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;, ISmState where TBrushTarget : CellItemsLayer where THexSurface : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">

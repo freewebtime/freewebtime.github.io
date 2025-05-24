@@ -290,7 +290,7 @@
   <h5 id="Fwt_HexTerrains_CellItems_Systems_CreateCellPropsDataSystem_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(CreateHexTerrainsGroup))]
-[UpdateAfter(typeof(CreateHexGroundDataSystem))]
+[UpdateAfter(typeof(CreateHexGroundLayerSystem))]
 public class CreateCellPropsDataSystem : SystemBase</code></pre>
   </div>
   <h3 id="methods">Methods
@@ -298,12 +298,12 @@ public class CreateCellPropsDataSystem : SystemBase</code></pre>
 
 
   <a id="Fwt_HexTerrains_CellItems_Systems_CreateCellPropsDataSystem_FillWithRandomData_" data-uid="Fwt.HexTerrains.CellItems.Systems.CreateCellPropsDataSystem.FillWithRandomData*"></a>
-  <h4 id="Fwt_HexTerrains_CellItems_Systems_CreateCellPropsDataSystem_FillWithRandomData_Fwt_HexTerrains_CellItems_Data_CellItemPropsData_Fwt_HexTerrains_Data_HexSurfaceData_Fwt_HexTerrains_CellItems_Data_CreateCellPropsDataRequest_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.CellItems.Systems.CreateCellPropsDataSystem.FillWithRandomData(Fwt.HexTerrains.CellItems.Data.CellItemPropsData,Fwt.HexTerrains.Data.HexSurfaceData,Fwt.HexTerrains.CellItems.Data.CreateCellPropsDataRequest,Fwt.HexTerrains.Data.HexTerrainSettings)">FillWithRandomData(CellItemPropsData, HexSurfaceData, CreateCellPropsDataRequest, HexTerrainSettings)</h4>
+  <h4 id="Fwt_HexTerrains_CellItems_Systems_CreateCellPropsDataSystem_FillWithRandomData_Fwt_HexTerrains_CellItems_Data_CellItemPropsData_Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_Fwt_HexTerrains_CellItems_Data_CreateCellPropsDataRequest_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.CellItems.Systems.CreateCellPropsDataSystem.FillWithRandomData(Fwt.HexTerrains.CellItems.Data.CellItemPropsData,Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer,Fwt.HexTerrains.CellItems.Data.CreateCellPropsDataRequest,Fwt.HexTerrains.Data.HexTerrainSettings)">FillWithRandomData(CellItemPropsData, HexSurfaceLayer, CreateCellPropsDataRequest, HexTerrainSettings)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void FillWithRandomData(CellItemPropsData cellPropsData, HexSurfaceData surfaceData, CreateCellPropsDataRequest request, HexTerrainSettings settings)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void FillWithRandomData(CellItemPropsData cellPropsData, HexSurfaceLayer surfaceData, CreateCellPropsDataRequest request, HexTerrainSettings settings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -321,7 +321,7 @@ public class CreateCellPropsDataSystem : SystemBase</code></pre>
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceData.html">HexSurfaceData</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.html">HexSurfaceLayer</a></td>
         <td><span class="parametername">surfaceData</span></td>
         <td></td>
       </tr>

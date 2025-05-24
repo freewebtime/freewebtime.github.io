@@ -295,7 +295,7 @@
   <h5 id="Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsInitializationGroup))]
-public abstract class CalcCellBiomeColorsSystem&lt;TSurfaceData&gt; : SystemBase where TSurfaceData : HexSurfaceData</code></pre>
+public abstract class CalcCellBiomeColorsSystem&lt;TSurfaceData&gt; : SystemBase where TSurfaceData : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -344,12 +344,12 @@ public abstract class CalcCellBiomeColorsSystem&lt;TSurfaceData&gt; : SystemBase
 
 
   <a id="Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData_" data-uid="Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData*"></a>
-  <h4 id="Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData__0_Fwt_HexTerrains_Data_HexSurfaceData_" data-uid="Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(`0,Fwt.HexTerrains.Data.HexSurfaceData)">UpdateData(TSurfaceData, HexSurfaceData)</h4>
+  <h4 id="Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData__0_Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_" data-uid="Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(`0,Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)">UpdateData(TSurfaceData, HexSurfaceLayer)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void UpdateData(TSurfaceData mySurfaceData, HexSurfaceData otherSurfaceData)</code></pre>
+    <pre><code class="lang-csharp hljs">public void UpdateData(TSurfaceData mySurfaceData, HexSurfaceLayer otherSurfaceData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -367,7 +367,7 @@ public abstract class CalcCellBiomeColorsSystem&lt;TSurfaceData&gt; : SystemBase
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.HexSurfaceData.html">HexSurfaceData</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.html">HexSurfaceLayer</a></td>
         <td><span class="parametername">otherSurfaceData</span></td>
         <td></td>
       </tr>

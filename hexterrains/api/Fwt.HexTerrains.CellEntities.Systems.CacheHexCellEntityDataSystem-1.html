@@ -285,7 +285,7 @@
   <h5 id="Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(PresentationSystemGroup), OrderLast = true)]
-public abstract class CacheHexCellEntityDataSystem&lt;TDataLayer&gt; : SystemBase where TDataLayer : CellEntitiesData, IComponentData</code></pre>
+public abstract class CacheHexCellEntityDataSystem&lt;TDataLayer&gt; : SystemBase where TDataLayer : CellEntitiesLayer, IComponentData</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -327,12 +327,12 @@ public abstract class CacheHexCellEntityDataSystem&lt;TDataLayer&gt; : SystemBas
 
 
   <a id="Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_DisposeCellItemsData_" data-uid="Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_DisposeCellItemsData_Fwt_HexTerrains_CellEntities_Data_CellEntitiesData_" data-uid="Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Data.CellEntitiesData)">DisposeCellItemsData(CellEntitiesData)</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_DisposeCellItemsData_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_" data-uid="Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)">DisposeCellItemsData(CellEntitiesLayer)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void DisposeCellItemsData(CellEntitiesData cellItemsData)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void DisposeCellItemsData(CellEntitiesLayer cellItemsData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -345,7 +345,7 @@ public abstract class CacheHexCellEntityDataSystem&lt;TDataLayer&gt; : SystemBas
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesData.html">CellEntitiesData</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html">CellEntitiesLayer</a></td>
         <td><span class="parametername">cellItemsData</span></td>
         <td></td>
       </tr>

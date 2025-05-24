@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt; | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt; | Hex Terrains ">
+    
+    <meta name="description" content="Base class for systems that create  data.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3">
+
+
+
+  <h1 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3" class="text-break">Class CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt;</h1>
+  <div class="markdown level0 summary"><p>Base class for systems that create <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer.html">HexSurfaceLayer</a> data.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">ComponentSystemBase</span></div>
+    <div class="level2"><span class="xref">SystemBase</span></div>
+    <div class="level3"><span class="xref">CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt;</span></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.Systems.CreateHexGroundLayerSystem.html">CreateHexGroundLayerSystem</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.Systems.CreateHexWaterLayerSystem.html">CreateHexWaterLayerSystem</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">SystemBase.Dependency</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.CheckedStateRef</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.CompleteDependency()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Entities</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Job</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Update()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.OnUpdate()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.GetComponent&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.SetComponent&lt;T&gt;(Entity, T)</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.HasComponent&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.HasBuffer&lt;T&gt;(Entity)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetComponentLookup&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetComponentDataFromEntity&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetBuffer&lt;T&gt;(Entity, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetBufferLookup&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">SystemBase.GetBufferFromEntity&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">SystemBase.GetEntityStorageInfoLookup()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.GetStorageInfoFromEntity()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.Exists(Entity)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.Enabled</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.EntityQueries</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GlobalSystemVersion</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.LastSystemVersion</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.EntityManager</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.World</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.SystemHandle</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.SystemHandleUntyped</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.Time</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.WorldUpdateAllocator</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.OnCreate()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.OnStartRunning()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.OnStopRunning()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.OnDestroy()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.ShouldRunSystem()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">ComponentSystemBase.GetComponentTypeHandle&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetDynamicComponentTypeHandle(ComponentType)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">ComponentSystemBase.GetBufferTypeHandle&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSharedComponentTypeHandle&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetDynamicSharedComponentTypeHandle(ComponentType)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityTypeHandle()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireForUpdate(EntityQuery)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireAnyForUpdate(params EntityQuery[])</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireAnyForUpdate(NativeArray&lt;EntityQuery&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireForUpdate&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.RequireSingletonForUpdate&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.HasSingleton&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSingleton&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSingletonRW&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">ComponentSystemBase.GetSingletonBuffer&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.TryGetSingleton&lt;T&gt;(out T)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.TryGetSingletonBuffer&lt;T&gt;(out DynamicBuffer&lt;T&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.SetSingleton&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetSingletonEntity&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.TryGetSingletonEntity&lt;T&gt;(out Entity)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(params ComponentType[])</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(NativeArray&lt;ComponentType&gt;)</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(params EntityQueryDesc[])</span>
+    </div>
+    <div>
+      <span class="xref">ComponentSystemBase.GetEntityQuery(in EntityQueryBuilder)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Systems.html">Systems</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(CreateHexTerrainsGroup))]
+public abstract class CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt; : SystemBase where TRequest : unmanaged, IComponentData, ICreateHexSurfaceRequest where TSurfaceData : HexSurfaceLayer, IComponentData, new() where TRenderData : HexSurfaceRenderData&lt;TSurfaceData&gt;, IComponentData, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TRequest</span></td>
+        <td><p>type of request IComponentData with configuration of surface data</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSurfaceData</span></td>
+        <td><p>type of surface data to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRenderData</span></td>
+        <td><p>type of render data for this surface data</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_ApplyHeightmap_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.ApplyHeightmap*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_ApplyHeightmap__1__0_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.ApplyHeightmap(`1,`0)">ApplyHeightmap(TSurfaceData, TRequest)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ApplyHeightmap(TSurfaceData terrainData, TRequest initRequest)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">terrainData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">initRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_CreateSurfaceData_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.CreateSurfaceData*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_CreateSurfaceData_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrain__Unity_Collections_NativeArray_UnityEngine_Color32____0__Unity_Entities_EntityCommandBuffer__" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.CreateSurfaceData(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrain@,Unity.Collections.NativeArray{UnityEngine.Color32}@,`0@,Unity.Entities.EntityCommandBuffer@)">CreateSurfaceData(Entity, in HexTerrain, in NativeArray&lt;Color32&gt;, in TRequest, in EntityCommandBuffer)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TSurfaceData CreateSurfaceData(Entity entity, in HexTerrain hexTerrain, in NativeArray&lt;Color32&gt; colorPalette, in TRequest request, in EntityCommandBuffer ecb)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrain.html">HexTerrain</a></td>
+        <td><span class="parametername">hexTerrain</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td><span class="parametername">colorPalette</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityCommandBuffer</span></td>
+        <td><span class="parametername">ecb</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_FillColormap_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.FillColormap*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_FillColormap__1__0_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.FillColormap(`1,`0)">FillColormap(TSurfaceData, TRequest)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void FillColormap(TSurfaceData surfaceData, TRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">surfaceData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_FillHeightmap_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.FillHeightmap*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_FillHeightmap__1__0_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.FillHeightmap(`1,`0)">FillHeightmap(TSurfaceData, TRequest)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void FillHeightmap(TSurfaceData surfaceData, TRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">surfaceData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_FillSurfaceData_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.FillSurfaceData*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_FillSurfaceData__1__0_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.FillSurfaceData(`1,`0,Fwt.HexTerrains.Data.HexTerrainSettings)">FillSurfaceData(TSurfaceData, TRequest, HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void FillSurfaceData(TSurfaceData surfaceData, TRequest request, HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">surfaceData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GenerateAutoColormap_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GenerateAutoColormap*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GenerateAutoColormap__1__0_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GenerateAutoColormap(`1,`0,Fwt.HexTerrains.Data.HexTerrainSettings)">GenerateAutoColormap(TSurfaceData, TRequest, HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void GenerateAutoColormap(TSurfaceData terrainData, TRequest initRequest, HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">terrainData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">initRequest</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GenerateRandomColormap_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GenerateRandomColormap*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GenerateRandomColormap__1__0_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GenerateRandomColormap(`1,`0)">GenerateRandomColormap(TSurfaceData, TRequest)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void GenerateRandomColormap(TSurfaceData terrainData, TRequest initRequest)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">terrainData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">initRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GenerateRandomData_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GenerateRandomData*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GenerateRandomData__1__0_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GenerateRandomData(`1,`0)">GenerateRandomData(TSurfaceData, TRequest)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void GenerateRandomData(TSurfaceData surfaceData, TRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TSurfaceData</span></td>
+        <td><span class="parametername">surfaceData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TRequest</span></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GetAutoBiomeHeightLevel_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GetAutoBiomeHeightLevel*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GetAutoBiomeHeightLevel_System_Byte_Fwt_Core_Collections_FixedArray8_System_Int32__" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GetAutoBiomeHeightLevel(System.Byte,Fwt.Core.Collections.FixedArray8{System.Int32})">GetAutoBiomeHeightLevel(byte, FixedArray8&lt;int&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int GetAutoBiomeHeightLevel(byte height, FixedArray8&lt;int&gt; levelBiomes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray8-1.html">FixedArray8</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><span class="parametername">levelBiomes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GetAutoColorForLevel_" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GetAutoColorForLevel*"></a>
+  <h4 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_GetAutoColorForLevel_System_Int32_Fwt_Core_Collections_FixedArray8_System_Int32__" data-uid="Fwt.HexTerrains.Systems.CreateHexSurfaceLayerSystem`3.GetAutoColorForLevel(System.Int32,Fwt.Core.Collections.FixedArray8{System.Int32})">GetAutoColorForLevel(int, FixedArray8&lt;int&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte GetAutoColorForLevel(int level, FixedArray8&lt;int&gt; levelColors)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">level</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.Collections.FixedArray8-1.html">FixedArray8</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><span class="parametername">levelColors</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

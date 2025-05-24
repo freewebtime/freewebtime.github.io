@@ -614,7 +614,7 @@ Replaces a cached TerrainEntity with the created one.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual byte? GetCellBiome&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellBiome&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -702,7 +702,7 @@ Replaces a cached TerrainEntity with the created one.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual CellEntity? GetCellEntity&lt;TEntitiesData&gt;(int cellIndex) where TEntitiesData : CellEntitiesData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual CellEntity? GetCellEntity&lt;TEntitiesData&gt;(int cellIndex) where TEntitiesData : CellEntitiesLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -763,7 +763,7 @@ Replaces a cached TerrainEntity with the created one.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual byte? GetCellHeight&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellHeight&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -851,7 +851,7 @@ Replaces a cached TerrainEntity with the created one.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual CellItem? GetCellItem&lt;TItemsData&gt;(int cellIndex) where TItemsData : CellItemsData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual CellItem? GetCellItem&lt;TItemsData&gt;(int cellIndex) where TItemsData : CellItemsLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1620,7 +1620,7 @@ Meaning if terrain has this data layer.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool SetCellBiome&lt;TSurfaceData&gt;(int cellIndex, byte biome) where TSurfaceData : HexSurfaceData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellBiome&lt;TSurfaceData&gt;(int cellIndex, byte biome) where TSurfaceData : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1687,7 +1687,7 @@ Meaning if terrain has this data layer.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool SetCellEntity&lt;TEntitiesData&gt;(int cellIndex, CellEntity entity) where TEntitiesData : CellEntitiesData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellEntity&lt;TEntitiesData&gt;(int cellIndex, CellEntity entity) where TEntitiesData : CellEntitiesLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1753,7 +1753,7 @@ Meaning if terrain has this data layer.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height) where TSurfaceData : HexSurfaceData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height) where TSurfaceData : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1819,7 +1819,7 @@ Meaning if terrain has this data layer.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool SetCellItem&lt;TItemsData&gt;(int cellIndex, CellItem item) where TItemsData : CellItemsData</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItem&lt;TItemsData&gt;(int cellIndex, CellItem item) where TItemsData : CellItemsLayer</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">

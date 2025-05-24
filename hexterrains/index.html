@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Hex Terrains Framework | Hex Terrains </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Hex Terrains Framework | Hex Terrains ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hex-terrains-framework">Hex Terrains Framework</h1>
+
+<h2 id="hex-terrain-framework--modular-high-performance-hex-based-world-system-for-unity-dots"><strong>Hex Terrain Framework – Modular, High-Performance Hex-Based World System for Unity DOTS</strong></h2>
+<h3 id="documentation"><strong>Documentation</strong></h3>
+<p><a href="https://www.freewebtime.com/hexterrains/index.html">Instruction</a>
+<a href="https://www.freewebtime.com/hexterrains/api/Fwt.HexTerrains.html">Class Reference</a></p>
+<p><strong>The Hex Terrain Framework</strong> is a fully modular, runtime-editable, high-performance hexagonal terrain system built for Unity’s <strong>ECS (DOTS)</strong> architecture. Designed from the ground up for large-scale simulation and strategy games, it offers a Photoshop-like editing workflow with full brush-based control, multichannel data layering, and dynamic surface generation — all with performance and flexibility in mind.</p>
+<p>Whether you're building a game like <em>Civilization</em>, <em>Factorio</em>, or your own simulation-heavy world, this framework provides everything you need to create, edit, render, and interact with vast hex-based environments.</p>
+<hr>
+<h3 id="core-features"><strong>Core Features</strong></h3>
+<ul>
+<li><p><strong>Brush-Based Terrain Editing</strong>
+Edit terrain in real time with brush tools that support size, opacity, stamping, alt-sampling (like a color picker), and auto-painting — just like Photoshop.</p>
+</li>
+<li><p><strong>Dynamic Terrain Creation</strong>
+Create new terrains at runtime with custom dimensions, cell resolution, and layer configuration. Resize or regenerate terrain without restarting.</p>
+</li>
+<li><p><strong>Modular Data Layer System</strong>
+Add or remove data layers (heightmap, biomes, countries, items, entities, etc.) on demand. Each layer is self-contained and supports dirty flagging and job-safe dependency tracking.</p>
+</li>
+<li><p><strong>Surface Layers &amp; Water Support</strong>
+Render complex layered surfaces (e.g., ground, water, snow, oil) using custom or built-in mesh generators. Water is its own elevation map — fully interactive and editable.</p>
+</li>
+<li><p><strong>Highly Optimized Mesh Generation</strong>
+Meshes are generated using Burst-compiled jobs with support for simplified or detailed topology. You can extend it with your own generators for custom visuals.</p>
+</li>
+<li><p><strong>Minimap with Viewport Sync</strong>
+Real-time minimap renders any data layer texture. Click-to-center camera control. Camera position indicator with normalized tracking included.</p>
+</li>
+<li><p><strong>HDRP &amp; URP Ready</strong>
+Sample content provided for both pipelines. Choose your look and customize with Shader Graph.</p>
+</li>
+<li><p><strong>Custom UI Toolkit-Based Editor</strong>
+In-game terrain editor built with Unity UI Toolkit, featuring fully data-bound property windows, tool panels, and a modular view model system. Easily extend with your own tools.</p>
+</li>
+<li><p><strong>Save/Load Support</strong>
+Modular binary serialization built-in. Save and load entire terrain states, including all data layers, runtime changes, and surface configuration.</p>
+</li>
+<li><p><strong>Wraparound Map Support</strong>
+Connect terrain edges horizontally and vertically (e.g., like a globe or Civ-style map). Seamless camera movement across terrain boundaries.</p>
+</li>
+</ul>
+<hr>
+<h3 id="technical-highlights"><strong>Technical Highlights</strong></h3>
+<ul>
+<li>Built entirely on <strong>Unity DOTS (ECS 1.0)</strong></li>
+<li><strong>Burst-accelerated hex math</strong> with axial/offset and flat/point top options</li>
+<li>Minimal allocations and full job safety — optimized for large terrains</li>
+<li>Data layers store <strong>per-chunk dirty flags</strong> and <strong>read/write job handles</strong></li>
+<li>Render system designed for <strong>Graphics.DrawMeshInstanced</strong>, not hybrid entities</li>
+<li>Designed for <strong>multi-terrain projects</strong> (e.g., Earth, Moon, Mars...)</li>
+</ul>
+<hr>
+<h3 id="ideal-for"><strong>Ideal For</strong></h3>
+<ul>
+<li>4X and Strategy Games</li>
+<li>Simulation and Economy Games</li>
+<li>City Builders</li>
+<li>Custom World Editors</li>
+<li>ECS Learning Projects</li>
+<li>Games that require <strong>fully interactive hex terrain with high performance</strong></li>
+</ul>
+<hr>
+<h3 id="included"><strong>Included</strong></h3>
+<ul>
+<li>Full source code (C# + DOTS)</li>
+<li>Demo project with HDRP and URP samples</li>
+<li>In-game terrain editor with sample tools</li>
+<li>Procedural brushes and auto-painting systems</li>
+<li>Modular, extendable UI framework</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsDemo/_git/HexTerrainsDemo?path=index.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

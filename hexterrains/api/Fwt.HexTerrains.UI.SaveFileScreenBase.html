@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class SaveFileScreenBase | Hex Terrains </title>
+      <title>Class SaveFileScreenBase | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class SaveFileScreenBase | Hex Terrains ">
+      <meta name="title" content="Class SaveFileScreenBase | Hex Terrains Framework ">
     
     <meta name="description" content="Base class for UI Screen that allows user to choose a save file.">
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -97,6 +97,10 @@
     <div class="level8"><a class="xref" href="Fwt.Core.UI.Screens.UIScreen-1.html">UIScreen</a>&lt;<a class="xref" href="Fwt.HexTerrains.DataSources.SaveFilesDataSource.html">SaveFilesDataSource</a>&gt;</div>
     <div class="level9"><span class="xref">SaveFileScreenBase</span></div>
       <div class="level10"><a class="xref" href="Fwt.HexTerrains.Samples.UI.SaveGameScreen.html">SaveGameScreen</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.UI.IViewDataReceiver-1.html">IViewDataReceiver</a>&lt;<a class="xref" href="Fwt.HexTerrains.DataSources.SaveFilesDataSource.html">SaveFilesDataSource</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -597,7 +601,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_UI_SaveFileScreenBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class SaveFileScreenBase : UIScreen&lt;SaveFilesDataSource&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class SaveFileScreenBase : UIScreen&lt;SaveFilesDataSource&gt;, IViewDataReceiver&lt;SaveFilesDataSource&gt;</code></pre>
   </div>
   <h3 id="properties">Properties
 </h3>
@@ -863,6 +867,10 @@ Implement your saving logic here, e.g. calling your API.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.UI.IViewDataReceiver-1.html">IViewDataReceiver&lt;TViewData&gt;</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>

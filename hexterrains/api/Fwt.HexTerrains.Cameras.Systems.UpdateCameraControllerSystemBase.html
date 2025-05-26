@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class UpdateCameraControllerSystemBase | Hex Terrains </title>
+      <title>Class UpdateCameraControllerSystemBase | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class UpdateCameraControllerSystemBase | Hex Terrains ">
+      <meta name="title" content="Class UpdateCameraControllerSystemBase | Hex Terrains Framework ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -301,7 +301,10 @@ public abstract class UpdateCameraControllerSystemBase : SystemBase</code></pre>
 
   <a id="Fwt_HexTerrains_Cameras_Systems_UpdateCameraControllerSystemBase_GetMinimapScreen_" data-uid="Fwt.HexTerrains.Cameras.Systems.UpdateCameraControllerSystemBase.GetMinimapScreen*"></a>
   <h4 id="Fwt_HexTerrains_Cameras_Systems_UpdateCameraControllerSystemBase_GetMinimapScreen_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.Cameras.Systems.UpdateCameraControllerSystemBase.GetMinimapScreen(Unity.Entities.Entity)">GetMinimapScreen(Entity)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Returns an instance of MinimapScreen for the given terrain entity.
+In your class override this method and return the instance of your minimap screen.
+May be it's a good idea to attach a screen to the terrain entity and return it here.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -320,7 +323,8 @@ public abstract class UpdateCameraControllerSystemBase : SystemBase</code></pre>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>terrain entity to find a minimap screen for</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -335,7 +339,8 @@ public abstract class UpdateCameraControllerSystemBase : SystemBase</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.UI.IMinimapScreen.html">IMinimapScreen</a></td>
-        <td></td>
+        <td><p>instance of minimap screen for given terrain entity if found</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -386,7 +391,8 @@ performance impact of the resulting [sync points].
 
   <a id="Fwt_HexTerrains_Cameras_Systems_UpdateCameraControllerSystemBase_UpdateMinimapScreen_" data-uid="Fwt.HexTerrains.Cameras.Systems.UpdateCameraControllerSystemBase.UpdateMinimapScreen*"></a>
   <h4 id="Fwt_HexTerrains_Cameras_Systems_UpdateCameraControllerSystemBase_UpdateMinimapScreen_Unity_Entities_Entity_Fwt_HexTerrains_Cameras_Data_CameraControllerTarget_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Cameras.Systems.UpdateCameraControllerSystemBase.UpdateMinimapScreen(Unity.Entities.Entity,Fwt.HexTerrains.Cameras.Data.CameraControllerTarget,Fwt.HexTerrains.Data.HexTerrainSettings)">UpdateMinimapScreen(Entity, CameraControllerTarget, HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates the minimap screen with the current camera controller target and terrain settings.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -405,17 +411,20 @@ performance impact of the resulting [sync points].
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
+        <td><p>terrain entity to update</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.html">CameraControllerTarget</a></td>
         <td><span class="parametername">target</span></td>
-        <td></td>
+        <td><p>camera controller to set data on screen from</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
         <td><span class="parametername">terrainSettings</span></td>
-        <td></td>
+        <td><p>terrain settings to send to the minimap screen</p>
+</td>
       </tr>
     </tbody>
   </table>

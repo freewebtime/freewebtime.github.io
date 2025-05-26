@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Interface IUserToolAPI | Hex Terrains </title>
+      <title>Interface IUserToolAPI | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Interface IUserToolAPI | Hex Terrains ">
+      <meta name="title" content="Interface IUserToolAPI | Hex Terrains Framework ">
     
     <meta name="description" content="Example implementation of the IUserToolAPI interface. Used to be injected into places without access to the EntityManager. Abstracts user code from the TerrainData storage (usually the Entity World). Provides an API for working with a terrain. Usually uses in a UserTools (brushes, etc.).">
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -98,16 +98,14 @@ Usually uses in a UserTools (brushes, etc.).</p>
 </h3>
 
 
-  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_CreateNewTerrain_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.CreateNewTerrain*"></a>
-  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_CreateNewTerrain_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.CreateNewTerrain(Unity.Entities.Entity)">CreateNewTerrain(Entity)</h4>
-  <div class="markdown level1 summary"><p>Destroys a current terrain terrainEntity.
-Creates a new terrain terrainEntity.
-Replaces a cached TerrainEntity with the created one.</p>
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_CreateNewTerrainEntity_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.CreateNewTerrainEntity*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_CreateNewTerrainEntity_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.CreateNewTerrainEntity(Unity.Entities.Entity)">CreateNewTerrainEntity(Entity)</h4>
+  <div class="markdown level1 summary"><p>Creates a new terrain terrainEntity by instantiating provided prefab.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">Entity CreateNewTerrain(Entity terrainPrefab)</code></pre>
+    <pre><code class="lang-csharp hljs">Entity CreateNewTerrainEntity(Entity terrainPrefab)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -140,6 +138,73 @@ Replaces a cached TerrainEntity with the created one.</p>
         <td><span class="xref">Entity</span></td>
         <td><p>instance of the created terrainEntity</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_CreateNewTerrain_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.CreateNewTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_CreateNewTerrain__1___0_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.CreateNewTerrain``1(``0,Fwt.HexTerrains.Data.HexTerrainSettings)">CreateNewTerrain&lt;TPrefabConfig&gt;(TPrefabConfig, HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Creates a new terrain entity with the specified settings.
+Destroys existing terrain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Entity CreateNewTerrain&lt;TPrefabConfig&gt;(TPrefabConfig terrainPrefabConfig, HexTerrainSettings terrainSettings) where TPrefabConfig : IHexTerrainPrefabConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TPrefabConfig</span></td>
+        <td><span class="parametername">terrainPrefabConfig</span></td>
+        <td><p>prefab config of the terrainEntity to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">terrainSettings</span></td>
+        <td><p>terrain settings to overwrite</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><p>instance of the created terrainEntity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TPrefabConfig</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -824,6 +889,76 @@ Replaces a cached TerrainEntity with the created one.</p>
       <tr>
         <td><span class="parametername">TDataLayer</span></td>
         <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetHexTerrainPrefabConfigsBuffer_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetHexTerrainPrefabConfigsBuffer*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetHexTerrainPrefabConfigsBuffer__1" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetHexTerrainPrefabConfigsBuffer``1">GetHexTerrainPrefabConfigsBuffer&lt;THexTerrainPrefabConfig&gt;()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available HexTerrainPrefabConfigs from the UserToolEntity (if any)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">DynamicBuffer&lt;THexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsBuffer&lt;THexTerrainPrefabConfig&gt;() where THexTerrainPrefabConfig : unmanaged, IBufferElementData, IHexTerrainPrefabConfig</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DynamicBuffer</span>&lt;THexTerrainPrefabConfig&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">THexTerrainPrefabConfig</span></td>
+        <td><p>type of HexTerrainPrefabConfig you have</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetHexTerrainPrefabConfigsList_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetHexTerrainPrefabConfigsList*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetHexTerrainPrefabConfigsList" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetHexTerrainPrefabConfigsList">GetHexTerrainPrefabConfigsList()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available HexTerrainPrefabConfigs from the UserToolEntity (if any).
+This list can be sent to the UI to display available terrain prefabs for the user to select from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">IList&lt;IHexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsList()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig.html">IHexTerrainPrefabConfig</a>&gt;</td>
+        <td><p>collection of hex terrain prefab configs for user to select from</p>
+</td>
       </tr>
     </tbody>
   </table>

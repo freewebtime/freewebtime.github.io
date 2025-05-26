@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Projects/HexTerrainsDemo",
+  "source_base_path": "C:/Projects/Fwt.HexTerrains.Framework/Docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -36,46 +36,6 @@
       "output": {
         ".html": {
           "relative_path": "Instruction.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Packages/Fwt.Core.Ecs/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "Packages/Fwt.Core.Ecs/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Packages/Fwt.Core/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "Packages/Fwt.Core/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Packages/Fwt.HexTerrains/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "Packages/Fwt.HexTerrains/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Packages/Fwt.UIToolkit/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "Packages/Fwt.UIToolkit/README.html"
         }
       },
       "version": ""
@@ -1824,20 +1784,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.Core.RenderEntities.ExtractTransformsJobOld.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.Core.RenderEntities.ExtractTransformsJobOld.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.Core.RenderEntities.ExtractTransformsJobOld",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.Core.RenderEntities.MaterialProperties.yml",
       "output": {
         ".html": {
@@ -3392,20 +3338,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.CellEntities.Data.CellEntitiesData",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesData.yml\" sourcestartlinenumber=\"1\">Base class for HexTerrain layers that contain an Entity per cell.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.yml",
       "output": {
         ".html": {
@@ -4036,6 +3968,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring.yml\" sourcestartlinenumber=\"1\">CellItem props HexTerrain layer authoring component.\nAllows to add a CellItem Props data layer on the terrain.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.CellItems.CellItemsDataAuthoring.yml",
       "output": {
         ".html": {
@@ -4061,20 +4007,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellItems.CellItemsDataBaker<TAuthoring>",
       "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.CellItems.CellPropsDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.CellItems.CellPropsDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.CellItems.CellPropsDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.CellPropsDataAuthoring.yml\" sourcestartlinenumber=\"1\">CellItem props HexTerrain layer authoring component.\nAllows to add a CellItem Props data layer on the terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4145,20 +4077,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellItems.Data.CellItemStateConfig",
       "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.CellItems.Data.CellItemsData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.CellItems.Data.CellItemsData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.CellItems.Data.CellItemsData",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.Data.CellItemsData.yml\" sourcestartlinenumber=\"1\">Base class for HexTerrain layers that contain a renderable CellItem per cell.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4596,20 +4514,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateCellEntityPropsDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateCellEntityPropsDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateCellEntityPropsDataRequest",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Data.CreateChunksGridDataRequest.yml",
       "output": {
         ".html": {
@@ -4635,90 +4539,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.CreateColorMapTexturesRequest",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateColorMapTexturesRequest.yml\" sourcestartlinenumber=\"1\">Request to create ColorMap textures on Terrain entity from the source.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateHexGroundDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateHexGroundDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateHexGroundDataRequest",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateHexGroundRenderDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateHexGroundRenderDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateHexGroundRenderDataRequest",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexGroundRenderDataRequest.yml\" sourcestartlinenumber=\"1\">Request to create HexGroundRenderData.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateHexSurfaceRenderDataRequestArgs.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateHexSurfaceRenderDataRequestArgs.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateHexSurfaceRenderDataRequestArgs",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexSurfaceRenderDataRequestArgs.yml\" sourcestartlinenumber=\"1\">Arguments for request to create hex surface render data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateHexSurfaceRequestArgs.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateHexSurfaceRequestArgs.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateHexSurfaceRequestArgs",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexSurfaceRequestArgs.yml\" sourcestartlinenumber=\"1\">Args for request to create a surface data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateHexWaterDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateHexWaterDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateHexWaterDataRequest",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexWaterDataRequest.yml\" sourcestartlinenumber=\"1\">Request component for creating hex water data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.CreateHexWaterRenderDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.CreateHexWaterRenderDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.CreateHexWaterRenderDataRequest",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.CreateHexWaterRenderDataRequest.yml\" sourcestartlinenumber=\"1\">Request to create HexWaterRenderData.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4778,104 +4598,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexGroundColorPalette.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexGroundColorPalette.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexGroundColorPalette",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexGroundData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexGroundData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexGroundData",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexGroundData.yml\" sourcestartlinenumber=\"1\">HexSurface for terrain Ground <xref href=\"Fwt.HexTerrains.Data.HexSurfaceData\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexGroundRenderConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexGroundRenderConfig.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexGroundRenderConfig",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexGroundRenderConfig.yml\" sourcestartlinenumber=\"1\">Configuration for rendering the HexSurface layer. Used to provide materials and other render settings when rendering a HexSurface.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexGroundRenderData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexGroundRenderData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexGroundRenderData",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexSurfaceData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexSurfaceData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexSurfaceData",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexSurfaceData.yml\" sourcestartlinenumber=\"1\">Base class for all HexTerrain surfaces like a ground or water, etc.\nCreate a new class that inherits from this one to create a new surface type.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexSurfaceRenderData-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexSurfaceRenderData-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexSurfaceRenderData<TSurfaceData>",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexSurfaceRenderData-1.yml\" sourcestartlinenumber=\"1\">Base class for render data of the hex terrain surface.\nThis one is a generic class, so it can be used for any surface type that is inherited from HexSurfaceData\n<xref href=\"Fwt.HexTerrains.Data.HexSurfaceRenderData\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexSurfaceRenderData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexSurfaceRenderData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexSurfaceRenderData",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexSurfaceRenderData.yml\" sourcestartlinenumber=\"1\">Base class for surface types of HexTerrain layers</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Data.HexTerrain.yml",
       "output": {
         ".html": {
@@ -4918,34 +4640,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexTerrainRenderConfigAsset.yml\" sourcestartlinenumber=\"1\">Render configuration for HexSurface layer. Used to provide materials and other render settings when rendering a HexSurface</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexTerrainRenderSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexTerrainRenderSettings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexTerrainRenderSettings",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexTerrainRenderSettings.yml\" sourcestartlinenumber=\"1\">Render settings for the hex terrain surface.\nContains settings that affect mesh generation and rendering.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Data.HexTerrainSettings.yml",
       "output": {
         ".html": {
@@ -4971,104 +4665,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.HexTerrainViewMode",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexTerrainViewMode.yml\" sourcestartlinenumber=\"1\">Contains the current view mode of the terrain.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexWaterColorPalette.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexWaterColorPalette.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexWaterColorPalette",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexWaterData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexWaterData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexWaterData",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexWaterData.yml\" sourcestartlinenumber=\"1\">HexSurface for terrain Water <xref href=\"Fwt.HexTerrains.Data.HexSurfaceData\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexWaterRenderConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexWaterRenderConfig.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexWaterRenderConfig",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.HexWaterRenderData.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.HexWaterRenderData.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.HexWaterRenderData",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.ICreateHexSurfaceDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.ICreateHexSurfaceDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.ICreateHexSurfaceDataRequest",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.ICreateHexSurfaceRenderDataRequest.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.ICreateHexSurfaceRenderDataRequest.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.ICreateHexSurfaceRenderDataRequest",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Data.IHexSurfaceRenderConfig.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Data.IHexSurfaceRenderConfig.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Data.IHexSurfaceRenderConfig",
-      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -5254,20 +4850,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.DataSources.CreateNewTerrainDataSource.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.DataSources.CreateNewTerrainDataSource.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.DataSources.CreateNewTerrainDataSource",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.DataSources.MinimapScreenDataSource.yml",
       "output": {
         ".html": {
@@ -5338,104 +4920,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexGroundDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexGroundDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexGroundDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexGroundDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for HexGroundData. This class is used to create hex ground data in the Unity Editor.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexGroundDataBaker.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexGroundDataBaker.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexGroundDataBaker",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexGroundDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for HexGroundData. This class is used to convert the HexGroundDataAuthoring component into a HexGroundData component at runtime.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexGroundRenderDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexGroundRenderDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexGroundRenderDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexGroundRenderDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for Ground HexRenderData.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexSurfaceDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexSurfaceDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexSurfaceDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceDataAuthoring.yml\" sourcestartlinenumber=\"1\">Base class for authoring components that create hex surface data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexSurfaceDataBaker-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexSurfaceDataBaker-2.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexSurfaceDataBaker<TAuthoring, TRequest>",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceDataBaker-2.yml\" sourcestartlinenumber=\"1\">Base class for baker components that create hex surface data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexSurfaceRenderDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexSurfaceRenderDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexSurfaceRenderDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceRenderDataAuthoring.yml\" sourcestartlinenumber=\"1\">Base class for authoring components that create hex surface render data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexSurfaceRenderDataBaker-3.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexSurfaceRenderDataBaker-3.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexSurfaceRenderDataBaker<TAuthoring, TRequest, TRenderConfig>",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexSurfaceRenderDataBaker-3.yml\" sourcestartlinenumber=\"1\">Base class for baker components that create hex surface render data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.HexTerrainAuthoring.yml",
       "output": {
         ".html": {
@@ -5461,20 +4945,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainBaker",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainBaker.yml\" sourcestartlinenumber=\"1\">Baker for the HexTerrainAuthoring component. This class is used to convert the authoring component into an entity with the appropriate components.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexTerrainRenderDataBaker.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexTerrainRenderDataBaker.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexTerrainRenderDataBaker",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainRenderDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for Ground HexRenderData.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5604,20 +5074,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexTerrainsInitializationBuffer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexTerrainsInitializationBuffer.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexTerrainsInitializationBuffer",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsInitializationBuffer.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains initialization systems (executes the last of all initialization systems).</p>\n"
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.HexTerrainsInitializationGroup.yml",
       "output": {
         ".html": {
@@ -5643,20 +5099,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsRenderBarrier",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsRenderBarrier.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains render systems (executes the last of all Render Systems).</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexTerrainsRenderBuffer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexTerrainsRenderBuffer.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexTerrainsRenderBuffer",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsRenderBuffer.yml\" sourcestartlinenumber=\"1\">Buffer system for the HexTerrains render systems (executes the last of all Render Systems).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5688,20 +5130,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexTerrainsStartPreRenderBuffer.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexTerrainsStartPreRenderBuffer.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexTerrainsStartPreRenderBuffer",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.HexTerrainsStartPreRenderGroup.yml",
       "output": {
         ".html": {
@@ -5713,62 +5141,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.HexTerrainsStartPreRenderGroup",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexTerrainsStartPreRenderGroup.yml\" sourcestartlinenumber=\"1\">System Group where the HexTerrains start pre-render systems are executed.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexWaterDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexWaterDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexWaterDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for hex water data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexWaterDataBaker.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexWaterDataBaker.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexWaterDataBaker",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterDataBaker.yml\" sourcestartlinenumber=\"1\">Baker class for hex water data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexWaterRenderDataAuthoring.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexWaterRenderDataAuthoring.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexWaterRenderDataAuthoring",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterRenderDataAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for hex water render data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.HexWaterRenderDataBaker.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.HexWaterRenderDataBaker.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.HexWaterRenderDataBaker",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.HexWaterRenderDataBaker.yml\" sourcestartlinenumber=\"1\">Baker for hex water render data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6272,7 +5644,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI.CreateNewTerrainScreen",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.CreateNewTerrainScreen.yml\" sourcestartlinenumber=\"1\">Sample implementation of a screen that shows user a dialog with options to create a new terrain.</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Samples.UI.CreateNewTerrainScreen.yml\" sourcestartlinenumber=\"1\">Samples implementation of a screen that shows user a dialog with options to create a new terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6370,6 +5742,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Samples.UI",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Samples.UserToolSamplesAPI.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Samples.UserToolSamplesAPI.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Samples.UserToolSamplesAPI",
       "Summary": null
     },
     {
@@ -6948,48 +6334,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyHexChunksSystem-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyHexChunksSystem-2.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcDirtyHexChunksSystem<TSurface, TRenderData>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyHexGroundChunksSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyHexGroundChunksSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcDirtyHexGroundChunksSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyHexWaterChunksSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyHexWaterChunksSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcDirtyHexWaterChunksSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.yml",
       "output": {
         ".html": {
@@ -7070,132 +6414,6 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CalcGroundMeshesSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexCellMetricsSystem-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexCellMetricsSystem-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexCellMetricsSystem<TSurface>",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CalcHexCellMetricsSystem-1.yml\" sourcestartlinenumber=\"1\">Base class for systems that calculate cell metrics for provided surface (TSurface)</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexChunkMeshSourcesSystem-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexChunkMeshSourcesSystem-2.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexChunkMeshSourcesSystem<TSurface, TRenderData>",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CalcHexChunkMeshSourcesSystem-2.yml\" sourcestartlinenumber=\"1\">Base system that calculates mesh sources for the chunks that are visible and dirty.\nWhen creating your own surface, override this system to work with your own surface data.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexGroundCellMetricsSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexGroundCellMetricsSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexGroundCellMetricsSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexSurfaceMeshesSystem-2.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexSurfaceMeshesSystem-2.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexSurfaceMeshesSystem<TSurfaceData, TRenderData>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexTerrainChunkMeshSourcesSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexTerrainChunkMeshSourcesSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexTerrainChunkMeshSourcesSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexTerrainMeshesSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexTerrainMeshesSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexTerrainMeshesSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexWaterCellMetricsSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexWaterCellMetricsSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexWaterCellMetricsSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexWaterChunkMeshSourcesSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexWaterChunkMeshSourcesSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexWaterChunkMeshSourcesSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CalcHexWaterMeshesSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CalcHexWaterMeshesSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CalcHexWaterMeshesSystem",
       "Summary": null
     },
     {
@@ -7298,20 +6516,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexGroundDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexGroundDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CleanupHexGroundDataSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexGroundLayerSystem.yml",
       "output": {
         ".html": {
@@ -7340,20 +6544,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexSurfaceDataSystem-1.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexSurfaceDataSystem-1.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CleanupHexSurfaceDataSystem<TSurface>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem-1.yml",
       "output": {
         ".html": {
@@ -7379,34 +6569,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem<TSurface, TRenderData>",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem-2.yml\" sourcestartlinenumber=\"1\">Base class for systems that perform a Cleanup on Render Data of the HexSurface layer.\nExecutes every frame.\nUsually resets the dirty flags.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexTerrainRenderDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexTerrainRenderDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CleanupHexTerrainRenderDataSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexWaterDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexWaterDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CleanupHexWaterDataSystem",
-      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -7480,20 +6642,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexGroundDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CreateHexGroundDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CreateHexGroundDataSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexGroundLayerSystem.yml",
       "output": {
         ".html": {
@@ -7505,20 +6653,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CreateHexGroundLayerSystem",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CreateHexGroundLayerSystem.yml\" sourcestartlinenumber=\"1\">System that creates <xref href=\"Fwt.HexTerrains.Surfaces.Data.HexGroundLayer\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem-3.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem-3.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem<TRequest, TSurfaceData, TRenderData>",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CreateHexSurfaceDataSystem-3.yml\" sourcestartlinenumber=\"1\">Base class for systems that create hex surface data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -7536,48 +6670,6 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexSurfaceRenderDataSystem-4.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CreateHexSurfaceRenderDataSystem-4.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CreateHexSurfaceRenderDataSystem<TRequest, TSurfaceData, TRenderData, TRenderConfig>",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexTerrainRenderDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CreateHexTerrainRenderDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CreateHexTerrainRenderDataSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexWaterDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CreateHexWaterDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CreateHexWaterDataSystem",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexWaterLayerSystem.yml",
       "output": {
         ".html": {
@@ -7589,20 +6681,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CreateHexWaterLayerSystem",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CreateHexWaterLayerSystem.yml\" sourcestartlinenumber=\"1\">System that creates <xref href=\"Fwt.HexTerrains.Surfaces.Data.HexWaterLayer\" data-throw-if-not-resolved=\"false\"></xref></p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.Systems.CreateHexWaterRenderDataSystem.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.Systems.CreateHexWaterRenderDataSystem.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Systems.CreateHexWaterRenderDataSystem",
-      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -7732,6 +6810,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.HeightmapsPalette.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.HeightmapsPalette.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.Data.HeightmapsPalette",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.TerrainEditors.Data.HeightmapsPalette.yml\" sourcestartlinenumber=\"1\">A buffer element that holds a heightmap for the ApplyHeightmap user tool.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.HexTerrainEditor.yml",
       "output": {
         ".html": {
@@ -7742,7 +6834,35 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.TerrainEditors.Data.HexTerrainEditor",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.TerrainEditors.Data.HexTerrainEditor.yml\" sourcestartlinenumber=\"1\">Component to mark an entity as a HexTerrain editor.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.HexTerrainPrefabConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.HexTerrainPrefabConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.Data.HexTerrainPrefabConfig",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.TerrainEditors.Data.HexTerrainPrefabConfig.yml\" sourcestartlinenumber=\"1\">Simple HexTerrainPrefab configuration for IUserToolAPI</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig.yml\" sourcestartlinenumber=\"1\">For IUserToolAPI to be able to find a list of prefab configs,\nthe prefab config buffer element bust implement this interface\n<xref href=\"Fwt.HexTerrains.TerrainEditors.Data.HexTerrainPrefabConfig\" data-throw-if-not-resolved=\"false\"></xref>.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -7872,16 +6992,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.yml",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateBase.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState.html"
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateBase.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolState",
+      "Title": "Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateBase",
       "Summary": null
     },
     {
@@ -7914,16 +7034,72 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.CreateNewTerrainCallbackDataSource.yml",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.CreateNewTerrainScreenViewData.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.CreateNewTerrainCallbackDataSource.html"
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.CreateNewTerrainScreenViewData.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.CreateNewTerrainCallbackDataSource",
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.CreateNewTerrainScreenViewData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabAuthoring",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring struct for HexTerrainPrefab data used in terrain editors.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabDataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabDataSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabDataSource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainSettingsDataSource.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainSettingsDataSource.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainSettingsDataSource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.ICreateNewTerrainStateViewData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.ICreateNewTerrainStateViewData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.ICreateNewTerrainStateViewData",
       "Summary": null
     },
     {
@@ -8105,7 +7281,7 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase<TScreen, TCallback>",
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase<TScreen, TViewData>",
       "Summary": null
     },
     {
@@ -8208,16 +7384,16 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState-1.yml",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState-2.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState-1.html"
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState-2.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState<TBrushTarget>",
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState<TBrushTarget, THexSurface>",
       "Summary": null
     },
     {
@@ -8936,17 +8112,17 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.UI.CreateNewTerrainScreenBase.yml",
+      "source_relative_path": "api/Fwt.HexTerrains.UI.CreateNewTerrainScreenBase-1.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Fwt.HexTerrains.UI.CreateNewTerrainScreenBase.html"
+          "relative_path": "api/Fwt.HexTerrains.UI.CreateNewTerrainScreenBase-1.html"
         }
       },
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.UI.CreateNewTerrainScreenBase",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.UI.CreateNewTerrainScreenBase.yml\" sourcestartlinenumber=\"1\">Base class for UI screens that show user a dialog with options to create a new terrain.</p>\n"
+      "Title": "Fwt.HexTerrains.UI.CreateNewTerrainScreenBase<TViewData>",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.UI.CreateNewTerrainScreenBase-1.yml\" sourcestartlinenumber=\"1\">Base class for UI screens that show user a dialog with options to create a new terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8975,34 +8151,6 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.UI.LoadFileScreenBase",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.UI.LoadFileScreenBase.yml\" sourcestartlinenumber=\"1\">Base class for UI Screens that allows user to choose a file to load a saved terrain from.</p>\n"
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.UI.MinimapScreen.ViewModeSettings.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.UI.MinimapScreen.ViewModeSettings.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.UI.MinimapScreen.ViewModeSettings",
-      "Summary": null
-    },
-    {
-      "type": "ManagedReference",
-      "source_relative_path": "api/Fwt.HexTerrains.UI.MinimapScreen.yml",
-      "output": {
-        ".html": {
-          "relative_path": "api/Fwt.HexTerrains.UI.MinimapScreen.html"
-        }
-      },
-      "version": "",
-      "Uid": null,
-      "IsMRef": true,
-      "Title": "Fwt.HexTerrains.UI.MinimapScreen",
-      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -9170,6 +8318,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.UIToolkit.DataSources.UIDataSource",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.UIToolkit.DataSources.UIListViewDataSourceBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.UIToolkit.DataSources.UIListViewDataSourceBase-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.UIToolkit.DataSources.UIListViewDataSourceBase<TItem>",
       "Summary": null
     },
     {

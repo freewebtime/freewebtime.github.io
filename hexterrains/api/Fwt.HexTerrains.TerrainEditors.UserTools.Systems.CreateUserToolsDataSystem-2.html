@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class CreateUserToolsDataSystem&lt;TUserToolsData, TRequest&gt; | Hex Terrains </title>
+      <title>Class CreateUserToolsDataSystem&lt;TUserToolsData, TRequest&gt; | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class CreateUserToolsDataSystem&lt;TUserToolsData, TRequest&gt; | Hex Terrains ">
+      <meta name="title" content="Class CreateUserToolsDataSystem&lt;TUserToolsData, TRequest&gt; | Hex Terrains Framework ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -319,12 +319,12 @@
 
 
   <a id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateData_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateData*"></a>
-  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateData_Unity_Entities_Entity_Unity_Entities_Entity_Unity_Entities_Entity__1_Unity_Entities_EntityCommandBuffer_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateData(Unity.Entities.Entity,Unity.Entities.Entity,Unity.Entities.Entity,`1,Unity.Entities.EntityCommandBuffer)">CreateData(Entity, Entity, Entity, TRequest, EntityCommandBuffer)</h4>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateData_Unity_Entities_Entity_Unity_Entities_Entity__1_Unity_Entities_EntityCommandBuffer_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateData(Unity.Entities.Entity,Unity.Entities.Entity,`1,Unity.Entities.EntityCommandBuffer)">CreateData(Entity, Entity, TRequest, EntityCommandBuffer)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual TUserToolsData CreateData(Entity userToolsEntity, Entity terrainEntity, Entity terrainPrefab, TRequest request, EntityCommandBuffer ecb)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual TUserToolsData CreateData(Entity userToolsEntity, Entity terrainEntity, TRequest request, EntityCommandBuffer ecb)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -344,11 +344,6 @@
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><span class="xref">Entity</span></td>
-        <td><span class="parametername">terrainPrefab</span></td>
         <td></td>
       </tr>
       <tr>
@@ -381,12 +376,12 @@
 
 
   <a id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUISystemAPI_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUISystemAPI*"></a>
-  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUISystemAPI_Unity_Entities_Entity__1_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUISystemAPI(Unity.Entities.Entity,`1)">CreateUISystemAPI(Entity, TRequest)</h4>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUISystemAPI_Unity_Entities_Entity_Unity_Entities_Entity__1_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUISystemAPI(Unity.Entities.Entity,Unity.Entities.Entity,`1)">CreateUISystemAPI(Entity, Entity, TRequest)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract IUISystemAPI CreateUISystemAPI(Entity terrainEntity, TRequest request)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract IUISystemAPI CreateUISystemAPI(Entity userToolsEntity, Entity terrainEntity, TRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -398,6 +393,11 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">userToolsEntity</span></td>
+        <td></td>
+      </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
@@ -428,12 +428,12 @@
 
 
   <a id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUserToolAPI_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUserToolAPI*"></a>
-  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUserToolAPI_Unity_Entities_Entity__1_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUserToolAPI(Unity.Entities.Entity,`1)">CreateUserToolAPI(Entity, TRequest)</h4>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUserToolAPI_Unity_Entities_Entity_Unity_Entities_Entity__1_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUserToolAPI(Unity.Entities.Entity,Unity.Entities.Entity,`1)">CreateUserToolAPI(Entity, Entity, TRequest)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual IUserToolAPI CreateUserToolAPI(Entity terrainEntity, TRequest request)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual IUserToolAPI CreateUserToolAPI(Entity userToolsEntity, Entity terrainEntity, TRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -445,6 +445,11 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">userToolsEntity</span></td>
+        <td></td>
+      </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>
@@ -475,12 +480,12 @@
 
 
   <a id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUserToolsData_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUserToolsData*"></a>
-  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUserToolsData_Unity_Entities_Entity__1_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUserToolsData(Unity.Entities.Entity,`1)">CreateUserToolsData(Entity, TRequest)</h4>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_Systems_CreateUserToolsDataSystem_2_CreateUserToolsData_Unity_Entities_Entity_Unity_Entities_Entity__1_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem`2.CreateUserToolsData(Unity.Entities.Entity,Unity.Entities.Entity,`1)">CreateUserToolsData(Entity, Entity, TRequest)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected abstract TUserToolsData CreateUserToolsData(Entity terrainEntity, TRequest request)</code></pre>
+    <pre><code class="lang-csharp hljs">protected abstract TUserToolsData CreateUserToolsData(Entity userToolsEntity, Entity terrainEntity, TRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -492,6 +497,11 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">userToolsEntity</span></td>
+        <td></td>
+      </tr>
       <tr>
         <td><span class="xref">Entity</span></td>
         <td><span class="parametername">terrainEntity</span></td>

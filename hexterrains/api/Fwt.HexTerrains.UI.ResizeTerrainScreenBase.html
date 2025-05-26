@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class ResizeTerrainScreenBase | Hex Terrains </title>
+      <title>Class ResizeTerrainScreenBase | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class ResizeTerrainScreenBase | Hex Terrains ">
+      <meta name="title" content="Class ResizeTerrainScreenBase | Hex Terrains Framework ">
     
     <meta name="description" content="Base class for the resize terrain screen. Inherit this class to create a custom resize terrain screen.">
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -98,6 +98,10 @@ Inherit this class to create a custom resize terrain screen.</p>
     <div class="level8"><a class="xref" href="Fwt.Core.UI.Screens.UIScreen-1.html">UIScreen</a>&lt;<a class="xref" href="Fwt.HexTerrains.DataSources.ResizeTerrainDataSource.html">ResizeTerrainDataSource</a>&gt;</div>
     <div class="level9"><span class="xref">ResizeTerrainScreenBase</span></div>
       <div class="level10"><a class="xref" href="Fwt.HexTerrains.Samples.UI.ResizeTerrainScreen.html">ResizeTerrainScreen</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.UI.IViewDataReceiver-1.html">IViewDataReceiver</a>&lt;<a class="xref" href="Fwt.HexTerrains.DataSources.ResizeTerrainDataSource.html">ResizeTerrainDataSource</a>&gt;</div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -601,7 +605,7 @@ Inherit this class to create a custom resize terrain screen.</p>
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_UI_ResizeTerrainScreenBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ResizeTerrainScreenBase : UIScreen&lt;ResizeTerrainDataSource&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ResizeTerrainScreenBase : UIScreen&lt;ResizeTerrainDataSource&gt;, IViewDataReceiver&lt;ResizeTerrainDataSource&gt;</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>
@@ -656,6 +660,10 @@ Inherit this class to create a custom resize terrain screen.</p>
       </tr>
     </tbody>
   </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.UI.IViewDataReceiver-1.html">IViewDataReceiver&lt;TViewData&gt;</a>
+  </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>

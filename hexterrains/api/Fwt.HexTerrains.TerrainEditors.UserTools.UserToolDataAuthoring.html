@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class UserToolDataAuthoring | Hex Terrains </title>
+      <title>Class UserToolDataAuthoring | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class UserToolDataAuthoring | Hex Terrains ">
+      <meta name="title" content="Class UserToolDataAuthoring | Hex Terrains Framework ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -516,6 +516,112 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public abstract class UserToolDataAuthoring : MonoBehaviour</code></pre>
   </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataAuthoring_Heightmaps" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataAuthoring.Heightmaps">Heightmaps</h4>
+  <div class="markdown level1 summary"><p>List of heightmaps used by ApplyHeightmapUserTool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of heightmaps used by ApplyHeightmapUserTool.&quot;)]
+public List&lt;Texture2D&gt; Heightmaps</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Texture2D</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataAuthoring_IsAddHeightmaps" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataAuthoring.IsAddHeightmaps">IsAddHeightmaps</h4>
+  <div class="markdown level1 summary"><p>If true, the heightmaps will be added to the UserToolData entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If true, the heightmaps will be added to the UserToolData entity.&quot;)]
+public bool IsAddHeightmaps</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataAuthoring_IsAddTerrainPrefabConfigs" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataAuthoring.IsAddTerrainPrefabConfigs">IsAddTerrainPrefabConfigs</h4>
+  <div class="markdown level1 summary"><p>If true, the terrain prefab configs will be added to the UserToolData entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If true, the terrain prefab configs will be added to the UserToolData entity.&quot;)]
+public bool IsAddTerrainPrefabConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataAuthoring_TerrainPrefabs" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataAuthoring.TerrainPrefabs">TerrainPrefabs</h4>
+  <div class="markdown level1 summary"><p>List of terrain prefabs available for creation</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of terrain prefabs available for creation&quot;)]
+public List&lt;HexTerrainPrefabAuthoring&gt; TerrainPrefabs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.HexTerrainPrefabAuthoring.html">HexTerrainPrefabAuthoring</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>

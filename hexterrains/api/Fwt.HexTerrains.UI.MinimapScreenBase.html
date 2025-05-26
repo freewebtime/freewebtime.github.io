@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class MinimapScreenBase | Hex Terrains </title>
+      <title>Class MinimapScreenBase | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class MinimapScreenBase | Hex Terrains ">
+      <meta name="title" content="Class MinimapScreenBase | Hex Terrains Framework ">
     
     <meta name="description" content="Base class for the minimap UI screen. Inherit from this class to create a new minimap screen (optional). In reality you have to implement IMinimapScreen interface to allow HexTerrains to interact with your screen.">
       <link rel="shortcut icon" href="../favicon.ico">
@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="../index.html">
-                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -102,6 +102,7 @@ In reality you have to implement IMinimapScreen interface to allow HexTerrains t
   </div>
   <div class="implements">
     <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.UI.IViewDataReceiver-1.html">IViewDataReceiver</a>&lt;<a class="xref" href="Fwt.HexTerrains.DataSources.MinimapScreenDataSource.html">MinimapScreenDataSource</a>&gt;</div>
     <div><a class="xref" href="Fwt.HexTerrains.UI.IMinimapScreen.html">IMinimapScreen</a></div>
   </div>
   <div class="inheritedMembers">
@@ -603,35 +604,10 @@ In reality you have to implement IMinimapScreen interface to allow HexTerrains t
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_UI_MinimapScreenBase_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class MinimapScreenBase : UIScreen&lt;MinimapScreenDataSource&gt;, IMinimapScreen</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class MinimapScreenBase : UIScreen&lt;MinimapScreenDataSource&gt;, IViewDataReceiver&lt;MinimapScreenDataSource&gt;, IMinimapScreen</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
-
-
-  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_TexturesSource" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.TexturesSource">TexturesSource</h4>
-  <div class="markdown level1 summary"><p>Scriptable object with color map textures.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public ColorMapTexturesSource TexturesSource</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.ColorMapTexturesSource.html">ColorMapTexturesSource</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 
   <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_ViewMode" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.ViewMode">ViewMode</h4>
@@ -710,13 +686,13 @@ Index in this list = view mode.</p>
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase__terrainsQuery" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase._terrainsQuery">_terrainsQuery</h4>
-  <div class="markdown level1 summary"><p>Cached query to all the terrains in the world.</p>
+  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase__terrainEntity" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase._terrainEntity">_terrainEntity</h4>
+  <div class="markdown level1 summary"><p>Terrain entity this minimap screen shows</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected EntityQuery _terrainsQuery</code></pre>
+    <pre><code class="lang-csharp hljs">protected Entity _terrainEntity</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -728,7 +704,7 @@ Index in this list = view mode.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="xref">Entity</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -762,9 +738,35 @@ Index in this list = view mode.</p>
 </h3>
 
 
+  <a id="Fwt_HexTerrains_UI_MinimapScreenBase_TerrainEntity_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.TerrainEntity*"></a>
+  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_TerrainEntity" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.TerrainEntity">TerrainEntity</h4>
+  <div class="markdown level1 summary"><p>Terrain entity this minimap screen shows</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Entity TerrainEntity { get; protected set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_UI_MinimapScreenBase_TexturesVersion_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.TexturesVersion*"></a>
   <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_TexturesVersion" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.TexturesVersion">TexturesVersion</h4>
-  <div class="markdown level1 summary"><p>Cached version of the color textures. If it is different from the version of Color Textures data, the screen will be updated with a new data.</p>
+  <div class="markdown level1 summary"><p>Cached viewModeVersion of the color textures. If it is different from the viewModeVersion of Color Textures data, the screen will be updated with a new data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -790,7 +792,7 @@ Index in this list = view mode.</p>
 
   <a id="Fwt_HexTerrains_UI_MinimapScreenBase_ViewModeVersion_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.ViewModeVersion*"></a>
   <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_ViewModeVersion" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.ViewModeVersion">ViewModeVersion</h4>
-  <div class="markdown level1 summary"><p>Cached version of the view mode. If it is different from the version of View Mode data, the screen will be updated with a new data.</p>
+  <div class="markdown level1 summary"><p>Cached viewModeVersion of the view mode. If it is different from the viewModeVersion of View Mode data, the screen will be updated with a new data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -827,14 +829,15 @@ Index in this list = view mode.</p>
   </div>
 
 
-  <a id="Fwt_HexTerrains_UI_MinimapScreenBase_SetCameraControllerData_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetCameraControllerData*"></a>
-  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_SetCameraControllerData_Fwt_HexTerrains_Cameras_Data_CameraControllerTarget_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetCameraControllerData(Fwt.HexTerrains.Cameras.Data.CameraControllerTarget,Fwt.HexTerrains.Data.HexTerrainSettings)">SetCameraControllerData(CameraControllerTarget, HexTerrainSettings)</h4>
-  <div class="markdown level1 summary"><p>Set the camera controller data for the minimap. Called from system so UI screen can update its data.</p>
+  <a id="Fwt_HexTerrains_UI_MinimapScreenBase_SetCameraNormalizedPosition_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetCameraNormalizedPosition*"></a>
+  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_SetCameraNormalizedPosition_Unity_Mathematics_float2_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetCameraNormalizedPosition(Unity.Mathematics.float2)">SetCameraNormalizedPosition(float2)</h4>
+  <div class="markdown level1 summary"><p>Sets the camera normalized position for the minimap. This is called from system so UI screen can update its data.
+Normalized position is a position in range x 0..1 and y 0..1 where 1 is the full width/height of the terrain in meters.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void SetCameraControllerData(CameraControllerTarget target, HexTerrainSettings terrainSettings)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void SetCameraNormalizedPosition(float2 normalizedCameraPosition)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -847,15 +850,9 @@ Index in this list = view mode.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.html">CameraControllerTarget</a></td>
-        <td><span class="parametername">target</span></td>
-        <td><p>Target of the camera, the object that camera calculates a position relative too and looks at.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
-        <td><span class="parametername">terrainSettings</span></td>
-        <td><p>Settings of the terrain. Allows to calculate the area that HexTerrain is covered. Needed so camera teleports from side to side if Terrain has connected edges, otherwise prevents camera to move outside the terrain bounds</p>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">normalizedCameraPosition</span></td>
+        <td><p>Position of the camera relative to the map in range 0..1 where 1 is a full width/height of the terrain in meters</p>
 </td>
       </tr>
     </tbody>
@@ -890,21 +887,21 @@ Index in this list = view mode.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
         <td><span class="parametername">texturesVersion</span></td>
-        <td><p>version of textures provided</p>
+        <td><p>viewModeVersion of textures provided</p>
 </td>
       </tr>
     </tbody>
   </table>
 
 
-  <a id="Fwt_HexTerrains_UI_MinimapScreenBase_SetViewMode_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetViewMode*"></a>
-  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_SetViewMode_System_Int32_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetViewMode(System.Int32)">SetViewMode(int)</h4>
-  <div class="markdown level1 summary"><p>Set the view mode for the minimap. Called from system so UI screen can update its data.</p>
+  <a id="Fwt_HexTerrains_UI_MinimapScreenBase_SetTerrainEntity_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetTerrainEntity*"></a>
+  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_SetTerrainEntity_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetTerrainEntity(Unity.Entities.Entity)">SetTerrainEntity(Entity)</h4>
+  <div class="markdown level1 summary"><p>Sets an entity of terrain that will be displayed on the minimap.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void SetViewMode(int viewMode)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void SetTerrainEntity(Entity terrainEntity)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -917,9 +914,10 @@ Index in this list = view mode.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">viewMode</span></td>
-        <td></td>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>Entity of terrain to be shown on minimap</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -932,7 +930,7 @@ Index in this list = view mode.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void SetViewMode(int viewMode, long version)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void SetViewMode(int viewMode, long viewModeVersion)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -951,7 +949,35 @@ Index in this list = view mode.</p>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
-        <td><span class="parametername">version</span></td>
+        <td><span class="parametername">viewModeVersion</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UI_MinimapScreenBase_SetViewModeOnTerrain_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetViewModeOnTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_UI_MinimapScreenBase_SetViewModeOnTerrain_System_Int32_" data-uid="Fwt.HexTerrains.UI.MinimapScreenBase.SetViewModeOnTerrain(System.Int32)">SetViewModeOnTerrain(int)</h4>
+  <div class="markdown level1 summary"><p>Set the view mode for the minimap. Called from system so UI screen can update its data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetViewModeOnTerrain(int newViewMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">newViewMode</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -969,6 +995,9 @@ Index in this list = view mode.</p>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Fwt.Core.UI.Screens.UIDocumentView.html#Fwt_Core_UI_Screens_UIDocumentView_Start">UIDocumentView.Start()</a></div>
   <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.UI.IViewDataReceiver-1.html">IViewDataReceiver&lt;TViewData&gt;</a>
+  </div>
   <div>
       <a class="xref" href="Fwt.HexTerrains.UI.IMinimapScreen.html">IMinimapScreen</a>
   </div>

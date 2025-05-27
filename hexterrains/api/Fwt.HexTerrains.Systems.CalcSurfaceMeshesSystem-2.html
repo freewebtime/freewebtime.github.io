@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalcSurfaceMeshesSystem&lt;TSurfaceData, TRenderData&gt; | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Bases class for systems that fill chunk  with generated data (verts, tris, uvs, etc.).">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2" class="text-break">Class CalcSurfaceMeshesSystem&lt;TSurfaceData, TRenderData&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Bases class for systems that fill chunk <span class="xref">UnityEngine.Mesh</span> with generated data (verts, tris, uvs, etc.).</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -307,11 +308,13 @@
     <tbody>
       <tr>
         <td><span class="parametername">TSurfaceData</span></td>
-        <td></td>
+        <td><p>Surface data that TRenderData renders</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">TRenderData</span></td>
-        <td></td>
+        <td><p>Surface render data that contains meshes that will be filled</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -320,12 +323,12 @@
 
 
   <a id="Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2_CalcMeshes_" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes*"></a>
-  <h4 id="Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2_CalcMeshes__0__1_" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes(`0,`1)">CalcMeshes(TSurfaceData, TRenderData)</h4>
+  <h4 id="Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2_CalcMeshes_Fwt_HexTerrains_Data_HexTerrainVisibility__1_" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes(Fwt.HexTerrains.Data.HexTerrainVisibility,`1)">CalcMeshes(HexTerrainVisibility, TRenderData)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void CalcMeshes(TSurfaceData surfaceData, TRenderData renderData)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void CalcMeshes(HexTerrainVisibility terrainVisibility, TRenderData renderData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -338,8 +341,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">TSurfaceData</span></td>
-        <td><span class="parametername">surfaceData</span></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></td>
+        <td><span class="parametername">terrainVisibility</span></td>
         <td></td>
       </tr>
       <tr>
@@ -354,10 +357,22 @@
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

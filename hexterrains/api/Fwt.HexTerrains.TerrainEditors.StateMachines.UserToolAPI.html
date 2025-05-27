@@ -1163,6 +1163,33 @@ This list can be sent to the UI to display available terrain prefabs for the use
   </table>
 
 
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsTerrainVisible_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsTerrainVisible" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible">GetIsTerrainVisible()</h4>
+  <div class="markdown level1 summary"><p>Returns true if terrain is visible, false is invisible, null if no terrain with visibility found<a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GetIsTerrainVisible()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</td>
+        <td><p>true if terrain is visible, false is invisible, null if no terrain with visibility found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsVisibleBrush_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsVisibleBrush*"></a>
   <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsVisibleBrush" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsVisibleBrush">GetIsVisibleBrush()</h4>
   <div class="markdown level1 summary"><p>Returns true if the brush on TerrainEntity is visible.</p>
@@ -2119,6 +2146,52 @@ Meaning if terrain has this data layer.</p>
   </table>
 
 
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsTerrainVisible_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsTerrainVisible_System_Boolean_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible(System.Boolean)">SetIsTerrainVisible(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets terrain visibility. <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a>
+Returns true if value was set</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetIsTerrainVisible(bool isVisible)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isVisible</span></td>
+        <td><p>New visibility value for terrain</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value was set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsVisibleBrush_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsVisibleBrush*"></a>
   <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsVisibleBrush_System_Boolean_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsVisibleBrush(System.Boolean)">SetIsVisibleBrush(bool)</h4>
   <div class="markdown level1 summary"><p>Sets the IsVisible value of the brush on TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
@@ -2207,6 +2280,33 @@ Meaning if terrain has this data layer.</p>
       </tr>
     </tbody>
   </table>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_ToggleIsTerrainVisible_" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_ToggleIsTerrainVisible" data-uid="Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible">ToggleIsTerrainVisible()</h4>
+  <div class="markdown level1 summary"><p>Destroys the specified screen instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ToggleIsTerrainVisible()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</td>
+        <td><p>true if the screen was destroyed successfully; otherwise, false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html">IUserToolAPI</a>
@@ -2216,10 +2316,22 @@ Meaning if terrain has this data layer.</p>
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

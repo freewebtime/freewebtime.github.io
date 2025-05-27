@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalcCellItemsSystem | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="System that calculates all the visible RenderEntities from CellItems (not Entities, but mesh+submesh+material+transform unique combination).">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem" data-uid="Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem" class="text-break">Class CalcCellItemsSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>System that calculates all the visible RenderEntities from CellItems (not Entities, but mesh+submesh+material+transform unique combination).</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -300,12 +301,12 @@
 
 
   <a id="Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem_UpdateItems_" data-uid="Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems*"></a>
-  <h4 id="Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem_UpdateItems_Fwt_HexTerrains_CellItems_Data_CellItemsLayer__Fwt_HexTerrains_Surfaces_Data_HexGroundLayer__Fwt_HexTerrains_Data_ChunksGridData_" data-uid="Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer@,Fwt.HexTerrains.Surfaces.Data.HexGroundLayer@,Fwt.HexTerrains.Data.ChunksGridData)">UpdateItems(in CellItemsLayer, in HexGroundLayer, ChunksGridData)</h4>
+  <h4 id="Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_CellItems_Data_CellItemsLayer__Fwt_HexTerrains_Surfaces_Data_HexGroundLayer__Fwt_HexTerrains_Data_ChunksGridData_" data-uid="Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer@,Fwt.HexTerrains.Surfaces.Data.HexGroundLayer@,Fwt.HexTerrains.Data.ChunksGridData)">UpdateItems(in HexTerrainVisibility, in CellItemsLayer, in HexGroundLayer, ChunksGridData)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void UpdateItems(in CellItemsLayer cellItemsData, in HexGroundLayer terrainData, ChunksGridData chunksData)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void UpdateItems(in HexTerrainVisibility terrainVisibility, in CellItemsLayer cellItemsLayer, in HexGroundLayer surfaceLayer, ChunksGridData chunksData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -318,13 +319,18 @@
     </thead>
     <tbody>
       <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></td>
+        <td><span class="parametername">terrainVisibility</span></td>
+        <td></td>
+      </tr>
+      <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItemsLayer.html">CellItemsLayer</a></td>
-        <td><span class="parametername">cellItemsData</span></td>
+        <td><span class="parametername">cellItemsLayer</span></td>
         <td></td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundLayer.html">HexGroundLayer</a></td>
-        <td><span class="parametername">terrainData</span></td>
+        <td><span class="parametername">surfaceLayer</span></td>
         <td></td>
       </tr>
       <tr>
@@ -339,10 +345,22 @@
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

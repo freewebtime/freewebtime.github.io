@@ -510,7 +510,7 @@ Usually used to clean the dirty flags.</p>
 
 
   <a id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig})">Init(HexTerrainSettings, NativeArray&lt;HexCellEntityConfig&gt;)</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__Unity_Entities_EntityManager_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig},Unity.Entities.EntityManager)">Init(HexTerrainSettings, NativeArray&lt;HexCellEntityConfig&gt;, EntityManager)</h4>
   <div class="markdown level1 summary"><p>Initializes/Reinitializes the cell entities data.
 Calls InitCellEntitiesConfigs() internally to copy the color palette
 from the given array <a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_InitCellEntitiesConfigs_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__">InitCellEntitiesConfigs(NativeArray&lt;HexCellEntityConfig&gt;)</a>.
@@ -520,7 +520,7 @@ so it is safe to dispose it after this call.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, NativeArray&lt;HexCellEntityConfig&gt; copyItemConfigsFrom)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, NativeArray&lt;HexCellEntityConfig&gt; copyItemConfigsFrom, EntityManager entityManager)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -543,6 +543,11 @@ so it is safe to dispose it after this call.</p>
         <td><span class="parametername">copyItemConfigsFrom</span></td>
         <td><p>array of colors per CellEntity index to copy a ItemConfigs from</p>
 </td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
@@ -777,10 +782,22 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

@@ -54396,15 +54396,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem
   nameWithType: CalcHexTerrainAreaCellsSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Unity.Entities.Entity@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
-  name: UpdateData(in Entity, in HexTerrainAreasData)
-  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_Unity_Entities_Entity__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData__
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Unity.Entities.Entity@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
-  name.vb: UpdateData(Entity, HexTerrainAreasData)
-  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(in Unity.Entities.Entity, in Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Unity.Entities.Entity, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  nameWithType: CalcHexTerrainAreaCellsSystem.UpdateData(in Entity, in HexTerrainAreasData)
-  nameWithType.vb: CalcHexTerrainAreaCellsSystem.UpdateData(Entity, HexTerrainAreasData)
+- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
+  name: UpdateData(in HexTerrainVisibility, in HexTerrainAreasData)
+  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData__
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
+  name.vb: UpdateData(HexTerrainVisibility, HexTerrainAreasData)
+  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  nameWithType: CalcHexTerrainAreaCellsSystem.UpdateData(in HexTerrainVisibility, in HexTerrainAreasData)
+  nameWithType.vb: CalcHexTerrainAreaCellsSystem.UpdateData(HexTerrainVisibility, HexTerrainAreasData)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData*
   name: UpdateData
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_
@@ -54418,15 +54418,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem
   nameWithType: CalcHexTerrainAreaColorsSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Unity.Entities.Entity@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
-  name: UpdateData(in Entity, in HexTerrainAreasData)
-  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_Unity_Entities_Entity__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData__
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Unity.Entities.Entity@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
-  name.vb: UpdateData(Entity, HexTerrainAreasData)
-  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(in Unity.Entities.Entity, in Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Unity.Entities.Entity, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  nameWithType: CalcHexTerrainAreaColorsSystem.UpdateData(in Entity, in HexTerrainAreasData)
-  nameWithType.vb: CalcHexTerrainAreaColorsSystem.UpdateData(Entity, HexTerrainAreasData)
+- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
+  name: UpdateData(in HexTerrainVisibility, in HexTerrainAreasData)
+  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData__
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
+  name.vb: UpdateData(HexTerrainVisibility, HexTerrainAreasData)
+  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  nameWithType: CalcHexTerrainAreaColorsSystem.UpdateData(in HexTerrainVisibility, in HexTerrainAreasData)
+  nameWithType.vb: CalcHexTerrainAreaColorsSystem.UpdateData(HexTerrainVisibility, HexTerrainAreasData)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData*
   name: UpdateData
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_
@@ -54440,15 +54440,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem
   nameWithType: CalcHexTerrainAreasDataSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Unity.Entities.Entity@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
-  name: UpdateData(in Entity, in HexTerrainAreasData)
-  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_Unity_Entities_Entity__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData__
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Unity.Entities.Entity@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
-  name.vb: UpdateData(Entity, HexTerrainAreasData)
-  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(in Unity.Entities.Entity, in Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Unity.Entities.Entity, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  nameWithType: CalcHexTerrainAreasDataSystem.UpdateData(in Entity, in HexTerrainAreasData)
-  nameWithType.vb: CalcHexTerrainAreasDataSystem.UpdateData(Entity, HexTerrainAreasData)
+- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
+  name: UpdateData(in HexTerrainVisibility, in HexTerrainAreasData)
+  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData__
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData@)
+  name.vb: UpdateData(HexTerrainVisibility, HexTerrainAreasData)
+  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  nameWithType: CalcHexTerrainAreasDataSystem.UpdateData(in HexTerrainVisibility, in HexTerrainAreasData)
+  nameWithType.vb: CalcHexTerrainAreasDataSystem.UpdateData(HexTerrainVisibility, HexTerrainAreasData)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData*
   name: UpdateData
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_
@@ -54654,12 +54654,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem
   nameWithType: CleanupHexTerrainAreasSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  name: CleanupData(HexTerrainAreasData)
-  href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
-  nameWithType: CleanupHexTerrainAreasSystem.CleanupData(HexTerrainAreasData)
+- uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  name: CleanupData(in HexTerrainVisibility, HexTerrainAreasData)
+  href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  name.vb: CleanupData(HexTerrainVisibility, HexTerrainAreasData)
+  fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(in Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)
+  nameWithType: CleanupHexTerrainAreasSystem.CleanupData(in HexTerrainVisibility, HexTerrainAreasData)
+  nameWithType.vb: CleanupHexTerrainAreasSystem.CleanupData(HexTerrainVisibility, HexTerrainAreasData)
 - uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData*
   name: CleanupData
   href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_
@@ -55990,15 +55993,15 @@ references:
   commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
   nameWithType: CellEntitiesLayer.Init(HexTerrainSettings)
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig})
-  name: Init(HexTerrainSettings, NativeArray<HexCellEntityConfig>)
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__
-  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig})
-  name.vb: Init(HexTerrainSettings, NativeArray(Of HexCellEntityConfig))
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig>)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig))
-  nameWithType: CellEntitiesLayer.Init(HexTerrainSettings, NativeArray<HexCellEntityConfig>)
-  nameWithType.vb: CellEntitiesLayer.Init(HexTerrainSettings, NativeArray(Of HexCellEntityConfig))
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig},Unity.Entities.EntityManager)
+  name: Init(HexTerrainSettings, NativeArray<HexCellEntityConfig>, EntityManager)
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_HexCellEntityConfig__Unity_Entities_EntityManager_
+  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig},Unity.Entities.EntityManager)
+  name.vb: Init(HexTerrainSettings, NativeArray(Of HexCellEntityConfig), EntityManager)
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig>, Unity.Entities.EntityManager)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.HexCellEntityConfig), Unity.Entities.EntityManager)
+  nameWithType: CellEntitiesLayer.Init(HexTerrainSettings, NativeArray<HexCellEntityConfig>, EntityManager)
+  nameWithType.vb: CellEntitiesLayer.Init(HexTerrainSettings, NativeArray(Of HexCellEntityConfig), EntityManager)
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Entities.EntityManager)
   name: Init(HexTerrainSettings, EntityManager)
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Entities_EntityManager_
@@ -56837,6 +56840,12 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.ChunkGridIndexHandle
   fullName: Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.ChunkGridIndexHandle
   nameWithType: UpdateCellItemsStateJob.ChunkGridIndexHandle
+- uid: Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.ChunkVisibilityMap
+  name: ChunkVisibilityMap
+  href: api/Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.html#Fwt_HexTerrains_CellEntities_Jobs_UpdateCellItemsStateJob_ChunkVisibilityMap
+  commentId: F:Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.ChunkVisibilityMap
+  fullName: Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.ChunkVisibilityMap
+  nameWithType: UpdateCellItemsStateJob.ChunkVisibilityMap
 - uid: Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.Execute(Unity.Entities.ArchetypeChunk@,System.Int32,System.Boolean,Unity.Burst.Intrinsics.v128@)
   name: Execute(in ArchetypeChunk, int, bool, in v128)
   href: api/Fwt.HexTerrains.CellEntities.Jobs.UpdateCellItemsStateJob.html#Fwt_HexTerrains_CellEntities_Jobs_UpdateCellItemsStateJob_Execute_Unity_Entities_ArchetypeChunk__System_Int32_System_Boolean_Unity_Burst_Intrinsics_v128__
@@ -56908,14 +56917,14 @@ references:
   fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem(Of TDataLayer).ClearDestroyedCellEntities
   nameWithType: CacheHexCellEntityDataSystem<TDataLayer>.ClearDestroyedCellEntities
   nameWithType.vb: CacheHexCellEntityDataSystem(Of TDataLayer).ClearDestroyedCellEntities
-- uid: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  name: DisposeCellItemsData(CellEntitiesLayer)
-  href: api/Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem-1.html#Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_DisposeCellItemsData_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_
-  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  fullName: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem<TDataLayer>.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem(Of TDataLayer).DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  nameWithType: CacheHexCellEntityDataSystem<TDataLayer>.DisposeCellItemsData(CellEntitiesLayer)
-  nameWithType.vb: CacheHexCellEntityDataSystem(Of TDataLayer).DisposeCellItemsData(CellEntitiesLayer)
+- uid: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Systems.HexCellEntityDataCache)
+  name: DisposeCellItemsData(HexCellEntityDataCache)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem-1.html#Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_DisposeCellItemsData_Fwt_HexTerrains_CellEntities_Systems_HexCellEntityDataCache_
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Systems.HexCellEntityDataCache)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem<TDataLayer>.DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Systems.HexCellEntityDataCache)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem(Of TDataLayer).DisposeCellItemsData(Fwt.HexTerrains.CellEntities.Systems.HexCellEntityDataCache)
+  nameWithType: CacheHexCellEntityDataSystem<TDataLayer>.DisposeCellItemsData(HexCellEntityDataCache)
+  nameWithType.vb: CacheHexCellEntityDataSystem(Of TDataLayer).DisposeCellItemsData(HexCellEntityDataCache)
 - uid: Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem`1.DisposeCellItemsData*
   name: DisposeCellItemsData
   href: api/Fwt.HexTerrains.CellEntities.Systems.CacheHexCellEntityDataSystem-1.html#Fwt_HexTerrains_CellEntities_Systems_CacheHexCellEntityDataSystem_1_DisposeCellItemsData_
@@ -56988,15 +56997,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem
   fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem
   nameWithType: CalcCellEntityColorsSystem
-- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData@)
-  name: UpdateCellItems(Entity, in CellEntityPropsData)
-  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityColorsSystem_UpdateCellItems_Unity_Entities_Entity_Fwt_HexTerrains_CellEntities_Data_CellEntityPropsData__
-  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData@)
-  name.vb: UpdateCellItems(Entity, CellEntityPropsData)
-  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Unity.Entities.Entity, in Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Unity.Entities.Entity, Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData)
-  nameWithType: CalcCellEntityColorsSystem.UpdateCellItems(Entity, in CellEntityPropsData)
-  nameWithType.vb: CalcCellEntityColorsSystem.UpdateCellItems(Entity, CellEntityPropsData)
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData@)
+  name: UpdateCellItems(HexTerrainVisibility, in CellEntityPropsData)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityColorsSystem_UpdateCellItems_Fwt_HexTerrains_Data_HexTerrainVisibility_Fwt_HexTerrains_CellEntities_Data_CellEntityPropsData__
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData@)
+  name.vb: UpdateCellItems(HexTerrainVisibility, CellEntityPropsData)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData)
+  nameWithType: CalcCellEntityColorsSystem.UpdateCellItems(HexTerrainVisibility, in CellEntityPropsData)
+  nameWithType.vb: CalcCellEntityColorsSystem.UpdateCellItems(HexTerrainVisibility, CellEntityPropsData)
 - uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems*
   name: UpdateCellItems
   href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityColorsSystem_UpdateCellItems_
@@ -57010,15 +57019,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem
   fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem
   nameWithType: CalcCellEntityEntitiesSystem
-- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer@)
-  name: UpdateCellItems(Entity, in CellEntitiesLayer)
-  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityEntitiesSystem_UpdateCellItems_Unity_Entities_Entity_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer__
-  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer@)
-  name.vb: UpdateCellItems(Entity, CellEntitiesLayer)
-  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Unity.Entities.Entity, in Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Unity.Entities.Entity, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  nameWithType: CalcCellEntityEntitiesSystem.UpdateCellItems(Entity, in CellEntitiesLayer)
-  nameWithType.vb: CalcCellEntityEntitiesSystem.UpdateCellItems(Entity, CellEntitiesLayer)
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer@)
+  name: UpdateCellItems(HexTerrainVisibility, in CellEntitiesLayer)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityEntitiesSystem_UpdateCellItems_Fwt_HexTerrains_Data_HexTerrainVisibility_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer__
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer@)
+  name.vb: UpdateCellItems(HexTerrainVisibility, CellEntitiesLayer)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
+  nameWithType: CalcCellEntityEntitiesSystem.UpdateCellItems(HexTerrainVisibility, in CellEntitiesLayer)
+  nameWithType.vb: CalcCellEntityEntitiesSystem.UpdateCellItems(HexTerrainVisibility, CellEntitiesLayer)
 - uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems*
   name: UpdateCellItems
   href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityEntitiesSystem_UpdateCellItems_
@@ -57026,6 +57035,70 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityEntitiesSystem.UpdateCellItems
   nameWithType: CalcCellEntityEntitiesSystem.UpdateCellItems
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem
+  name: CalcCellEntityPropColorsSystem
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem
+  nameWithType: CalcCellEntityPropColorsSystem
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnCreateForCompiler
+  name: OnCreateForCompiler()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropColorsSystem_OnCreateForCompiler
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnCreateForCompiler
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnCreateForCompiler()
+  nameWithType: CalcCellEntityPropColorsSystem.OnCreateForCompiler()
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnCreateForCompiler*
+  name: OnCreateForCompiler
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropColorsSystem_OnCreateForCompiler_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnCreateForCompiler
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnCreateForCompiler
+  nameWithType: CalcCellEntityPropColorsSystem.OnCreateForCompiler
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropColorsSystem_OnUpdate
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnUpdate
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnUpdate()
+  nameWithType: CalcCellEntityPropColorsSystem.OnUpdate()
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropColorsSystem_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.OnUpdate
+  nameWithType: CalcCellEntityPropColorsSystem.OnUpdate
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem
+  name: CalcCellEntityPropsSystem
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem
+  nameWithType: CalcCellEntityPropsSystem
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnCreateForCompiler
+  name: OnCreateForCompiler()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropsSystem_OnCreateForCompiler
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnCreateForCompiler
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnCreateForCompiler()
+  nameWithType: CalcCellEntityPropsSystem.OnCreateForCompiler()
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnCreateForCompiler*
+  name: OnCreateForCompiler
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropsSystem_OnCreateForCompiler_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnCreateForCompiler
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnCreateForCompiler
+  nameWithType: CalcCellEntityPropsSystem.OnCreateForCompiler
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropsSystem_OnUpdate
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnUpdate
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnUpdate()
+  nameWithType: CalcCellEntityPropsSystem.OnUpdate()
+- uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.html#Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityPropsSystem_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.OnUpdate
+  nameWithType: CalcCellEntityPropsSystem.OnUpdate
 - uid: Fwt.HexTerrains.CellEntities.Systems.CalcCellPropColorsSystem
   name: CalcCellPropColorsSystem
   href: api/Fwt.HexTerrains.CellEntities.Systems.CalcCellPropColorsSystem.html
@@ -57096,12 +57169,12 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem
   fullName: Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem
   nameWithType: CleanupCellEntitiesDataSystem
-- uid: Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  name: UpdateCells(CellEntitiesLayer)
-  href: api/Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.html#Fwt_HexTerrains_CellEntities_Systems_CleanupCellEntitiesDataSystem_UpdateCells_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_
-  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  fullName: Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells(Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
-  nameWithType: CleanupCellEntitiesDataSystem.UpdateCells(CellEntitiesLayer)
+- uid: Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
+  name: UpdateCells(HexTerrainVisibility, CellEntitiesLayer)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.html#Fwt_HexTerrains_CellEntities_Systems_CleanupCellEntitiesDataSystem_UpdateCells_Fwt_HexTerrains_Data_HexTerrainVisibility_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer)
+  nameWithType: CleanupCellEntitiesDataSystem.UpdateCells(HexTerrainVisibility, CellEntitiesLayer)
 - uid: Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.UpdateCells*
   name: UpdateCells
   href: api/Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntitiesDataSystem.html#Fwt_HexTerrains_CellEntities_Systems_CleanupCellEntitiesDataSystem_UpdateCells_
@@ -57204,6 +57277,25 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityCommandBuffersSystem.UpdateCells
   nameWithType: PlaybackUpdateCellEntityCommandBuffersSystem.UpdateCells
+- uid: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem
+  name: PlaybackUpdateCellEntityPropsCommandBuffersSystem
+  href: api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem
+  fullName: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem
+  nameWithType: PlaybackUpdateCellEntityPropsCommandBuffersSystem
+- uid: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.html#Fwt_HexTerrains_CellEntities_Systems_PlaybackUpdateCellEntityPropsCommandBuffersSystem_OnUpdate
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate
+  fullName: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate()
+  nameWithType: PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate()
+- uid: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.html#Fwt_HexTerrains_CellEntities_Systems_PlaybackUpdateCellEntityPropsCommandBuffersSystem_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate
+  nameWithType: PlaybackUpdateCellEntityPropsCommandBuffersSystem.OnUpdate
 - uid: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellPropsCommandBuffersSystem
   name: PlaybackUpdateCellPropsCommandBuffersSystem
   href: api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellPropsCommandBuffersSystem.html
@@ -57223,6 +57315,28 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellPropsCommandBuffersSystem.OnUpdate
   nameWithType: PlaybackUpdateCellPropsCommandBuffersSystem.OnUpdate
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem
+  name: UpdateCellEntitiesSystem
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem
+  nameWithType: UpdateCellEntitiesSystem
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
+  name: UpdateCellEntities(Entity, in HexTerrainVisibility, CellEntitiesLayer, CellMetricsDataLayer)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntitiesSystem_UpdateCellEntities_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
+  name.vb: UpdateCellEntities(Entity, HexTerrainVisibility, CellEntitiesLayer, CellMetricsDataLayer)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities(Unity.Entities.Entity, in Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer, Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer, Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
+  nameWithType: UpdateCellEntitiesSystem.UpdateCellEntities(Entity, in HexTerrainVisibility, CellEntitiesLayer, CellMetricsDataLayer)
+  nameWithType.vb: UpdateCellEntitiesSystem.UpdateCellEntities(Entity, HexTerrainVisibility, CellEntitiesLayer, CellMetricsDataLayer)
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities*
+  name: UpdateCellEntities
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntitiesSystem_UpdateCellEntities_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.UpdateCellEntities
+  nameWithType: UpdateCellEntitiesSystem.UpdateCellEntities
 - uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem
   name: UpdateCellEntityEntitiesStateSystem
   href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.html
@@ -57242,12 +57356,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.OnCreate
   nameWithType: UpdateCellEntityEntitiesStateSystem.OnCreate
-- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
-  name: UpdateCells(Entity, CellEntitiesLayer, CellMetricsDataLayer)
-  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityEntitiesStateSystem_UpdateCells_Unity_Entities_Entity_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_
-  commentId: M:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
-  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells(Unity.Entities.Entity, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer, Fwt.HexTerrains.DataLayers.CellMetricsDataLayer)
-  nameWithType: UpdateCellEntityEntitiesStateSystem.UpdateCells(Entity, CellEntitiesLayer, CellMetricsDataLayer)
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer,Fwt.HexTerrains.Data.ChunksGridData)
+  name: UpdateCells(Entity, HexTerrainVisibility, CellEntitiesLayer, CellMetricsDataLayer, ChunksGridData)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityEntitiesStateSystem_UpdateCells_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainVisibility_Fwt_HexTerrains_CellEntities_Data_CellEntitiesLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_Fwt_HexTerrains_Data_ChunksGridData_
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer,Fwt.HexTerrains.Data.ChunksGridData)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellEntities.Data.CellEntitiesLayer, Fwt.HexTerrains.DataLayers.CellMetricsDataLayer, Fwt.HexTerrains.Data.ChunksGridData)
+  nameWithType: UpdateCellEntityEntitiesStateSystem.UpdateCells(Entity, HexTerrainVisibility, CellEntitiesLayer, CellMetricsDataLayer, ChunksGridData)
 - uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.UpdateCells*
   name: UpdateCells
   href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesStateSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityEntitiesStateSystem_UpdateCells_
@@ -57274,6 +57388,44 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesSystem.UpdateCellEntities
   nameWithType: UpdateCellEntityEntitiesSystem.UpdateCellEntities
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem
+  name: UpdateCellEntityPropEntitiesSystem
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem
+  nameWithType: UpdateCellEntityPropEntitiesSystem
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityPropEntitiesSystem_OnUpdate
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.OnUpdate
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.OnUpdate()
+  nameWithType: UpdateCellEntityPropEntitiesSystem.OnUpdate()
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityPropEntitiesSystem_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.OnUpdate
+  nameWithType: UpdateCellEntityPropEntitiesSystem.OnUpdate
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem
+  name: UpdateCellEntityPropStateSystem
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem
+  nameWithType: UpdateCellEntityPropStateSystem
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityPropStateSystem_OnUpdate
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.OnUpdate
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.OnUpdate()
+  nameWithType: UpdateCellEntityPropStateSystem.OnUpdate()
+- uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.html#Fwt_HexTerrains_CellEntities_Systems_UpdateCellEntityPropStateSystem_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.OnUpdate
+  nameWithType: UpdateCellEntityPropStateSystem.OnUpdate
 - uid: Fwt.HexTerrains.CellEntities.Systems.UpdateCellPropEntitiesSystem
   name: UpdateCellPropEntitiesSystem
   href: api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellPropEntitiesSystem.html
@@ -58070,12 +58222,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem
   fullName: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem
   nameWithType: CalcCellItemsColorsSystem
-- uid: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity,Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
-  name: UpdateItems(Entity, CellItemsLayer)
-  href: api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.html#Fwt_HexTerrains_CellItems_Systems_CalcCellItemsColorsSystem_UpdateItems_Unity_Entities_Entity_Fwt_HexTerrains_CellItems_Data_CellItemsLayer_
-  commentId: M:Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity,Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
-  fullName: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity, Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
-  nameWithType: CalcCellItemsColorsSystem.UpdateItems(Entity, CellItemsLayer)
+- uid: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
+  name: UpdateItems(Entity, in HexTerrainVisibility, CellItemsLayer)
+  href: api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.html#Fwt_HexTerrains_CellItems_Systems_CalcCellItemsColorsSystem_UpdateItems_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_CellItems_Data_CellItemsLayer_
+  commentId: M:Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
+  name.vb: UpdateItems(Entity, HexTerrainVisibility, CellItemsLayer)
+  fullName: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity, in Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
+  fullName.vb: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
+  nameWithType: CalcCellItemsColorsSystem.UpdateItems(Entity, in HexTerrainVisibility, CellItemsLayer)
+  nameWithType.vb: CalcCellItemsColorsSystem.UpdateItems(Entity, HexTerrainVisibility, CellItemsLayer)
 - uid: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.UpdateItems*
   name: UpdateItems
   href: api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsColorsSystem.html#Fwt_HexTerrains_CellItems_Systems_CalcCellItemsColorsSystem_UpdateItems_
@@ -58089,15 +58244,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem
   fullName: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem
   nameWithType: CalcCellItemsSystem
-- uid: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer@,Fwt.HexTerrains.Surfaces.Data.HexGroundLayer@,Fwt.HexTerrains.Data.ChunksGridData)
-  name: UpdateItems(in CellItemsLayer, in HexGroundLayer, ChunksGridData)
-  href: api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.html#Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem_UpdateItems_Fwt_HexTerrains_CellItems_Data_CellItemsLayer__Fwt_HexTerrains_Surfaces_Data_HexGroundLayer__Fwt_HexTerrains_Data_ChunksGridData_
-  commentId: M:Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer@,Fwt.HexTerrains.Surfaces.Data.HexGroundLayer@,Fwt.HexTerrains.Data.ChunksGridData)
-  name.vb: UpdateItems(CellItemsLayer, HexGroundLayer, ChunksGridData)
-  fullName: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(in Fwt.HexTerrains.CellItems.Data.CellItemsLayer, in Fwt.HexTerrains.Surfaces.Data.HexGroundLayer, Fwt.HexTerrains.Data.ChunksGridData)
-  fullName.vb: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer, Fwt.HexTerrains.Surfaces.Data.HexGroundLayer, Fwt.HexTerrains.Data.ChunksGridData)
-  nameWithType: CalcCellItemsSystem.UpdateItems(in CellItemsLayer, in HexGroundLayer, ChunksGridData)
-  nameWithType.vb: CalcCellItemsSystem.UpdateItems(CellItemsLayer, HexGroundLayer, ChunksGridData)
+- uid: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer@,Fwt.HexTerrains.Surfaces.Data.HexGroundLayer@,Fwt.HexTerrains.Data.ChunksGridData)
+  name: UpdateItems(in HexTerrainVisibility, in CellItemsLayer, in HexGroundLayer, ChunksGridData)
+  href: api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.html#Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_CellItems_Data_CellItemsLayer__Fwt_HexTerrains_Surfaces_Data_HexGroundLayer__Fwt_HexTerrains_Data_ChunksGridData_
+  commentId: M:Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer@,Fwt.HexTerrains.Surfaces.Data.HexGroundLayer@,Fwt.HexTerrains.Data.ChunksGridData)
+  name.vb: UpdateItems(HexTerrainVisibility, CellItemsLayer, HexGroundLayer, ChunksGridData)
+  fullName: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.CellItems.Data.CellItemsLayer, in Fwt.HexTerrains.Surfaces.Data.HexGroundLayer, Fwt.HexTerrains.Data.ChunksGridData)
+  fullName.vb: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellItems.Data.CellItemsLayer, Fwt.HexTerrains.Surfaces.Data.HexGroundLayer, Fwt.HexTerrains.Data.ChunksGridData)
+  nameWithType: CalcCellItemsSystem.UpdateItems(in HexTerrainVisibility, in CellItemsLayer, in HexGroundLayer, ChunksGridData)
+  nameWithType.vb: CalcCellItemsSystem.UpdateItems(HexTerrainVisibility, CellItemsLayer, HexGroundLayer, ChunksGridData)
 - uid: Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.UpdateItems*
   name: UpdateItems
   href: api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.html#Fwt_HexTerrains_CellItems_Systems_CalcCellItemsSystem_UpdateItems_
@@ -58175,12 +58330,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem
   fullName: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem
   nameWithType: CleanupCellItemsDataSystem
-- uid: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
-  name: UpdateItems(CellItemsLayer)
-  href: api/Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.html#Fwt_HexTerrains_CellItems_Systems_CleanupCellItemsDataSystem_UpdateItems_Fwt_HexTerrains_CellItems_Data_CellItemsLayer_
-  commentId: M:Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
-  fullName: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
-  nameWithType: CleanupCellItemsDataSystem.UpdateItems(CellItemsLayer)
+- uid: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer@)
+  name: UpdateItems(in HexTerrainVisibility, in CellItemsLayer)
+  href: api/Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.html#Fwt_HexTerrains_CellItems_Systems_CleanupCellItemsDataSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_CellItems_Data_CellItemsLayer__
+  commentId: M:Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer@)
+  name.vb: UpdateItems(HexTerrainVisibility, CellItemsLayer)
+  fullName: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
+  fullName.vb: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellItems.Data.CellItemsLayer)
+  nameWithType: CleanupCellItemsDataSystem.UpdateItems(in HexTerrainVisibility, in CellItemsLayer)
+  nameWithType.vb: CleanupCellItemsDataSystem.UpdateItems(HexTerrainVisibility, CellItemsLayer)
 - uid: Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.UpdateItems*
   name: UpdateItems
   href: api/Fwt.HexTerrains.CellItems.Systems.CleanupCellItemsDataSystem.html#Fwt_HexTerrains_CellItems_Systems_CleanupCellItemsDataSystem_UpdateItems_
@@ -58271,12 +58429,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem
   fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem
   nameWithType: RenderCellItemsDataSystem
-- uid: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)
-  name: UpdateItems(CellItemsLayer, Camera)
-  href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.html#Fwt_HexTerrains_CellItems_Systems_RenderCellItemsDataSystem_UpdateItems_Fwt_HexTerrains_CellItems_Data_CellItemsLayer_UnityEngine_Camera_
-  commentId: M:Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)
-  fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.CellItems.Data.CellItemsLayer, UnityEngine.Camera)
-  nameWithType: RenderCellItemsDataSystem.UpdateItems(CellItemsLayer, Camera)
+- uid: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)
+  name: UpdateItems(in HexTerrainVisibility, CellItemsLayer, Camera)
+  href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.html#Fwt_HexTerrains_CellItems_Systems_RenderCellItemsDataSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_CellItems_Data_CellItemsLayer_UnityEngine_Camera_
+  commentId: M:Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)
+  name.vb: UpdateItems(HexTerrainVisibility, CellItemsLayer, Camera)
+  fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(in Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellItems.Data.CellItemsLayer, UnityEngine.Camera)
+  fullName.vb: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.CellItems.Data.CellItemsLayer, UnityEngine.Camera)
+  nameWithType: RenderCellItemsDataSystem.UpdateItems(in HexTerrainVisibility, CellItemsLayer, Camera)
+  nameWithType.vb: RenderCellItemsDataSystem.UpdateItems(HexTerrainVisibility, CellItemsLayer, Camera)
 - uid: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems*
   name: UpdateItems
   href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.html#Fwt_HexTerrains_CellItems_Systems_RenderCellItemsDataSystem_UpdateItems_
@@ -58648,6 +58809,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Data.ChunksGridData.Cleanup
   nameWithType: ChunksGridData.Cleanup
+- uid: Fwt.HexTerrains.Data.ChunksGridData.CleanupAsync
+  name: CleanupAsync()
+  href: api/Fwt.HexTerrains.Data.ChunksGridData.html#Fwt_HexTerrains_Data_ChunksGridData_CleanupAsync
+  commentId: M:Fwt.HexTerrains.Data.ChunksGridData.CleanupAsync
+  fullName: Fwt.HexTerrains.Data.ChunksGridData.CleanupAsync()
+  nameWithType: ChunksGridData.CleanupAsync()
+- uid: Fwt.HexTerrains.Data.ChunksGridData.CleanupAsync*
+  name: CleanupAsync
+  href: api/Fwt.HexTerrains.Data.ChunksGridData.html#Fwt_HexTerrains_Data_ChunksGridData_CleanupAsync_
+  commentId: Overload:Fwt.HexTerrains.Data.ChunksGridData.CleanupAsync
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Data.ChunksGridData.CleanupAsync
+  nameWithType: ChunksGridData.CleanupAsync
 - uid: Fwt.HexTerrains.Data.ChunksGridData.CompleteAllJobs
   name: CompleteAllJobs()
   href: api/Fwt.HexTerrains.Data.ChunksGridData.html#Fwt_HexTerrains_Data_ChunksGridData_CompleteAllJobs
@@ -59679,6 +59853,18 @@ references:
   commentId: F:Fwt.HexTerrains.Data.HexTerrainViewMode.Value
   fullName: Fwt.HexTerrains.Data.HexTerrainViewMode.Value
   nameWithType: HexTerrainViewMode.Value
+- uid: Fwt.HexTerrains.Data.HexTerrainVisibility
+  name: HexTerrainVisibility
+  href: api/Fwt.HexTerrains.Data.HexTerrainVisibility.html
+  commentId: T:Fwt.HexTerrains.Data.HexTerrainVisibility
+  fullName: Fwt.HexTerrains.Data.HexTerrainVisibility
+  nameWithType: HexTerrainVisibility
+- uid: Fwt.HexTerrains.Data.HexTerrainVisibility.Value
+  name: Value
+  href: api/Fwt.HexTerrains.Data.HexTerrainVisibility.html#Fwt_HexTerrains_Data_HexTerrainVisibility_Value
+  commentId: F:Fwt.HexTerrains.Data.HexTerrainVisibility.Value
+  fullName: Fwt.HexTerrains.Data.HexTerrainVisibility.Value
+  nameWithType: HexTerrainVisibility.Value
 - uid: Fwt.HexTerrains.DataLayers
   name: Fwt.HexTerrains.DataLayers
   href: api/Fwt.HexTerrains.DataLayers.html
@@ -61194,6 +61380,12 @@ references:
   commentId: F:Fwt.HexTerrains.HexTerrainAuthoring.ColorMapTextures
   fullName: Fwt.HexTerrains.HexTerrainAuthoring.ColorMapTextures
   nameWithType: HexTerrainAuthoring.ColorMapTextures
+- uid: Fwt.HexTerrains.HexTerrainAuthoring.IsVisible
+  name: IsVisible
+  href: api/Fwt.HexTerrains.HexTerrainAuthoring.html#Fwt_HexTerrains_HexTerrainAuthoring_IsVisible
+  commentId: F:Fwt.HexTerrains.HexTerrainAuthoring.IsVisible
+  fullName: Fwt.HexTerrains.HexTerrainAuthoring.IsVisible
+  nameWithType: HexTerrainAuthoring.IsVisible
 - uid: Fwt.HexTerrains.HexTerrainAuthoring.TerrainSettings
   name: TerrainSettings
   href: api/Fwt.HexTerrains.HexTerrainAuthoring.html#Fwt_HexTerrains_HexTerrainAuthoring_TerrainSettings
@@ -61834,6 +62026,18 @@ references:
   commentId: F:Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibility
   fullName: Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibility
   nameWithType: CalcHexChunkVisibilityJob.ChunkVisibility
+- uid: Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunks
+  name: ChunkVisibilityDirtyChunks
+  href: api/Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.html#Fwt_HexTerrains_Jobs_CalcHexChunkVisibilityJob_ChunkVisibilityDirtyChunks
+  commentId: F:Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunks
+  fullName: Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunks
+  nameWithType: CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunks
+- uid: Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunksGrid
+  name: ChunkVisibilityDirtyChunksGrid
+  href: api/Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.html#Fwt_HexTerrains_Jobs_CalcHexChunkVisibilityJob_ChunkVisibilityDirtyChunksGrid
+  commentId: F:Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunksGrid
+  fullName: Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunksGrid
+  nameWithType: CalcHexChunkVisibilityJob.ChunkVisibilityDirtyChunksGrid
 - uid: Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.Execute(System.Int32)
   name: Execute(int)
   href: api/Fwt.HexTerrains.Jobs.CalcHexChunkVisibilityJob.html#Fwt_HexTerrains_Jobs_CalcHexChunkVisibilityJob_Execute_System_Int32_
@@ -62693,6 +62897,22 @@ references:
   commentId: F:Fwt.HexTerrains.Samples.HexTerrainCursorView.Projector
   fullName: Fwt.HexTerrains.Samples.HexTerrainCursorView.Projector
   nameWithType: HexTerrainCursorView.Projector
+- uid: Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity(System.Single)
+  name: SetBrushOpacity(float)
+  href: api/Fwt.HexTerrains.Samples.HexTerrainCursorView.html#Fwt_HexTerrains_Samples_HexTerrainCursorView_SetBrushOpacity_System_Single_
+  commentId: M:Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity(System.Single)
+  name.vb: SetBrushOpacity(Single)
+  fullName: Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity(float)
+  fullName.vb: Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity(Single)
+  nameWithType: HexTerrainCursorView.SetBrushOpacity(float)
+  nameWithType.vb: HexTerrainCursorView.SetBrushOpacity(Single)
+- uid: Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity*
+  name: SetBrushOpacity
+  href: api/Fwt.HexTerrains.Samples.HexTerrainCursorView.html#Fwt_HexTerrains_Samples_HexTerrainCursorView_SetBrushOpacity_
+  commentId: Overload:Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushOpacity
+  nameWithType: HexTerrainCursorView.SetBrushOpacity
 - uid: Fwt.HexTerrains.Samples.HexTerrainCursorView.SetBrushSize(System.Int32)
   name: SetBrushSize(int)
   href: api/Fwt.HexTerrains.Samples.HexTerrainCursorView.html#Fwt_HexTerrains_Samples_HexTerrainCursorView_SetBrushSize_System_Int32_
@@ -64371,12 +64591,6 @@ references:
   fullName.vb: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.InitRenderConfigs(Of TRenderDataConfig)(Unity.Collections.NativeArray(Of TRenderDataConfig))
   nameWithType: HexSurfaceRenderData.InitRenderConfigs<TRenderDataConfig>(NativeArray<TRenderDataConfig>)
   nameWithType.vb: HexSurfaceRenderData.InitRenderConfigs(Of TRenderDataConfig)(NativeArray(Of TRenderDataConfig))
-- uid: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.IsVisible
-  name: IsVisible
-  href: api/Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_IsVisible
-  commentId: F:Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.IsVisible
-  fullName: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.IsVisible
-  nameWithType: HexSurfaceRenderData.IsVisible
 - uid: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.OffsetTransform
   name: OffsetTransform
   href: api/Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_OffsetTransform
@@ -64460,22 +64674,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetChunkMesh
   nameWithType: HexSurfaceRenderData.SetChunkMesh
-- uid: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible(System.Boolean)
-  name: SetIsVisible(bool)
-  href: api/Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_SetIsVisible_System_Boolean_
-  commentId: M:Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible(System.Boolean)
-  name.vb: SetIsVisible(Boolean)
-  fullName: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible(bool)
-  fullName.vb: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible(Boolean)
-  nameWithType: HexSurfaceRenderData.SetIsVisible(bool)
-  nameWithType.vb: HexSurfaceRenderData.SetIsVisible(Boolean)
-- uid: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible*
-  name: SetIsVisible
-  href: api/Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_SetIsVisible_
-  commentId: Overload:Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible
-  nameWithType: HexSurfaceRenderData.SetIsVisible
 - uid: Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.Settings
   name: Settings
   href: api/Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.html#Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_Settings
@@ -65071,22 +65269,24 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem(Of TSurfaceData)
   nameWithType: CalcCellBiomeColorsSystem<TSurfaceData>
   nameWithType.vb: CalcCellBiomeColorsSystem(Of TSurfaceData)
-- uid: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(`0)
-  name: UpdateData(TSurfaceData)
-  href: api/Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem-1.html#Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData__0_
-  commentId: M:Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(`0)
-  fullName: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(TSurfaceData)
-  fullName.vb: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(TSurfaceData)
-  nameWithType: CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(TSurfaceData)
-  nameWithType.vb: CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(TSurfaceData)
-- uid: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(`0,Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
-  name: UpdateData(TSurfaceData, HexSurfaceLayer)
-  href: api/Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem-1.html#Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData__0_Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_
-  commentId: M:Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(`0,Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
-  fullName: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(TSurfaceData, Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
-  fullName.vb: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(TSurfaceData, Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
-  nameWithType: CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(TSurfaceData, HexSurfaceLayer)
-  nameWithType.vb: CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(TSurfaceData, HexSurfaceLayer)
+- uid: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0)
+  name: UpdateData(in HexTerrainVisibility, TSurfaceData)
+  href: api/Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem-1.html#Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility___0_
+  commentId: M:Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0)
+  name.vb: UpdateData(HexTerrainVisibility, TSurfaceData)
+  fullName: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, TSurfaceData)
+  fullName.vb: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, TSurfaceData)
+  nameWithType: CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(in HexTerrainVisibility, TSurfaceData)
+  nameWithType.vb: CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(HexTerrainVisibility, TSurfaceData)
+- uid: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
+  name: UpdateData(in HexTerrainVisibility, TSurfaceData, HexSurfaceLayer)
+  href: api/Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem-1.html#Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility___0_Fwt_HexTerrains_Surfaces_Data_HexSurfaceLayer_
+  commentId: M:Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
+  name.vb: UpdateData(HexTerrainVisibility, TSurfaceData, HexSurfaceLayer)
+  fullName: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, TSurfaceData, Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
+  fullName.vb: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, TSurfaceData, Fwt.HexTerrains.Surfaces.Data.HexSurfaceLayer)
+  nameWithType: CalcCellBiomeColorsSystem<TSurfaceData>.UpdateData(in HexTerrainVisibility, TSurfaceData, HexSurfaceLayer)
+  nameWithType.vb: CalcCellBiomeColorsSystem(Of TSurfaceData).UpdateData(HexTerrainVisibility, TSurfaceData, HexSurfaceLayer)
 - uid: Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem`1.UpdateData*
   name: UpdateData
   href: api/Fwt.HexTerrains.Systems.CalcCellBiomeColorsSystem-1.html#Fwt_HexTerrains_Systems_CalcCellBiomeColorsSystem_1_UpdateData_
@@ -65218,14 +65418,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem(Of TSurface, TRenderData)
   nameWithType: CalcDirtyMeshSourcesSystem<TSurface, TRenderData>
   nameWithType.vb: CalcDirtyMeshSourcesSystem(Of TSurface, TRenderData)
-- uid: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem`2.CalcDirtyChunks(`0,`1)
-  name: CalcDirtyChunks(TSurface, TRenderData)
-  href: api/Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2_CalcDirtyChunks__0__1_
-  commentId: M:Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem`2.CalcDirtyChunks(`0,`1)
-  fullName: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem<TSurface, TRenderData>.CalcDirtyChunks(TSurface, TRenderData)
-  fullName.vb: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem(Of TSurface, TRenderData).CalcDirtyChunks(TSurface, TRenderData)
-  nameWithType: CalcDirtyMeshSourcesSystem<TSurface, TRenderData>.CalcDirtyChunks(TSurface, TRenderData)
-  nameWithType.vb: CalcDirtyMeshSourcesSystem(Of TSurface, TRenderData).CalcDirtyChunks(TSurface, TRenderData)
+- uid: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem`2.CalcDirtyChunks(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,`1)
+  name: CalcDirtyChunks(in HexTerrainVisibility, TSurface, TRenderData)
+  href: api/Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2_CalcDirtyChunks_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_
+  commentId: M:Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem`2.CalcDirtyChunks(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,`1)
+  name.vb: CalcDirtyChunks(HexTerrainVisibility, TSurface, TRenderData)
+  fullName: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem<TSurface, TRenderData>.CalcDirtyChunks(in Fwt.HexTerrains.Data.HexTerrainVisibility, TSurface, TRenderData)
+  fullName.vb: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem(Of TSurface, TRenderData).CalcDirtyChunks(Fwt.HexTerrains.Data.HexTerrainVisibility, TSurface, TRenderData)
+  nameWithType: CalcDirtyMeshSourcesSystem<TSurface, TRenderData>.CalcDirtyChunks(in HexTerrainVisibility, TSurface, TRenderData)
+  nameWithType.vb: CalcDirtyMeshSourcesSystem(Of TSurface, TRenderData).CalcDirtyChunks(HexTerrainVisibility, TSurface, TRenderData)
 - uid: Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem`2.CalcDirtyChunks*
   name: CalcDirtyChunks
   href: api/Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2_CalcDirtyChunks_
@@ -65404,14 +65605,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem(Of TSurface, TRenderData)
   nameWithType: CalcSurfaceMeshSourcesSystem<TSurface, TRenderData>
   nameWithType.vb: CalcSurfaceMeshSourcesSystem(Of TSurface, TRenderData)
-- uid: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources(`0,`1,Fwt.HexTerrains.Data.ChunksGridData)
-  name: CalcMeshSources(TSurface, TRenderData, ChunksGridData)
-  href: api/Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources__0__1_Fwt_HexTerrains_Data_ChunksGridData_
-  commentId: M:Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources(`0,`1,Fwt.HexTerrains.Data.ChunksGridData)
-  fullName: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem<TSurface, TRenderData>.CalcMeshSources(TSurface, TRenderData, Fwt.HexTerrains.Data.ChunksGridData)
-  fullName.vb: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem(Of TSurface, TRenderData).CalcMeshSources(TSurface, TRenderData, Fwt.HexTerrains.Data.ChunksGridData)
-  nameWithType: CalcSurfaceMeshSourcesSystem<TSurface, TRenderData>.CalcMeshSources(TSurface, TRenderData, ChunksGridData)
-  nameWithType.vb: CalcSurfaceMeshSourcesSystem(Of TSurface, TRenderData).CalcMeshSources(TSurface, TRenderData, ChunksGridData)
+- uid: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,`1,Fwt.HexTerrains.Data.ChunksGridData)
+  name: CalcMeshSources(in HexTerrainVisibility, TSurface, TRenderData, ChunksGridData)
+  href: api/Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_Fwt_HexTerrains_Data_ChunksGridData_
+  commentId: M:Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,`1,Fwt.HexTerrains.Data.ChunksGridData)
+  name.vb: CalcMeshSources(HexTerrainVisibility, TSurface, TRenderData, ChunksGridData)
+  fullName: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem<TSurface, TRenderData>.CalcMeshSources(in Fwt.HexTerrains.Data.HexTerrainVisibility, TSurface, TRenderData, Fwt.HexTerrains.Data.ChunksGridData)
+  fullName.vb: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem(Of TSurface, TRenderData).CalcMeshSources(Fwt.HexTerrains.Data.HexTerrainVisibility, TSurface, TRenderData, Fwt.HexTerrains.Data.ChunksGridData)
+  nameWithType: CalcSurfaceMeshSourcesSystem<TSurface, TRenderData>.CalcMeshSources(in HexTerrainVisibility, TSurface, TRenderData, ChunksGridData)
+  nameWithType.vb: CalcSurfaceMeshSourcesSystem(Of TSurface, TRenderData).CalcMeshSources(HexTerrainVisibility, TSurface, TRenderData, ChunksGridData)
 - uid: Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources*
   name: CalcMeshSources
   href: api/Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources_
@@ -65448,14 +65650,14 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem(Of TSurfaceData, TRenderData)
   nameWithType: CalcSurfaceMeshesSystem<TSurfaceData, TRenderData>
   nameWithType.vb: CalcSurfaceMeshesSystem(Of TSurfaceData, TRenderData)
-- uid: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes(`0,`1)
-  name: CalcMeshes(TSurfaceData, TRenderData)
-  href: api/Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2_CalcMeshes__0__1_
-  commentId: M:Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes(`0,`1)
-  fullName: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem<TSurfaceData, TRenderData>.CalcMeshes(TSurfaceData, TRenderData)
-  fullName.vb: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem(Of TSurfaceData, TRenderData).CalcMeshes(TSurfaceData, TRenderData)
-  nameWithType: CalcSurfaceMeshesSystem<TSurfaceData, TRenderData>.CalcMeshes(TSurfaceData, TRenderData)
-  nameWithType.vb: CalcSurfaceMeshesSystem(Of TSurfaceData, TRenderData).CalcMeshes(TSurfaceData, TRenderData)
+- uid: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes(Fwt.HexTerrains.Data.HexTerrainVisibility,`1)
+  name: CalcMeshes(HexTerrainVisibility, TRenderData)
+  href: api/Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2_CalcMeshes_Fwt_HexTerrains_Data_HexTerrainVisibility__1_
+  commentId: M:Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes(Fwt.HexTerrains.Data.HexTerrainVisibility,`1)
+  fullName: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem<TSurfaceData, TRenderData>.CalcMeshes(Fwt.HexTerrains.Data.HexTerrainVisibility, TRenderData)
+  fullName.vb: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem(Of TSurfaceData, TRenderData).CalcMeshes(Fwt.HexTerrains.Data.HexTerrainVisibility, TRenderData)
+  nameWithType: CalcSurfaceMeshesSystem<TSurfaceData, TRenderData>.CalcMeshes(HexTerrainVisibility, TRenderData)
+  nameWithType.vb: CalcSurfaceMeshesSystem(Of TSurfaceData, TRenderData).CalcMeshes(HexTerrainVisibility, TRenderData)
 - uid: Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem`2.CalcMeshes*
   name: CalcMeshes
   href: api/Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshesSystem_2_CalcMeshes_
@@ -65698,14 +65900,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem(Of TSurface)
   nameWithType: CleanupHexSurfaceLayerSystem<TSurface>
   nameWithType.vb: CleanupHexSurfaceLayerSystem(Of TSurface)
-- uid: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem`1.CleanupSurface(`0)
-  name: CleanupSurface(TSurface)
-  href: api/Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem-1.html#Fwt_HexTerrains_Systems_CleanupHexSurfaceLayerSystem_1_CleanupSurface__0_
-  commentId: M:Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem`1.CleanupSurface(`0)
-  fullName: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem<TSurface>.CleanupSurface(TSurface)
-  fullName.vb: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem(Of TSurface).CleanupSurface(TSurface)
-  nameWithType: CleanupHexSurfaceLayerSystem<TSurface>.CleanupSurface(TSurface)
-  nameWithType.vb: CleanupHexSurfaceLayerSystem(Of TSurface).CleanupSurface(TSurface)
+- uid: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem`1.CleanupSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0)
+  name: CleanupSurface(in HexTerrainVisibility, TSurface)
+  href: api/Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem-1.html#Fwt_HexTerrains_Systems_CleanupHexSurfaceLayerSystem_1_CleanupSurface_Fwt_HexTerrains_Data_HexTerrainVisibility___0_
+  commentId: M:Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem`1.CleanupSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0)
+  name.vb: CleanupSurface(HexTerrainVisibility, TSurface)
+  fullName: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem<TSurface>.CleanupSurface(in Fwt.HexTerrains.Data.HexTerrainVisibility, TSurface)
+  fullName.vb: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem(Of TSurface).CleanupSurface(Fwt.HexTerrains.Data.HexTerrainVisibility, TSurface)
+  nameWithType: CleanupHexSurfaceLayerSystem<TSurface>.CleanupSurface(in HexTerrainVisibility, TSurface)
+  nameWithType.vb: CleanupHexSurfaceLayerSystem(Of TSurface).CleanupSurface(HexTerrainVisibility, TSurface)
 - uid: Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem`1.CleanupSurface*
   name: CleanupSurface
   href: api/Fwt.HexTerrains.Systems.CleanupHexSurfaceLayerSystem-1.html#Fwt_HexTerrains_Systems_CleanupHexSurfaceLayerSystem_1_CleanupSurface_
@@ -65724,14 +65927,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem(Of TSurface, TRenderData)
   nameWithType: CleanupHexSurfaceRenderDataSystem<TSurface, TRenderData>
   nameWithType.vb: CleanupHexSurfaceRenderDataSystem(Of TSurface, TRenderData)
-- uid: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem`2.CleanupRenderData(`1)
-  name: CleanupRenderData(TRenderData)
-  href: api/Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem-2.html#Fwt_HexTerrains_Systems_CleanupHexSurfaceRenderDataSystem_2_CleanupRenderData__1_
-  commentId: M:Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem`2.CleanupRenderData(`1)
-  fullName: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem<TSurface, TRenderData>.CleanupRenderData(TRenderData)
-  fullName.vb: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem(Of TSurface, TRenderData).CleanupRenderData(TRenderData)
-  nameWithType: CleanupHexSurfaceRenderDataSystem<TSurface, TRenderData>.CleanupRenderData(TRenderData)
-  nameWithType.vb: CleanupHexSurfaceRenderDataSystem(Of TSurface, TRenderData).CleanupRenderData(TRenderData)
+- uid: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem`2.CleanupRenderData(Fwt.HexTerrains.Data.HexTerrainVisibility@,`1)
+  name: CleanupRenderData(in HexTerrainVisibility, TRenderData)
+  href: api/Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem-2.html#Fwt_HexTerrains_Systems_CleanupHexSurfaceRenderDataSystem_2_CleanupRenderData_Fwt_HexTerrains_Data_HexTerrainVisibility___1_
+  commentId: M:Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem`2.CleanupRenderData(Fwt.HexTerrains.Data.HexTerrainVisibility@,`1)
+  name.vb: CleanupRenderData(HexTerrainVisibility, TRenderData)
+  fullName: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem<TSurface, TRenderData>.CleanupRenderData(in Fwt.HexTerrains.Data.HexTerrainVisibility, TRenderData)
+  fullName.vb: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem(Of TSurface, TRenderData).CleanupRenderData(Fwt.HexTerrains.Data.HexTerrainVisibility, TRenderData)
+  nameWithType: CleanupHexSurfaceRenderDataSystem<TSurface, TRenderData>.CleanupRenderData(in HexTerrainVisibility, TRenderData)
+  nameWithType.vb: CleanupHexSurfaceRenderDataSystem(Of TSurface, TRenderData).CleanupRenderData(HexTerrainVisibility, TRenderData)
 - uid: Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem`2.CleanupRenderData*
   name: CleanupRenderData
   href: api/Fwt.HexTerrains.Systems.CleanupHexSurfaceRenderDataSystem-2.html#Fwt_HexTerrains_Systems_CleanupHexSurfaceRenderDataSystem_2_CleanupRenderData_
@@ -66305,15 +66509,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem(Of TSurfaceData, TRenderData)
   nameWithType: RenderHexSurfaceSystem<TSurfaceData, TRenderData>
   nameWithType.vb: RenderHexSurfaceSystem(Of TSurfaceData, TRenderData)
-- uid: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)
-  name: RenderSurface(in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)
-  href: api/Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html#Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__
-  commentId: M:Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)
-  name.vb: RenderSurface(LocalToWorld, TRenderData, HexTerrainViewMode, ChunksGridData, Camera)
-  fullName: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem<TSurfaceData, TRenderData>.RenderSurface(in Unity.Transforms.LocalToWorld, in TRenderData, in Fwt.HexTerrains.Data.HexTerrainViewMode, in Fwt.HexTerrains.Data.ChunksGridData, in UnityEngine.Camera)
-  fullName.vb: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem(Of TSurfaceData, TRenderData).RenderSurface(Unity.Transforms.LocalToWorld, TRenderData, Fwt.HexTerrains.Data.HexTerrainViewMode, Fwt.HexTerrains.Data.ChunksGridData, UnityEngine.Camera)
-  nameWithType: RenderHexSurfaceSystem<TSurfaceData, TRenderData>.RenderSurface(in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)
-  nameWithType.vb: RenderHexSurfaceSystem(Of TSurfaceData, TRenderData).RenderSurface(LocalToWorld, TRenderData, HexTerrainViewMode, ChunksGridData, Camera)
+- uid: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)
+  name: RenderSurface(in HexTerrainVisibility, in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)
+  href: api/Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html#Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Fwt_HexTerrains_Data_HexTerrainVisibility__Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__
+  commentId: M:Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)
+  name.vb: RenderSurface(HexTerrainVisibility, LocalToWorld, TRenderData, HexTerrainViewMode, ChunksGridData, Camera)
+  fullName: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem<TSurfaceData, TRenderData>.RenderSurface(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Unity.Transforms.LocalToWorld, in TRenderData, in Fwt.HexTerrains.Data.HexTerrainViewMode, in Fwt.HexTerrains.Data.ChunksGridData, in UnityEngine.Camera)
+  fullName.vb: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem(Of TSurfaceData, TRenderData).RenderSurface(Fwt.HexTerrains.Data.HexTerrainVisibility, Unity.Transforms.LocalToWorld, TRenderData, Fwt.HexTerrains.Data.HexTerrainViewMode, Fwt.HexTerrains.Data.ChunksGridData, UnityEngine.Camera)
+  nameWithType: RenderHexSurfaceSystem<TSurfaceData, TRenderData>.RenderSurface(in HexTerrainVisibility, in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)
+  nameWithType.vb: RenderHexSurfaceSystem(Of TSurfaceData, TRenderData).RenderSurface(HexTerrainVisibility, LocalToWorld, TRenderData, HexTerrainViewMode, ChunksGridData, Camera)
 - uid: Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface*
   name: RenderSurface
   href: api/Fwt.HexTerrains.Systems.RenderHexSurfaceSystem-2.html#Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_
@@ -67863,6 +68067,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsResizableBrush
   nameWithType: IUserToolAPI.GetIsResizableBrush
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsTerrainVisible
+  name: GetIsTerrainVisible()
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetIsTerrainVisible
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsTerrainVisible
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsTerrainVisible()
+  nameWithType: IUserToolAPI.GetIsTerrainVisible()
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsTerrainVisible*
+  name: GetIsTerrainVisible
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetIsTerrainVisible_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsTerrainVisible
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsTerrainVisible
+  nameWithType: IUserToolAPI.GetIsTerrainVisible
 - uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.GetIsVisibleBrush
   name: GetIsVisibleBrush()
   href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_GetIsVisibleBrush
@@ -68162,6 +68379,22 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsResizableBrush
   nameWithType: IUserToolAPI.SetIsResizableBrush
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible(System.Boolean)
+  name: SetIsTerrainVisible(bool)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_SetIsTerrainVisible_System_Boolean_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible(System.Boolean)
+  name.vb: SetIsTerrainVisible(Boolean)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible(bool)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible(Boolean)
+  nameWithType: IUserToolAPI.SetIsTerrainVisible(bool)
+  nameWithType.vb: IUserToolAPI.SetIsTerrainVisible(Boolean)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible*
+  name: SetIsTerrainVisible
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_SetIsTerrainVisible_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsTerrainVisible
+  nameWithType: IUserToolAPI.SetIsTerrainVisible
 - uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetIsVisibleBrush(System.Boolean)
   name: SetIsVisibleBrush(bool)
   href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_SetIsVisibleBrush_System_Boolean_
@@ -68194,6 +68427,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.SetViewMode
   nameWithType: IUserToolAPI.SetViewMode
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.ToggleIsTerrainVisible
+  name: ToggleIsTerrainVisible()
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_ToggleIsTerrainVisible
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.ToggleIsTerrainVisible
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.ToggleIsTerrainVisible()
+  nameWithType: IUserToolAPI.ToggleIsTerrainVisible()
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.ToggleIsTerrainVisible*
+  name: ToggleIsTerrainVisible
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_ToggleIsTerrainVisible_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.ToggleIsTerrainVisible
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.ToggleIsTerrainVisible
+  nameWithType: IUserToolAPI.ToggleIsTerrainVisible
 - uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI
   name: UserToolAPI
   href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html
@@ -68509,6 +68755,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsResizableBrush
   nameWithType: UserToolAPI.GetIsResizableBrush
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible
+  name: GetIsTerrainVisible()
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsTerrainVisible
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible()
+  nameWithType: UserToolAPI.GetIsTerrainVisible()
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible*
+  name: GetIsTerrainVisible
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsTerrainVisible_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsTerrainVisible
+  nameWithType: UserToolAPI.GetIsTerrainVisible
 - uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.GetIsVisibleBrush
   name: GetIsVisibleBrush()
   href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_GetIsVisibleBrush
@@ -68821,6 +69080,22 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsResizableBrush
   nameWithType: UserToolAPI.SetIsResizableBrush
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible(System.Boolean)
+  name: SetIsTerrainVisible(bool)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsTerrainVisible_System_Boolean_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible(System.Boolean)
+  name.vb: SetIsTerrainVisible(Boolean)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible(bool)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible(Boolean)
+  nameWithType: UserToolAPI.SetIsTerrainVisible(bool)
+  nameWithType.vb: UserToolAPI.SetIsTerrainVisible(Boolean)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible*
+  name: SetIsTerrainVisible
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsTerrainVisible_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsTerrainVisible
+  nameWithType: UserToolAPI.SetIsTerrainVisible
 - uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.SetIsVisibleBrush(System.Boolean)
   name: SetIsVisibleBrush(bool)
   href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_SetIsVisibleBrush_System_Boolean_
@@ -68866,6 +69141,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.TerrainEntity
   nameWithType: UserToolAPI.TerrainEntity
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible
+  name: ToggleIsTerrainVisible()
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_ToggleIsTerrainVisible
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible()
+  nameWithType: UserToolAPI.ToggleIsTerrainVisible()
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible*
+  name: ToggleIsTerrainVisible
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_ToggleIsTerrainVisible_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.ToggleIsTerrainVisible
+  nameWithType: UserToolAPI.ToggleIsTerrainVisible
 - uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.UISystemAPI
   name: UISystemAPI
   href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolAPI.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolAPI_UISystemAPI
@@ -74604,6 +74892,63 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.StampWaterHeightUserToolState.UserToolType
   nameWithType: StampWaterHeightUserToolState.UserToolType
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState
+  name: ToggleTerrainVisibilityUserToolState
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html
+  commentId: T:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState
+  nameWithType: ToggleTerrainVisibilityUserToolState
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor(Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
+  name: ToggleTerrainVisibilityUserToolState(IUserToolAPI, UserToolStateMachine)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState__ctor_Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolStateMachine_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor(Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
+  name.vb: New(IUserToolAPI, UserToolStateMachine)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState(Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.New(Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
+  nameWithType: ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState(IUserToolAPI, UserToolStateMachine)
+  nameWithType.vb: ToggleTerrainVisibilityUserToolState.New(IUserToolAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor*
+  name: ToggleTerrainVisibilityUserToolState
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.New
+  nameWithType: ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState
+  nameWithType.vb: ToggleTerrainVisibilityUserToolState.New
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.PrepareToRun
+  name: PrepareToRun()
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState_PrepareToRun
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.PrepareToRun
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.PrepareToRun()
+  nameWithType: ToggleTerrainVisibilityUserToolState.PrepareToRun()
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.PrepareToRun*
+  name: PrepareToRun
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState_PrepareToRun_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.PrepareToRun
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.PrepareToRun
+  nameWithType: ToggleTerrainVisibilityUserToolState.PrepareToRun
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState_UserToolType
+  commentId: P:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.UserToolType
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.UserToolType
+  nameWithType: ToggleTerrainVisibilityUserToolState.UserToolType
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.UserToolType
+  nameWithType: ToggleTerrainVisibilityUserToolState.UserToolType
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState._rootStateMachine
+  name: _rootStateMachine
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState__rootStateMachine
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState._rootStateMachine
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState._rootStateMachine
+  nameWithType: ToggleTerrainVisibilityUserToolState._rootStateMachine
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.Systems
   name: Fwt.HexTerrains.TerrainEditors.UserTools.Systems
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.html
@@ -75497,6 +75842,12 @@ references:
   commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.SaveTerrain
   fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.SaveTerrain
   nameWithType: UserToolTypes.SaveTerrain
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.ToggleTerrainVisibility
+  name: ToggleTerrainVisibility
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolTypes_ToggleTerrainVisibility
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.ToggleTerrainVisibility
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.ToggleTerrainVisibility
+  nameWithType: UserToolTypes.ToggleTerrainVisibility
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.WaterAutoPaint
   name: WaterAutoPaint
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolTypes.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolTypes_WaterAutoPaint

@@ -323,13 +323,13 @@ public abstract class CalcSurfaceMeshSourcesSystem&lt;TSurface, TRenderData&gt; 
 
 
   <a id="Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources_" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources*"></a>
-  <h4 id="Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources__0__1_Fwt_HexTerrains_Data_ChunksGridData_" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources(`0,`1,Fwt.HexTerrains.Data.ChunksGridData)">CalcMeshSources(TSurface, TRenderData, ChunksGridData)</h4>
+  <h4 id="Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_Fwt_HexTerrains_Data_ChunksGridData_" data-uid="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem`2.CalcMeshSources(Fwt.HexTerrains.Data.HexTerrainVisibility@,`0,`1,Fwt.HexTerrains.Data.ChunksGridData)">CalcMeshSources(in HexTerrainVisibility, TSurface, TRenderData, ChunksGridData)</h4>
   <div class="markdown level1 summary"><p>Calculates mesh sources for the chunks that are visible and dirty.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void CalcMeshSources(TSurface surfaceData, TRenderData renderData, ChunksGridData chunksGridData)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void CalcMeshSources(in HexTerrainVisibility terrainVisibility, TSurface surfaceData, TRenderData renderData, ChunksGridData chunksGridData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -341,6 +341,11 @@ public abstract class CalcSurfaceMeshSourcesSystem&lt;TSurface, TRenderData&gt; 
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></td>
+        <td><span class="parametername">terrainVisibility</span></td>
+        <td></td>
+      </tr>
       <tr>
         <td><span class="xref">TSurface</span></td>
         <td><span class="parametername">surfaceData</span></td>
@@ -447,10 +452,22 @@ If you want to introduce your own mesh generator, override this method and sched
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

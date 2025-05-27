@@ -89,7 +89,7 @@
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
     <div class="level3"><span class="xref">CalcCellEntityColorsSystem</span></div>
-      <div class="level4"><a class="xref" href="Fwt.HexTerrains.CellEntities.Systems.CalcCellPropColorsSystem.html">CalcCellPropColorsSystem</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html">CalcCellEntityPropColorsSystem</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
@@ -301,12 +301,12 @@ public abstract class CalcCellEntityColorsSystem : SystemBase</code></pre>
 
 
   <a id="Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityColorsSystem_UpdateCellItems_" data-uid="Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityColorsSystem_UpdateCellItems_Unity_Entities_Entity_Fwt_HexTerrains_CellEntities_Data_CellEntityPropsData__" data-uid="Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Unity.Entities.Entity,Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData@)">UpdateCellItems(Entity, in CellEntityPropsData)</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Systems_CalcCellEntityColorsSystem_UpdateCellItems_Fwt_HexTerrains_Data_HexTerrainVisibility_Fwt_HexTerrains_CellEntities_Data_CellEntityPropsData__" data-uid="Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorsSystem.UpdateCellItems(Fwt.HexTerrains.Data.HexTerrainVisibility,Fwt.HexTerrains.CellEntities.Data.CellEntityPropsData@)">UpdateCellItems(HexTerrainVisibility, in CellEntityPropsData)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void UpdateCellItems(Entity entity, in CellEntityPropsData propsData)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void UpdateCellItems(HexTerrainVisibility terrainVisibility, in CellEntityPropsData propsData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -319,8 +319,8 @@ public abstract class CalcCellEntityColorsSystem : SystemBase</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">Entity</span></td>
-        <td><span class="parametername">entity</span></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></td>
+        <td><span class="parametername">terrainVisibility</span></td>
         <td></td>
       </tr>
       <tr>
@@ -335,10 +335,22 @@ public abstract class CalcCellEntityColorsSystem : SystemBase</code></pre>
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

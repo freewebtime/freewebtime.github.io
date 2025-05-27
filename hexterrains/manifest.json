@@ -3744,6 +3744,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropColorsSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityPropsSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.CalcCellPropColorsSystem.yml",
       "output": {
         ".html": {
@@ -3842,6 +3870,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellEntityPropsCommandBuffersSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellPropsCommandBuffersSystem.yml",
       "output": {
         ".html": {
@@ -3852,6 +3894,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellEntities.Systems.PlaybackUpdateCellPropsCommandBuffersSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntitiesSystem",
       "Summary": null
     },
     {
@@ -3880,6 +3936,34 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityEntitiesSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropEntitiesSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Systems.UpdateCellEntityPropStateSystem",
       "Summary": null
     },
     {
@@ -4230,7 +4314,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.Systems.CalcCellItemsSystem.yml\" sourcestartlinenumber=\"1\">System that calculates all the visible RenderEntities from CellItems (not Entities, but mesh+submesh+material+transform unique combination).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4665,6 +4749,20 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Data.HexTerrainViewMode",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexTerrainViewMode.yml\" sourcestartlinenumber=\"1\">Contains the current view mode of the terrain.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Data.HexTerrainVisibility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Data.HexTerrainVisibility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Data.HexTerrainVisibility",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Data.HexTerrainVisibility.yml\" sourcestartlinenumber=\"1\">Component to indicate whether the hex terrain is visible or not.\nChange <xref href=\"Fwt.HexTerrains.Data.HexTerrainVisibility.Value\" data-throw-if-not-resolved=\"false\"></xref> to false to exclude the hex terrain from rendering.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6442,7 +6540,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem<TSurfaceData, TRenderData>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CalcSurfaceMeshesSystem-2.yml\" sourcestartlinenumber=\"1\">Bases class for systems that fill chunk <xref href=\"UnityEngine.Mesh\" data-throw-if-not-resolved=\"false\"></xref> with generated data (verts, tris, uvs, etc.).</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -7800,6 +7898,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.StampWaterHeightUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState",
       "Summary": null
     },
     {

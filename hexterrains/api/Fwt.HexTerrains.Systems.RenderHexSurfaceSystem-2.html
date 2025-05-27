@@ -323,12 +323,12 @@
 
 
   <a id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface*"></a>
-  <h4 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)">RenderSurface(in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)</h4>
+  <h4 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Fwt_HexTerrains_Data_HexTerrainVisibility__Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)">RenderSurface(in HexTerrainVisibility, in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void RenderSurface(in LocalToWorld terrainTransform, in TRenderData renderData, in HexTerrainViewMode viewMode, in ChunksGridData chunksGridData, in Camera camera)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void RenderSurface(in HexTerrainVisibility terrainVisibility, in LocalToWorld terrainTransform, in TRenderData renderData, in HexTerrainViewMode viewMode, in ChunksGridData chunksGridData, in Camera camera)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -340,6 +340,11 @@
       </tr>
     </thead>
     <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></td>
+        <td><span class="parametername">terrainVisibility</span></td>
+        <td></td>
+      </tr>
       <tr>
         <td><span class="xref">LocalToWorld</span></td>
         <td><span class="parametername">terrainTransform</span></td>
@@ -372,10 +377,22 @@
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

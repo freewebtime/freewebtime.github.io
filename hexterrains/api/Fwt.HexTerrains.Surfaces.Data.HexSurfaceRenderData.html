@@ -205,31 +205,6 @@ When getting a render config for view mode, if the config is not found, this one
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_IsVisible" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.IsVisible">IsVisible</h4>
-  <div class="markdown level1 summary"><p>When set to false, the terrain will not be rendered</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public VersionValue&lt;bool&gt; IsVisible</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.Core.VersionValue-1.html">VersionValue</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_OffsetTransform" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.OffsetTransform">OffsetTransform</h4>
   <div class="markdown level1 summary"><p>Surface is rendered with this offset from the terrain's origin</p>
 </div>
@@ -606,52 +581,6 @@ If isDirty == true, marks all data as dirty, so it will be recalculated.</p>
       </tr>
     </tbody>
   </table>
-
-
-  <a id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_SetIsVisible_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible*"></a>
-  <h4 id="Fwt_HexTerrains_Surfaces_Data_HexSurfaceRenderData_SetIsVisible_System_Boolean_" data-uid="Fwt.HexTerrains.Surfaces.Data.HexSurfaceRenderData.SetIsVisible(System.Boolean)">SetIsVisible(bool)</h4>
-  <div class="markdown level1 summary"><p>Sets a visibility of the surface. If the value is changed, returns true.
-If surface is not visible, it will not be rendered</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual bool SetIsVisible(bool isVisible)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><span class="parametername">isVisible</span></td>
-        <td><p>visibility flag for render data</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td><p>true if value has changed (new value != old value), otherwise - false</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="implements">Implements</h3>
   <div>
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
@@ -661,10 +590,22 @@ If surface is not visible, it will not be rendered</p>
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
   </div>
   <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
   </div>
   <div>
       <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>

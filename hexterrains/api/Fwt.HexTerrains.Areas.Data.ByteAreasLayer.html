@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class HexByteAreasLayer | Hex Terrains Framework </title>
+      <title>Class ByteAreasLayer | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class HexByteAreasLayer | Hex Terrains Framework ">
+      <meta name="title" content="Class ByteAreasLayer | Hex Terrains Framework ">
     
     <meta name="description" content="Base class for HexTerrain layers that have a byte value per cell">
       <link rel="shortcut icon" href="../favicon.ico">
@@ -76,18 +76,20 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer">
 
 
 
-  <h1 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer" class="text-break">Class HexByteAreasLayer</h1>
+  <h1 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer" class="text-break">Class ByteAreasLayer</h1>
   <div class="markdown level0 summary"><p>Base class for HexTerrain layers that have a byte value per cell</p>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
-    <div class="level1"><span class="xref">HexByteAreasLayer</span></div>
+    <div class="level1"><span class="xref">ByteAreasLayer</span></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexCountriesLayer.html">HexCountriesLayer</a></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexProvincesLayer.html">HexProvincesLayer</a></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -119,15 +121,15 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Areas.html">Areas</a>.<a class="xref" href="Fwt.HexTerrains.Areas.Data.html">Data</a></h6>
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
-  <h5 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_syntax">Syntax</h5>
+  <h5 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class HexByteAreasLayer : IDisposable</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ByteAreasLayer : IDisposable</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
 
 
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Settings" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Settings">Settings</h4>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Settings" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Settings">Settings</h4>
   <div class="markdown level1 summary"><p>Settings of the HexTerrain this area is attached to</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -154,8 +156,8 @@
 </h3>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaCells_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreaCells*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaCells" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreaCells">AreaCells</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaCells_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaCells" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells">AreaCells</h4>
   <div class="markdown level1 summary"><p>Cell indexes per area</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -180,11 +182,11 @@
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaColors_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreaColors*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaColors" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreaColors">AreaColors</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaColors_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaColors" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors">AreaColors</h4>
   <div class="markdown level1 summary"><p>Palette of colors for the areas.
 Index in this list = area index.
-Used to calculate the AreasColorMap data layer <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreasColorMap">AreasColorMap</a>,
+Used to calculate the AreasColorMap data layer <a class="xref" href="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreasColorMap">AreasColorMap</a>,
 which is used to fill a ColorTexture to be placed on UI or in terrain materials.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -209,8 +211,8 @@ which is used to fill a ColorTexture to be placed on UI or in terrain materials.
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaSizes_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreaSizes*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaSizes" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreaSizes">AreaSizes</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaSizes_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaSizes" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes">AreaSizes</h4>
   <div class="markdown level1 summary"><p>Size per area</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -235,8 +237,8 @@ which is used to fill a ColorTexture to be placed on UI or in terrain materials.
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreasColorMap_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreasColorMap*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreasColorMap" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.AreasColorMap">AreasColorMap</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreasColorMap_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreasColorMap" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap">AreasColorMap</h4>
   <div class="markdown level1 summary"><p>Cell Area color per cell</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -261,8 +263,8 @@ which is used to fill a ColorTexture to be placed on UI or in terrain materials.
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_CellAreaMap_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.CellAreaMap*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_CellAreaMap" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.CellAreaMap">CellAreaMap</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CellAreaMap_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CellAreaMap" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap">CellAreaMap</h4>
   <div class="markdown level1 summary"><p>Area index per cell</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -287,11 +289,11 @@ which is used to fill a ColorTexture to be placed on UI or in terrain materials.
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_ColorMapTextureIndex_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.ColorMapTextureIndex*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_ColorMapTextureIndex" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.ColorMapTextureIndex">ColorMapTextureIndex</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_ColorMapTextureIndex_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_ColorMapTextureIndex" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex">ColorMapTextureIndex</h4>
   <div class="markdown level1 summary"><p>Index of the texture in the list of ColorMapTextures.
 Used externally in systems.
-Systems read this value to know which texture to fill with colors from AreasColorMap data layer <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreasColorMap">AreasColorMap</a>.
+Systems read this value to know which texture to fill with colors from AreasColorMap data layer <a class="xref" href="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreasColorMap">AreasColorMap</a>.
 That texture is expected to be used in materials or/and UI like minimap.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -318,8 +320,8 @@ That texture is expected to be used in materials or/and UI like minimap.</p>
 </h3>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Cleanup_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Cleanup*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Cleanup" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Cleanup">Cleanup()</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Cleanup_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Cleanup" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup">Cleanup()</h4>
   <div class="markdown level1 summary"><p>Every frame there is a cleanup stage. This function is called.
 Usually used to clean the dirty flags.</p>
 </div>
@@ -330,9 +332,9 @@ Usually used to clean the dirty flags.</p>
   </div>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.CleanupAsync*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_CleanupAsync" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.CleanupAsync">CleanupAsync()</h4>
-  <div class="markdown level1 summary"><p>Async version of Cleanup() <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Cleanup">Cleanup()</a>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CleanupAsync" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync">CleanupAsync()</h4>
+  <div class="markdown level1 summary"><p>Async version of Cleanup() <a class="xref" href="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Cleanup">Cleanup()</a>
 Difference between regular Cleanup() is that it schedules jobs that clean up data layers,
 so you don't have to wait for the results and can continue working.
 Every frame there is a cleanup stage. This function is called.
@@ -345,8 +347,8 @@ Usually used to clean the dirty flags.</p>
   </div>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_CompleteAllJobs_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.CompleteAllJobs*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_CompleteAllJobs" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.CompleteAllJobs">CompleteAllJobs()</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CompleteAllJobs_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CompleteAllJobs" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs">CompleteAllJobs()</h4>
   <div class="markdown level1 summary"><p>Completes all jobs that affect data layers.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -356,8 +358,8 @@ Usually used to clean the dirty flags.</p>
   </div>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Dispose_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Dispose*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Dispose" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Dispose">Dispose()</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Dispose_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Dispose" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose">Dispose()</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -366,8 +368,8 @@ Usually used to clean the dirty flags.</p>
   </div>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_GetCellArea_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.GetCellArea*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_GetCellArea_System_Int32_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.GetCellArea(System.Int32)">GetCellArea(int)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_GetCellArea_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_GetCellArea_System_Int32_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea(System.Int32)">GetCellArea(int)</h4>
   <div class="markdown level1 summary"><p>Returns the area index of the cell.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -411,8 +413,8 @@ Usually used to clean the dirty flags.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Init_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Init*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
   <div class="markdown level1 summary"><p>Initializes/Reinitializes the area data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -440,10 +442,10 @@ Usually used to clean the dirty flags.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Init_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Init*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{UnityEngine.Color32})">Init(HexTerrainSettings, NativeArray&lt;Color32&gt;)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{UnityEngine.Color32})">Init(HexTerrainSettings, NativeArray&lt;Color32&gt;)</h4>
   <div class="markdown level1 summary"><p>Initializes/Reinitializes the areas data.
-Calls InitAreaColors() internally to copy the color palette from the given array <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__">InitAreaColors(NativeArray&lt;Color32&gt;)</a>.
+Calls InitAreaColors() internally to copy the color palette from the given array <a class="xref" href="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__">InitAreaColors(NativeArray&lt;Color32&gt;)</a>.
 Only copies data from the copyAreaColorsFrom array, does not change or cache,
 so it is safe to dispose it after this call.</p>
 </div>
@@ -478,9 +480,9 @@ so it is safe to dispose it after this call.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_InitAreaColors_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.InitAreaColors*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.InitAreaColors(Unity.Collections.NativeArray{UnityEngine.Color32})">InitAreaColors(NativeArray&lt;Color32&gt;)</h4>
-  <div class="markdown level1 summary"><p>Copies an AreaColors palette from the given array <a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_AreaColors">AreaColors</a>.
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_InitAreaColors_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors(Unity.Collections.NativeArray{UnityEngine.Color32})">InitAreaColors(NativeArray&lt;Color32&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copies an AreaColors palette from the given array <a class="xref" href="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaColors">AreaColors</a>.
 Does not change or cache the array, so it is safe to dispose it after this call.
 copyFrom array is expected to have the areas count length, so there is one color per possible area index.
 AreaIndex == index in copyFrom array.</p>
@@ -510,8 +512,8 @@ AreaIndex == index in copyFrom array.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Resize_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Resize*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Resize_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.Resize(Unity.Mathematics.int2)">Resize(int2)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Resize_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Resize_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize(Unity.Mathematics.int2)">Resize(int2)</h4>
   <div class="markdown level1 summary"><p>Resizes the terrain to a new size.
 Internally calls Init() to reinitialize the data layers.</p>
 </div>
@@ -539,8 +541,8 @@ Internally calls Init() to reinitialize the data layers.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_SetAllCellsArea_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.SetAllCellsArea*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_SetAllCellsArea_System_Byte_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.SetAllCellsArea(System.Byte)">SetAllCellsArea(byte)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllCellsArea_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllCellsArea_System_Byte_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea(System.Byte)">SetAllCellsArea(byte)</h4>
   <div class="markdown level1 summary"><p>Sets the area index of all cells to the given value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -584,8 +586,8 @@ Internally calls Init() to reinitialize the data layers.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.SetAllDirty*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
   <div class="markdown level1 summary"><p>Sets all data layers dirty value.
 If isDirty is true, all data layers will be marked as dirty and will be recalculated on the next frame.
 If isDirty is false, all data layers will be marked as clean and will not be recalculated on the next frame.</p>
@@ -614,8 +616,8 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
   </table>
 
 
-  <a id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_SetCellArea_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.SetCellArea*"></a>
-  <h4 id="Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_SetCellArea_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.SetCellArea(System.Int32,System.Byte)">SetCellArea(int, byte)</h4>
+  <a id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetCellArea_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea*"></a>
+  <h4 id="Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetCellArea_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea(System.Int32,System.Byte)">SetCellArea(int, byte)</h4>
   <div class="markdown level1 summary"><p>Sets the area index of the cell.</p>
 </div>
   <div class="markdown level1 conceptual"></div>

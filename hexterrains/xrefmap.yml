@@ -53896,6 +53896,263 @@ references:
   commentId: N:Fwt.HexTerrains.Areas.Data
   fullName: Fwt.HexTerrains.Areas.Data
   nameWithType: Fwt.HexTerrains.Areas.Data
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer
+  name: ByteAreasLayer
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html
+  commentId: T:Fwt.HexTerrains.Areas.Data.ByteAreasLayer
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer
+  nameWithType: ByteAreasLayer
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells
+  name: AreaCells
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaCells
+  commentId: P:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells
+  nameWithType: ByteAreasLayer.AreaCells
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells*
+  name: AreaCells
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaCells_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaCells
+  nameWithType: ByteAreasLayer.AreaCells
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors
+  name: AreaColors
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaColors
+  commentId: P:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors
+  nameWithType: ByteAreasLayer.AreaColors
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors*
+  name: AreaColors
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaColors_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaColors
+  nameWithType: ByteAreasLayer.AreaColors
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes
+  name: AreaSizes
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaSizes
+  commentId: P:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes
+  nameWithType: ByteAreasLayer.AreaSizes
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes*
+  name: AreaSizes
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreaSizes_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreaSizes
+  nameWithType: ByteAreasLayer.AreaSizes
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap
+  name: AreasColorMap
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreasColorMap
+  commentId: P:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap
+  nameWithType: ByteAreasLayer.AreasColorMap
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap*
+  name: AreasColorMap
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_AreasColorMap_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.AreasColorMap
+  nameWithType: ByteAreasLayer.AreasColorMap
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap
+  name: CellAreaMap
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CellAreaMap
+  commentId: P:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap
+  nameWithType: ByteAreasLayer.CellAreaMap
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap*
+  name: CellAreaMap
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CellAreaMap_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CellAreaMap
+  nameWithType: ByteAreasLayer.CellAreaMap
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup
+  name: Cleanup()
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Cleanup
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup()
+  nameWithType: ByteAreasLayer.Cleanup()
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup*
+  name: Cleanup
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Cleanup_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Cleanup
+  nameWithType: ByteAreasLayer.Cleanup
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync
+  name: CleanupAsync()
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CleanupAsync
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync()
+  nameWithType: ByteAreasLayer.CleanupAsync()
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync*
+  name: CleanupAsync
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CleanupAsync_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CleanupAsync
+  nameWithType: ByteAreasLayer.CleanupAsync
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex
+  name: ColorMapTextureIndex
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_ColorMapTextureIndex
+  commentId: P:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex
+  nameWithType: ByteAreasLayer.ColorMapTextureIndex
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex*
+  name: ColorMapTextureIndex
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_ColorMapTextureIndex_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.ColorMapTextureIndex
+  nameWithType: ByteAreasLayer.ColorMapTextureIndex
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs
+  name: CompleteAllJobs()
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CompleteAllJobs
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs()
+  nameWithType: ByteAreasLayer.CompleteAllJobs()
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs*
+  name: CompleteAllJobs
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_CompleteAllJobs_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.CompleteAllJobs
+  nameWithType: ByteAreasLayer.CompleteAllJobs
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose
+  name: Dispose()
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Dispose
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose()
+  nameWithType: ByteAreasLayer.Dispose()
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose*
+  name: Dispose
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Dispose_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Dispose
+  nameWithType: ByteAreasLayer.Dispose
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea(System.Int32)
+  name: GetCellArea(int)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_GetCellArea_System_Int32_
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea(System.Int32)
+  name.vb: GetCellArea(Integer)
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea(int)
+  fullName.vb: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea(Integer)
+  nameWithType: ByteAreasLayer.GetCellArea(int)
+  nameWithType.vb: ByteAreasLayer.GetCellArea(Integer)
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea*
+  name: GetCellArea
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_GetCellArea_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.GetCellArea
+  nameWithType: ByteAreasLayer.GetCellArea
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
+  name: Init(HexTerrainSettings)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
+  nameWithType: ByteAreasLayer.Init(HexTerrainSettings)
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{UnityEngine.Color32})
+  name: Init(HexTerrainSettings, NativeArray<Color32>)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Collections_NativeArray_UnityEngine_Color32__
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Collections.NativeArray{UnityEngine.Color32})
+  name.vb: Init(HexTerrainSettings, NativeArray(Of Color32))
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Collections.NativeArray<UnityEngine.Color32>)
+  fullName.vb: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Collections.NativeArray(Of UnityEngine.Color32))
+  nameWithType: ByteAreasLayer.Init(HexTerrainSettings, NativeArray<Color32>)
+  nameWithType.vb: ByteAreasLayer.Init(HexTerrainSettings, NativeArray(Of Color32))
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init*
+  name: Init
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Init_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Init
+  nameWithType: ByteAreasLayer.Init
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors(Unity.Collections.NativeArray{UnityEngine.Color32})
+  name: InitAreaColors(NativeArray<Color32>)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_InitAreaColors_Unity_Collections_NativeArray_UnityEngine_Color32__
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors(Unity.Collections.NativeArray{UnityEngine.Color32})
+  name.vb: InitAreaColors(NativeArray(Of Color32))
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors(Unity.Collections.NativeArray<UnityEngine.Color32>)
+  fullName.vb: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors(Unity.Collections.NativeArray(Of UnityEngine.Color32))
+  nameWithType: ByteAreasLayer.InitAreaColors(NativeArray<Color32>)
+  nameWithType.vb: ByteAreasLayer.InitAreaColors(NativeArray(Of Color32))
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors*
+  name: InitAreaColors
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_InitAreaColors_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.InitAreaColors
+  nameWithType: ByteAreasLayer.InitAreaColors
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize(Unity.Mathematics.int2)
+  name: Resize(int2)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Resize_Unity_Mathematics_int2_
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize(Unity.Mathematics.int2)
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize(Unity.Mathematics.int2)
+  nameWithType: ByteAreasLayer.Resize(int2)
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize*
+  name: Resize
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Resize_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Resize
+  nameWithType: ByteAreasLayer.Resize
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea(System.Byte)
+  name: SetAllCellsArea(byte)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllCellsArea_System_Byte_
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea(System.Byte)
+  name.vb: SetAllCellsArea(Byte)
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea(byte)
+  fullName.vb: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea(Byte)
+  nameWithType: ByteAreasLayer.SetAllCellsArea(byte)
+  nameWithType.vb: ByteAreasLayer.SetAllCellsArea(Byte)
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea*
+  name: SetAllCellsArea
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllCellsArea_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllCellsArea
+  nameWithType: ByteAreasLayer.SetAllCellsArea
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty(System.Boolean)
+  name: SetAllDirty(bool)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllDirty_System_Boolean_
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty(System.Boolean)
+  name.vb: SetAllDirty(Boolean)
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty(bool)
+  fullName.vb: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty(Boolean)
+  nameWithType: ByteAreasLayer.SetAllDirty(bool)
+  nameWithType.vb: ByteAreasLayer.SetAllDirty(Boolean)
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty*
+  name: SetAllDirty
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetAllDirty_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetAllDirty
+  nameWithType: ByteAreasLayer.SetAllDirty
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea(System.Int32,System.Byte)
+  name: SetCellArea(int, byte)
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetCellArea_System_Int32_System_Byte_
+  commentId: M:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea(System.Int32,System.Byte)
+  name.vb: SetCellArea(Integer, Byte)
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea(int, byte)
+  fullName.vb: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea(Integer, Byte)
+  nameWithType: ByteAreasLayer.SetCellArea(int, byte)
+  nameWithType.vb: ByteAreasLayer.SetCellArea(Integer, Byte)
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea*
+  name: SetCellArea
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_SetCellArea_
+  commentId: Overload:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.SetCellArea
+  nameWithType: ByteAreasLayer.SetCellArea
+- uid: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Settings
+  name: Settings
+  href: api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html#Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Settings
+  commentId: F:Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Settings
+  fullName: Fwt.HexTerrains.Areas.Data.ByteAreasLayer.Settings
+  nameWithType: ByteAreasLayer.Settings
 - uid: Fwt.HexTerrains.Areas.Data.CountryColorPalette
   name: CountryColorPalette
   href: api/Fwt.HexTerrains.Areas.Data.CountryColorPalette.html
@@ -55057,6 +55314,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem
   nameWithType: CalcHexTerrainAreaCellsSystem
+- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
+  name: UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
+  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer__
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
+  name.vb: UpdateData(HexTerrainVisibility, ByteAreasLayer)
+  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  nameWithType: CalcHexTerrainAreaCellsSystem.UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
+  nameWithType.vb: CalcHexTerrainAreaCellsSystem.UpdateData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer@)
   name: UpdateData(in HexTerrainVisibility, in HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer__
@@ -55079,6 +55345,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem
   nameWithType: CalcHexTerrainAreaColorsSystem
+- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
+  name: UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
+  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer__
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
+  name.vb: UpdateData(HexTerrainVisibility, ByteAreasLayer)
+  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  nameWithType: CalcHexTerrainAreaColorsSystem.UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
+  nameWithType.vb: CalcHexTerrainAreaColorsSystem.UpdateData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer@)
   name: UpdateData(in HexTerrainVisibility, in HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer__
@@ -55101,6 +55376,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem
   nameWithType: CalcHexTerrainAreasDataSystem
+- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
+  name: UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
+  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer__
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
+  name.vb: UpdateData(HexTerrainVisibility, ByteAreasLayer)
+  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  nameWithType: CalcHexTerrainAreasDataSystem.UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
+  nameWithType.vb: CalcHexTerrainAreasDataSystem.UpdateData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer@)
   name: UpdateData(in HexTerrainVisibility, in HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer__
@@ -55315,6 +55599,15 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem
   nameWithType: CleanupHexTerrainAreasSystem
+- uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  name: CleanupData(in HexTerrainVisibility, ByteAreasLayer)
+  href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer_
+  commentId: M:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  name.vb: CleanupData(HexTerrainVisibility, ByteAreasLayer)
+  fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(in Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  fullName.vb: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  nameWithType: CleanupHexTerrainAreasSystem.CleanupData(in HexTerrainVisibility, ByteAreasLayer)
+  nameWithType.vb: CleanupHexTerrainAreasSystem.CleanupData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer)
   name: CleanupData(in HexTerrainVisibility, HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_
@@ -63304,6 +63597,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainSerializer.ReadSurfaceData
   nameWithType: HexTerrainSerializer.ReadSurfaceData
+- uid: Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.ByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)
+  name: ReadTerrainByteAreas(BinaryReader, ByteAreasLayer, HexTerrainSettings)
+  href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainByteAreas_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Fwt_HexTerrains_Data_HexTerrainSettings_
+  commentId: M:Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.ByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)
+  fullName: Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader, Fwt.HexTerrains.Areas.Data.ByteAreasLayer, Fwt.HexTerrains.Data.HexTerrainSettings)
+  nameWithType: HexTerrainSerializer.ReadTerrainByteAreas(BinaryReader, ByteAreasLayer, HexTerrainSettings)
 - uid: Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)
   name: ReadTerrainByteAreas(BinaryReader, HexByteAreasLayer, HexTerrainSettings)
   href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainByteAreas_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Fwt_HexTerrains_Data_HexTerrainSettings_
@@ -63492,6 +63791,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainSerializer.WriteSurfaceData
   nameWithType: HexTerrainSerializer.WriteSurfaceData
+- uid: Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  name: WriteTerrainByteAreas(BinaryWriter, ByteAreasLayer)
+  href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainByteAreas_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_ByteAreasLayer_
+  commentId: M:Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  fullName: Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
+  nameWithType: HexTerrainSerializer.WriteTerrainByteAreas(BinaryWriter, ByteAreasLayer)
 - uid: Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer)
   name: WriteTerrainByteAreas(BinaryWriter, HexByteAreasLayer)
   href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainByteAreas_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_

@@ -85,8 +85,8 @@
 </li>
 <li><p>Import HexTerrains Demo core sample</p>
 </li>
-<li><p>Additionally import one of two following samples depending on your render pipeline: &quot;HexTerrains Demo URP assets&quot; or &quot;HexTerrains Demo HDRP assets&quot;
-<img src="images/ImportSamples.png" alt="Install" title="Import Samples into your project"></p>
+<li><p>Additionally import one of two following samples depending on your render pipeline: &quot;HexTerrains Demo URP assets&quot; or &quot;HexTerrains Demo HDRP assets&quot;</p>
+<p><img src="images/ImportSamples.png" alt="Install" title="Import Samples into your project"></p>
 </li>
 <li><p>After sample projects are imported into your project, navigate to folder &quot;Assets/Samples/HexTerrains/HexTerrains_URP&quot; or &quot;Assets/Samples/HexTerrains/HexTerrains_HDRP&quot; depending on your render pipeline.</p>
 </li>
@@ -109,9 +109,48 @@
 </ol>
 <h2 id="in-game-terrain-editor">In-game terrain editor</h2>
 <ol>
-<li>In-game editor is a State Machine called <code>UserToolStateMachine</code></li>
+<li><p>In-game editor is a State Machine called (see class <code>UserToolStateMachine</code>). State Machine has a set of User Tool States like Deform Terrain, Paint Biomes, Paint Cell Items, Paint Countries, etc. Every UserToolState communicates with a Terrain using a proxy implementation of the <code>IHexTerrainAPI</code> (see <code>HexTerrainAPI</code> class).</p>
+</li>
+<li><p>All User Tools are split between a set of categories:</p>
+<ul>
+<li>Ground Tools
+(Deform, Level, Noise, Smooth, Heightmap, Paint Biome, Auto-paint Biome, Stamp Height, Stamp Biome)</li>
+</ul>
+<p><img src="images/GroundTools.png" alt="Ground Tools"></p>
+<ul>
+<li>Water Tools
+(Deform, Level, Noise, Smooth, Heightmap, Paint Biome, Auto-paint Biome, Stamp Height, Stamp Biome)</li>
+</ul>
+<p><img src="images/WaterTools.png" alt="Water Tools"></p>
+<ul>
+<li>Cell Items
+(Paint Cell Items, Stamp Cell Items)</li>
+</ul>
+<p><img src="images/CellItemsTools.png" alt="Cell Items"></p>
+<ul>
+<li>Cell Entities
+(Paint Cell Entities, Stamp Cell Entities)</li>
+</ul>
+<p><img src="images/CellEntitiesTools.png" alt="Cell Entities"></p>
+<ul>
+<li>Provinces
+(Paint Provinces, Stamp Provinces)</li>
+</ul>
+<p><img src="images/ProvincesTools.png" alt="Provinces"></p>
+<ul>
+<li>Countries
+(Paint Countries, Stamp Countries)</li>
+</ul>
+<p><img src="images/CountriesTools.png" alt="Countries"></p>
+<ul>
+<li>System
+(Toggle Visibility, Resize Terrain, Save Terrain, Load Terrain, Create New)</li>
+</ul>
+<p><img src="images/SystemTools.png" alt="System"></p>
+</li>
 </ol>
 <h2 id="create-terrain-on-scene-load">Create terrain on scene load</h2>
+<p>If you want to have a terrain loaded at scene load, just put on the subscene a terrain prefab. If you have a HexTerrainEditor prefab on the scene, set a reference to the terrain prefab in the <code>SamplesUserToolDataAuthoring</code> script in the field <code>Terrain Authoring</code>:</p>
 <ol>
 <li><p>You can find Terrain prefabs in the Samples folder by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_URP/Prefabs&quot; for URP projects and by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_HDRP/Prefabs&quot; for HDRP projects
 <img src="images/TerrainPrefabs.png" alt="Terrain Prefabs"></p>
@@ -128,7 +167,489 @@
 </ol>
 <h2 id="how-to-interact-with-a-terrain">How to interact with a Terrain</h2>
 <ol>
-<li>To see how it's done, take a look at</li>
+<li>To see how it's done, take a look at interface <code>IHexTerrainAPI</code> and it's example implementation <code>HexTerrainAPI</code> class:</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Example implementation of the IHexTerrainAPI interface.
+/// Used to be injected into places outside the ECS World. 
+/// Contains examples of how to read and write data from the TerrainEntity.
+/// Abstracts user code from the TerrainData storage (usually the Entity World).
+/// Provides an API for working with a terrain.
+/// Usually uses in a UserTools (brushes, etc.).
+/// &lt;/summary&gt;
+public interface IHexTerrainAPI
+{
+    /// &lt;summary&gt;
+    /// Get the TerainEntity this API is working with.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;terrain terrainEntity this API works with&lt;/returns&gt;
+    Entity GetTerrainEntity();
+
+    /// &lt;summary&gt;
+    /// Returns a Terrain Settings if found.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;terrain settings if found or null if not found&lt;/returns&gt;
+    HexTerrainSettings? GetTerrainSettings();
+
+    /// &lt;summary&gt;
+    /// returns a data layer from the TerrainEntity &lt;see cref=&quot;GetTerrainEntity()&quot;/&gt; 
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TDataLayer&quot;&gt;&lt;/typeparam&gt;
+    /// &lt;returns&gt;data layer if found, otherwise - null&lt;/returns&gt;
+    TDataLayer GetDataLayer&lt;TDataLayer&gt;() where TDataLayer : class;
+
+    /// &lt;summary&gt;
+    /// Checks if the data layer is supported by the terrain.
+    /// Usually means if terrain has this data layer.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TDataLayer&quot;&gt;type of the TerrainLayer to check&lt;/typeparam&gt;
+    /// &lt;returns&gt;true if supports, otherwise - false&lt;/returns&gt;
+    bool IsLayerSupported&lt;TDataLayer&gt;() where TDataLayer : class;
+
+    /// &lt;summary&gt;
+    /// Returns the height map value (byte) of the cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TSurfaceData&quot;&gt;type of surface data to get height from&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a height from&lt;/param&gt;
+    /// &lt;returns&gt;heightmap value if found or null if not found&lt;/returns&gt;
+    byte? GetCellHeight&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer;
+
+    /// &lt;summary&gt;
+    /// Sets the height map value (byte) of the cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TSurfaceData&quot;&gt;type of surface data to set height for&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set a height for&lt;/param&gt;
+    /// &lt;param name=&quot;height&quot;&gt;&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height) where TSurfaceData : HexSurfaceLayer;
+
+    /// &lt;summary&gt;
+    /// Returns the biomes map value (byte) of the cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TSurfaceData&quot;&gt;type of surface data to get biome from&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a biome from&lt;/param&gt;
+    /// &lt;returns&gt;biome value if found or null if not found&lt;/returns&gt;
+    byte? GetCellBiome&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer;
+
+    /// &lt;summary&gt;
+    /// Sets the biomes map value (byte) of the cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TSurfaceData&quot;&gt;type of surface data to set biome for&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set a biome for&lt;/param&gt;
+    /// &lt;param name=&quot;biome&quot;&gt;biome value to set&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetCellBiome&lt;TSurfaceData&gt;(int cellIndex, byte biome) where TSurfaceData : HexSurfaceLayer;
+
+    /// &lt;summary&gt;
+    /// Returns the CellItem from terrain cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TItemsLayer&quot;&gt;type of cell items layer to get data from&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a CellItem from&lt;/param&gt;
+    /// &lt;returns&gt;CellItem value if found, otherwise null&lt;/returns&gt;
+    CellItem? GetCellItem&lt;TItemsLayer&gt;(int cellIndex) where TItemsLayer : CellItemsLayer;
+
+    /// &lt;summary&gt;
+    /// Sets the CellItem from terrain cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TItemsLayer&quot;&gt;type of cell items layer to set value on&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set CellItem on&lt;/param&gt;
+    /// &lt;param name=&quot;item&quot;&gt;CellItem value to set on provided cellIndex on provided ItemsData layer&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetCellItem&lt;TItemsLayer&gt;(int cellIndex, CellItem item) where TItemsLayer : CellItemsLayer;
+
+    /// &lt;summary&gt;
+    /// Returns the CellEntity from terrain cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TEntitiesData&quot;&gt;type of cell terrainEntity layer to get data from&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a CellEntity from&lt;/param&gt;
+    /// &lt;returns&gt;CellEntity value if found, otherwise null&lt;/returns&gt;
+    CellEntity? GetCellEntity&lt;TCellEntityLayer&gt;(int cellIndex) where TCellEntityLayer : CellEntitiesLayer;
+
+    /// &lt;summary&gt;
+    /// Sets the CellEntity from terrain cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TEntitiesData&quot;&gt;type of cell terrainEntity layer to set value on&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set CellEntity on&lt;/param&gt;
+    /// &lt;param name=&quot;item&quot;&gt;CellItem value to set on provided cellIndex on provided EntitiesData layer&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetCellEntity&lt;TCellEntityLayer&gt;(int cellIndex, CellEntity entity) where TCellEntityLayer : CellEntitiesLayer;
+
+    /// &lt;summary&gt;
+    /// Returns the CellArea from terrain cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TAreasLayer&quot;&gt;type of areas data layer to get value from&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get value from&lt;/param&gt;
+    /// &lt;returns&gt;CellArea if found or null if not found&lt;/returns&gt;
+    byte? GetCellArea&lt;TAreasLayer&gt;(int cellIndex) where TAreasLayer : HexByteAreasLayer;
+
+    /// &lt;summary&gt;
+    /// Sets the CellArea from terrain cell at the specified index.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TAreasLayer&quot;&gt;type of areas data layer to set value on&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set value on&lt;/param&gt;
+    /// &lt;param name=&quot;area&quot;&gt;area value to set&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetCellArea&lt;TAreasLayer&gt;(int cellIndex, byte area) where TAreasLayer : HexByteAreasLayer;
+
+    /// &lt;summary&gt;
+    /// Returns the Raycast data from the TerrainEntity &lt;see cref=&quot;HexTerrainRaycastData&quot;/&gt;.
+    /// this data contains information about the raycast from mouse to terrain result.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;raycast data from the TerrainEntity&lt;/returns&gt;
+    HexTerrainRaycastData? GetRaycastData();
+
+    /// &lt;summary&gt;
+    /// Returns the cell index under the cursor.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;cell index if found and raycast hit the terrain, otherwise - false&lt;/returns&gt;
+    int? GetCellIndexUnderCursor();
+
+    /// &lt;summary&gt;
+    /// Returns the cell coordinate under the cursor.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;cell coordinate if found and raycast hit the terrain, otherwise - false&lt;/returns&gt;
+    int2? GetCellCoordUnderCursor();
+
+    /// &lt;summary&gt;
+    /// Returns a list of available HexTerrainPrefabConfigs from the UserToolEntity (if any)
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;THexTerrainPrefabConfig&quot;&gt;type of HexTerrainPrefabConfig you have&lt;/typeparam&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    DynamicBuffer&lt;THexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsBuffer&lt;THexTerrainPrefabConfig&gt;()
+        where THexTerrainPrefabConfig : unmanaged, IBufferElementData, IHexTerrainPrefabConfig;
+
+    /// &lt;summary&gt;
+    /// Returns a list of available HexTerrainPrefabConfigs from the UserToolEntity (if any).
+    /// This list can be sent to the UI to display available terrain prefabs for the user to select from.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;collection of hex terrain prefab configs for user to select from&lt;/returns&gt;
+    IList&lt;IHexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsList();
+
+    /// &lt;summary&gt;
+    /// Returns the brush view from the TerrainEntity &lt;see cref=&quot;HexTerrainBrushView&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;brush view from the TerrainEntity if found, otherwise - null&lt;/returns&gt;
+    HexTerrainBrushView GetBrushView();
+
+    /// &lt;summary&gt;
+    /// Returns the brush size from the TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;brush size if found, otherwise - null&lt;/returns&gt;
+    int? GetBrushSize();
+
+    /// &lt;summary&gt;
+    /// Sets the brush size on the TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;brushSize&quot;&gt;new brush size&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetBrushSize(int brushSize);
+
+    /// &lt;summary&gt;
+    /// Returns true if the brush on TerrainEntity is resizable.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;is brush found and resizable&lt;/returns&gt;
+    bool GetIsResizableBrush();
+
+    /// &lt;summary&gt;
+    /// Sets the IsResizable value of the brush on TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;isResizableBrush&quot;&gt;new value for IsResizable&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetIsResizableBrush(bool isResizableBrush);
+
+
+    /// &lt;summary&gt;
+    /// Returns the brush opacity from the TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;brush opacity if brush is found, otherwise - null&lt;/returns&gt;
+    float? GetBrushOpacity();
+
+    /// &lt;summary&gt;
+    /// Sets the brush opacity on the TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;opacity&quot;&gt;new opacity value (0..1)&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetBrushOpacity(float opacity);
+
+    /// &lt;summary&gt;
+    /// Returns true if the brush on TerrainEntity is visible.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;true if brush is found and is visible, otherwise - false&lt;/returns&gt;
+    bool GetIsVisibleBrush();
+
+    /// &lt;summary&gt;
+    /// Sets the IsVisible value of the brush on TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;isVisibleBrush&quot;&gt;new IsVisible value&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetIsVisibleBrush(bool isVisibleBrush);
+
+    /// &lt;summary&gt;
+    /// Returns the brush color from the TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;brush color if found, otherwise - false&lt;/returns&gt;
+    Color32? GetBrushColor();
+
+    /// &lt;summary&gt;
+    /// Sets the brush color on the TerrainEntity &lt;see cref=&quot;HexTerrainBrush&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;color&quot;&gt;new brush color&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetBrushColor(Color32 color);
+
+    /// &lt;summary&gt;
+    /// Returns the view mode of the TerrainEntity &lt;see cref=&quot;HexTerrainViewMode&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;view mode if found, otherwise - false&lt;/returns&gt;
+    byte GetViewMode();
+
+    /// &lt;summary&gt;
+    /// Returns true if terrain is visible, false is invisible, null if no terrain with visibility found&lt;see cref=&quot;HexTerrainVisibility&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;true if terrain is visible, false is invisible, null if no terrain with visibility found&lt;/returns&gt;
+    bool? GetIsTerrainVisible();
+
+    /// &lt;summary&gt;
+    /// Sets terrain visibility. &lt;see cref=&quot;HexTerrainVisibility&quot;/&gt;
+    /// Returns true if value was set
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;isVisible&quot;&gt;New visibility value for terrain&lt;/param&gt;
+    /// &lt;returns&gt;True if value was set, otherwise - false&lt;/returns&gt;
+    bool SetIsTerrainVisible(bool isVisible);
+
+    /// &lt;summary&gt;
+    /// Toggles the visibility of the terrain on the TerrainEntity &lt;see cref=&quot;HexTerrainVisibility&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;returns&gt;True if terrain now visible, false is invisible, null if no terrain with visibility found&lt;/returns&gt;
+    bool? ToggleIsTerrainVisible();
+
+    /// &lt;summary&gt;
+    /// Sets the view mode on the TerrainEntity &lt;see cref=&quot;HexTerrainViewMode&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;viewMode&quot;&gt;new view mode&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetViewMode(byte viewMode);
+
+    /// &lt;summary&gt;
+    /// Saves the TerrainEntity to a file.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;filePath&quot;&gt;file path to save a terrain into&lt;/param&gt;
+    /// &lt;returns&gt;true if terrain has been saved, otherwise - false&lt;/returns&gt;
+    bool SaveTerrain(string filePath);
+
+    /// &lt;summary&gt;
+    /// Loads the TerrainEntity from a file.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;filePath&quot;&gt;file path to load a terrain from&lt;/param&gt;
+    /// &lt;returns&gt;true if loaded, otherwise - false&lt;/returns&gt;
+    bool LoadTerrain(string filePath);
+
+    /// &lt;summary&gt;
+    /// Resizes the TerrainEntity &lt;see cref=&quot;HexTerrainSettings.TerrainSize&quot;/&gt;.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;terrainSize&quot;&gt;new terrain size&lt;/param&gt;
+    /// &lt;returns&gt;true if was resized, otherwise - false&lt;/returns&gt;
+    bool ResizeTerrain(int2 terrainSize);
+
+    /// &lt;summary&gt;
+    /// Destroys a terrain entity provided.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;terrainEntity&quot;&gt;terrain entity to destroy&lt;/param&gt;
+    /// &lt;returns&gt;true if was destroyed, otherwise - false&lt;/returns&gt;
+    bool DestroyTerrain(Entity terrainEntity);
+
+    /// &lt;summary&gt;
+    /// Creates a new terrain terrainEntity by instantiating provided prefab.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;terrainPrefab&quot;&gt;prefab of the terrainEntity to create&lt;/param&gt;
+    /// &lt;returns&gt;instance of the created terrainEntity&lt;/returns&gt;
+    Entity CreateNewTerrainEntity(Entity terrainPrefab);
+
+    /// &lt;summary&gt;
+    /// Creates a new terrain entity with the specified settings.
+    /// Destroys existing terrain
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;terrainPrefabConfig&quot;&gt;prefab config of the terrainEntity to create&lt;/param&gt;
+    /// &lt;param name=&quot;terrainSettings&quot;&gt;terrain settings to overwrite&lt;/param&gt;
+    /// &lt;returns&gt;instance of the created terrainEntity&lt;/returns&gt;
+    Entity CreateNewTerrain&lt;TPrefabConfig&gt;(TPrefabConfig terrainPrefabConfig, HexTerrainSettings terrainSettings) where TPrefabConfig : IHexTerrainPrefabConfig;
+
+    /// &lt;summary&gt;
+    /// Creates a new screen of the specified type.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TScreen&quot;&gt;type of the screen to create&lt;/typeparam&gt;
+    /// &lt;returns&gt;screen instance&lt;/returns&gt;
+    TScreen CreateUIScreen&lt;TScreen&gt;() where TScreen : UIScreen;
+
+    /// &lt;summary&gt;
+    /// Gets an existing screen of the specified type, or creates a new one if it doesn't exist.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TScreen&quot;&gt;type of the screen to get or create&lt;/typeparam&gt;
+    /// &lt;returns&gt;screen instance&lt;/returns&gt;
+    TScreen GetOrCreateUIScreen&lt;TScreen&gt;() where TScreen : UIScreen;
+
+    /// &lt;summary&gt;
+    /// Gets an existing screen of the specified type if found.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TScreen&quot;&gt;type of the screen to get&lt;/typeparam&gt;
+    /// &lt;returns&gt;&lt;/returns&gt;
+    TScreen GetUIScreen&lt;TScreen&gt;() where TScreen : UIScreen;
+
+    /// &lt;summary&gt;
+    /// Destroys the specified screen.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TScreen&quot;&gt;type of a screen to destroy&lt;/typeparam&gt;
+    /// &lt;returns&gt;true if the screen was destroyed successfully; otherwise, false&lt;/returns&gt;
+    bool DestroyUIScreen&lt;TScreen&gt;() where TScreen : UIScreen;
+
+    /// &lt;summary&gt;
+    /// Destroys the specified screen instance.
+    /// &lt;/summary&gt;
+    /// &lt;param name=&quot;screen&quot;&gt;screen instance to destroy&lt;/param&gt;
+    /// &lt;returns&gt;true if the screen was destroyed successfully; otherwise, false&lt;/returns&gt;
+    bool DestroyUIScreen(UIScreen screen);
+}
+</code></pre>
+<ol start="2">
+<li>In general all the interactions are done by accessing components on the Terrain Entity:</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// returns a data layer from the TerrainEntity &lt;see cref=&quot;TerrainEntity&quot;/&gt; 
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;TDataLayer&quot;&gt;&lt;/typeparam&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+public virtual TDataLayer GetDataLayer&lt;TDataLayer&gt;() where TDataLayer : class
+{
+    if (!EntityManager.Exists(TerrainEntity) || !EntityManager.TryGetComponentObject&lt;TDataLayer&gt;(TerrainEntity, out var dataLayer))
+    {
+        return default;
+    }
+    return dataLayer;
+}
+
+/// &lt;summary&gt;
+/// Returns the height map value (byte) of the cell at the specified index.
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;TSurfaceData&quot;&gt;type of surface data to get height from&lt;/typeparam&gt;
+/// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a height from&lt;/param&gt;
+/// &lt;returns&gt;heightmap value if found or null if not found&lt;/returns&gt;
+public virtual byte? GetCellHeight&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer
+{
+    var surfaceData = GetDataLayer&lt;TSurfaceData&gt;();
+    if (surfaceData == null)
+    {
+        return null;
+    }
+
+    return surfaceData.GetCellHeight(cellIndex);
+}
+
+/// &lt;summary&gt;
+/// Sets the height map value (byte) of the cell at the specified index.
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;TSurfaceData&quot;&gt;type of surface data to set height for&lt;/typeparam&gt;
+/// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set a height for&lt;/param&gt;
+/// &lt;param name=&quot;height&quot;&gt;&lt;/param&gt;
+/// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+public virtual bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height) where TSurfaceData : HexSurfaceLayer
+{
+    var surfaceData = GetDataLayer&lt;TSurfaceData&gt;();
+    if (surfaceData == null)
+    {
+        return false;
+    }
+    return surfaceData.SetCellHeight(cellIndex, height);
+}
+</code></pre>
+<ol start="3">
+<li>Terrain Entity contains a set of Terrain Layers (see <a href="">Terrain Layers</a>)</li>
+</ol>
+<ul>
+<li><p>Surface Layers (Ground, Water, add your own)
+Contains Heightmap and Biomesmap.</p>
+<pre><code class="lang-csharp">public abstract partial class HexSurfaceLayer : IDisposable
+{
+    ...
+
+    /// &lt;summary&gt;
+    /// HeightMap data layer. Contains a byte height value per cell &lt;see cref=&quot;HeightMapDataLayer&quot;/&gt;
+    /// &lt;/summary&gt;
+    public HeightMapDataLayer HeightMap { get; protected set; }
+
+    /// &lt;summary&gt;
+    /// BiomesMap data layer. Contains biome index per cell &lt;see cref=&quot;CellBiomesDataLayer&quot;/&gt;
+    /// &lt;/summary&gt;
+    public CellBiomesDataLayer BiomesMap { get; protected set; }
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>Surface Render Layer (<code>HexSurfaceRenderLayer&lt;TSurfaceLayer&gt;</code>)
+Contains generated meshes for the respective Surface Layer.</p>
+<pre><code class="lang-csharp">public abstract partial class HexSurfaceRenderLayer : IDisposable
+{
+    ...
+
+    /// &lt;summary&gt;
+    /// Data layer that stores meshes for the hex terrain chunks.
+    /// &lt;/summary&gt;
+    public ChunkMeshesDataLayer ChunkMeshes;
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>ByteArea Layers (Countries, Provinces, add your own)
+Contains a byte map (byte per terrain cell).</p>
+<pre><code class="lang-csharp">public abstract partial class ByteAreasLayer : IDisposable
+{
+    ...
+
+    /// &lt;summary&gt;
+    /// Area index per cell
+    /// &lt;/summary&gt;
+    public CellByteAreaDataLayer CellAreaMap { get; set; }
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>Cell Items Layers (Cell Items, add your own)
+Contains a CellItems map (Cell Item per terrain cell).
+Cell Item is a static visual object that is painted on the cell (up to 8 submeshes per CellItem).</p>
+<pre><code class="lang-csharp">public abstract class CellItemsLayer : IDisposable
+{
+    ...
+
+    /// &lt;summary&gt;
+    /// Data layer for storing a CellItem per cell
+    /// &lt;/summary&gt;
+    public CellItemDataLayer CellItems;
+
+    ...
+}
+</code></pre>
+</li>
+<li><p>Cell Entities Layers (Cell Entities, add your own)
+Contains a CellEntities map (Cell Entity per terrain cell)
+Cell Entity is a full-fledged Entity with any components on it.</p>
+<pre><code class="lang-csharp">public abstract class CellEntitiesLayer : IDisposable
+{
+    ...
+
+    /// &lt;summary&gt;
+    /// Data layer for storing a CellEntity per cell
+    /// &lt;/summary&gt;
+    public HexCellEntityDataLayer CellEntities;
+
+    ...
+}
+</code></pre>
+</li>
+</ul>
+<ol start="4">
+<li></li>
 </ol>
 
 </article>

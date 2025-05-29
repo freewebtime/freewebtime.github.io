@@ -2454,6 +2454,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Areas.Data.ByteAreasLayer",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.ByteAreasLayer.yml\" sourcestartlinenumber=\"1\">Base class for HexTerrain layers that have a byte value per cell</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Areas.Data.CountryColorPalette.yml",
       "output": {
         ".html": {
@@ -2534,7 +2548,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Areas.Data.HexCountriesLayer",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexCountriesLayer.yml\" sourcestartlinenumber=\"1\">HexByteAreasLayer for countries</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexCountriesLayer.yml\" sourcestartlinenumber=\"1\">ByteAreasLayer for countries</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2562,7 +2576,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Areas.Data.HexProvincesLayer",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexProvincesLayer.yml\" sourcestartlinenumber=\"1\">HexByteAreasLayer for provinces</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexProvincesLayer.yml\" sourcestartlinenumber=\"1\">ByteAreasLayer for provinces</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2996,7 +3010,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.yml\" sourcestartlinenumber=\"1\">Base class for systems that clean up HexByteAreasLayer every frame at cleanup stage.\nUsually the cleanup clears the dirty flags.</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.yml\" sourcestartlinenumber=\"1\">Base class for systems that clean up ByteAreasLayer every frame at cleanup stage.\nUsually the cleanup clears the dirty flags.</p>\n"
     },
     {
       "type": "ManagedReference",

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#128247; Camera Controller System | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#128247; Camera Controller System | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-camera-controller-system">📷 Camera Controller System</h1>
+
+<p>The Hex Terrains Framework includes a built-in <strong>camera controller system</strong> that allows users to smoothly move and zoom the camera across a hex terrain during gameplay or editing. This system is built on top of Unity ECS and integrates seamlessly with both UI input and ECS logic.</p>
+<h2 id="overview">Overview</h2>
+<p>The camera controller is composed of the following parts:</p>
+<ul>
+<li><strong>Authoring + Baking</strong>: Declares movement keys and speed settings.</li>
+<li><strong>ECS Systems</strong>: Create, update, and clean up camera controller components.</li>
+<li><strong>Scene Component</strong>: A <code>CameraControllerComponentBase</code> instance handles zoom behavior and actual camera movement.</li>
+</ul>
+<p>This design enables <strong>camera panning</strong>, <strong>zooming</strong>, and <strong>follow behavior</strong> over ECS-controlled hex terrains with minimal boilerplate.</p>
+<hr>
+<h2 id="components">Components</h2>
+<h3 id="cameracontrollerauthoring-monobehaviour"><code>CameraControllerAuthoring</code> (MonoBehaviour)</h3>
+<p>This Unity MonoBehaviour is placed on a GameObject to configure the camera movement and zoom behavior. It includes:</p>
+<ul>
+<li>Movement input keys (WASD or others)</li>
+<li>Acceleration key (e.g., Shift)</li>
+<li>Speed settings</li>
+<li>Flags to indicate terrain wrapping (horizontal/vertical)</li>
+</ul>
+<p>It gets baked into a <code>CreateCameraControllerRequest</code> component.</p>
+<pre><code class="lang-csharp">public class CameraControllerAuthoring : MonoBehaviour
+{
+    public KeyCode MoveUpKey = KeyCode.W;
+    public KeyCode MoveDownKey = KeyCode.S;
+    public float MovementSpeed = 10f;
+    public bool IsConnectedHorizontally;
+}
+</code></pre>
+<hr>
+<h3 id="createcameracontrollerrequest-icomponentdata"><code>CreateCameraControllerRequest</code> (IComponentData)</h3>
+<p>Added to a terrain entity during baking. When processed, it creates a runtime camera controller for the terrain.</p>
+<pre><code class="lang-csharp">public struct CreateCameraControllerRequest : IComponentData
+{
+    public KeyCode MoveUpKey;
+    public float MovementSpeed;
+    public bool IsFindCameraControllerComponentOnScene;
+}
+</code></pre>
+<hr>
+<h3 id="cameracontrollertarget-icleanupcomponentdata"><code>CameraControllerTarget</code> (ICleanupComponentData)</h3>
+<p>Attached to a terrain entity, it contains:</p>
+<ul>
+<li>Current movement input config</li>
+<li>Camera target local position</li>
+<li>Pointer to <code>CameraControllerComponentBase</code> MonoBehaviour</li>
+<li><code>UnityObjectRef&lt;Transform&gt;</code> for target GameObject movement</li>
+</ul>
+<hr>
+<h2 id="systems">Systems</h2>
+<h3 id="createcameracontrollersystem"><code>CreateCameraControllerSystem</code></h3>
+<ul>
+<li>Executes in the <code>HexTerrainsInitializationGroup</code></li>
+<li>Detects <code>CreateCameraControllerRequest</code> and adds <code>CameraControllerTarget</code></li>
+<li>Instantiates a new <code>Transform</code> for the camera to follow</li>
+<li>Optionally binds a <code>CameraControllerComponentBase</code> found in the scene</li>
+</ul>
+<blockquote>
+<p>Automatically positions the camera over the center of the terrain at start.</p>
+</blockquote>
+<hr>
+<h3 id="updatecameracontrollersystembase"><code>UpdateCameraControllerSystemBase</code></h3>
+<ul>
+<li>Handles input (<code>W</code>, <code>A</code>, <code>S</code>, <code>D</code>, <code>Shift</code>) and applies movement to the camera target</li>
+<li>Wraps around terrain borders if <code>IsConnectedHorizontally/Vertically</code> is set</li>
+<li>Updates zoom or world position if any movement occurred</li>
+<li>Calls <code>CameraControllerComponentBase.UpdatePosition()</code></li>
+<li>Updates the minimap view via <code>IMinimapScreen</code></li>
+</ul>
+<blockquote>
+<p>Ignores input if the pointer is over UI (using <code>EventSystem.current.IsPointerOverGameObject()</code>)</p>
+</blockquote>
+<hr>
+<h3 id="destroycameracontrollersystem"><code>DestroyCameraControllerSystem</code></h3>
+<ul>
+<li>Executes in <code>HexTerrainsCleanupGroup</code></li>
+<li>Cleans up camera targets when terrain becomes invisible or is removed</li>
+</ul>
+<hr>
+<h2 id="camera-controller-component">Camera Controller Component</h2>
+<h3 id="cameracontrollercomponentbase-monobehaviour"><code>CameraControllerComponentBase</code> (MonoBehaviour)</h3>
+<p>A Unity-side component for zooming and final camera positioning. You can implement custom behaviors by deriving from this class. For example, it supports:</p>
+<ul>
+<li><code>CurrentZoom</code> value in range <code>[0–1]</code></li>
+<li>Computed offset between <code>MinZoomOffset</code> and <code>MaxZoomOffset</code></li>
+<li><code>SetTarget()</code> and <code>UpdatePosition()</code> abstract methods</li>
+</ul>
+<hr>
+<h2 id="how-to-use">How to Use</h2>
+<ol>
+<li>Add <code>CameraControllerAuthoring</code> to a GameObject.</li>
+<li>Add a derived implementation of <code>CameraControllerComponentBase</code> to the scene.</li>
+<li>Assign your terrain entity with the authoring component.</li>
+<li>At runtime, camera controller will be initialized and updated automatically.</li>
+<li>Optionally override <code>UpdateCameraControllerSystemBase.GetMinimapScreen()</code> to sync with your UI.</li>
+</ol>
+<hr>
+<h2 id="extending">Extending</h2>
+<ul>
+<li>You can create custom camera behavior by subclassing <code>CameraControllerComponentBase</code>.</li>
+<li>For advanced use cases (e.g., cinematic camera), you may implement your own systems and disable the default ones.</li>
+</ul>
+<hr>
+<h2 id="-sample-camera-controller-samplescameracontrollercomponent">🧪 Sample Camera Controller (SamplesCameraControllerComponent)</h2>
+<p>To help users quickly integrate and test the camera system, the Hex Terrains Framework includes a ready-to-use MonoBehaviour:
+<code>SamplesCameraControllerComponent</code>. This is a simple but flexible camera rig with zooming, panning, and edge wrapping.</p>
+<h3 id="-purpose">🔍 Purpose</h3>
+<p>This component demonstrates how to:</p>
+<ul>
+<li>Integrate the ECS-based camera logic with a Unity <code>Camera</code> component</li>
+<li>Follow a target (usually a terrain anchor or camera proxy)</li>
+<li>Implement smooth zooming using the mouse scroll wheel</li>
+<li>Avoid UI conflicts (prevents movement if pointer is over UI)</li>
+<li>Enforce terrain boundaries and edge-wrapping logic</li>
+</ul>
+<h3 id="-inherits-from">🧱 Inherits From</h3>
+<pre><code class="lang-csharp">public class SamplesCameraControllerComponent : CameraControllerComponentBase
+</code></pre>
+<hr>
+<h3 id="-features">📌 Features</h3>
+<ul>
+<li><p><strong>Zoom Control</strong>
+Uses <code>Input.mouseScrollDelta.y</code> to change zoom, clamped between 0 and 1.</p>
+</li>
+<li><p><strong>Target Following</strong>
+The camera follows a world <code>Transform</code> provided by ECS using <code>SetTarget()</code>.</p>
+</li>
+<li><p><strong>Zoom Modifier Keys</strong>
+If the user is holding modifier keys like <code>LeftAlt</code> or <code>LeftControl</code>, zoom is temporarily disabled to avoid accidental input.</p>
+</li>
+<li><p><strong>Acceleration</strong>
+Holding the acceleration key (e.g., Shift) increases zoom speed via <code>AccelerationMultiplier</code>.</p>
+</li>
+<li><p><strong>UI-Aware Input</strong>
+Prevents updates when the user interacts with UI using <code>EventSystem.current.IsPointerOverGameObject()</code>.</p>
+</li>
+</ul>
+<hr>
+<h3 id="-sample-usage">🧪 Sample Usage</h3>
+<pre><code class="lang-csharp">public Camera camera;
+public SamplesCameraControllerComponent controller;
+
+controller.Camera = camera;
+controller.SetTarget(cameraFollowTransform);  // Set by ECS at runtime
+</code></pre>
+<hr>
+<h3 id="-zoom-calculation-logic">🔁 Zoom Calculation Logic</h3>
+<pre><code class="lang-csharp">var scrollDelta = Input.mouseScrollDelta.y * ZoomSpeed;
+CurrentZoom += scrollDelta * multiplier;
+CurrentZoom = Mathf.Clamp(CurrentZoom, 0, 1);
+</code></pre>
+<p>The final zoom offset is applied to the camera using:</p>
+<pre><code class="lang-csharp">Camera.transform.position = TargetTransform.TransformPoint(CurrentZoomOffset);
+Camera.transform.LookAt(TargetTransform);
+</code></pre>
+<hr>
+<h3 id="-zoom-lock-keys">🚫 Zoom Lock Keys</h3>
+<p>By default, zoom is disabled while any of the following keys are held:</p>
+<pre><code class="lang-csharp">KeyCode.LeftAlt
+KeyCode.LeftControl
+</code></pre>
+<p>This is defined in:</p>
+<pre><code class="lang-csharp">public List&lt;KeyCode&gt; PreventZoomKeys
+</code></pre>
+<p>You can customize this list at runtime or via inspector.</p>
+<hr>
+<h3 id="-integration-tip">🧩 Integration Tip</h3>
+<p>This is a great starting point for integrating with custom terrain views, minimaps, or input contexts. For a more advanced camera (e.g., orbit or drag-scroll), simply subclass this component or extend <code>CameraControllerComponentBase</code>.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/camera-controller.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

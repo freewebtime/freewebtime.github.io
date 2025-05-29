@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#128230; CellItems System | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#128230; CellItems System | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-cellitems-system">📦 CellItems System</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The <strong>CellItems</strong> system enables the placement of static props, decorations, or visual objects directly onto terrain cells. These can include trees, rocks, buildings, or any custom object defined by the user. Each cell can contain a single <code>CellItem</code>, which refers to a configuration entry (a prefab, mesh, or rendering instruction), making it extremely memory-efficient and suitable for large terrains.</p>
+<p>CellItems are rendered using a <code>RenderEntities</code> system rather than traditional ECS entities, enabling better performance and scalability.</p>
+<hr>
+<h2 id="-key-components">🧱 Key Components</h2>
+<h3 id="cellitemslayer"><code>CellItemsLayer</code></h3>
+<ul>
+<li><p>Stores the actual cell-level data — which item is placed in which cell.</p>
+</li>
+<li><p>Inherits from <code>HexTerrainLayer</code>.</p>
+</li>
+<li><p>Contains:</p>
+<ul>
+<li><code>CellItems</code>: A <code>NativeArrayDataLayer&lt;CellItem&gt;</code> — the main item assignment per cell.</li>
+<li><code>ItemConfigs</code>: A buffer of configuration structs (<code>CellItemConfig</code>) referencing assets, meshes, materials, and other rendering metadata.</li>
+<li><code>RenderEntities</code>: A <code>NativeParallelMultiHashMapDataLayer&lt;RenderEntityKey, RenderEntity&gt;</code> — acts as the bridge to the rendering system by collecting render commands.</li>
+</ul>
+</li>
+</ul>
+<h3 id="cellitempropslayer"><code>CellItemPropsLayer</code></h3>
+<ul>
+<li>A parallel system used for procedural or runtime cell item generation.</li>
+<li>Used for randomizing terrain props during creation using <code>CreateCellPropsDataRequest</code>.</li>
+</ul>
+<hr>
+<h2 id="-creation-flow">🏗️ Creation Flow</h2>
+<h3 id="createcellpropsdatasystem"><code>CreateCellPropsDataSystem</code></h3>
+<ul>
+<li><p>Runs under the <code>CreateHexTerrainsGroup</code>.</p>
+</li>
+<li><p>When a <code>CreateCellPropsDataRequest</code> is present on a <code>HexTerrain</code> entity, this system:</p>
+<ol>
+<li>Creates a new <code>CellItemPropsLayer</code>.</li>
+<li>Initializes it using the terrain's settings and item configuration buffer.</li>
+<li>Optionally fills the terrain with randomized props (based on height or range).</li>
+<li>Removes the request component once processing is complete.</li>
+</ol>
+</li>
+</ul>
+<h3 id="createcellpropsdatarequest"><code>CreateCellPropsDataRequest</code></h3>
+<ul>
+<li><p>Contains parameters such as:</p>
+<ul>
+<li><code>IsFillWithRandomData</code>: whether to auto-generate.</li>
+<li><code>MinCellHeight</code>, <code>MaxCellHeight</code>: filters.</li>
+<li><code>MinRandomPropIndex</code>, <code>MaxRandomPropIndex</code>: range of prop types.</li>
+<li><code>ColorMapTextureIndex</code>: for visualizing cell item distributions.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="-runtime-updates">🔄 Runtime Updates</h2>
+<h3 id="calccellitemssystem"><code>CalcCellItemsSystem</code></h3>
+<ul>
+<li><p>Runs continuously to compute visible render instructions from cell item data.</p>
+</li>
+<li><p>Only recalculates when:</p>
+<ul>
+<li>Cell items, metrics, or chunk visibility are marked dirty.</li>
+</ul>
+</li>
+<li><p>Combines read/write dependencies to ensure thread-safe access.</p>
+</li>
+<li><p>Main responsibilities:</p>
+<ul>
+<li>Clears existing render entries.</li>
+<li>Schedules a <code>CalcCellItemsJob</code> to generate new render entries.</li>
+</ul>
+</li>
+</ul>
+<h3 id="calccellitemsjob"><code>CalcCellItemsJob</code></h3>
+<ul>
+<li><p>Iterates over all visible chunks and creates a list of <code>RenderEntity</code> descriptors based on:</p>
+<ul>
+<li>Cell height.</li>
+<li>Item configuration (e.g., meshes, materials, transforms).</li>
+</ul>
+</li>
+<li><p>Populates <code>RenderEntities</code> with these descriptors for fast rendering.</p>
+</li>
+</ul>
+<hr>
+<h2 id="-cleanup">🧹 Cleanup</h2>
+<h3 id="cleanupcellpropsdatasystem"><code>CleanupCellPropsDataSystem</code></h3>
+<ul>
+<li>Clears cell item dirty flags</li>
+</ul>
+<h2 id="-authoring--config">🔧 Authoring &amp; Config</h2>
+<h3 id="authoring-components">Authoring Components</h3>
+<ul>
+<li><code>CellItemsLayerAuthoring</code>: attaches the initial layer on authoring.</li>
+<li><code>CellItemPrefabAuthoring</code>: defines asset references for each <code>CellItemConfig</code>.</li>
+</ul>
+<hr>
+<h2 id="-rendering-notes">🖼️ Rendering Notes</h2>
+<ul>
+<li>Rendering is handled via <code>RenderEntities</code>, not ECS entities.</li>
+<li>This allows thousands of items to be rendered with extremely low CPU overhead.</li>
+<li>Each <code>RenderEntity</code> contains: <code>mesh</code>, <code>material</code>, <code>submesh index</code>, and a <code>transform matrix</code>.</li>
+</ul>
+<hr>
+<h2 id="-benefits">🚀 Benefits</h2>
+<ul>
+<li><strong>Highly optimized</strong> for large-scale terrains.</li>
+<li><strong>Jobified</strong> and multithreaded with tight memory management.</li>
+<li><strong>Customizable</strong> and extensible: new item types, conditional placements, dynamic updates.</li>
+</ul>
+<p>Here's a new section for your documentation that explains how <strong>Cell Items</strong> work in the Hex Terrains Framework, including their configuration, simulation, and rendering pipeline.</p>
+<hr>
+<h2 id="-cell-items-system">📦 Cell Items System</h2>
+<p>The <strong>Cell Items System</strong> allows you to place and manage static, non-entity objects in hexagonal terrain cells—ideal for populating the terrain with props such as trees, rocks, decorations, and similar elements. It is designed for performance and scalability using a non-entity rendering pipeline via <code>Graphics.DrawMeshInstanced</code>.</p>
+<h3 id="-configuration">🔧 Configuration</h3>
+<p>Each cell can contain a <code>CellItem</code>, which stores:</p>
+<ul>
+<li>An index into a shared array of <code>CellItemConfig</code>, defining mesh, material, and behavior.</li>
+<li>A state index, allowing visual or logical variation per configuration (e.g., seasonal variants, damaged states).</li>
+</ul>
+<p>These are authored using:</p>
+<ul>
+<li><code>CellItemConfigAuthoring.cs</code>: defines mesh/material combinations and transform data.</li>
+<li><code>CellItemPrefabAuthoring.cs</code>: creates <code>CellItemConfig</code> assets.</li>
+<li><code>CellItemsLayerAuthoring.cs</code>: places item instances on the map during terrain authoring.</li>
+</ul>
+<h3 id="-simulation-workflow">📐 Simulation Workflow</h3>
+<p>Simulation systems compute visibility and transform for each cell item, producing renderable data.</p>
+<ol>
+<li><p><strong>System Setup:</strong></p>
+<ul>
+<li>Systems like <code>CreateCellPropsDataSystem</code> and <code>CleanupCellPropsDataSystem</code> manage lifetime of supporting data.</li>
+<li><code>CalcCellItemsSystem</code> populates and updates the <code>CellItem</code> data for each terrain cell.</li>
+</ul>
+</li>
+<li><p><strong>Job Execution:</strong></p>
+<ul>
+<li><p><code>CalcCellItemsJob</code> is a Burst-compiled job that runs in parallel for every visible terrain cell.</p>
+</li>
+<li><p>It:</p>
+<ul>
+<li>Skips cells outside the view frustum (<code>ChunkVisibility</code>).</li>
+<li>Looks up the <code>CellItemConfig</code> and relevant state.</li>
+<li>Computes local-to-world transform using chunk + cell + item transforms.</li>
+<li>Emits <code>RenderEntity</code> instances into a <code>NativeParallelMultiHashMap&lt;RenderEntitySettings, RenderEntity&gt;</code>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-csharp">public partial struct CalcCellItemsJob : IJobParallelFor
+{
+    public void Execute(int index)
+    {
+        var chunkIndex = Settings.GetChunkIndexByCellIndex(index);
+        if (!ChunkVisibilityGrid[chunkIndex].IsVisible) return;
+
+        var cellItem = CellItems[index];
+        var itemConfig = ItemConfigs[cellItem.Index];
+        var cellMetrics = CellMetrics[index];
+
+        var itemStateConfig = itemConfig.GetStateConfig(cellItem.State);
+        var chunkTransform = ChunkVisibilityGrid[chunkIndex].Transform;
+        var cellTransform = cellMetrics.CellTransform_Local;
+
+        foreach (var reSettings in itemStateConfig.RenderEntities)
+        {
+            var transform = chunkTransform * cellTransform * baseTransform;
+            RenderEntities.Add(reSettings, new RenderEntity { Settings = reSettings, Transform = transform });
+        }
+    }
+}
+</code></pre>
+<ol start="3">
+<li><p><strong>Color Mapping:</strong></p>
+<ul>
+<li><code>CalcCellItemsColorsSystem</code> computes cell item color overlays used in the minimap and terrain editor via <code>CalcCellItemColorsJob</code>.</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="-rendering-pipeline">🎨 Rendering Pipeline</h3>
+<p>Unlike entities rendered by Unity's Hybrid Renderer, Cell Items are <strong>drawn manually via instancing</strong> using <code>Graphics.DrawMeshInstanced</code>, which enables:</p>
+<ul>
+<li>Lower overhead than GameObjects or Entities.</li>
+<li>Efficient frustum culling via chunk visibility.</li>
+<li>Support for up to 8 submeshes per item.</li>
+</ul>
+<h4 id="key-rendering-types">Key Rendering Types:</h4>
+<ul>
+<li><p><strong><code>RenderEntity</code></strong>:</p>
+<pre><code class="lang-csharp">public struct RenderEntity {
+    public RenderEntitySettings Settings;
+    public Matrix4x4 Transform;
+}
+</code></pre>
+</li>
+<li><p><strong><code>RenderEntitySettings</code></strong>: groups <code>RenderEntity</code> instances by visual similarity.</p>
+<pre><code class="lang-csharp">public struct RenderEntitySettings {
+    public int MeshIndex;
+    public int SubmeshIndex;
+    public int MaterialIndex;
+    public ShadowCastingMode ShadowMode;
+    public bool ReceiveShadows;
+    public int Layer;
+    public int PropertyBlockIndex;
+}
+</code></pre>
+</li>
+</ul>
+<h4 id="final-step">Final Step:</h4>
+<ul>
+<li><code>SortRenderEntitiesJob</code> batches and groups render entities by <code>RenderEntitySettings</code> for efficient draw calls.</li>
+<li>The final draw submission happens in rendering systems downstream <code>RenderCellItemsDataSystem</code>:</li>
+</ul>
+<pre><code class="lang-csharp">public virtual void UpdateItems(in HexTerrainVisibility terrainVisibility, CellItemsLayer itemsData, Camera camera)
+{
+	if (!terrainVisibility.Value)
+	{
+		return;
+	}
+
+	var renderEntitiesConfig = itemsData.RenderEntitiesConfig;
+	var renderEntities = itemsData.RenderEntities;
+	var cellItems = itemsData.CellItems;
+
+	if (cellItems == null || renderEntitiesConfig == null)
+	{
+		return;
+	}
+
+	cellItems.OpenToRead();
+
+	if (!renderEntities.IsCreated || renderEntities.IsEmpty)
+	{
+		return;
+	}
+
+	var worldBounds = new Bounds(Vector3.zero, Vector3.one * 100000f);
+
+	renderEntitiesConfig.RenderEntities(renderEntities, camera, worldBounds);
+}
+</code></pre>
+<hr>
+<h3 id="-extensibility">🧩 Extensibility</h3>
+<p>You can easily:</p>
+<ul>
+<li>Add more item types by creating new <code>CellItemConfig</code> assets.</li>
+<li>Extend rendering behavior by customizing <code>RenderEntitySettings</code>.</li>
+<li>Add interaction or visibility logic by plugging into the chunk visibility grid or extending render utility systems.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/cell-items.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

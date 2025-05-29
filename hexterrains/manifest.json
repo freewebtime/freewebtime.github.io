@@ -9363,10 +9363,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "gettingstarted.md",
+      "source_relative_path": "getting-started.md",
       "output": {
         ".html": {
-          "relative_path": "gettingstarted.html"
+          "relative_path": "getting-started.html"
         }
       },
       "version": ""
@@ -9733,10 +9733,50 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "terrainchunks.md",
+      "source_relative_path": "terrain-chunks.md",
       "output": {
         ".html": {
-          "relative_path": "terrainchunks.html"
+          "relative_path": "terrain-chunks.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "terrain-layers.md",
+      "output": {
+        ".html": {
+          "relative_path": "terrain-layers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "terrain-serialization.md",
+      "output": {
+        ".html": {
+          "relative_path": "terrain-serialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "terrain-surface-rendering.md",
+      "output": {
+        ".html": {
+          "relative_path": "terrain-surface-rendering.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "terrain-surfaces.md",
+      "output": {
+        ".html": {
+          "relative_path": "terrain-surfaces.html"
         }
       },
       "version": ""
@@ -9753,60 +9793,20 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "terrainlayers.md",
+      "source_relative_path": "user-interface.md",
       "output": {
         ".html": {
-          "relative_path": "terrainlayers.html"
+          "relative_path": "user-interface.html"
         }
       },
       "version": ""
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "terrainserialization.md",
+      "source_relative_path": "user-tools.md",
       "output": {
         ".html": {
-          "relative_path": "terrainserialization.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "terrainsurfacerendering.md",
-      "output": {
-        ".html": {
-          "relative_path": "terrainsurfacerendering.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "terrainsurfaces.md",
-      "output": {
-        ".html": {
-          "relative_path": "terrainsurfaces.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "userinterface.md",
-      "output": {
-        ".html": {
-          "relative_path": "userinterface.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "usertools.md",
-      "output": {
-        ".html": {
-          "relative_path": "usertools.html"
+          "relative_path": "user-tools.html"
         }
       },
       "version": ""

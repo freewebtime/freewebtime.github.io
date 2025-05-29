@@ -90,21 +90,21 @@
 </li>
 <li><p>After sample projects are imported into your project, navigate to folder &quot;Assets/Samples/HexTerrains/HexTerrains_URP&quot; or &quot;Assets/Samples/HexTerrains/HexTerrains_HDRP&quot; depending on your render pipeline.</p>
 </li>
-<li><p>From there navigate to &quot;Scenes&quot; folder and open Showcase scene
-<img src="images/ShowcaseScene.png" alt="Showcase Scene" title="Open a Showcase scene"></p>
+<li><p>From there navigate to &quot;Scenes&quot; folder and open Showcase scene</p>
+<p><img src="images/ShowcaseScene.png" alt="Showcase Scene" title="Open a Showcase scene"></p>
 </li>
 <li><p>Press &quot;Play&quot; button</p>
 </li>
-<li><p>Select &quot;System&quot; User Tool category, then &quot;Create New&quot;
-<img src="images/CreateNewTerrainButton.png" alt="Create Terrain"></p>
+<li><p>Select &quot;System&quot; User Tool category, then &quot;Create New&quot;</p>
+<p><img src="images/CreateNewTerrainButton.png" alt="Create Terrain"></p>
 </li>
-<li><p>In openned window select a terrain prefab and put the settings you want.
-<img src="images/CreateNewTerrainPopup.png" alt="Create Terrain Popup"></p>
+<li><p>In openned window select a terrain prefab and put the settings you want.</p>
+<p><img src="images/CreateNewTerrainPopup.png" alt="Create Terrain Popup"></p>
 </li>
 <li><p>Press &quot;Create&quot; button</p>
 </li>
-<li><p>Enjoy!
-<img src="images/PressPlay.png" alt="Gameplay" title="Created terrain"></p>
+<li><p>Enjoy!</p>
+<p><img src="images/PressPlay.png" alt="Gameplay" title="Created terrain"></p>
 </li>
 </ol>
 <h2 id="in-game-terrain-editor">In-game terrain editor</h2>
@@ -152,11 +152,11 @@
 <h2 id="create-terrain-on-scene-load">Create terrain on scene load</h2>
 <p>If you want to have a terrain loaded at scene load, just put on the subscene a terrain prefab. If you have a HexTerrainEditor prefab on the scene, set a reference to the terrain prefab in the <code>SamplesUserToolDataAuthoring</code> script in the field <code>Terrain Authoring</code>:</p>
 <ol>
-<li><p>You can find Terrain prefabs in the Samples folder by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_URP/Prefabs&quot; for URP projects and by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_HDRP/Prefabs&quot; for HDRP projects
-<img src="images/TerrainPrefabs.png" alt="Terrain Prefabs"></p>
+<li><p>You can find Terrain prefabs in the Samples folder by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_URP/Prefabs&quot; for URP projects and by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_HDRP/Prefabs&quot; for HDRP projects</p>
+<p><img src="images/TerrainPrefabs.png" alt="Terrain Prefabs"></p>
 </li>
-<li><p>Put a prefab you want on the &quot;Showcase Subscene&quot; subscene besides the HexTerrainEditor prefab. Then add the reference to this Terrain on the HexTerrainEditor game object at &quot;Terrain Authoring&quot; field of SamplesUserToolDataAuthoring component
-<img src="images/HexTerrainEditorPrefabSetupPreExistingTerrain.png" alt="Add Terrain On Scene"></p>
+<li><p>Put a prefab you want on the &quot;Showcase Subscene&quot; subscene besides the HexTerrainEditor prefab. Then add the reference to this Terrain on the HexTerrainEditor game object at &quot;Terrain Authoring&quot; field of SamplesUserToolDataAuthoring component</p>
+<p><img src="images/HexTerrainEditorPrefabSetupPreExistingTerrain.png" alt="Add Terrain On Scene"></p>
 <blockquote>
 <p>Note: if you don't set a reference to the terrain on the HexTerrainEditor, you will not be able to edit a terrain using the User Tools Panel at the bottom center of the screen.</p>
 </blockquote>
@@ -562,7 +562,7 @@ public virtual bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height
 }
 </code></pre>
 <ol start="3">
-<li>Terrain Entity contains a set of Terrain Layers (see <a href="">Terrain Layers</a>)</li>
+<li>Terrain Entity contains a set of Terrain Layers (see <a href="terrainlayers.html">Terrain Layers</a>)</li>
 </ol>
 <ul>
 <li><p>Surface Layers (Ground, Water, add your own)
@@ -649,7 +649,8 @@ Cell Entity is a full-fledged Entity with any components on it.</p>
 </li>
 </ul>
 <ol start="4">
-<li></li>
+<li>As you can see, every Terrain Layer contains one or more Data Layers. Data Layer is a container for (usually) collection of data like byte, CellItem, Color32, etc.
+See more about <a href="datalayers.html">DataLayers</a>. The main point of the DataLayer is that it allows to track Read and Write job handlers, so you can schedule jobs to access or modify a DataLayer's data safely.</li>
 </ol>
 
 </article>
@@ -660,7 +661,7 @@ Cell Entity is a full-fledged Entity with any components on it.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/gettingstarted.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/getting-started.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>

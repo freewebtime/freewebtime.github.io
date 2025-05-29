@@ -149,6 +149,47 @@
 <p><img src="images/SystemTools.png" alt="System"></p>
 </li>
 </ol>
+<h2 id="view-modes">View modes</h2>
+<p>Hex Terrain supports rendering in a different view modes. View mode is a number, the value of the <code>HexTerrainViewMode</code> component on a Terrain Entity.</p>
+<pre><code class="lang-csharp">    /// &lt;summary&gt;
+    /// Contains the current view mode of the terrain.
+    /// &lt;/summary&gt;
+    public struct HexTerrainViewMode : IComponentData
+    {
+        /// &lt;summary&gt;
+        /// The current view mode of the terrain.
+        /// &lt;/summary&gt;
+        public VersionValue&lt;byte&gt; Value;
+    }
+</code></pre>
+<p>To change a view mode, click on a respective button above the minimap. There are four built-in view modes already, but it's very simple to expand the list:</p>
+<ul>
+<li><p>Normal View Mode (Regular terrain view)</p>
+<p><img src="images/ViewModeNormal.png" alt="ViewMode Normal"></p>
+</li>
+<li><p>Biomes View Mode (Paints each cell to a color of it's biome, see <code>ColorPalette</code> on <code>HexSurfaceLayerAuthoring</code> mono behaviour)</p>
+<p><img src="images/ViewModeBiomes.png" alt="ViewMode Normal"></p>
+</li>
+<li><p>Provinces View Mode</p>
+<p><img src="images/ViewModeProvinces.png" alt="ViewMode Normal"></p>
+</li>
+<li><p>Countries View Mode</p>
+<p><img src="images/ViewModeCountries.png" alt="ViewMode Normal"></p>
+</li>
+</ul>
+<p>To setup a ViewMode, take a look at the <code>MinimapScreen</code> prefab, the <code>SamplesMinimapScreen</code> component, the <code>ViewModes</code> list. Here you can setup which color textures are painted on the Minimap when terrain is in the respective ViewMode.</p>
+<p><img src="images/MinimapScreenViewModeSetup.png" alt="Minimap ViewModes setup"></p>
+<p>Color texture is a read/write enabled Texture2D that is filled with calculated colors from terrain. For instance, each biome has it's own color for minimap (see <code>ColorPalette</code> list on <code>SurfaceLayer</code> authoring component)</p>
+<p><img src="images/BiomesColorMapPalette.png" alt="Biomes Color Palette"></p>
+<p>or, for example, the Color setup for each Cell Entity:</p>
+<p><img src="images/CellEntitiesColors.png" alt="Cell Entity Colors"></p>
+<p>Now, take a look at the field <code>ColorMapTextureIndex</code> of each renderable terrain layer (Surface, ByteArea, CellItems, CellEntities). This value tells on which texture to copy colors from the layer's color palette.</p>
+<p><img src="images/TerrainPrefabViewModeSetup.png" alt="Terrain Prefab Color Textures Setup"></p>
+<p><img src="images/TerrainPrefabViewModeSetup2.png" alt="Terrain Prefab Color Textures Setup"></p>
+<p>All textures are stored into the <code>ColorMapTexturesSource</code> scriptable object:</p>
+<p><img src="images/ColorMapTexturesSource.png" alt="Color Map Textures source">.</p>
+<p>Then setup the UI, so it has room for all the ColorMap textures you have (currently it displays 4 textures)</p>
+<p><img src="images/MinimapColorTexturesOnUIScreen.png" alt="Minimap Screen ColorMap textures"></p>
 <h2 id="create-terrain-on-scene-load">Create terrain on scene load</h2>
 <p>If you want to have a terrain loaded at scene load, just put on the subscene a terrain prefab. If you have a HexTerrainEditor prefab on the scene, set a reference to the terrain prefab in the <code>SamplesUserToolDataAuthoring</code> script in the field <code>Terrain Authoring</code>:</p>
 <ol>
@@ -562,7 +603,7 @@ public virtual bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height
 }
 </code></pre>
 <ol start="3">
-<li>Terrain Entity contains a set of Terrain Layers (see <a href="terrainlayers.html">Terrain Layers</a>)</li>
+<li>Terrain Entity contains a set of Terrain Layers (see <a href="terrain-layers.html">Terrain Layers</a>)</li>
 </ol>
 <ul>
 <li><p>Surface Layers (Ground, Water, add your own)
@@ -650,7 +691,7 @@ Cell Entity is a full-fledged Entity with any components on it.</p>
 </ul>
 <ol start="4">
 <li>As you can see, every Terrain Layer contains one or more Data Layers. Data Layer is a container for (usually) collection of data like byte, CellItem, Color32, etc.
-See more about <a href="datalayers.html">DataLayers</a>. The main point of the DataLayer is that it allows to track Read and Write job handlers, so you can schedule jobs to access or modify a DataLayer's data safely.</li>
+See more about <a href="data-layers.html">DataLayers</a>. The main point of the DataLayer is that it allows to track Read and Write job handlers, so you can schedule jobs to access or modify a DataLayer's data safely.</li>
 </ol>
 
 </article>

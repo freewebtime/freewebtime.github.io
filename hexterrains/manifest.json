@@ -6626,6 +6626,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring.yml\" sourcestartlinenumber=\"1\">Base class for authoring components that create hex surface data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexSurfaceRenderDataAuthoring.yml",
       "output": {
         ".html": {
@@ -9373,6 +9387,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/BiomesColorMapPalette.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/BiomesColorMapPalette.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/CellEntitiesColors.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/CellEntitiesColors.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/CellEntitiesTools.png",
       "output": {
         "resource": {
@@ -9387,6 +9421,26 @@
       "output": {
         "resource": {
           "relative_path": "images/CellItemsTools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ColorMapTexturesOnTerrainPrefab.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ColorMapTexturesOnTerrainPrefab.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ColorMapTexturesSource.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ColorMapTexturesSource.png"
         }
       },
       "version": ""
@@ -9477,6 +9531,16 @@
       "output": {
         "resource": {
           "relative_path": "images/ImportSamples.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/MinimapColorTexturesOnUIScreen.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/MinimapColorTexturesOnUIScreen.png"
         }
       },
       "version": ""

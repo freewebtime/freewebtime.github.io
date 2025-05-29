@@ -296,7 +296,7 @@
   <h5 id="Fwt_HexTerrains_Systems_CreateHexSurfaceLayerSystem_3_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(CreateHexTerrainsGroup))]
-public abstract class CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt; : SystemBase where TRequest : unmanaged, IComponentData, ICreateHexSurfaceRequest where TSurfaceData : HexSurfaceLayer, IComponentData, new() where TRenderData : HexSurfaceRenderData&lt;TSurfaceData&gt;, IComponentData, new()</code></pre>
+public abstract class CreateHexSurfaceLayerSystem&lt;TRequest, TSurfaceData, TRenderData&gt; : SystemBase where TRequest : unmanaged, IComponentData, ICreateHexSurfaceRequest where TSurfaceData : HexSurfaceLayer, IComponentData, new() where TRenderData : HexSurfaceRenderLayer&lt;TSurfaceData&gt;, IComponentData, new()</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">

@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#128396;️ In-Game Terrain Editor | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#128396;️ In-Game Terrain Editor | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-in-game-terrain-editor">🖌️ In-Game Terrain Editor</h1>
+
+<h2 id="overview">Overview</h2>
+<p>The Hex Terrains Framework features a powerful in-game terrain editor designed with a <strong>Photoshop-like workflow</strong> in mind. It supports:</p>
+<ul>
+<li>Brush-based editing with size, opacity, and color control</li>
+<li>Modular tools for deforming terrain, painting areas, placing objects, and more</li>
+<li>A runtime state machine to manage tools</li>
+<li>Full UI Toolkit integration via a shared UI system</li>
+<li>Clean separation between UI code and ECS-based terrain data</li>
+</ul>
+<hr>
+<h2 id="-user-tool-system-architecture">🎛️ User Tool System Architecture</h2>
+<p>Each editor tool is a <strong>state</strong> within a <code>UserToolStateMachine</code>, allowing seamless switching between editing modes.</p>
+<h3 id="key-components">Key Components</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UserToolStateMachine</code></td>
+<td>Runtime state machine managing tool transitions</td>
+</tr>
+<tr>
+<td><code>UserToolStateBase</code></td>
+<td>Base class for all tool states; handles activation, brush setup, view mode</td>
+</tr>
+<tr>
+<td><code>IUserToolAPI</code></td>
+<td>Interface injected into tools to access terrain editing APIs</td>
+</tr>
+<tr>
+<td><code>UserToolSettings</code></td>
+<td>Data-driven brush/tool parameters</td>
+</tr>
+<tr>
+<td><code>IUISystemAPI</code></td>
+<td>UI integration layer for editor panels and toolbars</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-tool-lifecycle">🔁 Tool Lifecycle</h2>
+<p>Each tool derives from <code>UserToolStateBase</code> and can optionally:</p>
+<ul>
+<li>Initialize a UI panel (<code>ShowSettingsScreen</code>)</li>
+<li>Activate a custom brush with settings</li>
+<li>Switch terrain view modes</li>
+<li>Apply edits using <code>ApplyBrush(...)</code></li>
+</ul>
+<h3 id="example-lifecycle-flow">Example Lifecycle Flow</h3>
+<pre><code class="lang-plaintext">[Tool Selected]
+     ↓
+PrepareToRun()
+     ↓
+Set View Mode / Show Brush
+     ↓
+Tick() – per-frame updates
+     ↓
+ApplyBrush(...) – on user input
+     ↓
+PrepareToStop() – restore view mode, hide UI
+</code></pre>
+<hr>
+<h2 id="-tool-example-deform-ground">🖼️ Tool Example: Deform Ground</h2>
+<h3 id="class-deformgroundusertoolstate">Class: <code>DeformGroundUserToolState</code></h3>
+<p>This tool deforms terrain height based on mouse input, key modifiers, and brush size.</p>
+<pre><code class="lang-csharp">public class DeformGroundUserToolState : DeformHeightUserToolState&lt;HexGroundLayer&gt;
+{
+    public override int UserToolType =&gt; (int)UserToolTypes.GroundDeformation;
+}
+</code></pre>
+<h3 id="modifier-keys">Modifier Keys</h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Effect</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>LeftAlt</code></td>
+<td>Inverts height delta</td>
+</tr>
+<tr>
+<td><code>LeftShift</code></td>
+<td>Applies turbo strength</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-tool-example-paint-countries">🗺️ Tool Example: Paint Countries</h2>
+<h3 id="class-paintcountriesusertoolstate">Class: <code>PaintCountriesUserToolState</code></h3>
+<p>This tool paints area indices (such as countries) onto cells, optionally constrained by elevation.</p>
+<pre><code class="lang-csharp">public class PaintCountriesUserToolState : PaintAreasUserToolState&lt;HexCountriesLayer, HexGroundLayer&gt;
+{
+    public override int UserToolType =&gt; (int)UserToolTypes.CountriesPainting;
+}
+</code></pre>
+<h3 id="settings">Settings</h3>
+<ul>
+<li><strong>Index</strong> – area index (byte 0–255)</li>
+<li><strong>Min Cell Height</strong> – skip cells below this elevation</li>
+<li><strong>Max Cell Height</strong> – skip cells above this elevation</li>
+</ul>
+<hr>
+<h2 id="-iusertoolapi--bridging-tools-and-terrain">🧠 <code>IUserToolAPI</code> – Bridging Tools and Terrain</h2>
+<p>The <code>IUserToolAPI</code> allows tools to interact with terrain layers outside ECS systems:</p>
+<pre><code class="lang-csharp">public interface IUserToolAPI
+{
+    void SetIsVisibleBrush(bool isVisible);
+    void SetBrushSize(int size);
+    void SetBrushColor(Color32 color);
+    void SetIsResizableBrush(bool isResizable);
+    int GetViewMode();
+    void SetViewMode(byte mode);
+    byte GetCellHeight&lt;TSurfaceLayer&gt;(int cellIndex) where TSurfaceLayer : HexSurfaceLayer;
+    // ... other helper methods
+}
+</code></pre>
+<p>This ensures tools are lightweight, testable, and do not manipulate ECS state directly.</p>
+<hr>
+<h2 id="-creating-a-new-tool">🧩 Creating a New Tool</h2>
+<p>To implement a new terrain editing tool:</p>
+<ol>
+<li><strong>Inherit</strong> from <code>UserToolStateBase</code> or a derived class like <code>BrushUserToolState</code></li>
+<li><strong>Implement</strong> <code>ApplyBrush(...)</code> with your editing logic</li>
+<li><strong>Set</strong> a unique <code>UserToolType</code> ID</li>
+<li><strong>Register</strong> the tool in your state machine</li>
+<li><strong>(Optional)</strong> Provide a UI panel by calling <code>ShowSettingsScreen</code></li>
+</ol>
+<h3 id="template">Template</h3>
+<pre><code class="lang-csharp">public class MyCustomToolState : BrushUserToolState&lt;SomeLayer&gt;
+{
+    public override int UserToolType =&gt; (int)UserToolTypes.MyTool;
+
+    public MyCustomToolState(IUserToolAPI userToolAPI) : base(userToolAPI) { }
+
+    public override bool ApplyBrush(...)
+    {
+        // Custom logic here
+    }
+}
+</code></pre>
+<hr>
+<h2 id="-brushes--cursors">📐 Brushes &amp; Cursors</h2>
+<p>Brush visuals and interaction are controlled via <code>IUserToolAPI</code>:</p>
+<ul>
+<li>Size</li>
+<li>Color</li>
+<li>Opacity</li>
+<li>Visibility</li>
+<li>Resizability</li>
+</ul>
+<p>All brush properties are dynamically adjusted based on tool and user input.</p>
+<hr>
+<h2 id="-tool-settings-ui">🧠 Tool Settings UI</h2>
+<p>Tools can define custom settings through data-driven <code>UserToolSettingsDataSource</code>:</p>
+<pre><code class="lang-csharp">DataSource.AddValue(new UserToolParameterDataSource&lt;int&gt;
+{
+    Name = &quot;Min Cell Height&quot;,
+    MinValue = 0,
+    MaxValue = 255,
+    Value = 3,
+    IsClampValue = true,
+    IsVisible = true
+});
+</code></pre>
+<p>The UI system automatically binds these parameters to in-game panels using a common <code>UIScreen</code> and <code>IViewDataReceiver</code>.</p>
+<hr>
+<h2 id="-cleanup-and-memory-safety">🧼 Cleanup and Memory Safety</h2>
+<p>All tools implement:</p>
+<ul>
+<li><code>Dispose()</code> for cleanup</li>
+<li><code>PrepareToStart()</code> to prepare tool for work and show UI</li>
+<li><code>Tick()</code> to apply per-frame logic</li>
+<li><code>PrepareToStop()</code> to revert view modes and hide UI
+and more (see <a href="https://www.freewebtime.com/hexterrains/api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateBase.html">UserToolStateBase</a>)</li>
+</ul>
+<hr>
+<p>Here's a draft <strong>documentation section</strong> explaining how the <code>BrushUserTool</code> system works in your Hex Terrains Framework, written in Markdown format to fit cleanly into your broader docs:</p>
+<hr>
+<h2 id="-brush-based-terrain-editing">🖌 Brush-Based Terrain Editing</h2>
+<p>The <strong>BrushUserTool system</strong> powers the in-game Photoshop-like editing experience within the Hex Terrains Framework. It allows real-time, cell-level modifications of terrain layers using a dynamic, customizable brush. Each tool is implemented as a state in a user tool state machine and inherits from a shared foundation: <code>BrushUserToolState</code>.</p>
+<h3 id="key-features">Key Features</h3>
+<ul>
+<li>Adjustable <strong>brush size</strong> and <strong>opacity</strong></li>
+<li>Unified API for diverse operations (e.g., painting countries, applying heightmaps, stamping objects)</li>
+<li>Tool-specific logic via overrideable brush application methods</li>
+<li>Data-driven settings exposed via UI</li>
+<li>Supports undo/redo, smooth user interactions, and multi-step operations</li>
+</ul>
+<hr>
+<h2 id="-base-class-brushusertoolstate">🔧 Base Class: <code>BrushUserToolState</code></h2>
+<p>The core abstract base class:</p>
+<pre><code class="lang-csharp">BrushUserToolState&lt;TBrushTarget, TDataSource, TUIScreen&gt;
+</code></pre>
+<ul>
+<li><code>TBrushTarget</code>: The layer type affected (e.g., <code>HexSurfaceLayer</code>, <code>CellEntitiesLayer</code>)</li>
+<li><code>TDataSource</code>: A class describing editable settings (usually <code>UserToolSettingsDataSource</code>)</li>
+<li><code>TUIScreen</code>: The settings panel (usually <code>UniversalToolSettingsScreen</code>)</li>
+</ul>
+<h3 id="example-implementations">Example Implementations</h3>
+<table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Inherits From</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ApplyHeightmapUserToolState</code></td>
+<td><code>BrushUserToolState&lt;HexSurfaceLayer, ...&gt;</code></td>
+<td>Paints heightmap values onto terrain cells</td>
+</tr>
+<tr>
+<td><code>AutoPaintUserToolState</code></td>
+<td><code>BrushUserToolState&lt;HexSurfaceLayer, ...&gt;</code></td>
+<td>Auto-assigns biomes based on elevation</td>
+</tr>
+<tr>
+<td><code>PaintCountriesUserToolState</code></td>
+<td><code>PaintAreasUserToolState&lt;HexCountriesLayer, ...&gt;</code></td>
+<td>Assigns country indices per cell</td>
+</tr>
+<tr>
+<td><code>LevelTerrainUserToolState</code></td>
+<td><code>BrushUserToolState&lt;HexSurfaceLayer, ...&gt;</code></td>
+<td>Sets cells to a specific elevation</td>
+</tr>
+<tr>
+<td><code>StampUserToolStateBase</code></td>
+<td><code>BrushUserToolState&lt;...&gt;</code></td>
+<td>Copies cell data from one area to another</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-brush-lifecycle">🔁 Brush Lifecycle</h2>
+<p>Each frame while a brush is active:</p>
+<ol>
+<li><strong>Cursor</strong> location is evaluated (<code>UserToolAPI.GetCellCoordUnderCursor()</code>).</li>
+<li><strong>Affected cells</strong> within brush radius are gathered.</li>
+<li><code>ApplyBrush(...)</code> is invoked for each cell.</li>
+<li>Layer-specific logic (e.g., biome assignment, height change, object stamping) is applied.</li>
+<li>UI settings are updated if necessary (e.g., when reading a value).</li>
+</ol>
+<hr>
+<h2 id="-user-defined-parameters">🧠 User-Defined Parameters</h2>
+<p>Each brush tool can expose user-facing parameters:</p>
+<pre><code class="lang-csharp">DataSource.AddValue(new UserToolParameterDataSource&lt;int&gt; {
+    Name = &quot;Elevation&quot;,
+    Value = 0,
+    MinValue = 0,
+    MaxValue = 255,
+    IsVisible = true,
+});
+</code></pre>
+<p>These parameters are shown in the editor UI and persisted during the session.</p>
+<hr>
+<h2 id="-overriding-applybrush">✍️ Overriding ApplyBrush</h2>
+<p>Every brush tool must override <code>ApplyBrush</code>:</p>
+<pre><code class="lang-csharp">public override bool ApplyBrush(int brushMode, int2 cellCoord, int cellIndex, TBrushTarget target, int mouseButton)
+</code></pre>
+<p>For example, in <code>ApplyHeightmapUserToolState</code>, the method reads a value from a texture and updates the terrain height:</p>
+<pre><code class="lang-csharp">var pixel = Heightmap.GetPixelBilinear(progress.x, progress.y);
+var height = (byte)math.clamp(pixel.r * scale * 255 + offset, 0, 255);
+brushTarget.SetCellHeight(cellIndex, height);
+</code></pre>
+<hr>
+<h2 id="-extending-brushusertool">🧬 Extending BrushUserTool</h2>
+<p>To create a custom brush tool:</p>
+<ol>
+<li>Inherit from <code>BrushUserToolState&lt;TBrushTarget, TDataSource, TUIScreen&gt;</code></li>
+<li>Override <code>InitDefaultSettings()</code> to register UI parameters.</li>
+<li>Override <code>ApplyBrush(...)</code> with logic for applying edits.</li>
+<li>Register your tool in the state machine (<code>UserToolStateMachine.SwitchStateByUserToolType(...)</code>).</li>
+</ol>
+<hr>
+<p>Here's a documentation section that clearly and concisely explains how the <code>UserToolAPI</code> class works:</p>
+<hr>
+<h2 id="-usertoolapi-default-implementation-of-iusertoolapi">🛠️ <code>UserToolAPI</code>: Default Implementation of <code>IUserToolAPI</code></h2>
+<p>The <code>UserToolAPI</code> class is the default implementation of the <code>IUserToolAPI</code> interface, designed to bridge <strong>runtime user tools</strong> (e.g., brush operations) with ECS-based <strong>HexTerrain</strong> data structures.</p>
+<p>It provides a standardized way for tool states to interact with terrain data, access brush settings, UI screens, and read/write values from data layers such as heightmaps, biomes, cell entities, and areas — all without requiring direct access to the <code>EntityManager</code>.</p>
+<hr>
+<h3 id="-purpose">🔑 Purpose</h3>
+<ul>
+<li><p>Acts as a <strong>facade</strong> over the <code>EntityManager</code>, abstracting terrain access logic.</p>
+</li>
+<li><p>Enables tools (like <code>BrushUserToolState</code>) to:</p>
+<ul>
+<li>Modify terrain data (e.g., deform terrain, paint biomes).</li>
+<li>Read/write brush settings (size, opacity, visibility).</li>
+<li>Manage terrain lifecycle (create, destroy, resize, save/load).</li>
+<li>Interact with UI (via injected <code>IUISystemAPI</code>).</li>
+</ul>
+</li>
+<li><p>Is <strong>injectable</strong> into tool states as <code>IUserToolAPI</code>.</p>
+</li>
+</ul>
+<hr>
+<h3 id="-core-components">🔧 Core Components</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EntityManager</code></td>
+<td>ECS context for terrain access.</td>
+</tr>
+<tr>
+<td><code>TerrainEntity</code></td>
+<td>Current active terrain entity.</td>
+</tr>
+<tr>
+<td><code>UserToolEntity</code></td>
+<td>Tool controller entity (provides prefab configs, settings).</td>
+</tr>
+<tr>
+<td><code>UISystemAPI</code></td>
+<td>Interface to manage UI screens (create, destroy, retrieve).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-terrain-access--manipulation">🧱 Terrain Access &amp; Manipulation</h3>
+<p>You can access and modify ECS terrain data safely through these functions:</p>
+<ul>
+<li><p><strong>Generic Data Layer Access</strong></p>
+<pre><code class="lang-csharp">TDataLayer GetDataLayer&lt;TDataLayer&gt;() where TDataLayer : class;
+bool IsLayerSupported&lt;TDataLayer&gt;() where TDataLayer : class;
+</code></pre>
+</li>
+<li><p><strong>Heightmap / Biome Access</strong></p>
+<pre><code class="lang-csharp">byte? GetCellHeight&lt;TSurface&gt;() / SetCellHeight&lt;TSurface&gt;()
+byte? GetCellBiome&lt;TSurface&gt;() / SetCellBiome&lt;TSurface&gt;()
+</code></pre>
+</li>
+<li><p><strong>Cell Items / Entities</strong></p>
+<pre><code class="lang-csharp">CellItem? GetCellItem&lt;T&gt;() / bool SetCellItem&lt;T&gt;()
+CellEntity? GetCellEntity&lt;T&gt;() / bool SetCellEntity&lt;T&gt;()
+</code></pre>
+</li>
+<li><p><strong>Areas</strong></p>
+<pre><code class="lang-csharp">byte? GetCellArea&lt;T&gt;() / bool SetCellArea&lt;T&gt;()
+</code></pre>
+</li>
+<li><p><strong>Raycasting</strong></p>
+<pre><code class="lang-csharp">HexTerrainRaycastData? GetRaycastData()
+int? GetCellIndexUnderCursor()
+int2? GetCellCoordUnderCursor()
+</code></pre>
+</li>
+</ul>
+<hr>
+<h3 id="-brush-manipulation">🎨 Brush Manipulation</h3>
+<p><code>UserToolAPI</code> provides full access to brush properties:</p>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Methods</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Size</td>
+<td><code>GetBrushSize()</code>, <code>SetBrushSize(int)</code></td>
+</tr>
+<tr>
+<td>Opacity</td>
+<td><code>GetBrushOpacity()</code>, <code>SetBrushOpacity(float)</code></td>
+</tr>
+<tr>
+<td>Visibility</td>
+<td><code>GetIsVisibleBrush()</code>, <code>SetIsVisibleBrush(bool)</code></td>
+</tr>
+<tr>
+<td>Resizability</td>
+<td><code>GetIsResizableBrush()</code>, <code>SetIsResizableBrush(bool)</code></td>
+</tr>
+<tr>
+<td>Color</td>
+<td><code>GetBrushColor()</code>, <code>SetBrushColor(Color32)</code></td>
+</tr>
+<tr>
+<td>View Mode</td>
+<td><code>GetViewMode()</code>, <code>SetViewMode(byte)</code></td>
+</tr>
+<tr>
+<td>View</td>
+<td><code>GetBrushView()</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-terrain-lifecycle-management">🗺️ Terrain Lifecycle Management</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Save / Load</td>
+<td><code>SaveTerrain(path)</code>, <code>LoadTerrain(path)</code></td>
+</tr>
+<tr>
+<td>Resize</td>
+<td><code>ResizeTerrain(int2)</code></td>
+</tr>
+<tr>
+<td>Destroy</td>
+<td><code>DestroyTerrain(entity)</code></td>
+</tr>
+<tr>
+<td>Create</td>
+<td><code>CreateNewTerrainEntity(prefab)</code><br><code>CreateNewTerrain(config, settings)</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-ui-integration">🖼️ UI Integration</h3>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Method</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Create screen</td>
+<td><code>CreateUIScreen&lt;T&gt;()</code></td>
+</tr>
+<tr>
+<td>Get screen</td>
+<td><code>GetUIScreen&lt;T&gt;()</code></td>
+</tr>
+<tr>
+<td>Get or create</td>
+<td><code>GetOrCreateUIScreen&lt;T&gt;()</code></td>
+</tr>
+<tr>
+<td>Destroy screen</td>
+<td><code>DestroyUIScreen&lt;T&gt;()</code> / <code>DestroyUIScreen(UIScreen)</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-extensibility">🧩 Extensibility</h3>
+<p>Developers can:</p>
+<ul>
+<li>Use this class as-is.</li>
+<li>Subclass it to extend behavior.</li>
+<li>Implement <code>IUserToolAPI</code> from scratch for alternative logic.</li>
+</ul>
+<p>This makes <code>UserToolAPI</code> both <strong>powerful</strong> and <strong>flexible</strong>, fitting a wide range of in-game editor use cases.</p>
+<hr>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/usertools.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

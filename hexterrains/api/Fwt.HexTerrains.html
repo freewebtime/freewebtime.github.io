@@ -86,13 +86,20 @@
 Classes
 </h3>
       <h4><a class="xref" href="Fwt.HexTerrains.ChunksGridDataAuthoring.html">ChunksGridDataAuthoring</a></h4>
-      <section><p>Authoring component for ChunksGridData. This class is used to create chunks grid data in the Unity Editor.</p>
+      <section><p>Authoring component for ChunksGridLayer. This class is used to create chunks grid data in the Unity Editor.</p>
 </section>
       <h4><a class="xref" href="Fwt.HexTerrains.ChunksGridDataBaker.html">ChunksGridDataBaker</a></h4>
-      <section><p>Baker for ChunksGridData. This class is used to convert the ChunksGridDataAuthoring component into a ChunksGridData component at runtime.</p>
+      <section><p>Baker for ChunksGridLayer. This class is used to convert the ChunksGridDataAuthoring component into a ChunksGridLayer component at runtime.</p>
 </section>
       <h4><a class="xref" href="Fwt.HexTerrains.CreateHexTerrainsGroup.html">CreateHexTerrainsGroup</a></h4>
       <section><p>System group where all the creation systems for HexTerrains are executed.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainAPI.html">HexTerrainAPI</a></h4>
+      <section><p>Example implementation of the IHexTerrainAPI interface.
+Used to be injected into places without access to the EntityManager.
+Abstracts user code from the TerrainData storage (usually the Entity World).
+Provides an API for working with a terrain.
+Usually uses in a UserTools (brushes, etc.).</p>
 </section>
       <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainAuthoring.html">HexTerrainAuthoring</a></h4>
       <section><p>Authoring component for the HexTerrain. This component is used to create a HexTerrain entity in the ECS world.</p>
@@ -137,6 +144,21 @@ This system group is executed at the very beginning of the frame</p>
 </section>
       <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsStartPreRenderGroup.html">HexTerrainsStartPreRenderGroup</a></h4>
       <section><p>System Group where the HexTerrains start pre-render systems are executed.</p>
+</section>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></h4>
+      <section><p>Example implementation of the IHexTerrainAPI interface.
+Used to be injected into places outside the ECS World.
+Contains examples of how to read and write data from the TerrainEntity.
+Abstracts user code from the TerrainData storage (usually the Entity World).
+Provides an API for working with a terrain.
+Usually uses in a UserTools (brushes, etc.).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.IUISystemAPI.html">IUISystemAPI</a></h4>
+      <section><p>Interface for the UI system API.
+Provides methods to create, get, and destroy screens.</p>
 </section>
     <h3 id="delegates">
 Delegates

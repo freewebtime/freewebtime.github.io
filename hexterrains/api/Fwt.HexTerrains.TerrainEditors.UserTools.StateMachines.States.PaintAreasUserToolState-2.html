@@ -310,7 +310,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_PaintAreasUserToolState_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class PaintAreasUserToolState&lt;TBrushTarget, THexSurface&gt; : BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;, ISmState where TBrushTarget : HexTerrainAreasData where THexSurface : HexSurfaceLayer</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class PaintAreasUserToolState&lt;TBrushTarget, THexSurface&gt; : BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;, ISmState where TBrushTarget : HexByteAreasLayer where THexSurface : HexSurfaceLayer</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -336,12 +336,12 @@
 
 
   <a id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_PaintAreasUserToolState_2__ctor_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState`2.#ctor*"></a>
-  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_PaintAreasUserToolState_2__ctor_Fwt_HexTerrains_TerrainEditors_StateMachines_IUserToolAPI_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState`2.#ctor(Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI)">PaintAreasUserToolState(IUserToolAPI)</h4>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_PaintAreasUserToolState_2__ctor_Fwt_HexTerrains_IHexTerrainAPI_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.PaintAreasUserToolState`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI)">PaintAreasUserToolState(IHexTerrainAPI)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected PaintAreasUserToolState(IUserToolAPI userToolAPI)</code></pre>
+    <pre><code class="lang-csharp hljs">protected PaintAreasUserToolState(IHexTerrainAPI userToolAPI)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -354,7 +354,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.TerrainEditors.StateMachines.IUserToolAPI.html">IUserToolAPI</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
         <td><span class="parametername">userToolAPI</span></td>
         <td></td>
       </tr>

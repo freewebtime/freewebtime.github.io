@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalcWaterMeshSourcesSystem | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="System that calculates mesh sources for the  surface.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,23 +81,24 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_CalcWaterMeshSourcesSystem" data-uid="Fwt.HexTerrains.Systems.CalcWaterMeshSourcesSystem" class="text-break">Class CalcWaterMeshSourcesSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>System that calculates mesh sources for the <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterLayer.html">HexWaterLayer</a> surface.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
-    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html">CalcSurfaceMeshSourcesSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterLayer.html">HexWaterLayer</a>, <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterRenderData.html">HexWaterRenderData</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html">CalcSurfaceMeshSourcesSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterLayer.html">HexWaterLayer</a>, <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexWaterRenderLayer.html">HexWaterRenderLayer</a>&gt;</div>
     <div class="level4"><span class="xref">CalcWaterMeshSourcesSystem</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_Fwt_HexTerrains_Data_ChunksGridData_">CalcSurfaceMeshSourcesSystem&lt;HexWaterLayer, HexWaterRenderData&gt;.CalcMeshSources(in HexTerrainVisibility, HexWaterLayer, HexWaterRenderData, ChunksGridData)</a>
+      <a class="xref" href="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_CalcMeshSources_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_Fwt_HexTerrains_Data_ChunksGridLayer_">CalcSurfaceMeshSourcesSystem&lt;HexWaterLayer, HexWaterRenderLayer&gt;.CalcMeshSources(in HexTerrainVisibility, HexWaterLayer, HexWaterRenderLayer, ChunksGridLayer)</a>
     </div>
     <div>
-      <a class="xref" href="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_ScheduleGenerateMeshJob__0__1_Fwt_HexTerrains_DataLayers_ChunkMetricsDataLayer_Fwt_HexTerrains_DataLayers_ChunkMeshSourcesDataLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_System_Int32_Unity_Jobs_JobHandle_">CalcSurfaceMeshSourcesSystem&lt;HexWaterLayer, HexWaterRenderData&gt;.ScheduleGenerateMeshJob(HexWaterLayer, HexWaterRenderData, ChunkMetricsDataLayer, ChunkMeshSourcesDataLayer, CellMetricsDataLayer, int, JobHandle)</a>
+      <a class="xref" href="Fwt.HexTerrains.Systems.CalcSurfaceMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcSurfaceMeshSourcesSystem_2_ScheduleGenerateMeshJob__0__1_Fwt_HexTerrains_DataLayers_ChunkMetricsDataLayer_Fwt_HexTerrains_DataLayers_ChunkMeshSourcesDataLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_System_Int32_Unity_Jobs_JobHandle_">CalcSurfaceMeshSourcesSystem&lt;HexWaterLayer, HexWaterRenderLayer&gt;.ScheduleGenerateMeshJob(HexWaterLayer, HexWaterRenderLayer, ChunkMetricsDataLayer, ChunkMeshSourcesDataLayer, CellMetricsDataLayer, int, JobHandle)</a>
     </div>
     <div>
       <span class="xref">SystemBase.Dependency</span>
@@ -296,7 +297,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_Systems_CalcWaterMeshSourcesSystem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class CalcWaterMeshSourcesSystem : CalcSurfaceMeshSourcesSystem&lt;HexWaterLayer, HexWaterRenderData&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public class CalcWaterMeshSourcesSystem : CalcSurfaceMeshSourcesSystem&lt;HexWaterLayer, HexWaterRenderLayer&gt;</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>

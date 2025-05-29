@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Struct GenerateBorderlessChunkMeshJob | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Struct GenerateBorderlessChunkMeshJob | Hex Terrains Framework ">
+    
+    <meta name="description" content="Job that generates a borderless mesh for a hex terrain chunk.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob">
+
+
+
+  <h1 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob" class="text-break">Struct GenerateBorderlessChunkMeshJob</h1>
+  <div class="markdown level0 summary"><p>Job that generates a borderless mesh for a hex terrain chunk.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IJob</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Surfaces.html">Surfaces</a>.<a class="xref" href="Fwt.HexTerrains.Surfaces.Jobs.html">Jobs</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public struct GenerateBorderlessChunkMeshJob : IJob</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CellMetrics" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CellMetrics">CellMetrics</h4>
+  <div class="markdown level1 summary"><p>List of cell metrics for the terrain, containing information about each cell's position, height, biome, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeList&lt;HexCellMetrics&gt; CellMetrics</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_ChunkIndex" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.ChunkIndex">ChunkIndex</h4>
+  <div class="markdown level1 summary"><p>Chunk index to generate the mesh for.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int ChunkIndex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_ChunkMetrics" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.ChunkMetrics">ChunkMetrics</h4>
+  <div class="markdown level1 summary"><p>Metrics of the chunk to generate the mesh for, including position, size, bounds, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexChunkMetrics ChunkMetrics</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexChunkMetrics.html">HexChunkMetrics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_MeshData" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.MeshData">MeshData</h4>
+  <div class="markdown level1 summary"><p>Mesh data to store the generated mesh vertices, colors, UVs, and indices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MeshSource MeshData</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.MeshSource.html">MeshSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_RenderSettings" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.RenderSettings">RenderSettings</h4>
+  <div class="markdown level1 summary"><p>Render settings for the hex terrain, including slope size, border size, colored borders, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainRenderSettings RenderSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexTerrainRenderSettings.html">HexTerrainRenderSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_TerrainMetrics" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.TerrainMetrics">TerrainMetrics</h4>
+  <div class="markdown level1 summary"><p>Metrics of the hex terrain, including size, chunk size, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainMetrics TerrainMetrics</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainMetrics.html">HexTerrainMetrics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_TerrainSettings" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.TerrainSettings">TerrainSettings</h4>
+  <div class="markdown level1 summary"><p>Settings for the hex terrain, including hex radius, height, rotation, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSettings TerrainSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_UvChannelCell" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.UvChannelCell">UvChannelCell</h4>
+  <div class="markdown level1 summary"><p>UV for one cell is saved in this UV channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UvChannelCell</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_UvChannelChunk" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.UvChannelChunk">UvChannelChunk</h4>
+  <div class="markdown level1 summary"><p>UV for cell's chunk is saved in this UV channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UvChannelChunk</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_UvChannelCoord" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.UvChannelCoord">UvChannelCoord</h4>
+  <div class="markdown level1 summary"><p>UV channel to store the cell coordinate (to map one pixel of texture to one cell).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UvChannelCoord</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_UvChannelTerrain" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.UvChannelTerrain">UvChannelTerrain</h4>
+  <div class="markdown level1 summary"><p>UV for whole terrain is saved to this UV channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UvChannelTerrain</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalcAdjacentCellData_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalcAdjacentCellData*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalcAdjacentCellData_Fwt_HexTerrains_Data_HexCellMetrics_System_Int32_Unity_Mathematics_int2__Unity_Mathematics_float2__" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalcAdjacentCellData(Fwt.HexTerrains.Data.HexCellMetrics,System.Int32,Unity.Mathematics.int2@,Unity.Mathematics.float2@)">CalcAdjacentCellData(HexCellMetrics, int, out int2, out float2)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public HexCellMetrics CalcAdjacentCellData(HexCellMetrics cellMetrics, int sideIndex, out int2 adjCellCoordUnclamped, out float2 adjCellPointUnclamped)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">sideIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">adjCellCoordUnclamped</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">adjCellPointUnclamped</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateGroundType_Bridge_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateGroundType_Bridge*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateGroundType_Bridge_Fwt_HexTerrains_Data_HexCellMetrics_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateGroundType_Bridge(Fwt.HexTerrains.Data.HexCellMetrics,Fwt.HexTerrains.Data.HexCellMetrics)">CalculateGroundType_Bridge(HexCellMetrics, HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public byte CalculateGroundType_Bridge(HexCellMetrics cellMetrics, HexCellMetrics adjacentCellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">adjacentCellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateGroundType_BridgeCorner_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateGroundType_BridgeCorner*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateGroundType_BridgeCorner_Fwt_HexTerrains_Data_HexCellMetrics_Fwt_HexTerrains_Data_HexCellMetrics_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateGroundType_BridgeCorner(Fwt.HexTerrains.Data.HexCellMetrics,Fwt.HexTerrains.Data.HexCellMetrics,Fwt.HexTerrains.Data.HexCellMetrics)">CalculateGroundType_BridgeCorner(HexCellMetrics, HexCellMetrics, HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public byte CalculateGroundType_BridgeCorner(HexCellMetrics cellMetrics, HexCellMetrics adjacentCellMetrics0, HexCellMetrics adjacentCellMetrics1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">adjacentCellMetrics0</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">adjacentCellMetrics1</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvCell_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvCell*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvCell_Unity_Mathematics_float2_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvCell(Unity.Mathematics.float2,Fwt.HexTerrains.Data.HexCellMetrics)">CalculateUvCell(float2, HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float2 CalculateUvCell(float2 vertexPos, HexCellMetrics cellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">vertexPos</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvCellCoord_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvCellCoord*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvCellCoord_Unity_Mathematics_float2_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvCellCoord(Unity.Mathematics.float2,Fwt.HexTerrains.Data.HexCellMetrics)">CalculateUvCellCoord(float2, HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float2 CalculateUvCellCoord(float2 vertexPos, HexCellMetrics cellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">vertexPos</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvChunk_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvChunk*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvChunk_Unity_Mathematics_float2_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvChunk(Unity.Mathematics.float2,Fwt.HexTerrains.Data.HexCellMetrics)">CalculateUvChunk(float2, HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float2 CalculateUvChunk(float2 vertexPos, HexCellMetrics cellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">vertexPos</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvTerrain_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_CalculateUvTerrain_Unity_Mathematics_float2_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.CalculateUvTerrain(Unity.Mathematics.float2)">CalculateUvTerrain(float2)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public float2 CalculateUvTerrain(float2 vertexPos)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td><span class="parametername">vertexPos</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">float2</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_DrawCell_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.DrawCell*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_DrawCell_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.DrawCell(Fwt.HexTerrains.Data.HexCellMetrics)">DrawCell(HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public bool DrawCell(HexCellMetrics cellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_DrawCellBridges_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.DrawCellBridges*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_DrawCellBridges_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.DrawCellBridges(Fwt.HexTerrains.Data.HexCellMetrics)">DrawCellBridges(HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public void DrawCellBridges(HexCellMetrics cellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_DrawCellPlato_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.DrawCellPlato*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_DrawCellPlato_Fwt_HexTerrains_Data_HexCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.DrawCellPlato(Fwt.HexTerrains.Data.HexCellMetrics)">DrawCellPlato(HexCellMetrics)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public void DrawCellPlato(HexCellMetrics cellMetrics)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_Execute_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.Execute*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_Execute" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.Execute">Execute()</h4>
+  <div class="markdown level1 summary"><p>Implement this method to perform work on a worker thread.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Execute()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_GetAdjacentCellMetrics_" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.GetAdjacentCellMetrics*"></a>
+  <h4 id="Fwt_HexTerrains_Surfaces_Jobs_GenerateBorderlessChunkMeshJob_GetAdjacentCellMetrics_Fwt_HexTerrains_Data_HexCellMetrics_System_Int32_Unity_Mathematics_int2__" data-uid="Fwt.HexTerrains.Surfaces.Jobs.GenerateBorderlessChunkMeshJob.GetAdjacentCellMetrics(Fwt.HexTerrains.Data.HexCellMetrics,System.Int32,Unity.Mathematics.int2@)">GetAdjacentCellMetrics(HexCellMetrics, int, out int2)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public HexCellMetrics GetAdjacentCellMetrics(HexCellMetrics cellMetrics, int sideIndex, out int2 adjCellCoordUnclamped)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">sideIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">adjCellCoordUnclamped</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexCellMetrics.html">HexCellMetrics</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Unity.Jobs.IJob</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_ValueType__1___0_System_Int32_">HashExtensions.GetHashCode_ValueType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_ValueType__1___0_System_Int32_">HashExtensions.GetHashCode_ValueType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

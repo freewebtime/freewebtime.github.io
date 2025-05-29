@@ -72,17 +72,63 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="getting-started">Getting Started</h1>
 
+<p><img src="images/GameView.png" alt="Terrain View"></p>
+<h2 id="samples-demo-scene">Samples Demo Scene</h2>
 <ol>
-<li>Install package from asset store.</li>
-<li>Open Package Manager window (Window -&gt; Package Manager)</li>
-<li>Select the Fwt.HexTerrains package</li>
-<li>In right section of the window find tabs &quot;Description&quot;, &quot;Version History&quot;, &quot;Dependencies&quot;, &quot;Samples&quot;. Select &quot;Samples&quot;</li>
-<li>Import HexTerrains Demo core sample</li>
-<li>Additionally import one of two following samples depending on your render pipeline: &quot;HexTerrains Demo URP assets&quot; or &quot;HexTerrains Demo HDRP assets&quot;</li>
-<li>After sample projects are imported into your project, navigate to folder &quot;Assets/Samples/HexTerrains/HexTerrains_URP&quot; or &quot;Assets/Samples/HexTerrains/HexTerrains_HDRP&quot; depending on your render pipeline.</li>
-<li>From there navigate to &quot;Scenes&quot; folder and open Showcase scene</li>
-<li>Press &quot;Play&quot; button</li>
-<li>Enjoy</li>
+<li><p>Install package from asset store.</p>
+</li>
+<li><p>Open Package Manager window (Window -&gt; Package Manager)</p>
+</li>
+<li><p>Select the Fwt.HexTerrains package</p>
+</li>
+<li><p>In right section of the window find tabs &quot;Description&quot;, &quot;Version History&quot;, &quot;Dependencies&quot;, &quot;Samples&quot;. Select &quot;Samples&quot;</p>
+</li>
+<li><p>Import HexTerrains Demo core sample</p>
+</li>
+<li><p>Additionally import one of two following samples depending on your render pipeline: &quot;HexTerrains Demo URP assets&quot; or &quot;HexTerrains Demo HDRP assets&quot;
+<img src="images/ImportSamples.png" alt="Install" title="Import Samples into your project"></p>
+</li>
+<li><p>After sample projects are imported into your project, navigate to folder &quot;Assets/Samples/HexTerrains/HexTerrains_URP&quot; or &quot;Assets/Samples/HexTerrains/HexTerrains_HDRP&quot; depending on your render pipeline.</p>
+</li>
+<li><p>From there navigate to &quot;Scenes&quot; folder and open Showcase scene
+<img src="images/ShowcaseScene.png" alt="Showcase Scene" title="Open a Showcase scene"></p>
+</li>
+<li><p>Press &quot;Play&quot; button</p>
+</li>
+<li><p>Select &quot;System&quot; User Tool category, then &quot;Create New&quot;
+<img src="images/CreateNewTerrainButton.png" alt="Create Terrain"></p>
+</li>
+<li><p>In openned window select a terrain prefab and put the settings you want.
+<img src="images/CreateNewTerrainPopup.png" alt="Create Terrain Popup"></p>
+</li>
+<li><p>Press &quot;Create&quot; button</p>
+</li>
+<li><p>Enjoy!
+<img src="images/PressPlay.png" alt="Gameplay" title="Created terrain"></p>
+</li>
+</ol>
+<h2 id="in-game-terrain-editor">In-game terrain editor</h2>
+<ol>
+<li>In-game editor is a State Machine called <code>UserToolStateMachine</code></li>
+</ol>
+<h2 id="create-terrain-on-scene-load">Create terrain on scene load</h2>
+<ol>
+<li><p>You can find Terrain prefabs in the Samples folder by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_URP/Prefabs&quot; for URP projects and by path &quot;Assets/Samples/Fwt.HexTerrains/1.0.0/HexTerrains_HDRP/Prefabs&quot; for HDRP projects
+<img src="images/TerrainPrefabs.png" alt="Terrain Prefabs"></p>
+</li>
+<li><p>Put a prefab you want on the &quot;Showcase Subscene&quot; subscene besides the HexTerrainEditor prefab. Then add the reference to this Terrain on the HexTerrainEditor game object at &quot;Terrain Authoring&quot; field of SamplesUserToolDataAuthoring component
+<img src="images/HexTerrainEditorPrefabSetupPreExistingTerrain.png" alt="Add Terrain On Scene"></p>
+<blockquote>
+<p>Note: if you don't set a reference to the terrain on the HexTerrainEditor, you will not be able to edit a terrain using the User Tools Panel at the bottom center of the screen.</p>
+</blockquote>
+<blockquote>
+<p>Note: HexTerrainEditor prefab is optional. It is needed for having the User Tools Panel to be created. For your gameplay it might not be needed, so feel free to get rid of it.</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="how-to-interact-with-a-terrain">How to interact with a Terrain</h2>
+<ol>
+<li>To see how it's done, take a look at</li>
 </ol>
 
 </article>
@@ -93,7 +139,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/GettingStarted.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/gettingstarted.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>

@@ -295,7 +295,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class RenderHexSurfaceSystem&lt;TSurfaceData, TRenderData&gt; : SystemBase where TSurfaceData : HexSurfaceLayer where TRenderData : HexSurfaceRenderData&lt;TSurfaceData&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class RenderHexSurfaceSystem&lt;TSurfaceData, TRenderData&gt; : SystemBase where TSurfaceData : HexSurfaceLayer where TRenderData : HexSurfaceRenderLayer&lt;TSurfaceData&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -323,12 +323,12 @@
 
 
   <a id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface*"></a>
-  <h4 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Fwt_HexTerrains_Data_HexTerrainVisibility__Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridData__UnityEngine_Camera__" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridData@,UnityEngine.Camera@)">RenderSurface(in HexTerrainVisibility, in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridData, in Camera)</h4>
+  <h4 id="Fwt_HexTerrains_Systems_RenderHexSurfaceSystem_2_RenderSurface_Fwt_HexTerrains_Data_HexTerrainVisibility__Unity_Transforms_LocalToWorld___1__Fwt_HexTerrains_Data_HexTerrainViewMode__Fwt_HexTerrains_Data_ChunksGridLayer__UnityEngine_Camera__" data-uid="Fwt.HexTerrains.Systems.RenderHexSurfaceSystem`2.RenderSurface(Fwt.HexTerrains.Data.HexTerrainVisibility@,Unity.Transforms.LocalToWorld@,`1@,Fwt.HexTerrains.Data.HexTerrainViewMode@,Fwt.HexTerrains.Data.ChunksGridLayer@,UnityEngine.Camera@)">RenderSurface(in HexTerrainVisibility, in LocalToWorld, in TRenderData, in HexTerrainViewMode, in ChunksGridLayer, in Camera)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void RenderSurface(in HexTerrainVisibility terrainVisibility, in LocalToWorld terrainTransform, in TRenderData renderData, in HexTerrainViewMode viewMode, in ChunksGridData chunksGridData, in Camera camera)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void RenderSurface(in HexTerrainVisibility terrainVisibility, in LocalToWorld terrainTransform, in TRenderData renderData, in HexTerrainViewMode viewMode, in ChunksGridLayer chunksGridData, in Camera camera)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -361,7 +361,7 @@
         <td></td>
       </tr>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridData.html">ChunksGridData</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridLayer.html">ChunksGridLayer</a></td>
         <td><span class="parametername">chunksGridData</span></td>
         <td></td>
       </tr>

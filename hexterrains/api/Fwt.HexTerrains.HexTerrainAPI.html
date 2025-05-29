@@ -1,0 +1,2376 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexTerrainAPI | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexTerrainAPI | Hex Terrains Framework ">
+    
+    <meta name="description" content="Example implementation of the IHexTerrainAPI interface. Used to be injected into places without access to the EntityManager. Abstracts user code from the TerrainData storage (usually the Entity World). Provides an API for working with a terrain. Usually uses in a UserTools (brushes, etc.).">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.HexTerrainAPI">
+
+
+
+  <h1 id="Fwt_HexTerrains_HexTerrainAPI" data-uid="Fwt.HexTerrains.HexTerrainAPI" class="text-break">Class HexTerrainAPI</h1>
+  <div class="markdown level0 summary"><p>Example implementation of the IHexTerrainAPI interface.
+Used to be injected into places without access to the EntityManager.
+Abstracts user code from the TerrainData storage (usually the Entity World).
+Provides an API for working with a terrain.
+Usually uses in a UserTools (brushes, etc.).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">HexTerrainAPI</span></div>
+      <div class="level2"><a class="xref" href="Fwt.HexTerrains.Samples.UserToolSamplesAPI.html">UserToolSamplesAPI</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_HexTerrainAPI_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class HexTerrainAPI : IHexTerrainAPI</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI__terrainPrefabConfigs" data-uid="Fwt.HexTerrains.HexTerrainAPI._terrainPrefabConfigs">_terrainPrefabConfigs</h4>
+  <div class="markdown level1 summary"><p>List of terrain prefab configs to be sent on UI, so user can choose from
+when creating a new terrain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected IList&lt;IHexTerrainPrefabConfig&gt; _terrainPrefabConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig.html">IHexTerrainPrefabConfig</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_EntityManager_" data-uid="Fwt.HexTerrains.HexTerrainAPI.EntityManager*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_EntityManager" data-uid="Fwt.HexTerrains.HexTerrainAPI.EntityManager">EntityManager</h4>
+  <div class="markdown level1 summary"><p>Cached EntityManager. Used to access the Entity World.
+Performs operations on the TerrainEntity <a class="xref" href="Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_TerrainEntity">TerrainEntity</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public EntityManager EntityManager { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_TerrainEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.TerrainEntity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_TerrainEntity" data-uid="Fwt.HexTerrains.HexTerrainAPI.TerrainEntity">TerrainEntity</h4>
+  <div class="markdown level1 summary"><p>Cached terrain terrainEntity.
+Feel free to replace it's value, as everything is extracted from Entity World using this terrainEntity for every API function call.
+So if this terrainEntity is changed, the API will work with a new terrainEntity.
+If this terrainEntity does not exist, the API calls will not work, but will not throw an exception.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity TerrainEntity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_UISystemAPI_" data-uid="Fwt.HexTerrains.HexTerrainAPI.UISystemAPI*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_UISystemAPI" data-uid="Fwt.HexTerrains.HexTerrainAPI.UISystemAPI">UISystemAPI</h4>
+  <div class="markdown level1 summary"><p>Cached UISystemAPI. Used to access the UI system.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public IUISystemAPI UISystemAPI { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IUISystemAPI.html">IUISystemAPI</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_UserToolEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.UserToolEntity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_UserToolEntity" data-uid="Fwt.HexTerrains.HexTerrainAPI.UserToolEntity">UserToolEntity</h4>
+  <div class="markdown level1 summary"><p>Cached UserToolEntity this user tool is controlled by</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity UserToolEntity { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_CreateNewTerrainEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.CreateNewTerrainEntity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_CreateNewTerrainEntity_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.CreateNewTerrainEntity(Unity.Entities.Entity)">CreateNewTerrainEntity(Entity)</h4>
+  <div class="markdown level1 summary"><p>Creates a new terrain terrainEntity by instantiating provided prefab.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Entity CreateNewTerrainEntity(Entity terrainPrefab)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainPrefab</span></td>
+        <td><p>prefab of the terrainEntity to create</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><p>instance of the created terrainEntity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_CreateNewTerrain_" data-uid="Fwt.HexTerrains.HexTerrainAPI.CreateNewTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_CreateNewTerrain__1___0_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainAPI.CreateNewTerrain``1(``0,Fwt.HexTerrains.Data.HexTerrainSettings)">CreateNewTerrain&lt;TPrefabConfig&gt;(TPrefabConfig, HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Creates a new terrain entity with the specified settings.
+Destroys existing terrain</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Entity CreateNewTerrain&lt;TPrefabConfig&gt;(TPrefabConfig terrainPrefabConfig, HexTerrainSettings terrainSettings) where TPrefabConfig : IHexTerrainPrefabConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TPrefabConfig</span></td>
+        <td><span class="parametername">terrainPrefabConfig</span></td>
+        <td><p>prefab config of the terrainEntity to create</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">terrainSettings</span></td>
+        <td><p>terrain settings to overwrite</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><p>instance of the created terrainEntity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TPrefabConfig</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_CreateUIScreen_" data-uid="Fwt.HexTerrains.HexTerrainAPI.CreateUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_CreateUIScreen__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.CreateUIScreen``1">CreateUIScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Creates a new screen of the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen CreateUIScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>screen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to create</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_DestroyTerrain_" data-uid="Fwt.HexTerrains.HexTerrainAPI.DestroyTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_DestroyTerrain_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.DestroyTerrain(Unity.Entities.Entity)">DestroyTerrain(Entity)</h4>
+  <div class="markdown level1 summary"><p>Destroys a terrain entity provided.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DestroyTerrain(Entity terrainEntity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>terrain entity to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if was destroyed, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_DestroyUIScreen_" data-uid="Fwt.HexTerrains.HexTerrainAPI.DestroyUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_DestroyUIScreen_Fwt_Core_UI_Screens_UIScreen_" data-uid="Fwt.HexTerrains.HexTerrainAPI.DestroyUIScreen(Fwt.Core.UI.Screens.UIScreen)">DestroyUIScreen(UIScreen)</h4>
+  <div class="markdown level1 summary"><p>Destroys the specified screen instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DestroyUIScreen(UIScreen screen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><span class="parametername">screen</span></td>
+        <td><p>screen instance to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the screen was destroyed successfully; otherwise, false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_DestroyUIScreen_" data-uid="Fwt.HexTerrains.HexTerrainAPI.DestroyUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_DestroyUIScreen__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.DestroyUIScreen``1">DestroyUIScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Destroys the specified screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DestroyUIScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the screen was destroyed successfully; otherwise, false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of a screen to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetBrushColor_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushColor*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetBrushColor" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushColor">GetBrushColor()</h4>
+  <div class="markdown level1 summary"><p>Returns the brush color from the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Color32? GetBrushColor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color32</span>?</td>
+        <td><p>brush color if found, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetBrushOpacity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushOpacity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetBrushOpacity" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushOpacity">GetBrushOpacity()</h4>
+  <div class="markdown level1 summary"><p>Returns the brush opacity from the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float? GetBrushOpacity()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td><p>brush opacity if brush is found, otherwise - null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetBrushSize_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushSize*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetBrushSize" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushSize">GetBrushSize()</h4>
+  <div class="markdown level1 summary"><p>Returns the brush size from the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? GetBrushSize()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
+        <td><p>brush size if found, otherwise - null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetBrushView_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushView*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetBrushView" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetBrushView">GetBrushView()</h4>
+  <div class="markdown level1 summary"><p>Returns the brush view from the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrushView.html">HexTerrainBrushView</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexTerrainBrushView GetBrushView()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrushView.html">HexTerrainBrushView</a></td>
+        <td><p>brush view from the TerrainEntity if found, otherwise - null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellArea_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellArea*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellArea__1_System_Int32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellArea``1(System.Int32)">GetCellArea&lt;TAreasLayer&gt;(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the CellArea from terrain cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellArea&lt;TAreasLayer&gt;(int cellIndex) where TAreasLayer : HexByteAreasLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>?</td>
+        <td><p>CellArea if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TAreasLayer</span></td>
+        <td><p>type of areas terrain layer to get value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellBiome_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellBiome*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellBiome__1_System_Int32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellBiome``1(System.Int32)">GetCellBiome&lt;TSurfaceData&gt;(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the biomes map value (byte) of the cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellBiome&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a biome from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>?</td>
+        <td><p>biome value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSurfaceData</span></td>
+        <td><p>type of surface data to get biome from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellCoordUnderCursor_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellCoordUnderCursor*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellCoordUnderCursor" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellCoordUnderCursor">GetCellCoordUnderCursor()</h4>
+  <div class="markdown level1 summary"><p>Returns the cell coordinate under the cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int2? GetCellCoordUnderCursor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span>?</td>
+        <td><p>cell coordinate if found and raycast hit the terrain, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellEntity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellEntity__1_System_Int32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellEntity``1(System.Int32)">GetCellEntity&lt;TEntitiesLayer&gt;(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the CellEntity from terrain cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual CellEntity? GetCellEntity&lt;TEntitiesLayer&gt;(int cellIndex) where TEntitiesLayer : CellEntitiesLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a CellEntity from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a>?</td>
+        <td><p>CellEntity value if found, otherwise null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEntitiesLayer</span></td>
+        <td><p>type of cell terrainEntity layer to get data from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellHeight_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellHeight__1_System_Int32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellHeight``1(System.Int32)">GetCellHeight&lt;TSurfaceData&gt;(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the height map value (byte) of the cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte? GetCellHeight&lt;TSurfaceData&gt;(int cellIndex) where TSurfaceData : HexSurfaceLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a height from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>?</td>
+        <td><p>heightmap value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSurfaceData</span></td>
+        <td><p>type of surface data to get height from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellIndexUnderCursor_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellIndexUnderCursor*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellIndexUnderCursor" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellIndexUnderCursor">GetCellIndexUnderCursor()</h4>
+  <div class="markdown level1 summary"><p>Returns the cell index under the cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int? GetCellIndexUnderCursor()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
+        <td><p>cell index if found and raycast hit the terrain, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetCellItem_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellItem*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetCellItem__1_System_Int32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetCellItem``1(System.Int32)">GetCellItem&lt;TItemsLayer&gt;(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the CellItem from terrain cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual CellItem? GetCellItem&lt;TItemsLayer&gt;(int cellIndex) where TItemsLayer : CellItemsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a CellItem from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItem.html">CellItem</a>?</td>
+        <td><p>CellItem value if found, otherwise null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItemsLayer</span></td>
+        <td><p>type of cell items layer to get data from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetDataLayer_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetDataLayer*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetDataLayer__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetDataLayer``1">GetDataLayer&lt;TDataLayer&gt;()</h4>
+  <div class="markdown level1 summary"><p>returns a data layer from the TerrainEntity <a class="xref" href="Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_TerrainEntity">TerrainEntity</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TDataLayer GetDataLayer&lt;TDataLayer&gt;() where TDataLayer : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TDataLayer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TDataLayer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetHexTerrainPrefabConfigsBuffer_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetHexTerrainPrefabConfigsBuffer*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetHexTerrainPrefabConfigsBuffer__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetHexTerrainPrefabConfigsBuffer``1">GetHexTerrainPrefabConfigsBuffer&lt;THexTerrainPrefabConfig&gt;()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available HexTerrainPrefabConfigs from the UserToolEntity (if any)</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual DynamicBuffer&lt;THexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsBuffer&lt;THexTerrainPrefabConfig&gt;() where THexTerrainPrefabConfig : unmanaged, IBufferElementData, IHexTerrainPrefabConfig</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">DynamicBuffer</span>&lt;THexTerrainPrefabConfig&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">THexTerrainPrefabConfig</span></td>
+        <td><p>type of HexTerrainPrefabConfig you have</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetHexTerrainPrefabConfigsList_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetHexTerrainPrefabConfigsList*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetHexTerrainPrefabConfigsList" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetHexTerrainPrefabConfigsList">GetHexTerrainPrefabConfigsList()</h4>
+  <div class="markdown level1 summary"><p>Returns a list of available HexTerrainPrefabConfigs from the UserToolEntity (if any).
+This list can be sent to the UI to display available terrain prefabs for the user to select from.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IList&lt;IHexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsList()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Fwt.HexTerrains.TerrainEditors.Data.IHexTerrainPrefabConfig.html">IHexTerrainPrefabConfig</a>&gt;</td>
+        <td><p>collection of hex terrain prefab configs for user to select from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetIsResizableBrush_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetIsResizableBrush*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetIsResizableBrush" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetIsResizableBrush">GetIsResizableBrush()</h4>
+  <div class="markdown level1 summary"><p>Returns true if the brush on TerrainEntity is resizable.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool GetIsResizableBrush()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>is brush found and resizable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetIsTerrainVisible_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetIsTerrainVisible*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetIsTerrainVisible" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetIsTerrainVisible">GetIsTerrainVisible()</h4>
+  <div class="markdown level1 summary"><p>Returns true if terrain is visible, false is invisible, null if no terrain with visibility found<a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? GetIsTerrainVisible()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</td>
+        <td><p>true if terrain is visible, false is invisible, null if no terrain with visibility found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetIsVisibleBrush_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetIsVisibleBrush*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetIsVisibleBrush" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetIsVisibleBrush">GetIsVisibleBrush()</h4>
+  <div class="markdown level1 summary"><p>Returns true if the brush on TerrainEntity is visible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool GetIsVisibleBrush()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if brush is found and is visible, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetOrCreateUIScreen_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetOrCreateUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetOrCreateUIScreen__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetOrCreateUIScreen``1">GetOrCreateUIScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Gets an existing screen of the specified type, or creates a new one if it doesn't exist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetOrCreateUIScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>screen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to get or create</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetRaycastData_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetRaycastData*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetRaycastData" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetRaycastData">GetRaycastData()</h4>
+  <div class="markdown level1 summary"><p>Returns the Raycast data from the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainRaycastData.html">HexTerrainRaycastData</a>.
+this data contains information about the raycast from mouse to terrain result.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexTerrainRaycastData? GetRaycastData()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainRaycastData.html">HexTerrainRaycastData</a>?</td>
+        <td><p>raycast data from the TerrainEntity</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetTerrainEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetTerrainEntity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetTerrainEntity" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetTerrainEntity">GetTerrainEntity()</h4>
+  <div class="markdown level1 summary"><p>Returns the TerrainEntity this API is working with.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Entity GetTerrainEntity()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><p>terrain terrainEntity this API works with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetTerrainSettings*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetTerrainSettings" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetTerrainSettings">GetTerrainSettings()</h4>
+  <div class="markdown level1 summary"><p>Returns a Terrain Settings if found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexTerrainSettings? GetTerrainSettings()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a>?</td>
+        <td><p>terrain settings if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetUIScreen_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetUIScreen__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetUIScreen``1">GetUIScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Gets an existing screen of the specified type if found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetUIScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_GetViewMode_" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_GetViewMode" data-uid="Fwt.HexTerrains.HexTerrainAPI.GetViewMode">GetViewMode()</h4>
+  <div class="markdown level1 summary"><p>Returns the view mode of the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual byte GetViewMode()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><p>view mode if found, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_Init_" data-uid="Fwt.HexTerrains.HexTerrainAPI.Init*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_Init_Unity_Entities_Entity_Unity_Entities_Entity_Unity_Entities_EntityManager_Fwt_HexTerrains_IUISystemAPI_" data-uid="Fwt.HexTerrains.HexTerrainAPI.Init(Unity.Entities.Entity,Unity.Entities.Entity,Unity.Entities.EntityManager,Fwt.HexTerrains.IUISystemAPI)">Init(Entity, Entity, EntityManager, IUISystemAPI)</h4>
+  <div class="markdown level1 summary"><p>Initializes the HexTerrainAPI with the terrain terrainEntity, terrainEntity manager and UI system API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(Entity userToolsEntity, Entity terrainEntity, EntityManager entityManager, IUISystemAPI uiSystemAPI)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">userToolsEntity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IUISystemAPI.html">IUISystemAPI</a></td>
+        <td><span class="parametername">uiSystemAPI</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_IsLayerSupported_" data-uid="Fwt.HexTerrains.HexTerrainAPI.IsLayerSupported*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_IsLayerSupported__1" data-uid="Fwt.HexTerrains.HexTerrainAPI.IsLayerSupported``1">IsLayerSupported&lt;TDataLayer&gt;()</h4>
+  <div class="markdown level1 summary"><p>Checks if the data layer is supported by the terrain.
+Meaning if terrain has this data layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsLayerSupported&lt;TDataLayer&gt;() where TDataLayer : class</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if supports, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TDataLayer</span></td>
+        <td><p>type of the TerrainLayer to check</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_LoadTerrain_" data-uid="Fwt.HexTerrains.HexTerrainAPI.LoadTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_LoadTerrain_System_String_" data-uid="Fwt.HexTerrains.HexTerrainAPI.LoadTerrain(System.String)">LoadTerrain(string)</h4>
+  <div class="markdown level1 summary"><p>Loads the TerrainEntity from a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool LoadTerrain(string filePath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">filePath</span></td>
+        <td><p>file path to load a terrain from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if loaded, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_ResizeTerrain_" data-uid="Fwt.HexTerrains.HexTerrainAPI.ResizeTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_ResizeTerrain_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.HexTerrainAPI.ResizeTerrain(Unity.Mathematics.int2)">ResizeTerrain(int2)</h4>
+  <div class="markdown level1 summary"><p>Resizes the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html#Fwt_HexTerrains_Data_HexTerrainSettings_TerrainSize">TerrainSize</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ResizeTerrain(int2 terrainSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">terrainSize</span></td>
+        <td><p>new terrain size</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if was resized, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SaveTerrain_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SaveTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SaveTerrain_System_String_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SaveTerrain(System.String)">SaveTerrain(string)</h4>
+  <div class="markdown level1 summary"><p>Saves the TerrainEntity to a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SaveTerrain(string filePath)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">filePath</span></td>
+        <td><p>file path to save a terrain into</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if terrain has been saved, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetBrushColor_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetBrushColor*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetBrushColor_UnityEngine_Color32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetBrushColor(UnityEngine.Color32)">SetBrushColor(Color32)</h4>
+  <div class="markdown level1 summary"><p>Sets the brush color on the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetBrushColor(Color32 color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color32</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>new brush color</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetBrushOpacity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetBrushOpacity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetBrushOpacity_System_Single_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetBrushOpacity(System.Single)">SetBrushOpacity(float)</h4>
+  <div class="markdown level1 summary"><p>Sets the brush opacity on the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetBrushOpacity(float opacity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">opacity</span></td>
+        <td><p>new opacity value (0..1)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetBrushSize_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetBrushSize*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetBrushSize_System_Int32_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetBrushSize(System.Int32)">SetBrushSize(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the brush size on the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetBrushSize(int brushSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">brushSize</span></td>
+        <td><p>new brush size</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetCellArea_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellArea*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetCellArea__1_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellArea``1(System.Int32,System.Byte)">SetCellArea&lt;TAreasLayer&gt;(int, byte)</h4>
+  <div class="markdown level1 summary"><p>Sets the CellArea from terrain cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellArea&lt;TAreasLayer&gt;(int cellIndex, byte area) where TAreasLayer : HexByteAreasLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set value on</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">area</span></td>
+        <td><p>area value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TAreasLayer</span></td>
+        <td><p>type of areas terrain layer to set value on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetCellBiome_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellBiome*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetCellBiome__1_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellBiome``1(System.Int32,System.Byte)">SetCellBiome&lt;TSurfaceData&gt;(int, byte)</h4>
+  <div class="markdown level1 summary"><p>Sets the biomes map value (byte) of the cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellBiome&lt;TSurfaceData&gt;(int cellIndex, byte biome) where TSurfaceData : HexSurfaceLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a biome for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">biome</span></td>
+        <td><p>biome value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSurfaceData</span></td>
+        <td><p>type of surface data to set biome for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetCellEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellEntity*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetCellEntity__1_System_Int32_Fwt_HexTerrains_CellEntities_Data_CellEntity_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellEntity``1(System.Int32,Fwt.HexTerrains.CellEntities.Data.CellEntity)">SetCellEntity&lt;TEntitiesLayer&gt;(int, CellEntity)</h4>
+  <div class="markdown level1 summary"><p>Sets the CellEntity from terrain cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellEntity&lt;TEntitiesLayer&gt;(int cellIndex, CellEntity entity) where TEntitiesLayer : CellEntitiesLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set CellEntity on</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntity.html">CellEntity</a></td>
+        <td><span class="parametername">entity</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TEntitiesLayer</span></td>
+        <td><p>type of cell terrainEntity layer to set value on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetCellHeight_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetCellHeight__1_System_Int32_System_Byte_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellHeight``1(System.Int32,System.Byte)">SetCellHeight&lt;TSurfaceData&gt;(int, byte)</h4>
+  <div class="markdown level1 summary"><p>Sets the height map value (byte) of the cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellHeight&lt;TSurfaceData&gt;(int cellIndex, byte height) where TSurfaceData : HexSurfaceLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a height for</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">height</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TSurfaceData</span></td>
+        <td><p>type of surface data to set height for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetCellItem_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellItem*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetCellItem__1_System_Int32_Fwt_HexTerrains_CellItems_Data_CellItem_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetCellItem``1(System.Int32,Fwt.HexTerrains.CellItems.Data.CellItem)">SetCellItem&lt;TItemsLayer&gt;(int, CellItem)</h4>
+  <div class="markdown level1 summary"><p>Sets the CellItem from terrain cell at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItem&lt;TItemsLayer&gt;(int cellIndex, CellItem item) where TItemsLayer : CellItemsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set CellItem on</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItem.html">CellItem</a></td>
+        <td><span class="parametername">item</span></td>
+        <td><p>CellItem value to set on provided cellIndex on provided ItemsData layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TItemsLayer</span></td>
+        <td><p>type of cell items layer to set value on</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetIsResizableBrush_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetIsResizableBrush*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetIsResizableBrush_System_Boolean_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetIsResizableBrush(System.Boolean)">SetIsResizableBrush(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the IsResizable value of the brush on TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetIsResizableBrush(bool isResizableBrush)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isResizableBrush</span></td>
+        <td><p>new value for IsResizable</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetIsTerrainVisible_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetIsTerrainVisible*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetIsTerrainVisible_System_Boolean_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetIsTerrainVisible(System.Boolean)">SetIsTerrainVisible(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets terrain visibility. <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a>
+Returns true if value was set</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetIsTerrainVisible(bool isVisible)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isVisible</span></td>
+        <td><p>New visibility value for terrain</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if value was set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetIsVisibleBrush_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetIsVisibleBrush*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetIsVisibleBrush_System_Boolean_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetIsVisibleBrush(System.Boolean)">SetIsVisibleBrush(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the IsVisible value of the brush on TerrainEntity <a class="xref" href="Fwt.HexTerrains.Brushes.HexTerrainBrush.html">HexTerrainBrush</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetIsVisibleBrush(bool isVisibleBrush)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isVisibleBrush</span></td>
+        <td><p>new IsVisible value</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_SetViewMode_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_SetViewMode_System_Byte_" data-uid="Fwt.HexTerrains.HexTerrainAPI.SetViewMode(System.Byte)">SetViewMode(byte)</h4>
+  <div class="markdown level1 summary"><p>Sets the view mode on the TerrainEntity <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetViewMode(byte viewMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></td>
+        <td><span class="parametername">viewMode</span></td>
+        <td><p>new view mode</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_HexTerrainAPI_ToggleIsTerrainVisible_" data-uid="Fwt.HexTerrains.HexTerrainAPI.ToggleIsTerrainVisible*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainAPI_ToggleIsTerrainVisible" data-uid="Fwt.HexTerrains.HexTerrainAPI.ToggleIsTerrainVisible">ToggleIsTerrainVisible()</h4>
+  <div class="markdown level1 summary"><p>Destroys the specified screen instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool? ToggleIsTerrainVisible()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>?</td>
+        <td><p>true if the screen was destroyed successfully; otherwise, false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

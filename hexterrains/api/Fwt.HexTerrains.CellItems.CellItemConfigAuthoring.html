@@ -117,11 +117,13 @@ public struct CellItemConfigAuthoring</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_Color" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.Color">Color</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>This color is used on minimap and color maps</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Color32 Color</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;This color is used on minimap and color maps&quot;)]
+public Color32 Color</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -141,11 +143,13 @@ public struct CellItemConfigAuthoring</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_Name" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Name of the Cell Item</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public string Name</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Name of the Cell Item&quot;)]
+public string Name</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -165,7 +169,8 @@ public struct CellItemConfigAuthoring</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_States" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.States">States</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>The index of the item in the list == CellItemConfig.Index</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -193,7 +198,8 @@ public List&lt;CellItemPrefabAuthoring&gt; States</code></pre>
 
   <a id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_System_Int32_Fwt_Core_RenderEntities_RenderEntitiesConfig_" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig)">ExtractCellItemConfig(int, RenderEntitiesConfig)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Extracts the CellItemConfig from the authoring data.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -212,12 +218,14 @@ public List&lt;CellItemPrefabAuthoring&gt; States</code></pre>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">index</span></td>
-        <td></td>
+        <td><p>index of the cell item it will be registered under</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="Fwt.Core.RenderEntities.RenderEntitiesConfig.html">RenderEntitiesConfig</a></td>
         <td><span class="parametername">renderEntities</span></td>
-        <td></td>
+        <td><p>render entities config to register meshes and materials in</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -298,7 +298,7 @@ Usually resets the dirty flags.</p>
   <h5 id="Fwt_HexTerrains_Systems_CleanupHexSurfaceRenderDataSystem_2_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsCleanupGroup))]
-public abstract class CleanupHexSurfaceRenderDataSystem&lt;TSurface, TRenderData&gt; : SystemBase where TSurface : HexSurfaceLayer where TRenderData : HexSurfaceRenderData&lt;TSurface&gt;</code></pre>
+public abstract class CleanupHexSurfaceRenderDataSystem&lt;TSurface, TRenderData&gt; : SystemBase where TSurface : HexSurfaceLayer where TRenderData : HexSurfaceRenderLayer&lt;TSurface&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">

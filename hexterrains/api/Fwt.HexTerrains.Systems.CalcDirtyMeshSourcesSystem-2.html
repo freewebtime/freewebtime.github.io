@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalcDirtyMeshSourcesSystem&lt;TSurface, TRenderData&gt; | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="System that calculates which chunk meshes need to be recalculated (dirty) for the specified surface type.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2" data-uid="Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem`2" class="text-break">Class CalcDirtyMeshSourcesSystem&lt;TSurface, TRenderData&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>System that calculates which chunk meshes need to be recalculated (dirty) for the specified surface type.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -294,7 +295,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class CalcDirtyMeshSourcesSystem&lt;TSurface, TRenderData&gt; : SystemBase where TSurface : HexSurfaceLayer where TRenderData : HexSurfaceRenderData&lt;TSurface&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class CalcDirtyMeshSourcesSystem&lt;TSurface, TRenderData&gt; : SystemBase where TSurface : HexSurfaceLayer where TRenderData : HexSurfaceRenderLayer&lt;TSurface&gt;</code></pre>
   </div>
   <h5 class="typeParameters">Type Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -307,11 +308,13 @@
     <tbody>
       <tr>
         <td><span class="parametername">TSurface</span></td>
-        <td></td>
+        <td><p>Surface type to calculate a dirty chunks for</p>
+</td>
       </tr>
       <tr>
         <td><span class="parametername">TRenderData</span></td>
-        <td></td>
+        <td><p>Type of RenderLayer related to TSurface</p>
+</td>
       </tr>
     </tbody>
   </table>

@@ -500,6 +500,53 @@ public float3 CellIndexToPixel(int cellIndex)</code></pre>
   </table>
 
 
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_ClampCellIndex_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ClampCellIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ClampCellIndex_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ClampCellIndex(System.Int32)">ClampCellIndex(int)</h4>
+  <div class="markdown level1 summary"><p>Clamps the cell index to the terrain size.
+Takes into account if Terrain's edges are connected or not.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public int ClampCellIndex(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>Raw cell index (can be outside of terrain)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>clamped cell index</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_Data_HexTerrainSettings_ClampCoordinate_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ClampCoordinate*"></a>
   <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_ClampCoordinate_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.ClampCoordinate(Unity.Mathematics.int2)">ClampCoordinate(int2)</h4>
   <div class="markdown level1 summary"><p>Takes a cell coordinate and wraps it around the terrain size
@@ -1176,6 +1223,51 @@ public int GetChunkIndexByCellIndex(int cellIndex)</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainSettings_IsCellInsideTheTerrain_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.IsCellInsideTheTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainSettings_IsCellInsideTheTerrain_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainSettings.IsCellInsideTheTerrain(System.Int32)">IsCellInsideTheTerrain(int)</h4>
+  <div class="markdown level1 summary"><p>Checks if the cell index is inside the terrain.
+Takes into account if terrain's edges are connected or not</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public bool IsCellInsideTheTerrain(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td></td>
       </tr>
     </tbody>

@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title> | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content=" | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="">
+      <meta property="docfx:tocrel" content="">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+
+<p>Here is the documentation section for the <strong>Chunks Grid System</strong> in your Hex Terrains Framework:</p>
+<hr>
+<h2 id="-chunks-grid-system">🧩 Chunks Grid System</h2>
+<p>The Hex Terrains Framework divides the terrain into <strong>chunks</strong> to enable efficient rendering, visibility culling, and simulation scaling. The <strong>Chunks Grid System</strong> manages the lifecycle, visibility state, and dynamic spatial organization of these chunks.</p>
+<h3 id="overview">Overview</h3>
+<p>Each terrain is split into a grid of chunks. This system ensures:</p>
+<ul>
+<li>Only <strong>visible chunks</strong> are rendered or in some cases even updated.</li>
+<li>Chunks can dynamically adjust their <strong>transform offsets</strong> for seamless terrain tiling.</li>
+<li>Simulation and rendering can be constrained to <strong>active areas</strong> based on camera visibility.</li>
+</ul>
+<h3 id="core-concepts">Core Concepts</h3>
+<h4 id="chunksgriddata"><code>ChunksGridData</code></h4>
+<p>A component that stores all spatial data related to chunk organization and visibility. It holds:</p>
+<ul>
+<li>Chunk settings (dimensions, count, etc.)</li>
+<li>Visibility flags per chunk (<code>ChunkVisibility</code>)</li>
+<li>Chunk metrics (<code>ChunkMetrics</code>)</li>
+<li>Dirty flags for dependency management and selective updating</li>
+</ul>
+<p>Added by: <code>CreateChunksGridDataSystem</code></p>
+<h4 id="chunkbounds"><code>ChunkBounds</code></h4>
+<p>Each chunk tracks 9 bounds:</p>
+<ul>
+<li><code>Bounds_Center</code> — actual location</li>
+<li><code>Bounds_{Direction}</code> — adjacent bounds used for edge wrapping or spatial calculations</li>
+</ul>
+<p>These enable neighborhood queries and visual interpolation across chunk edges.</p>
+<h4 id="chunkvisibility"><code>ChunkVisibility</code></h4>
+<p>Stores per-chunk visibility information:</p>
+<ul>
+<li><code>IsVisible</code> — true if inside camera frustum</li>
+<li><code>VisualPosition</code> — where the chunk is currently rendered (may differ from actual world position if terrain wraps)</li>
+<li><code>ChunkOffset</code> — logical offset used for virtual terrain scrolling</li>
+<li><code>Transform</code> — final transform matrix applied to the chunk renderer</li>
+</ul>
+<h3 id="lifecycle-systems">Lifecycle Systems</h3>
+<h4 id="-createchunksgriddatasystem">✅ CreateChunksGridDataSystem</h4>
+<ul>
+<li>Group: <code>CreateHexTerrainsGroup</code></li>
+<li>Automatically adds <code>ChunksGridData</code> component to any entity with <code>CreateChunksGridDataRequest</code></li>
+<li>Initializes chunk data using terrain settings</li>
+</ul>
+<pre><code class="lang-csharp">chunksGridData.Init(request.Settings);
+</code></pre>
+<h4 id="-calcchunkvisibilitysystem">📐 CalcChunkVisibilitySystem</h4>
+<ul>
+<li>Group: <code>HexTerrainsInitializationGroup</code></li>
+<li>Recalculates visible chunks each frame based on camera frustum</li>
+<li>Stores new visibility states in <code>ChunkVisibility</code> per chunk</li>
+<li>Uses a <code>CalcHexChunkVisibilityJob</code> to run visibility culling in parallel</li>
+</ul>
+<pre><code class="lang-csharp">var job = new CalcHexChunkVisibilityJob {
+    // Assign metrics, frustum, visibility maps...
+};
+job.Schedule(terrainSettings.ChunksCount, 16, combinedDeps);
+</code></pre>
+<p>This system is the core of <strong>terrain culling and selective rendering</strong>.</p>
+<h4 id="-cleanupchunksgriddatasystem">🧹 CleanupChunksGridDataSystem</h4>
+<ul>
+<li>Group: <code>HexTerrainsCleanupGroup</code></li>
+<li>Calls <code>CleanupAsync()</code> on <code>ChunksGridData</code> when terrain is visible</li>
+</ul>
+<h3 id="authoring-support">Authoring Support</h3>
+<h4 id="chunksgriddataauthoring"><code>ChunksGridDataAuthoring</code></h4>
+<ul>
+<li>Used in the Unity Editor to define chunks grid metadata</li>
+<li>Extracts terrain settings from a referenced <code>HexTerrainAuthoring</code></li>
+<li>On bake, converts this to a <code>CreateChunksGridDataRequest</code> via <code>ChunksGridDataBaker</code></li>
+</ul>
+<h3 id="execution-order-summary">Execution Order Summary</h3>
+<table>
+<thead>
+<tr>
+<th>System</th>
+<th>Group</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CreateChunksGridDataSystem</code></td>
+<td><code>CreateHexTerrainsGroup</code></td>
+<td>Initializes chunks on terrain load</td>
+</tr>
+<tr>
+<td><code>CalcChunkVisibilitySystem</code></td>
+<td><code>HexTerrainsInitializationGroup</code></td>
+<td>Recomputes which chunks are visible</td>
+</tr>
+<tr>
+<td><code>CleanupChunksGridDataSystem</code></td>
+<td><code>HexTerrainsCleanupGroup</code></td>
+<td>Cleans up chunk data when no longer needed</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/terrainchunks.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

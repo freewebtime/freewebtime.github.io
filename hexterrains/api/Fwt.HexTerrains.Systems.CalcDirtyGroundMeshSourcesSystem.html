@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalcDirtyGroundMeshSourcesSystem | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="System that calculates which chunk meshes need to be recalculated (dirty) for the  surface.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,20 +81,21 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_CalcDirtyGroundMeshSourcesSystem" data-uid="Fwt.HexTerrains.Systems.CalcDirtyGroundMeshSourcesSystem" class="text-break">Class CalcDirtyGroundMeshSourcesSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>System that calculates which chunk meshes need to be recalculated (dirty) for the <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundLayer.html">HexGroundLayer</a> surface.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
-    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html">CalcDirtyMeshSourcesSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundLayer.html">HexGroundLayer</a>, <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundRenderData.html">HexGroundRenderData</a>&gt;</div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html">CalcDirtyMeshSourcesSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundLayer.html">HexGroundLayer</a>, <a class="xref" href="Fwt.HexTerrains.Surfaces.Data.HexGroundRenderLayer.html">HexGroundRenderLayer</a>&gt;</div>
     <div class="level4"><span class="xref">CalcDirtyGroundMeshSourcesSystem</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2_CalcDirtyChunks_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_">CalcDirtyMeshSourcesSystem&lt;HexGroundLayer, HexGroundRenderData&gt;.CalcDirtyChunks(in HexTerrainVisibility, HexGroundLayer, HexGroundRenderData)</a>
+      <a class="xref" href="Fwt.HexTerrains.Systems.CalcDirtyMeshSourcesSystem-2.html#Fwt_HexTerrains_Systems_CalcDirtyMeshSourcesSystem_2_CalcDirtyChunks_Fwt_HexTerrains_Data_HexTerrainVisibility___0__1_">CalcDirtyMeshSourcesSystem&lt;HexGroundLayer, HexGroundRenderLayer&gt;.CalcDirtyChunks(in HexTerrainVisibility, HexGroundLayer, HexGroundRenderLayer)</a>
     </div>
     <div>
       <span class="xref">SystemBase.Dependency</span>
@@ -295,7 +296,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsInitializationGroup))]
 [UpdateAfter(typeof(CalcGroundCellMetricsSystem))]
-public class CalcDirtyGroundMeshSourcesSystem : CalcDirtyMeshSourcesSystem&lt;HexGroundLayer, HexGroundRenderData&gt;</code></pre>
+public class CalcDirtyGroundMeshSourcesSystem : CalcDirtyMeshSourcesSystem&lt;HexGroundLayer, HexGroundRenderLayer&gt;</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>

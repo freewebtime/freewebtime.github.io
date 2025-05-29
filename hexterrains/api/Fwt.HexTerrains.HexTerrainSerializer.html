@@ -509,14 +509,14 @@ Will be incremented when changes are added to the serialization/deserialization 
   </table>
 
 
-  <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainAreasData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainAreasData*"></a>
-  <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainAreasData_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainAreasData(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData,Fwt.HexTerrains.Data.HexTerrainSettings)">ReadTerrainAreasData(BinaryReader, HexTerrainAreasData, HexTerrainSettings)</h4>
+  <a id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainByteAreas_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainByteAreas_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)">ReadTerrainByteAreas(BinaryReader, HexByteAreasLayer, HexTerrainSettings)</h4>
   <div class="markdown level1 summary"><p>Reads the terrain areas data from a binary reader.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static bool ReadTerrainAreasData(BinaryReader reader, HexTerrainAreasData areasData, HexTerrainSettings terrainSettings)</code></pre>
+    <pre><code class="lang-csharp hljs">public static bool ReadTerrainByteAreas(BinaryReader reader, HexByteAreasLayer areasData, HexTerrainSettings terrainSettings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -535,7 +535,7 @@ Will be incremented when changes are added to the serialization/deserialization 
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html">HexTerrainAreasData</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html">HexByteAreasLayer</a></td>
         <td><span class="parametername">areasData</span></td>
         <td><p>Areas data to deserialize data into</p>
 </td>
@@ -1294,14 +1294,14 @@ Will be incremented when changes are added to the serialization/deserialization 
   </table>
 
 
-  <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainAreasData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainAreasData*"></a>
-  <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainAreasData_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_HexTerrainAreasData_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainAreasData(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.HexTerrainAreasData)">WriteTerrainAreasData(BinaryWriter, HexTerrainAreasData)</h4>
+  <a id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainByteAreas_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas*"></a>
+  <h4 id="Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainByteAreas_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_" data-uid="Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer)">WriteTerrainByteAreas(BinaryWriter, HexByteAreasLayer)</h4>
   <div class="markdown level1 summary"><p>Writes the terrain areas data to the binary writer.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public static void WriteTerrainAreasData(BinaryWriter writer, HexTerrainAreasData areasData)</code></pre>
+    <pre><code class="lang-csharp hljs">public static void WriteTerrainByteAreas(BinaryWriter writer, HexByteAreasLayer areasData)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1320,7 +1320,7 @@ Will be incremented when changes are added to the serialization/deserialization 
 </td>
       </tr>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexTerrainAreasData.html">HexTerrainAreasData</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.Areas.Data.HexByteAreasLayer.html">HexByteAreasLayer</a></td>
         <td><span class="parametername">areasData</span></td>
         <td><p>area data to serialize</p>
 </td>

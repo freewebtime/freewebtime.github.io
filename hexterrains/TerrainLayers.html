@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title> | Hex Terrains Framework </title>
+      <title>&#129521; Terrain Layers Overview | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content=" | Hex Terrains Framework ">
+      <meta name="title" content="&#129521; Terrain Layers Overview | Hex Terrains Framework ">
     
     
       <link rel="shortcut icon" href="favicon.ico">
@@ -70,117 +70,210 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
+<h1 id="-terrain-layers-overview">🧱 Terrain Layers Overview</h1>
 
-<p><strong>Hex Terrains Framework - Instruction Part 2: Main Terrain Layers Overview</strong></p>
-<hr>
-<h3 id="introduction">Introduction</h3>
-<p>The Hex Terrains framework organizes its logic and simulation data into <strong>terrain layers</strong>. Each terrain layer is composed of one or more <strong>data layers</strong> that store and manage information about the terrain, such as elevation, biome types, or cell-specific content like props and buildings. These layers are modular, job-friendly, and optimized for performance in Unity DOTS.</p>
-<p>Below is an overview of the most important terrain layer types and their key responsibilities.</p>
-<hr>
-<h3 id="1-hexsurfacedata">1. HexSurfaceData</h3>
-<p>Represents a surface such as <strong>ground</strong> or <strong>water</strong>.</p>
-<p><strong>Includes the following data layers:</strong></p>
+<h2 id="what-is-a-terrain-layer">What is a Terrain Layer?</h2>
+<p>In the Hex Terrains Framework, each terrain entity consists of several <strong>Terrain Layers</strong>, each responsible for managing a specific kind of spatial data or functionality over the hex grid. These layers are modular, extensible, and powered by job-safe <code>DataLayer</code> components.</p>
+<p>All layers share a common pattern:</p>
 <ul>
-<li><code>HeightMapDataLayer</code>: byte per cell for height</li>
-<li><code>BiomeMapDataLayer</code>: byte per cell for biome index</li>
-<li><code>CellMetricsMap</code>: per-cell struct with spatial and environmental metadata</li>
-<li><code>ColorMap</code>: color per cell used for visualization</li>
-</ul>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Associated with a <code>HexSurfaceRenderData</code> that stores mesh and mesh source data for each terrain chunk.</li>
-<li>Contains a <strong>biome color palette</strong>, a <code>NativeArray&lt;Color32&gt;</code>, used to translate biome indices into displayable colors for minimaps and materials.</li>
-<li>Colors are rendered into a texture via the color map, making this layer critical for both visualization and simulation.</li>
+<li>Store core data per-cell or per-chunk using <code>DataLayer</code>s.</li>
+<li>Optionally include color maps for visualization and minimaps.</li>
+<li>Support reinitialization, cleanup, and job completion workflows.</li>
 </ul>
 <hr>
-<h3 id="2-hexareadata">2. HexAreaData</h3>
-<p>Used to represent conceptual groupings like <strong>countries</strong> or <strong>provinces</strong>.</p>
-<p><strong>Includes the following data layers:</strong></p>
+<h2 id="-terrain-layer-types">🌍 Terrain Layer Types</h2>
+<p>There are four primary layer types included in the framework:</p>
+<table>
+<thead>
+<tr>
+<th>Layer Type</th>
+<th>Purpose</th>
+<th>Example Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SurfaceLayer</code></td>
+<td>Defines core physical terrain (height, biome, surface mesh)</td>
+<td><code>HexGroundLayer</code></td>
+</tr>
+<tr>
+<td><code>AreasLayer</code></td>
+<td>Stores area/country/province indices per cell</td>
+<td><code>HexCountriesLayer</code></td>
+</tr>
+<tr>
+<td><code>CellItemsLayer</code></td>
+<td>Stores static objects per cell, renderable with instancing</td>
+<td><code>CellItemPropsLayer</code></td>
+</tr>
+<tr>
+<td><code>CellEntitiesLayer</code></td>
+<td>Stores a full ECS entity per cell</td>
+<td><code>CellEntityPropsLayer</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="-surface-layer">🟫 Surface Layer</h2>
+<p>Represents visible terrain features like land or water.</p>
+<p><strong>Key Features:</strong></p>
 <ul>
-<li><code>AreaDataLayer</code>: byte per cell storing area index</li>
-<li><code>ColorMap</code>: visual representation of area boundaries</li>
+<li>Stores <code>HeightMapDataLayer</code> and <code>CellBiomesDataLayer</code></li>
+<li>Contains a <code>CellColorsDataLayer</code> for visual overlays</li>
+<li>Linked to a <code>HexSurfaceRenderLayer&lt;T&gt;</code> for rendering</li>
 </ul>
-<p><strong>Features:</strong></p>
+<h3 id="example-hexgroundlayer">Example: <code>HexGroundLayer</code></h3>
+<p>This is a simple implementation of <code>HexSurfaceLayer</code> for ground terrain.</p>
+<pre><code class="lang-csharp">[ChunkSerializable]
+public partial class HexGroundLayer : HexSurfaceLayer, IComponentData { }
+</code></pre>
+<h3 id="render-data">Render Data</h3>
+<p>Paired with <code>HexGroundRenderLayer</code>, which inherits <code>HexSurfaceRenderLayer&lt;HexGroundLayer&gt;</code> and handles:</p>
 <ul>
-<li>Includes a color palette (byte index -&gt; Color32) to paint regions.</li>
-<li>Supports multiple view modes, allowing toggling between different abstract overlays like political zones or administrative regions.</li>
-<li>Implements dirty flags per chunk to ensure only changed areas are updated.</li>
+<li>Mesh generation from data layers</li>
+<li>Material configs per view mode</li>
+<li>Dirty flag tracking and cleanup</li>
 </ul>
 <hr>
-<h3 id="3-cellitemsdata">3. CellItemsData</h3>
-<p>Used to represent lightweight <strong>visual cell objects</strong> like forests, props, or decorations.</p>
-<p><strong>Includes the following data layers:</strong></p>
+<h2 id="-areas-layer">🧱 Areas Layer</h2>
+<p>Used to mark cells with region identifiers, such as provinces or countries.</p>
+<h3 id="example-hexcountrieslayer">Example: <code>HexCountriesLayer</code></h3>
+<pre><code class="lang-csharp">public partial class HexCountriesLayer : HexByteAreasLayer, IComponentData { }
+</code></pre>
+<p>Internally uses:</p>
 <ul>
-<li><code>CellItemDataLayer</code>: struct with <code>Index</code> and <code>State</code> per cell</li>
-<li><code>ItemsColorMap</code>: per-cell color for rendering and minimap</li>
-<li><code>CellTransforms</code>: used for position and orientation on terrain</li>
-</ul>
-<p><strong>Features:</strong></p>
-<ul>
-<li>A palette of <code>CellItemConfig</code> is used to define render settings per index/state.</li>
-<li>Rendering is handled using <code>RenderEntitiesConfig</code> via <code>Graphics.DrawMeshInstanced</code>, making this extremely performant.</li>
-<li>Internal MultiHashMap manages batched render calls per unique configuration.</li>
+<li><code>NativeListChunkedDataLayer&lt;byte&gt;</code> for area indices</li>
+<li><code>CellColorsDataLayer</code> for coloring each area</li>
 </ul>
 <hr>
-<h3 id="4-cellentitiesdata">4. CellEntitiesData</h3>
-<p>Used to represent <strong>entity-based cell contents</strong> such as buildings or units.</p>
-<p><strong>Includes the following data layers:</strong></p>
+<h2 id="-cell-items-layer">🧍 Cell Items Layer</h2>
+<p>Stores static renderable objects per cell using GPU instancing (<code>Graphics.DrawMeshInstanced</code>).</p>
+<p><strong>Key Components:</strong></p>
 <ul>
-<li><code>CellEntityDataLayer</code>: index/state pair per cell</li>
-<li><code>CellEntityViews</code>: actual entities instantiated in the scene</li>
-<li><code>EntitiesColorMap</code>: per-cell color used for visualization</li>
-<li><code>CellTransforms</code>: used to track terrain-relative position</li>
+<li><code>CellItemDataLayer</code> – index into a shared list of item types</li>
+<li><code>CellTransformDataLayer</code> – transformation matrix per cell</li>
+<li><code>ItemsColorMap</code> – overlay color per item</li>
+<li><code>RenderEntitiesConfig</code> – defines instancing behavior</li>
+<li><code>RenderEntities</code> – stores active render entity instances</li>
 </ul>
-<p><strong>Features:</strong></p>
+<h3 id="example-cellitempropslayer">Example: <code>CellItemPropsLayer</code></h3>
+<pre><code class="lang-csharp">public class CellItemPropsLayer : CellItemsLayer, IComponentData { }
+</code></pre>
+<p><strong>Utility Methods:</strong></p>
 <ul>
-<li>Uses a palette of <code>HexCellEntityConfig</code> that maps each index/state pair to a prefab.</li>
-<li>On update, entities are created/destroyed to match the cell data.</li>
-<li>View transforms are kept in sync with terrain height.</li>
-<li>High-performance usage of <code>EntityCommandBuffer</code> and <code>JobHandle</code> to manage entity lifecycle.</li>
+<li><code>SetCellItem(cellIndex, item)</code></li>
+<li><code>SetAllCellsItem(item)</code></li>
+<li><code>Init(settings, copyItemConfigsFrom, renderConfig)</code></li>
+<li><code>Resize(newSize)</code></li>
+<li><code>Dispose()</code></li>
+</ul>
+<p><strong>Render Pipeline:</strong>
+Cell items are rendered based on their index and corresponding <code>RenderEntitySettings</code>.</p>
+<hr>
+<h2 id="-cell-entities-layer">🧬 Cell Entities Layer</h2>
+<p>Stores an entire ECS entity per cell, useful for dynamic agents, buildings, or gameplay units.</p>
+<h3 id="example-cellentitypropslayer">Example: <code>CellEntityPropsLayer</code></h3>
+<pre><code class="lang-csharp">[ChunkSerializable]
+public class CellEntityPropsLayer : CellEntitiesLayer, IComponentData, IDisposable { }
+</code></pre>
+<p>Each cell can store:</p>
+<ul>
+<li>A reference to a full entity</li>
+<li>A color (via <code>CellColorsDataLayer</code>)</li>
+<li>A transform if needed</li>
+</ul>
+<p>Like other layers, it implements:</p>
+<ul>
+<li><code>Init()</code></li>
+<li><code>SetAllDirty(bool)</code></li>
+<li><code>Cleanup()</code>, <code>CleanupAsync()</code></li>
+<li><code>CompleteAllJobs()</code></li>
 </ul>
 <hr>
-<h3 id="5-chunksgriddata">5. ChunksGridData</h3>
-<p>Special terrain layer that tracks data <strong>per chunk</strong> (not per cell).</p>
-<p><strong>Includes the following data layers:</strong></p>
+<h2 id="-color-maps">🎨 Color Maps</h2>
+<p>Every layer includes a <code>CellColorsDataLayer</code> or <code>ItemsColorMap</code>, which stores per-cell <code>Color32</code> values to:</p>
 <ul>
-<li><code>ChunkVisibilityDataLayer</code>: tracks if and where a chunk is visible (e.g., via looping camera)</li>
-<li><code>ChunkMetricsDataLayer</code>: holds calculated spatial metrics for each chunk</li>
+<li>Support terrain visual overlays</li>
+<li>Fill GPU textures used in terrain materials or minimaps</li>
+<li>Provide diagnostic feedback in the editor</li>
 </ul>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Visibility is used to filter calculations across all other terrain layers.</li>
-<li>Supports wrap-around logic for cylindrical terrain navigation (e.g., Civ-style map looping).</li>
-<li>Key part of the chunking system that drives partial updates and rendering culling.</li>
-</ul>
+<p>To apply the color map:</p>
+<pre><code class="lang-csharp">public void ApplyColorsToTexture(Texture2D texture, CellColorsDataLayer colorsDataLayer)
+{
+	colorsDataLayer.ApplyColorsToTexture(Texture2D texture);
+}
+</code></pre>
 <hr>
-<h3 id="6-hexsurfacerenderdata">6. HexSurfaceRenderData</h3>
-<p>Stores <strong>rendering structures</strong> for a <code>HexSurfaceData</code>.</p>
-<p><strong>Includes:</strong></p>
+<h2 id="-lifecycle-hooks">🔁 Lifecycle Hooks</h2>
+<p>Each <code>TerrainLayer</code> supports:</p>
 <ul>
-<li><code>HexMeshDataLayer</code>: one mesh per chunk</li>
-<li><code>HexMeshSourceDataLayer</code>: job-friendly mesh source (vertices, triangles, UVs)</li>
+<li><strong>Initialization</strong> (<code>Init</code>)</li>
+<li><strong>Resizing</strong> (<code>Resize</code>)</li>
+<li><strong>Dirty flag control</strong> (<code>SetAllDirty(bool)</code>)</li>
+<li><strong>Cleanup</strong> (<code>Cleanup</code>, <code>CleanupAsync</code>)</li>
+<li><strong>Disposal</strong> (<code>Dispose</code>)</li>
+<li><strong>Job sync</strong> (<code>CompleteAllJobs</code>)</li>
 </ul>
-<p><strong>Features:</strong></p>
-<ul>
-<li>Built entirely in jobs.</li>
-<li>Source data is filled in parallel jobs, then uploaded to Unity Meshes for rendering.</li>
-<li>Each surface (e.g., water and ground) has its own render data.</li>
-</ul>
+<p>These ensure safe parallel updates and smooth interoperation with Unity’s ECS and Jobs system.</p>
 <hr>
-<h3 id="merging-chunk-dirty-flags">Merging Chunk Dirty Flags</h3>
-<p>Some data layers track dirty flags <strong>per chunk</strong> using an internal grid. This is especially true for all chunked layers like <code>ChunkedDataLayer</code> and its descendants.</p>
-<p>To optimize job execution:</p>
-<ul>
-<li>Only dirty chunks are processed.</li>
-<li><code>MergeChunkDirtyGrids()</code> merges dirty flags from dependencies.</li>
-<li>The result allows a dependent layer to update only where source layers have changed.</li>
-</ul>
-<p>This mechanism ensures that the cost of processing is proportional to actual changes, leading to efficient and scalable terrain updates.</p>
+<h2 id="-summary">✅ Summary</h2>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Surface</th>
+<th>Areas</th>
+<th>Items</th>
+<th>Entities</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Height &amp; Biome</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Area Index (byte)</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Static Rendered Objects</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Dynamic ECS Entities</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Cell Color Map</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Render Mesh Support</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h3 id="summary">Summary</h3>
-<p>Each terrain layer in the Hex Terrains framework is designed with modularity, performance, and flexibility in mind. Whether you are rendering a visual mesh, instantiating dynamic entities, or calculating simulation metrics, the layered architecture ensures that each concern is handled cleanly and efficiently.</p>
-<p>These layers integrate tightly with the ECS job system, allowing massive terrains to be updated and rendered with minimal CPU/GPU cost.</p>
-<p>Next section: <em>Working with User Tools, View Modes, and UI Integration.</em></p>
 
 </article>
           </div>
@@ -190,7 +283,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/TerrainLayers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/terrainlayers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
                   </li>
                 </ul>
               </div>

@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+                <img id="logo" height="100%" src="logo.png" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -80,16 +80,19 @@
 <li><p><strong>Create Render Data</strong>
 The <code>CreateSurfaceRenderDataSystem</code> is responsible for creating a <code>HexSurfaceRenderLayer</code> instance tied to a specific <code>HexSurfaceLayer</code>. This object holds all the render-related data structures including chunk meshes, mesh sources, and render configuration.</p>
 </li>
+<li><p><strong>Calculate Mesh Sources (Verts, UV, tris, etc.)</strong>
+The <code>CalcGroundMeshSourcesSystem</code> system calculates mesh data for visible chunks to be later copied into the chunk meshes (regular Unity Mesh).</p>
+</li>
 <li><p><strong>Generate Mesh Data</strong>
-The <code>CalcSurfaceMeshesSystem</code> converts the intermediate <code>MeshSource</code> data (generated earlier by procedural or brush-based tools) into actual Unity <code>Mesh</code> objects per chunk. Only dirty or changed chunks are reprocessed.</p>
+The <code>CalcSurfaceMeshesSystem</code> converts the intermediate <code>MeshSource</code> data (generated earlier by other systems like <code>CalcGroundMeshSourcesSystem</code>) into actual Unity <code>Mesh</code> objects per chunk. Only dirty or changed chunks are reprocessed.</p>
 </li>
 <li><p><strong>Render Meshes</strong>
 The <code>RenderHexSurfaceSystem</code> uses Unity’s <code>Graphics.DrawMesh</code> to efficiently render only the visible chunks for the current camera using instancing and render config materials.</p>
 </li>
 </ol>
 <hr>
-<h2 id="-createsurfacerenderdatasystem">🏗 CreateSurfaceRenderDataSystem</h2>
-<pre><code class="lang-csharp">public class CreateSurfaceRenderDataSystem&lt;TRequest, TSurfaceLayer, TRenderData, TRenderConfig&gt; : SystemBase
+<h2 id="-createsurfacerenderlayersystem">🏗 CreateSurfaceRenderLayerSystem</h2>
+<pre><code class="lang-csharp">public class CreateSurfaceRenderLayerSystem&lt;TRequest, TSurfaceLayer, TRenderData, TRenderConfig&gt; : SystemBase
 </code></pre>
 <ul>
 <li><p><strong>Purpose:</strong> Initializes the render data structure when a <code>TRequest</code> component is present on a terrain entity.</p>
@@ -110,7 +113,7 @@ The <code>RenderHexSurfaceSystem</code> uses Unity’s <code>Graphics.DrawMesh</
 <li><code>ChunkMeshes</code> (final <code>Mesh</code> instances)</li>
 <li><code>RenderConfig</code> (materials and shadow settings)</li>
 </ul>
-<p>【Source: <code>CreateSurfaceRenderDataSystem.cs</code>】</p>
+<p>【Source: <code>CreateSurfaceRenderLayerSystem.cs</code>】</p>
 <hr>
 <h2 id="-calcsurfacemeshessystem">🧬 CalcSurfaceMeshesSystem</h2>
 <pre><code class="lang-csharp">public class CalcSurfaceMeshesSystem&lt;TSurfaceData, TRenderData&gt; : SystemBase

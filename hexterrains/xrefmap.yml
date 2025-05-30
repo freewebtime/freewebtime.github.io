@@ -55314,15 +55314,6 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem
   nameWithType: CalcHexTerrainAreaCellsSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
-  name: UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
-  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer__
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
-  name.vb: UpdateData(HexTerrainVisibility, ByteAreasLayer)
-  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  nameWithType: CalcHexTerrainAreaCellsSystem.UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
-  nameWithType.vb: CalcHexTerrainAreaCellsSystem.UpdateData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer@)
   name: UpdateData(in HexTerrainVisibility, in HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaCellsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaCellsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer__
@@ -55345,15 +55336,6 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem
   nameWithType: CalcHexTerrainAreaColorsSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
-  name: UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
-  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer__
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
-  name.vb: UpdateData(HexTerrainVisibility, ByteAreasLayer)
-  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  nameWithType: CalcHexTerrainAreaColorsSystem.UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
-  nameWithType.vb: CalcHexTerrainAreaColorsSystem.UpdateData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer@)
   name: UpdateData(in HexTerrainVisibility, in HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreaColorsSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreaColorsSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer__
@@ -55376,15 +55358,6 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem
   nameWithType: CalcHexTerrainAreasDataSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
-  name: UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
-  href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer__
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer@)
-  name.vb: UpdateData(HexTerrainVisibility, ByteAreasLayer)
-  fullName: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  nameWithType: CalcHexTerrainAreasDataSystem.UpdateData(in HexTerrainVisibility, in ByteAreasLayer)
-  nameWithType.vb: CalcHexTerrainAreasDataSystem.UpdateData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.UpdateData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer@)
   name: UpdateData(in HexTerrainVisibility, in HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CalcHexTerrainAreasDataSystem.html#Fwt_HexTerrains_Areas_Systems_CalcHexTerrainAreasDataSystem_UpdateData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer__
@@ -55599,15 +55572,6 @@ references:
   commentId: T:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem
   fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem
   nameWithType: CleanupHexTerrainAreasSystem
-- uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  name: CleanupData(in HexTerrainVisibility, ByteAreasLayer)
-  href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_ByteAreasLayer_
-  commentId: M:Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  name.vb: CleanupData(HexTerrainVisibility, ByteAreasLayer)
-  fullName: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(in Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  fullName.vb: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  nameWithType: CleanupHexTerrainAreasSystem.CleanupData(in HexTerrainVisibility, ByteAreasLayer)
-  nameWithType.vb: CleanupHexTerrainAreasSystem.CleanupData(HexTerrainVisibility, ByteAreasLayer)
 - uid: Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.CleanupData(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer)
   name: CleanupData(in HexTerrainVisibility, HexByteAreasLayer)
   href: api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.html#Fwt_HexTerrains_Areas_Systems_CleanupHexTerrainAreasSystem_CleanupData_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_
@@ -63597,12 +63561,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainSerializer.ReadSurfaceData
   nameWithType: HexTerrainSerializer.ReadSurfaceData
-- uid: Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.ByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)
-  name: ReadTerrainByteAreas(BinaryReader, ByteAreasLayer, HexTerrainSettings)
-  href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainByteAreas_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_ByteAreasLayer_Fwt_HexTerrains_Data_HexTerrainSettings_
-  commentId: M:Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.ByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)
-  fullName: Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader, Fwt.HexTerrains.Areas.Data.ByteAreasLayer, Fwt.HexTerrains.Data.HexTerrainSettings)
-  nameWithType: HexTerrainSerializer.ReadTerrainByteAreas(BinaryReader, ByteAreasLayer, HexTerrainSettings)
 - uid: Fwt.HexTerrains.HexTerrainSerializer.ReadTerrainByteAreas(System.IO.BinaryReader,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer,Fwt.HexTerrains.Data.HexTerrainSettings)
   name: ReadTerrainByteAreas(BinaryReader, HexByteAreasLayer, HexTerrainSettings)
   href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_ReadTerrainByteAreas_System_IO_BinaryReader_Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_Fwt_HexTerrains_Data_HexTerrainSettings_
@@ -63791,12 +63749,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainSerializer.WriteSurfaceData
   nameWithType: HexTerrainSerializer.WriteSurfaceData
-- uid: Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  name: WriteTerrainByteAreas(BinaryWriter, ByteAreasLayer)
-  href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainByteAreas_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_ByteAreasLayer_
-  commentId: M:Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  fullName: Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter, Fwt.HexTerrains.Areas.Data.ByteAreasLayer)
-  nameWithType: HexTerrainSerializer.WriteTerrainByteAreas(BinaryWriter, ByteAreasLayer)
 - uid: Fwt.HexTerrains.HexTerrainSerializer.WriteTerrainByteAreas(System.IO.BinaryWriter,Fwt.HexTerrains.Areas.Data.HexByteAreasLayer)
   name: WriteTerrainByteAreas(BinaryWriter, HexByteAreasLayer)
   href: api/Fwt.HexTerrains.HexTerrainSerializer.html#Fwt_HexTerrains_HexTerrainSerializer_WriteTerrainByteAreas_System_IO_BinaryWriter_Fwt_HexTerrains_Areas_Data_HexByteAreasLayer_
@@ -68163,6 +68115,31 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Surfaces.HexGroundDataBaker.Bake
   nameWithType: HexGroundDataBaker.Bake
+- uid: Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring
+  name: HexGroundLayerAuthoring
+  href: api/Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring.html
+  commentId: T:Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring
+  fullName: Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring
+  nameWithType: HexGroundLayerAuthoring
+- uid: Fwt.HexTerrains.Surfaces.HexGroundLayerBaker
+  name: HexGroundLayerBaker
+  href: api/Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.html
+  commentId: T:Fwt.HexTerrains.Surfaces.HexGroundLayerBaker
+  fullName: Fwt.HexTerrains.Surfaces.HexGroundLayerBaker
+  nameWithType: HexGroundLayerBaker
+- uid: Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.Bake(Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring)
+  name: Bake(HexGroundLayerAuthoring)
+  href: api/Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.html#Fwt_HexTerrains_Surfaces_HexGroundLayerBaker_Bake_Fwt_HexTerrains_Surfaces_HexGroundLayerAuthoring_
+  commentId: M:Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.Bake(Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring)
+  fullName: Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.Bake(Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring)
+  nameWithType: HexGroundLayerBaker.Bake(HexGroundLayerAuthoring)
+- uid: Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.Bake*
+  name: Bake
+  href: api/Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.html#Fwt_HexTerrains_Surfaces_HexGroundLayerBaker_Bake_
+  commentId: Overload:Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.Bake
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.Bake
+  nameWithType: HexGroundLayerBaker.Bake
 - uid: Fwt.HexTerrains.Surfaces.HexGroundRenderDataAuthoring
   name: HexGroundRenderDataAuthoring
   href: api/Fwt.HexTerrains.Surfaces.HexGroundRenderDataAuthoring.html
@@ -68423,6 +68400,32 @@ references:
   commentId: F:Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring.MinRandomHeight
   fullName: Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring.MinRandomHeight
   nameWithType: HexSurfaceLayerAuthoring.MinRandomHeight
+- uid: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker`2
+  name: HexSurfaceLayerBaker<TAuthoring, TRequest>
+  href: api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker-2.html
+  commentId: T:Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker`2
+  name.vb: HexSurfaceLayerBaker(Of TAuthoring, TRequest)
+  fullName: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker<TAuthoring, TRequest>
+  fullName.vb: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker(Of TAuthoring, TRequest)
+  nameWithType: HexSurfaceLayerBaker<TAuthoring, TRequest>
+  nameWithType.vb: HexSurfaceLayerBaker(Of TAuthoring, TRequest)
+- uid: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker`2.BakeData(`0)
+  name: BakeData(TAuthoring)
+  href: api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker-2.html#Fwt_HexTerrains_Surfaces_HexSurfaceLayerBaker_2_BakeData__0_
+  commentId: M:Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker`2.BakeData(`0)
+  fullName: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker<TAuthoring, TRequest>.BakeData(TAuthoring)
+  fullName.vb: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker(Of TAuthoring, TRequest).BakeData(TAuthoring)
+  nameWithType: HexSurfaceLayerBaker<TAuthoring, TRequest>.BakeData(TAuthoring)
+  nameWithType.vb: HexSurfaceLayerBaker(Of TAuthoring, TRequest).BakeData(TAuthoring)
+- uid: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker`2.BakeData*
+  name: BakeData
+  href: api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker-2.html#Fwt_HexTerrains_Surfaces_HexSurfaceLayerBaker_2_BakeData_
+  commentId: Overload:Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker`2.BakeData
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker<TAuthoring, TRequest>.BakeData
+  fullName.vb: Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker(Of TAuthoring, TRequest).BakeData
+  nameWithType: HexSurfaceLayerBaker<TAuthoring, TRequest>.BakeData
+  nameWithType.vb: HexSurfaceLayerBaker(Of TAuthoring, TRequest).BakeData
 - uid: Fwt.HexTerrains.Surfaces.HexSurfaceRenderDataAuthoring
   name: HexSurfaceRenderDataAuthoring
   href: api/Fwt.HexTerrains.Surfaces.HexSurfaceRenderDataAuthoring.html
@@ -68517,6 +68520,31 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Surfaces.HexWaterDataBaker.Bake
   nameWithType: HexWaterDataBaker.Bake
+- uid: Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring
+  name: HexWaterLayerAuthoring
+  href: api/Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring.html
+  commentId: T:Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring
+  fullName: Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring
+  nameWithType: HexWaterLayerAuthoring
+- uid: Fwt.HexTerrains.Surfaces.HexWaterLayerBaker
+  name: HexWaterLayerBaker
+  href: api/Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.html
+  commentId: T:Fwt.HexTerrains.Surfaces.HexWaterLayerBaker
+  fullName: Fwt.HexTerrains.Surfaces.HexWaterLayerBaker
+  nameWithType: HexWaterLayerBaker
+- uid: Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.Bake(Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring)
+  name: Bake(HexWaterLayerAuthoring)
+  href: api/Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.html#Fwt_HexTerrains_Surfaces_HexWaterLayerBaker_Bake_Fwt_HexTerrains_Surfaces_HexWaterLayerAuthoring_
+  commentId: M:Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.Bake(Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring)
+  fullName: Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.Bake(Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring)
+  nameWithType: HexWaterLayerBaker.Bake(HexWaterLayerAuthoring)
+- uid: Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.Bake*
+  name: Bake
+  href: api/Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.html#Fwt_HexTerrains_Surfaces_HexWaterLayerBaker_Bake_
+  commentId: Overload:Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.Bake
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.Bake
+  nameWithType: HexWaterLayerBaker.Bake
 - uid: Fwt.HexTerrains.Surfaces.HexWaterRenderDataAuthoring
   name: HexWaterRenderDataAuthoring
   href: api/Fwt.HexTerrains.Surfaces.HexWaterRenderDataAuthoring.html

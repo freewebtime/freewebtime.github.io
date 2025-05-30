@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+                <img id="logo" height="100%" src="logo.png" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -190,6 +190,10 @@
 <p><img src="images/ColorMapTexturesSource.png" alt="Color Map Textures source">.</p>
 <p>Then setup the UI, so it has room for all the ColorMap textures you have (currently it displays 4 textures)</p>
 <p><img src="images/MinimapColorTexturesOnUIScreen.png" alt="Minimap Screen ColorMap textures"></p>
+<p>And finally, when the terrain switches to a new View Mode, it starts rendering by different set of materials. If those materials use one of your Color Texture (where the terrain color data is copied), you will see the terrain painted in colors of the color map.</p>
+<p><img src="images/RenderConfigs.png" alt="Color Map Textures"></p>
+<p><img src="images/RenderConfigs_Materials.png" alt="Color Map Textures"></p>
+<p><img src="images/ColorMapMaterial.png" alt="Color Map Textures"></p>
 <h2 id="create-terrain-on-scene-load">Create terrain on scene load</h2>
 <p>If you want to have a terrain loaded at scene load, just put on the subscene a terrain prefab. If you have a HexTerrainEditor prefab on the scene, set a reference to the terrain prefab in the <code>SamplesUserToolDataAuthoring</code> script in the field <code>Terrain Authoring</code>:</p>
 <ol>

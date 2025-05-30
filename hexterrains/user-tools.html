@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+                <img id="logo" height="100%" src="logo.png" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -102,7 +102,7 @@
 <td>Base class for all tool states; handles activation, brush setup, view mode</td>
 </tr>
 <tr>
-<td><code>IUserToolAPI</code></td>
+<td><code>IHexTerrainAPI</code></td>
 <td>Interface injected into tools to access terrain editing APIs</td>
 </tr>
 <tr>
@@ -181,9 +181,9 @@ PrepareToStop() – restore view mode, hide UI
 <li><strong>Max Cell Height</strong> – skip cells above this elevation</li>
 </ul>
 <hr>
-<h2 id="-iusertoolapi--bridging-tools-and-terrain">🧠 <code>IUserToolAPI</code> – Bridging Tools and Terrain</h2>
-<p>The <code>IUserToolAPI</code> allows tools to interact with terrain layers outside ECS systems:</p>
-<pre><code class="lang-csharp">public interface IUserToolAPI
+<h2 id="-ihexterrainapi--bridging-tools-and-terrain">🧠 <code>IHexTerrainAPI</code> – Bridging Tools and Terrain</h2>
+<p>The <code>IHexTerrainAPI</code> allows tools to interact with terrain layers outside ECS systems:</p>
+<pre><code class="lang-csharp">public interface IHexTerrainAPI
 {
     void SetIsVisibleBrush(bool isVisible);
     void SetBrushSize(int size);
@@ -211,7 +211,7 @@ PrepareToStop() – restore view mode, hide UI
 {
     public override int UserToolType =&gt; (int)UserToolTypes.MyTool;
 
-    public MyCustomToolState(IUserToolAPI userToolAPI) : base(userToolAPI) { }
+    public MyCustomToolState(IHexTerrainAPI hexTerrainAPI) : base(hexTerrainAPI) { }
 
     public override bool ApplyBrush(...)
     {
@@ -221,7 +221,7 @@ PrepareToStop() – restore view mode, hide UI
 </code></pre>
 <hr>
 <h2 id="-brushes--cursors">📐 Brushes &amp; Cursors</h2>
-<p>Brush visuals and interaction are controlled via <code>IUserToolAPI</code>:</p>
+<p>Brush visuals and interaction are controlled via <code>IHexTerrainAPI</code>:</p>
 <ul>
 <li>Size</li>
 <li>Color</li>
@@ -254,8 +254,6 @@ PrepareToStop() – restore view mode, hide UI
 <li><code>PrepareToStop()</code> to revert view modes and hide UI
 and more (see <a href="https://www.freewebtime.com/hexterrains/api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateBase.html">UserToolStateBase</a>)</li>
 </ul>
-<hr>
-<p>Here's a draft <strong>documentation section</strong> explaining how the <code>BrushUserTool</code> system works in your Hex Terrains Framework, written in Markdown format to fit cleanly into your broader docs:</p>
 <hr>
 <h2 id="-brush-based-terrain-editing">🖌 Brush-Based Terrain Editing</h2>
 <p>The <strong>BrushUserTool system</strong> powers the in-game Photoshop-like editing experience within the Hex Terrains Framework. It allows real-time, cell-level modifications of terrain layers using a dynamic, customizable brush. Each tool is implemented as a state in a user tool state machine and inherits from a shared foundation: <code>BrushUserToolState</code>.</p>
@@ -318,7 +316,7 @@ and more (see <a href="https://www.freewebtime.com/hexterrains/api/Fwt.HexTerrai
 <h2 id="-brush-lifecycle">🔁 Brush Lifecycle</h2>
 <p>Each frame while a brush is active:</p>
 <ol>
-<li><strong>Cursor</strong> location is evaluated (<code>UserToolAPI.GetCellCoordUnderCursor()</code>).</li>
+<li><strong>Cursor</strong> location is evaluated (<code>HexTerrainAPI.GetCellCoordUnderCursor()</code>).</li>
 <li><strong>Affected cells</strong> within brush radius are gathered.</li>
 <li><code>ApplyBrush(...)</code> is invoked for each cell.</li>
 <li>Layer-specific logic (e.g., biome assignment, height change, object stamping) is applied.</li>
@@ -356,10 +354,8 @@ brushTarget.SetCellHeight(cellIndex, height);
 <li>Register your tool in the state machine (<code>UserToolStateMachine.SwitchStateByUserToolType(...)</code>).</li>
 </ol>
 <hr>
-<p>Here's a documentation section that clearly and concisely explains how the <code>UserToolAPI</code> class works:</p>
-<hr>
-<h2 id="-usertoolapi-default-implementation-of-iusertoolapi">🛠️ <code>UserToolAPI</code>: Default Implementation of <code>IUserToolAPI</code></h2>
-<p>The <code>UserToolAPI</code> class is the default implementation of the <code>IUserToolAPI</code> interface, designed to bridge <strong>runtime user tools</strong> (e.g., brush operations) with ECS-based <strong>HexTerrain</strong> data structures.</p>
+<h2 id="-hexterrainapi-default-implementation-of-ihexterrainapi">🛠️ <code>HexTerrainAPI</code>: Default Implementation of <code>IHexTerrainAPI</code></h2>
+<p>The <code>HexTerrainAPI</code> class is the default implementation of the <code>IHexTerrainAPI</code> interface, designed to bridge <strong>runtime user tools</strong> (e.g., brush operations) with ECS-based <strong>HexTerrain</strong> data structures.</p>
 <p>It provides a standardized way for tool states to interact with terrain data, access brush settings, UI screens, and read/write values from data layers such as heightmaps, biomes, cell entities, and areas — all without requiring direct access to the <code>EntityManager</code>.</p>
 <hr>
 <h3 id="-purpose">🔑 Purpose</h3>
@@ -374,7 +370,7 @@ brushTarget.SetCellHeight(cellIndex, height);
 <li>Interact with UI (via injected <code>IUISystemAPI</code>).</li>
 </ul>
 </li>
-<li><p>Is <strong>injectable</strong> into tool states as <code>IUserToolAPI</code>.</p>
+<li><p>Is <strong>injectable</strong> into tool states as <code>IHexTerrainAPI</code>.</p>
 </li>
 </ul>
 <hr>
@@ -437,7 +433,7 @@ int2? GetCellCoordUnderCursor()
 </ul>
 <hr>
 <h3 id="-brush-manipulation">🎨 Brush Manipulation</h3>
-<p><code>UserToolAPI</code> provides full access to brush properties:</p>
+<p><code>HexTerrainAPI</code> provides full access to brush properties:</p>
 <table>
 <thead>
 <tr>
@@ -538,9 +534,9 @@ int2? GetCellCoordUnderCursor()
 <ul>
 <li>Use this class as-is.</li>
 <li>Subclass it to extend behavior.</li>
-<li>Implement <code>IUserToolAPI</code> from scratch for alternative logic.</li>
+<li>Implement <code>IHexTerrainAPI</code> from scratch for alternative logic.</li>
 </ul>
-<p>This makes <code>UserToolAPI</code> both <strong>powerful</strong> and <strong>flexible</strong>, fitting a wide range of in-game editor use cases.</p>
+<p>This makes <code>HexTerrainAPI</code> both <strong>powerful</strong> and <strong>flexible</strong>, fitting a wide range of in-game editor use cases.</p>
 <hr>
 
 </article>

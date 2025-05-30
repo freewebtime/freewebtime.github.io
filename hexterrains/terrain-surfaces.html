@@ -35,7 +35,7 @@
               </button>
 
               <a class="navbar-brand" href="index.html">
-                <img id="logo" class="svg" src="logo.svg" alt="Hex Terrains Framework">
+                <img id="logo" height="100%" src="logo.png" alt="Hex Terrains Framework">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -117,8 +117,8 @@
 <hr>
 <h2 id="-data-generation-and-setup">🧪 Data Generation and Setup</h2>
 <p>Surfaces can be initialized via <strong>authoring components</strong> in the Unity Editor. For example:</p>
-<h3 id="example-hexgrounddataauthoring">Example: <code>HexGroundDataAuthoring</code></h3>
-<pre><code class="lang-csharp">public class HexGroundDataAuthoring : HexSurfaceDataAuthoring {}
+<h3 id="example-hexgroundlayerauthoring">Example: <code>HexGroundLayerAuthoring</code></h3>
+<pre><code class="lang-csharp">public class HexGroundLayerAuthoring : HexSurfaceLayerAuthoring {}
 </code></pre>
 <p>When baked by <code>HexGroundDataBaker</code>, this authoring component:</p>
 <ul>
@@ -154,13 +154,12 @@
 <hr>
 <h2 id="-runtime-behavior">🔄 Runtime Behavior</h2>
 <ul>
-<li>All surface systems are scheduled in the <code>HexTerrainsInitializationGroup</code>.</li>
 <li>Systems are designed to work independently per terrain, which allows multi-terrain setups.</li>
 <li>Surfaces automatically react to changes in their layers (e.g., biome or heightmap changes) via their dirty flags and dependency tracking.</li>
 </ul>
 <hr>
 <h2 id="-color-palette-system">🌈 Color Palette System</h2>
-<p>For visual feedback (e.g., biomes displayed in the minimap or editor):</p>
+<p>For visual feedback (e.g., biomes displayed in the minimap or by coloring cells on terrain):</p>
 <ul>
 <li>Each surface has a color palette (e.g., <code>HexGroundColorPalette</code>).</li>
 <li>The palette is used during biome color map job execution.</li>
@@ -196,9 +195,9 @@
 <li>Each implements <code>ICreateHexSurfaceDataRequest</code> or uses associated request structs for instantiation</li>
 </ul>
 <h2 id="layer-creation">Layer Creation</h2>
-<p>Surfaces are initialized by systems such as <code>CreateHexGroundLayerRequest</code> and <code>CreateHexSurfaceRequestArgs</code>, usually via authoring components like <code>HexGroundDataAuthoring</code> or <code>HexSurfaceDataAuthoring</code>. These components describe what kind of surface to create and associate them with a terrain entity.</p>
+<p>Surfaces are initialized by systems such as <code>CreateHexGroundLayerRequest</code> and <code>CreateHexSurfaceRequestArgs</code>, usually via authoring components like <code>HexGroundLayerAuthoring</code> or <code>HexSurfaceLayerAuthoring</code>. These components describe what kind of surface to create and associate them with a terrain entity.</p>
 <h3 id="example-setup-flow">Example Setup Flow</h3>
-<pre><code class="lang-plaintext">HexGroundDataAuthoring -&gt; CreateHexGroundLayerRequest
+<pre><code class="lang-plaintext">HexGroundLayerAuthoring -&gt; CreateHexGroundLayerRequest
 → System receives request → Creates HexGroundLayer
 → Initializes DataLayers (HeightMap, Biomes, Colors)
 </code></pre>

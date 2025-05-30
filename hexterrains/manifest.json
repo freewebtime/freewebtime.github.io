@@ -2548,7 +2548,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Areas.Data.HexCountriesLayer",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexCountriesLayer.yml\" sourcestartlinenumber=\"1\">ByteAreasLayer for countries</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexCountriesLayer.yml\" sourcestartlinenumber=\"1\">HexByteAreasLayer for countries</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -2576,7 +2576,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Areas.Data.HexProvincesLayer",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexProvincesLayer.yml\" sourcestartlinenumber=\"1\">ByteAreasLayer for provinces</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Data.HexProvincesLayer.yml\" sourcestartlinenumber=\"1\">HexByteAreasLayer for provinces</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -3010,7 +3010,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem",
-      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.yml\" sourcestartlinenumber=\"1\">Base class for systems that clean up ByteAreasLayer every frame at cleanup stage.\nUsually the cleanup clears the dirty flags.</p>\n"
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Areas.Systems.CleanupHexTerrainAreasSystem.yml\" sourcestartlinenumber=\"1\">Base class for systems that clean up HexByteAreasLayer every frame at cleanup stage.\nUsually the cleanup clears the dirty flags.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6584,6 +6584,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexGroundLayerAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for HexGroundLayer. This class is used to create hex ground data in the Unity Editor.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Surfaces.HexGroundLayerBaker",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexGroundLayerBaker.yml\" sourcestartlinenumber=\"1\">Baker for HexGroundLayer. This class is used to convert the HexGroundLayerAuthoring component into a HexGroundLayer component at runtime.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexGroundRenderDataAuthoring.yml",
       "output": {
         ".html": {
@@ -6637,6 +6665,20 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerAuthoring.yml\" sourcestartlinenumber=\"1\">Base class for authoring components that create hex surface data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker<TAuthoring, TRequest>",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexSurfaceLayerBaker-2.yml\" sourcestartlinenumber=\"1\">Base class for baker components that create hex surface data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6707,6 +6749,34 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Surfaces.HexWaterDataBaker",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexWaterDataBaker.yml\" sourcestartlinenumber=\"1\">Baker class for hex water data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexWaterLayerAuthoring.yml\" sourcestartlinenumber=\"1\">Authoring component for hex water data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Surfaces.HexWaterLayerBaker",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Surfaces.HexWaterLayerBaker.yml\" sourcestartlinenumber=\"1\">Baker class for hex water data.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -9367,16 +9437,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "fulldoc.md",
-      "output": {
-        ".html": {
-          "relative_path": "fulldoc.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "getting-started.md",
       "output": {
         ".html": {
@@ -9421,6 +9481,16 @@
       "output": {
         "resource": {
           "relative_path": "images/CellItemsTools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ColorMapMaterial.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ColorMapMaterial.png"
         }
       },
       "version": ""
@@ -9587,6 +9657,26 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/RenderConfigs.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/RenderConfigs.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/RenderConfigs_Materials.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/RenderConfigs_Materials.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/ShowcaseScene.png",
       "output": {
         "resource": {
@@ -9707,10 +9797,10 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "index-backup.md",
+      "source_relative_path": "index.md",
       "output": {
         ".html": {
-          "relative_path": "index-backup.html"
+          "relative_path": "index.html"
         }
       },
       "version": ""
@@ -9777,26 +9867,6 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "simulation.md",
-      "output": {
-        ".html": {
-          "relative_path": "simulation.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "site_index.md",
-      "output": {
-        ".html": {
-          "relative_path": "site_index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
       "source_relative_path": "terrain-chunks.md",
       "output": {
         ".html": {
@@ -9841,16 +9911,6 @@
       "output": {
         ".html": {
           "relative_path": "terrain-surfaces.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "terraindatalayers.md",
-      "output": {
-        ".html": {
-          "relative_path": "terraindatalayers.html"
         }
       },
       "version": ""

@@ -520,12 +520,13 @@
 </h3>
 
 
-  <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_AccelerationKey" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationKey">AccelerationKey</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_Camera" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Camera">Camera</h4>
+  <div class="markdown level1 summary"><p>The camera to control.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public KeyCode AccelerationKey</code></pre>
+    <pre><code class="lang-csharp hljs">public Camera Camera</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -537,31 +538,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">KeyCode</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_AccelerationMultiplier" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationMultiplier">AccelerationMultiplier</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float AccelerationMultiplier</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="xref">Camera</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -640,12 +617,13 @@
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_ZoomSpeed" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.ZoomSpeed">ZoomSpeed</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_TargetTransform" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.TargetTransform">TargetTransform</h4>
+  <div class="markdown level1 summary"><p>The transform of the target object to follow.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float ZoomSpeed</code></pre>
+    <pre><code class="lang-csharp hljs">public Transform TargetTransform</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -657,7 +635,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="xref">Transform</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -695,11 +673,12 @@
 
   <a id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_SetTarget_" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.SetTarget*"></a>
   <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_SetTarget_UnityEngine_Transform_" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.SetTarget(UnityEngine.Transform)">SetTarget(Transform)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the target transform to follow.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void SetTarget(Transform targetTransform)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void SetTarget(Transform targetTransform)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -714,7 +693,8 @@
       <tr>
         <td><span class="xref">Transform</span></td>
         <td><span class="parametername">targetTransform</span></td>
-        <td></td>
+        <td><p>Target transform to follow</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -722,11 +702,12 @@
 
   <a id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_UpdatePosition_" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.UpdatePosition*"></a>
   <h4 id="Fwt_HexTerrains_Cameras_CameraControllerComponentBase_UpdatePosition" data-uid="Fwt.HexTerrains.Cameras.CameraControllerComponentBase.UpdatePosition">UpdatePosition()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Updates the camera position based on the target transform and zoom level.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract void UpdatePosition()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void UpdatePosition()</code></pre>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>

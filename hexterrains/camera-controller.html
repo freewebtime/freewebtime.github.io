@@ -89,7 +89,6 @@
 <li>Movement input keys (WASD or others)</li>
 <li>Acceleration key (e.g., Shift)</li>
 <li>Speed settings</li>
-<li>Flags to indicate terrain wrapping (horizontal/vertical)</li>
 </ul>
 <p>It gets baked into a <code>CreateCameraControllerRequest</code> component.</p>
 <pre><code class="lang-csharp">public class CameraControllerAuthoring : MonoBehaviour
@@ -97,7 +96,7 @@
     public KeyCode MoveUpKey = KeyCode.W;
     public KeyCode MoveDownKey = KeyCode.S;
     public float MovementSpeed = 10f;
-    public bool IsConnectedHorizontally;
+    ...
 }
 </code></pre>
 <hr>

@@ -56319,18 +56319,6 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.AccelerationMultiplier
   fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.AccelerationMultiplier
   nameWithType: CameraControllerAuthoring.AccelerationMultiplier
-- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsConnectedHorizontally
-  name: IsConnectedHorizontally
-  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_IsConnectedHorizontally
-  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsConnectedHorizontally
-  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsConnectedHorizontally
-  nameWithType: CameraControllerAuthoring.IsConnectedHorizontally
-- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsConnectedVertically
-  name: IsConnectedVertically
-  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_IsConnectedVertically
-  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsConnectedVertically
-  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsConnectedVertically
-  nameWithType: CameraControllerAuthoring.IsConnectedVertically
 - uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
   name: IsFindCameraControllerComponentOnScene
   href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_IsFindCameraControllerComponentOnScene
@@ -56367,6 +56355,18 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.MovementSpeed
   fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.MovementSpeed
   nameWithType: CameraControllerAuthoring.MovementSpeed
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.PreventZoomKeys
+  name: PreventZoomKeys
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_PreventZoomKeys
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.PreventZoomKeys
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.PreventZoomKeys
+  nameWithType: CameraControllerAuthoring.PreventZoomKeys
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.ZoomSpeed
+  name: ZoomSpeed
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_ZoomSpeed
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.ZoomSpeed
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.ZoomSpeed
+  nameWithType: CameraControllerAuthoring.ZoomSpeed
 - uid: Fwt.HexTerrains.Cameras.CameraControllerBaker
   name: CameraControllerBaker
   href: api/Fwt.HexTerrains.Cameras.CameraControllerBaker.html
@@ -56392,18 +56392,12 @@ references:
   commentId: T:Fwt.HexTerrains.Cameras.CameraControllerComponentBase
   fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase
   nameWithType: CameraControllerComponentBase
-- uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationKey
-  name: AccelerationKey
-  href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_AccelerationKey
-  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationKey
-  fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationKey
-  nameWithType: CameraControllerComponentBase.AccelerationKey
-- uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationMultiplier
-  name: AccelerationMultiplier
-  href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_AccelerationMultiplier
-  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationMultiplier
-  fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.AccelerationMultiplier
-  nameWithType: CameraControllerComponentBase.AccelerationMultiplier
+- uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Camera
+  name: Camera
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_Camera
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Camera
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Camera
+  nameWithType: CameraControllerComponentBase.Camera
 - uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.CurrentZoom
   name: CurrentZoom
   href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_CurrentZoom
@@ -56448,6 +56442,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.SetTarget
   nameWithType: CameraControllerComponentBase.SetTarget
+- uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.TargetTransform
+  name: TargetTransform
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_TargetTransform
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.TargetTransform
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.TargetTransform
+  nameWithType: CameraControllerComponentBase.TargetTransform
 - uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.UpdatePosition
   name: UpdatePosition()
   href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_UpdatePosition
@@ -56461,12 +56461,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.UpdatePosition
   nameWithType: CameraControllerComponentBase.UpdatePosition
-- uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.ZoomSpeed
-  name: ZoomSpeed
-  href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_ZoomSpeed
-  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.ZoomSpeed
-  fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.ZoomSpeed
-  nameWithType: CameraControllerComponentBase.ZoomSpeed
 - uid: Fwt.HexTerrains.Cameras.Data
   name: Fwt.HexTerrains.Cameras.Data
   href: api/Fwt.HexTerrains.Cameras.Data.html
@@ -56539,12 +56533,24 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.MovementSpeed
   fullName: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.MovementSpeed
   nameWithType: CameraControllerTarget.MovementSpeed
+- uid: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.NormalizedZoom
+  name: NormalizedZoom
+  href: api/Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.html#Fwt_HexTerrains_Cameras_Data_CameraControllerTarget_NormalizedZoom
+  commentId: F:Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.NormalizedZoom
+  fullName: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.NormalizedZoom
+  nameWithType: CameraControllerTarget.NormalizedZoom
 - uid: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.Target
   name: Target
   href: api/Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.html#Fwt_HexTerrains_Cameras_Data_CameraControllerTarget_Target
   commentId: F:Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.Target
   fullName: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.Target
   nameWithType: CameraControllerTarget.Target
+- uid: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.ZoomSpeed
+  name: ZoomSpeed
+  href: api/Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.html#Fwt_HexTerrains_Cameras_Data_CameraControllerTarget_ZoomSpeed
+  commentId: F:Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.ZoomSpeed
+  fullName: Fwt.HexTerrains.Cameras.Data.CameraControllerTarget.ZoomSpeed
+  nameWithType: CameraControllerTarget.ZoomSpeed
 - uid: Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest
   name: CreateCameraControllerRequest
   href: api/Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.html
@@ -56599,6 +56605,24 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.MovementSpeed
   fullName: Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.MovementSpeed
   nameWithType: CreateCameraControllerRequest.MovementSpeed
+- uid: Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.ZoomSpeed
+  name: ZoomSpeed
+  href: api/Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.html#Fwt_HexTerrains_Cameras_Data_CreateCameraControllerRequest_ZoomSpeed
+  commentId: F:Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.ZoomSpeed
+  fullName: Fwt.HexTerrains.Cameras.Data.CreateCameraControllerRequest.ZoomSpeed
+  nameWithType: CreateCameraControllerRequest.ZoomSpeed
+- uid: Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys
+  name: IgnoreCameraZoomInputKeys
+  href: api/Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.html
+  commentId: T:Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys
+  fullName: Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys
+  nameWithType: IgnoreCameraZoomInputKeys
+- uid: Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.Value
+  name: Value
+  href: api/Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.html#Fwt_HexTerrains_Cameras_Data_IgnoreCameraZoomInputKeys_Value
+  commentId: F:Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.Value
+  fullName: Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.Value
+  nameWithType: IgnoreCameraZoomInputKeys.Value
 - uid: Fwt.HexTerrains.Cameras.Systems
   name: Fwt.HexTerrains.Cameras.Systems
   href: api/Fwt.HexTerrains.Cameras.Systems.html
@@ -65788,63 +65812,6 @@ references:
   commentId: T:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent
   fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent
   nameWithType: SamplesCameraControllerComponent
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Camera
-  name: Camera
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_Camera
-  commentId: F:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Camera
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Camera
-  nameWithType: SamplesCameraControllerComponent.Camera
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.PreventZoomKeys
-  name: PreventZoomKeys
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_PreventZoomKeys
-  commentId: F:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.PreventZoomKeys
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.PreventZoomKeys
-  nameWithType: SamplesCameraControllerComponent.PreventZoomKeys
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget(UnityEngine.Transform)
-  name: SetTarget(Transform)
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_SetTarget_UnityEngine_Transform_
-  commentId: M:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget(UnityEngine.Transform)
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget(UnityEngine.Transform)
-  nameWithType: SamplesCameraControllerComponent.SetTarget(Transform)
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget*
-  name: SetTarget
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_SetTarget_
-  commentId: Overload:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.SetTarget
-  nameWithType: SamplesCameraControllerComponent.SetTarget
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.TargetTransform
-  name: TargetTransform
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_TargetTransform
-  commentId: F:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.TargetTransform
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.TargetTransform
-  nameWithType: SamplesCameraControllerComponent.TargetTransform
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update
-  name: Update()
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_Update
-  commentId: M:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update()
-  nameWithType: SamplesCameraControllerComponent.Update()
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update*
-  name: Update
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_Update_
-  commentId: Overload:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.Update
-  nameWithType: SamplesCameraControllerComponent.Update
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition
-  name: UpdatePosition()
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_UpdatePosition
-  commentId: M:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition()
-  nameWithType: SamplesCameraControllerComponent.UpdatePosition()
-- uid: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition*
-  name: UpdatePosition
-  href: api/Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.html#Fwt_HexTerrains_Samples_SamplesCameraControllerComponent_UpdatePosition_
-  commentId: Overload:Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.Samples.SamplesCameraControllerComponent.UpdatePosition
-  nameWithType: SamplesCameraControllerComponent.UpdatePosition
 - uid: Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring
   name: SamplesUserToolDataAuthoring
   href: api/Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring.html
@@ -66521,19 +66488,6 @@ references:
   commentId: T:Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen
   fullName: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen
   nameWithType: SamplesMinimapScreen
-- uid: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.OnMinimapClick(Unity.Mathematics.float2)
-  name: OnMinimapClick(float2)
-  href: api/Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.html#Fwt_HexTerrains_Samples_UI_SamplesMinimapScreen_OnMinimapClick_Unity_Mathematics_float2_
-  commentId: M:Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.OnMinimapClick(Unity.Mathematics.float2)
-  fullName: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.OnMinimapClick(Unity.Mathematics.float2)
-  nameWithType: SamplesMinimapScreen.OnMinimapClick(float2)
-- uid: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.OnMinimapClick*
-  name: OnMinimapClick
-  href: api/Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.html#Fwt_HexTerrains_Samples_UI_SamplesMinimapScreen_OnMinimapClick_
-  commentId: Overload:Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.OnMinimapClick
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.OnMinimapClick
-  nameWithType: SamplesMinimapScreen.OnMinimapClick
 - uid: Fwt.HexTerrains.Samples.UI.SaveGameScreen
   name: SaveGameScreen
   href: api/Fwt.HexTerrains.Samples.UI.SaveGameScreen.html
@@ -80493,6 +80447,19 @@ references:
   commentId: T:Fwt.HexTerrains.UI.MinimapScreenBase
   fullName: Fwt.HexTerrains.UI.MinimapScreenBase
   nameWithType: MinimapScreenBase
+- uid: Fwt.HexTerrains.UI.MinimapScreenBase.OnMinimapClick(Unity.Mathematics.float2)
+  name: OnMinimapClick(float2)
+  href: api/Fwt.HexTerrains.UI.MinimapScreenBase.html#Fwt_HexTerrains_UI_MinimapScreenBase_OnMinimapClick_Unity_Mathematics_float2_
+  commentId: M:Fwt.HexTerrains.UI.MinimapScreenBase.OnMinimapClick(Unity.Mathematics.float2)
+  fullName: Fwt.HexTerrains.UI.MinimapScreenBase.OnMinimapClick(Unity.Mathematics.float2)
+  nameWithType: MinimapScreenBase.OnMinimapClick(float2)
+- uid: Fwt.HexTerrains.UI.MinimapScreenBase.OnMinimapClick*
+  name: OnMinimapClick
+  href: api/Fwt.HexTerrains.UI.MinimapScreenBase.html#Fwt_HexTerrains_UI_MinimapScreenBase_OnMinimapClick_
+  commentId: Overload:Fwt.HexTerrains.UI.MinimapScreenBase.OnMinimapClick
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UI.MinimapScreenBase.OnMinimapClick
+  nameWithType: MinimapScreenBase.OnMinimapClick
 - uid: Fwt.HexTerrains.UI.MinimapScreenBase.OnViewModeChanged
   name: OnViewModeChanged()
   href: api/Fwt.HexTerrains.UI.MinimapScreenBase.html#Fwt_HexTerrains_UI_MinimapScreenBase_OnViewModeChanged

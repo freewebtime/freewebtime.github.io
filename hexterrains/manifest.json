@@ -3322,6 +3322,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Cameras.Data.IgnoreCameraZoomInputKeys",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Cameras.Data.yml",
       "output": {
         ".html": {
@@ -9801,66 +9815,6 @@
       "output": {
         ".html": {
           "relative_path": "index.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "node_modules/@types/node/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "node_modules/@types/node/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "node_modules/source-map/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "node_modules/source-map/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "node_modules/storytailor/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "node_modules/storytailor/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "node_modules/typescript/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "node_modules/typescript/README.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "node_modules/typescript/SECURITY.md",
-      "output": {
-        ".html": {
-          "relative_path": "node_modules/typescript/SECURITY.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "node_modules/undici-types/README.md",
-      "output": {
-        ".html": {
-          "relative_path": "node_modules/undici-types/README.html"
         }
       },
       "version": ""

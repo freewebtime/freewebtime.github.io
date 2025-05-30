@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class RenderCellPropsDataSystem | Hex Terrains Framework </title>
+      <title>Class RenderCellItemsLayerSystem | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class RenderCellPropsDataSystem | Hex Terrains Framework ">
+      <meta name="title" content="Class RenderCellItemsLayerSystem | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="System that renders cell items in the hex terrain.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -76,26 +76,24 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem">
 
 
 
-  <h1 id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem" class="text-break">Class RenderCellPropsDataSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <h1 id="Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem" class="text-break">Class RenderCellItemsLayerSystem</h1>
+  <div class="markdown level0 summary"><p>System that renders cell items in the hex terrain.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
-    <div class="level3"><a class="xref" href="Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.html">RenderCellItemsLayerSystem</a></div>
-    <div class="level4"><span class="xref">RenderCellPropsDataSystem</span></div>
+    <div class="level3"><span class="xref">RenderCellItemsLayerSystem</span></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem.html">RenderCellPropsDataSystem</a></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.html#Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Data_HexTerrain__Fwt_HexTerrains_CellItems_Data_CellItemsLayer_UnityEngine_Camera_">RenderCellItemsLayerSystem.UpdateItems(in HexTerrainVisibility, in HexTerrain, CellItemsLayer, Camera)</a>
-    </div>
     <div>
       <span class="xref">SystemBase.Dependency</span>
     </div>
@@ -113,6 +111,9 @@
     </div>
     <div>
       <span class="xref">SystemBase.Update()</span>
+    </div>
+    <div>
+      <span class="xref">SystemBase.OnUpdate()</span>
     </div>
     <div>
       <span class="xref">SystemBase.GetComponent&lt;T&gt;(Entity)</span>
@@ -291,56 +292,54 @@
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.CellItems.html">CellItems</a>.<a class="xref" href="Fwt.HexTerrains.CellItems.Systems.html">Systems</a></h6>
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
-  <h5 id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem_syntax">Syntax</h5>
+  <h5 id="Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsRenderGroup))]
-public class RenderCellPropsDataSystem : RenderCellItemsLayerSystem</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class RenderCellItemsLayerSystem : SystemBase</code></pre>
   </div>
   <h3 id="methods">Methods
 </h3>
 
 
-  <a id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem_OnCreateForCompiler_" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem.OnCreateForCompiler*"></a>
-  <h4 id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem_OnCreateForCompiler" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem.OnCreateForCompiler">OnCreateForCompiler()</h4>
+  <a id="Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem_UpdateItems_" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems*"></a>
+  <h4 id="Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Data_HexTerrain__Fwt_HexTerrains_CellItems_Data_CellItemsLayer_UnityEngine_Camera_" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Data.HexTerrain@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)">UpdateItems(in HexTerrainVisibility, in HexTerrain, CellItemsLayer, Camera)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnCreateForCompiler()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void UpdateItems(in HexTerrainVisibility terrainVisibility, in HexTerrain terrain, CellItemsLayer itemsData, Camera camera)</code></pre>
   </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Unity.Entities.ComponentSystemBase.OnCreateForCompiler()</span></div>
-
-
-  <a id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem_OnUpdate_" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem.OnUpdate*"></a>
-  <h4 id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem_OnUpdate" data-uid="Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem.OnUpdate">OnUpdate()</h4>
-  <div class="markdown level1 summary"><p>Implement <code>OnUpdate()</code> to perform the major work of this system.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnUpdate()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Unity.Entities.SystemBase.OnUpdate()</span></div>
-  <h5 id="Fwt_HexTerrains_CellItems_Systems_RenderCellPropsDataSystem_OnUpdate_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-By default, the system invokes `OnUpdate()` once every frame on the main thread.
-To skip OnUpdate if all of the system's [EntityQueries] are empty, use the
-[RequireMatchingQueriesForUpdateAttribute]. To limit when OnUpdate is invoked, you can
-specify components that must exist, or queries that match specific Entities. To do
-this, call <span class="xref">Unity.Entities.ComponentSystemBase.RequireForUpdate&lt;T&gt;()</span> or
-<span class="xref">Unity.Entities.ComponentSystemBase.RequireForUpdate(Unity.Entities.EntityQuery)</span>
-in the system's OnCreate method. For more information, see [ShouldRunSystem].
-</p>
-<p>
-The [Entities.ForEach] and [Job.WithCode] constructions provide convenient mechanisms for defining jobs.
-You can also instantiate and schedule an <span class="xref">Unity.Entities.IJobChunk</span> instance; you can use the
-[C# Job System] or you can perform work on the main thread. If you call <span class="xref">Unity.Entities.EntityManager</span> methods
-that perform structural changes on the main thread, be sure to arrange the system order to minimize the
-performance impact of the resulting [sync points].
-</p>
-</div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></td>
+        <td><span class="parametername">terrainVisibility</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrain.html">HexTerrain</a></td>
+        <td><span class="parametername">terrain</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItemsLayer.html">CellItemsLayer</a></td>
+        <td><span class="parametername">itemsData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>

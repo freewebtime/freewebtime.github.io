@@ -1,5 +1,5 @@
 {
-  "source_base_path": "C:/Projects/Fwt.HexTerrains.Framework/docs",
+  "source_base_path": "C:/Projects/Fwt.HexTerrains.Framework/Docs",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -1666,6 +1666,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.Core.Packages.Fwt.Core.Runtime",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.Core.Packages.com.freewebtime.core.Runtime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.Core.Packages.com.freewebtime.core.Runtime.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.Core.Packages.com.freewebtime.core.Runtime",
       "Summary": null
     },
     {
@@ -4302,6 +4344,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.yml\" sourcestartlinenumber=\"1\">CellItem props HexTerrain layer authoring component.\nAllows to add a CellItem Props data layer on the terrain.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.CellItems.CellItemsDataAuthoring.yml",
       "output": {
         ".html": {
@@ -4663,6 +4719,20 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem",
       "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.yml\" sourcestartlinenumber=\"1\">System that renders cell items in the hex terrain.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -9531,6 +9601,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "images/CopyToPackages.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/CopyToPackages.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "images/CountriesTools.png",
       "output": {
         "resource": {
@@ -9615,6 +9695,16 @@
       "output": {
         "resource": {
           "relative_path": "images/ImportSamples.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/ImportSamples_No_Package.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/ImportSamples_No_Package.png"
         }
       },
       "version": ""

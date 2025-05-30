@@ -49745,6 +49745,102 @@ references:
   commentId: F:Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.UseStopwatch
   fullName: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.UseStopwatch
   nameWithType: FpsCounter.UseStopwatch
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime
+  name: Fwt.Core.Packages.com.freewebtime.core.Runtime
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.html
+  commentId: N:Fwt.Core.Packages.com.freewebtime.core.Runtime
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime
+  nameWithType: Fwt.Core.Packages.com.freewebtime.core.Runtime
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility
+  name: ExportMeshUtility
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html
+  commentId: T:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility
+  nameWithType: ExportMeshUtility
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh(System.String)
+  name: CreateEmptyObjAndLoadMesh(string)
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_CreateEmptyObjAndLoadMesh_System_String_
+  commentId: M:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh(System.String)
+  name.vb: CreateEmptyObjAndLoadMesh(String)
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh(string)
+  fullName.vb: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh(String)
+  nameWithType: ExportMeshUtility.CreateEmptyObjAndLoadMesh(string)
+  nameWithType.vb: ExportMeshUtility.CreateEmptyObjAndLoadMesh(String)
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh*
+  name: CreateEmptyObjAndLoadMesh
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_CreateEmptyObjAndLoadMesh_
+  commentId: Overload:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh
+  isSpec: "True"
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.CreateEmptyObjAndLoadMesh
+  nameWithType: ExportMeshUtility.CreateEmptyObjAndLoadMesh
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{UnityEngine.Vector2},System.Collections.Generic.IList{System.Int32})
+  name: ExportToObj(string, PolygonType, IList<Vector3>, IList<Vector2>, IList<int>)
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_ExportToObj_System_String_Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_PolygonType_System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_UnityEngine_Vector2__System_Collections_Generic_IList_System_Int32__
+  commentId: M:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{UnityEngine.Vector2},System.Collections.Generic.IList{System.Int32})
+  name.vb: ExportToObj(String, PolygonType, IList(Of Vector3), IList(Of Vector2), IList(Of Integer))
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(string, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, System.Collections.Generic.IList<UnityEngine.Vector3>, System.Collections.Generic.IList<UnityEngine.Vector2>, System.Collections.Generic.IList<int>)
+  fullName.vb: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(String, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, System.Collections.Generic.IList(Of UnityEngine.Vector3), System.Collections.Generic.IList(Of UnityEngine.Vector2), System.Collections.Generic.IList(Of Integer))
+  nameWithType: ExportMeshUtility.ExportToObj(string, ExportMeshUtility.PolygonType, IList<Vector3>, IList<Vector2>, IList<int>)
+  nameWithType.vb: ExportMeshUtility.ExportToObj(String, ExportMeshUtility.PolygonType, IList(Of Vector3), IList(Of Vector2), IList(Of Integer))
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,UnityEngine.Mesh)
+  name: ExportToObj(string, PolygonType, Mesh)
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_ExportToObj_System_String_Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_PolygonType_UnityEngine_Mesh_
+  commentId: M:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,UnityEngine.Mesh)
+  name.vb: ExportToObj(String, PolygonType, Mesh)
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(string, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, UnityEngine.Mesh)
+  fullName.vb: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj(String, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, UnityEngine.Mesh)
+  nameWithType: ExportMeshUtility.ExportToObj(string, ExportMeshUtility.PolygonType, Mesh)
+  nameWithType.vb: ExportMeshUtility.ExportToObj(String, ExportMeshUtility.PolygonType, Mesh)
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj*
+  name: ExportToObj
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_ExportToObj_
+  commentId: Overload:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj
+  isSpec: "True"
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObj
+  nameWithType: ExportMeshUtility.ExportToObj
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{UnityEngine.Vector2},System.Collections.Generic.IList{System.Int32})
+  name: ExportToObjAndLoadMesh(string, PolygonType, IList<Vector3>, IList<Vector2>, IList<int>)
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_ExportToObjAndLoadMesh_System_String_Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_PolygonType_System_Collections_Generic_IList_UnityEngine_Vector3__System_Collections_Generic_IList_UnityEngine_Vector2__System_Collections_Generic_IList_System_Int32__
+  commentId: M:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,System.Collections.Generic.IList{UnityEngine.Vector3},System.Collections.Generic.IList{UnityEngine.Vector2},System.Collections.Generic.IList{System.Int32})
+  name.vb: ExportToObjAndLoadMesh(String, PolygonType, IList(Of Vector3), IList(Of Vector2), IList(Of Integer))
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(string, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, System.Collections.Generic.IList<UnityEngine.Vector3>, System.Collections.Generic.IList<UnityEngine.Vector2>, System.Collections.Generic.IList<int>)
+  fullName.vb: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(String, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, System.Collections.Generic.IList(Of UnityEngine.Vector3), System.Collections.Generic.IList(Of UnityEngine.Vector2), System.Collections.Generic.IList(Of Integer))
+  nameWithType: ExportMeshUtility.ExportToObjAndLoadMesh(string, ExportMeshUtility.PolygonType, IList<Vector3>, IList<Vector2>, IList<int>)
+  nameWithType.vb: ExportMeshUtility.ExportToObjAndLoadMesh(String, ExportMeshUtility.PolygonType, IList(Of Vector3), IList(Of Vector2), IList(Of Integer))
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,UnityEngine.Mesh)
+  name: ExportToObjAndLoadMesh(string, PolygonType, Mesh)
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_ExportToObjAndLoadMesh_System_String_Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_PolygonType_UnityEngine_Mesh_
+  commentId: M:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(System.String,Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType,UnityEngine.Mesh)
+  name.vb: ExportToObjAndLoadMesh(String, PolygonType, Mesh)
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(string, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, UnityEngine.Mesh)
+  fullName.vb: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh(String, Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType, UnityEngine.Mesh)
+  nameWithType: ExportMeshUtility.ExportToObjAndLoadMesh(string, ExportMeshUtility.PolygonType, Mesh)
+  nameWithType.vb: ExportMeshUtility.ExportToObjAndLoadMesh(String, ExportMeshUtility.PolygonType, Mesh)
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh*
+  name: ExportToObjAndLoadMesh
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_ExportToObjAndLoadMesh_
+  commentId: Overload:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh
+  isSpec: "True"
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.ExportToObjAndLoadMesh
+  nameWithType: ExportMeshUtility.ExportToObjAndLoadMesh
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType
+  name: ExportMeshUtility.PolygonType
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.html
+  commentId: T:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType
+  nameWithType: ExportMeshUtility.PolygonType
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.Quads
+  name: Quads
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_PolygonType_Quads
+  commentId: F:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.Quads
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.Quads
+  nameWithType: ExportMeshUtility.PolygonType.Quads
+- uid: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.Triangles
+  name: Triangles
+  href: api/Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.html#Fwt_Core_Packages_com_freewebtime_core_Runtime_ExportMeshUtility_PolygonType_Triangles
+  commentId: F:Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.Triangles
+  fullName: Fwt.Core.Packages.com.freewebtime.core.Runtime.ExportMeshUtility.PolygonType.Triangles
+  nameWithType: ExportMeshUtility.PolygonType.Triangles
 - uid: Fwt.Core.RandomExtensions
   name: RandomExtensions
   href: api/Fwt.Core.RandomExtensions.html
@@ -58560,15 +58656,15 @@ references:
   commentId: F:Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.Color
   fullName: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.Color
   nameWithType: CellItemConfigAuthoring.Color
-- uid: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig)
-  name: ExtractCellItemConfig(int, RenderEntitiesConfig)
-  href: api/Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.html#Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_System_Int32_Fwt_Core_RenderEntities_RenderEntitiesConfig_
-  commentId: M:Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig)
-  name.vb: ExtractCellItemConfig(Integer, RenderEntitiesConfig)
-  fullName: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(int, Fwt.Core.RenderEntities.RenderEntitiesConfig)
-  fullName.vb: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(Integer, Fwt.Core.RenderEntities.RenderEntitiesConfig)
-  nameWithType: CellItemConfigAuthoring.ExtractCellItemConfig(int, RenderEntitiesConfig)
-  nameWithType.vb: CellItemConfigAuthoring.ExtractCellItemConfig(Integer, RenderEntitiesConfig)
+- uid: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig,System.Action{UnityEngine.GameObject})
+  name: ExtractCellItemConfig(int, RenderEntitiesConfig, Action<GameObject>)
+  href: api/Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.html#Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_System_Int32_Fwt_Core_RenderEntities_RenderEntitiesConfig_System_Action_UnityEngine_GameObject__
+  commentId: M:Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig,System.Action{UnityEngine.GameObject})
+  name.vb: ExtractCellItemConfig(Integer, RenderEntitiesConfig, Action(Of GameObject))
+  fullName: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(int, Fwt.Core.RenderEntities.RenderEntitiesConfig, System.Action<UnityEngine.GameObject>)
+  fullName.vb: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(Integer, Fwt.Core.RenderEntities.RenderEntitiesConfig, System.Action(Of UnityEngine.GameObject))
+  nameWithType: CellItemConfigAuthoring.ExtractCellItemConfig(int, RenderEntitiesConfig, Action<GameObject>)
+  nameWithType.vb: CellItemConfigAuthoring.ExtractCellItemConfig(Integer, RenderEntitiesConfig, Action(Of GameObject))
 - uid: Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig*
   name: ExtractCellItemConfig
   href: api/Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.html#Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_
@@ -58671,6 +58767,48 @@ references:
   commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring.MinRandomPropIndex
   fullName: Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring.MinRandomPropIndex
   nameWithType: CellItemPropsDataAuthoring.MinRandomPropIndex
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring
+  name: CellItemPropsLayerAuthoring
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html
+  commentId: T:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring
+  nameWithType: CellItemPropsLayerAuthoring
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.ColorMapTextureIndex
+  name: ColorMapTextureIndex
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html#Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_ColorMapTextureIndex
+  commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.ColorMapTextureIndex
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.ColorMapTextureIndex
+  nameWithType: CellItemPropsLayerAuthoring.ColorMapTextureIndex
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.IsFillWithRandomData
+  name: IsFillWithRandomData
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html#Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_IsFillWithRandomData
+  commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.IsFillWithRandomData
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.IsFillWithRandomData
+  nameWithType: CellItemPropsLayerAuthoring.IsFillWithRandomData
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MaxCellHeight
+  name: MaxCellHeight
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html#Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_MaxCellHeight
+  commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MaxCellHeight
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MaxCellHeight
+  nameWithType: CellItemPropsLayerAuthoring.MaxCellHeight
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MaxRandomPropIndex
+  name: MaxRandomPropIndex
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html#Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_MaxRandomPropIndex
+  commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MaxRandomPropIndex
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MaxRandomPropIndex
+  nameWithType: CellItemPropsLayerAuthoring.MaxRandomPropIndex
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MinCellHeight
+  name: MinCellHeight
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html#Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_MinCellHeight
+  commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MinCellHeight
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MinCellHeight
+  nameWithType: CellItemPropsLayerAuthoring.MinCellHeight
+- uid: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MinRandomPropIndex
+  name: MinRandomPropIndex
+  href: api/Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.html#Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_MinRandomPropIndex
+  commentId: F:Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MinRandomPropIndex
+  fullName: Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring.MinRandomPropIndex
+  nameWithType: CellItemPropsLayerAuthoring.MinRandomPropIndex
 - uid: Fwt.HexTerrains.CellItems.CellItemsDataAuthoring
   name: CellItemsDataAuthoring
   href: api/Fwt.HexTerrains.CellItems.CellItemsDataAuthoring.html
@@ -58739,12 +58877,12 @@ references:
   commentId: T:Fwt.HexTerrains.CellItems.CellPropsDataBaker
   fullName: Fwt.HexTerrains.CellItems.CellPropsDataBaker
   nameWithType: CellPropsDataBaker
-- uid: Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake(Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring)
-  name: Bake(CellItemPropsDataAuthoring)
-  href: api/Fwt.HexTerrains.CellItems.CellPropsDataBaker.html#Fwt_HexTerrains_CellItems_CellPropsDataBaker_Bake_Fwt_HexTerrains_CellItems_CellItemPropsDataAuthoring_
-  commentId: M:Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake(Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring)
-  fullName: Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake(Fwt.HexTerrains.CellItems.CellItemPropsDataAuthoring)
-  nameWithType: CellPropsDataBaker.Bake(CellItemPropsDataAuthoring)
+- uid: Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake(Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring)
+  name: Bake(CellItemPropsLayerAuthoring)
+  href: api/Fwt.HexTerrains.CellItems.CellPropsDataBaker.html#Fwt_HexTerrains_CellItems_CellPropsDataBaker_Bake_Fwt_HexTerrains_CellItems_CellItemPropsLayerAuthoring_
+  commentId: M:Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake(Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring)
+  fullName: Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake(Fwt.HexTerrains.CellItems.CellItemPropsLayerAuthoring)
+  nameWithType: CellPropsDataBaker.Bake(CellItemPropsLayerAuthoring)
 - uid: Fwt.HexTerrains.CellItems.CellPropsDataBaker.Bake*
   name: Bake
   href: api/Fwt.HexTerrains.CellItems.CellPropsDataBaker.html#Fwt_HexTerrains_CellItems_CellPropsDataBaker_Bake_
@@ -59560,6 +59698,28 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsDataSystem.UpdateItems
   nameWithType: RenderCellItemsDataSystem.UpdateItems
+- uid: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem
+  name: RenderCellItemsLayerSystem
+  href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.html
+  commentId: T:Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem
+  fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem
+  nameWithType: RenderCellItemsLayerSystem
+- uid: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Data.HexTerrain@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)
+  name: UpdateItems(in HexTerrainVisibility, in HexTerrain, CellItemsLayer, Camera)
+  href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.html#Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem_UpdateItems_Fwt_HexTerrains_Data_HexTerrainVisibility__Fwt_HexTerrains_Data_HexTerrain__Fwt_HexTerrains_CellItems_Data_CellItemsLayer_UnityEngine_Camera_
+  commentId: M:Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility@,Fwt.HexTerrains.Data.HexTerrain@,Fwt.HexTerrains.CellItems.Data.CellItemsLayer,UnityEngine.Camera)
+  name.vb: UpdateItems(HexTerrainVisibility, HexTerrain, CellItemsLayer, Camera)
+  fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems(in Fwt.HexTerrains.Data.HexTerrainVisibility, in Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.CellItems.Data.CellItemsLayer, UnityEngine.Camera)
+  fullName.vb: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems(Fwt.HexTerrains.Data.HexTerrainVisibility, Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.CellItems.Data.CellItemsLayer, UnityEngine.Camera)
+  nameWithType: RenderCellItemsLayerSystem.UpdateItems(in HexTerrainVisibility, in HexTerrain, CellItemsLayer, Camera)
+  nameWithType.vb: RenderCellItemsLayerSystem.UpdateItems(HexTerrainVisibility, HexTerrain, CellItemsLayer, Camera)
+- uid: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems*
+  name: UpdateItems
+  href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.html#Fwt_HexTerrains_CellItems_Systems_RenderCellItemsLayerSystem_UpdateItems_
+  commentId: Overload:Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellItems.Systems.RenderCellItemsLayerSystem.UpdateItems
+  nameWithType: RenderCellItemsLayerSystem.UpdateItems
 - uid: Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem
   name: RenderCellPropsDataSystem
   href: api/Fwt.HexTerrains.CellItems.Systems.RenderCellPropsDataSystem.html

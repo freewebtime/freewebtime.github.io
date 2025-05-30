@@ -197,13 +197,13 @@ public List&lt;CellItemPrefabAuthoring&gt; States</code></pre>
 
 
   <a id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig*"></a>
-  <h4 id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_System_Int32_Fwt_Core_RenderEntities_RenderEntitiesConfig_" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig)">ExtractCellItemConfig(int, RenderEntitiesConfig)</h4>
+  <h4 id="Fwt_HexTerrains_CellItems_CellItemConfigAuthoring_ExtractCellItemConfig_System_Int32_Fwt_Core_RenderEntities_RenderEntitiesConfig_System_Action_UnityEngine_GameObject__" data-uid="Fwt.HexTerrains.CellItems.CellItemConfigAuthoring.ExtractCellItemConfig(System.Int32,Fwt.Core.RenderEntities.RenderEntitiesConfig,System.Action{UnityEngine.GameObject})">ExtractCellItemConfig(int, RenderEntitiesConfig, Action&lt;GameObject&gt;)</h4>
   <div class="markdown level1 summary"><p>Extracts the CellItemConfig from the authoring data.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CellItemConfig ExtractCellItemConfig(int index, RenderEntitiesConfig renderEntities)</code></pre>
+    <pre><code class="lang-csharp hljs">public CellItemConfig ExtractCellItemConfig(int index, RenderEntitiesConfig renderEntities, Action&lt;GameObject&gt; registerPrefabForBakingCallback)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -226,6 +226,11 @@ public List&lt;CellItemPrefabAuthoring&gt; States</code></pre>
         <td><span class="parametername">renderEntities</span></td>
         <td><p>render entities config to register meshes and materials in</p>
 </td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">GameObject</span>&gt;</td>
+        <td><span class="parametername">registerPrefabForBakingCallback</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>

@@ -49733,12 +49733,24 @@ references:
   commentId: F:Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.FramesToMeasure
   fullName: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.FramesToMeasure
   nameWithType: FpsCounter.FramesToMeasure
+- uid: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.IsActive
+  name: IsActive
+  href: api/Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.html#Fwt_Core_Packages_Fwt_Core_Runtime_FpsCounter_IsActive
+  commentId: F:Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.IsActive
+  fullName: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.IsActive
+  nameWithType: FpsCounter.IsActive
 - uid: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.Offset
   name: Offset
   href: api/Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.html#Fwt_Core_Packages_Fwt_Core_Runtime_FpsCounter_Offset
   commentId: F:Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.Offset
   fullName: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.Offset
   nameWithType: FpsCounter.Offset
+- uid: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.ToggleActiveKey
+  name: ToggleActiveKey
+  href: api/Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.html#Fwt_Core_Packages_Fwt_Core_Runtime_FpsCounter_ToggleActiveKey
+  commentId: F:Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.ToggleActiveKey
+  fullName: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.ToggleActiveKey
+  nameWithType: FpsCounter.ToggleActiveKey
 - uid: Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.UseStopwatch
   name: UseStopwatch
   href: api/Fwt.Core.Packages.Fwt.Core.Runtime.FpsCounter.html#Fwt_Core_Packages_Fwt_Core_Runtime_FpsCounter_UseStopwatch
@@ -56421,6 +56433,12 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
   fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
   nameWithType: CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LockMovementKey
+  name: LockMovementKey
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_LockMovementKey
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LockMovementKey
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LockMovementKey
+  nameWithType: CameraControllerAuthoring.LockMovementKey
 - uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.MoveDownKey
   name: MoveDownKey
   href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_MoveDownKey
@@ -56457,6 +56475,24 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.PreventZoomKeys
   fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.PreventZoomKeys
   nameWithType: CameraControllerAuthoring.PreventZoomKeys
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotateLeftKey
+  name: RotateLeftKey
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_RotateLeftKey
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotateLeftKey
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotateLeftKey
+  nameWithType: CameraControllerAuthoring.RotateLeftKey
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotateRightKey
+  name: RotateRightKey
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_RotateRightKey
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotateRightKey
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotateRightKey
+  nameWithType: CameraControllerAuthoring.RotateRightKey
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotationSpeed
+  name: RotationSpeed
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_RotationSpeed
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotationSpeed
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotationSpeed
+  nameWithType: CameraControllerAuthoring.RotationSpeed
 - uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.ZoomSpeed
   name: ZoomSpeed
   href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_ZoomSpeed
@@ -56525,6 +56561,12 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.MinZoomOffset
   fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.MinZoomOffset
   nameWithType: CameraControllerComponentBase.MinZoomOffset
+- uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Rotation
+  name: Rotation
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_Rotation
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Rotation
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.Rotation
+  nameWithType: CameraControllerComponentBase.Rotation
 - uid: Fwt.HexTerrains.Cameras.CameraControllerComponentBase.SetTarget(UnityEngine.Transform)
   name: SetTarget(Transform)
   href: api/Fwt.HexTerrains.Cameras.CameraControllerComponentBase.html#Fwt_HexTerrains_Cameras_CameraControllerComponentBase_SetTarget_UnityEngine_Transform_
@@ -66648,6 +66690,12 @@ references:
   commentId: T:Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen
   fullName: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen
   nameWithType: SamplesMinimapScreen
+- uid: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.ToggleVisibilityKey
+  name: ToggleVisibilityKey
+  href: api/Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.html#Fwt_HexTerrains_Samples_UI_SamplesMinimapScreen_ToggleVisibilityKey
+  commentId: F:Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.ToggleVisibilityKey
+  fullName: Fwt.HexTerrains.Samples.UI.SamplesMinimapScreen.ToggleVisibilityKey
+  nameWithType: SamplesMinimapScreen.ToggleVisibilityKey
 - uid: Fwt.HexTerrains.Samples.UI.SaveGameScreen
   name: SaveGameScreen
   href: api/Fwt.HexTerrains.Samples.UI.SaveGameScreen.html
@@ -79486,6 +79534,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.SetViewData
   nameWithType: UserToolsScreen.SetViewData
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.ToggleVisibilityKey
+  name: ToggleVisibilityKey
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.html#Fwt_HexTerrains_TerrainEditors_UserTools_UI_UserToolsScreen_ToggleVisibilityKey
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.ToggleVisibilityKey
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.ToggleVisibilityKey
+  nameWithType: UserToolsScreen.ToggleVisibilityKey
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.UserToolAuthoring
   name: UserToolAuthoring
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UI.UserToolsScreen.html#Fwt_HexTerrains_TerrainEditors_UserTools_UI_UserToolsScreen_UserToolAuthoring

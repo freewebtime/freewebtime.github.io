@@ -56433,6 +56433,12 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
   fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
   nameWithType: CameraControllerAuthoring.IsFindCameraControllerComponentOnScene
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LoadCameraStateKey
+  name: LoadCameraStateKey
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_LoadCameraStateKey
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LoadCameraStateKey
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LoadCameraStateKey
+  nameWithType: CameraControllerAuthoring.LoadCameraStateKey
 - uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.LockMovementKey
   name: LockMovementKey
   href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_LockMovementKey
@@ -56493,6 +56499,12 @@ references:
   commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotationSpeed
   fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.RotationSpeed
   nameWithType: CameraControllerAuthoring.RotationSpeed
+- uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.SaveCameraStateKey
+  name: SaveCameraStateKey
+  href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_SaveCameraStateKey
+  commentId: F:Fwt.HexTerrains.Cameras.CameraControllerAuthoring.SaveCameraStateKey
+  fullName: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.SaveCameraStateKey
+  nameWithType: CameraControllerAuthoring.SaveCameraStateKey
 - uid: Fwt.HexTerrains.Cameras.CameraControllerAuthoring.ZoomSpeed
   name: ZoomSpeed
   href: api/Fwt.HexTerrains.Cameras.CameraControllerAuthoring.html#Fwt_HexTerrains_Cameras_CameraControllerAuthoring_ZoomSpeed
@@ -65829,6 +65841,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: CreateNewSampleTerrainUserToolState.CreateNewSampleTerrainUserToolState(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: CreateNewSampleTerrainUserToolState.New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: CreateNewSampleTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.html#Fwt_HexTerrains_Samples_CreateNewSampleTerrainUserToolState__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.CreateNewSampleTerrainUserToolState(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: CreateNewSampleTerrainUserToolState.CreateNewSampleTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: CreateNewSampleTerrainUserToolState.New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.#ctor*
   name: CreateNewSampleTerrainUserToolState
   href: api/Fwt.HexTerrains.Samples.CreateNewSampleTerrainUserToolState.html#Fwt_HexTerrains_Samples_CreateNewSampleTerrainUserToolState__ctor_
@@ -65973,6 +65994,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Samples.LoadTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: LoadTerrainUserToolState.LoadTerrainUserToolState(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: LoadTerrainUserToolState.New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.Samples.LoadTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: LoadTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.Samples.LoadTerrainUserToolState.html#Fwt_HexTerrains_Samples_LoadTerrainUserToolState__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.Samples.LoadTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.Samples.LoadTerrainUserToolState.LoadTerrainUserToolState(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.Samples.LoadTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: LoadTerrainUserToolState.LoadTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: LoadTerrainUserToolState.New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.Samples.LoadTerrainUserToolState.#ctor*
   name: LoadTerrainUserToolState
   href: api/Fwt.HexTerrains.Samples.LoadTerrainUserToolState.html#Fwt_HexTerrains_Samples_LoadTerrainUserToolState__ctor_
@@ -65998,6 +66028,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: ResizeTerrainUserToolState.ResizeTerrainUserToolState(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: ResizeTerrainUserToolState.New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: ResizeTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.html#Fwt_HexTerrains_Samples_ResizeTerrainUserToolState__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.ResizeTerrainUserToolState(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: ResizeTerrainUserToolState.ResizeTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: ResizeTerrainUserToolState.New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.#ctor*
   name: ResizeTerrainUserToolState
   href: api/Fwt.HexTerrains.Samples.ResizeTerrainUserToolState.html#Fwt_HexTerrains_Samples_ResizeTerrainUserToolState__ctor_
@@ -66045,6 +66084,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolDataRequest
   nameWithType: SamplesUserToolDataBaker.GetCreateUserToolDataRequest
+- uid: Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest(Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring)
+  name: GetCreateUserToolsDataRequest(SamplesUserToolDataAuthoring)
+  href: api/Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.html#Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_GetCreateUserToolsDataRequest_Fwt_HexTerrains_Samples_SamplesUserToolDataAuthoring_
+  commentId: M:Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest(Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring)
+  fullName: Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest(Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring)
+  nameWithType: SamplesUserToolDataBaker.GetCreateUserToolsDataRequest(SamplesUserToolDataAuthoring)
+- uid: Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest*
+  name: GetCreateUserToolsDataRequest
+  href: api/Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.html#Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_GetCreateUserToolsDataRequest_
+  commentId: Overload:Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest
+  nameWithType: SamplesUserToolDataBaker.GetCreateUserToolsDataRequest
 - uid: Fwt.HexTerrains.Samples.SaveTerrainUserToolState
   name: SaveTerrainUserToolState
   href: api/Fwt.HexTerrains.Samples.SaveTerrainUserToolState.html
@@ -66060,6 +66112,15 @@ references:
   fullName.vb: Fwt.HexTerrains.Samples.SaveTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: SaveTerrainUserToolState.SaveTerrainUserToolState(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: SaveTerrainUserToolState.New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.Samples.SaveTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: SaveTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.Samples.SaveTerrainUserToolState.html#Fwt_HexTerrains_Samples_SaveTerrainUserToolState__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.Samples.SaveTerrainUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.Samples.SaveTerrainUserToolState.SaveTerrainUserToolState(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.Samples.SaveTerrainUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: SaveTerrainUserToolState.SaveTerrainUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: SaveTerrainUserToolState.New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.Samples.SaveTerrainUserToolState.#ctor*
   name: SaveTerrainUserToolState
   href: api/Fwt.HexTerrains.Samples.SaveTerrainUserToolState.html#Fwt_HexTerrains_Samples_SaveTerrainUserToolState__ctor_
@@ -70996,6 +71057,118 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Systems.UpdateColorMapTextureSystem.UpdateColorMap_3
   nameWithType: UpdateColorMapTextureSystem.UpdateColorMap_3
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase
+  name: UpdateColorMapTexturesSystemBase
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html
+  commentId: T:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase
+  nameWithType: UpdateColorMapTexturesSystemBase
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnCreateForCompiler
+  name: OnCreateForCompiler()
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_OnCreateForCompiler
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnCreateForCompiler
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnCreateForCompiler()
+  nameWithType: UpdateColorMapTexturesSystemBase.OnCreateForCompiler()
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnCreateForCompiler*
+  name: OnCreateForCompiler
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_OnCreateForCompiler_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnCreateForCompiler
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnCreateForCompiler
+  nameWithType: UpdateColorMapTexturesSystemBase.OnCreateForCompiler
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_OnUpdate
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnUpdate
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnUpdate()
+  nameWithType: UpdateColorMapTexturesSystemBase.OnUpdate()
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.OnUpdate
+  nameWithType: UpdateColorMapTexturesSystemBase.OnUpdate
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name: UpdateColorMapTextures(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMapTextures_Unity_Entities_Entity_Fwt_HexTerrains_Data_ColorMapTexturesCache__Unity_Entities_DynamicBuffer_Fwt_HexTerrains_Data_ColorMapTexture___Fwt_HexTerrains_Data_HexTerrain_Fwt_HexTerrains_Data_HexTerrainViewMode__
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name.vb: UpdateColorMapTextures(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures(Unity.Entities.Entity, ref Fwt.HexTerrains.Data.ColorMapTexturesCache, in Unity.Entities.DynamicBuffer<Fwt.HexTerrains.Data.ColorMapTexture>, Fwt.HexTerrains.Data.HexTerrain, in Fwt.HexTerrains.Data.HexTerrainViewMode)
+  fullName.vb: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures(Unity.Entities.Entity, Fwt.HexTerrains.Data.ColorMapTexturesCache, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.Data.ColorMapTexture), Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.Data.HexTerrainViewMode)
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMapTextures(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  nameWithType.vb: UpdateColorMapTexturesSystemBase.UpdateColorMapTextures(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures*
+  name: UpdateColorMapTextures
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMapTextures_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMapTextures
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMapTextures
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name: UpdateColorMap_0(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_0_Unity_Entities_Entity_Fwt_HexTerrains_Data_ColorMapTexturesCache__Unity_Entities_DynamicBuffer_Fwt_HexTerrains_Data_ColorMapTexture___Fwt_HexTerrains_Data_HexTerrain_Fwt_HexTerrains_Data_HexTerrainViewMode__
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name.vb: UpdateColorMap_0(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0(Unity.Entities.Entity, ref Fwt.HexTerrains.Data.ColorMapTexturesCache, in Unity.Entities.DynamicBuffer<Fwt.HexTerrains.Data.ColorMapTexture>, Fwt.HexTerrains.Data.HexTerrain, in Fwt.HexTerrains.Data.HexTerrainViewMode)
+  fullName.vb: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0(Unity.Entities.Entity, Fwt.HexTerrains.Data.ColorMapTexturesCache, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.Data.ColorMapTexture), Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.Data.HexTerrainViewMode)
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_0(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  nameWithType.vb: UpdateColorMapTexturesSystemBase.UpdateColorMap_0(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0*
+  name: UpdateColorMap_0
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_0_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_0
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_0
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name: UpdateColorMap_1(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_1_Unity_Entities_Entity_Fwt_HexTerrains_Data_ColorMapTexturesCache__Unity_Entities_DynamicBuffer_Fwt_HexTerrains_Data_ColorMapTexture___Fwt_HexTerrains_Data_HexTerrain_Fwt_HexTerrains_Data_HexTerrainViewMode__
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name.vb: UpdateColorMap_1(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1(Unity.Entities.Entity, ref Fwt.HexTerrains.Data.ColorMapTexturesCache, in Unity.Entities.DynamicBuffer<Fwt.HexTerrains.Data.ColorMapTexture>, Fwt.HexTerrains.Data.HexTerrain, in Fwt.HexTerrains.Data.HexTerrainViewMode)
+  fullName.vb: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1(Unity.Entities.Entity, Fwt.HexTerrains.Data.ColorMapTexturesCache, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.Data.ColorMapTexture), Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.Data.HexTerrainViewMode)
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_1(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  nameWithType.vb: UpdateColorMapTexturesSystemBase.UpdateColorMap_1(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1*
+  name: UpdateColorMap_1
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_1_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_1
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_1
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name: UpdateColorMap_2(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_2_Unity_Entities_Entity_Fwt_HexTerrains_Data_ColorMapTexturesCache__Unity_Entities_DynamicBuffer_Fwt_HexTerrains_Data_ColorMapTexture___Fwt_HexTerrains_Data_HexTerrain_Fwt_HexTerrains_Data_HexTerrainViewMode__
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name.vb: UpdateColorMap_2(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2(Unity.Entities.Entity, ref Fwt.HexTerrains.Data.ColorMapTexturesCache, in Unity.Entities.DynamicBuffer<Fwt.HexTerrains.Data.ColorMapTexture>, Fwt.HexTerrains.Data.HexTerrain, in Fwt.HexTerrains.Data.HexTerrainViewMode)
+  fullName.vb: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2(Unity.Entities.Entity, Fwt.HexTerrains.Data.ColorMapTexturesCache, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.Data.ColorMapTexture), Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.Data.HexTerrainViewMode)
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_2(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  nameWithType.vb: UpdateColorMapTexturesSystemBase.UpdateColorMap_2(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2*
+  name: UpdateColorMap_2
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_2_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_2
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_2
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name: UpdateColorMap_3(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_3_Unity_Entities_Entity_Fwt_HexTerrains_Data_ColorMapTexturesCache__Unity_Entities_DynamicBuffer_Fwt_HexTerrains_Data_ColorMapTexture___Fwt_HexTerrains_Data_HexTerrain_Fwt_HexTerrains_Data_HexTerrainViewMode__
+  commentId: M:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3(Unity.Entities.Entity,Fwt.HexTerrains.Data.ColorMapTexturesCache@,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Data.ColorMapTexture}@,Fwt.HexTerrains.Data.HexTerrain,Fwt.HexTerrains.Data.HexTerrainViewMode@)
+  name.vb: UpdateColorMap_3(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3(Unity.Entities.Entity, ref Fwt.HexTerrains.Data.ColorMapTexturesCache, in Unity.Entities.DynamicBuffer<Fwt.HexTerrains.Data.ColorMapTexture>, Fwt.HexTerrains.Data.HexTerrain, in Fwt.HexTerrains.Data.HexTerrainViewMode)
+  fullName.vb: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3(Unity.Entities.Entity, Fwt.HexTerrains.Data.ColorMapTexturesCache, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.Data.ColorMapTexture), Fwt.HexTerrains.Data.HexTerrain, Fwt.HexTerrains.Data.HexTerrainViewMode)
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_3(Entity, ref ColorMapTexturesCache, in DynamicBuffer<ColorMapTexture>, HexTerrain, in HexTerrainViewMode)
+  nameWithType.vb: UpdateColorMapTexturesSystemBase.UpdateColorMap_3(Entity, ColorMapTexturesCache, DynamicBuffer(Of ColorMapTexture), HexTerrain, HexTerrainViewMode)
+- uid: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3*
+  name: UpdateColorMap_3
+  href: api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html#Fwt_HexTerrains_Systems_UpdateColorMapTexturesSystemBase_UpdateColorMap_3_
+  commentId: Overload:Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.UpdateColorMap_3
+  nameWithType: UpdateColorMapTexturesSystemBase.UpdateColorMap_3
 - uid: Fwt.HexTerrains.Systems.UpdateMiniMapScreenSystemBase
   name: UpdateMiniMapScreenSystemBase
   href: api/Fwt.HexTerrains.Systems.UpdateMiniMapScreenSystemBase.html
@@ -73922,6 +74095,140 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine.UserToolAPI
   nameWithType: UserToolStateMachine.UserToolAPI
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase
+  name: UserToolsStateMachineBase
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html
+  commentId: T:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase
+  nameWithType: UserToolsStateMachineBase
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.#ctor(Fwt.HexTerrains.IHexTerrainAPI)
+  name: UserToolsStateMachineBase(IHexTerrainAPI)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase__ctor_Fwt_HexTerrains_IHexTerrainAPI_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.#ctor(Fwt.HexTerrains.IHexTerrainAPI)
+  name.vb: New(IHexTerrainAPI)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolsStateMachineBase(Fwt.HexTerrains.IHexTerrainAPI)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.New(Fwt.HexTerrains.IHexTerrainAPI)
+  nameWithType: UserToolsStateMachineBase.UserToolsStateMachineBase(IHexTerrainAPI)
+  nameWithType.vb: UserToolsStateMachineBase.New(IHexTerrainAPI)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.#ctor*
+  name: UserToolsStateMachineBase
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase__ctor_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolsStateMachineBase
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.New
+  nameWithType: UserToolsStateMachineBase.UserToolsStateMachineBase
+  nameWithType.vb: UserToolsStateMachineBase.New
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.AddState(Fwt.Core.StateMachines.ISmState)
+  name: AddState(ISmState)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_AddState_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.AddState(Fwt.Core.StateMachines.ISmState)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.AddState(Fwt.Core.StateMachines.ISmState)
+  nameWithType: UserToolsStateMachineBase.AddState(ISmState)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.AddState*
+  name: AddState
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_AddState_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.AddState
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.AddState
+  nameWithType: UserToolsStateMachineBase.AddState
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.Dispose
+  name: Dispose()
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_Dispose
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.Dispose
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.Dispose()
+  nameWithType: UserToolsStateMachineBase.Dispose()
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.Dispose*
+  name: Dispose
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_Dispose_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.Dispose
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.Dispose
+  nameWithType: UserToolsStateMachineBase.Dispose
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState*
+  name: GetState
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_GetState_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState
+  nameWithType: UserToolsStateMachineBase.GetState
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType(System.Int32)
+  name: GetStateByUserToolType(int)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_GetStateByUserToolType_System_Int32_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType(System.Int32)
+  name.vb: GetStateByUserToolType(Integer)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType(int)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType(Integer)
+  nameWithType: UserToolsStateMachineBase.GetStateByUserToolType(int)
+  nameWithType.vb: UserToolsStateMachineBase.GetStateByUserToolType(Integer)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType*
+  name: GetStateByUserToolType
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_GetStateByUserToolType_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetStateByUserToolType
+  nameWithType: UserToolsStateMachineBase.GetStateByUserToolType
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState``1(System.Int32)
+  name: GetState<TState>(int)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_GetState__1_System_Int32_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState``1(System.Int32)
+  name.vb: GetState(Of TState)(Integer)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState<TState>(int)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.GetState(Of TState)(Integer)
+  nameWithType: UserToolsStateMachineBase.GetState<TState>(int)
+  nameWithType.vb: UserToolsStateMachineBase.GetState(Of TState)(Integer)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.StatesByType
+  name: StatesByType
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_StatesByType
+  commentId: F:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.StatesByType
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.StatesByType
+  nameWithType: UserToolsStateMachineBase.StatesByType
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState*
+  name: SwitchState
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_SwitchState_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState
+  nameWithType: UserToolsStateMachineBase.SwitchState
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType(System.Int32)
+  name: SwitchStateByUserToolType(int)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_SwitchStateByUserToolType_System_Int32_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType(System.Int32)
+  name.vb: SwitchStateByUserToolType(Integer)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType(int)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType(Integer)
+  nameWithType: UserToolsStateMachineBase.SwitchStateByUserToolType(int)
+  nameWithType.vb: UserToolsStateMachineBase.SwitchStateByUserToolType(Integer)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType*
+  name: SwitchStateByUserToolType
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_SwitchStateByUserToolType_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchStateByUserToolType
+  nameWithType: UserToolsStateMachineBase.SwitchStateByUserToolType
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState``1(System.Int32)
+  name: SwitchState<TState>(int)
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_SwitchState__1_System_Int32_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState``1(System.Int32)
+  name.vb: SwitchState(Of TState)(Integer)
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState<TState>(int)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.SwitchState(Of TState)(Integer)
+  nameWithType: UserToolsStateMachineBase.SwitchState<TState>(int)
+  nameWithType.vb: UserToolsStateMachineBase.SwitchState(Of TState)(Integer)
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolAPI
+  name: UserToolAPI
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_UserToolAPI
+  commentId: P:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolAPI
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolAPI
+  nameWithType: UserToolsStateMachineBase.UserToolAPI
+- uid: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolAPI*
+  name: UserToolAPI
+  href: api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html#Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_UserToolAPI_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolAPI
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.UserToolAPI
+  nameWithType: UserToolsStateMachineBase.UserToolAPI
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools
   name: Fwt.HexTerrains.TerrainEditors.UserTools
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.html
@@ -75417,6 +75724,15 @@ references:
   fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase(Of TScreen, TViewData).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: CreateNewTerrainUserToolStateBase<TScreen, TViewData>.CreateNewTerrainUserToolStateBase(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: CreateNewTerrainUserToolStateBase(Of TScreen, TViewData).New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: CreateNewTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase<TScreen, TViewData>.CreateNewTerrainUserToolStateBase(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase(Of TScreen, TViewData).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: CreateNewTerrainUserToolStateBase<TScreen, TViewData>.CreateNewTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: CreateNewTerrainUserToolStateBase(Of TScreen, TViewData).New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase`2.#ctor*
   name: CreateNewTerrainUserToolStateBase
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.CreateNewTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_CreateNewTerrainUserToolStateBase_2__ctor_
@@ -76062,6 +76378,15 @@ references:
   fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase(Of TScreen, TCallback).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: LoadTerrainUserToolStateBase<TScreen, TCallback>.LoadTerrainUserToolStateBase(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: LoadTerrainUserToolStateBase(Of TScreen, TCallback).New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: LoadTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_LoadTerrainUserToolStateBase_2__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase<TScreen, TCallback>.LoadTerrainUserToolStateBase(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase(Of TScreen, TCallback).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: LoadTerrainUserToolStateBase<TScreen, TCallback>.LoadTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: LoadTerrainUserToolStateBase(Of TScreen, TCallback).New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase`2.#ctor*
   name: LoadTerrainUserToolStateBase
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.LoadTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_LoadTerrainUserToolStateBase_2__ctor_
@@ -77541,6 +77866,15 @@ references:
   fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase(Of TScreen, TCallback).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: ResizeTerrainUserToolStateBase<TScreen, TCallback>.ResizeTerrainUserToolStateBase(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: ResizeTerrainUserToolStateBase(Of TScreen, TCallback).New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: ResizeTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ResizeTerrainUserToolStateBase_2__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase<TScreen, TCallback>.ResizeTerrainUserToolStateBase(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase(Of TScreen, TCallback).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: ResizeTerrainUserToolStateBase<TScreen, TCallback>.ResizeTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: ResizeTerrainUserToolStateBase(Of TScreen, TCallback).New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase`2.#ctor*
   name: ResizeTerrainUserToolStateBase
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ResizeTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ResizeTerrainUserToolStateBase_2__ctor_
@@ -77781,6 +78115,15 @@ references:
   fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase(Of TScreen, TCallback).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: SaveTerrainUserToolStateBase<TScreen, TCallback>.SaveTerrainUserToolStateBase(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: SaveTerrainUserToolStateBase(Of TScreen, TCallback).New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: SaveTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_SaveTerrainUserToolStateBase_2__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase`2.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase<TScreen, TCallback>.SaveTerrainUserToolStateBase(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase(Of TScreen, TCallback).New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: SaveTerrainUserToolStateBase<TScreen, TCallback>.SaveTerrainUserToolStateBase(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: SaveTerrainUserToolStateBase(Of TScreen, TCallback).New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase`2.#ctor*
   name: SaveTerrainUserToolStateBase
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.SaveTerrainUserToolStateBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_SaveTerrainUserToolStateBase_2__ctor_
@@ -79232,6 +79575,15 @@ references:
   fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine)
   nameWithType: ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState(IHexTerrainAPI, UserToolStateMachine)
   nameWithType.vb: ToggleTerrainVisibilityUserToolState.New(IHexTerrainAPI, UserToolStateMachine)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name: ToggleTerrainVisibilityUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState__ctor_Fwt_HexTerrains_IHexTerrainAPI_Fwt_HexTerrains_TerrainEditors_StateMachines_UserToolsStateMachineBase_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor(Fwt.HexTerrains.IHexTerrainAPI,Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  name.vb: New(IHexTerrainAPI, UserToolsStateMachineBase)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.New(Fwt.HexTerrains.IHexTerrainAPI, Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase)
+  nameWithType: ToggleTerrainVisibilityUserToolState.ToggleTerrainVisibilityUserToolState(IHexTerrainAPI, UserToolsStateMachineBase)
+  nameWithType.vb: ToggleTerrainVisibilityUserToolState.New(IHexTerrainAPI, UserToolsStateMachineBase)
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.#ctor*
   name: ToggleTerrainVisibilityUserToolState
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.StateMachines.States.ToggleTerrainVisibilityUserToolState.html#Fwt_HexTerrains_TerrainEditors_UserTools_StateMachines_States_ToggleTerrainVisibilityUserToolState__ctor_
@@ -79357,6 +79709,32 @@ references:
   fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.CreateUserToolsDataSystem(Of TUserToolsData, TRequest).CreateUserToolsData
   nameWithType: CreateUserToolsDataSystem<TUserToolsData, TRequest>.CreateUserToolsData
   nameWithType.vb: CreateUserToolsDataSystem(Of TUserToolsData, TRequest).CreateUserToolsData
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase`1
+  name: UpdateUserToolsStateMachineSystemBase<TUserToolsData>
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase-1.html
+  commentId: T:Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase`1
+  name.vb: UpdateUserToolsStateMachineSystemBase(Of TUserToolsData)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase<TUserToolsData>
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase(Of TUserToolsData)
+  nameWithType: UpdateUserToolsStateMachineSystemBase<TUserToolsData>
+  nameWithType.vb: UpdateUserToolsStateMachineSystemBase(Of TUserToolsData)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase`1.UpdateData(`0)
+  name: UpdateData(TUserToolsData)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase-1.html#Fwt_HexTerrains_TerrainEditors_UserTools_Systems_UpdateUserToolsStateMachineSystemBase_1_UpdateData__0_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase`1.UpdateData(`0)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase<TUserToolsData>.UpdateData(TUserToolsData)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase(Of TUserToolsData).UpdateData(TUserToolsData)
+  nameWithType: UpdateUserToolsStateMachineSystemBase<TUserToolsData>.UpdateData(TUserToolsData)
+  nameWithType.vb: UpdateUserToolsStateMachineSystemBase(Of TUserToolsData).UpdateData(TUserToolsData)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase`1.UpdateData*
+  name: UpdateData
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase-1.html#Fwt_HexTerrains_TerrainEditors_UserTools_Systems_UpdateUserToolsStateMachineSystemBase_1_UpdateData_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase`1.UpdateData
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase<TUserToolsData>.UpdateData
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase(Of TUserToolsData).UpdateData
+  nameWithType: UpdateUserToolsStateMachineSystemBase<TUserToolsData>.UpdateData
+  nameWithType.vb: UpdateUserToolsStateMachineSystemBase(Of TUserToolsData).UpdateData
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystem`1
   name: UpdateUserToolsStateMachineSystem<TUserToolsData>
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystem-1.html
@@ -80284,6 +80662,130 @@ references:
   commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsData.StateMachine
   fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsData.StateMachine
   nameWithType: UserToolsData.StateMachine
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase
+  name: UserToolsDataAuthoringBase
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.html
+  commentId: T:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase
+  nameWithType: UserToolsDataAuthoringBase
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.Heightmaps
+  name: Heightmaps
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataAuthoringBase_Heightmaps
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.Heightmaps
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.Heightmaps
+  nameWithType: UserToolsDataAuthoringBase.Heightmaps
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.IsAddHeightmaps
+  name: IsAddHeightmaps
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataAuthoringBase_IsAddHeightmaps
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.IsAddHeightmaps
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.IsAddHeightmaps
+  nameWithType: UserToolsDataAuthoringBase.IsAddHeightmaps
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.IsAddTerrainPrefabConfigs
+  name: IsAddTerrainPrefabConfigs
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataAuthoringBase_IsAddTerrainPrefabConfigs
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.IsAddTerrainPrefabConfigs
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.IsAddTerrainPrefabConfigs
+  nameWithType: UserToolsDataAuthoringBase.IsAddTerrainPrefabConfigs
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.TerrainPrefabs
+  name: TerrainPrefabs
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataAuthoringBase_TerrainPrefabs
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.TerrainPrefabs
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.TerrainPrefabs
+  nameWithType: UserToolsDataAuthoringBase.TerrainPrefabs
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2
+  name: UserToolsDataBakerBase<TAuthoring, TRequest>
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html
+  commentId: T:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2
+  name.vb: UserToolsDataBakerBase(Of TAuthoring, TRequest)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase<TAuthoring, TRequest>
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase(Of TAuthoring, TRequest)
+  nameWithType: UserToolsDataBakerBase<TAuthoring, TRequest>
+  nameWithType.vb: UserToolsDataBakerBase(Of TAuthoring, TRequest)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.Bake(`0)
+  name: Bake(TAuthoring)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_Bake__0_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.Bake(`0)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase<TAuthoring, TRequest>.Bake(TAuthoring)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase(Of TAuthoring, TRequest).Bake(TAuthoring)
+  nameWithType: UserToolsDataBakerBase<TAuthoring, TRequest>.Bake(TAuthoring)
+  nameWithType.vb: UserToolsDataBakerBase(Of TAuthoring, TRequest).Bake(TAuthoring)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.Bake*
+  name: Bake
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_Bake_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.Bake
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase<TAuthoring, TRequest>.Bake
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase(Of TAuthoring, TRequest).Bake
+  nameWithType: UserToolsDataBakerBase<TAuthoring, TRequest>.Bake
+  nameWithType.vb: UserToolsDataBakerBase(Of TAuthoring, TRequest).Bake
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.GetCreateUserToolsDataRequest(`0)
+  name: GetCreateUserToolsDataRequest(TAuthoring)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_GetCreateUserToolsDataRequest__0_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.GetCreateUserToolsDataRequest(`0)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase<TAuthoring, TRequest>.GetCreateUserToolsDataRequest(TAuthoring)
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase(Of TAuthoring, TRequest).GetCreateUserToolsDataRequest(TAuthoring)
+  nameWithType: UserToolsDataBakerBase<TAuthoring, TRequest>.GetCreateUserToolsDataRequest(TAuthoring)
+  nameWithType.vb: UserToolsDataBakerBase(Of TAuthoring, TRequest).GetCreateUserToolsDataRequest(TAuthoring)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.GetCreateUserToolsDataRequest*
+  name: GetCreateUserToolsDataRequest
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_GetCreateUserToolsDataRequest_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.GetCreateUserToolsDataRequest
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase<TAuthoring, TRequest>.GetCreateUserToolsDataRequest
+  fullName.vb: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase(Of TAuthoring, TRequest).GetCreateUserToolsDataRequest
+  nameWithType: UserToolsDataBakerBase<TAuthoring, TRequest>.GetCreateUserToolsDataRequest
+  nameWithType.vb: UserToolsDataBakerBase(Of TAuthoring, TRequest).GetCreateUserToolsDataRequest
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase
+  name: UserToolsDataBase
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html
+  commentId: T:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase
+  nameWithType: UserToolsDataBase
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.CreateStateMachine(Fwt.HexTerrains.IHexTerrainAPI)
+  name: CreateStateMachine(IHexTerrainAPI)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_CreateStateMachine_Fwt_HexTerrains_IHexTerrainAPI_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.CreateStateMachine(Fwt.HexTerrains.IHexTerrainAPI)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.CreateStateMachine(Fwt.HexTerrains.IHexTerrainAPI)
+  nameWithType: UserToolsDataBase.CreateStateMachine(IHexTerrainAPI)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.CreateStateMachine*
+  name: CreateStateMachine
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_CreateStateMachine_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.CreateStateMachine
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.CreateStateMachine
+  nameWithType: UserToolsDataBase.CreateStateMachine
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Dispose
+  name: Dispose()
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_Dispose
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Dispose
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Dispose()
+  nameWithType: UserToolsDataBase.Dispose()
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Dispose*
+  name: Dispose
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_Dispose_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Dispose
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Dispose
+  nameWithType: UserToolsDataBase.Dispose
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Init(Fwt.HexTerrains.IHexTerrainAPI)
+  name: Init(IHexTerrainAPI)
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_Init_Fwt_HexTerrains_IHexTerrainAPI_
+  commentId: M:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Init(Fwt.HexTerrains.IHexTerrainAPI)
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Init(Fwt.HexTerrains.IHexTerrainAPI)
+  nameWithType: UserToolsDataBase.Init(IHexTerrainAPI)
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Init*
+  name: Init
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_Init_
+  commentId: Overload:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Init
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.Init
+  nameWithType: UserToolsDataBase.Init
+- uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.StateMachine
+  name: StateMachine
+  href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBase_StateMachine
+  commentId: F:Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.StateMachine
+  fullName: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.StateMachine
+  nameWithType: UserToolsDataBase.StateMachine
 - uid: Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsPanelDataSource
   name: UserToolsPanelDataSource
   href: api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsPanelDataSource.html

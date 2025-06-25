@@ -7588,6 +7588,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Systems.UpdateColorMapTexturesSystemBase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Systems.UpdateMiniMapScreenSystemBase.yml",
       "output": {
         ".html": {
@@ -7822,6 +7836,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolStateMachine",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.StateMachines.UserToolsStateMachineBase",
       "Summary": null
     },
     {
@@ -8666,6 +8694,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.Systems.UpdateUserToolsStateMachineSystemBase<TUserToolsData>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.Systems.yml",
       "output": {
         ".html": {
@@ -8886,6 +8928,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataAuthoringBase",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase<TAuthoring, TRequest>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBase",
       "Summary": null
     },
     {

@@ -5,11 +5,11 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>Class SamplesUserToolDataBaker | Hex Terrains Framework </title>
+      <title>Class UserToolsDataBakerBase&lt;TAuthoring, TRequest&gt; | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="Class SamplesUserToolDataBaker | Hex Terrains Framework ">
+      <meta name="title" content="Class UserToolsDataBakerBase&lt;TAuthoring, TRequest&gt; | Hex Terrains Framework ">
     
-    <meta name="description" content="Baker for the SamplesUserToolDataAuthoring component.">
+    
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -76,33 +76,22 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Samples.SamplesUserToolDataBaker">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2">
 
 
 
-  <h1 id="Fwt_HexTerrains_Samples_SamplesUserToolDataBaker" data-uid="Fwt.HexTerrains.Samples.SamplesUserToolDataBaker" class="text-break">Class SamplesUserToolDataBaker</h1>
-  <div class="markdown level0 summary"><p>Baker for the SamplesUserToolDataAuthoring component.</p>
-</div>
+  <h1 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2" class="text-break">Class UserToolsDataBakerBase&lt;TAuthoring, TRequest&gt;</h1>
+  <div class="markdown level0 summary"></div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">IBaker</span></div>
-    <div class="level2"><span class="xref">Baker</span>&lt;<a class="xref" href="Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring.html">SamplesUserToolDataAuthoring</a>&gt;</div>
-    <div class="level3"><a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataBaker-2.html">UserToolDataBaker</a>&lt;<a class="xref" href="Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring.html">SamplesUserToolDataAuthoring</a>, <a class="xref" href="Fwt.HexTerrains.Samples.Data.CreateSamplesUserToolsDataRequest.html">CreateSamplesUserToolsDataRequest</a>&gt;</div>
-    <div class="level4"><span class="xref">SamplesUserToolDataBaker</span></div>
+    <div class="level2"><span class="xref">Baker</span>&lt;TAuthoring&gt;</div>
+    <div class="level3"><span class="xref">UserToolsDataBakerBase&lt;TAuthoring, TRequest&gt;</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
-    <div>
-      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataBaker-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataBaker_2_Bake__0_">UserToolDataBaker&lt;SamplesUserToolDataAuthoring, CreateSamplesUserToolsDataRequest&gt;.Bake(SamplesUserToolDataAuthoring)</a>
-    </div>
-    <div>
-      <a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataBaker-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataBaker_2_GetCreateUserToolDataRequest__0_">UserToolDataBaker&lt;SamplesUserToolDataAuthoring, CreateSamplesUserToolsDataRequest&gt;.GetCreateUserToolDataRequest(SamplesUserToolDataAuthoring)</a>
-    </div>
-    <div>
-      <span class="xref">Baker&lt;SamplesUserToolDataAuthoring&gt;.Bake(SamplesUserToolDataAuthoring)</span>
-    </div>
     <div>
       <span class="xref">IBaker.GetSceneGUID()</span>
     </div>
@@ -500,23 +489,43 @@
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
     </div>
   </div>
-  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Samples.html">Samples</a></h6>
-  <h6><strong>Assembly</strong>: FwtHexTerrainSamples.dll</h6>
-  <h5 id="Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_syntax">Syntax</h5>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.TerrainEditors.html">TerrainEditors</a>.<a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.html">UserTools</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SamplesUserToolDataBaker : UserToolDataBaker&lt;SamplesUserToolDataAuthoring, CreateSamplesUserToolsDataRequest&gt;</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class UserToolsDataBakerBase&lt;TAuthoring, TRequest&gt; : Baker&lt;TAuthoring&gt; where TAuthoring : UserToolsDataAuthoringBase where TRequest : unmanaged, IComponentData</code></pre>
   </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TAuthoring</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TRequest</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
 
 
-  <a id="Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_GetCreateUserToolDataRequest_" data-uid="Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolDataRequest*"></a>
-  <h4 id="Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_GetCreateUserToolDataRequest_Fwt_HexTerrains_Samples_SamplesUserToolDataAuthoring_" data-uid="Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolDataRequest(Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring)">GetCreateUserToolDataRequest(SamplesUserToolDataAuthoring)</h4>
-  <div class="markdown level1 summary"></div>
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_Bake_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.Bake*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_Bake__0_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.Bake(`0)">Bake(TAuthoring)</h4>
+  <div class="markdown level1 summary"><p>Called in the baking process to bake the authoring component</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override CreateSamplesUserToolsDataRequest GetCreateUserToolDataRequest(SamplesUserToolDataAuthoring authoring)</code></pre>
+    <pre><code class="lang-csharp hljs">public override void Bake(TAuthoring authoring)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -529,7 +538,40 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring.html">SamplesUserToolDataAuthoring</a></td>
+        <td><span class="xref">TAuthoring</span></td>
+        <td><span class="parametername">authoring</span></td>
+        <td><p>The authoring component to bake</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Unity.Entities.Baker&lt;TAuthoring&gt;.Bake(TAuthoring)</span></div>
+  <h5 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_Bake__0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method will be called for every instance of TAuthoringType in order to bake that instance.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_GetCreateUserToolsDataRequest_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.GetCreateUserToolsDataRequest*"></a>
+  <h4 id="Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_GetCreateUserToolsDataRequest__0_" data-uid="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase`2.GetCreateUserToolsDataRequest(`0)">GetCreateUserToolsDataRequest(TAuthoring)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected abstract TRequest GetCreateUserToolsDataRequest(TAuthoring authoring)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TAuthoring</span></td>
         <td><span class="parametername">authoring</span></td>
         <td></td>
       </tr>
@@ -545,57 +587,11 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Samples.Data.CreateSamplesUserToolsDataRequest.html">CreateSamplesUserToolsDataRequest</a></td>
+        <td><span class="xref">TRequest</span></td>
         <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolDataBaker-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolDataBaker_2_GetCreateUserToolDataRequest__0_">UserToolDataBaker&lt;SamplesUserToolDataAuthoring, CreateSamplesUserToolsDataRequest&gt;.GetCreateUserToolDataRequest(SamplesUserToolDataAuthoring)</a></div>
-
-
-  <a id="Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_GetCreateUserToolsDataRequest_" data-uid="Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest*"></a>
-  <h4 id="Fwt_HexTerrains_Samples_SamplesUserToolDataBaker_GetCreateUserToolsDataRequest_Fwt_HexTerrains_Samples_SamplesUserToolDataAuthoring_" data-uid="Fwt.HexTerrains.Samples.SamplesUserToolDataBaker.GetCreateUserToolsDataRequest(Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring)">GetCreateUserToolsDataRequest(SamplesUserToolDataAuthoring)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override CreateSamplesUserToolsDataRequest GetCreateUserToolsDataRequest(SamplesUserToolDataAuthoring authoring)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Samples.SamplesUserToolDataAuthoring.html">SamplesUserToolDataAuthoring</a></td>
-        <td><span class="parametername">authoring</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Samples.Data.CreateSamplesUserToolsDataRequest.html">CreateSamplesUserToolsDataRequest</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="overrides">Overrides</h5>
-  <div><a class="xref" href="Fwt.HexTerrains.TerrainEditors.UserTools.UserToolsDataBakerBase-2.html#Fwt_HexTerrains_TerrainEditors_UserTools_UserToolsDataBakerBase_2_GetCreateUserToolsDataRequest__0_">UserToolsDataBakerBase&lt;SamplesUserToolDataAuthoring, CreateSamplesUserToolsDataRequest&gt;.GetCreateUserToolsDataRequest(SamplesUserToolDataAuthoring)</a></div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>

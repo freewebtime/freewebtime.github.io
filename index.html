@@ -1,92 +1,106 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta http-equiv="refresh" content="0; url=chessknight/">
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-    <meta http-equiv="Pragma" content="no-cache" />
-    <meta http-equiv="Expires" content="0" />
-    <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Unity WebGL Player | ChessKnight</title>
-    <link rel="shortcut icon" href="TemplateData/favicon.ico">
-    <link rel="stylesheet" href="TemplateData/style.css">
-  </head>
-  <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1280 height=800></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
-        </div>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yevhen “Jack” Sydorenko — Software Engineer Portfolio</title>
+  <meta name="description" content="Senior Unity/DOTS & C# engineer. Creator of StoryTailor, Hex Terrains Framework, and ChessKnight. Experienced in simulation, performance, and ECS architecture."/>
+  <meta name="author" content="Yevhen “Jack” Sydorenko"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,sans-serif;background:#0b1020;color:#e6e9ef;margin:0;line-height:1.6}
+    a{color:#22d3ee;text-decoration:none}
+    a:hover{text-decoration:underline}
+    header,footer{background:#111735;padding:1rem 2rem}
+    main{max-width:1100px;margin:auto;padding:2rem}
+    section{margin:3rem 0}
+    h1,h2,h3{color:#22d3ee;margin-bottom:0.3em}
+    .grid{display:grid;gap:1.5rem}
+    @media(min-width:800px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#0f1630;border-radius:12px;padding:1rem;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .thumb{aspect-ratio:16/9;background:#1b243c;border-radius:8px;margin-bottom:0.8rem}
+    .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem}
+    .badge{font-size:12px;padding:4px 8px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:#9aa4b2}
+    .btn{display:inline-block;background:linear-gradient(180deg,#0ea5e9,#22d3ee);color:#001019;padding:0.6rem 1.2rem;border-radius:10px;font-weight:600;margin-top:0.8rem}
+    .btn.ghost{background:none;border:1px solid #22d3ee;color:#22d3ee}
+  </style>
+</head>
+<body>
+<header>
+  <h1>Yevhen “Jack” Sydorenko</h1>
+  <p>Senior Unity/DOTS & C# Engineer | Simulation • ECS • Tools</p>
+</header>
+<main>
+  <section id="featured">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"></div>
+        <h3>StoryTailor</h3>
+        <p>Open-source narrative scripting language with VS Code extension. Enables dynamic branching, variables, and localization.</p>
+        <div class="stack"><span class="badge">TypeScript</span><span class="badge">npm</span><span class="badge">VS Code</span></div>
       </div>
-      <div id="unity-mobile-warning">
-        WebGL builds are not supported on mobile devices.
+      <div class="card">
+        <div class="thumb"></div>
+        <h3>Hex Terrains Framework</h3>
+        <p>High-performance hex terrain engine for Unity DOTS, supporting multi-layer simulation and in-game editing.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">DOTS/ECS</span><span class="badge">Burst</span></div>
       </div>
-      <div id="unity-footer">
-        <div id="unity-webgl-logo"></div>
-        <div id="unity-fullscreen-button"></div>
-        <div id="unity-build-title"><a href="ChessKnight.apk">Android build (.apk file)</a> | <a href="ChessKnight.zip">Desktop build (Win)</a> | ChessKnight </div>
+      <div class="card">
+        <div class="thumb"></div>
+        <h3>ChessKnight</h3>
+        <p>A minimal puzzle about visiting every tile with a knight. Built in Unity for WebGL and Android.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">WebGL</span></div>
       </div>
     </div>
-    <script>
-      var pathPrefix = "WebGL/1.1.1.0/";
-      var buildUrl = pathPrefix + "Build/";
-      var loaderUrl = buildUrl + "ChessKnight.loader.js";
-      var config = {
-        dataUrl: buildUrl + "ChessKnight.data.unityweb",
-        frameworkUrl: buildUrl + "ChessKnight.framework.js.unityweb",
-        codeUrl: buildUrl + "ChessKnight.wasm.unityweb",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Freewebtime",
-        productName: "ChessKnight",
-        productVersion: "1.1.1.0",
-      };
+  </section>
 
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var fullscreenButton = document.querySelector("#unity-fullscreen-button");
-      var mobileWarning = document.querySelector("#unity-mobile-warning");
+  <section id="professional">
+    <h2>Professional Work</h2>
+    <p>Selected commercial projects I contributed to as part of a team. Focus on scalable systems, performance, and gameplay architecture.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"></div>
+        <h3>Project Title</h3>
+        <p>Worked as <b>Senior Unity Developer</b> at <b>Company Name</b> (Year–Year). Contributed to ECS-based gameplay systems, optimization, and tool development.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">C#</span><span class="badge">ECS</span></div>
+        <a class="btn ghost" href="#" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <div class="thumb"></div>
+        <h3>Project Title</h3>
+        <p>Worked as <b>Lead Engineer</b> at <b>Company Name</b>. Responsible for gameplay systems, physics, and performance optimization.</p>
+        <div class="stack"><span class="badge">C#</span><span class="badge">DOTS</span><span class="badge">Optimization</span></div>
+        <a class="btn ghost" href="#" target="_blank">View Online</a>
+      </div>
+      <div class="card">
+        <div class="thumb"></div>
+        <h3>Project Title</h3>
+        <p>Role at <b>Company Name</b>. Handled UI, game systems, or engine features, depending on project type.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">Tools</span></div>
+        <a class="btn ghost" href="#" target="_blank">Learn More</a>
+      </div>
+    </div>
+  </section>
 
-      // By default Unity keeps WebGL canvas render target size matched with
-      // the DOM size of the canvas element (scaled by window.devicePixelRatio)
-      // Set this to false if you want to decouple this synchronization from
-      // happening inside the engine, and you would instead like to size up
-      // the canvas DOM size and WebGL render target sizes yourself.
-      // config.matchWebGLToCanvasSize = false;
+  <section id="skills">
+    <h2>Core Skills</h2>
+    <ul>
+      <li>Unity DOTS/ECS • Jobs • Burst • Profiling • Optimization</li>
+      <li>Simulation & Tools Architecture • In-game Editors • Serialization</li>
+      <li>TypeScript • npm • VS Code Extensions • CI/CD pipelines</li>
+    </ul>
+  </section>
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        // Avoid draining fillrate performance on mobile devices,
-        // and default/override low DPI mode on mobile browsers.
-        config.devicePixelRatio = 1;
-        mobileWarning.style.display = "block";
-        setTimeout(() => {
-          mobileWarning.style.display = "none";
-        }, 5000);
-      } else {
-        canvas.style.width = "1280px";
-        canvas.style.height = "800px";
-      }
-      loadingBar.style.display = "block";
-
-      var script = document.createElement("script");
-      script.src = loaderUrl;
-      script.onload = () => {
-        createUnityInstance(canvas, config, (progress) => {
-          progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
-          loadingBar.style.display = "none";
-          fullscreenButton.onclick = () => {
-            unityInstance.SetFullscreen(1);
-          };
-        }).catch((message) => {
-          alert(message);
-        });
-      };
-      document.body.appendChild(script);
-    </script>
-  </body>
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:freewebtime@gmail.com">freewebtime@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/jacksydorenko/" target="_blank">linkedin.com/in/jacksydorenko</a></p>
+    <p>GitHub: <a href="https://github.com/freewebtime" target="_blank">github.com/freewebtime</a></p>
+  </section>
+</main>
+<footer>
+  <p>© <script>document.write(new Date().getFullYear());</script> Yevhen “Jack” Sydorenko</p>
+</footer>
+</body>
 </html>

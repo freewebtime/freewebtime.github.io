@@ -23,6 +23,8 @@
     .badge{font-size:12px;padding:4px 8px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:#9aa4b2}
     .btn{display:inline-block;background:linear-gradient(180deg,#0ea5e9,#22d3ee);color:#001019;padding:0.6rem 1.2rem;border-radius:10px;font-weight:600;margin-top:0.8rem}
     .btn.ghost{background:none;border:1px solid #22d3ee;color:#22d3ee}
+
+    .thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
   </style>
 </head>
 <body>
@@ -35,22 +37,22 @@
     <h2>Featured Projects</h2>
     <div class="grid">
       <div class="card">
-        <div class="thumb"></div>
+        <div class="thumb"><img src="images/StoryTailorThumbnail.png" loading="lazy" /></div>
         <h3>StoryTailor</h3>
-        <p>Open-source narrative scripting language with VS Code extension. Enables dynamic branching, variables, and localization.</p>
+        <p>Open-source narrative scripting language for interactive fiction and games. Features variables, branching logic, and multi-language localization. Built in TypeScript with a custom VS Code extension and npm CLI.</p>
         <div class="stack"><span class="badge">TypeScript</span><span class="badge">npm</span><span class="badge">VS Code</span></div>
       </div>
       <div class="card">
-        <div class="thumb"></div>
+        <div class="thumb"><img src="images/HexTerrainsFramework.png" loading="lazy" /></div>
         <h3>Hex Terrains Framework</h3>
-        <p>High-performance hex terrain engine for Unity DOTS, supporting multi-layer simulation and in-game editing.</p>
-        <div class="stack"><span class="badge">Unity</span><span class="badge">DOTS/ECS</span><span class="badge">Burst</span></div>
+        <p>High-performance hex-based terrain system for Unity DOTS. Supports multi-layer data (height, biomes, humidity, etc.) and real-time in-game editing. Designed for scalable strategy and simulation games.</p>
+        <div class="stack"><span class="badge">Unity3D</span><span class="badge">DOTS/ECS</span><span class="badge">Burst</span></div>
       </div>
       <div class="card">
-        <div class="thumb"></div>
+        <div class="thumb"><img src="images/ChessKnight.png" loading="lazy" /></div>
         <h3>ChessKnight</h3>
-        <p>A minimal puzzle about visiting every tile with a knight. Built in Unity for WebGL and Android.</p>
-        <div class="stack"><span class="badge">Unity</span><span class="badge">WebGL</span></div>
+        <p>A minimalist puzzle where players build a continuous path using chess-figures moves. Built in Unity (WebGL + Android) with clean UI and adaptive levels for smooth gameplay.</p>
+        <div class="stack"><span class="badge">Unity3D</span><span class="badge">ECS</span><span class="badge">WebGL</span></div>
       </div>
     </div>
   </section>
@@ -60,24 +62,26 @@
     <p>Selected commercial projects I contributed to as part of a team. Focus on scalable systems, performance, and gameplay architecture.</p>
     <div class="grid">
       <div class="card">
-        <div class="thumb"></div>
-        <h3>Project Title</h3>
-        <p>Worked as <b>Senior Unity Developer</b> at <b>Company Name</b> (Year–Year). Contributed to ECS-based gameplay systems, optimization, and tool development.</p>
-        <div class="stack"><span class="badge">Unity</span><span class="badge">C#</span><span class="badge">ECS</span></div>
+        <div class="thumb"><img src="images/DisneySolitaire.png" loading="lazy" /></div>
+        <h3>Disney Solitaire</h3>
+        <p>Worked as <b>Senior Unity Developer</b> at <b>Superplay LTD</b> (2023-2025) on Disney Solitaire mobile game. Adapted and re-integrated complex tutorial (FTUE) and marketing systems to support the new game’s flow, assets, and live-ops content. Managed complex cross-project code merges, resolving thousands of conflicts per cycle and refactoring legacy systems to operate in a modified architecture.</p>
+        <div class="stack"><span class="badge">Unity3D</span><span class="badge">C#</span></div>
         <a class="btn ghost" href="#" target="_blank">View Project</a>
       </div>
       <div class="card">
-        <div class="thumb"></div>
-        <h3>Project Title</h3>
-        <p>Worked as <b>Lead Engineer</b> at <b>Company Name</b>. Responsible for gameplay systems, physics, and performance optimization.</p>
-        <div class="stack"><span class="badge">C#</span><span class="badge">DOTS</span><span class="badge">Optimization</span></div>
+        <div class="thumb"><img src="images/Bookful.png" loading="lazy" /></div>
+        <h3>Bookful and Little Oxford</h3>
+        <p>Worked as <b>Senior Unity Developer</b> at <b>Inception XR</b>. Worked as Unity Developer on Bookful and Little Oxford — educational mobile applications for children featuring interactive books, mini-games, and AR experiences. Contributed to UI development, app-wide bug fixes, and feature support. Implemented custom UI components such as custom Layout Groups for dynamic interfaces. In Little Oxford, created an interactive handwriting mini-game that tracks a child’s finger input to teach letter formation.</p>
+        <div class="stack"><span class="badge">C#</span><span class="badge">AR</span><span class="badge">Unity3D</span></div>
         <a class="btn ghost" href="#" target="_blank">View Online</a>
       </div>
       <div class="card">
-        <div class="thumb"></div>
-        <h3>Project Title</h3>
-        <p>Role at <b>Company Name</b>. Handled UI, game systems, or engine features, depending on project type.</p>
-        <div class="stack"><span class="badge">Unity</span><span class="badge">Tools</span></div>
+        <div class="thumb"><img src="images/RioMatch3Party.png" loading="lazy" /></div>
+        <h3>Rio Match3 Party</h3>
+        <p>Senior Unity Developer/Tech Lead at <b>Plarium</b>. Contributed to the development of a shared Match-3 framework used across multiple titles.
+Responsible for the visual architecture, board presentation systems, and UI/application structure that transformed algorithmic match data into animated gameplay events.
+Mentored junior developers, maintained core gameplay code, and created shader-based visual effects for dynamic environmental transitions.</p>
+        <div class="stack"><span class="badge">Unity3D</span><span class="badge">Tools</span></div>
         <a class="btn ghost" href="#" target="_blank">Learn More</a>
       </div>
     </div>

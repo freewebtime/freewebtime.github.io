@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yevhen “Jack” Sydorenko: Software Engineer Portfolio</title>
+  <meta name="description" content="Portfolio of Yevhen 'Jack' Sydorenko — Senior Unity/DOTS Engineer. Creator of StoryTailor, Hex Terrains Framework, and ChessKnight. Experienced in ECS, simulation, and high-performance tools.">
+  <meta name="author" content="Yevhen “Jack” Sydorenko"/>
+  <meta property="og:title" content="Yevhen 'Jack' Sydorenko — Unity/DOTS Engineer Portfolio">
+  <meta property="og:description" content="Creator of StoryTailor, Hex Terrains, and ChessKnight. Senior Unity/DOTS Engineer specializing in simulation and ECS architecture.">
+  <meta property="og:url" content="https://www.freewebtime.com/portfolio">
+  <link rel="icon" href="../favicon.ico"/>
+  <link rel="canonical" href="https://www.freewebtime.com/portfolio">  
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,sans-serif;background:#0b1020;color:#e6e9ef;margin:0;line-height:1.6}
+    a{color:#22d3ee;text-decoration:none}
+    a:hover{text-decoration:underline}
+    header,footer{background:#111735;padding:1rem 2rem}
+    main{max-width:1100px;margin:auto;padding:2rem}
+    section{margin:3rem 0}
+    h1,h2,h3{color:#22d3ee;margin-bottom:0.3em}
+    .grid{display:grid;gap:1.5rem}
+    @media(min-width:800px){.grid{grid-template-columns:repeat(3,1fr)}}
+    .card{background:#0f1630;border-radius:12px;padding:1rem;box-shadow:0 4px 20px rgba(0,0,0,0.3)}
+    .thumb{aspect-ratio:16/9;background:#1b243c;border-radius:8px;margin-bottom:0.8rem}
+    .stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:0.5rem}
+    .badge{font-size:12px;padding:4px 8px;border:1px solid rgba(255,255,255,0.2);border-radius:8px;color:#9aa4b2}
+    .btn{display:inline-block;background:linear-gradient(180deg,#0ea5e9,#22d3ee);color:#001019;padding:0.6rem 1.2rem;border-radius:10px;font-weight:600;margin-top:0.8rem}
+    .btn.ghost{background:none;border:1px solid #22d3ee;color:#22d3ee}
+
+    .thumb img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; display: block; }
+    .card:hover { transform: translateY(-4px); transition: transform 0.25s ease, box-shadow 0.25s ease; box-shadow: 0 8px 30px rgba(0,0,0,0.3); }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Yevhen “Jack” Sydorenko</h1>
+  <p>Senior Unity/DOTS & C# Engineer • Simulation • ECS • Tools</p>
+</header>
+<main>
+  <section id="featured">
+    <h2>Featured Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><img src="images/StoryTailorThumbnail.png" loading="lazy" /></div>
+        <h3>StoryTailor</h3>
+        <p>Open-source narrative scripting language for interactive fiction and games. 
+          Features variables, branching logic, and multi-language localization. 
+          Built in TypeScript as a VS Code extension and npm package.
+        </p>
+        <div class="stack"><span class="badge">TypeScript</span><span class="badge">npm</span><span class="badge">VS Code</span></div>
+        <a class="btn ghost" href="https://marketplace.visualstudio.com/items?itemName=jackstorytailor.storytailor-vscode" target="_blank">View Project</a>
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="images/HexTerrainsFramework.png" loading="lazy" /></div>
+        <h3>Hex Terrains Framework</h3>
+        <p>High-performance hex-based terrain system for Unity DOTS. Supports multi-layer data (height, biomes, humidity, etc.) and real-time in-game editing. Designed for scalable strategy and simulation games.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">DOTS/ECS</span><span class="badge">Burst</span></div>
+        <a class="btn ghost" href="https://assetstore.unity.com/packages/tools/terrain/hex-terrains-framework-322256" target="_blank">Asset Store</a>
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="images/ChessKnight.png" loading="lazy" /></div>
+        <h3>ChessKnight</h3>
+        <p>A minimalist puzzle where players build a continuous path using chess-figures moves. 
+          Designed for calm, strategic gameplay.
+          Developed in Unity (WebGL + Android) featuring adaptive levels, responsive UI, and lightweight performance.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">ECS</span><span class="badge">WebGL</span></div>
+        <a class="btn ghost" href="https://www.freewebtime.com/chessknight/" target="_blank">Play Online</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="professional">
+    <h2>Professional Work</h2>
+    <p>Selected commercial projects I contributed to as part of a team. Focus on scalable systems, performance, and gameplay architecture.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="thumb"><img src="images/DisneySolitaire.png" loading="lazy" /></div>
+        <h3>Disney Solitaire</h3>
+        <p>Worked as <b>Senior Unity Developer</b> at <b>Superplay LTD</b> (2023-2025) on Disney Solitaire mobile game. 
+          Adapted and re-integrated complex tutorial (FTUE) and marketing systems to support the new game’s flow, assets, and live-ops content. 
+          Managed extensive code merges, resolving thousands of conflicts per cycle and refactoring legacy systems to operate in a new architecture.
+        </p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">C#</span></div>
+        <a class="btn ghost" href="https://apps.apple.com/us/app/disney-solitaire/id6475757306" target="_blank">Play on mobile</a>
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="images/Bookful.png" loading="lazy" /></div>
+        <h3>Bookful and Little Oxford</h3>
+        <p>Worked as <b>Senior Unity Developer</b> at <b>Inception XR</b> - educational mobile apps for children featuring interactive books, mini-games, and AR experiences. 
+        Contributed to UI development, app-wide bug fixes, and feature support. Implemented custom UI components such as custom Layout Groups for dynamic interfaces. In Little Oxford, created an interactive handwriting mini-game that tracks a child’s finger input to teach letter formation.</p>
+        <div class="stack"><span class="badge">C#</span><span class="badge">AR</span><span class="badge">Unity</span></div>
+        <a class="btn ghost" href="https://learningworksforkids.com/apps/bookful/" target="_blank">Learn More</a>
+      </div>
+      <div class="card">
+        <div class="thumb"><img src="images/RioMatch3Party.png" loading="lazy" /></div>
+        <h3>Rio Match3 Party</h3>
+        <p>Worked as <b>Senior Unity Developer/Tech Lead</b> at <b>Plarium</b> on Rio Match-3 Party. 
+        Contributed to a <b>shared Match-3 framework</b> used across multiple titles.
+        Designed the <b>visual and UI architecture</b> translating algorithmic board logic into animated gameplay.
+        Mentored junior developers, maintained <b>core gameplay systems</b>, and implemented <b>shader-based visual effects</b> for dynamic environments.</p>
+        <div class="stack"><span class="badge">Unity</span><span class="badge">Tools</span></div>
+        <a class="btn ghost" href="https://company.plarium.com/en/presskit/rio-match-3-party/" target="_blank">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Core Skills</h2>
+    <ul>
+      <li>C# • JavaScript • TypeScript</li>
+      <li>Unity DOTS/ECS • Jobs • Burst • Profiling • Optimization</li>
+      <li>Simulation & Tools Architecture • In-game Editors • Serialization • UI</li>
+      <li>npm • VS Code Extensions • CI/CD pipelines</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:freewebtime@gmail.com">freewebtime@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/evgeny-sidorenko-691a2569" target="_blank">linkedin.com/in/evgeny-sidorenko-691a2569</a></p>
+    <p>GitHub: <a href="https://github.com/freewebtime" target="_blank">github.com/freewebtime</a></p>
+    <p>GitHub: <a href="https://github.com/jack-storytailor/" target="_blank">github.com/jack-storytailor</a></p>
+    <p>CV (Google Docs): <a href="https://docs.google.com/document/d/14oNSzsVcWnMWDXWhhOJ6wzD5jkgihSvH5kYvIn24Mcc/edit?usp=sharing" target="_blank">Yevhen Sydorenko CV.doc</a></p>
+    <p>CV (Pdf): <a href="Yevhen_Sydorenko_CV.pdf" target="_blank">Yevhen Sydorenko CV.pdf</a></p>
+  </section>
+</main>
+<footer>
+  <p>© <script>document.write(new Date().getFullYear());</script> Yevhen “Jack” Sydorenko</p>
+</footer>
+</body>
+</html>

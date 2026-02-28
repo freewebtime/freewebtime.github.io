@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace Fwt.HexTerrains | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace Fwt.HexTerrains | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains">
+
+  <h1 id="Fwt_HexTerrains" data-uid="Fwt.HexTerrains" class="text-break">Namespace Fwt.HexTerrains</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.AttachMainCameraAuthoring.html">AttachMainCameraAuthoring</a></h4>
+      <section><p>Adds the <a class="xref" href="Fwt.HexTerrains.Data.AttachMainCameraRequest.html">AttachMainCameraRequest</a> component to the entity, which will be used by a system to attach the main camera to the terrain.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.AttachMainCameraBaker.html">AttachMainCameraBaker</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Fwt.HexTerrains.EnvironmentAPI.html">EnvironmentAPI</a></h4>
+      <section><p>Provides an API for managing environment entities, terrain operations, and UI integration within the
+application. Exposes methods for creating, modifying, and querying terrain entities, as well as interacting with
+UI screens related to the environment.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainAPI.html">HexTerrainAPI</a></h4>
+      <section><p>Example implementation of the IHexTerrainAPI interface.
+Used to be injected into places without access to the EntityManager.
+Abstracts user code from the TerrainData storage (usually the Entity World).
+Provides an API for working with a terrain.
+Usually uses in a UserTools (brushes, etc.).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainAuthoring.html">HexTerrainAuthoring</a></h4>
+      <section><p>Authoring component for the HexTerrain. This component is used to create a HexTerrain entity in the ECS world.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainBaker.html">HexTerrainBaker</a></h4>
+      <section><p>Baker for the HexTerrainAuthoring component. This class is used to convert the authoring component into an entity with the appropriate components.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainLayerExtensions.html">HexTerrainLayerExtensions</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.html">HexTerrainSerializer</a></h4>
+      <section><p>HexTerrainSerializer is a static class that provides methods to serialize and deserialize HexTerrain data entity.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsCleanupBarrier.html">HexTerrainsCleanupBarrier</a></h4>
+      <section><p>Buffer system for the HexTerrains cleanup systems (executes the last of all cleanup systems).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsCleanupGroup.html">HexTerrainsCleanupGroup</a></h4>
+      <section><p>System group for the HexTerrains cleanup systems.
+This systems usually reset the dirty flags.
+This system group is executed at the very beginning of the frame</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsFinishPreRenderBarrier.html">HexTerrainsFinishPreRenderBarrier</a></h4>
+      <section><p>Barrier system for the HexTerrains finish pre-render systems (executes the last of all Finish Pre Render Systems).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsFinishPreRenderGroup.html">HexTerrainsFinishPreRenderGroup</a></h4>
+      <section><p>System group for the HexTerrains finish pre-render systems</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsInitBarrier.html">HexTerrainsInitBarrier</a></h4>
+      <section><p>Buffer system for the HexTerrains creation systems (executes the last of all creation systems).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsInitGroup.html">HexTerrainsInitGroup</a></h4>
+      <section><p>System group where all the creation systems for HexTerrains are executed.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsRenderBarrier.html">HexTerrainsRenderBarrier</a></h4>
+      <section><p>Buffer system for the HexTerrains render systems (executes the last of all Render Systems).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsRenderGroup.html">HexTerrainsRenderGroup</a></h4>
+      <section><p>System Group where HexTerrains are rendered.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsSimulationGroup.html">HexTerrainsSimulationGroup</a></h4>
+      <section><p>System Group where all HexTerrains simulation systems are executed.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsSimulatiosBarrier.html">HexTerrainsSimulatiosBarrier</a></h4>
+      <section><p>Buffer system for the HexTerrains simulation systems.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsStartPreRenderBarrier.html">HexTerrainsStartPreRenderBarrier</a></h4>
+      <section><p>Buffer system for the HexTerrains start pre-render systems (executes the last of all Start Pre Render Systems).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsStartPreRenderGroup.html">HexTerrainsStartPreRenderGroup</a></h4>
+      <section><p>System Group where the HexTerrains start pre-render systems are executed.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsUpdateBarrier.html">HexTerrainsUpdateBarrier</a></h4>
+      <section><p>Buffer system for the HexTerrains initialization systems (executes the last of all initialization systems).</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainsUpdateGroup.html">HexTerrainsUpdateGroup</a></h4>
+      <section><p>System Group where all HexTerrains initialization systems are executed.</p>
+</section>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.IEnvironmentAPI.html">IEnvironmentAPI</a></h4>
+      <section><p>Provides access to environment-level APIs, including user interface system functionality.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></h4>
+      <section><p>Provides a comprehensive interface for interacting with hexagonal terrain systems, enabling access to terrain
+entities, layers, settings, and related UI and environment functionality.</p>
+</section>
+    <h3 id="delegates">
+Delegates
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomDeserializerCallback.html">HexTerrainSerializer.CustomDeserializerCallback</a></h4>
+      <section><p>If you want to deserialize a custom component or implement a custom deserialization logic for standard components,
+provide this callback to the serializer.
+Deserializer will call this callback and if the callback returns true, serializer will not try to deserialize a component by itself,
+assuming you have already done it.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.HexTerrainSerializer.CustomSerializerCallback.html">HexTerrainSerializer.CustomSerializerCallback</a></h4>
+      <section><p>If you want to serialize a custom component or implement a custom serialization logic for standard components,
+provide this callback to the serializer.
+Serializer will call this callback and if the callback returns true, serializer will not try to serialize a component by itself,
+assuming you have already done it.</p>
+</section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

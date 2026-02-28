@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Struct UpdateCellEntityVisibilityJob | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Struct UpdateCellEntityVisibilityJob | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob">
+
+
+
+  <h1 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob" class="text-break">Struct UpdateCellEntityVisibilityJob</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IJobEntity</span></div>
+    <div><span class="xref">IJobChunk</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.CellEntities.html">CellEntities</a>.<a class="xref" href="Fwt.HexTerrains.CellEntities.Jobs.html">Jobs</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public struct UpdateCellEntityVisibilityJob : IJobEntity, IJobChunk</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_IsVisible" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.IsVisible">IsVisible</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsVisible</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_MaterialMeshInfoLookup" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.MaterialMeshInfoLookup">MaterialMeshInfoLookup</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ComponentLookup&lt;MaterialMeshInfo&gt; MaterialMeshInfoLookup</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ComponentLookup</span>&lt;<span class="xref">MaterialMeshInfo</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Execute_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Execute*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Execute_Unity_Entities_ArchetypeChunk__System_Int32_System_Boolean_Unity_Burst_Intrinsics_v128__" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Execute(Unity.Entities.ArchetypeChunk@,System.Int32,System.Boolean,Unity.Burst.Intrinsics.v128@)">Execute(in ArchetypeChunk, int, bool, in v128)</h4>
+  <div class="markdown level1 summary"><p>Implement the <code>Execute</code> function to perform a unit of work on an <span class="xref">Unity.Entities.ArchetypeChunk</span> representing
+a chunk.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Execute(in ArchetypeChunk chunk, int chunkIndexInQuery, bool useEnabledMask, in v128 chunkEnabledMask)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ArchetypeChunk</span></td>
+        <td><span class="parametername">chunk</span></td>
+        <td><p>An object providing access to the entities within a chunk.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndexInQuery</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">useEnabledMask</span></td>
+        <td><p>If true, the contents of <code class="paramref">chunkEnabledMask</code> describe which
+entities in the chunk match the provided <span class="xref">Unity.Entities.EntityQuery</span> and should be processed by this job.
+If false, all entities in the chunk match the provided query, and the contents of
+<code class="paramref">chunkEnabledMask</code> are undefined.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">v128</span></td>
+        <td><span class="parametername">chunkEnabledMask</span></td>
+        <td><p>If bit N in this mask is set, entity N in <code class="paramref">chunk</code> matches
+the <span class="xref">Unity.Entities.EntityQuery</span> used to schedule the job. If bit N is clear, entity N does not match the query
+and can be skipped. If N is greater than or equal to the number of entities in the chunk, bit N will always
+be clear. If <code class="paramref">useEnabledMask</code> is false, all entities in the chunk match the query, and the
+contents of this mask are undefined.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Execute_Unity_Entities_ArchetypeChunk__System_Int32_System_Boolean_Unity_Burst_Intrinsics_v128___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The chunks selected by the <span class="xref">Unity.Entities.EntityQuery</span> used to schedule the job are the input to your <code>Execute</code>
+function. The <code>Execute</code> function is called once per matching chunk.</p>
+<p>Note that <code class="paramref">unfilteredChunkIndex</code> is not necessarily guaranteed to be a zero-based,
+tightly-packed index into the chunks the job actually runs on. For example, if the query matches 100 chunks,
+but the query's uses <span class="xref">Unity.Entities.EntityQuery.SetSharedComponentFilter&lt;SharedComponent&gt;(SharedComponent)</span> and the first 50 chunks get
+filtered out, the <code class="paramref">unfilteredChunkIndex</code> will range from 50 to 99. If the index relative
+to the filtered chunk list is required, use <span class="xref">Unity.Entities.EntityQuery.CalculateFilteredChunkIndexArray(Unity.Collections.AllocatorManager.AllocatorHandle)</span></p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Run_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Run*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Run" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Run">Run()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Run()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Run_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Run*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Run_Unity_Entities_EntityQuery_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Run(Unity.Entities.EntityQuery)">Run(EntityQuery)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Run(EntityQuery query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_RunByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.RunByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_RunByRef" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.RunByRef">RunByRef()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RunByRef()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_RunByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.RunByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_RunByRef_Unity_Entities_EntityQuery_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.RunByRef(Unity.Entities.EntityQuery)">RunByRef(EntityQuery)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void RunByRef(EntityQuery query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule">Schedule()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Schedule()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_Unity_Entities_EntityQuery_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule(Unity.Entities.EntityQuery)">Schedule(EntityQuery)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Schedule(EntityQuery query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_Unity_Entities_EntityQuery_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule(Unity.Entities.EntityQuery,Unity.Jobs.JobHandle)">Schedule(EntityQuery, JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle Schedule(EntityQuery query, JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_Schedule_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.Schedule(Unity.Jobs.JobHandle)">Schedule(JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle Schedule(JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef">ScheduleByRef()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduleByRef()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_Unity_Entities_EntityQuery_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef(Unity.Entities.EntityQuery)">ScheduleByRef(EntityQuery)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduleByRef(EntityQuery query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_Unity_Entities_EntityQuery_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef(Unity.Entities.EntityQuery,Unity.Jobs.JobHandle)">ScheduleByRef(EntityQuery, JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleByRef(EntityQuery query, JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleByRef_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleByRef(Unity.Jobs.JobHandle)">ScheduleByRef(JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleByRef(JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel">ScheduleParallel()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduleParallel()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_Unity_Entities_EntityQuery_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel(Unity.Entities.EntityQuery)">ScheduleParallel(EntityQuery)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduleParallel(EntityQuery query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_Unity_Entities_EntityQuery_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel(Unity.Entities.EntityQuery,Unity.Jobs.JobHandle)">ScheduleParallel(EntityQuery, JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleParallel(EntityQuery query, JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_Unity_Entities_EntityQuery_Unity_Jobs_JobHandle_Unity_Collections_NativeArray_System_Int32__" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel(Unity.Entities.EntityQuery,Unity.Jobs.JobHandle,Unity.Collections.NativeArray{System.Int32})">ScheduleParallel(EntityQuery, JobHandle, NativeArray&lt;int&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleParallel(EntityQuery query, JobHandle dependsOn, NativeArray&lt;int&gt; chunkBaseEntityIndices)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><span class="parametername">chunkBaseEntityIndices</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallel_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallel(Unity.Jobs.JobHandle)">ScheduleParallel(JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleParallel(JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef">ScheduleParallelByRef()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduleParallelByRef()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_Unity_Entities_EntityQuery_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef(Unity.Entities.EntityQuery)">ScheduleParallelByRef(EntityQuery)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void ScheduleParallelByRef(EntityQuery query)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_Unity_Entities_EntityQuery_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef(Unity.Entities.EntityQuery,Unity.Jobs.JobHandle)">ScheduleParallelByRef(EntityQuery, JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleParallelByRef(EntityQuery query, JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_Unity_Entities_EntityQuery_Unity_Jobs_JobHandle_Unity_Collections_NativeArray_System_Int32__" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef(Unity.Entities.EntityQuery,Unity.Jobs.JobHandle,Unity.Collections.NativeArray{System.Int32})">ScheduleParallelByRef(EntityQuery, JobHandle, NativeArray&lt;int&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleParallelByRef(EntityQuery query, JobHandle dependsOn, NativeArray&lt;int&gt; chunkBaseEntityIndices)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td><span class="parametername">query</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><span class="parametername">chunkBaseEntityIndices</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_UpdateCellEntityVisibilityJob_ScheduleParallelByRef_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.CellEntities.Jobs.UpdateCellEntityVisibilityJob.ScheduleParallelByRef(Unity.Jobs.JobHandle)">ScheduleParallelByRef(JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public JobHandle ScheduleParallelByRef(JobHandle dependsOn)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependsOn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Unity.Entities.IJobEntity</span>
+  </div>
+  <div>
+      <span class="xref">Unity.Entities.IJobChunk</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_ValueType__1___0_System_Int32_">HashExtensions.GetHashCode_ValueType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

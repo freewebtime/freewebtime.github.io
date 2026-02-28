@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexTerrainLayerGroup | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexTerrainLayerGroup | Hex Terrains Framework ">
+    
+    <meta name="description" content="Base class for HexTerrain layer that holds a list of Terrain layers inside. Inherit from this class to create a list of terrain layers following the standard HexTerrain layers structure.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup">
+
+
+
+  <h1 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup" class="text-break">Class HexTerrainLayerGroup</h1>
+  <div class="markdown level0 summary"><p>Base class for HexTerrain layer that holds a list of Terrain layers inside.
+Inherit from this class to create a list of terrain layers following the standard HexTerrain layers structure.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></div>
+    <div class="level2"><span class="xref">HexTerrainLayerGroup</span></div>
+      <div class="level3"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html">HexTerrainLayerGroup&lt;TTerrainLayer&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Name">HexTerrainLayer.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Settings">HexTerrainLayer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ParentLayer">HexTerrainLayer.ParentLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayer.Init(HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_">HexTerrainLayer.Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Resize_Unity_Mathematics_int2_">HexTerrainLayer.Resize(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__">HexTerrainLayer.InitColoredDataLayer&lt;TValue&gt;(ColorMapCellValueDataLayer&lt;TValue&gt;, IInitColorMapCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitDataLayer__1_Fwt_HexTerrains_DataLayers_CellValueDataLayer___0__Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs___0__">HexTerrainLayer.InitDataLayer&lt;TValue&gt;(CellValueDataLayer&lt;TValue&gt;, IInitCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CalculateColorMap_Unity_Jobs_JobHandle_">HexTerrainLayer.CalculateColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CompleteAllJobs">HexTerrainLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_SetAllDirty_System_Boolean_">HexTerrainLayer.SetAllDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Cleanup">HexTerrainLayer.Cleanup()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CleanupAsync_Unity_Jobs_JobHandle_">HexTerrainLayer.CleanupAsync(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Dispose">HexTerrainLayer.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ToString">HexTerrainLayer.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class HexTerrainLayerGroup : HexTerrainLayer, IDisposable, ISerializableTerrainLayer</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_DeserializeLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.DeserializeLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_DeserializeLayer_System_IO_BinaryReader_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.DeserializeLayer(System.IO.BinaryReader,Fwt.HexTerrains.Data.HexTerrainSettings)">DeserializeLayer(BinaryReader, HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Requests a deserialization of the layer data.
+Returns false if the layer does not support deserialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binaryreader">BinaryReader</a></td>
+        <td><span class="parametername">reader</span></td>
+        <td><p>binary reader to deserialize data from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">terrainSettings</span></td>
+        <td><p>deserialized terrain settings (layer was serialized with this settings)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer``1">GetLayer&lt;TTargetLayer&gt;()</h4>
+  <div class="markdown level1 summary"><p>Returns the first layer of type TTargetLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TTargetLayer GetLayer&lt;TTargetLayer&gt;()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTargetLayer</span></td>
+        <td><p>first found layer of TTargetLayer type. If not found, returns null</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTargetLayer</span></td>
+        <td><p>type of layer to find</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer``1(Fwt.HexTerrains.Data.HexTerrainLayerReference)">GetLayer&lt;TTargetLayer&gt;(HexTerrainLayerReference)</h4>
+  <div class="markdown level1 summary"><p>Returns the layer of type TTargetLayer from the list of layers according to the provided arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TTargetLayer GetLayer&lt;TTargetLayer&gt;(HexTerrainLayerReference args) where TTargetLayer : HexTerrainLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">args</span></td>
+        <td><p>args to get layer according to</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTargetLayer</span></td>
+        <td><p>layer of TTargetType according to provided arguments</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTargetLayer</span></td>
+        <td><p>casts result to this type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1_System_Int32_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer``1(System.Int32)">GetLayer&lt;TTargetLayer&gt;(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the layer of type TTargetLayer at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TTargetLayer GetLayer&lt;TTargetLayer&gt;(int layerIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index at which to get a layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTargetLayer</span></td>
+        <td><p>layer of TTargetType at the requested index (if found) or null (if not found)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTargetLayer</span></td>
+        <td><p>casts result to this type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1_System_Int32_System_Boolean_System_String_System_Boolean_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer``1(System.Int32,System.Boolean,System.String,System.Boolean)">GetLayer&lt;TTargetLayer&gt;(int, bool, string, bool)</h4>
+  <div class="markdown level1 summary"><p>Retrieves a terrain layer of the specified type using either its index or name, depending on the provided
+search options.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TTargetLayer GetLayer&lt;TTargetLayer&gt;(int layerIndex, bool isSearchByIndex, string layerName, bool isSearchByName) where TTargetLayer : HexTerrainLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>The zero-based index of the layer to retrieve. Used if <code class="paramref">isSearchByIndex</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isSearchByIndex</span></td>
+        <td><p>Indicates whether to search for the layer by its index. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, <code class="paramref">layerIndex</code> is used.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>The name of the layer to retrieve. Used if <code class="paramref">isSearchByName</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isSearchByName</span></td>
+        <td><p>Indicates whether to search for the layer by its name. If <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, <code class="paramref">layerName</code> is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTargetLayer</span></td>
+        <td><p>The terrain layer of type <code class="typeparamref">TTargetLayer</code> that matches the specified search criteria, or
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if no matching layer is found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTargetLayer</span></td>
+        <td><p>The type of terrain layer to retrieve. Must derive from HexTerrainLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1_System_Int32_System_Boolean_System_String_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If both <code class="paramref">isSearchByIndex</code> and <code class="paramref">isSearchByName</code> are
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, the method may prioritize one search method over the other depending on the
+implementation. Ensure that the provided index and name correspond to an existing layer to avoid a <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> result.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1_System_Int32_System_String_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer``1(System.Int32,System.String)">GetLayer&lt;TTargetLayer&gt;(int, string)</h4>
+  <div class="markdown level1 summary"><p>Returns the layer of type TTargetLayer at the specified index and with the specified name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TTargetLayer GetLayer&lt;TTargetLayer&gt;(int layerIndex, string layerName) where TTargetLayer : HexTerrainLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index at which to get a layer</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer that should be found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTargetLayer</span></td>
+        <td><p>layer of TTargetType at the requested index (if found) if it has the provided name</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTargetLayer</span></td>
+        <td><p>casts result to this type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_GetLayer__1_System_String_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.GetLayer``1(System.String)">GetLayer&lt;TTargetLayer&gt;(string)</h4>
+  <div class="markdown level1 summary"><p>Returns the layer of type TTargetLayer at the specified index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract TTargetLayer GetLayer&lt;TTargetLayer&gt;(string layerName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer that should be found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTargetLayer</span></td>
+        <td><p>layer of TTargetType at the requested index (if found) or null (if not found)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TTargetLayer</span></td>
+        <td><p>casts result to this type</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_SerializeLayer_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.SerializeLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Data_HexTerrainLayerGroup_SerializeLayer_System_IO_BinaryWriter_" data-uid="Fwt.HexTerrains.Data.HexTerrainLayerGroup.SerializeLayer(System.IO.BinaryWriter)">SerializeLayer(BinaryWriter)</h4>
+  <div class="markdown level1 summary"><p>Requests a serialization of the layer data.
+Returns false if the layer does not support serialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract bool SerializeLayer(BinaryWriter writer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.io.binarywriter">BinaryWriter</a></td>
+        <td><span class="parametername">writer</span></td>
+        <td><p>binary writer to serialize data by</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>True if serialized, false if not serialized/not supported/not implemented</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

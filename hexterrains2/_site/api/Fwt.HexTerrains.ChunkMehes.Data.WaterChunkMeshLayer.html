@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class WaterChunkMeshLayer | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class WaterChunkMeshLayer | Hex Terrains Framework ">
+    
+    <meta name="description" content="HexSurfaceLayer that has a special color map (cells under the ground are transparent).">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.ChunkMehes.Data.WaterChunkMeshLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_ChunkMehes_Data_WaterChunkMeshLayer" data-uid="Fwt.HexTerrains.ChunkMehes.Data.WaterChunkMeshLayer" class="text-break">Class WaterChunkMeshLayer</h1>
+  <div class="markdown level0 summary"><p>HexSurfaceLayer that has a special color map (cells under the ground are transparent).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html">ChunkMeshLayer</a></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html">VisualChunkMeshLayer</a></div>
+    <div class="level4"><span class="xref">WaterChunkMeshLayer</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsVisible">VisualChunkMeshLayer.IsVisible</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsGenerateMeshesWithMeshData">VisualChunkMeshLayer.IsGenerateMeshesWithMeshData</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_OffsetTransform">VisualChunkMeshLayer.OffsetTransform</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderSettings">VisualChunkMeshLayer.RenderSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshSources">VisualChunkMeshLayer.ChunkMeshSources</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshes">VisualChunkMeshLayer.ChunkMeshes</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderConfigs">VisualChunkMeshLayer.RenderConfigs</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_DefaultRenderConfig">VisualChunkMeshLayer.DefaultRenderConfig</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_BiomeUvConfigs">VisualChunkMeshLayer.BiomeUvConfigs</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_MeshDatas">VisualChunkMeshLayer.MeshDatas</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_">VisualChunkMeshLayer.Init(HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_">VisualChunkMeshLayer.Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_FillBiomeUVConfigs_System_Collections_Generic_IEnumerable_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshBiomeUVConfig__">VisualChunkMeshLayer.FillBiomeUVConfigs(IEnumerable&lt;ChunkMeshBiomeUVConfig&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcDirtyMeshSources_Unity_Jobs_JobHandle_">VisualChunkMeshLayer.CalcDirtyMeshSources(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcMeshSources_Fwt_HexTerrains_Data_ChunksGridLayer_System_Boolean_Unity_Jobs_JobHandle_">VisualChunkMeshLayer.CalcMeshSources(ChunksGridLayer, bool, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_System_Boolean_">VisualChunkMeshLayer.CreateChunkMeshes(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_MeshData_System_Boolean_">VisualChunkMeshLayer.CreateChunkMeshes_MeshData(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_Classic_System_Boolean_">VisualChunkMeshLayer.CreateChunkMeshes_Classic(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CompleteFillingMeshes_System_Boolean_">VisualChunkMeshLayer.CompleteFillingMeshes(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshesOld_System_Boolean_">VisualChunkMeshLayer.CreateChunkMeshesOld(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetChunkMesh_System_Int32_">VisualChunkMeshLayer.GetChunkMesh(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetLayerVisibility">VisualChunkMeshLayer.GetLayerVisibility()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetLayerVisibility_System_Boolean_">VisualChunkMeshLayer.SetLayerVisibility(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ToggleLayerVisibility">VisualChunkMeshLayer.ToggleLayerVisibility()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetChunkMesh_System_Int32_UnityEngine_Mesh_">VisualChunkMeshLayer.SetChunkMesh(int, Mesh)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Render_Fwt_HexTerrains_Data_ChunksGridLayer_Fwt_HexTerrains_Data_HexTerrainViewMode_Unity_Transforms_LocalToWorld_UnityEngine_Camera_">VisualChunkMeshLayer.Render(ChunksGridLayer, HexTerrainViewMode, LocalToWorld, Camera)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderOld_Fwt_HexTerrains_Data_ChunksGridLayer_Fwt_HexTerrains_Data_HexTerrainViewMode_Unity_Transforms_LocalToWorld_UnityEngine_Camera_">VisualChunkMeshLayer.RenderOld(ChunksGridLayer, HexTerrainViewMode, LocalToWorld, Camera)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_HasIncorrectValues_UnityEngine_Bounds_">VisualChunkMeshLayer.HasIncorrectValues(Bounds)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsIncorrectValue_System_Single_">VisualChunkMeshLayer.IsIncorrectValue(float)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetRenderConfigAsset_System_Int32_">VisualChunkMeshLayer.GetRenderConfigAsset(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GenerateAllMeshes_Fwt_HexTerrains_Data_ChunksGridLayer_">VisualChunkMeshLayer.GenerateAllMeshes(ChunksGridLayer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshesToAssets_Fwt_HexTerrains_Data_ChunksGridLayer_System_String_System_String_">VisualChunkMeshLayer.ExportMeshesToAssets(ChunksGridLayer, string, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshes_System_Collections_Generic_List_UnityEngine_Mesh__">VisualChunkMeshLayer.ExportMeshes(List&lt;Mesh&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetAllDirty_System_Boolean_">VisualChunkMeshLayer.SetAllDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CompleteAllJobs">VisualChunkMeshLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Cleanup">VisualChunkMeshLayer.Cleanup()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CleanupAsync_Unity_Jobs_JobHandle_">VisualChunkMeshLayer.CleanupAsync(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Dispose">VisualChunkMeshLayer.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_ChunkMeshLayerSettings">ChunkMeshLayer.ChunkMeshLayerSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_TerrainMetrics">ChunkMeshLayer.TerrainMetrics</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_HeightMap">ChunkMeshLayer.HeightMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_BiomeMap">ChunkMeshLayer.BiomeMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CellMetricsMap">ChunkMeshLayer.CellMetricsMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_TransparencyMap">ChunkMeshLayer.TransparencyMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncHeightMapLayerReference">ChunkMeshLayer.SyncHeightMapLayerReference</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncBiomeMapLayerReference">ChunkMeshLayer.SyncBiomeMapLayerReference</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncTransparencyMapLayerReference">ChunkMeshLayer.SyncTransparencyMapLayerReference</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_FillBiomeByHeight_Unity_Collections_NativeList_System_Int32__Unity_Collections_NativeList_System_Single__System_Collections_Generic_IList_System_Single__">ChunkMeshLayer.FillBiomeByHeight(NativeList&lt;int&gt;, NativeList&lt;float&gt;, IList&lt;float&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_GetAutoBiomeHeightLevel_System_Single_System_Collections_Generic_IList_System_Single__">ChunkMeshLayer.GetAutoBiomeHeightLevel(float, IList&lt;float&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncData_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncData(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncHeightMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncHeightMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncBiomeMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncBiomeMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncTransparencyMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncTransparencyMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalcCellMetrics_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalcCellMetrics(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateHeightColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateHeightColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateBiomeColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateBiomeColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateOverlapBiomeColorMap_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateOverlapBiomeColorMap(ChunkMeshLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateDefaultBiomeColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateDefaultBiomeColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SerializeLayer_System_IO_BinaryWriter_">ChunkMeshLayer.SerializeLayer(BinaryWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_DeserializeLayer_System_IO_BinaryReader_Fwt_HexTerrains_Data_HexTerrainSettings_">ChunkMeshLayer.DeserializeLayer(BinaryReader, HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Name">HexTerrainLayer.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Settings">HexTerrainLayer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ParentLayer">HexTerrainLayer.ParentLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Resize_Unity_Mathematics_int2_">HexTerrainLayer.Resize(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__">HexTerrainLayer.InitColoredDataLayer&lt;TValue&gt;(ColorMapCellValueDataLayer&lt;TValue&gt;, IInitColorMapCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitDataLayer__1_Fwt_HexTerrains_DataLayers_CellValueDataLayer___0__Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs___0__">HexTerrainLayer.InitDataLayer&lt;TValue&gt;(CellValueDataLayer&lt;TValue&gt;, IInitCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ToString">HexTerrainLayer.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.ChunkMehes.html">ChunkMehes</a>.<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_WaterChunkMeshLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class WaterChunkMeshLayer : VisualChunkMeshLayer, IDisposable, ISerializableTerrainLayer</code></pre>
+  </div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_WaterChunkMeshLayer_ScheduleGenerateMeshJob_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.WaterChunkMeshLayer.ScheduleGenerateMeshJob*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_WaterChunkMeshLayer_ScheduleGenerateMeshJob_Fwt_HexTerrains_DataLayers_ChunkMetricsDataLayer_Fwt_HexTerrains_DataLayers_ChunkMeshSourcesDataLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_System_Int32_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.WaterChunkMeshLayer.ScheduleGenerateMeshJob(Fwt.HexTerrains.DataLayers.ChunkMetricsDataLayer,Fwt.HexTerrains.DataLayers.ChunkMeshSourcesDataLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer,System.Int32,Unity.Jobs.JobHandle)">ScheduleGenerateMeshJob(ChunkMetricsDataLayer, ChunkMeshSourcesDataLayer, CellMetricsDataLayer, int, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules a job to generate a mesh for the chunk with a given index.
+If you want to introduce your own mesh generator, override this method and schedule your own job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JobHandle ScheduleGenerateMeshJob(ChunkMetricsDataLayer chunkMetrics, ChunkMeshSourcesDataLayer chunkMeshSources, CellMetricsDataLayer cellMetrics, int chunkIndex, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMetricsDataLayer.html">ChunkMetricsDataLayer</a></td>
+        <td><span class="parametername">chunkMetrics</span></td>
+        <td><p>Metrix of all terrain chunks</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMeshSourcesDataLayer.html">ChunkMeshSourcesDataLayer</a></td>
+        <td><span class="parametername">chunkMeshSources</span></td>
+        <td><p>MeshSources to save generated mesh data into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellMetricsDataLayer.html">CellMetricsDataLayer</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td><p>Metrics of all cells</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td><p>Index of chunk to schedule a mesh generation for</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>JobHandle to use as parameter when scheduling job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ScheduleGenerateMeshJob_Fwt_HexTerrains_DataLayers_ChunkMetricsDataLayer_Fwt_HexTerrains_DataLayers_ChunkMeshSourcesDataLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_System_Int32_Unity_Jobs_JobHandle_">VisualChunkMeshLayer.ScheduleGenerateMeshJob(ChunkMetricsDataLayer, ChunkMeshSourcesDataLayer, CellMetricsDataLayer, int, JobHandle)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

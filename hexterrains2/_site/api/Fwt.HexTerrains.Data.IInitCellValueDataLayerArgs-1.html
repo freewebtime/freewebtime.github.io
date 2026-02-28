@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IInitCellValueDataLayerArgs&lt;TValue&gt; | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IInitCellValueDataLayerArgs&lt;TValue&gt; | Hex Terrains Framework ">
+    
+    <meta name="description" content="Defines the arguments used to initialize cell values in a data layer, including value ranges, fill options, and optional source texture settings.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1">
+
+
+
+  <h1 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1" class="text-break">Interface IInitCellValueDataLayerArgs&lt;TValue&gt;</h1>
+  <div class="markdown level0 summary"><p>Defines the arguments used to initialize cell values in a data layer, including value ranges, fill options, and
+optional source texture settings.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IInitCellValueDataLayerArgs&lt;TValue&gt; where TValue : unmanaged</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TValue</span></td>
+        <td><p>The unmanaged value type used for cell values in the data layer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Implementations of this interface allow configuration of how cell values are initialized,
+supporting scenarios such as filling with a constant value, random values within a range, or values derived from
+a source texture. The specific combination of options determines the initialization behavior.</p>
+</div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_DefaultValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.DefaultValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_DefaultValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.DefaultValue">DefaultValue</h4>
+  <div class="markdown level1 summary"><p>When the layer is resized, this value is used to fill any new cells that are added to the layer. This allows for consistent initialization of new cells when the layer's dimensions change.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue DefaultValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_FillValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.FillValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_FillValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.FillValue">FillValue</h4>
+  <div class="markdown level1 summary"><p>When the layer is initialized, this value is used to fill all cells in the layer. This provides a simple way to set a uniform initial value for all cells, which can be useful for creating flat terrain features or resetting cell values during initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue FillValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsApplySourceTexture_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.IsApplySourceTexture*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsApplySourceTexture" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.IsApplySourceTexture">IsApplySourceTexture</h4>
+  <div class="markdown level1 summary"><p>If true, the initialization process will apply values from a source texture to the cells. The source texture can be used to provide spatially varying initial values based on its pixel data, allowing for more complex and visually interesting terrain features <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueOffset">SourceTextureValueOffset</a> and <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueScale">SourceTextureValueScale</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsApplySourceTexture { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsFillWithRandomValues_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.IsFillWithRandomValues*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsFillWithRandomValues" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.IsFillWithRandomValues">IsFillWithRandomValues</h4>
+  <div class="markdown level1 summary"><p>If true, the initialization process will fill cells with random values within the specified range defined by <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMinValue">RandomMinValue</a> and <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMaxValue">RandomMaxValue</a>. This option allows for the creation of more varied and natural-looking terrain features by introducing randomness into the initial cell values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsFillWithRandomValues { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsFillWithValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.IsFillWithValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsFillWithValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.IsFillWithValue">IsFillWithValue</h4>
+  <div class="markdown level1 summary"><p>If true, the initialization process will fill cells with a constant value defined by <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_FillValue">FillValue</a>. This option is useful for creating uniform terrain features or resetting cell values to a known state during initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool IsFillWithValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_MaxValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.MaxValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_MaxValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.MaxValue">MaxValue</h4>
+  <div class="markdown level1 summary"><p>Value representing the maximum expected value in the cell. Does not restrict the actual values that can be assigned to the cell, but serves as a reference for normalization or scaling purposes when processing cell values, such as calculating a color map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue MaxValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_MinValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.MinValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_MinValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.MinValue">MinValue</h4>
+  <div class="markdown level1 summary"><p>Value representing the minimum expected value in the cell. Does not restrict the actual values that can be assigned to the cell, but serves as a reference for normalization or scaling purposes when processing cell values, such as calculating a color map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue MinValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMaxValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.RandomMaxValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMaxValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.RandomMaxValue">RandomMaxValue</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsFillWithRandomValues">IsFillWithRandomValues</a> is true, this value represents the maximum value in the range from which random values will be generated to fill the cells. The actual random values assigned to the cells will be greater than or equal to <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMinValue">RandomMinValue</a> and less than or equal to this maximum value.&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue RandomMaxValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMinValue_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.RandomMinValue*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMinValue" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.RandomMinValue">RandomMinValue</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsFillWithRandomValues">IsFillWithRandomValues</a> is true, this value represents the minimum value in the range from which random values will be generated to fill the cells. The actual random values assigned to the cells will be greater than or equal to this minimum value and less than or equal to <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_RandomMaxValue">RandomMaxValue</a>.&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">TValue RandomMinValue { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTexture_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.SourceTexture*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTexture" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.SourceTexture">SourceTexture</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsApplySourceTexture">IsApplySourceTexture</a> is true, this property holds the reference to the source texture used to initialize cell values. The pixel data from this texture can be sampled and processed to derive initial values for the cells, allowing for spatially varying initialization based on the texture's content. The specific mapping of texture pixels to cell values can be influenced by <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueOffset">SourceTextureValueOffset</a> and <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueScale">SourceTextureValueScale</a> to achieve the desired range and distribution of initial cell values.&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">Texture2D SourceTexture { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Texture2D</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueOffset_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.SourceTextureValueOffset*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueOffset" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.SourceTextureValueOffset">SourceTextureValueOffset</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsApplySourceTexture">IsApplySourceTexture</a> is true, this value is added to the sampled pixel values from the source texture before applying them to the cells. This allows for adjusting the baseline of the initial cell values derived from the texture, effectively shifting the range of values that can be assigned to the cells based on the texture's pixel data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float SourceTextureValueOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueScale_" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.SourceTextureValueScale*"></a>
+  <h4 id="Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueScale" data-uid="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs`1.SourceTextureValueScale">SourceTextureValueScale</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_IsApplySourceTexture">IsApplySourceTexture</a> is true, this value is multiplied with the sampled pixel values from the source texture (after applying <a class="xref" href="Fwt.HexTerrains.Data.IInitCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs_1_SourceTextureValueOffset">SourceTextureValueOffset</a>) before applying them to the cells. This allows for scaling the range of initial cell values derived from the texture, effectively amplifying or reducing the influence of the texture's pixel data on the final cell values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float SourceTextureValueScale { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class HexTerrainUserToolStateBase | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class HexTerrainUserToolStateBase | Hex Terrains Framework ">
+    
+    <meta name="description" content="Provides a base class for user tool states that interact with hex-based terrain, supplying common functionality for managing terrain APIs, tool settings, and view modes.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase">
+
+
+
+  <h1 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase" class="text-break">Class HexTerrainUserToolStateBase</h1>
+  <div class="markdown level0 summary"><p>Provides a base class for user tool states that interact with hex-based terrain, supplying common functionality
+for managing terrain APIs, tool settings, and view modes.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.StateMachines.SmState.html">SmState</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></div>
+    <div class="level3"><span class="xref">HexTerrainUserToolStateBase</span></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html">BrushUserToolState&lt;TBrushTarget&gt;</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.CreateNewTerrainUserToolStateBase-2.html">CreateNewTerrainUserToolStateBase&lt;TScreen, TViewData&gt;</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.LoadTerrainUserToolStateBase-2.html">LoadTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.PointerUserToolState.html">PointerUserToolState</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase-2.html">ResizeTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.SaveTerrainUserToolStateBase-2.html">SaveTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.ToggleTerrainVisibilityUserToolState.html">ToggleTerrainVisibilityUserToolState</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Settings">UserToolStateBase.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Parent">UserToolStateBase.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_ParentStateMachine">UserToolStateBase.ParentStateMachine</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_UserToolType">UserToolStateBase.UserToolType</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_UserToolStateSettings_">UserToolStateBase.Init(UserToolStateSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Tick">UserToolStateBase.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.html">UserTools</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.html">SM</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class HexTerrainUserToolStateBase : UserToolStateBase, ISmState</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This abstract class is intended to be inherited by user tool state implementations that
+require access to hex terrain features and UI integration. It centralizes initialization logic, view mode
+management, and cursor setup for tools operating on hex terrain. Derived classes should override relevant
+methods to customize behavior for specific tool requirements.</p>
+</div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase__ctor_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase__ctor_Fwt_Core_StateMachines_ISmState_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.#ctor(Fwt.Core.StateMachines.ISmState)">HexTerrainUserToolStateBase(ISmState)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected HexTerrainUserToolStateBase(ISmState parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HexTerrainUserToolSettings_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.HexTerrainUserToolSettings*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HexTerrainUserToolSettings" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.HexTerrainUserToolSettings">HexTerrainUserToolSettings</h4>
+  <div class="markdown level1 summary"><p>Settings specific to the hex terrain user tool.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexTerrainUserToolStateSettings HexTerrainUserToolSettings { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Data.HexTerrainUserToolStateSettings.html">HexTerrainUserToolStateSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PreviousViewMode_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.PreviousViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PreviousViewMode" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.PreviousViewMode">PreviousViewMode</h4>
+  <div class="markdown level1 summary"><p>The view mode that was active prior to the current one.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int PreviousViewMode { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TerrainAPI_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.TerrainAPI*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TerrainAPI" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.TerrainAPI">TerrainAPI</h4>
+  <div class="markdown level1 summary"><p>The API interface for interacting with hex terrain features.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual IHexTerrainAPI TerrainAPI { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetTerrainLayer_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.GetTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetTerrainLayer__2_Fwt_HexTerrains_Data_HexTerrainLayerReference_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.GetTerrainLayer``2(Fwt.HexTerrains.Data.HexTerrainLayerReference)">GetTerrainLayer&lt;TLayerGroup, TLayer&gt;(HexTerrainLayerReference)</h4>
+  <div class="markdown level1 summary"><p>Looks for a terrain layer of type <code class="typeparamref">TLayer</code> within the terrain layer group specified by <code class="typeparamref">TLayerGroup</code> using the provided layer reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TLayer GetTerrainLayer&lt;TLayerGroup, TLayer&gt;(HexTerrainLayerReference layerReference) where TLayerGroup : HexTerrainLayerGroup where TLayer : HexTerrainLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>reference data to needed layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TLayer</span></td>
+        <td><p>terrain layer if found and null otherwise</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetUIScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.GetUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetUIScreen__1" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.GetUIScreen``1">GetUIScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Retrieves an instance of the specified UIScreen type, creating it if it does not already exist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TScreen GetUIScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>An instance of the specified UIScreen type. A new instance is created if one does not already exist.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>The type of UIScreen to retrieve. Must inherit from UIScreen.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HideSettingsScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.HideSettingsScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HideSettingsScreen__1" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.HideSettingsScreen``1">HideSettingsScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Hides the settings screen of the specified type if it is currently active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void HideSettingsScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>The type of settings screen to hide. Must derive from <a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HideSettingsScreen__1_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the specified screen is not active or does not exist, this method has no effect.
+Override this method to customize the hiding behavior for specific screen types.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_IHexTerrainAPI_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init(Fwt.HexTerrains.IHexTerrainAPI)">Init(IHexTerrainAPI)</h4>
+  <div class="markdown level1 summary"><p>Initializes the instance with the specified terrain API.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(IHexTerrainAPI terrainAPI)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td><span class="parametername">terrainAPI</span></td>
+        <td><p>The terrain API to associate with this instance. Cannot be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_HexTerrainUserToolStateSettings_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init(Fwt.HexTerrains.UserTools.SM.Data.HexTerrainUserToolStateSettings)">Init(HexTerrainUserToolStateSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tool with the specified user state settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainUserToolStateSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Data.HexTerrainUserToolStateSettings.html">HexTerrainUserToolStateSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The user state settings to apply to the tool. Cannot be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init__1_Fwt_HexTerrains_IHexTerrainAPI___0_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init``1(Fwt.HexTerrains.IHexTerrainAPI,``0)">Init&lt;TInitArgs&gt;(IHexTerrainAPI, TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the instance using the specified terrain API and initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init&lt;TInitArgs&gt;(IHexTerrainAPI terrainAPI, TInitArgs args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td><span class="parametername">terrainAPI</span></td>
+        <td><p>An object that provides access to terrain-related functionality required for initialization. Cannot be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The initialization arguments used to configure the instance. The specific requirements depend on the
+implementation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>The type of the initialization arguments used to configure the instance.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init__1___0_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.Init``1(``0)">Init&lt;TInitArgs&gt;(TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tool using the specified initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init&lt;TInitArgs&gt;(TInitArgs args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The initialization arguments used to configure the tool. If the argument implements IUserToolStateConfig,
+its ToolSettings are used; otherwise, default settings are applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>The type of the initialization arguments used to configure the tool. If the type implements
+IUserToolStateConfig, its ToolSettings will be used; otherwise, default settings are applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Init__1___0_">UserToolStateBase.Init&lt;TInitArgs&gt;(TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToRun_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.PrepareToRun*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToRun" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.PrepareToRun">PrepareToRun()</h4>
+  <div class="markdown level1 summary"><p>Performs any necessary initialization or setup required before executing the main operation.
+Called by state machine once when state becomes active.
+If state is disabled and then enabled again, this method will be called again.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PrepareToRun()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.StateMachines.SmState.html#Fwt_Core_StateMachines_SmState_PrepareToRun">SmState.PrepareToRun()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToRun_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to implement preparation logic specific to the derived class.
+This method should be called prior to running the core functionality to ensure all prerequisites are
+met.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToStop_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.PrepareToStop*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToStop" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.PrepareToStop">PrepareToStop()</h4>
+  <div class="markdown level1 summary"><p>Performs any necessary actions to prepare the object for stopping or shutdown.
+Called when the state is about to be deactivated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PrepareToStop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.StateMachines.SmState.html#Fwt_Core_StateMachines_SmState_PrepareToStop">SmState.PrepareToStop()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToStop_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Implementations should ensure that all resources are released and any ongoing
+operations are safely terminated before the object is stopped. This method is typically called prior to
+disposing or shutting down the object to ensure a clean transition.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetViewMode(System.Int32)">SetViewMode(int)</h4>
+  <div class="markdown level1 summary"><p>Sets the current terrain view mode to the specified value.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SetViewMode(int viewMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">viewMode</span></td>
+        <td><p>The view mode to apply to the terrain. Must be a valid mode recognized by the terrain API.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method stores the previous view mode before updating to the new mode. Derived
+classes can override this method to implement custom behavior when changing view modes.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor(System.Boolean)">SetupTerrainCursor(bool)</h4>
+  <div class="markdown level1 summary"><p>Configures the visibility of the terrain brush cursor.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SetupTerrainCursor(bool isCursorVisible)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isCursorVisible</span></td>
+        <td><p>A value indicating whether the terrain cursor should be visible. Specify <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to show the
+cursor; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a> to hide it.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor(System.Boolean,System.Int32)">SetupTerrainCursor(bool, int)</h4>
+  <div class="markdown level1 summary"><p>Configures the terrain cursor's visibility and brush size for terrain editing operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SetupTerrainCursor(bool isCursorVisible, int size)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isCursorVisible</span></td>
+        <td><p>A value indicating whether the terrain cursor should be visible. Set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to display
+the cursor; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The size of the terrain brush to apply. Must be a positive integer representing the brush diameter in
+terrain units.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor(System.Boolean,System.Int32,UnityEngine.Color32)">SetupTerrainCursor(bool, int, Color32)</h4>
+  <div class="markdown level1 summary"><p>Configures the terrain cursor's visibility, size, and color for terrain editing operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SetupTerrainCursor(bool isCursorVisible, int size, Color32 color)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isCursorVisible</span></td>
+        <td><p>A value indicating whether the terrain cursor should be visible. Set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to display
+the cursor; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The diameter of the terrain cursor brush, in units. Must be a positive integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color32</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color to apply to the terrain cursor brush.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_System_Boolean_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetupTerrainCursor(System.Boolean,System.Int32,UnityEngine.Color32,System.Boolean)">SetupTerrainCursor(bool, int, Color32, bool)</h4>
+  <div class="markdown level1 summary"><p>Configures the terrain editing cursor's visibility, size, color, and resizability.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void SetupTerrainCursor(bool isCursorVisible, int size, Color32 color, bool isResizable)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isCursorVisible</span></td>
+        <td><p>A value indicating whether the terrain cursor should be visible. Set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to display
+the cursor; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">size</span></td>
+        <td><p>The diameter of the terrain cursor brush, in pixels. Must be a positive integer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Color32</span></td>
+        <td><span class="parametername">color</span></td>
+        <td><p>The color to apply to the terrain cursor brush.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isResizable</span></td>
+        <td><p>A value indicating whether the terrain cursor brush can be resized interactively. Set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to allow resizing; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_ShowSettingsScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.ShowSettingsScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_ShowSettingsScreen__2___0_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.ShowSettingsScreen``2(``0)">ShowSettingsScreen&lt;TViewData, TScreen&gt;(TViewData)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TScreen ShowSettingsScreen&lt;TViewData, TScreen&gt;(TViewData viewData) where TScreen : UIScreen, IViewDataReceiver&lt;TViewData&gt;</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TViewData</span></td>
+        <td><span class="parametername">viewData</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TViewData</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TryRestoreViewMode_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.TryRestoreViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TryRestoreViewMode" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.TryRestoreViewMode">TryRestoreViewMode()</h4>
+  <div class="markdown level1 summary"><p>Attempts to restore the previous terrain view mode if a view mode change is enabled in the user tool
+settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void TryRestoreViewMode()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TryRestoreViewMode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to customize how the terrain view mode is restored in derived
+classes. This method has no effect if view mode changes are not enabled.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TrySetViewMode_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.TrySetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TrySetViewMode" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.TrySetViewMode">TrySetViewMode()</h4>
+  <div class="markdown level1 summary"><p>Attempts to set the view mode based on the current user tool settings. If a view mode change is required,
+updates the view mode accordingly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void TrySetViewMode()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TrySetViewMode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to customize how the view mode is determined or applied in
+derived classes. This method does not throw exceptions if no change is needed.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Namespace Fwt.HexTerrains.CellObjects.Data | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Namespace Fwt.HexTerrains.CellObjects.Data | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.CellObjects.Data">
+
+  <h1 id="Fwt_HexTerrains_CellObjects_Data" data-uid="Fwt.HexTerrains.CellObjects.Data" class="text-break">Namespace Fwt.HexTerrains.CellObjects.Data</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">
+Classes
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html">CellObjectLayer</a></h4>
+      <section><p>Terrain layer that contains a visual object per cell.
+Renders cell objects using Graphics.DrawMeshInstanced using provided <a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_BulkRenderer">BulkRenderer</a> and CellObjectConfigs.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html">CellObjectLayerConfigAsset</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerGroup.html">CellObjectLayerGroup</a></h4>
+      <section></section>
+    <h3 id="structs">
+Structs
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectConfig.html">CellObjectConfig</a></h4>
+      <section><p>Configuration for a cell object (visual object that is placed in a cell).
+Contains a list of states, each state can have multiple LODs (Level of Detail).
+States allow to have different visuals for the same cell object, for example, a forest can have different visuals when it's young or fully grown
+or a building can have different visuals when it's under construction or fully built or it's a ruins.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.html">CellObjectLODConfig</a></h4>
+      <section><p>Configuration for a cell object LOD (Level of Detail).
+Contains a range of distances for which this LOD is used,
+and a list of render entities (meshes, materials, etc.) that are used to render this LOD.
+Also holds a relative transforms for each render entity, which allows to place them correctly in the cell space.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.html">CellObjectLODSettings</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerLODSettings.html">CellObjectLayerLODSettings</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig.html">CellObjectStateConfig</a></h4>
+      <section><p>Configuration for a cell object state. Each cell object can have multiple states,
+for example, a tree can be young, fully grown or a stump, the building can be under construction, fully built or a ruins.</p>
+</section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings.html">CellObjectVisualItemSettings</a></h4>
+      <section></section>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CreateCellObjectsLayerRequest.html">CreateCellObjectsLayerRequest</a></h4>
+      <section></section>
+    <h3 id="interfaces">
+Interfaces
+</h3>
+      <h4><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html">ICellObjectLayerConfig</a></h4>
+      <section></section>
+
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

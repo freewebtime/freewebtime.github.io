@@ -1,0 +1,1140 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class GeoPlastLayerGroup | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class GeoPlastLayerGroup | Hex Terrains Framework ">
+    
+    <meta name="description" content="Represents a group of geological plast terrain layers, providing methods to simulate, update, and render all layers in sequence. Supports scheduling and chaining of jobs for simulation, density, volume, bedrock, ceiling, and rendering operations across all contained layers.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup">
+
+
+
+  <h1 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup" class="text-break">Class GeoPlastLayerGroup</h1>
+  <div class="markdown level0 summary"><p>Represents a group of geological plast terrain layers, providing methods to simulate, update, and render all
+layers in sequence. Supports scheduling and chaining of jobs for simulation, density, volume, bedrock, ceiling,
+and rendering operations across all contained layers.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup.html">HexTerrainLayerGroup</a></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html">HexTerrainLayerGroup</a>&lt;<a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayer.html">GeoPlastLayer</a>&gt;</div>
+    <div class="level4"><span class="xref">GeoPlastLayerGroup</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a></div>
+    <div><span class="xref">IComponentData</span></div>
+    <div><span class="xref">IQueryTypeParameter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayersCount">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.LayersCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Layers">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.Layers</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayersByName">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.LayersByName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayerIndexByName">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.LayerIndexByName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayerIndexByInstance">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.LayerIndexByInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings_System_Collections_Generic_IEnumerable___0__">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.Init&lt;TInitLayerArgs&gt;(HexTerrainSettings, IEnumerable&lt;TInitLayerArgs&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Init_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.Init(HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_InitLayers__1_Fwt_HexTerrains_Data_HexTerrainSettings_System_Collections_Generic_IEnumerable___0__">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.InitLayers&lt;TInitLayerArgs&gt;(HexTerrainSettings, IEnumerable&lt;TInitLayerArgs&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_InitLayers_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.InitLayers(HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer_System_Int32_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer_System_String_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_CalculateColorMap_Unity_Jobs_JobHandle_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.CalculateColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_Int32_System_Boolean_System_String_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer&lt;TTargetLayer&gt;(int, bool, string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_String_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer&lt;TTargetLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_Int32_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer&lt;TTargetLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_Int32_System_String_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer&lt;TTargetLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer&lt;TTargetLayer&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.GetLayer&lt;TTargetLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SetOrAddLayer_System_Int32__0_System_Boolean_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.SetOrAddLayer(int, GeoPlastLayer, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SetLayer_System_Int32__0_System_Boolean_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.SetLayer(int, GeoPlastLayer, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_AddLayer__0_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.AddLayer(GeoPlastLayer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RemoveLayer_System_Int32_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.RemoveLayer(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RemoveLayer_System_String_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.RemoveLayer(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RemoveLayer__0_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.RemoveLayer(GeoPlastLayer, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RegisterLayer__0_System_Int32_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.RegisterLayer(GeoPlastLayer, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_UnregisterLayer__0_System_Int32_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.UnregisterLayer(GeoPlastLayer, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SetAllDirty_System_Boolean_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.SetAllDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Cleanup">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.Cleanup()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_CleanupAsync_Unity_Jobs_JobHandle_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.CleanupAsync(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Dispose">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SerializeLayer_System_IO_BinaryWriter_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.SerializeLayer(BinaryWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_DeserializeLayer_System_IO_BinaryReader_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.DeserializeLayer(BinaryReader, HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Name">HexTerrainLayer.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Settings">HexTerrainLayer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ParentLayer">HexTerrainLayer.ParentLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_">HexTerrainLayer.Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Resize_Unity_Mathematics_int2_">HexTerrainLayer.Resize(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__">HexTerrainLayer.InitColoredDataLayer&lt;TValue&gt;(ColorMapCellValueDataLayer&lt;TValue&gt;, IInitColorMapCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitDataLayer__1_Fwt_HexTerrains_DataLayers_CellValueDataLayer___0__Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs___0__">HexTerrainLayer.InitDataLayer&lt;TValue&gt;(CellValueDataLayer&lt;TValue&gt;, IInitCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CompleteAllJobs">HexTerrainLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ToString">HexTerrainLayer.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.GeoPlasts.html">GeoPlasts</a>.<a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class GeoPlastLayerGroup : HexTerrainLayerGroup&lt;GeoPlastLayer&gt;, IDisposable, ISerializableTerrainLayer, IComponentData, IQueryTypeParameter</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>GeoPlastLayerGroup manages a collection of GeoPlastLayer instances, coordinating their
+simulation and update workflows using job handles for parallel processing. Methods typically iterate through all
+layers, scheduling jobs and combining dependencies to ensure correct execution order. If the layer collection is
+null or empty, most operations return the input dependency unchanged. This class is designed for use in systems
+that require synchronized simulation and rendering of multiple terrain layers, such as geological modeling or
+procedural terrain generation.</p>
+</div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_LastSimulationFrame" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.LastSimulationFrame">LastSimulationFrame</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected long LastSimulationFrame</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_ApplySimulation_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.ApplySimulation*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_ApplySimulation_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.ApplySimulation(Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Unity.Jobs.JobHandle)">ApplySimulation(HexTerrainSimulationTimer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Applies calculated simulation for all the layers in order they are in the list.
+Calls ApplySimulation on each layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle ApplySimulation(HexTerrainSimulationTimer simulationTime, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td><span class="parametername">simulationTime</span></td>
+        <td><p>Simulation time structure. Use this values in your calculations to be in sync with all other simulations</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateBedrock_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateBedrock*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateBedrock_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateBedrock(Unity.Jobs.JobHandle)">CalculateBedrock(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates Bedrock height for all the layers in order they are in the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculateBedrock(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateBedrockAndCeiling_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateBedrockAndCeiling*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateBedrockAndCeiling_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateBedrockAndCeiling(Unity.Jobs.JobHandle)">CalculateBedrockAndCeiling(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules calculations for bedrock and ceiling layers, chaining them as jobs dependent on the specified job
+handle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculateBedrockAndCeiling(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>A job handle representing the dependency that must be completed before bedrock and ceiling calculations
+begin.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>A job handle that represents the scheduled bedrock and ceiling calculations, including the provided
+dependency.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateBedrockAndCeiling_Unity_Jobs_JobHandle__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If no layers are present, the method returns the input dependency unchanged. Each
+layer's bedrock and ceiling calculations are scheduled in sequence, with each depending on the completion of
+the previous job.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateCeiling_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateCeiling*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateCeiling_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateCeiling(Unity.Jobs.JobHandle)">CalculateCeiling(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates Ceiling height for all the layers in order they are in the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculateCeiling(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateDensity_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateDensity*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateDensity_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateDensity(Unity.Jobs.JobHandle)">CalculateDensity(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules density calculation jobs for all layers and returns a handle that represents the combined job
+dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculateDensity(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>A job handle that represents the dependency to be completed before density calculations begin.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>A job handle that can be used to track the completion of all scheduled density calculation jobs. If no
+layers are present, returns the input dependency handle unchanged.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateDensity_Unity_Jobs_JobHandle__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the Layers collection is null or empty, no jobs are scheduled and the input
+dependency is returned. This method is typically used to chain job dependencies when performing density
+calculations in parallel.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculatePlastUpdate_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculatePlastUpdate*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculatePlastUpdate_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculatePlastUpdate(Unity.Jobs.JobHandle)">CalculatePlastUpdate(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules plast update jobs for all non-null layers and returns a handle representing the combined job
+dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculatePlastUpdate(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>A <span class="xref">Unity.Jobs.JobHandle</span> representing the job dependency to which plast update jobs will be chained.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>A <span class="xref">Unity.Jobs.JobHandle</span> that represents the combined dependencies of all scheduled plast update jobs. If
+no layers are present, returns the input dependency unchanged.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculatePlastUpdate_Unity_Jobs_JobHandle__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the Layers collection is null or empty, no jobs are scheduled and the input
+dependency is returned. Each non-null layer in the Layers collection has its plast update job scheduled in
+sequence, chaining dependencies accordingly.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateSimulation_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateSimulation*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateSimulation_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateSimulation(Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Unity.Jobs.JobHandle)">CalculateSimulation(HexTerrainSimulationTimer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates simulation for all the layers in order they are in the list.
+Calls CalculateSimulation on each layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculateSimulation(HexTerrainSimulationTimer simulationTime, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td><span class="parametername">simulationTime</span></td>
+        <td><p>Simulation time structure. Use this values in your calculations to be in sync with all other simulations</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateVolume_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateVolume*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CalculateVolume_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CalculateVolume(Unity.Jobs.JobHandle)">CalculateVolume(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates volume for all the layers in order they are in the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalculateVolume(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CreateTerrainLayer_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CreateTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_CreateTerrainLayer__1___0_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.CreateTerrainLayer``1(``0)">CreateTerrainLayer&lt;TInitArgs&gt;(TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>This function is called to create a new terrain layer of type TTerrainLayer.
+Default implementation uses an Activator to create a new instance of TTerrainLayer,
+expecting that the TTerrainLayer has a parameterless constructor.
+Override this function in your derived class to have a custom way of creating a terrain layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override GeoPlastLayer CreateTerrainLayer&lt;TInitArgs&gt;(TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td><p>Initialization arguments for creating a layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayer.html">GeoPlastLayer</a></td>
+        <td><p>Returns a created instance of the terrain layer of type (inherited from) TTerrainLayer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>Init terrain layer arguments object that is used in create layer process. Default implementation ignores this parameter, but in your overrided implementation it may be needed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_CreateTerrainLayer__1___0_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.CreateTerrainLayer&lt;TInitArgs&gt;(TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_InitTerrainLayer_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.InitTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_InitTerrainLayer__1_Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayer_Fwt_HexTerrains_Data_HexTerrainSettings___0_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.InitTerrainLayer``1(Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayer,Fwt.HexTerrains.Data.HexTerrainSettings,``0)">InitTerrainLayer&lt;TInitArgs&gt;(GeoPlastLayer, HexTerrainSettings, TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the terrain layer with the specified settings and initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitTerrainLayer&lt;TInitArgs&gt;(GeoPlastLayer layer, HexTerrainSettings settings, TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayer.html">GeoPlastLayer</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td><p>nested terrain layer to be initialized with provided init args</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>HexTerrainSettings of the terrain this layers list is attached to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td><p>Initialization arguments for provided nested terrain layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>Initialization arguments for a nested terrain layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_InitTerrainLayer__1__0_Fwt_HexTerrains_Data_HexTerrainSettings___0_">HexTerrainLayerGroup&lt;GeoPlastLayer&gt;.InitTerrainLayer&lt;TInitArgs&gt;(GeoPlastLayer, HexTerrainSettings, TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_PreparePlastUpdate_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.PreparePlastUpdate*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_PreparePlastUpdate_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.PreparePlastUpdate(Unity.Jobs.JobHandle)">PreparePlastUpdate(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Prepares the update operations for all plast layers and returns a job handle representing the combined
+dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle PreparePlastUpdate(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>A <span class="xref">Unity.Jobs.JobHandle</span> that represents the job dependency to be combined with the plast layer updates.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>A <span class="xref">Unity.Jobs.JobHandle</span> that encapsulates the dependencies of all plast layer update jobs. If no layers
+are present, returns the input dependency unchanged.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_PreparePlastUpdate_Unity_Jobs_JobHandle__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method iterates through all plast layers and schedules their update jobs,
+chaining them with the provided dependency. If the layers collection is null, no updates are scheduled and
+the original dependency is returned. This method is typically called as part of a job scheduling workflow to
+ensure that plast layer updates are properly synchronized.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_PrepareSimulation_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.PrepareSimulation*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_PrepareSimulation_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.PrepareSimulation(Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Unity.Jobs.JobHandle)">PrepareSimulation(HexTerrainSimulationTimer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Prepares all the layers in order they are in the list for simulation.
+Calls PrepareSimulation on each layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle PrepareSimulation(HexTerrainSimulationTimer simulationTime, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td><span class="parametername">simulationTime</span></td>
+        <td><p>Simulation time structure. Use this values in your calculations to be in sync with all other simulations</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Render_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.Render*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Render_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.Render(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)">Render(ChunkMeshLayerGroup, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Renders all the layers in order they are in the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle Render(ChunkMeshLayerGroup chunkMeshLayerList, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup.html">ChunkMeshLayerGroup</a></td>
+        <td><span class="parametername">chunkMeshLayerList</span></td>
+        <td><p>chunk meshes layer that is used to display the geo plast layer data.
+For instance, the terrain surface is used to render a ground, the clouds chunk mesh is used to display atmosphere humid, etc.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency to schedule jobs with</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Simulate_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.Simulate*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Simulate_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.Simulate(Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Unity.Jobs.JobHandle)">Simulate(HexTerrainSimulationTimer, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Simulates all the layers in order they are in the list.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle Simulate(HexTerrainSimulationTimer simulationTime, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td><span class="parametername">simulationTime</span></td>
+        <td><p>Simulation time structure. Use this values in your calculations to be in sync with all other simulations</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency for jobs to schedule</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>job handle of all the scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Update_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.Update*"></a>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Update_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.Update(Unity.Jobs.JobHandle)">Update(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates everything that could have changed between frames.
+Checks for dirty flags and recalculates only what is needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle Update(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>dependency to use for scheduling jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>combined dependency of all scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a>
+  </div>
+  <div>
+      <span class="xref">Unity.Entities.IComponentData</span>
+  </div>
+  <div>
+      <span class="xref">Unity.Entities.IQueryTypeParameter</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

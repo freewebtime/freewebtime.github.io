@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Struct SunSettings | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Struct SunSettings | Hex Terrains Framework ">
+    
+    <meta name="description" content="Represents configuration settings for simulating the sun&#39;s movement, seasonal variation, and heating effects in a planetary environment.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings">
+
+
+
+  <h1 id="Fwt_HexTerrains_Suns_Data_SunSettings" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings" class="text-break">Struct SunSettings</h1>
+  <div class="markdown level0 summary"><p>Represents configuration settings for simulating the sun's movement, seasonal variation, and heating effects in
+a planetary environment.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Suns.html">Suns</a>.<a class="xref" href="Fwt.HexTerrains.Suns.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Suns_Data_SunSettings_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public struct SunSettings</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_Suns_Data_SunSettings_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The SunSettings structure encapsulates parameters that control the length of day and year,
+the sun's apparent movement relative to the equator, and how solar heat is distributed across the terrain. These
+settings are typically used in environmental or planetary simulation systems to model day-night cycles, seasonal
+changes, and temperature gradients. All fields are publicly accessible for direct configuration.</p>
+</div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_CoolingIntensity" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.CoolingIntensity">CoolingIntensity</h4>
+  <div class="markdown level1 summary"><p>when the sun does not apply the heat, this amount of heat is added to the cell. This can be used to simulate cooling of the cells during the night or when the sun is far away.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;All cells outside the sun radius, this amount of heat is added to the cell. This can be used to simulate cooling of the cells during the night or when the sun is far away.&quot;)]
+public float CoolingIntensity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_DayLength" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.DayLength">DayLength</h4>
+  <div class="markdown level1 summary"><p>Day in seconds. The sun goes around the terrain in horizontal direction by this time.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Day in seconds. The sun goes around the terrain in horizontal direction by this time.&quot;)]
+public float DayLength</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_HeatIntensity" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.HeatIntensity">HeatIntensity</h4>
+  <div class="markdown level1 summary"><p>This value is the heat applied to the cell at distance 0 from the sun center. The heat applied to the cells at distance equal to <a class="xref" href="Fwt.HexTerrains.Suns.Data.SunSettings.html#Fwt_HexTerrains_Suns_Data_SunSettings_SunRadius">SunRadius</a> is determined by <a class="xref" href="Fwt.HexTerrains.Suns.Data.SunSettings.html#Fwt_HexTerrains_Suns_Data_SunSettings_SunHeatCurve">SunHeatCurve</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;This value is the heat applied to the cell at distance 0 from the sun center. The heat applied to the cells at distance equal to SunSize is determined by SunHeatCurve.&quot;)]
+public float HeatIntensity</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_IsEnabled" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.IsEnabled">IsEnabled</h4>
+  <div class="markdown level1 summary"><p>Indicates whether the feature or component is enabled.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Indicates whether the feature or component is enabled.&quot;)]
+public bool IsEnabled</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_PlanetAngle" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.PlanetAngle">PlanetAngle</h4>
+  <div class="markdown level1 summary"><p>Affects how far the sum moves from the equator during the year. 0 means no vertical movement, 1 means that the sun will move from the equator to the pole, then to equator and then to opposite pole during the year.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Range(0, 1)]
+[Tooltip(&quot;Affects how far the sum moves from the equator during the year. 0 means no vertical movement, 1 means that the sun will move from the equator to the pole, then to equator and then to opposite pole during the year.&quot;)]
+public float PlanetAngle</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_SimulationSettings" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.SimulationSettings">SimulationSettings</h4>
+  <div class="markdown level1 summary"><p>Defines when the simulation happens during the simulation Frame Cycle.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Defines when the simulation happens during the simulation Frame Cycle.&quot;)]
+public FrameCycleSettings SimulationSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.FrameCycleSettings.html">FrameCycleSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_SunHeatCurve" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.SunHeatCurve">SunHeatCurve</h4>
+  <div class="markdown level1 summary"><p>Affects how much the sun heats the terrain with distance from the sun center. Max distance is <a class="xref" href="Fwt.HexTerrains.Suns.Data.SunSettings.html#Fwt_HexTerrains_Suns_Data_SunSettings_SunRadius">SunRadius</a>. This curve evaluates the multiplier to the sun heat applied to the cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Affects how much the sun heats the terrain with distance from the sun center. Max distance is SunSize. This curve evaluates the multiplier to the sun heat applied to the cell.&quot;)]
+public ExponentialCurve SunHeatCurve</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.ExponentialCurve.html">ExponentialCurve</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_SunRadius" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.SunRadius">SunRadius</h4>
+  <div class="markdown level1 summary"><p>How much cells from the sun center is heated by the sun.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;How much cells from the sun center is heated by the sun.&quot;)]
+public float SunRadius</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_SunType" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.SunType">SunType</h4>
+  <div class="markdown level1 summary"><p>Type of the sun (Circle or line stretched in horizontal direction). Circle sun heats the cells in a circular area around the sun center. Line sun heats the cells in a line around the sun center. Line sun can be used to simulate the sun that is far away from the terrain, while circle sun can be used to simulate the sun that is close to the terrain.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SunType SunType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Suns.Data.SunType.html">SunType</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_YearLengthInDays" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.YearLengthInDays">YearLengthInDays</h4>
+  <div class="markdown level1 summary"><p>Every time the sun goes around the terrain, the day passes. This amount of days is a full year. Year affects seasons (displacement of the sun vertically).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Every time the sun goes around the terrain, the day passes. This amount of days is a full year. Year affects seasons (displacement of the sun vertically).&quot;)]
+public int YearLengthInDays</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Suns_Data_SunSettings_Default_" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.Default*"></a>
+  <h4 id="Fwt_HexTerrains_Suns_Data_SunSettings_Default" data-uid="Fwt.HexTerrains.Suns.Data.SunSettings.Default">Default</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static SunSettings Default { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Suns.Data.SunSettings.html">SunSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_ValueType__1___0_System_Int32_">HashExtensions.GetHashCode_ValueType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

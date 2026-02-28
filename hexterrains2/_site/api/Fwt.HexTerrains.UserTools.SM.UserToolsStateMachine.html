@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class UserToolsStateMachine | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class UserToolsStateMachine | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine">
+
+
+
+  <h1 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine" class="text-break">Class UserToolsStateMachine</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.StateMachines.SmState.html">SmState</a></div>
+    <div class="level2"><a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html">SmStateMachine</a></div>
+    <div class="level3"><span class="xref">UserToolsStateMachine</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></div>
+    <div><a class="xref" href="Fwt.Core.StateMachines.IStateMachine.html">IStateMachine</a></div>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_States">SmStateMachine.States</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SortedStates">SmStateMachine.SortedStates</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_CurrentState">SmStateMachine.CurrentState</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_AddState__1___0_">SmStateMachine.AddState&lt;TState&gt;(TState)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SetState__1_System_Int32___0_System_Boolean_">SmStateMachine.SetState&lt;TState&gt;(int, TState, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SwitchState__1">SmStateMachine.SwitchState&lt;TState&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SwitchState__2___1_">SmStateMachine.SwitchState&lt;TState, TContext&gt;(TContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SwitchState_System_Int32_">SmStateMachine.SwitchState(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SwitchState__2___0___1_">SmStateMachine.SwitchState&lt;TState, TContext&gt;(TState, TContext)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_SwitchState_Fwt_Core_StateMachines_ISmState_">SmStateMachine.SwitchState(ISmState)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_GetState__1_System_Type_">SmStateMachine.GetState&lt;TState&gt;(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_GetState_System_Int32_">SmStateMachine.GetState(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_GetState_System_Type_">SmStateMachine.GetState(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_Tick">SmStateMachine.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_PrepareToRun">SmStateMachine.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_PrepareToStop">SmStateMachine.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.html">UserTools</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.html">SM</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class UserToolsStateMachine : SmStateMachine, ISmState, IStateMachine, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine__ctor_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine__ctor" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.#ctor">UserToolsStateMachine()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserToolsStateMachine()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine__ctor_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine__ctor_Fwt_HexTerrains_IHexTerrainAPI_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.#ctor(Fwt.HexTerrains.IHexTerrainAPI)">UserToolsStateMachine(IHexTerrainAPI)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected UserToolsStateMachine(IHexTerrainAPI terrainAPI)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td><span class="parametername">terrainAPI</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_StatesByType" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.StatesByType">StatesByType</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Dictionary&lt;int, UserToolStateBase&gt; StatesByType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_AddState_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.AddState*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_AddState_Fwt_Core_StateMachines_ISmState_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.AddState(Fwt.Core.StateMachines.ISmState)">AddState(ISmState)</h4>
+  <div class="markdown level1 summary"><p>Adds the specified state to the state machine's collection of states.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void AddState(ISmState state)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></td>
+        <td><span class="parametername">state</span></td>
+        <td><p>The state to add. Cannot be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.Core.StateMachines.SmStateMachine.html#Fwt_Core_StateMachines_SmStateMachine_AddState_Fwt_Core_StateMachines_ISmState_">SmStateMachine.AddState(ISmState)</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_AddState_Fwt_Core_StateMachines_ISmState__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the state is not null, it is also added to the sorted state collection, keyed by
+its type. This allows for efficient retrieval of states by type.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_ClearStates_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.ClearStates*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_ClearStates" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.ClearStates">ClearStates()</h4>
+  <div class="markdown level1 summary"><p>Destroys all states and clears the States collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ClearStates()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_CreateUserToolState_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.CreateUserToolState*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_CreateUserToolState__1___0_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.CreateUserToolState``1(``0)">CreateUserToolState&lt;TInitArgs&gt;(TInitArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UserToolStateBase CreateUserToolState&lt;TInitArgs&gt;(TInitArgs args) where TInitArgs : IUserToolStateConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">args</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Dispose_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Dispose" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_GetStateByUserToolType_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.GetStateByUserToolType*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_GetStateByUserToolType_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.GetStateByUserToolType(System.Int32)">GetStateByUserToolType(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserToolStateBase GetStateByUserToolType(int userToolType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">userToolType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_GetState_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.GetState*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_GetState__1_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.GetState``1(System.Int32)">GetState&lt;TState&gt;(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TState GetState&lt;TState&gt;(int userToolType) where TState : UserToolStateBase</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">userToolType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TState</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Init_Fwt_HexTerrains_IHexTerrainAPI_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Init(Fwt.HexTerrains.IHexTerrainAPI)">Init(IHexTerrainAPI)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init(IHexTerrainAPI terrainAPI)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td><span class="parametername">terrainAPI</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_InitState_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.InitState*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_InitState__1_Fwt_HexTerrains_UserTools_SM_UserToolStateBase___0_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.InitState``1(Fwt.HexTerrains.UserTools.SM.UserToolStateBase,``0)">InitState&lt;TInitArgs&gt;(UserToolStateBase, TInitArgs)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitState&lt;TInitArgs&gt;(UserToolStateBase state, TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></td>
+        <td><span class="parametername">state</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_InitStates_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.InitStates*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_InitStates_Fwt_HexTerrains_IHexTerrainAPI_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.InitStates(Fwt.HexTerrains.IHexTerrainAPI)">InitStates(IHexTerrainAPI)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitStates(IHexTerrainAPI terrainAPI)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td><span class="parametername">terrainAPI</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_InitStates_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.InitStates*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_InitStates__1_System_Collections_Generic_IEnumerable___0__" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.InitStates``1(System.Collections.Generic.IEnumerable{``0})">InitStates&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitStates&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt; requests) where TInitArgs : IUserToolStateConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TInitArgs&gt;</td>
+        <td><span class="parametername">requests</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Init__1_System_Collections_Generic_IEnumerable___0__" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Init``1(System.Collections.Generic.IEnumerable{``0})">Init&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt; requests) where TInitArgs : IUserToolStateConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TInitArgs&gt;</td>
+        <td><span class="parametername">requests</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_Init__1_System_Collections_Generic_IEnumerable___0__Fwt_HexTerrains_IHexTerrainAPI_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.Init``1(System.Collections.Generic.IEnumerable{``0},Fwt.HexTerrains.IHexTerrainAPI)">Init&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt;, IHexTerrainAPI)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Init&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt; requests, IHexTerrainAPI terrainAPI) where TInitArgs : IUserToolStateConfig</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;TInitArgs&gt;</td>
+        <td><span class="parametername">requests</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.IHexTerrainAPI.html">IHexTerrainAPI</a></td>
+        <td><span class="parametername">terrainAPI</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_SwitchStateByUserToolType_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.SwitchStateByUserToolType*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_SwitchStateByUserToolType_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.SwitchStateByUserToolType(System.Int32)">SwitchStateByUserToolType(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UserToolStateBase SwitchStateByUserToolType(int userToolType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">userToolType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_SwitchState_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.SwitchState*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_UserToolsStateMachine_SwitchState__1_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.UserToolsStateMachine.SwitchState``1(System.Int32)">SwitchState&lt;TState&gt;(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public TState SwitchState&lt;TState&gt;(int userToolType) where TState : UserToolStateBase</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">userToolType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TState</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TState</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.IStateMachine.html">IStateMachine</a>
+  </div>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>User Interface concepts | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="User Interface concepts | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" height="100%" src="logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="user-interface-concepts">User Interface concepts</h1>
+
+<h2 id="-ui-binding-system-in-hex-terrains-framework">🧩 UI Binding System in Hex Terrains Framework</h2>
+<p>The UI in Hex Terrains Framework is built on <strong>Unity UI Toolkit</strong> and uses a <strong>data-driven binding system</strong> that seamlessly synchronizes UI screens with underlying runtime data.</p>
+<p>This system ensures UI elements always reflect the current application state, and allows runtime tools (like terrain brushes, minimaps, and tool selectors) to respond to user input with minimal boilerplate.</p>
+<hr>
+<h3 id="-core-concepts">🧱 Core Concepts</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UIDataSource</code></td>
+<td>Base class for all bindable data. Tracks changes using a <code>Version</code>.</td>
+</tr>
+<tr>
+<td><code>IViewDataReceiver&lt;T&gt;</code></td>
+<td>Interface for screens to receive and apply data sources.</td>
+</tr>
+<tr>
+<td><code>UIScreen&lt;T&gt;</code></td>
+<td>Base class for all UI screens, supports binding and updating.</td>
+</tr>
+<tr>
+<td><code>ToolSettingsScreen&lt;T&gt;</code></td>
+<td>Generic base for tool-specific UI panels.</td>
+</tr>
+<tr>
+<td><code>MinimapScreenBase</code></td>
+<td>Base for minimap UI, receives view data updates from systems.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-data-binding-with-uidatasource">📊 Data Binding with <code>UIDataSource</code></h3>
+<p>All data exposed to UI inherits from <code>UIDataSource</code>. This abstract class handles:</p>
+<ul>
+<li><strong>Change detection</strong> via a <code>Version</code> counter</li>
+<li><strong>Dirty tracking</strong> using <code>MarkDirty()</code></li>
+<li><strong>UI invalidation</strong> with <code>CommitChanges()</code></li>
+</ul>
+<pre><code class="lang-csharp">public abstract class UIDataSource : ICommitChanges {
+    public long Version;
+
+    public virtual void MarkDirty() =&gt; Version++;
+    public virtual void CommitChanges() =&gt; MarkDirty();
+}
+</code></pre>
+<p>When a value changes, <code>CommitChanges()</code> increments the <code>Version</code>, signaling UI Toolkit to rebind affected elements.</p>
+<hr>
+<h3 id="-view-data-lifecycle">🔁 View Data Lifecycle</h3>
+<ol>
+<li>A screen receives a data object via <code>SetViewData(T viewData)</code></li>
+<li>The screen assigns the data to its root visual element's <code>.dataSource</code></li>
+<li>UI Toolkit auto-binds fields based on <code>[CreateProperty]</code> attributes</li>
+</ol>
+<pre><code class="lang-csharp">public virtual void SetViewData(TSettings viewData) {
+    _viewData = viewData;
+    if (TryGetRootElement(out var rootElement)) {
+        rootElement.dataSource = viewData;
+    }
+}
+</code></pre>
+<p>This flow is defined in <code>ToolSettingsScreen&lt;T&gt;</code> and reused across all UI panels.</p>
+<hr>
+<h3 id="-example-tool-settings-panel">🧰 Example: Tool Settings Panel</h3>
+<pre><code class="lang-csharp">public class UniversalToolSettingsScreen : ToolSettingsScreen&lt;UserToolSettingsDataSource&gt; { }
+</code></pre>
+<ul>
+<li>Binds to <code>UserToolSettingsDataSource</code>, which is a <code>UIDataSource</code></li>
+<li>Automatically reflects settings like brush size, tool parameters, and visibility</li>
+<li>Changes to settings (e.g., via sliders or dropdowns) update the bound data and propagate to the active user tool</li>
+</ul>
+<hr>
+<h3 id="-example-minimap-ui">🗺️ Example: Minimap UI</h3>
+<p>The minimap UI is backed by <code>MinimapScreenDataSource</code>, a subclass of <code>UIDataSource</code>.</p>
+<p>Key properties:</p>
+<pre><code class="lang-csharp">[CreateProperty] public List&lt;Texture2D&gt; ColorMapTextures;
+[CreateProperty] public List&lt;DisplayStyle&gt; ColorMapTextureVisibilities;
+[CreateProperty] public Vector2 CameraNormalizedPosition;
+</code></pre>
+<p>When <code>SetColorTextures(...)</code> or <code>SetViewMode(...)</code> is called in <code>MinimapScreenBase</code>, it updates the data source and commits changes:</p>
+<pre><code class="lang-csharp">ViewData.SetVisibleTextureIndexes(visibleIndexes);
+ViewData.CommitChanges();
+</code></pre>
+<p>This triggers an immediate UI refresh showing the correct textures and view modes.</p>
+<hr>
+<h3 id="-ui-message-routing-optional">🧪 UI Message Routing (Optional)</h3>
+<p>The <code>IViewDataReceiver&lt;T&gt;</code> and base <code>IViewDataReceiver</code> interfaces support message routing and generalized UI communication.</p>
+<hr>
+<h3 id="-benefits">✅ Benefits</h3>
+<ul>
+<li>Declarative, low-code UI architecture</li>
+<li>Automatic UI refresh on data changes</li>
+<li>Clean separation between logic and presentation</li>
+<li>Highly extensible and testable</li>
+</ul>
+<hr>
+<h2 id="-ui-toolkit-custom-controls-and-data-templates">🧱 UI Toolkit Custom Controls and Data Templates</h2>
+<p>In addition to core screen and data binding infrastructure, the Hex Terrains Framework includes a powerful set of <strong>custom UI Toolkit components</strong> to streamline data-driven UI development.</p>
+<p>These components support dynamic layout, list rendering, event handling, and runtime template selection.</p>
+<hr>
+<h3 id="-uibutton-unified-button-binding">🔘 <code>UIButton</code>: Unified Button Binding</h3>
+<p>The <code>UIButton</code> component enhances Unity's standard <code>Button</code> by supporting multiple binding strategies for click handling:</p>
+<pre><code class="lang-csharp">[CreateProperty]
+public object OnClick { get; set; }
+
+[CreateProperty]
+public string OnClickPath { get; set; }
+</code></pre>
+<p>Supported click targets include:</p>
+<ul>
+<li><code>Action</code></li>
+<li><code>UnityEvent</code></li>
+<li><code>UIButtonDataSource</code> (with an <code>OnClick</code> action)</li>
+<li>Property path bindings (using <code>OnClickPath</code>)</li>
+</ul>
+<p>This flexibility allows UI to invoke methods on view models or data sources declaratively.</p>
+<hr>
+<h3 id="-simplelistview-static-template-lists">📃 <code>SimpleListView</code>: Static Template Lists</h3>
+<p>The <code>SimpleListView</code> displays a list of items using a single <code>VisualTreeAsset</code> template:</p>
+<pre><code class="lang-csharp">[CreateProperty]
+public VisualTreeAsset ItemTemplate { get; set; }
+
+[CreateProperty]
+public IList itemsSource { get; set; }
+</code></pre>
+<p>For each item in <code>itemsSource</code>:</p>
+<ul>
+<li>A view is instantiated using <code>ItemTemplate</code></li>
+<li>Its <code>.dataSource</code> is assigned</li>
+<li>If the view implements <code>ICommitChanges</code>, it is refreshed automatically</li>
+</ul>
+<p>This is ideal for simple collections with consistent UI layout.</p>
+<hr>
+<h3 id="-uilistview-event-driven-selection">🧩 <code>UIListView</code>: Event-Driven Selection</h3>
+<p><code>UIListView</code> extends Unity’s native <code>ListView</code> with enhanced selection binding. You can assign:</p>
+<ul>
+<li><code>UnityEvent&lt;IEnumerable&lt;object&gt;&gt;</code></li>
+<li><code>UnityEvent&lt;int&gt;</code></li>
+<li><code>Action&lt;int&gt;</code> or <code>Action&lt;IEnumerable&lt;object&gt;&gt;</code></li>
+</ul>
+<p>All are invoked automatically when the user changes selection.</p>
+<pre><code class="lang-csharp">public object OnSelectionChange { get; set; }
+</code></pre>
+<hr>
+<h3 id="-template-selection-system">🎭 Template Selection System</h3>
+<p>The framework supports <strong>data-driven UI templates</strong> using:</p>
+<ul>
+<li><code>TemplateSelectorConfig</code>: Base for defining default templates</li>
+<li><code>TemplateSelectorConfigByType</code>: Maps C# types to specific templates</li>
+<li><code>DataTemplateConfig</code>: Stores the mapping between type and <code>VisualTreeAsset</code></li>
+</ul>
+<p>This system allows runtime UI to render heterogeneous data models with distinct views based on data type.</p>
+<pre><code class="lang-csharp">public override VisualTreeAsset GetTemplateForData&lt;TData&gt;(TData data) {
+    return GetTemplateForType(typeof(TData));
+}
+</code></pre>
+<hr>
+<h3 id="-templateselectorelement-dynamic-ui-rendering">🧱 <code>TemplateSelectorElement</code>: Dynamic UI Rendering</h3>
+<p><code>TemplateSelectorElement</code> dynamically selects and instantiates a view template at runtime based on the data it is bound to.</p>
+<p>How it works:</p>
+<ol>
+<li><strong>Retrieves a data object</strong> from the UI hierarchy using <code>GetHierarchicalDataSourceContext</code></li>
+<li><strong>Selects a template</strong> via a <code>TemplateSelectorConfig</code></li>
+<li><strong>Creates and binds</strong> a view using the selected template</li>
+<li>Automatically <strong>updates</strong> when data changes or when reattached to panel</li>
+</ol>
+<p>This mechanism is ideal for modular and polymorphic UIs such as:</p>
+<ul>
+<li>Properties panels for different object types</li>
+<li>Inspector-style interfaces</li>
+<li>Minimap overlays with customizable visuals</li>
+</ul>
+<hr>
+<h3 id="-summary">💡 Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UIButton</code></td>
+<td>Data-bound click handling with path and object support</td>
+</tr>
+<tr>
+<td><code>SimpleListView</code></td>
+<td>Fast list rendering using one template</td>
+</tr>
+<tr>
+<td><code>UIListView</code></td>
+<td>Flexible list view with event-driven selection</td>
+</tr>
+<tr>
+<td><code>TemplateSelectorConfig</code></td>
+<td>Maps data types to UI templates</td>
+</tr>
+<tr>
+<td><code>TemplateSelectorElement</code></td>
+<td>Renders data using a selected template at runtime</td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/user-interface.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

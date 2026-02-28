@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#127757; Terrain Surfaces | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#127757; Terrain Surfaces | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-terrain-surfaces">🌍 Terrain Surfaces</h1>
+
+<p>Hex Terrains Framework supports multiple surface types (like ground or water), each implemented as a <strong>HexSurfaceLayer</strong>. These surfaces are responsible for storing key data such as height, biomes, and render information. Surfaces are extensible, fully ECS-compatible, and processed with DOTS for maximum performance.</p>
+<h2 id="surface-types">Surface Types</h2>
+<p>Each surface type is implemented as a class that inherits from <code>HexSurfaceLayer</code>. The primary concrete implementations include:</p>
+<ul>
+<li><strong>HexGroundLayer</strong> – for terrain ground surface (elevation, terrain biomes).</li>
+<li><strong>WaterSurfaceLayer</strong> <em>(not shown here, but supported similarly)</em>.</li>
+</ul>
+<p>Each surface has associated systems to handle metric calculation and rendering-related preprocessing.</p>
+<hr>
+<h2 id="-structure-of-a-surface-layer">🧱 Structure of a Surface Layer</h2>
+<p>Each <code>HexSurfaceLayer</code> holds multiple data layers, such as:</p>
+<table>
+<thead>
+<tr>
+<th>Data Layer</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HeightMap</code></td>
+<td>Stores per-cell elevation</td>
+</tr>
+<tr>
+<td><code>BiomesMap</code></td>
+<td>Stores biome index per cell</td>
+</tr>
+<tr>
+<td><code>CellColorMap</code></td>
+<td>Stores visualized colors for each cell</td>
+</tr>
+<tr>
+<td><code>CellMetrics</code></td>
+<td>Stores combined metrics derived from height + biome</td>
+</tr>
+<tr>
+<td><code>BiomeColors</code></td>
+<td>A palette for converting biome index to color</td>
+</tr>
+</tbody>
+</table>
+<p>All of these layers are implemented as <code>DataLayer</code> or <code>ChunkedDataLayer</code> objects and benefit from read/write dependency tracking and chunk-level dirty maps for efficient job scheduling.</p>
+<hr>
+<h2 id="-data-generation-and-setup">🧪 Data Generation and Setup</h2>
+<p>Surfaces can be initialized via <strong>authoring components</strong> in the Unity Editor. For example:</p>
+<h3 id="example-hexgroundlayerauthoring">Example: <code>HexGroundLayerAuthoring</code></h3>
+<pre><code class="lang-csharp">public class HexGroundLayerAuthoring : HexSurfaceLayerAuthoring {}
+</code></pre>
+<p>When baked by <code>HexGroundDataBaker</code>, this authoring component:</p>
+<ul>
+<li>Sets up height, biomes, and color palette.</li>
+<li>Adds the <code>HexGroundColorPalette</code> buffer to the terrain entity.</li>
+<li>Schedules a <code>CreateHexGroundLayerRequest</code>.</li>
+</ul>
+<pre><code class="lang-csharp">public struct CreateHexGroundLayerRequest : ICreateHexSurfaceRequest, IComponentData
+</code></pre>
+<p>This request is then picked up by systems to construct the ECS-side surface representation.</p>
+<hr>
+<h2 id="-simulation-and-updates">⚙️ Simulation and Updates</h2>
+<h3 id="color-map-generation-calccellbiomecolorssystemt">Color Map Generation: <code>CalcCellBiomeColorsSystem&lt;T&gt;</code></h3>
+<p>This system:</p>
+<ul>
+<li>Compares dirty flags between biomes and color maps.</li>
+<li>Combines chunk-level dirty grids.</li>
+<li>Schedules a <code>CalculateBiomesColorMapJob</code> or <code>CalculateWaterColorMapJob</code>.</li>
+<li>Writes biome color to <code>CellColorMap</code> using the defined palette.</li>
+</ul>
+<p>The system ensures color maps update <em>only when needed</em>, and processes data in jobs chunk-by-chunk.</p>
+<hr>
+<h3 id="metrics-calculation-calccellmetricssystemt">Metrics Calculation: <code>CalcCellMetricsSystem&lt;T&gt;</code></h3>
+<p>Surface metrics such as slope, average height, or relative biome data are calculated here.</p>
+<ul>
+<li>Depends on <code>HeightMap</code> and <code>BiomesMap</code>.</li>
+<li>Uses <code>ChunkDirtyGrid</code> to identify regions needing recalculation.</li>
+<li>Populates <code>CellMetrics</code> (metrics and cell position data).</li>
+</ul>
+<h4 id="specialized-implementation">Specialized implementation:</h4>
+<pre><code class="lang-csharp">public partial class CalcGroundCellMetricsSystem : CalcCellMetricsSystem&lt;HexGroundLayer&gt;
+</code></pre>
+<hr>
+<h2 id="-runtime-behavior">🔄 Runtime Behavior</h2>
+<ul>
+<li>Systems are designed to work independently per terrain, which allows multi-terrain setups.</li>
+<li>Surfaces automatically react to changes in their layers (e.g., biome or heightmap changes) via their dirty flags and dependency tracking.</li>
+</ul>
+<hr>
+<h2 id="-color-palette-system">🌈 Color Palette System</h2>
+<p>For visual feedback (e.g., biomes displayed in the minimap or by coloring cells on terrain):</p>
+<ul>
+<li>Each surface has a color palette (e.g., <code>HexGroundColorPalette</code>).</li>
+<li>The palette is used during biome color map job execution.</li>
+<li>Supports easy customization and visualization without needing shader-side logic.</li>
+</ul>
+<hr>
+<h2 id="-custom-surfaces">🧩 Custom Surfaces</h2>
+<p>To create a custom surface:</p>
+<ol>
+<li>Derive from <code>HexSurfaceLayer</code>.</li>
+<li>Create an authoring component and baker.</li>
+<li>Implement a data creation request (<code>ICreateHexSurfaceRequest</code>).</li>
+<li>Add custom systems for metric or render preparation as needed.</li>
+</ol>
+<hr>
+<p>Here's a structured documentation section for the <strong>Terrain Surfaces</strong> system in your Hex Terrains Framework:</p>
+<hr>
+<h1 id="terrain-surfaces">Terrain Surfaces</h1>
+<p>Hex Terrains Framework supports multiple surface types (e.g., ground, water) using a flexible and extensible layer system. Each surface is implemented as a specialized <code>HexSurfaceLayer</code> and may store height data, biome information, color maps, and associated rendering data. This section details how terrain surfaces are constructed, managed, raycasted, and updated.</p>
+<h2 id="overview">Overview</h2>
+<p>A <strong>HexSurface</strong> is a conceptual layer of the terrain, such as the ground or water. Each one is implemented via:</p>
+<ul>
+<li>A derived class from <code>HexSurfaceLayer</code></li>
+<li>A <code>HeightMapDataLayer</code> for cell heights (as <code>byte</code>, scaled to world meters)</li>
+<li>A <code>CellBiomesDataLayer</code> for storing biome types per cell</li>
+<li>A <code>CellColorsDataLayer</code> for coloring the surface, updated based on biomes or other logic</li>
+<li>A <code>HexTerrainRenderData</code> layer to render the surface mesh</li>
+</ul>
+<p>Example surface layers:</p>
+<ul>
+<li><code>HexGroundLayer</code> (ground surface)</li>
+<li><code>HexWaterLayer</code> (custom surface type, if added)</li>
+<li>Each implements <code>ICreateHexSurfaceDataRequest</code> or uses associated request structs for instantiation</li>
+</ul>
+<h2 id="layer-creation">Layer Creation</h2>
+<p>Surfaces are initialized by systems such as <code>CreateHexGroundLayerRequest</code> and <code>CreateHexSurfaceRequestArgs</code>, usually via authoring components like <code>HexGroundLayerAuthoring</code> or <code>HexSurfaceLayerAuthoring</code>. These components describe what kind of surface to create and associate them with a terrain entity.</p>
+<h3 id="example-setup-flow">Example Setup Flow</h3>
+<pre><code class="lang-plaintext">HexGroundLayerAuthoring -&gt; CreateHexGroundLayerRequest
+→ System receives request → Creates HexGroundLayer
+→ Initializes DataLayers (HeightMap, Biomes, Colors)
+</code></pre>
+<h2 id="cleanup">Cleanup</h2>
+<p>Each surface is cleaned every frame (if visible) to clear dirty flags or release temporary resources.</p>
+<ul>
+<li>Base class: <code>CleanupHexSurfaceLayerSystem&lt;TSurface&gt;</code></li>
+<li>Example implementation: <code>CleanupHexGroundLayerSystem</code></li>
+</ul>
+<pre><code class="lang-csharp">public class CleanupHexGroundLayerSystem 
+    : CleanupHexSurfaceLayerSystem&lt;HexGroundLayer&gt;
+{
+    protected override void OnUpdate() { ... }
+}
+</code></pre>
+<p>The system checks <code>HexTerrainVisibility.Value</code> before calling <code>surface.CleanupAsync()</code>.</p>
+<h2 id="surface-color-map-calculation">Surface Color Map Calculation</h2>
+<p>The biomes map drives the visual appearance of terrain via <code>CalculateBiomesColorMapJob</code>. This job:</p>
+<ul>
+<li>Iterates over each cell in parallel</li>
+<li>Skips clean (non-dirty) chunks</li>
+<li>Maps the biome index (byte) to a <code>Color32</code> using a palette</li>
+<li>Writes results into <code>CellColorsDataLayer</code></li>
+</ul>
+<pre><code class="lang-csharp">if (cellValue &lt; Colors.Length)
+    CellColorMap[index] = Colors[cellValue];
+else
+    CellColorMap[index] = DefaultColor;
+</code></pre>
+<p>This allows efficient color map recalculation per chunk.</p>
+<h2 id="raycasting">Raycasting</h2>
+<p>Two raycasting jobs exist for interaction and tooling:</p>
+<h3 id="raycasthexterrainjob"><code>RaycastHexTerrainJob</code></h3>
+<p>Raycasts against a <strong>single</strong> surface's heightmap. It:</p>
+<ul>
+<li>Iterates along the ray by steps</li>
+<li>Converts world coordinates to hex cell index</li>
+<li>Checks if the point is under the surface's height</li>
+</ul>
+<p>If so, it writes a <code>HexTerrainRaycastData</code> containing:</p>
+<ul>
+<li><code>IsHit</code></li>
+<li><code>HitPosition</code></li>
+<li><code>CellCoord</code>, <code>CellIndex</code>, <code>ChunkIndex</code>, <code>ChunkCoord</code></li>
+</ul>
+<h3 id="raycasthexterrain2job"><code>RaycastHexTerrain2Job</code></h3>
+<p>Works similarly, but checks <strong>two surfaces simultaneously</strong> (e.g., ground and water) and picks the one with higher height at each cell.</p>
+<pre><code class="lang-csharp">var rawHeight = max(Heightmap1[cellIndex], Heightmap2[cellIndex]);
+</code></pre>
+<p>This enables correct behavior for raycasts involving layered terrain.</p>
+<h2 id="terrain-metrics">Terrain Metrics</h2>
+<p>The <code>CalcHexCellMetricsJob</code> and <code>CalcCellMetricsSystem</code> compute per-cell properties like slope, height, and elevation, used for physics, rendering, or gameplay logic. These systems run after terrain data changes and update internal terrain state accordingly.</p>
+<hr>
+<h3 id="summary">Summary</h3>
+<p>Hex Terrain Surfaces provide an efficient and extensible way to represent elevation, biomes, and visual data. Each surface is ECS-native and fully integrated into the simulation loop, using chunked data layers, dirty tracking, and job scheduling for high performance. Whether you're rendering a mountain range or simulating ocean waves, <code>HexSurfaceLayer</code> is the foundation that supports terrain realism in the framework.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/terrain-surfaces.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

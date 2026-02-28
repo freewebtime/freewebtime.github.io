@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class VisualChunkMeshLayer | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class VisualChunkMeshLayer | Hex Terrains Framework ">
+    
+    <meta name="description" content="Base class for HexSurface layer that contains visuals (mesh for each chunk).">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer" class="text-break">Class VisualChunkMeshLayer</h1>
+  <div class="markdown level0 summary"><p>Base class for HexSurface layer that contains visuals (mesh for each chunk).</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html">ChunkMeshLayer</a></div>
+    <div class="level3"><span class="xref">VisualChunkMeshLayer</span></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.CloudsChunkMeshLayer.html">CloudsChunkMeshLayer</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.RainChunkMeshLayer.html">RainChunkMeshLayer</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.RoadsChunkMeshLayer.html">RoadsChunkMeshLayer</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.WaterChunkMeshLayer.html">WaterChunkMeshLayer</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_ChunkMeshLayerSettings">ChunkMeshLayer.ChunkMeshLayerSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_TerrainMetrics">ChunkMeshLayer.TerrainMetrics</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_HeightMap">ChunkMeshLayer.HeightMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_BiomeMap">ChunkMeshLayer.BiomeMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CellMetricsMap">ChunkMeshLayer.CellMetricsMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_TransparencyMap">ChunkMeshLayer.TransparencyMap</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncHeightMapLayerReference">ChunkMeshLayer.SyncHeightMapLayerReference</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncBiomeMapLayerReference">ChunkMeshLayer.SyncBiomeMapLayerReference</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncTransparencyMapLayerReference">ChunkMeshLayer.SyncTransparencyMapLayerReference</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_FillBiomeByHeight_Unity_Collections_NativeList_System_Int32__Unity_Collections_NativeList_System_Single__System_Collections_Generic_IList_System_Single__">ChunkMeshLayer.FillBiomeByHeight(NativeList&lt;int&gt;, NativeList&lt;float&gt;, IList&lt;float&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_GetAutoBiomeHeightLevel_System_Single_System_Collections_Generic_IList_System_Single__">ChunkMeshLayer.GetAutoBiomeHeightLevel(float, IList&lt;float&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncData_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncData(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncHeightMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncHeightMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncBiomeMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncBiomeMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SyncTransparencyMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.SyncTransparencyMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalcCellMetrics_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalcCellMetrics(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateHeightColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateHeightColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateBiomeColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateBiomeColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateOverlapBiomeColorMap_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateOverlapBiomeColorMap(ChunkMeshLayer, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CalculateDefaultBiomeColorMap_Unity_Jobs_JobHandle_">ChunkMeshLayer.CalculateDefaultBiomeColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SerializeLayer_System_IO_BinaryWriter_">ChunkMeshLayer.SerializeLayer(BinaryWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_DeserializeLayer_System_IO_BinaryReader_Fwt_HexTerrains_Data_HexTerrainSettings_">ChunkMeshLayer.DeserializeLayer(BinaryReader, HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Name">HexTerrainLayer.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Settings">HexTerrainLayer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ParentLayer">HexTerrainLayer.ParentLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Resize_Unity_Mathematics_int2_">HexTerrainLayer.Resize(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__">HexTerrainLayer.InitColoredDataLayer&lt;TValue&gt;(ColorMapCellValueDataLayer&lt;TValue&gt;, IInitColorMapCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitDataLayer__1_Fwt_HexTerrains_DataLayers_CellValueDataLayer___0__Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs___0__">HexTerrainLayer.InitDataLayer&lt;TValue&gt;(CellValueDataLayer&lt;TValue&gt;, IInitCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ToString">HexTerrainLayer.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.ChunkMehes.html">ChunkMehes</a>.<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class VisualChunkMeshLayer : ChunkMeshLayer, IDisposable, ISerializableTerrainLayer</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_BiomeUvConfigs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.BiomeUvConfigs">BiomeUvConfigs</h4>
+  <div class="markdown level1 summary"><p>Represents the collection of biome UV configuration data used for chunk mesh generation if mesh is generated with <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshRenderSettings.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshRenderSettings_IsUseBiomeAtlas">IsUseBiomeAtlas</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeList&lt;ChunkMeshBiomeUVConfig&gt; BiomeUvConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshBiomeUVConfig.html">ChunkMeshBiomeUVConfig</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshSources" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ChunkMeshSources">ChunkMeshSources</h4>
+  <div class="markdown level1 summary"><p>Data layer that stores mesh sources for the hex terrain chunks.
+Mesh sources are filled in respected Jobs and then used to generate/fill meshes for the chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkMeshSourcesDataLayer ChunkMeshSources</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMeshSourcesDataLayer.html">ChunkMeshSourcesDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshes" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ChunkMeshes">ChunkMeshes</h4>
+  <div class="markdown level1 summary"><p>Data layer that stores meshes for the hex terrain chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkMeshesDataLayer ChunkMeshes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMeshesDataLayer.html">ChunkMeshesDataLayer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_DefaultRenderConfig" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.DefaultRenderConfig">DefaultRenderConfig</h4>
+  <div class="markdown level1 summary"><p>Fallback render config for the hex terrain chunks.
+When getting a render config for view mode, if the config is not found, this one will be used instead.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexSurfaceRenderConfigAsset DefaultRenderConfig</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.HexSurfaceRenderConfigAsset.html">HexSurfaceRenderConfigAsset</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_MeshDatas" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.MeshDatas">MeshDatas</h4>
+  <div class="markdown level1 summary"><p>DataLayer with a MeshData per chunk</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkValueDataLayer&lt;Mesh.MeshDataArray&gt; MeshDatas</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkValueDataLayer-1.html">ChunkValueDataLayer</a>&lt;<span class="xref">Mesh</span>.<span class="xref">MeshDataArray</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_OffsetTransform" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.OffsetTransform">OffsetTransform</h4>
+  <div class="markdown level1 summary"><p>Surface is rendered with this offset from the terrain's origin</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Matrix4x4 OffsetTransform</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Matrix4x4</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderConfigs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.RenderConfigs">RenderConfigs</h4>
+  <div class="markdown level1 summary"><p>List of render configs for the hex terrain chunks.
+Config index = view mode. So if you have 3 view modes, you will have 3 configs in this list.
+When the view mode == 0, the first config will be used, when view mode == 1, the second config will be used, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;HexSurfaceRenderConfigAsset&gt; RenderConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.HexSurfaceRenderConfigAsset.html">HexSurfaceRenderConfigAsset</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderSettings" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.RenderSettings">RenderSettings</h4>
+  <div class="markdown level1 summary"><p>Render settings for the hex terrain chunks.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkMeshRenderSettings RenderSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshRenderSettings.html">ChunkMeshRenderSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsGenerateMeshesWithMeshData_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.IsGenerateMeshesWithMeshData*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsGenerateMeshesWithMeshData" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.IsGenerateMeshesWithMeshData">IsGenerateMeshesWithMeshData</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsGenerateMeshesWithMeshData { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsVisible_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.IsVisible*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsVisible" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.IsVisible">IsVisible</h4>
+  <div class="markdown level1 summary"><p>If true, the surface is visible and should be rendered.
+There for the meshes will be calculated and created and rendered.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsVisible { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcDirtyMeshSources_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CalcDirtyMeshSources*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcDirtyMeshSources_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CalcDirtyMeshSources(Unity.Jobs.JobHandle)">CalcDirtyMeshSources(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates dirty mesh sources based on the dirty cell metrics and transparency maps.
+Marks chunks as dirty in the ChunkMeshSources layer if their underlying cell metrics or transparency have changed.
+Marks the ChunkMeshSources layer as dirty if any updates are made.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalcDirtyMeshSources(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>JobHandle that will be used as dependency to scheduled jobs</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>combined JobHandle of all scheduled jobs or input dependency if no jobs were scheduled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcMeshSources_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CalcMeshSources*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcMeshSources_Fwt_HexTerrains_Data_ChunksGridLayer_System_Boolean_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CalcMeshSources(Fwt.HexTerrains.Data.ChunksGridLayer,System.Boolean,Unity.Jobs.JobHandle)">CalcMeshSources(ChunksGridLayer, bool, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules mesh generation jobs for visible and dirty chunks in the specified grid layer, returning a handle
+to the combined job dependencies.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle CalcMeshSources(ChunksGridLayer chunksGridLayer, bool isCalcAllMeshes, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridLayer.html">ChunksGridLayer</a></td>
+        <td><span class="parametername">chunksGridLayer</span></td>
+        <td><p>The grid layer containing the chunks for which mesh sources are to be calculated. Cannot be null and must
+have valid visible chunks and chunk metrics.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isCalcAllMeshes</span></td>
+        <td><p>A value indicating whether to recalculate mesh sources for all visible chunks (<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>), or
+only for those marked as dirty (<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>).</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>A job handle representing the dependencies that must be completed before mesh generation begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>A <span class="xref">Unity.Jobs.JobHandle</span> that represents the combined dependencies of the scheduled mesh generation jobs.
+If no jobs are scheduled, returns the input <code class="paramref">dependency</code>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CalcMeshSources_Fwt_HexTerrains_Data_ChunksGridLayer_System_Boolean_Unity_Jobs_JobHandle__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Mesh generation is only scheduled for chunks that are both visible and dirty, unless
+<code class="paramref">isCalcAllMeshes</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>. If required data or layers are not available,
+or if there are no chunks to process, the method returns the input dependency without scheduling any
+jobs.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Cleanup_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Cleanup" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Resets all dirty flags from data layers. Called at the beginning of the frame.
+Does not clear dirty flags for layers that have to keep their dirty flags between frames, such as <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshSources">ChunkMeshSources</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Cleanup()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_Cleanup">ChunkMeshLayer.Cleanup()</a></div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CleanupAsync_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CleanupAsync(Unity.Jobs.JobHandle)">CleanupAsync(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Asyncrhonously resets all dirty flags from data layers. Called at the beginning of the frame.
+Does not clear dirty flags for layers that have to keep their dirty flags between frames, such as <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshSources">ChunkMeshSources</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JobHandle CleanupAsync(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CleanupAsync_Unity_Jobs_JobHandle_">ChunkMeshLayer.CleanupAsync(JobHandle)</a></div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CompleteAllJobs_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CompleteAllJobs*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CompleteAllJobs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CompleteAllJobs">CompleteAllJobs()</h4>
+  <div class="markdown level1 summary"><p>Completes all jobs that affect data layers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void CompleteAllJobs()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_CompleteAllJobs">ChunkMeshLayer.CompleteAllJobs()</a></div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CompleteFillingMeshes_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CompleteFillingMeshes*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CompleteFillingMeshes_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CompleteFillingMeshes(System.Boolean)">CompleteFillingMeshes(bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void CompleteFillingMeshes(bool createAllMeshes)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">createAllMeshes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshes*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshes(System.Boolean)">CreateChunkMeshes(bool)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CreateChunkMeshes(bool createAllMeshes = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">createAllMeshes</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshesOld_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshesOld*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshesOld_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshesOld(System.Boolean)">CreateChunkMeshesOld(bool)</h4>
+  <div class="markdown level1 summary"><p>Creates or updates the mesh instances for all or modified chunks based on the current mesh source data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CreateChunkMeshesOld(bool createAllMeshes = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">createAllMeshes</span></td>
+        <td><p>If set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, recreates meshes for all chunks regardless of whether they have changed;
+otherwise, only updates meshes for chunks marked as dirty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshesOld_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method processes the mesh source data and generates corresponding mesh objects
+for each chunk. It is typically called after chunk data has been generated or modified. If no changes are
+detected and <code class="paramref">createAllMeshes</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, the method performs no
+action.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_Classic_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshes_Classic*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_Classic_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshes_Classic(System.Boolean)">CreateChunkMeshes_Classic(bool)</h4>
+  <div class="markdown level1 summary"><p>Creates or updates the mesh instances for all or modified chunks based on the current mesh source data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CreateChunkMeshes_Classic(bool createAllMeshes = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">createAllMeshes</span></td>
+        <td><p>If set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, recreates meshes for all chunks regardless of whether they have changed;
+otherwise, only updates meshes for chunks marked as dirty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_Classic_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method processes the mesh source data and generates corresponding mesh objects
+for each chunk. It is typically called after chunk data has been generated or modified. If no changes are
+detected and <code class="paramref">createAllMeshes</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, the method performs no
+action.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_MeshData_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshes_MeshData*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_MeshData_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.CreateChunkMeshes_MeshData(System.Boolean)">CreateChunkMeshes_MeshData(bool)</h4>
+  <div class="markdown level1 summary"><p>Creates or updates the mesh instances for all or modified chunks based on the current mesh source data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CreateChunkMeshes_MeshData(bool createAllMeshes = false)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">createAllMeshes</span></td>
+        <td><p>If set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, recreates meshes for all chunks regardless of whether they have changed;
+otherwise, only updates meshes for chunks marked as dirty.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_CreateChunkMeshes_MeshData_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method processes the mesh source data and generates corresponding mesh objects
+for each chunk. It is typically called after chunk data has been generated or modified. If no changes are
+detected and <code class="paramref">createAllMeshes</code> is <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>, the method performs no
+action.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Dispose_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Dispose" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_Dispose">ChunkMeshLayer.Dispose()</a></div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshes_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ExportMeshes*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshes_System_Collections_Generic_List_UnityEngine_Mesh__" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ExportMeshes(System.Collections.Generic.List{UnityEngine.Mesh})">ExportMeshes(List&lt;Mesh&gt;)</h4>
+  <div class="markdown level1 summary"><p>Fills the list of meshes with the meshes from this layer <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ChunkMeshes">ChunkMeshes</a>.
+If provided list is null, a new list will be created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual List&lt;Mesh&gt; ExportMeshes(List&lt;Mesh&gt; meshList = null)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Mesh</span>&gt;</td>
+        <td><span class="parametername">meshList</span></td>
+        <td><p>List of meshes to be filled</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Mesh</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshesToAssets_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ExportMeshesToAssets*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshesToAssets_Fwt_HexTerrains_Data_ChunksGridLayer_System_String_System_String_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ExportMeshesToAssets(Fwt.HexTerrains.Data.ChunksGridLayer,System.String,System.String)">ExportMeshesToAssets(ChunksGridLayer, string, string)</h4>
+  <div class="markdown level1 summary"><p>Exports all generated meshes from the specified chunks grid layer to individual mesh asset files in the
+given directory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool ExportMeshesToAssets(ChunksGridLayer chunksGridLayer, string directoryPath, string meshAssetNameMask = &quot;{0}_Chunk_{1}_{2}&quot;)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridLayer.html">ChunksGridLayer</a></td>
+        <td><span class="parametername">chunksGridLayer</span></td>
+        <td><p>The chunks grid layer containing the meshes to export. Must not be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">directoryPath</span></td>
+        <td><p>The file system path to the directory where mesh asset files will be saved. If the directory does not exist,
+it will be created.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">meshAssetNameMask</span></td>
+        <td><p>An optional format string used to generate mesh asset file names. The format should include placeholders for
+the layer name, chunk index, and chunk coordinates. Defaults to &quot;{0}<em>Chunk</em>{1}_{2}&quot;.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the meshes were successfully exported to asset files; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ExportMeshesToAssets_Fwt_HexTerrains_Data_ChunksGridLayer_System_String_System_String__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method is intended for use in the Unity Editor and has no effect at runtime.
+Meshes are exported as individual asset files using the specified naming convention. If a mesh is null, it
+is skipped and a warning is logged.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_FillBiomeUVConfigs_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.FillBiomeUVConfigs*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_FillBiomeUVConfigs_System_Collections_Generic_IEnumerable_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshBiomeUVConfig__" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.FillBiomeUVConfigs(System.Collections.Generic.IEnumerable{Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshBiomeUVConfig})">FillBiomeUVConfigs(IEnumerable&lt;ChunkMeshBiomeUVConfig&gt;)</h4>
+  <div class="markdown level1 summary"><p>Fills the <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_BiomeUvConfigs">BiomeUvConfigs</a> list with the provided biome UV configurations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void FillBiomeUVConfigs(IEnumerable&lt;ChunkMeshBiomeUVConfig&gt; biomeUVConfigs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ienumerable-1">IEnumerable</a>&lt;<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshBiomeUVConfig.html">ChunkMeshBiomeUVConfig</a>&gt;</td>
+        <td><span class="parametername">biomeUVConfigs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GenerateAllMeshes_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GenerateAllMeshes*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GenerateAllMeshes_Fwt_HexTerrains_Data_ChunksGridLayer_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GenerateAllMeshes(Fwt.HexTerrains.Data.ChunksGridLayer)">GenerateAllMeshes(ChunksGridLayer)</h4>
+  <div class="markdown level1 summary"><p>Generates and updates all chunk meshes for the specified grid layer, ensuring that all chunks are visible
+and up to date.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void GenerateAllMeshes(ChunksGridLayer chunksGridLayer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridLayer.html">ChunksGridLayer</a></td>
+        <td><span class="parametername">chunksGridLayer</span></td>
+        <td><p>The grid layer containing the chunks for which meshes will be generated and updated. Cannot be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GenerateAllMeshes_Fwt_HexTerrains_Data_ChunksGridLayer__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method marks all chunk mesh sources and meshes as dirty, sets all chunks in the
+specified grid layer as visible, and then recalculates and creates meshes for all visible chunks. If any
+required data or the grid layer is null, the method returns without performing any operations.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetChunkMesh_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GetChunkMesh*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetChunkMesh_System_Int32_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GetChunkMesh(System.Int32)">GetChunkMesh(int)</h4>
+  <div class="markdown level1 summary"><p>Returns a mesh for the Chunk with given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual Mesh GetChunkMesh(int chunkIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetLayerVisibility_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GetLayerVisibility*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetLayerVisibility" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GetLayerVisibility">GetLayerVisibility()</h4>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether the layer is currently visible.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool GetLayerVisibility()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the layer is visible; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetRenderConfigAsset_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GetRenderConfigAsset*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_GetRenderConfigAsset_System_Int32_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.GetRenderConfigAsset(System.Int32)">GetRenderConfigAsset(int)</h4>
+  <div class="markdown level1 summary"><p>Returns a render config asset for provided view mode <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderConfigs">RenderConfigs</a>
+If nothing is found, returns a DefaultRenderConfig <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_DefaultRenderConfig">DefaultRenderConfig</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexSurfaceRenderConfigAsset GetRenderConfigAsset(int viewMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">viewMode</span></td>
+        <td><p>view mode to get a render config for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.HexSurfaceRenderConfigAsset.html">HexSurfaceRenderConfigAsset</a></td>
+        <td><p>render config asset</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_HasIncorrectValues_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.HasIncorrectValues*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_HasIncorrectValues_UnityEngine_Bounds_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.HasIncorrectValues(UnityEngine.Bounds)">HasIncorrectValues(Bounds)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified bounds contain any invalid or incorrect values in their center or extents
+components.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool HasIncorrectValues(Bounds bounds)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">bounds</span></td>
+        <td><p>The bounds to check for incorrect values.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if any component of the center or extents of the bounds contains an incorrect value; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes the data layers and resources required for the hex terrain system using the specified settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The settings to use for initializing the hex terrain, including chunk count and configuration options.
+Cannot be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_">ChunkMeshLayer.Init(HexTerrainSettings)</a></div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,``0)">Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the mesh layer with the specified terrain settings and mesh layer configuration.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init&lt;TInitArgs&gt;(HexTerrainSettings settings, TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The terrain settings to use for initialization. Provides configuration values such as grid size, elevation,
+and other terrain-related parameters.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_">ChunkMeshLayer.Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</a></div>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If <code class="paramref">args</code> is a <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IVisualChunkMeshLayerConfig.html">IVisualChunkMeshLayerConfig</a>, this
+method copies its render settings, visibility, render configurations, and biome UV configurations to the
+mesh layer. Existing render configurations are cleared and replaced. The method also ensures that biome UV
+configuration storage is properly initialized and holds the new values from the provided args.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsIncorrectValue_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.IsIncorrectValue*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_IsIncorrectValue_System_Single_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.IsIncorrectValue(System.Single)">IsIncorrectValue(float)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified floating-point value is not a valid finite number.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool IsIncorrectValue(float y)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">y</span></td>
+        <td><p>The floating-point value to evaluate.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the value is NaN, negative infinity, or positive infinity; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Render_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Render*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_Render_Fwt_HexTerrains_Data_ChunksGridLayer_Fwt_HexTerrains_Data_HexTerrainViewMode_Unity_Transforms_LocalToWorld_UnityEngine_Camera_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.Render(Fwt.HexTerrains.Data.ChunksGridLayer,Fwt.HexTerrains.Data.HexTerrainViewMode,Unity.Transforms.LocalToWorld,UnityEngine.Camera)">Render(ChunksGridLayer, HexTerrainViewMode, LocalToWorld, Camera)</h4>
+  <div class="markdown level1 summary"><p>Renders visible chunks from the provided chunks grid layer using the specified view mode and terrain transform.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void Render(ChunksGridLayer chunksGridLayer, HexTerrainViewMode viewMode, LocalToWorld terrainTransform, Camera camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridLayer.html">ChunksGridLayer</a></td>
+        <td><span class="parametername">chunksGridLayer</span></td>
+        <td><p>ChunksGridLayer of the terrain</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a></td>
+        <td><span class="parametername">viewMode</span></td>
+        <td><p>view mode in which to render the terrain (which render config to use is dependent on this value)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">LocalToWorld</span></td>
+        <td><span class="parametername">terrainTransform</span></td>
+        <td><p>transform of the terrain entity</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>camera to render the chunk meshes for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderOld_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.RenderOld*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_RenderOld_Fwt_HexTerrains_Data_ChunksGridLayer_Fwt_HexTerrains_Data_HexTerrainViewMode_Unity_Transforms_LocalToWorld_UnityEngine_Camera_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.RenderOld(Fwt.HexTerrains.Data.ChunksGridLayer,Fwt.HexTerrains.Data.HexTerrainViewMode,Unity.Transforms.LocalToWorld,UnityEngine.Camera)">RenderOld(ChunksGridLayer, HexTerrainViewMode, LocalToWorld, Camera)</h4>
+  <div class="markdown level1 summary"><p>Renders visible chunks from the provided chunks grid layer using the specified view mode and terrain transform.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void RenderOld(ChunksGridLayer chunksGridLayer, HexTerrainViewMode viewMode, LocalToWorld terrainTransform, Camera camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.ChunksGridLayer.html">ChunksGridLayer</a></td>
+        <td><span class="parametername">chunksGridLayer</span></td>
+        <td><p>ChunksGridLayer of the terrain</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a></td>
+        <td><span class="parametername">viewMode</span></td>
+        <td><p>view mode in which to render the terrain (which render config to use is dependent on this value)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">LocalToWorld</span></td>
+        <td><span class="parametername">terrainTransform</span></td>
+        <td><p>transform of the terrain entity</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td><p>camera to render the chunk meshes for</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ScheduleGenerateMeshJob_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ScheduleGenerateMeshJob*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ScheduleGenerateMeshJob_Fwt_HexTerrains_DataLayers_ChunkMetricsDataLayer_Fwt_HexTerrains_DataLayers_ChunkMeshSourcesDataLayer_Fwt_HexTerrains_DataLayers_CellMetricsDataLayer_System_Int32_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ScheduleGenerateMeshJob(Fwt.HexTerrains.DataLayers.ChunkMetricsDataLayer,Fwt.HexTerrains.DataLayers.ChunkMeshSourcesDataLayer,Fwt.HexTerrains.DataLayers.CellMetricsDataLayer,System.Int32,Unity.Jobs.JobHandle)">ScheduleGenerateMeshJob(ChunkMetricsDataLayer, ChunkMeshSourcesDataLayer, CellMetricsDataLayer, int, JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules a job to generate a mesh for the chunk with a given index.
+If you want to introduce your own mesh generator, override this method and schedule your own job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual JobHandle ScheduleGenerateMeshJob(ChunkMetricsDataLayer chunkMetrics, ChunkMeshSourcesDataLayer chunkMeshSources, CellMetricsDataLayer cellMetrics, int chunkIndex, JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMetricsDataLayer.html">ChunkMetricsDataLayer</a></td>
+        <td><span class="parametername">chunkMetrics</span></td>
+        <td><p>Metrix of all terrain chunks</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ChunkMeshSourcesDataLayer.html">ChunkMeshSourcesDataLayer</a></td>
+        <td><span class="parametername">chunkMeshSources</span></td>
+        <td><p>MeshSources to save generated mesh data into</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellMetricsDataLayer.html">CellMetricsDataLayer</a></td>
+        <td><span class="parametername">cellMetrics</span></td>
+        <td><p>Metrics of all cells</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td><p>Index of chunk to schedule a mesh generation for</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>JobHandle to use as parameter when scheduling job</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Marks all chunks in the associated maps as either dirty or clean.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetAllDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td><p>A value indicating whether to mark all chunks as dirty (<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>) or clean (<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>).</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_SetAllDirty_System_Boolean_">ChunkMeshLayer.SetAllDirty(bool)</a></div>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetAllDirty_System_Boolean__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Use this method to force all chunks in the height, biome, transparency, and cell
+metrics maps to be reprocessed or refreshed as needed.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetChunkMesh_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.SetChunkMesh*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetChunkMesh_System_Int32_UnityEngine_Mesh_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.SetChunkMesh(System.Int32,UnityEngine.Mesh)">SetChunkMesh(int, Mesh)</h4>
+  <div class="markdown level1 summary"><p>Sets a mesh for the chunk with a given index</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetChunkMesh(int chunkIndex, Mesh mesh)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">chunkIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetLayerVisibility_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.SetLayerVisibility*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_SetLayerVisibility_System_Boolean_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.SetLayerVisibility(System.Boolean)">SetLayerVisibility(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets the visibility state of the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetLayerVisibility(bool isVisible)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isVisible</span></td>
+        <td><p>A value indicating whether the layer should be visible. Set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> to make the layer
+visible; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ToggleLayerVisibility_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ToggleLayerVisibility*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ToggleLayerVisibility" data-uid="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayer.ToggleLayerVisibility">ToggleLayerVisibility()</h4>
+  <div class="markdown level1 summary"><p>Toggles the visibility state of the layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ToggleLayerVisibility()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_VisualChunkMeshLayer_ToggleLayerVisibility_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Calling this method switches the layer between visible and hidden states. The current
+visibility is determined by the value of the <code>IsVisible</code> property.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Serialization &amp; Deserialization | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Serialization &amp; Deserialization | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="serialization--deserialization">Serialization &amp; Deserialization</h1>
+
+<p>This document explains how <strong>saving/loading</strong> works in HexTerrains, how <strong>terrain layers</strong> participate in serialization via <code>ISerializableTerrainLayer</code>, how <code>HexTerrainSerializer</code> writes/reads the binary format, and how to add serialization support to a <strong>custom user terrain layer</strong>.</p>
+<hr>
+<h2 id="1-high-level-model">1) High-level model</h2>
+<p>HexTerrains stores runtime terrain state on a <strong>terrain entity</strong> (Unity Entities / ECS):</p>
+<ul>
+<li>The terrain entity always contains <code>HexTerrain</code> (<code>IComponentData</code>) which holds <code>HexTerrainSettings</code>.</li>
+<li>Terrain “layers” are typically stored as <strong>managed components</strong> (component objects) on the same entity.</li>
+<li>Any managed component that implements <code>ISerializableTerrainLayer</code> can be saved/loaded by <code>HexTerrainSerializer</code>.</li>
+</ul>
+<p>Key interface:</p>
+<ul>
+<li><code>ISerializableTerrainLayer</code>
+<ul>
+<li><code>bool SerializeLayer(BinaryWriter writer)</code></li>
+<li><code>bool DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="2-hexterrainserializer-overview">2) <code>HexTerrainSerializer</code> overview</h2>
+<p><code>HexTerrainSerializer</code> is a static utility that serializes a <strong>single terrain entity</strong> to/from a binary stream or file.</p>
+<h3 id="entry-points">Entry points</h3>
+<p>Saving:</p>
+<ul>
+<li><code>HexTerrainSerializer.SaveTerrainToFile(filePath, terrainEntity, entityManager, customSerializer)</code></li>
+<li><code>HexTerrainSerializer.Serialize(stream, terrainEntity, entityManager, customSerializer)</code></li>
+<li><code>HexTerrainSerializer.Serialize(writer, terrainEntity, entityManager, customSerializer)</code></li>
+</ul>
+<p>Loading:</p>
+<ul>
+<li><code>HexTerrainSerializer.LoadTerrainFromFile(filePath, terrainEntity, entityManager, customDeserializer)</code></li>
+<li><code>HexTerrainSerializer.LoadTerrainFromFile(byte[] fileContent, terrainEntity, entityManager, customDeserializer)</code></li>
+<li><code>HexTerrainSerializer.Deserialize(stream, terrainEntity, entityManager, customDeserializer)</code></li>
+<li><code>HexTerrainSerializer.Deserialize(reader, terrainEntity, entityManager, customDeserializer)</code></li>
+</ul>
+<h3 id="serializer-versioning">Serializer versioning</h3>
+<p><code>HexTerrainSerializer.Version</code> is written first (currently <code>2</code>).</p>
+<ul>
+<li>Version <code>1+</code>: introduces the managed-component layer serialization loop (type hash + layer payload).</li>
+<li>Version <code>2+</code>: adds <code>HexTerrainSettings.SlopeSize</code> to the saved settings payload.</li>
+</ul>
+<p>When adding new fields to <code>HexTerrainSettings</code>, the serializer version should be bumped and <code>ReadTerrainSettings(...)</code> should be updated with version guards.</p>
+<hr>
+<h2 id="3-binary-format-what-actually-gets-written">3) Binary format (what actually gets written)</h2>
+<p>At a high level the file is:</p>
+<ol>
+<li><strong>Serializer version</strong> (<code>int</code>)</li>
+<li><strong>Terrain settings</strong> (<code>HexTerrainSettings</code> fields written in a stable order)</li>
+<li><strong>Zero or more layer/component records</strong> until end-of-stream:
+<ul>
+<li><code>StableTypeHash</code> (<code>ulong</code>)</li>
+<li>component/layer payload written by <code>ISerializableTerrainLayer.SerializeLayer(...)</code></li>
+</ul>
+</li>
+</ol>
+<p>There is <strong>no component count</strong> stored for the layer records: the reader continues until <code>reader.BaseStream.Position == reader.BaseStream.Length</code>.</p>
+<h3 id="type-identity-stable-type-hash">Type identity: Stable Type Hash</h3>
+<p>For each serialized managed component, <code>HexTerrainSerializer</code> writes:</p>
+<ul>
+<li><code>TypeHash.CalculateStableTypeHash(componentType.GetManagedType())</code></li>
+</ul>
+<p>During load:</p>
+<ul>
+<li><code>TypeManager.GetTypeIndexFromStableTypeHash(typeHash)</code></li>
+<li><code>TypeManager.GetType(typeIndex)</code></li>
+</ul>
+<p>This means save files depend on the <strong>stable identity</strong> of component types. Renaming/moving a type (or changing assemblies) may break loading unless handled via a custom deserializer.</p>
+<hr>
+<h2 id="4-how-terrain-layers-participate">4) How terrain layers participate</h2>
+<h3 id="41-managed-components-are-scanned-automatically">4.1 Managed components are scanned automatically</h3>
+<p>During save (<code>WriteVersion1</code>), the serializer enumerates all component types on the terrain entity and selects:</p>
+<ul>
+<li><strong>managed components</strong></li>
+<li>non-zero-sized</li>
+</ul>
+<p>For each managed component object:</p>
+<ol>
+<li>If <code>customSerializer</code> is provided and returns <code>true</code>, the serializer assumes the component was handled and skips default logic.</li>
+<li>Otherwise, if <code>componentObj is ISerializableTerrainLayer</code>, it writes the type hash and calls <code>SerializeLayer(writer)</code>.</li>
+</ol>
+<h3 id="42-deserialization-expects-components-to-exist">4.2 Deserialization expects components to exist</h3>
+<p>During load (<code>ReadVersion1</code>):</p>
+<ol>
+<li>It reads the type hash and resolves <code>componentType</code>.</li>
+<li>If <code>customDeserializer</code> is provided and returns <code>true</code>, it assumes you handled that record (including reading bytes) and continues.</li>
+<li>Otherwise it does:
+<ul>
+<li><code>entityManager.GetComponentObject&lt;object&gt;(terrainEntity, componentType)</code></li>
+<li>if it implements <code>ISerializableTerrainLayer</code>, calls <code>DeserializeLayer(reader, terrainSettings)</code>.</li>
+</ul>
+</li>
+</ol>
+<p>Implication: <strong>the terrain entity must already have the corresponding managed component attached</strong> for the default path to work (because <code>GetComponentObject</code> retrieves an existing component instance). If you need to create/attach missing components dynamically, do it in <code>customDeserializer</code>.</p>
+<hr>
+<h2 id="5-layer-groups-hexterrainlayergroup-are-serializable-too">5) Layer groups (<code>HexTerrainLayerGroup</code>) are serializable too</h2>
+<p><code>HexTerrainLayerGroup : HexTerrainLayer, ISerializableTerrainLayer</code> provides a standard way to serialize a <em>collection of layers</em>:</p>
+<ul>
+<li>Writes <code>Layers.Count</code> (<code>int</code>)</li>
+<li>For each index:
+<ul>
+<li><code>hasLayer</code> (<code>bool</code>)</li>
+<li><code>layer.Name</code> (<code>string</code>)</li>
+<li>delegates to the layer’s <code>SerializeLayer(...)</code> / <code>DeserializeLayer(...)</code> if it implements <code>ISerializableTerrainLayer</code></li>
+</ul>
+</li>
+</ul>
+<p>This means:</p>
+<ul>
+<li>If your terrain uses a group component (for example, a mesh-layer group), the group can be a single serializable managed component that recursively serializes its children.</li>
+</ul>
+<hr>
+<h2 id="6-example-chunkmeshlayer-serialization">6) Example: <code>ChunkMeshLayer</code> serialization</h2>
+<p><code>ChunkMeshLayer : HexTerrainLayer, ISerializableTerrainLayer</code> demonstrates best practices:</p>
+<ul>
+<li>Calls <code>CompleteAllJobs()</code> before reading/writing (important for job-driven data layers).</li>
+<li>Serializes only the <strong>authoritative</strong> data:
+<ul>
+<li><code>HeightMap.Serialize(writer)</code></li>
+<li><code>BiomeMap.Serialize(writer)</code></li>
+<li><code>TransparencyMap.Serialize(writer)</code></li>
+</ul>
+</li>
+<li>It does <strong>not</strong> serialize derived/runtime-only data like <code>CellMetricsMap</code> (those are recalculated).</li>
+<li>On load:
+<ul>
+<li>calls <code>Init(terrainSettings)</code> to allocate data layers to the correct size</li>
+<li>deserializes maps</li>
+<li>calls <code>SetAllDirty(true)</code> so downstream systems recompute dependent data (metrics, meshes, color maps, etc.)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="7-custom-hooks-customserializer--customdeserializer">7) Custom hooks: <code>customSerializer</code> / <code>customDeserializer</code></h2>
+<p><code>HexTerrainSerializer</code> supports two optional callbacks:</p>
+<h3 id="customserializercallbackbinarywriter-writer-object-componentobject"><code>CustomSerializerCallback(BinaryWriter writer, object componentObject)</code></h3>
+<p>Use this when:</p>
+<ul>
+<li>a component does <strong>not</strong> implement <code>ISerializableTerrainLayer</code></li>
+<li>you want a different format than <code>SerializeLayer</code></li>
+<li>you want to skip a component entirely</li>
+</ul>
+<p>Return <code>true</code> to tell the serializer “I handled it”.</p>
+<h3 id="customdeserializercallbackbinaryreader-reader-type-componenttype-hexterrainsettings-terrainsettings"><code>CustomDeserializerCallback(BinaryReader reader, Type componentType, HexTerrainSettings terrainSettings)</code></h3>
+<p>Use this when:</p>
+<ul>
+<li>a component type hash no longer maps to a known type</li>
+<li>you want to <strong>create/add</strong> a missing managed component before deserializing</li>
+<li>you want to apply migrations/rename mappings</li>
+<li>you want to read custom payloads</li>
+</ul>
+<p>Return <code>true</code> only if you fully consumed the corresponding payload bytes from the stream.</p>
+<hr>
+<h2 id="8-adding-serialization-support-to-a-new-custom-terrain-layer">8) Adding serialization support to a new custom terrain layer</h2>
+<h3 id="step-by-step-checklist">Step-by-step checklist</h3>
+<ol>
+<li><strong>Store your runtime state</strong> inside the layer (often via data layers like <code>CellValueDataLayer&lt;T&gt;</code>, <code>ColorMapCellValueDataLayer&lt;T&gt;</code>, etc.).</li>
+<li>Implement <code>ISerializableTerrainLayer</code> on your layer component.</li>
+<li>In <code>SerializeLayer</code>:
+<ul>
+<li>call <code>CompleteAllJobs()</code> (if the layer uses jobs/native containers)</li>
+<li>write a <strong>layer-local version</strong> (<code>int</code>) if you expect the layer format to evolve</li>
+<li>write your data in a strict order</li>
+</ul>
+</li>
+<li>In <code>DeserializeLayer</code>:
+<ul>
+<li>call <code>CompleteAllJobs()</code></li>
+<li>call <code>Init(terrainSettings)</code> (or equivalent) so containers match the saved terrain size</li>
+<li>read version and data in the exact order you wrote it</li>
+<li>mark derived outputs dirty (or recompute) so visuals and dependent layers update</li>
+</ul>
+</li>
+</ol>
+<h3 id="minimal-example">Minimal example</h3>
+<p>Below is a simple managed layer that stores one integer per cell and persists it.</p>
+<pre><code class="lang-csharp">using System.IO; 
+using Fwt.HexTerrains.Data; 
+using Fwt.HexTerrains.DataLayers;
+
+namespace Fwt.HexTerrains 
+{ 
+    public sealed class MyCustomIntLayer : HexTerrainLayer, ISerializableTerrainLayer 
+    { 
+        private const int LayerFormatVersion = 1;
+        
+        public CellValueDataLayer&lt;int&gt; Values;
+
+        public override void Init(HexTerrainSettings settings)
+        {
+            Values ??= new CellValueDataLayer&lt;int&gt;();
+            Values.Init(settings.CellsCount, settings);
+
+            base.Init(settings);
+        }
+
+        public override void CompleteAllJobs()
+        {
+            Values?.CompleteAllJobs();
+            base.CompleteAllJobs();
+        }
+
+        public override void Cleanup()
+        {
+            Values?.Cleanup();
+        }
+
+        public override Unity.Jobs.JobHandle CleanupAsync(Unity.Jobs.JobHandle dependency)
+        {
+            return Values?.CleanupAsync(dependency) ?? dependency;
+        }
+
+        public override void SetAllDirty(bool isDirty)
+        {
+            Values?.SetAllChunksDirty(isDirty);
+        }
+
+        public bool SerializeLayer(BinaryWriter writer)
+        {
+            if (writer == null)
+            {
+                return false;
+            }
+
+            CompleteAllJobs();
+
+            writer.Write(LayerFormatVersion);
+
+            // Persist the data layer. NativeListChunkedDataLayer.Serialize writes:
+            // - a presence flag (bool)
+            // - the NativeArray payload
+            return Values?.Serialize(writer) ?? false;
+        }
+
+        public bool DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)
+        {
+            if (reader == null)
+            {
+                return false;
+            }
+
+            CompleteAllJobs();
+            Init(terrainSettings);
+
+            var version = reader.ReadInt32();
+            if (version &gt; LayerFormatVersion)
+            {
+                // Optionally handle forward-compat here (or fail).
+            }
+
+            var ok = Values?.Deserialize(reader) ?? false;
+
+            // Ensure dependent systems recompute anything derived from Values
+            SetAllDirty(true);
+
+            return ok;
+        }
+
+        public override void Dispose()
+        {
+            Values?.Dispose();
+            base.Dispose();
+        }
+    }
+}
+</code></pre>
+<h3 id="step-make-sure-the-layer-is-on-the-terrain-entity">Step: make sure the layer is on the terrain entity</h3>
+<p>For the default deserialization path to work, the layer instance must already exist on the terrain entity as a <strong>managed component</strong>.</p>
+<p>If you need to add it on demand (or migrate), use <code>customDeserializer</code> to attach/create it before calling its <code>DeserializeLayer(...)</code>.</p>
+<hr>
+<h2 id="9-common-pitfalls">9) Common pitfalls</h2>
+<ul>
+<li><strong>Forgetting <code>CompleteAllJobs()</code></strong> before serialization: can lead to partial/invalid data.</li>
+<li><strong>Serializing derived caches</strong> (like metrics or meshes): prefer serializing the minimal authoritative inputs, then recompute.</li>
+<li><strong>Type rename breaks stable hashes</strong>: use <code>customDeserializer</code> to map old types or handle missing components.</li>
+<li><strong>Changing field order</strong> in <code>SerializeLayer</code> without a version guard: always version your layer payload if it might evolve.</li>
+</ul>
+<hr>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/terrain-serialization.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

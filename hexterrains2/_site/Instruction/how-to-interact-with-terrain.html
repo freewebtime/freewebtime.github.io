@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interacting With a Terrain Entity | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interacting With a Terrain Entity | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="interacting-with-a-terrain-entity">Interacting With a Terrain Entity</h1>
+
+<p>This page explains the main runtime interaction model in HexTerrains:</p>
+<ul>
+<li>how terrain state is stored on a <strong>terrain entity</strong></li>
+<li>what <code>IHexTerrainAPI</code> / <code>HexTerrainAPI</code> are for</li>
+<li>what <code>IEnvironmentAPI</code> / <code>EnvironmentAPI</code> are for</li>
+<li>how <code>EnvironmentAPIComponent</code> is created (startup wiring)</li>
+<li>how to plug in a custom <code>IEnvironmentAPI</code> using <code>CreateEnvironmentAPIRequest</code> + <code>EnvironmentAPIConfigAssetBase</code></li>
+<li>practical interaction examples (reading/writing terrain data)</li>
+</ul>
+<hr>
+<h2 id="1-the-core-idea-terrain--entity--components">1) The core idea: “Terrain = Entity + Components”</h2>
+<p>HexTerrains uses Unity Entities (ECS) as the storage backend.</p>
+<p>A <strong>terrain</strong> is represented by an <code>Entity</code> (referred to as <code>terrainEntity</code>) that contains:</p>
+<ul>
+<li><code>HexTerrain</code> (<code>IComponentData</code>) — holds <code>HexTerrainSettings</code> (size, chunk size, layout/rotation, etc.)</li>
+<li>multiple <strong>managed components</strong> (component objects) that implement various terrain layer/data concepts, commonly derived from <code>HexTerrainLayer</code> and/or <code>HexTerrainLayerGroup</code></li>
+</ul>
+<p>Most “terrain layers” are <strong>managed component objects</strong> attached to the same <code>terrainEntity</code>, e.g. a <code>ChunkMeshLayerGroup</code> that contains multiple <code>ChunkMeshLayer</code> instances.</p>
+<h3 id="why-apis-exist">Why APIs exist</h3>
+<p>Direct <code>EntityManager</code> access is not always convenient (or desirable) across tools/UI code. HexTerrains provides two API layers:</p>
+<ul>
+<li><code>IEnvironmentAPI</code> / <code>EnvironmentAPI</code> — environment-wide operations (UI integration, save/load, create/destroy terrains, cursor raycast info, brush settings, etc.)</li>
+<li><code>IHexTerrainAPI</code> / <code>HexTerrainAPI</code> — terrain-focused, convenience accessors/mutators (cell height/biome/regions/objects/entities/etc.), typically used by user tools</li>
+</ul>
+<hr>
+<h2 id="2-ihexterrainapi-terrain-focused-api">2) <code>IHexTerrainAPI</code> (terrain-focused API)</h2>
+<p><code>IHexTerrainAPI</code> is a “terrain-scoped” façade around a specific <code>terrainEntity</code>.</p>
+<h3 id="responsibilities">Responsibilities</h3>
+<p><code>IHexTerrainAPI</code> exposes:</p>
+<ul>
+<li>references to other subsystems:
+<ul>
+<li><code>IUISystemAPI UISystemAPI { get; }</code></li>
+<li><code>IEnvironmentAPI EnvironmentAPI { get; }</code></li>
+</ul>
+</li>
+<li>access to the current terrain:
+<ul>
+<li><code>Entity GetTerrainEntity()</code></li>
+<li><code>HexTerrainSettings? GetTerrainSettings()</code></li>
+</ul>
+</li>
+<li>managed layer access:
+<ul>
+<li><code>TTerrainLayer GetTerrainLayer&lt;TTerrainLayer&gt;() where TTerrainLayer : class</code></li>
+<li><code>bool IsLayerSupported&lt;TDataLayer&gt;()</code></li>
+<li>helper to fetch a layer from a group:
+<ul>
+<li><code>GetTerrainLayer&lt;TTerrainLayerGroup, TTerrainLayer&gt;(HexTerrainLayerReference layerReference)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="the-layergroup--layerreference-pattern">The “LayerGroup + LayerReference” pattern</h3>
+<p>Many APIs use:</p>
+<ul>
+<li>a <em>group component</em> on the entity (ex: <code>ChunkMeshLayerGroup : HexTerrainLayerGroup&lt;ChunkMeshLayer&gt;, IComponentData</code>)</li>
+<li>a <code>HexTerrainLayerReference</code> to select a nested layer by:
+<ul>
+<li>index (<code>ByLayerIndex(...)</code>)</li>
+<li>name (<code>ByLayerName(...)</code>)</li>
+<li>index + name (<code>ByLayerIndexAndName(...)</code>)</li>
+</ul>
+</li>
+</ul>
+<p>This lets you address “the 2nd surface layer” or “the layer named Water” without hard-coding component types everywhere.</p>
+<h3 id="typical-operations">Typical operations</h3>
+<p><code>IHexTerrainAPI</code> includes a large set of convenience methods grouped by feature, for example:</p>
+<ul>
+<li><strong>Cell height</strong>: <code>GetCellHeight(...)</code>, <code>SetCellHeight(...)</code></li>
+<li><strong>Biome</strong>: <code>GetCellBiome(...)</code>, <code>SetCellBiome(...)</code></li>
+<li><strong>Regions / objects / entities / geoplasts</strong>: similar “get/set cell value” patterns</li>
+<li><strong>Visibility</strong> of visual mesh layers: <code>GetChunkMeshLayerVisibility(...)</code>, <code>ShowChunkMeshLayer(...)</code>, <code>HideChunkMeshLayer(...)</code></li>
+</ul>
+<hr>
+<h2 id="3-hexterrainapi-default-ihexterrainapi-implementation">3) <code>HexTerrainAPI</code> (default <code>IHexTerrainAPI</code> implementation)</h2>
+<p><code>HexTerrainAPI</code> is the provided baseline implementation.</p>
+<h3 id="what-it-caches">What it caches</h3>
+<p><code>HexTerrainAPI</code> stores:</p>
+<ul>
+<li><code>Entity TerrainEntity</code> — the terrain it currently targets</li>
+<li><code>EntityManager EntityManager</code> — used to query and mutate ECS storage</li>
+<li><code>Entity UserToolEntity</code> — typically the entity that drives a tool/brush</li>
+<li><code>IUISystemAPI UISystemAPI</code></li>
+<li><code>IEnvironmentAPI EnvironmentAPI</code></li>
+</ul>
+<p>It is designed so that if <code>TerrainEntity</code> changes, <strong>all API calls automatically operate on the new entity</strong> (the API queries the <code>EntityManager</code> each call).</p>
+<h3 id="failure-behavior-important">Failure behavior (important)</h3>
+<p>Most methods are defensive:</p>
+<ul>
+<li>If the entity doesn’t exist, or a layer isn’t present, calls generally return <code>null</code>/<code>default</code>/<code>false</code> rather than throwing.</li>
+<li>Layer access uses <code>EntityManager.TryGetComponentObject&lt;T&gt;(...)</code> for managed components.</li>
+</ul>
+<h3 id="example-how-hexterrainapi-readswrites-cell-height">Example: how <code>HexTerrainAPI</code> reads/writes cell height</h3>
+<p>Internally <code>HexTerrainAPI</code> does this pattern:</p>
+<ol>
+<li>Get the layer group component (managed or data component depending on the group type)</li>
+<li>Use <code>HexTerrainLayerReference</code> to locate the nested layer</li>
+<li>Use the layer’s data layer (<code>HeightMap</code>, <code>BiomeMap</code>, etc.) and call <code>TryGetData</code> / <code>TrySetData</code></li>
+</ol>
+<p>This keeps tool code independent from the underlying data storage layout.</p>
+<hr>
+<h2 id="4-ienvironmentapi-environment-wide-api">4) <code>IEnvironmentAPI</code> (environment-wide API)</h2>
+<p><code>IEnvironmentAPI</code> is the “outer” API used to operate on <strong>any</strong> terrain entity, and also to integrate UI and environment-level assets.</p>
+<h3 id="key-properties">Key properties</h3>
+<ul>
+<li><code>Entity EnvironmentAPIEntity { get; set; }</code><br>
+The entity that hosts the environment API component.</li>
+<li><code>EntityManager EntityManager { get; set; }</code></li>
+<li><code>IUISystemAPI UISystemAPI { get; set; }</code></li>
+</ul>
+<h3 id="terrain-facing-methods-selected-highlights">Terrain-facing methods (selected highlights)</h3>
+<p><strong>Terrain basics</strong></p>
+<ul>
+<li><code>HexTerrainSettings? GetTerrainSettings(Entity terrainEntity)</code></li>
+<li><code>TDataLayer GetTerrainLayer&lt;TDataLayer&gt;(Entity terrainEntity)</code></li>
+<li><code>bool IsTerrainLayerSupported&lt;TDataLayer&gt;(Entity terrainEntity)</code></li>
+</ul>
+<p><strong>Visibility and view mode</strong></p>
+<ul>
+<li><code>bool? GetIsTerrainVisible(Entity terrainEntity)</code></li>
+<li><code>bool SetIsTerrainVisible(Entity terrainEntity, bool isVisible)</code></li>
+<li><code>int GetViewMode(Entity terrainEntity)</code></li>
+<li><code>bool SetViewMode(Entity terrainEntity, int viewMode)</code></li>
+</ul>
+<p><strong>Persistence</strong></p>
+<ul>
+<li><code>bool SaveTerrain(Entity terrainEntity, string filePath)</code></li>
+<li><code>bool LoadTerrain(Entity terrainEntity, string filePath)</code></li>
+</ul>
+<p><strong>Resizing and lifecycle</strong></p>
+<ul>
+<li><code>bool ResizeTerrain(Entity terrainEntity, int2 terrainSize)</code></li>
+<li><code>bool DestroyTerrain(Entity terrainEntity)</code></li>
+</ul>
+<p><strong>Cursor / raycast</strong></p>
+<ul>
+<li><code>HexTerrainRaycastData? GetRaycastData(Entity terrainEntity)</code></li>
+<li><code>int? GetCellIndexUnderCursor(Entity terrainEntity)</code></li>
+<li><code>int2? GetCellCoordUnderCursor(Entity terrainEntity)</code></li>
+</ul>
+<p><strong>Prefab configs and palettes</strong></p>
+<ul>
+<li><code>IList&lt;IHexTerrainPrefabConfig&gt; GetHexTerrainPrefabConfigsList()</code></li>
+<li><code>IList&lt;Texture2D&gt; GetHeightmapPalette()</code></li>
+</ul>
+<p><strong>UI</strong></p>
+<ul>
+<li>methods to create/get/destroy UI screens via <code>IUISystemAPI</code> (minimap, user tools screen, etc.)</li>
+</ul>
+<hr>
+<h2 id="5-environmentapi-default-ienvironmentapi-implementation">5) <code>EnvironmentAPI</code> (default <code>IEnvironmentAPI</code> implementation)</h2>
+<p><code>EnvironmentAPI</code> implements the interface using <code>EntityManager</code> reads/writes.</p>
+<p>Notable behavior:</p>
+<ul>
+<li><code>SaveTerrain(...)</code> / <code>LoadTerrain(...)</code> delegate to <code>HexTerrainSerializer</code>.</li>
+<li><code>ResizeTerrain(...)</code> updates <code>HexTerrain.Settings.TerrainSize</code>, then iterates managed components on the terrain entity and calls <code>Resize(...)</code> for those that are <code>HexTerrainLayer</code>.<br>
+This is the standard “resize propagates to managed layers” workflow.</li>
+<li><code>GetHexTerrainPrefabConfigsList()</code> and <code>GetHeightmapPalette()</code> cache results after first query.</li>
+</ul>
+<hr>
+<h2 id="6-environmentapicomponent-how-the-environment-api-is-stored-on-an-entity">6) <code>EnvironmentAPIComponent</code>: how the environment API is stored on an entity</h2>
+<p><code>EnvironmentAPIComponent</code> is a managed ECS component (<code>IComponentData</code>) that holds an <code>IEnvironmentAPI</code> instance:</p>
+<ul>
+<li><code>public IEnvironmentAPI Value;</code></li>
+</ul>
+<p>It also implements <code>IDisposable</code> and will dispose <code>Value</code> if it implements <code>IDisposable</code>.</p>
+<h3 id="marker-component-environmentapientity">Marker component: <code>EnvironmentAPIEntity</code></h3>
+<p>Alongside <code>EnvironmentAPIComponent</code>, the framework also adds a marker <code>EnvironmentAPIEntity : IComponentData</code> so systems can locate “the environment API entity” as a singleton.</p>
+<hr>
+<h2 id="7-how-environmentapicomponent-is-created-startup-flow">7) How <code>EnvironmentAPIComponent</code> is created (startup flow)</h2>
+<p>Creation is request-driven via <code>CreateEnvironmentAPIRequest</code> and processed by <code>CreateEnvironmentAPISystem</code>.</p>
+<h3 id="71-the-request-component">7.1 The request component</h3>
+<p><code>CreateEnvironmentAPIRequest : IComponentData</code> contains:</p>
+<ul>
+<li><code>UnityObjectRef&lt;EnvironmentAPIConfigAssetBase&gt; ConfigAsset;</code></li>
+</ul>
+<h3 id="72-the-system-that-fulfills-the-request">7.2 The system that fulfills the request</h3>
+<p><code>CreateEnvironmentAPISystem</code> (runs in <code>InitializationSystemGroup</code>, before <code>HexTerrainsInitGroup</code>) does:</p>
+<ol>
+<li>Finds entities with <code>CreateEnvironmentAPIRequest</code> and <em>without</em> <code>EnvironmentAPIComponent</code></li>
+<li>Reads <code>request.ConfigAsset.Value</code></li>
+<li>Calls <code>apiConfig.CreateAPI(EntityManager, entity)</code></li>
+<li>Adds:
+<ul>
+<li><code>EnvironmentAPIComponent { Value = environmentAPI }</code></li>
+<li><code>EnvironmentAPIEntity</code> marker</li>
+</ul>
+</li>
+<li>Removes <code>CreateEnvironmentAPIRequest</code> so it only runs once per entity</li>
+</ol>
+<p><strong>Implication:</strong> to customize environment behavior, you typically customize the <em>config asset</em> used by the request.</p>
+<hr>
+<h2 id="8-providing-a-custom-ienvironmentapi">8) Providing a custom <code>IEnvironmentAPI</code></h2>
+<p>You customize environment API creation via a ScriptableObject derived from <code>EnvironmentAPIConfigAssetBase</code>.</p>
+<h3 id="81-what-environmentapiconfigassetbase-does-by-default">8.1 What <code>EnvironmentAPIConfigAssetBase</code> does by default</h3>
+<ul>
+<li><code>CreateAPI(...)</code> creates <code>new EnvironmentAPI()</code> and calls:
+<ul>
+<li><code>Init(entityManager, GetUISystemAPI(entityManager), apiEntity)</code></li>
+</ul>
+</li>
+<li><code>GetUISystemAPI(entityManager)</code> is abstract, so every project must decide how to provide the UI API instance.</li>
+</ul>
+<h3 id="82-customization-options">8.2 Customization options</h3>
+<h4 id="option-a-override-only-getuisystemapi">Option A: Override only <code>GetUISystemAPI(...)</code></h4>
+<p>Use this when you want the default <code>EnvironmentAPI</code> behavior, but must provide another UI API implementation.</p>
+<h4 id="option-b-override-createapi">Option B: Override <code>CreateAPI(...)</code></h4>
+<p>Use this when you want a different environment API implementation:</p>
+<ul>
+<li>subclass <code>EnvironmentAPI</code> (recommended when you just extend behavior), or</li>
+<li>implement <code>IEnvironmentAPI</code> from scratch</li>
+</ul>
+<h3 id="83-example-config-asset-overriding-createapi">8.3 Example config asset overriding <code>CreateAPI(...)</code></h3>
+<p>Below is a minimal pattern you can adapt (the UI acquisition is project-specific):</p>
+<pre><code class="lang-csharp">// In your project (example) 
+using Fwt.Core.UI.Screens; 
+using Fwt.HexTerrains; 
+using Fwt.HexTerrains.Data; 
+using Unity.Entities; 
+using UnityEngine;
+
+[CreateAssetMenu(menuName = &quot;HexTerrains/Environment API Config (Custom)&quot;)] 
+public sealed class CustomEnvironmentAPIConfigAsset : EnvironmentAPIConfigAssetBase 
+{ 
+    public override IEnvironmentAPI CreateAPI(EntityManager entityManager, Entity apiEntity) 
+    { 
+        var api = new CustomEnvironmentAPI(); 
+        api.Init(entityManager, GetUISystemAPI(entityManager), apiEntity); 
+        return api; 
+    }
+
+    public override IUISystemAPI GetUISystemAPI(EntityManager entityManager)
+    {
+        // Resolve your UI system API here (project-specific).
+        // Typically: query a singleton component, a world-managed service, etc.
+        return default;
+    }
+
+    private sealed class CustomEnvironmentAPI : EnvironmentAPI
+    {
+        // Override / extend behavior as needed:
+        // - SaveTerrain / LoadTerrain (custom callbacks)
+        // - CreateNewTerrain pipeline
+        // - custom UI screen management
+    }
+}
+</code></pre>
+<h3 id="84-wiring-it-up-at-runtime">8.4 Wiring it up at runtime</h3>
+<p>To activate your config, create an entity (or choose an existing “environment/bootstrap” entity) and add:</p>
+<ul>
+<li><code>CreateEnvironmentAPIRequest { ConfigAsset = &lt;your asset ref&gt; }</code></li>
+</ul>
+<p><code>CreateEnvironmentAPISystem</code> will attach the resulting API to that entity as <code>EnvironmentAPIComponent</code>.</p>
+<hr>
+<h2 id="9-practical-interaction-examples-using-hexterrainapi">9) Practical interaction examples (using <code>HexTerrainAPI</code>)</h2>
+<h3 id="example-1-readwrite-a-cell-height">Example 1: Read/Write a cell height</h3>
+<p>Conceptually (pseudo-flow):</p>
+<ol>
+<li>Determine a target cell index (from cursor raycast, selection, etc.)</li>
+<li>Use <code>HexTerrainAPI.SetCellHeight(...)</code> to write into a specific <code>ChunkMeshLayer</code></li>
+<li>Downstream systems react because the underlying data layer is marked dirty</li>
+</ol>
+<pre><code class="lang-csharp">// Example usage pattern (pseudo-code): 
+var cellIndex = environmentApi.GetCellIndexUnderCursor(terrainEntity); 
+if (cellIndex.HasValue) 
+{ 
+    // Choose the target mesh layer inside a layer group by name/index: 
+    var layerRef = HexTerrainLayerReference.ByLayerName(&quot;Surface&quot;);
+    hexTerrainApi.SetCellHeight&lt;MyChunkMeshLayerGroup, ChunkMeshLayer&gt;(
+        cellIndex.Value,
+        layerRef,
+        value: 5.0f
+    );
+}
+</code></pre>
+<h3 id="example-2-toggle-visibility-of-a-visual-mesh-layer">Example 2: Toggle visibility of a visual mesh layer</h3>
+<pre><code class="lang-csharp">var layerRef = HexTerrainLayerReference.ByLayerName(&quot;Water&quot;);
+var isVisible = hexTerrainApi.GetChunkMeshLayerVisibility&lt;MyChunkMeshLayerGroup, VisualChunkMeshLayer&gt;(layerRef); 
+if (isVisible.HasValue) 
+{ 
+    hexTerrainApi.SetChunkMeshVisibility&lt;MyChunkMeshLayerGroup, VisualChunkMeshLayer&gt;(layerRef, !isVisible.Value); 
+}
+</code></pre>
+<h3 id="example-3-read-terrain-settings-safely">Example 3: Read terrain settings safely</h3>
+<pre><code class="lang-csharp">var settings = hexTerrainApi.GetTerrainSettings(); 
+if (settings.HasValue) 
+{ 
+    // settings.Value.TerrainSize, settings.Value.ChunkSize, etc. 
+}
+</code></pre>
+<hr>
+<h2 id="10-when-to-use-ienvironmentapi-vs-ihexterrainapi">10) When to use <code>IEnvironmentAPI</code> vs <code>IHexTerrainAPI</code></h2>
+<p>Use <code>IEnvironmentAPI</code> when:</p>
+<ul>
+<li>you have a <code>terrainEntity</code> and need general operations (save/load, resize, raycast-under-cursor, view mode, UI screens)</li>
+</ul>
+<p>Use <code>IHexTerrainAPI</code> when:</p>
+<ul>
+<li>you are writing tool/brush-style code and want compact helpers for “set cell value in layer X”</li>
+<li>you want logic that is naturally scoped to “the current terrain”</li>
+</ul>
+<p>In many tool flows:</p>
+<ul>
+<li><code>IEnvironmentAPI</code> determines <em>what cell is targeted</em> (raycast/cursor)</li>
+<li><code>IHexTerrainAPI</code> mutates <em>the data inside a specific terrain layer</em></li>
+</ul>
+<hr>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/how-to-interact-with-terrain.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

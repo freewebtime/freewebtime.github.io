@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>⚙️ System Execution Pipeline | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="⚙️ System Execution Pipeline | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-system-execution-pipeline">⚙️ System Execution Pipeline</h1>
+
+<p>The simulation logic of the Hex Terrains Framework is structured into well-defined <strong>execution phases</strong>, organized through a hierarchy of <code>ComponentSystemGroup</code>s. This design ensures that all systems run in a deterministic and performant order, respecting job dependencies and data lifecycle phases such as cleanup, initialization, simulation, rendering.</p>
+<p>Each major phase of the pipeline is represented by a dedicated system group and often accompanied by a corresponding <strong>barrier system</strong> (<code>EntityCommandBufferSystem</code>) to queue structural changes safely at the end of the phase.</p>
+<hr>
+<h3 id="-overview-of-execution-order">🧭 Overview of Execution Order</h3>
+<p>The system groups are executed in the following sequence throughout each frame:</p>
+<ol>
+<li><p><strong>Initialization Phase</strong> (<code>InitializationSystemGroup</code>)</p>
+<ul>
+<li><code>HexTerrainsCleanupGroup</code></li>
+<li><code>HexTerrainsInitGroup</code></li>
+</ul>
+<p><img src="images/InitializationSystemGroup.png" alt="Initialization System Group"></p>
+</li>
+<li><p><strong>Simulation Phase</strong> (<code>SimulationSystemGroup</code>)</p>
+<ul>
+<li><code>HexTerrainsSimulationGroup</code></li>
+<li><code>HexTerrainsUpdateGroup</code></li>
+<li><code>HexTerrainsStartPreRenderGroup</code></li>
+</ul>
+<p><img src="images/SimulationSystemGroup.png" alt="Simulation System Group"></p>
+</li>
+<li><p><strong>Late Simulation Phase</strong> (<code>LateSimulationSystemGroup</code>)</p>
+<ul>
+<li><code>HexTerrainsFinishPreRenderGroup</code></li>
+</ul>
+<p><img src="images/LateSimulationSystemGroup.png" alt="Simulation System Group"></p>
+</li>
+<li><p><strong>Presentation Phase</strong> (<code>PresentationSystemGroup</code>)</p>
+<ul>
+<li><code>HexTerrainsRenderGroup</code></li>
+</ul>
+<p><img src="images/PresentationSystemGroup.png" alt="Simulation System Group"></p>
+</li>
+</ol>
+<p>Each group is scheduled inside a broader Unity ECS phase (<code>InitializationSystemGroup</code>, <code>SimulationSystemGroup</code>, <code>LateSimulationSystemGroup</code>, <code>PresentationSystemGroup</code>) to ensure correct integration into Unity's default update loop.</p>
+<hr>
+<h3 id="-1-hexterrainscleanupgroup">🧼 1. <code>HexTerrainsCleanupGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>InitializationSystemGroup</code></li>
+<li><strong>Order:</strong> Executes <strong>first</strong> in the frame (<code>OrderFirst = true</code>)</li>
+<li><strong>Purpose:</strong> Resets flags, clears buffers, and prepares terrain data for the new simulation frame.</li>
+<li><strong>Typical Systems:</strong> Reset dirty flags, mark layers for recomputation.</li>
+</ul>
+<hr>
+<h3 id="-3-hexterrainsinitgroup">🏗️ 3. <code>HexTerrainsInitGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>InitializationSystemGroup</code></li>
+<li><strong>Order:</strong> Runs <strong>after</strong> <code>HexTerrainsSimulationGroup</code></li>
+<li><strong>Purpose:</strong> Handles the creation of new terrain entities, initialization of ECS components, and data allocation.</li>
+</ul>
+<hr>
+<h3 id="-2-hexterrainssimulationgroup">🎢 2. <code>HexTerrainsSimulationGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>SimulationSystemGroup</code></li>
+<li><strong>Order:</strong> Runs <strong>before</strong> <code>HexTerrainsUpdateGroup</code></li>
+<li><strong>Purpose:</strong> Handles the simulation processes like water flow, snow melting, etc.</li>
+</ul>
+<hr>
+<h3 id="-3-hexterrainsupdategroup">🔄 3. <code>HexTerrainsUpdateGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>SimulationSystemGroup</code></li>
+<li><strong>Order:</strong> Runs <strong>after</strong> <code>HexTerrainsSimulationGroup</code></li>
+<li><strong>Purpose:</strong> Every frame update logic runs here. Processes input, accumulated changes to terrain state. Here happens the reaction on data change of the terrain. This includes terrain analysis, updates to data layers, generation of mesh data, etc.</li>
+</ul>
+<hr>
+<h3 id="-4-hexterrainsstartprerendergroup">🚦 4. <code>HexTerrainsStartPreRenderGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>SimulationSystemGroup</code></li>
+<li><strong>Order:</strong> Executes <strong>after</strong> <code>HexTerrainsUpdateGroup</code></li>
+<li><strong>Purpose:</strong> Runs all the logic that happens after the input is processed. Such as ColorMap colors, CellEntityLayer entities, etc.</li>
+</ul>
+<hr>
+<h3 id="-5-hexterrainsfinishprerendergroup">✍🏻 5. <code>HexTerrainsFinishPreRenderGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>LateSimulationSystemGroup</code></li>
+<li><strong>Purpose:</strong> Final cleanup and processing just before rendering.</li>
+<li><strong>Typical Use:</strong> Create meshes, combine buffers, finalize render settings, compress or normalize data.</li>
+</ul>
+<hr>
+<h3 id="-6-hexterrainsrendergroup">🎨 6. <code>HexTerrainsRenderGroup</code></h3>
+<ul>
+<li><strong>Parent:</strong> <code>PresentationSystemGroup</code></li>
+<li><strong>Purpose:</strong> Renders the terrain using data prepared in previous steps. Filling ColorMap textures with calculated colors.</li>
+<li><strong>Use Case:</strong> Rendering systems using <code>Graphics.DrawMeshInstanced</code>, material property block application, GPU data upload.</li>
+</ul>
+<hr>
+<h3 id="-barrier-systems">🛡️ Barrier Systems</h3>
+<p>Each phase has a corresponding <strong>EntityCommandBufferSystem</strong> that ensures deferred structural changes do not break parallel simulation:</p>
+<table>
+<thead>
+<tr>
+<th>Barrier System</th>
+<th>Associated Group</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>HexTerrainsCleanupBarrier</code></td>
+<td><code>HexTerrainsCleanupGroup</code></td>
+</tr>
+<tr>
+<td><code>HexTerrainsInitBarrier</code></td>
+<td><code>HexTerrainsInitGroup</code></td>
+</tr>
+<tr>
+<td><em>(others exist for each group)</em></td>
+<td><em>(other hex terrain groups)</em></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="-summary-diagram-text">📊 Summary Diagram (Text)</h3>
+<pre><code>[InitializationSystemGroup]
+ ├── HexTerrainsCleanupGroup (first)
+ │    └── HexTerrainsCleanupBarrier
+ └── HexTerrainsInitGroup (after cleanup)
+      └── HexTerrainsInitBarrier
+
+[SimulationSystemGroup]
+ ├── HexTerrainsSimulationGroup
+ │    └── HexTerrainsSimulationBarrier
+ ├── HexTerrainsUpdateGroup
+ │    └── HexTerrainsUpdateBarrier
+ └── HexTerrainsStartPreRenderGroup
+      └── HexTerrainsStartPreRenderBarrier
+
+[LateSimulationSystemGroup]
+ └── HexTerrainsFinishPreRenderGroup
+ │    └── HexTerrainsFinishPreRenderBarrier
+
+[PresentationSystemGroup]
+ └── HexTerrainsRenderGroup
+      └── HexTerrainsRenderBarrier
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/execution-order.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

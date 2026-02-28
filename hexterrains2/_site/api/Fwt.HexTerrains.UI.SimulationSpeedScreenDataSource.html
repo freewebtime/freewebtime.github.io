@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class SimulationSpeedScreenDataSource | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class SimulationSpeedScreenDataSource | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource">
+
+
+
+  <h1 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource" class="text-break">Class SimulationSpeedScreenDataSource</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.UIToolkit.DataSources.UIDataSource.html">UIDataSource</a></div>
+    <div class="level2"><span class="xref">SimulationSpeedScreenDataSource</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IDataSourceViewHashProvider</span></div>
+    <div><a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.UIToolkit.DataSources.UIDataSource.html#Fwt_UIToolkit_DataSources_UIDataSource_Version">UIDataSource.Version</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.UIToolkit.DataSources.UIDataSource.html#Fwt_UIToolkit_DataSources_UIDataSource_MarkDirty">UIDataSource.MarkDirty()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.UIToolkit.DataSources.UIDataSource.html#Fwt_UIToolkit_DataSources_UIDataSource_GetViewHashCode">UIDataSource.GetViewHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.UIToolkit.DataSources.UIDataSource.html#Fwt_UIToolkit_DataSources_UIDataSource_CommitChanges">UIDataSource.CommitChanges()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.UI.html">UI</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Serializable]
+public class SimulationSpeedScreenDataSource : UIDataSource, IDataSourceViewHashProvider, ICommitChanges</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource__ctor_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource__ctor" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.#ctor">SimulationSpeedScreenDataSource()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SimulationSpeedScreenDataSource()</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_FastSpeedButton" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.FastSpeedButton">FastSpeedButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateProperty]
+public SimulationSpeedScreenButtonDataSource FastSpeedButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UI.SimulationSpeedScreenButtonDataSource.html">SimulationSpeedScreenButtonDataSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_NextTickButton" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.NextTickButton">NextTickButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateProperty]
+public SimulationSpeedScreenButtonDataSource NextTickButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UI.SimulationSpeedScreenButtonDataSource.html">SimulationSpeedScreenButtonDataSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_NormalSpeedButton" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.NormalSpeedButton">NormalSpeedButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateProperty]
+public SimulationSpeedScreenButtonDataSource NormalSpeedButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UI.SimulationSpeedScreenButtonDataSource.html">SimulationSpeedScreenButtonDataSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnSimulationTimerChange" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnSimulationTimerChange">OnSimulationTimerChange</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UnityEvent&lt;HexTerrainSimulationTimer&gt; OnSimulationTimerChange</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">UnityEvent</span>&lt;<a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_PauseButton" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.PauseButton">PauseButton</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateProperty]
+public SimulationSpeedScreenButtonDataSource PauseButton</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UI.SimulationSpeedScreenButtonDataSource.html">SimulationSpeedScreenButtonDataSource</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SimulationDelays" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SimulationDelays">SimulationDelays</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;int&gt; SimulationDelays</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource__simulationTimer" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource._simulationTimer">_simulationTimer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected HexTerrainSimulationTimer _simulationTimer</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SimulationTimer_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SimulationTimer*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SimulationTimer" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SimulationTimer">SimulationTimer</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSimulationTimer SimulationTimer { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_NextTick_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.NextTick*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_NextTick" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.NextTick">NextTick()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void NextTick()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnFastSpeedButtonClicked_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnFastSpeedButtonClicked*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnFastSpeedButtonClicked" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnFastSpeedButtonClicked">OnFastSpeedButtonClicked()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnFastSpeedButtonClicked()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnNextTickButtonClicked_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnNextTickButtonClicked*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnNextTickButtonClicked" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnNextTickButtonClicked">OnNextTickButtonClicked()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnNextTickButtonClicked()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnNormalSpeedButtonClicked_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnNormalSpeedButtonClicked*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnNormalSpeedButtonClicked" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnNormalSpeedButtonClicked">OnNormalSpeedButtonClicked()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnNormalSpeedButtonClicked()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnPauseButtonClicked_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnPauseButtonClicked*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnPauseButtonClicked" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnPauseButtonClicked">OnPauseButtonClicked()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void OnPauseButtonClicked()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnSimulationTimerChanged_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnSimulationTimerChanged*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_OnSimulationTimerChanged" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.OnSimulationTimerChanged">OnSimulationTimerChanged()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnSimulationTimerChanged()</code></pre>
+  </div>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SetSimulationDelay_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SetSimulationDelay*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SetSimulationDelay_System_Int32_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SetSimulationDelay(System.Int32)">SetSimulationDelay(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetSimulationDelay(int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">value</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SetSimulationTimer_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SetSimulationTimer*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_SetSimulationTimer_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.SetSimulationTimer(Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer)">SetSimulationTimer(HexTerrainSimulationTimer)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void SetSimulationTimer(HexTerrainSimulationTimer simulationTimer)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer.html">HexTerrainSimulationTimer</a></td>
+        <td><span class="parametername">simulationTimer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_TogglePause_" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.TogglePause*"></a>
+  <h4 id="Fwt_HexTerrains_UI_SimulationSpeedScreenDataSource_TogglePause" data-uid="Fwt.HexTerrains.UI.SimulationSpeedScreenDataSource.TogglePause">TogglePause()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void TogglePause()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">UnityEngine.UIElements.IDataSourceViewHashProvider</span>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

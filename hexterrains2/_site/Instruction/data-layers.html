@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#128230; Data Layers Overview | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#128230; Data Layers Overview | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-data-layers-overview">📦 Data Layers Overview</h1>
+
+<h2 id="what-is-a-data-layer">What is a Data Layer?</h2>
+<p>A <strong>Data Layer</strong> is a specialized container used to store, manage, and process data efficiently in Unity. Specifically designed to work seamlessly with Unity's Job System and Burst Compiler, Data Layers provide built-in dependency tracking, state monitoring (dirty flags), and memory management.</p>
+<p>Data Layers excel in scenarios where massive amounts of data—such as terrain cell values, colors, or heights—need to be modified on the main thread and read by background worker jobs, or vice versa.</p>
+<h3 id="core-capabilities">Core Capabilities:</h3>
+<ol>
+<li><strong>Dependency Tracking:</strong> Built-in <code>JobHandle</code> management for safe, parallel reading and writing without race conditions.</li>
+<li><strong>State &amp; Versioning:</strong> Tracks if the data is dirty (<code>IsDirty</code>) and maintains a <code>Version</code> number, making it easy to invalidate caches or trigger updates only when necessary.</li>
+<li><strong>Memory Management:</strong> Automatically handles disposal of unmanaged memory, native collections, and optionally, disposable data items contained within the layer.</li>
+<li><strong>Chunking Support:</strong> Capable of dividing localized grid data into &quot;chunks&quot; to track dirty states spatially (e.g., when a single terrain cell is modified, only its specific chunk is marked for regeneration).</li>
+</ol>
+<hr>
+<h2 id="how-to-work-with-data-layers">How to Work with Data Layers</h2>
+<p>Data layers are designed to be accessed both immediately on the main thread and asynchronously via the Unity Job System.</p>
+<h3 id="synchronous-access-immediate">Synchronous Access (Immediate)</h3>
+<p>If you need to read or write data immediately on the main thread, you must signal to the layer to complete any running jobs before proceeding.</p>
+<ul>
+<li><strong><code>OpenToRead()</code></strong>: Completes all currently scheduled <em>write</em> jobs. Use this before reading data on the main thread.</li>
+<li><strong><code>OpenToWrite()</code></strong>: Completes <em>all</em> currently scheduled (read and write) jobs. Use this before modifying data on the main thread.</li>
+</ul>
+<pre><code class="lang-csharp">myNativeDataLayer.OpenToWrite(); 
+myNativeDataLayer.SetData(cellIndex, newValue); 
+myNativeDataLayer.CommitChanges(); // Marks the layer as dirty
+</code></pre>
+<h3 id="asynchronous-access-unity-jobs">Asynchronous Access (Unity Jobs)</h3>
+<p>When scheduling jobs that use a Data Layer's underlying structures, you request the necessary dependencies and update the layer once the job is scheduled.</p>
+<ul>
+<li><strong><code>PrepareToRead()</code></strong>: Returns a <code>JobHandle</code> representing all current write dependencies. Your job runs after the writes finish.</li>
+<li><strong><code>PrepareToWrite()</code></strong>: Returns a <code>JobHandle</code> representing all current read and write dependencies. Your job runs after everything else finishes.</li>
+<li><strong><code>AddReadDependency(JobHandle)</code></strong> / <strong><code>AddWriteDependency(JobHandle)</code></strong>: Stores your newly scheduled job's handle in the layer so future operations wait for it.</li>
+</ul>
+<pre><code class="lang-csharp">// 1. Prepare to write 
+JobHandle deps = myNativeDataLayer.PrepareToWrite();
+
+// 2. Schedule your job 
+var myJob = new ModifyDataJob 
+{ 
+	Data = myNativeDataLayer.Data.AsArray() 
+}; 
+JobHandle jobHandle = myJob.Schedule(myNativeDataLayer.Length, 64, deps);
+
+// 3. Register the newly scheduled job 
+myNativeDataLayer.AddWriteDependency(jobHandle); 
+myNativeDataLayer.SetDirty(true);
+</code></pre>
+<hr>
+<h2 id="types-of-data-layers">Types of Data Layers</h2>
+<p>The framework provides a comprehensive hierarchy of generic Data Layers catering to various storage needs.</p>
+<h3 id="1-basic--native-collections">1. Basic &amp; Native Collections</h3>
+<p>These standard models wrap common collection types with Data Layer tracking logic.</p>
+<ul>
+<li><strong>Managed Collections</strong>: <code>ArrayDataLayer&lt;T&gt;</code>, <code>ListDataLayer&lt;T&gt;</code>, <code>DictionaryDataLayer&lt;TKey, TItem&gt;</code>, <code>HashSetDataLayer&lt;T&gt;</code>.</li>
+<li><strong>Native Collections</strong>: Provide <code>Unity.Collections</code> variants safe for use inside the Burst Compiler (e.g., <code>NativeArrayDataLayer&lt;T&gt;</code>, <code>NativeListDataLayer&lt;T&gt;</code>, <code>NativeHashMapDataLayer&lt;TKey, TItem&gt;</code>, <code>NativeParallelHashSetDataLayer&lt;T&gt;</code>).</li>
+</ul>
+<h3 id="2-chunked-data-layers">2. Chunked Data Layers</h3>
+<p><code>ChunkedDataLayer</code> forms the backbone of spatial data tracking. It splits grid-based datasets (like terrain maps) into localized &quot;chunks.&quot;</p>
+<p>When you set a cell as dirty via <code>SetCellDirty(cellIndex)</code>, the layer flags the underlying chunk as dirty via the <code>ChunkDirtyGrid</code> and <code>DirtyChunks</code> arrays.</p>
+<ul>
+<li><strong>Edge Wrapping:</strong> Chunk layers understand grid connections. If <code>IsConnectedHorizontally</code> or <code>IsConnectedVertically</code> are enabled, setting a cell on the grid seam automatically flags the wrapped adjacent chunk on the far side of the map as dirty.</li>
+<li><strong>Subclasses:</strong> <code>ArrayChunkedDataLayer&lt;T&gt;</code>, <code>ListChunkedDataLayer&lt;T&gt;</code>, <code>NativeArrayChunkedDataLayer&lt;T&gt;</code>, <code>NativeListChunkedDataLayer&lt;T&gt;</code>.</li>
+</ul>
+<h3 id="3-hex-terrain-specific-layers">3. Hex Terrain Specific Layers</h3>
+<p>These provide direct integration with <code>HexTerrainSettings</code> ensuring automatic size matching and terrain chunk topology rules.</p>
+<ul>
+<li><p><strong><code>HexTerrainNativeListChunkedDataLayer&lt;TItem&gt;</code></strong>: Inherits the Native List chunking concepts but auto-configures sizes through a <code>HexTerrainSettings</code> profile.</p>
+</li>
+<li><p><strong><code>CellValueDataLayer&lt;TCellValue&gt;</code></strong>: Stores a numeric or structural value per discrete hexagon cell.</p>
+</li>
+<li><p><strong><code>CellColorsDataLayer</code></strong>: Explicitly stores a <code>Color32</code> value per cell. Allows bulk-applying its stored color data directly to a given <code>Texture2D</code> utilizing fast memory transfer operations (<code>ApplyColorsToTexture()</code>).</p>
+</li>
+<li><p><strong><code>ColorMapDataLayer</code></strong>: An extension of <code>CellColorsDataLayer</code> that also stores a <code>ColorPalette</code> (<code>NativeList&lt;Color32&gt;</code>). Ideal for coloring terrain surfaces based on specific index-to-color palettes.</p>
+</li>
+<li><p><strong><code>ColorMapCellValueDataLayer&lt;TCellValue&gt;</code></strong>: A synchronized pairing of a <code>CellValueDataLayer</code> and a <code>ColorMapDataLayer</code>. It stores the actual <em>value</em> (e.g., height, temperature, moisture) and maintains an explicit visual <em>Color Map</em> layer linked to it.</p>
+</li>
+<li><p><strong><code>AutoColorMapCellValueDataLayer&lt;TCellValue&gt;</code></strong>: Automates the pipeline of converting cell values into visual colors via Jobs. It supports different mapping modes via <code>AutoColorMapMode</code>:</p>
+<ul>
+<li><strong>ColorIndexByValue</strong>: The raw cell value is an exact index mapping to an entry in the Color Palette.</li>
+<li><strong>GradientThroughPalette</strong>: Normalized lerping between <code>MinValue</code> and <code>MaxValue</code> determines the position across the color palette array.</li>
+<li><strong>Custom</strong>: Override <code>CalculateColorMap_Custom()</code> to supply entirely bespoke translation Jobs.
+<em>(Implementations provided out-of-the-box include <code>ColorMapCellValueDataLayer_Int</code> and <code>ColorMapCellValueDataLayer_Float</code>.)</em></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="memory-management-and-disposal">Memory Management and Disposal</h2>
+<p>Data Layers implement <code>IDisposable</code>. Because they heavily utilize Unity Native Collections (<code>NativeList</code>, <code>NativeArray</code>, etc.), calling <code>Dispose()</code> on the Data Layer is required to prevent memory leaks.</p>
+<p>By default:</p>
+<ol>
+<li><code>Dispose()</code> calls <code>CompleteAllJobs()</code> ensuring underlying data is no longer actively being accessed by worker threads.</li>
+<li>Unmanaged collections are freed.</li>
+<li>If <code>IsDisposableItems</code> is <code>true</code>, it iterates and safely disposes of the inner discrete element items before structural release.</li>
+</ol>
+<hr>
+<h2 id="practical-example-chunk-mesh-layer--cell-metrics">Practical Example: Chunk Mesh Layer &amp; Cell Metrics</h2>
+<p>To fully grasp how Data Layers interact in practice, let's look at <code>ChunkMeshLayer</code> and how it calculates <code>HexCellMetrics</code>.</p>
+<p>A <code>ChunkMeshLayer</code> holds multiple Data Layers representing different terrain features:</p>
+<ul>
+<li><code>HeightMap</code> (<code>ColorMapCellValueDataLayer_Float</code>)</li>
+<li><code>BiomeMap</code> (<code>ColorMapCellValueDataLayer_Int</code>)</li>
+<li><code>TransparencyMap</code> (<code>CellValueDataLayer&lt;bool&gt;</code>)</li>
+<li><code>CellMetricsMap</code> (<code>CellMetricsDataLayer</code> - purely an output layer based on the above)</li>
+</ul>
+<p>When terrain generation or modification occurs, we need to recalculate the physical cell properties (metrics) such as local/global coordinates, calculated height in units, and transformation matrices. Data Layers ensure this process is performant, asynchronous, and only processes what has actually changed.</p>
+<h3 id="the-calculation-pipeline">The Calculation Pipeline</h3>
+<p>The <code>CalcCellMetrics(JobHandle dependency)</code> method in <code>ChunkMeshLayer</code> demonstrates the complete lifecycle of reading from multiple Data Layers and writing to another using the Unity Job System.</p>
+<h4 id="1-checking-dirty-states">1. Checking Dirty States</h4>
+<p>First, the system prevents unnecessary work by checking the <code>IsDirty</code> flag of the source layers and the destination layer.</p>
+<pre><code class="lang-csharp">// If nothing has changed, simply return the input dependency 
+if (!HeightMap.IsDirty &amp;&amp; !BiomeMap.IsDirty &amp;&amp; !CellMetricsMap.IsDirty &amp;&amp; !TransparencyMap.IsDirty) 
+{ 
+	return dependency; 
+}
+</code></pre>
+<h4 id="2-preparing-job-dependencies">2. Preparing Job Dependencies</h4>
+<p>Before reading or writing to Native Collections, the layer must wait for any previously scheduled jobs to finish. <code>PrepareToRead()</code> and <code>PrepareToWrite()</code> fetch these dependencies.</p>
+<pre><code class="lang-csharp">// The Metrics map will be modified, so we prepare to WRITE 
+var deps1 = CellMetricsMap.PrepareToWrite();
+
+// Height, Biome, and Transparency maps will only be read, so we prepare to READ 
+var deps2 = HeightMap.PrepareToRead(); 
+var deps3 = BiomeMap.PrepareToRead(); 
+var deps4 = TransparencyMap.PrepareToRead();
+
+// Combine all handles with the input dependency 
+dependency = JobHandle.CombineDependencies(dependency, deps1, deps2); 
+dependency = JobHandle.CombineDependencies(dependency, deps3, deps4);
+</code></pre>
+<h4 id="3-merging-dirty-grids-chunking-optimization">3. Merging Dirty Grids (Chunking Optimization)</h4>
+<p>Since these are <em>Chunked</em> Data Layers, we don't want to recalculate metrics for the entire map—only for the chunks where height, biome, or transparency changed. <code>MergeChunkDirtyGrids</code> combines the dirty flags from the source layers into the destination's chunk grid.</p>
+<pre><code class="lang-csharp">dependency = CellMetricsMap.MergeChunkDirtyGrids(HeightMap, BiomeMap, TransparencyMap, dependency);
+
+// CellMetricsMap's ChunkDirtyGrid now contains 'true' for any chunk 
+// that was marked dirty in HeightMap, BiomeMap, or TransparencyMap. 
+</code></pre>
+<h4 id="4-scheduling-the-burst-job">4. Scheduling the Burst Job</h4>
+<p>Next, the actual data is passed to a Burst-compiled <code>IJobParallelFor</code> struct (<code>CalcHexCellMetricsJob</code>). Notice the use of <code>.AsArray()</code> to extract the underlying Native Arrays cleanly.</p>
+<pre><code class="lang-csharp">var job = new CalcHexCellMetricsJob 
+{ 
+	TerrainSettings = Settings, 
+	TerrainMetrics = TerrainMetrics, 
+	TransparencyMap = TransparencyMap.Data.AsArray(), 
+	HeightMap = HeightMap.Data.AsArray(), 
+	ColorMap = BiomeMap.Data.AsArray(),
+	// We pass the merged dirty grid so the job knows which chunks to process
+	ChunkDirtyGrid = CellMetricsMap.ChunkDirtyGrid.AsArray(),
+
+	// Output arrays
+	CellMetrics = CellMetricsMap.Data.AsArray(),
+	CellPositions = CellMetricsMap.CellPositions.AsArray(),
+};
+
+dependency = job.Schedule(Settings.CellsCount, Settings.CellsPerChunk, dependency);
+</code></pre>
+<p><em>Inside the Job's <code>Execute(int index)</code> method, the code checks <code>ChunkDirtyGrid[chunkIndex]</code>. If the chunk isn't dirty, it immediately returns, saving massive amounts of CPU time.</em></p>
+<h4 id="5-registering-the-scheduled-job">5. Registering the Scheduled Job</h4>
+<p>Finally, the modified and read Data Layers need to be informed of this newly scheduled job so they can protect their memory in future operations. The destination layer is also marked as dirty, triggering its own downstream updates (like mesh generation).</p>
+<pre><code class="lang-csharp">// Set write dependency on the output layer 
+CellMetricsMap.SetWriteDependency(dependency);
+
+// Add read dependencies on the source layers 
+HeightMap.AddReadDependency(dependency); 
+BiomeMap.AddReadDependency(dependency); 
+TransparencyMap.AddReadDependency(dependency);
+
+// Mark the CellMetricsMap as dirty so downstream systems know it changed 
+CellMetricsMap.SetDirty(true);
+return dependency;
+</code></pre>
+<h3 id="summary-of-the-workflow">Summary of the Workflow</h3>
+<p>By utilizing Data Layers, <code>ChunkMeshLayer</code> completely avoids blocking the main thread during heavy calculations. Data Layers safely bridge the gap between complex game logic state, dependency tracking, chunk-based culling, and highly optimized Unity Burst jobs.</p>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/data-layers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

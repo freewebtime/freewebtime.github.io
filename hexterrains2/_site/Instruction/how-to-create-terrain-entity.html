@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>How to create a Terrain Entity | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="How to create a Terrain Entity | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="how-to-create-a-terrain-entity">How to create a Terrain Entity</h1>
+
+<h2 id="baking">Baking</h2>
+<p>Place a TerrainEntity authoring prefab game object on a subscene. Add all needed components to it:</p>
+<h3 id="hexterrain"><code>HexTerrain</code></h3>
+<p><img src="images/HexTerrainAuthoring.png" alt="HexTerrain authoring"></p>
+<p>This component contains terrain settings such as <code>TerrainSize</code> in cells (x, y), <code>HexRotation</code> (Point Top/Flat Top), <code>HexLayout</code> (Even/Odd), <code>HexRadius</code> (the lenght of the hexagon side), <code>HexHeight</code> (1 unit of height on HeightMap translates to this height of cell in meters, think of it as a vertical terrain scale), <code>SlopeSize</code> (share of the hex radius dedicated to slope between two adjacent cells), <code>IsConnectedVertically</code> and <code>IsConnectedHorizontally</code> flags (allow to connect opposite sides of the terrain, to create an illusion of a round planet like in Civilization), and <code>ChunkSize</code> (width and height of one terrain chunk in cells. 16x16 is an optimal value, as the Unity engine has a hard limit for the amount of vertices per mesh, and the ChunkMeshLayer generates one mesh per chunk. So depending on the geometry of your chunks the amount of vertexes per cell can easilly make your mesh big enough to go over that limit).</p>
+<h3 id="attachmaincamera"><code>AttachMainCamera</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/AttachMainCameraAuthoring.png" alt="AttachMainCamera authoring"></p>
+<p>Attaches a Camera.main to the Terrain Entity on Initialization phase in runtime.
+In order to calculate visible chunks, the <code>ChunksGridLayer</code> needs a Camera instance attached to the Terrain Entity (to test chunk visibility inside the Camera Frustum).</p>
+<p>If your logic requires different camera to be attached or no camera at all, don't add this component. If you need another camera to be attached, create your own component for that and check <code>AttachMainCameraToTerrainSystem</code> to learn how the camera is attached to the Terrain Entity:</p>
+<pre><code class="lang-csharp">[UpdateInGroup(typeof(CreateHexTerrainsGroup))]
+public partial class AttachMainCameraToTerrainSystem : SystemBase
+{
+    private EntityQuery _terrainsQuery;
+
+    protected override void OnCreate()
+    {
+        base.OnCreate();
+
+        _terrainsQuery = GetEntityQuery(
+            ComponentType.ReadOnly&lt;AttachMainCameraRequest&gt;(),
+            ComponentType.Exclude&lt;Camera&gt;()
+        );
+
+        RequireForUpdate(_terrainsQuery);
+    }
+
+    protected override void OnUpdate()
+    {
+        using var ecb = new EntityCommandBuffer(Unity.Collections.Allocator.Temp);
+        var camera = Camera.main;
+
+        ecb.AddComponentObject(_terrainsQuery, camera);
+        ecb.RemoveComponent&lt;AttachMainCameraRequest&gt;(_terrainsQuery, EntityQueryCaptureMode.AtPlayback);
+
+        ecb.Playback(EntityManager);
+    }
+}
+</code></pre>
+<h3 id="cameracontroller"><code>CameraController</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/CameraControllerAuthoring.png" alt="CameraController authoring"></p>
+<p>This component adds the default Camera Controller to the terrain that allows to control a position of the Camera attached to the Terrain Entity.</p>
+<p>If you have your own implementation of the Camera Controller, or you simply don't need the default camera controller, don't add this component.</p>
+<h3 id="hexterrainbrush"><code>HexTerrainBrush</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/TerrainBrushAuthoring.png" alt="HexTerrainBrush authoring"></p>
+<p>This component adds a 'Brush' that highlights the cells under cursor. Default implementation uses the <code>DecalProjector</code> to project a highlight on the terrain (see <code>View Prefab</code> on authoring component)</p>
+<p>If you don't need a brush on the terrain, or you have your own implementation, don't add this component</p>
+<h3 id="chunkmeshlayergroup"><code>ChunkMeshLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/ChunkMeshLayerGroupAuthoring.png" alt="ChunkMeshLayerGroup authoring"></p>
+<p>This component adds a <code>ChunkMeshLayerGroup</code> component to the TerrainEntity. This LayerGroup holds a list of <code>ChunkMeshLayer</code> layers such as TerrainSurface, Clouds, Roads, etc.</p>
+<p>Each ChunkMeshLayer has a <code>HeightMap</code> (float per cell), <code>BiomeMap</code> (int per cell), and <code>TransparencyMap</code> (bool per cell). It also has a <code>CellMetricsMap</code> that holds precalculated data for each cell  such as local and global center position, cell height, chunk index, chunk position, etc. This data is used by mesh generation as well as by other layers such as <code>CellObjectLayer</code> or <code>CellEntityLayer</code> to cell metrics dependent calculation. So <code>CellMetrics</code> are generated once and then used in different places.</p>
+<p>This component is optional, but some other layers depend on it, such as CellObjectLayer and CellEntityLayer - for calculating the transforms for their items.</p>
+<h3 id="cellregionlayergroup"><code>CellRegionLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/CellRegionLayerGroupAuthoring.png" alt="CellRegionLayerGroup authoring"></p>
+<p>This component adds a <code>CellRegionLayerGroup</code> component to the Terrain Entity. This LayerGroup holds a list of <code>CellRegionLayer</code> layers such as Provinces, Countries, etc. <code>CellRegionLayer</code> has a <code>CellRegionMap</code> (int per cell), <code>RegionCells</code> (<code>NativeParallelMultiHashMap&lt;int, uint&gt;</code> where key is a region index and values is a collection of cell indexes of the cells that are belong to that region), <code>RegionSizes</code> (uint per cell where index is a region index and value is the amount of cells of that region). <code>RegionCells</code> and <code>RegionSizes</code> are recalculated when <code>CellRegionMap</code> values change.
+<code>CellRegionMap</code> is a data layer with embedded color map, so whenever the data is changed, the colors in that color map are updated. That colors can be copied into the <code>Texture2D</code> instance to be displayed on UI or in terrain material to color the terrain cells into the respective colors (for example, to paint each cell into the color of the country that cell belongs to).</p>
+<p>This component is totally optional and in default implementation no other layers depend on it.</p>
+<h3 id="cellobjectlayergroup"><code>CellObjectLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/CellObjectLayerGroupAuthoring.png" alt="CellObjectLayerGroup authoring"></p>
+<p>This component adds a <code>CellObjectLayerGroup</code> component to the Terrain Entity. This LayerGroup holds a list of <code>CellObjectLayer</code> layers such as Trees, Buildings, etc.</p>
+<p><code>CellObjectLayer</code> has <code>ItemIndexMap</code> (int per cell), <code>ItemStateMap</code> (int per cell), <code>ItemPositionMap</code> (float3 per cell), <code>ItemRotationMap</code> (quaternion per cell), <code>ItemScaleMap</code> (float3 per cell), and <code>ItemTransformMap</code> (Matrix4x4 per cell).
+When <code>ItemPositionMap</code> or <code>ItemRotationMap</code> or <code>ItemScaleMap</code> data is changed, the <code>ItemTransformMap</code> is recalculated, so it always contains the transform matrix for each cell for the Cell Items to render at.</p>
+<p>This layer holds a palette for Cell Items. Each CellItem index and CellItemState correspond to an item in the palette. So if in a ItemIndexMap[cell] is 1 and ItemStateMap[cell] is 3, on this cell will be rendered an item from palette for index 1 and state 3. Rendering is done using <code>Graphics.DrawMeshInstanced</code>.</p>
+<p>This layer supports LODs (see the CellObject prefab).</p>
+<blockquote>
+<p>This layer exists to solve a problem with inability to have millions of Entities in Unity. If you have a huge terrain with millions of cells, and you spawn an Entity in each cell, the Unity may crash. To solve this problem a <code>CellObject</code> mecanic was created. It can hold as much items as you need as long as you have memory for them. Cell Objects are more lightweight that Entities and run faster, but provide only static object(s) per cell without a hierarchy, no animation, etc. Cell Objects can co-exist with Cell Entity on the same terrain without any problems.</p>
+</blockquote>
+<p>This layer is optional. In default implementation no other layers depend on it.</p>
+<h3 id="cellentitylayergroup"><code>CellEntityLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/CellEntityLayerGroupAuthoring.png" alt="CellEntityLayerGroup authoring"></p>
+<p>This component adds a <code>CellEntityLayerGroup</code> component to the Terrain Entity. This LayerGroup holds a list of <code>CellEntityLayer</code> layers such as Trees, Buildings, etc.</p>
+<p><code>CellEntityLayer</code> is very similar to the <code>CellObjectLayer</code>, but instead of rendering cell items using <code>Graphics.DrawMeshInstanced</code>, this layer spawns Entity per cell from palette according to the <code>ItemIndexMap</code> value and <code>ItemStateMap</code> value.</p>
+<p>This layer holds a palette for Cell Items. Each CellItemIndex and CellItemState correspond to an Entity prefab in the palette. So if in a ItemIndexMap[cell] is 1 and ItemStateMap[cell] is 3, on this cell will be placed an Entity from palette for index 1 and state 3.</p>
+<blockquote>
+<p>Note that Unity may crash if you create millions of Entities, so if you have a huge terrain and you create an entity for each cell, keep this restriction in mind. The <code>CellObjectLayer</code> exists to fix this problem, as it can hold as many items as you want as long as you have memory for them.</p>
+</blockquote>
+<p>This layer is optional. In default implementation no other layers depend on it.</p>
+<h3 id="geoplastlayergroup"><code>GeoPlastLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/GeoPlastLayerGroupAuthoring.png" alt="GeoPlastLayerGroup authoring"></p>
+<p>This component adds a <code>GeoPlastLayerGroup</code> to the Terrain Entity. This LayerGroup holds a list of <code>GeoPlastLayer</code> layers such as Ground, Water, Air, etc.</p>
+<p><code>GeoPlastLayer</code> has <code>AmountMap</code> (float per cell), <code>VolumeMap</code> (float per cell), <code>DensityMap</code> (float per cell), <code>BedrockHeightMap</code> (float per cell), <code>CeilingHeightMap</code> (float per cell). When <code>AmountMap</code> values or <code>DensityMap</code> values are changed, the <code>VolumeMap</code> is recalculated. Volume is calculated by multiplying the plast amount with it's density in the same cell. Whenever the <code>BedrockHeightMap</code> is changed or <code>VolumeMap</code> is changed, the <code>CeilingHeightMap</code> is recalculated. Ceiling height is Bedrock height + Volume in each cell.</p>
+<p>It is possible to set a bedrock reference to another <code>GeoPlastLayer</code>. In this case the Bedrock height of the layer is equals to the Ceiling height of the bedrock layer. This allows to place a layer above layer. So, for instance, if you have a Water GeoPlast layer and it's bedrock is a Ground GeoPlast layer, the water is always above the ground, and when the ground height is changed, the water automatically adjusts.</p>
+<p>If a <code>GeoPlastLayer</code> is a <code>DynamicGeoPlastLayer</code>, it has an ability to flow. Flow is an exchange of volume between adjacent cells in attempt to equalize Ceiling height. This naturally creates a realistic flow of the GeoPlast volume, so, for example, water flows downhill, filling the valleys on the ground.</p>
+<blockquote>
+<p>There is also an ability to set a vertical flow targets (up and down) to exchange volume between GeoPlast layers. For instance, to simulate evaporation from water to clouds or to simulate condensation from clouds back to water. Default implementation of the DynamicGeoPlastLayer does not calculate a vertical flow, but there is a MaterialGeoPlastLayer that has an implementation of the vertical flow depending on the Temperature (so you can have a freezing/evaporating water, melting snow, etc).</p>
+</blockquote>
+<h2 id="runtime">Runtime</h2>
+<h3 id="initialization-process">Initialization process</h3>
+<p>Because the Terrain Layers are managed IComponentData components, it is not possible to bake them directly on Entity. So instead baking adds the CreateLayerRequest components.</p>
+<p>For example, the ChunkMeshLayerGroupBaker adds a <code>DynamicBuffer&lt;CreateChunkMeshLayerRequest&gt;</code>:</p>
+<pre><code class="lang-csharp">public struct CreateChunkMeshLayerRequest : IBufferElementData, ITerrainLayerFactory
+{
+    public FixedString128Bytes Name;
+    public UnityObjectRef&lt;ChunkMeshLayerConfigAsset&gt; Args;
+
+    public HexTerrainLayer CreateTerrainLayer()
+    {
+        var config = Args.Value;
+        if (config == null)
+        {
+            return default;
+        }
+
+        return config.CreateTerrainLayer();
+    }
+}
+</code></pre>
+<p>The <code>ChunkMeshLayerConfigAsset</code> here is a <code>ScriptableObject</code> that implements an <code>IChunkMeshLayerConfig</code> interface. This way the parameters of the <code>ChunkMeshLayer</code> is set on that <code>ScriptableObject</code> asset, and it is passed to the runtime world thorugh baking the buffer of requests.</p>
+<p>When the <code>CreateChunkMeshLayerGroupSystem</code> sees the entity with this DynamicBuffer of requests, it creates a <code>ChunkMeshLayerGroup</code> component, puts it on Terrain Entity and then creates and initializes as much ChunkMeshLayers as much requests are in this DynamicBuffer. After initialization the requests DynamicBuffer is removed from Terrain Entity.</p>
+<p>The same approach is used for all the Terrain Layers.</p>
+<blockquote>
+<p>Note that you don't have to use a <code>ScriptableObject</code> to initialize a TerrainLayer, you can use any class or struct you want as long as it implements the required interface. In case of <code>ChunkMeshLayer</code> it has to implement the <code>IChunkMeshLayerConfig</code>, in case of <code>CellEntityLayer</code> it must be <code>ICellEntityLayerConfig</code>, and so on.</p>
+</blockquote>
+<h3 id="creating-a-terrain-entity-in-runtime">Creating a Terrain Entity in runtime</h3>
+<p>If you don't bake your Terrain Entity from a scene, but want to create a Terrain in runtime, you have two options:</p>
+<ol>
+<li><p>Instantiate a baked entity prefab with Create Layers Requests on it.</p>
+</li>
+<li><p>Instantiate an empty entity and manually add all the components to it. You can add CreateLayerRequests as baker does and then wait for one frame so the initialization systems create and initialize layers. Or alternatively you can create the TerrainLayerGroup components in your code, create and insert all the layers inside them, and add the LayerGroups to your entity.</p>
+</li>
+</ol>
+<p>See the code of Bakers of the authoring components to learn which components you have to add for the initialization process (Create Terrain Layer Requests processing):</p>
+<p>Non-optional components:</p>
+<pre><code class="lang-csharp">public class HexTerrainBaker : Baker&lt;HexTerrainAuthoring&gt;
+{
+    public override void Bake(HexTerrainAuthoring authoring)
+    {
+        var terrainEntity = GetEntity(authoring, TransformUsageFlags.Dynamic);
+        var terrainSettings = authoring.TerrainSettings;
+
+        // terrain
+        AddComponent(terrainEntity, new HexTerrain
+        {
+            Settings = terrainSettings
+        });
+
+        AddComponent(terrainEntity, new HexTerrainRaycastData());
+
+        AddComponent(terrainEntity, new HexTerrainViewMode
+        {
+            Value = authoring.ViewMode
+        });
+
+        AddComponent(terrainEntity, new HexTerrainVisibility
+        {
+            Value = authoring.IsVisible
+        });
+        if (authoring.ViewModeCollectionConfig != null)
+        {
+            AddComponent(terrainEntity, new ViewModeCollectionConfigComponent
+            {
+                ConfigAsset = authoring.ViewModeCollectionConfig
+            });
+        }
+
+        AddComponent(terrainEntity, new CreateChunksGridLayerRequest());
+
+        AddComponent(terrainEntity, new NotInitializedTerrain
+        {
+            IsSetViewMode = true,
+            ViewMode = authoring.ViewMode
+        });
+    }
+}
+</code></pre>
+<p>Optional components.</p>
+<p>Camera controller:</p>
+<pre><code class="lang-csharp">public class CameraControllerBaker : Baker&lt;CameraControllerAuthoring&gt;
+{
+    public override void Bake(CameraControllerAuthoring authoring)
+    {
+        var entity = GetEntity(TransformUsageFlags.Dynamic);
+        AddComponent(entity, new CreateCameraControllerRequest
+        {
+            MoveUpKey = authoring.MoveUpKey,
+            MoveDownKey = authoring.MoveDownKey,
+            MoveLeftKey = authoring.MoveLeftKey,
+            MoveRightKey = authoring.MoveRightKey,
+            AccelerationKey = authoring.AccelerationKey,
+            RotateLeftKey = authoring.RotateLeftKey,
+            RotateRightKey = authoring.RotateRightKey,
+            LockMovementKey = authoring.LockMovementKey,
+            SaveCameraStateKey = authoring.SaveCameraStateKey,
+            LoadCameraStateKey = authoring.LoadCameraStateKey,
+
+            ZoomSpeed = authoring.ZoomSpeed,
+            MovementSpeed = authoring.MovementSpeed,
+            RotationSpeed = authoring.RotationSpeed,
+            AccelerationMultiplier = authoring.AccelerationMultiplier,
+
+            IsFindCameraControllerComponentOnScene = authoring.IsFindCameraControllerComponentOnScene
+        });
+
+        var ignoreInputBuf = AddBuffer&lt;IgnoreCameraZoomInputKeys&gt;(entity);
+        if (authoring.PreventZoomKeys != null)
+        {
+            for (var kIndex = 0; kIndex &lt; authoring.PreventZoomKeys.Count; kIndex++)
+            {
+                ignoreInputBuf.Add(new IgnoreCameraZoomInputKeys
+                {
+                    Value = authoring.PreventZoomKeys[kIndex]
+                });
+            }
+        }
+    }
+}
+</code></pre>
+<p>Attach main camera request:</p>
+<pre><code class="lang-csharp">public class AttachMainCameraBaker : Baker&lt;AttachMainCameraAuthoring&gt;
+{
+    public override void Bake(AttachMainCameraAuthoring authoring)
+    {
+        var entity = GetEntity(TransformUsageFlags.None);
+        AddComponent(entity, new AttachMainCameraRequest());
+    }
+}
+</code></pre>
+<p>HexTerrainBrush:</p>
+<pre><code class="lang-csharp">public class HexTerrainBrushBaker : Baker&lt;HexTerrainBrushAuthoring&gt;
+{
+    public override void Bake(HexTerrainBrushAuthoring authoring)
+    {
+        var entity = GetEntity(TransformUsageFlags.Dynamic);
+
+        AddComponent(entity, new HexTerrainBrush
+        {
+            Color = authoring.Color,
+            IsResizable = authoring.IsResizable,
+            IsVisible = authoring.IsVisible,
+            Size = authoring.Size,
+            Opacity = authoring.Opacity
+        });
+
+        if (authoring.IsCreateView &amp;&amp; authoring.ViewPrefab != null)
+        {
+            var request = new CreateHexTerrainBrushViewRequest
+            {
+                Prefab = new UnityObjectRef&lt;GameObject&gt;
+                {
+                    Value = authoring.ViewPrefab.gameObject
+                }
+            };
+            AddComponent(entity, request);
+        }
+    }
+}
+</code></pre>
+<p>ChunkMeshLayerGroup:</p>
+<pre><code class="lang-csharp">public class ChunkMeshLayerGroupBaker : Baker&lt;ChunkMeshLayerGroupAuthoring&gt;
+{
+    public override void Bake(ChunkMeshLayerGroupAuthoring authoring)
+    {
+        var terrainEntity = GetEntity(TransformUsageFlags.None);
+
+        var createRequests = AddBuffer&lt;CreateChunkMeshLayerRequest&gt;(terrainEntity);
+        if (authoring.Layers != null)
+        {
+            for (var lIndex = 0; lIndex &lt; authoring.Layers.Count; lIndex++)
+            {
+                var layerAuthoring = authoring.Layers[lIndex];
+                if (layerAuthoring.Args == null)
+                {
+                    Debug.LogError($&quot;Layer {layerAuthoring.Name} has no Args defined.&quot;);
+                    continue;
+                }
+
+                var request = new CreateChunkMeshLayerRequest
+                {
+                    Name = layerAuthoring.Name,
+                    Args = layerAuthoring.Args
+                };
+                createRequests.Add(request);
+            }
+        }
+    }
+}
+</code></pre>
+<p>CellRegionLayerGroup:</p>
+<pre><code class="lang-csharp">public class CellRegionLayerGroupBaker : Baker&lt;CellRegionLayerGroupAuthoring&gt;
+{
+    public override void Bake(CellRegionLayerGroupAuthoring authoring)
+    {
+        var terrainEntity = GetEntity(TransformUsageFlags.None);
+
+        var createRequests = AddBuffer&lt;CreateCellRegionLayerGroupRequest&gt;(terrainEntity);
+        if (authoring.Layers != null)
+        {
+            for (var lIndex = 0; lIndex &lt; authoring.Layers.Count; lIndex++)
+            {
+                var layerAuthoring = authoring.Layers[lIndex];
+                if (layerAuthoring.Args == null)
+                {
+                    Debug.LogError($&quot;Layer {layerAuthoring.Name} has no Args defined.&quot;);
+                    continue;
+                }
+
+                var request = new CreateCellRegionLayerGroupRequest
+                {
+                    Name = layerAuthoring.Name,
+                    Args = layerAuthoring.Args
+                };
+                createRequests.Add(request);
+            }
+        }
+    }
+}
+</code></pre>
+<p>CellObjectLayerGroup:</p>
+<pre><code class="lang-csharp">public class CellObjectLayerGroupBaker : Baker&lt;CellObjectLayerGroupAuthoring&gt;
+{
+    public override void Bake(CellObjectLayerGroupAuthoring authoring)
+    {
+        var terrainEntity = GetEntity(TransformUsageFlags.None);
+
+        var createRequests = AddBuffer&lt;CreateCellObjectsLayerRequest&gt;(terrainEntity);
+        if (authoring.Layers != null)
+        {
+            for (var lIndex = 0; lIndex &lt; authoring.Layers.Count; lIndex++)
+            {
+                var layerAuthoring = authoring.Layers[lIndex];
+                if (layerAuthoring.Args == null)
+                {
+                    Debug.LogError($&quot;Layer {layerAuthoring.Name} has no Args defined.&quot;);
+                    continue;
+                }
+
+                var request = new CreateCellObjectsLayerRequest
+                {
+                    Name = layerAuthoring.Name,
+                    Args = layerAuthoring.Args
+                };
+                createRequests.Add(request);
+            }
+        }
+    }
+}
+</code></pre>
+<p>CellEntityLayerGroup:</p>
+<pre><code class="lang-csharp">public class CellEntitiesLayersBaker : Baker&lt;CellEntityLayerGroupAuthoring&gt;
+{
+    public override void Bake(CellEntityLayerGroupAuthoring authoring)
+    {
+        var terrainEntity = GetEntity(TransformUsageFlags.Dynamic);
+        var requestBuff = AddBuffer&lt;CreateCellEntityLayerRequest&gt;(terrainEntity);
+        var cellEntityPrefabsBuff = AddBuffer&lt;CellEntityConfig&gt;(terrainEntity);
+
+        if (authoring.Layers != null)
+        {
+            for (var lIndex = 0; lIndex &lt; authoring.Layers.Count; lIndex++)
+            {
+                var layerAuthoring = authoring.Layers[lIndex];
+                var createLayerArgs = layerAuthoring.Args;
+                if (createLayerArgs != null)
+                {
+                    BakeCellEntities(createLayerArgs, lIndex, cellEntityPrefabsBuff);
+                }
+
+                var createLayerRequest = new CreateCellEntityLayerRequest
+                {
+                    Name = layerAuthoring.Name,
+                    Args = new UnityObjectRef&lt;CellEntityLayerConfigAsset&gt;
+                    {
+                        Value = createLayerArgs
+                    }
+                };
+                requestBuff.Add(createLayerRequest);
+            }
+        }
+    }
+
+    public virtual void BakeCellEntities(CellEntityLayerConfigAsset createArgs, int layerIndex, DynamicBuffer&lt;CellEntityConfig&gt; cellEntityConfigs)
+    {
+        var configsRangeStart = cellEntityConfigs.Length;
+        var configsRangeSize = 0;
+
+        for (int entityConfigIndex = 0; entityConfigIndex &lt; createArgs.CellEntities.Count; entityConfigIndex++)
+        {
+            var itemConfigAuthoring = createArgs.CellEntities[entityConfigIndex];
+            var entityConfig = new CellEntityConfig
+            {
+                Color = itemConfigAuthoring.Color,
+                Prefabs = new FixedList16&lt;Entity&gt;(),
+                StatePerPrefab = new FixedList16&lt;byte&gt;()
+            };
+
+            for (var pIndex = 0; pIndex &lt; itemConfigAuthoring.PrefabConfigs.Count; pIndex++)
+            {
+                var prefabConfigAuthoring = itemConfigAuthoring.PrefabConfigs[pIndex];
+                RegisterPrefabForBaking(prefabConfigAuthoring.Prefab);
+                var itemPrefab = GetEntity(prefabConfigAuthoring.Prefab, TransformUsageFlags.Dynamic);
+                entityConfig.Prefabs.Add(itemPrefab);
+                entityConfig.StatePerPrefab.Add((byte)prefabConfigAuthoring.State);
+            }
+
+            cellEntityConfigs.Add(entityConfig);
+
+            configsRangeSize++;
+        }
+
+        createArgs.EntityConfigsRangeStart = configsRangeStart;
+        createArgs.EntityConfigsRangeSize = configsRangeSize;
+
+#if UNITY_EDITOR
+        UnityEditor.EditorUtility.SetDirty(createArgs);
+#endif
+    }
+}
+</code></pre>
+<p>GeoPlastLayerGroup:</p>
+<pre><code class="lang-csharp">public class GeoPlastLayersGroupBaker : Baker&lt;GeoPlastLayerGroupAuthoring&gt;
+{
+    public override void Bake(GeoPlastLayerGroupAuthoring authoring)
+    {
+        var terrainEntity = GetEntity(TransformUsageFlags.None);
+
+        var createRequests = AddBuffer&lt;CreateGeoPlastLayerRequest&gt;(terrainEntity);
+        if (authoring.Layers != null)
+        {
+            for (var lIndex = 0; lIndex &lt; authoring.Layers.Count; lIndex++)
+            {
+                var layerAuthoring = authoring.Layers[lIndex];
+                if (layerAuthoring.Args == null)
+                {
+                    Debug.LogError($&quot;Layer {layerAuthoring.Name} has no Args defined.&quot;);
+                    continue;
+                }
+
+                var request = new CreateGeoPlastLayerRequest
+                {
+                    Name = layerAuthoring.Name,
+                    Args = layerAuthoring.Args
+                };
+                createRequests.Add(request);
+            }
+        }
+    }
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/how-to-create-terrain-entity.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

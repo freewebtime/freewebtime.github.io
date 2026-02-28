@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer&gt; | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer&gt; | Hex Terrains Framework ">
+    
+    <meta name="description" content="base clas for UserTool state that works with brush and TerrainLayersList component on the terrain entity. Provides an API for getting terrain layer by index or name or index and name combined.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4">
+
+
+
+  <h1 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4" class="text-break">Class BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer&gt;</h1>
+  <div class="markdown level0 summary"><p>base clas for UserTool state that works with brush and TerrainLayersList component on the terrain entity.
+Provides an API for getting terrain layer by index or name or index and name combined.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.StateMachines.SmState.html">SmState</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html">HexTerrainUserToolStateBase</a></div>
+    <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html">BrushUserToolState</a>&lt;TBrushTarget&gt;</div>
+    <div class="level5"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html">BrushUserToolState</a>&lt;TBrushTarget, TSettings&gt;</div>
+    <div class="level6"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html">BrushUserToolState</a>&lt;TBrushTarget, TSettings, TSettingsScreen&gt;</div>
+    <div class="level7"><span class="xref">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer&gt;</span></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.DataLayerBrushUserToolState-6.html">DataLayerBrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer, TDataLayer, TDataLayerValue&gt;</a></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.AutoPaintSurfaceUserToolStateBase-2.html">AutoPaintSurfaceUserToolStateBase&lt;TBrushTarget, TTerrainLayer&gt;</a></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.CellItems.PaintCellItemUserToolStateBase-4.html">PaintCellItemUserToolStateBase&lt;TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer&gt;</a></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase-4.html">PaintRegionsUserToolStateBase&lt;TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface&gt;</a></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.PaintSurfaceTransparencyUserToolStateBase-2.html">PaintSurfaceTransparencyUserToolStateBase&lt;TBrushTarget, TTerrainLayer&gt;</a></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.SetChunkMeshVisibilityUserToolState.html">SetChunkMeshVisibilityUserToolState</a></div>
+      <div class="level8"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.StampUserToolStateBase-3.html">StampUserToolStateBase&lt;TBrushTarget, TTerrainLayer, TCellData&gt;</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_SettingsScreen">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;.SettingsScreen</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_PrepareToRun">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_PrepareToStop">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_GetSettingsScreen">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;.GetSettingsScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_UpdateSettingsScreen">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;.UpdateSettingsScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_DataSource">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.DataSource</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SettingsPlayerPrefsKeyName">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.SettingsPlayerPrefsKeyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_PrepareToRun">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_InitSettings">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.InitSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_InitDefaultSettings">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.InitDefaultSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_PrepareToStop">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettings">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.LoadSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SaveSettings">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.SaveSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SaveSettingsValue__1_System_String___0_">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.SaveSettingsValue&lt;TValue&gt;(string, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettingsValue__1_System_String___0_">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.LoadSettingsValue&lt;TValue&gt;(string, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_TryLoadSettingsValue__1_System_String___0__">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.TryLoadSettingsValue&lt;TValue&gt;(string, out TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettingsValueOrDefault__1_System_String___0_">BrushUserToolState&lt;TBrushTarget, TSettings&gt;.LoadSettingsValueOrDefault&lt;TValue&gt;(string, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_PrevChangeTimeStamp">BrushUserToolState&lt;TBrushTarget&gt;.PrevChangeTimeStamp</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_TimeTreshold">BrushUserToolState&lt;TBrushTarget&gt;.TimeTreshold</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_CanChangeBrushSize">BrushUserToolState&lt;TBrushTarget&gt;.CanChangeBrushSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_AllowRightMouseButton">BrushUserToolState&lt;TBrushTarget&gt;.AllowRightMouseButton</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_CursorColor">BrushUserToolState&lt;TBrushTarget&gt;.CursorColor</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeModeKey">BrushUserToolState&lt;TBrushTarget&gt;.ChangeModeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeBrushSizeKey">BrushUserToolState&lt;TBrushTarget&gt;.ChangeBrushSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeOpacityKey">BrushUserToolState&lt;TBrushTarget&gt;.ChangeOpacityKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IncreaseBrushSizeKey">BrushUserToolState&lt;TBrushTarget&gt;.IncreaseBrushSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IncreaseBrushSizeKey2">BrushUserToolState&lt;TBrushTarget&gt;.IncreaseBrushSizeKey2</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_DecreaseBrushSizeKey">BrushUserToolState&lt;TBrushTarget&gt;.DecreaseBrushSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_DecreaseBrushSizeKey2">BrushUserToolState&lt;TBrushTarget&gt;.DecreaseBrushSizeKey2</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IsTimeTresholdPassed">BrushUserToolState&lt;TBrushTarget&gt;.IsTimeTresholdPassed</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_BrushSize">BrushUserToolState&lt;TBrushTarget&gt;.BrushSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_BrushOpacity">BrushUserToolState&lt;TBrushTarget&gt;.BrushOpacity</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeOpacityMultiplier">BrushUserToolState&lt;TBrushTarget&gt;.ChangeOpacityMultiplier</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_SetNewTimestamp">BrushUserToolState&lt;TBrushTarget&gt;.SetNewTimestamp()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_PrepareToRun">BrushUserToolState&lt;TBrushTarget&gt;.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_PrepareToStop">BrushUserToolState&lt;TBrushTarget&gt;.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_Tick">BrushUserToolState&lt;TBrushTarget&gt;.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_UpdateBrush">BrushUserToolState&lt;TBrushTarget&gt;.UpdateBrush()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_TryApplyBrush">BrushUserToolState&lt;TBrushTarget&gt;.TryApplyBrush()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyToSingleCell_System_Int32_Unity_Mathematics_int2_System_Int32__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyToSingleCell(int, int2, int, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyBrushToAllCells_System_Int32_Fwt_HexTerrains_Data_HexTerrainSettings__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyBrushToAllCells(int, HexTerrainSettings, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyBrushToAllBrushPoints_System_Int32_Unity_Mathematics_int2_System_Int32_Fwt_HexTerrains_Data_HexTerrainSettings__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyBrushToAllBrushPoints(int, int2, int, HexTerrainSettings, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyBrush_System_Int32_Unity_Mathematics_int2_System_Int32__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyBrush(int, int2, int, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_CanBeAppliedToManyPoints_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.CanBeAppliedToManyPoints(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IsAppliedToEveryCellOnMap_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.IsAppliedToEveryCellOnMap(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_GetBrushTarget">BrushUserToolState&lt;TBrushTarget&gt;.GetBrushTarget()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TerrainAPI">HexTerrainUserToolStateBase.TerrainAPI</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HexTerrainUserToolSettings">HexTerrainUserToolStateBase.HexTerrainUserToolSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PreviousViewMode">HexTerrainUserToolStateBase.PreviousViewMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_HexTerrainUserToolStateSettings_">HexTerrainUserToolStateBase.Init(HexTerrainUserToolStateSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_IHexTerrainAPI_">HexTerrainUserToolStateBase.Init(IHexTerrainAPI)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init__1_Fwt_HexTerrains_IHexTerrainAPI___0_">HexTerrainUserToolStateBase.Init&lt;TInitArgs&gt;(IHexTerrainAPI, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_ShowSettingsScreen__2___0_">HexTerrainUserToolStateBase.ShowSettingsScreen&lt;TViewData, TScreen&gt;(TViewData)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetUIScreen__1">HexTerrainUserToolStateBase.GetUIScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HideSettingsScreen__1">HexTerrainUserToolStateBase.HideSettingsScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int, Color32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_System_Boolean_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int, Color32, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetTerrainLayer__2_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainUserToolStateBase.GetTerrainLayer&lt;TLayerGroup, TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32_">HexTerrainUserToolStateBase.SetViewMode(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TryRestoreViewMode">HexTerrainUserToolStateBase.TryRestoreViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Settings">UserToolStateBase.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Parent">UserToolStateBase.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_ParentStateMachine">UserToolStateBase.ParentStateMachine</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_UserToolType">UserToolStateBase.UserToolType</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_UserToolStateSettings_">UserToolStateBase.Init(UserToolStateSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.html">UserTools</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.html">SM</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer&gt; : BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;, ISmState where TBrushTarget : HexTerrainLayerGroup where TSettingsScreen : ToolSettingsScreen&lt;TSettings&gt; where TTerrainLayer : HexTerrainLayer</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TBrushTarget</span></td>
+        <td><p>Terrain layer component (from terrain entity) this user tool works with</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSettings</span></td>
+        <td><p>Type of user tool settings (values that user can change like CellItemIndex, RegionIndex, etc.)</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TSettingsScreen</span></td>
+        <td><p>Type of the UI screen used to display the settings for user, so user can change settings</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TTerrainLayer</span></td>
+        <td><p>Type of the terrain layer to get from the terrain layer component (which is terrain layers list).
+Set this param to HexTerrainLayerBase if you don't want to filter the terrain layers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4__ctor_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4__ctor_Fwt_Core_StateMachines_ISmState_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.#ctor(Fwt.Core.StateMachines.ISmState)">BrushUserToolState(ISmState)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected BrushUserToolState(ISmState parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByIndex_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.IsGetLayerByIndex*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByIndex" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.IsGetLayerByIndex">IsGetLayerByIndex</h4>
+  <div class="markdown level1 summary"><p>If true, gets terrain layer by index specified in <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerIndex">TerrainLayerIndex</a> property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsGetLayerByIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByName_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.IsGetLayerByName*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByName" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.IsGetLayerByName">IsGetLayerByName</h4>
+  <div class="markdown level1 summary"><p>If true, gets terrain layer by name specified in <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerName">TerrainLayerName</a> property.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsGetLayerByName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerIndex_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.TerrainLayerIndex*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerIndex" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.TerrainLayerIndex">TerrainLayerIndex</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByIndex">IsGetLayerByIndex</a> is true, this index is used to get terrain layer from terrain layers list.&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int TerrainLayerIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerName_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.TerrainLayerName*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerName" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.TerrainLayerName">TerrainLayerName</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByName">IsGetLayerByName</a> is true, this name is used to get terrain layer from terrain layers list.&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual string TerrainLayerName { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_ViewModeByLayerIndex_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.ViewModeByLayerIndex*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_ViewModeByLayerIndex" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.ViewModeByLayerIndex">ViewModeByLayerIndex</h4>
+  <div class="markdown level1 summary"><p>List of view modes for each layer index.
+Index = layer index, value = view mode for that layer active.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual List&lt;int&gt; ViewModeByLayerIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer">GetTerrainLayer()</h4>
+  <div class="markdown level1 summary"><p>Retrieves the terrain layer associated with the current brush target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TTerrainLayer GetTerrainLayer()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTerrainLayer</span></td>
+        <td><p>The terrain layer of type <code class="typeparamref">TTerrainLayer</code> corresponding to the active brush target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer(`0)">GetTerrainLayer(TBrushTarget)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the terrain layer of type <code class="typeparamref">TTerrainLayer</code> from the specified brush target</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TTerrainLayer GetTerrainLayer(TBrushTarget brushTarget)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TBrushTarget</span></td>
+        <td><span class="parametername">brushTarget</span></td>
+        <td><p>HexTerrainLayerGroup that contains the requested layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTerrainLayer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer(`0,System.Int32)">GetTerrainLayer(TBrushTarget, int)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the terrain layer of type <code class="typeparamref">TTerrainLayer</code> at the specified index from the
+given brush target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TTerrainLayer GetTerrainLayer(TBrushTarget brushTarget, int layerIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TBrushTarget</span></td>
+        <td><span class="parametername">brushTarget</span></td>
+        <td><p>The brush target from which to retrieve the terrain layer. Cannot be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>The zero-based index of the terrain layer to retrieve.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTerrainLayer</span></td>
+        <td><p>The terrain layer of type <code class="typeparamref">TTerrainLayer</code> at the specified index, or the default value
+of <code class="typeparamref">TTerrainLayer</code> if <code class="paramref">brushTarget</code> is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_System_Int32_System_String_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer(`0,System.Int32,System.String)">GetTerrainLayer(TBrushTarget, int, string)</h4>
+  <div class="markdown level1 summary"><p>Retrieves a terrain layer from the specified brush target by index and name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TTerrainLayer GetTerrainLayer(TBrushTarget brushTarget, int layerIndex, string layerName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TBrushTarget</span></td>
+        <td><span class="parametername">brushTarget</span></td>
+        <td><p>The brush target from which to retrieve the terrain layer. If null, the method returns the default value for
+<code class="typeparamref">TTerrainLayer</code>.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>The zero-based index of the terrain layer to retrieve.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>The name of the terrain layer to retrieve. Used to identify the layer within the brush target.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTerrainLayer</span></td>
+        <td><p>The terrain layer of type <code class="typeparamref">TTerrainLayer</code> matching the specified index and name, or the
+default value for <code class="typeparamref">TTerrainLayer</code> if <code class="paramref">brushTarget</code> is null or the
+layer is not found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_System_String_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetTerrainLayer(`0,System.String)">GetTerrainLayer(TBrushTarget, string)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the terrain layer with the specified name from the given brush target.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TTerrainLayer GetTerrainLayer(TBrushTarget brushTarget, string layerName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TBrushTarget</span></td>
+        <td><span class="parametername">brushTarget</span></td>
+        <td><p>The brush target from which to retrieve the terrain layer. If null, the method returns the default value for
+the terrain layer type.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>The name of the terrain layer to retrieve. This value is case-sensitive.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTerrainLayer</span></td>
+        <td><p>The terrain layer of type TTerrainLayer with the specified name, or the default value for TTerrainLayer if
+the brush target is null or the layer does not exist.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetViewModeByLayerIndex_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetViewModeByLayerIndex*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetViewModeByLayerIndex_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.GetViewModeByLayerIndex(System.Int32)">GetViewModeByLayerIndex(int)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the view mode associated with the specified terrain layer index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int GetViewModeByLayerIndex(int terrainLayerIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">terrainLayerIndex</span></td>
+        <td><p>The zero-based index of the terrain layer for which to obtain the view mode. Must be within the bounds of
+the available terrain layers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><p>An integer representing the view mode for the specified terrain layer index. Returns the default view mode
+if the index is out of range or if no view modes are defined.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_Init__1___0_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.Init``1(``0)">Init&lt;TInitArgs&gt;(TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tool using the specified initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init&lt;TInitArgs&gt;(TInitArgs args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The initialization arguments used to configure the tool. If the argument implements IUserToolStateConfig,
+its ToolSettings are used; otherwise, default settings are applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>The type of the initialization arguments used to configure the tool. If the type implements
+IUserToolStateConfig, its ToolSettings will be used; otherwise, default settings are applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_Init__1___0_">BrushUserToolState&lt;TBrushTarget&gt;.Init&lt;TInitArgs&gt;(TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_OnTerrainLayerChanged_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.OnTerrainLayerChanged*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_OnTerrainLayerChanged" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.OnTerrainLayerChanged">OnTerrainLayerChanged()</h4>
+  <div class="markdown level1 summary"><p>Invoked when the terrain layer changes to update the view mode accordingly.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void OnTerrainLayerChanged()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_OnTerrainLayerChanged_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Derived classes can override this method to implement custom behavior when the
+terrain layer changes. This method is called automatically and should not be invoked directly.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TrySetViewMode_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.TrySetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TrySetViewMode" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.TrySetViewMode">TrySetViewMode()</h4>
+  <div class="markdown level1 summary"><p>Attempts to update the view mode based on the current terrain layer index if a view mode change is
+requested.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void TrySetViewMode()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TrySetViewMode">HexTerrainUserToolStateBase.TrySetViewMode()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TrySetViewMode_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method checks whether a view mode change is enabled in the user tool settings
+before updating the view mode. Override this method to customize how view mode changes are handled in
+derived classes.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateDescriptionAndErrorMessageOnDataSource_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.UpdateDescriptionAndErrorMessageOnDataSource*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateDescriptionAndErrorMessageOnDataSource" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.UpdateDescriptionAndErrorMessageOnDataSource">UpdateDescriptionAndErrorMessageOnDataSource()</h4>
+  <div class="markdown level1 summary"><p>Updates the description and error message properties on the associated data source to reflect the current
+terrain layer state.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void UpdateDescriptionAndErrorMessageOnDataSource()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateDescriptionAndErrorMessageOnDataSource_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the data source implements IErrorAndDescriptionUserToolSettingsDataSource, this
+method sets the error message to indicate when no terrain layer is found at the specified index, or updates
+the description with the terrain layer's name when available. If the data source also implements
+ICommitChanges, changes are committed after updating the properties. Override this method to customize how
+description and error message updates are handled for different data source types.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateSettingsScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.UpdateSettingsScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateSettingsScreen" data-uid="Fwt.HexTerrains.UserTools.SM.BrushUserToolState`4.UpdateSettingsScreen">UpdateSettingsScreen()</h4>
+  <div class="markdown level1 summary"><p>Refreshes the settings screen to reflect the current state of the data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void UpdateSettingsScreen()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_UpdateSettingsScreen">BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;.UpdateSettingsScreen()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateSettingsScreen_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the data source implements <a class="xref" href="Fwt.Core.ICommitChanges.html">ICommitChanges</a>, any pending changes are
+committed before the settings screen is updated. This ensures that the settings screen displays the most
+up-to-date information.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Chunk Mesh Layers | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Chunk Mesh Layers | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="chunk-mesh-layers">Chunk Mesh Layers</h1>
+
+<p>This document explains the <strong>Chunk Mesh</strong> feature in HexTerrains: how <code>ChunkMeshLayer</code> stores per-cell surface data, how <code>VisualChunkMeshLayer</code> turns that data into chunk meshes, how <code>ChunkMeshLayerGroup</code> orchestrates multiple mesh layers, what specialized mesh layers exist (Surface/Water/Clouds/Roads/Rain), which <strong>jobs</strong> generate mesh geometry and biome color maps, and how to implement a new chunk mesh layer (using Clouds as the reference model).</p>
+<hr>
+<h2 id="1-what-chunk-mesh-means-in-hexterrains">1) What “Chunk Mesh” means in HexTerrains</h2>
+<p>HexTerrains renders terrain as a grid of <strong>chunks</strong>, where each chunk contains a fixed-size rectangle of hex cells. A <strong>chunk mesh layer</strong> is responsible for:</p>
+<ol>
+<li>Holding per-cell surface data (height, biome, transparency)</li>
+<li>Converting that data into per-cell <strong>metrics</strong> (<code>HexCellMetrics</code>)</li>
+<li>Scheduling mesh generation jobs per <strong>dirty + visible</strong> chunk</li>
+<li>Producing <code>Mesh</code> objects and rendering them with one or more materials</li>
+</ol>
+<p>The architecture separates data from visuals:</p>
+<ul>
+<li><code>ChunkMeshLayer</code> = <strong>data &amp; metrics</strong> (height/biome/transparency/cell metrics + biome color map)</li>
+<li><code>VisualChunkMeshLayer</code> = <strong>mesh sources, meshes, render settings, render loop</strong></li>
+<li>Specialized layers (Clouds/Water/Roads/Rain) override only the <strong>mesh generator job</strong> while reusing the same pipeline.</li>
+</ul>
+<hr>
+<h2 id="2-key-classes-and-responsibilities">2) Key classes and responsibilities</h2>
+<h3 id="21-chunkmeshlayer-data--metrics">2.1 <code>ChunkMeshLayer</code> (data + metrics)</h3>
+<p><code>ChunkMeshLayer</code> (<code>HexTerrainLayer</code>, <code>ISerializableTerrainLayer</code>) owns the fundamental per-cell maps:</p>
+<ul>
+<li><code>HeightMap : ColorMapCellValueDataLayer_Float</code></li>
+<li><code>BiomeMap : ColorMapCellValueDataLayer_Int</code></li>
+<li><code>TransparencyMap : CellValueDataLayer&lt;bool&gt;</code></li>
+<li><code>CellMetricsMap : CellMetricsDataLayer</code></li>
+<li><code>TerrainMetrics : HexTerrainMetrics</code></li>
+</ul>
+<p>It also supports synchronization from another layer:</p>
+<ul>
+<li><code>SyncHeightMapLayerReference</code></li>
+<li><code>SyncBiomeMapLayerReference</code></li>
+<li><code>SyncTransparencyMapLayerReference</code></li>
+</ul>
+<h4 id="auto-biome-painting-height--biome">Auto-biome painting (Height → Biome)</h4>
+<p>When initialized with <code>IChunkMeshLayerConfig</code> and <code>IsAutoPaintBiomes = true</code>, <code>ChunkMeshLayer.Init&lt;TInitArgs&gt;</code> calls:</p>
+<ul>
+<li><code>FillBiomeByHeight(biomeMap, heightMap, AutoPaintBiomesLevels)</code></li>
+<li>which uses <code>GetAutoBiomeHeightLevel(height, levels)</code> (descending threshold match)</li>
+</ul>
+<p>This means biome indices can be derived entirely from the height map without a custom biome generation job.</p>
+<hr>
+<h3 id="22-visualchunkmeshlayer-mesh-sources--meshes--rendering">2.2 <code>VisualChunkMeshLayer</code> (mesh sources + meshes + rendering)</h3>
+<p><code>VisualChunkMeshLayer : ChunkMeshLayer</code> adds everything required to <strong>generate</strong> and <strong>render</strong> meshes:</p>
+<ul>
+<li><code>RenderSettings : ChunkMeshRenderSettings</code></li>
+<li><code>ChunkMeshSources : ChunkMeshSourcesDataLayer</code> (one <code>MeshSource</code> per chunk)</li>
+<li><code>ChunkMeshes : ChunkMeshesDataLayer</code> (one Unity <code>Mesh</code> per chunk)</li>
+<li><code>BiomeUvConfigs : NativeList&lt;ChunkMeshBiomeUVConfig&gt;</code> (atlas rects)</li>
+<li><code>RenderConfigs : List&lt;HexSurfaceRenderConfigAsset&gt;</code> (per view mode)</li>
+<li><code>DefaultRenderConfig : HexSurfaceRenderConfigAsset</code></li>
+<li><code>IsVisible</code></li>
+<li><code>OffsetTransform</code> (typically height offset via <code>RenderSettings.HeightOffset</code>)</li>
+</ul>
+<h4 id="meshsource-and-why-it-exists"><code>MeshSource</code> and why it exists</h4>
+<p>Mesh generation runs in jobs, so it cannot safely write Unity <code>Mesh</code> directly. Instead jobs write into a Burst-friendly container:</p>
+<ul>
+<li><code>MeshSource</code> (from <code>com.freewebtime.core</code>) stores vertices, normals, colors, UVs (4 channels), indices (up to 16 submeshes), plus bounds.</li>
+<li>After the job finishes, the main thread converts <code>MeshSource</code> → Unity <code>Mesh</code>.</li>
+</ul>
+<p><code>ChunkMeshSourcesDataLayer</code> additionally tracks:</p>
+<ul>
+<li><code>GeneratedMeshIndexes : NativeList&lt;int&gt;</code> (which chunks finished generation this frame)</li>
+<li>Dirty chunk flags (<code>DirtyChunks</code>, <code>ChunkDirtyGrid</code> inherited from chunked data layer base)</li>
+</ul>
+<h4 id="two-mesh-upload-modes">Two mesh upload modes</h4>
+<p><code>VisualChunkMeshLayer</code> supports two ways to upload mesh data:</p>
+<ol>
+<li><p><strong>Classic</strong>: <code>MeshSource.FillMesh(mesh, ...)</code> on main thread<br>
+(<code>CreateChunkMeshes_Classic</code>)</p>
+</li>
+<li><p><strong>MeshData path</strong>: allocate <code>MeshDataArray</code>, fill it using <code>FillMeshDataJob</code>, then apply via:
+<code>Mesh.ApplyAndDisposeWritableMeshData(...)</code><br>
+(<code>CreateChunkMeshes_MeshData</code> + <code>CompleteFillingMeshes</code>)</p>
+</li>
+</ol>
+<p>Which path is used is controlled by:</p>
+<ul>
+<li><code>IsGenerateMeshesWithMeshData</code></li>
+<li>and the <code>ChunkMeshSources.MeshSourceMode</code> is set accordingly (<code>SeparatedData</code> vs <code>CombinedData</code>)</li>
+</ul>
+<hr>
+<h3 id="23-chunkmeshlayergroup-orchestration-across-multiple-layers">2.3 <code>ChunkMeshLayerGroup</code> (orchestration across multiple layers)</h3>
+<p><code>ChunkMeshLayerGroup : HexTerrainLayerGroup&lt;ChunkMeshLayer&gt;, IComponentData</code> is a container for multiple chunk mesh layers and exposes a common pipeline:</p>
+<ul>
+<li><code>SyncData(dependency)</code> → calls <code>layer.SyncData</code> for each</li>
+<li><code>CalcCellMetrics(dependency)</code> → calls <code>layer.CalcCellMetrics</code> for each</li>
+<li><code>CalcDirtyMeshSources(dependency)</code> → for each <code>VisualChunkMeshLayer</code>, maps dirty metrics → dirty chunk mesh sources</li>
+<li><code>CalcMeshSources(chunksGridLayer, dependency)</code> → schedules per-chunk mesh generation jobs</li>
+<li><code>CreateChunkMeshes()</code> → uploads meshes</li>
+<li><code>Render(chunksGridLayer, viewMode, terrainTransform, camera)</code> → draws meshes</li>
+</ul>
+<p>Layer creation is factory-driven via <code>CreateChunkMeshLayerRequest</code> and the config asset’s <code>CreateTerrainLayer()</code>.</p>
+<hr>
+<h2 id="3-the-chunk-mesh-update-pipeline-end-to-end">3) The Chunk Mesh update pipeline (end-to-end)</h2>
+<p>A typical frame/update pipeline is:</p>
+<ol>
+<li><p><strong>Sync maps (optional)</strong></p>
+<ul>
+<li><code>ChunkMeshLayer.SyncData()</code> calls:
+<ul>
+<li><code>SyncHeightMap()</code></li>
+<li><code>SyncBiomeMap()</code></li>
+<li><code>SyncTransparencyMap()</code></li>
+</ul>
+</li>
+<li>Each uses <code>SyncDataLayersMapJob&lt;T&gt;</code> and merges dirty chunk grids.</li>
+</ul>
+</li>
+<li><p><strong>Recalculate <code>HexCellMetrics</code></strong></p>
+<ul>
+<li><code>ChunkMeshLayer.CalcCellMetrics(dependency)</code> schedules <code>CalcHexCellMetricsJob</code></li>
+<li>Inputs:
+<ul>
+<li><code>HeightMap</code>, <code>BiomeMap</code>, <code>TransparencyMap</code></li>
+</ul>
+</li>
+<li>Output:
+<ul>
+<li><code>CellMetricsMap</code> + <code>CellPositions</code></li>
+</ul>
+</li>
+<li>Transparency can be forced by <code>ChunkMeshLayerSettings.UseHeightTresholdForTransparency</code> + <code>HeightTresholdForTransparency</code>.</li>
+</ul>
+</li>
+<li><p><strong>Map dirty metrics → dirty chunk mesh sources</strong></p>
+<ul>
+<li><code>VisualChunkMeshLayer.CalcDirtyMeshSources(dependency)</code> merges dirty grids from:
+<ul>
+<li><code>CellMetricsMap</code> and <code>TransparencyMap</code></li>
+</ul>
+</li>
+<li>Marks <code>ChunkMeshSources</code> dirty per chunk.</li>
+</ul>
+</li>
+<li><p><strong>Generate mesh sources for dirty + visible chunks</strong></p>
+<ul>
+<li><code>VisualChunkMeshLayer.CalcMeshSources(chunksGridLayer, isCalcAllMeshes, dependency)</code>:
+<ul>
+<li>iterates over <code>chunksGridLayer.VisibleChunks</code></li>
+<li>schedules <code>ScheduleGenerateMeshJob(...)</code> per chunk</li>
+<li>tracks generated chunks in <code>ChunkMeshSources.GeneratedMeshIndexes</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Upload meshes to Unity</strong></p>
+<ul>
+<li><code>VisualChunkMeshLayer.CreateChunkMeshes()</code>:
+<ul>
+<li>classic or MeshData path</li>
+<li>clears <code>GeneratedMeshIndexes</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>Render</strong></p>
+<ul>
+<li><code>VisualChunkMeshLayer.Render(...)</code>:
+<ul>
+<li>fetches <code>HexSurfaceRenderConfigAsset</code> by view mode</li>
+<li>uses <code>Graphics.DrawMesh</code> per chunk and per material/submesh</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<p>Visibility culling comes from <code>ChunksGridLayer</code> (not a mesh layer). It computes <code>ChunkVisibility</code> and <code>VisibleChunks</code> using the camera frustum.</p>
+</blockquote>
+<hr>
+<h2 id="4-specialized-visualchunkmeshlayer-implementations">4) Specialized <code>VisualChunkMeshLayer</code> implementations</h2>
+<p>All specialized layers share the same pipeline, but override <strong>which job</strong> generates mesh geometry.</p>
+<h3 id="41-surface-default--visualchunkmeshlayer--generatesurfacechunkmeshjob">4.1 Surface (default) — <code>VisualChunkMeshLayer</code> + <code>GenerateSurfaceChunkMeshJob</code></h3>
+<p>If you use <code>VisualChunkMeshLayer</code> directly, mesh generation is:</p>
+<ul>
+<li><code>VisualChunkMeshLayer.ScheduleGenerateMeshJob(...)</code> → schedules <code>GenerateSurfaceChunkMeshJob</code></li>
+</ul>
+<p>Characteristics:</p>
+<ul>
+<li>Skips <code>HexCellMetrics.IsTransparent</code> cells</li>
+<li>Generates:
+<ul>
+<li>a central “plato” (top surface)</li>
+<li>“bridges” between cells</li>
+</ul>
+</li>
+<li>Supports:
+<ul>
+<li>colored borders (<code>ChunkMeshRenderSettings.IsColoredBorders</code>)</li>
+<li>slope threshold border painting (<code>ColoredSlopeTreshold</code>)</li>
+<li>biome atlas mode (<code>IsUseBiomeAtlas</code>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-water--waterchunkmeshlayer--generatewaterchunkmeshjob">4.2 Water — <code>WaterChunkMeshLayer</code> + <code>GenerateWaterChunkMeshJob</code></h3>
+<p><code>WaterChunkMeshLayer : VisualChunkMeshLayer</code> schedules:</p>
+<ul>
+<li><code>GenerateWaterChunkMeshJob</code></li>
+</ul>
+<p>Notable behavior differences in the job:</p>
+<ul>
+<li>Handles transparency differently (water surface can still produce bridge geometry depending on neighbor transparency/height logic)</li>
+<li>Still uses the same UV channel layout and border logic concepts</li>
+</ul>
+<p>Config asset:</p>
+<ul>
+<li><code>WaterChunkMeshLayerConfigAsset : VisualChunkMeshLayerConfigAsset</code></li>
+</ul>
+<h3 id="43-clouds--cloudschunkmeshlayer--generatecloudschunkmeshjob">4.3 Clouds — <code>CloudsChunkMeshLayer</code> + <code>GenerateCloudsChunkMeshJob</code></h3>
+<p><code>CloudsChunkMeshLayer : VisualChunkMeshLayer</code> schedules:</p>
+<ul>
+<li><code>GenerateCloudsChunkMeshJob</code></li>
+</ul>
+<p>Adds <code>CloudsRenderSettings</code>:</p>
+<ul>
+<li>Thickness scaling (<code>CloudThickness</code>, <code>MaxCellHeight</code>)</li>
+<li>Optional “pillow” scaling threshold (<code>CloudScaleTreshold</code>)</li>
+<li>Optional bottom side rendering (<code>IsDrawBottomSide</code>)</li>
+</ul>
+<p>Config asset:</p>
+<ul>
+<li><code>CloudsChunkMeshLayerConfigAsset : VisualChunkMeshLayerConfigAsset, ICloudsChunkMeshLayerConfig</code></li>
+</ul>
+<h3 id="44-rain--rainchunkmeshlayer--generaterainchunkmeshjob">4.4 Rain — <code>RainChunkMeshLayer</code> + <code>GenerateRainChunkMeshJob</code></h3>
+<p><code>RainChunkMeshLayer : VisualChunkMeshLayer</code> schedules:</p>
+<ul>
+<li><code>GenerateRainChunkMeshJob</code></li>
+</ul>
+<p>Adds <code>RainRenderSettings</code>:</p>
+<ul>
+<li>Rain plane height (<code>RainHeight</code>)</li>
+<li>Thickness based on normalized cell height (<code>MaxCellHeight</code>)</li>
+</ul>
+<p>Config asset:</p>
+<ul>
+<li><code>RainChunkMeshLayerConfigAsset : VisualChunkMeshLayerConfigAsset, IRainChunkMeshLayerConfig</code></li>
+</ul>
+<h3 id="45-roads--roadschunkmeshlayer--generateroadschunkmeshjob">4.5 Roads — <code>RoadsChunkMeshLayer</code> + <code>GenerateRoadsChunkMeshJob</code></h3>
+<p><code>RoadsChunkMeshLayer : VisualChunkMeshLayer</code> schedules:</p>
+<ul>
+<li><code>GenerateRoadsChunkMeshJob</code></li>
+</ul>
+<p>Adds <code>HexRoadsRenderSettings</code>:</p>
+<ul>
+<li>Road width (<code>RoadThickness</code>)</li>
+<li>UV scaling for road tiling (<code>RoadsTileScalePlato</code>, <code>RoadsTileScaleBridge</code>)</li>
+<li>Optional height threshold to skip road connections across steep steps (<code>IsUseHeightTreshold</code>, <code>HeightTreshold</code>)</li>
+</ul>
+<p>Important detail: the roads job uses multiple submeshes by design:</p>
+<ul>
+<li>submesh 0 = background / base</li>
+<li>submesh 1 = road geometry</li>
+</ul>
+<p>Config asset:</p>
+<ul>
+<li><code>RoadsChunkMeshLayerConfigAsset : VisualChunkMeshLayerConfigAsset, IRoadsChunkMeshLayerConfig</code></li>
+</ul>
+<hr>
+<h2 id="5-mesh-generation-jobs-what-they-do">5) Mesh generation jobs (what they do)</h2>
+<p>Each <code>Generate*ChunkMeshJob</code> follows the same high-level structure:</p>
+<ol>
+<li>Validate that <code>MeshSource</code> is initialized.</li>
+<li><code>MeshSource.Clear()</code></li>
+<li>Loop over cells within <code>ChunkMetrics.ChunkSize_Cells</code></li>
+<li>Convert local chunk cell position → global <code>cellIndex</code></li>
+<li>Read <code>HexCellMetrics</code> and decide whether to generate geometry</li>
+<li>Emit vertices/triangles into <code>MeshSource</code></li>
+<li>Compute UVs and assign triangles into submeshes</li>
+</ol>
+<h3 id="51-common-inputs">5.1 Common inputs</h3>
+<p>All mesh jobs are given (directly or indirectly):</p>
+<ul>
+<li><code>HexTerrainSettings TerrainSettings</code></li>
+<li><code>HexTerrainMetrics TerrainMetrics</code></li>
+<li><code>ChunkMeshRenderSettings RenderSettings</code></li>
+<li><code>HexChunkMetrics ChunkMetrics</code> (the current chunk)</li>
+<li><code>NativeList&lt;HexCellMetrics&gt; CellMetrics</code> (the whole terrain metrics array)</li>
+<li><code>NativeList&lt;ChunkMeshBiomeUVConfig&gt; BiomeUVs</code></li>
+<li>UV channel indices:
+<ul>
+<li><code>UvChannelCell</code> (usually 0)</li>
+<li><code>UvChannelChunk</code> (usually 1)</li>
+<li><code>UvChannelTerrain</code> (usually 2)</li>
+<li><code>UvChannelCoord</code> (usually 3)</li>
+</ul>
+</li>
+</ul>
+<h3 id="52-uv-channel-semantics-as-implemented-by-the-jobs">5.2 UV channel semantics (as implemented by the jobs)</h3>
+<p>Jobs compute multiple UV sets so materials can choose which mapping to use:</p>
+<ul>
+<li><strong>UV0 (“cell”)</strong>: maps the hex into its biome atlas rect (or 0..1 if atlas disabled)</li>
+<li><strong>UV1 (“chunk”)</strong>: maps the entire chunk area to 0..1</li>
+<li><strong>UV2 (“terrain”)</strong>: maps the entire terrain area to 0..1</li>
+<li><strong>UV3 (“cellCoord”)</strong>: encodes cell coordinate as UV, useful for data textures / lookups</li>
+</ul>
+<h3 id="53-submesh-strategy-atlas-vs-per-biome">5.3 Submesh strategy: atlas vs per-biome</h3>
+<p>In surface/water/clouds/rain jobs:</p>
+<ul>
+<li>If <code>RenderSettings.IsUseBiomeAtlas == true</code>:
+<ul>
+<li>geometry typically goes to <strong>submesh 0</strong> (single material, atlas-driven UVs)</li>
+</ul>
+</li>
+<li>If <code>IsUseBiomeAtlas == false</code>:
+<ul>
+<li>submesh index is commonly <code>cellMetrics.Biome</code> (one submesh per biome/material slot)</li>
+</ul>
+</li>
+</ul>
+<p>In roads job:</p>
+<ul>
+<li>submesh allocation is specialized (base vs roads) regardless of biome.</li>
+</ul>
+<h3 id="54-deep-dive-how-generatecloudschunkmeshjob-generates-meshes-and-what-it-teaches-about-all-generators">5.4 Deep dive: how <code>GenerateCloudsChunkMeshJob</code> generates meshes (and what it teaches about all generators)</h3>
+<p><code>GenerateCloudsChunkMeshJob</code> is one of the best references for understanding how mesh generation works in the framework because it combines:</p>
+<ul>
+<li>the standard “surface-like” hex meshing flow (<code>plato</code> + <code>bridges</code>)</li>
+<li>feature-specific geometry rules (cloud thickness + “pillow” scaling)</li>
+<li>optional double-sided geometry (top + bottom) using triangle winding</li>
+</ul>
+<p>This section walks through the job step-by-step and points out what is shared with <code>GenerateSurfaceChunkMeshJob</code>, <code>GenerateWaterChunkMeshJob</code>, etc.</p>
+<h4 id="541-input-data-where-hexcellmetrics-comes-from">5.4.1 Input data: where <code>HexCellMetrics</code> comes from</h4>
+<p>Mesh jobs do <strong>not</strong> read <code>HeightMap</code> / <code>BiomeMap</code> directly. They read <code>HexCellMetrics</code>, which is produced earlier by <code>CalcHexCellMetricsJob</code> (via <code>ChunkMeshLayer.CalcCellMetrics(...)</code>).</p>
+<p><code>HexCellMetrics</code> contains (among other things):</p>
+<ul>
+<li><code>CenterPoint_Local</code> (x/z in chunk-local space)</li>
+<li><code>CellHeight_Points</code> and <code>CellHeight_Units</code></li>
+<li><code>Biome</code></li>
+<li><code>IsTransparent</code></li>
+<li><code>CellCoord_Global</code> / <code>ChunkCoord</code> / <code>ChunkIndex</code></li>
+</ul>
+<p>That’s why all mesh jobs accept:</p>
+<ul>
+<li><code>HexChunkMetrics ChunkMetrics</code> (chunk-local basis)</li>
+<li><code>NativeList&lt;HexCellMetrics&gt; CellMetrics</code> (global per-cell array)</li>
+</ul>
+<h4 id="542-the-outer-loop-generate-one-chunks-mesh">5.4.2 The outer loop: generate one chunk’s mesh</h4>
+<p>All chunk mesh jobs start the same way:</p>
+<ul>
+<li>early out if <code>!MeshData.IsInitialized()</code></li>
+<li><code>MeshData.Clear()</code></li>
+<li>iterate all cells within the chunk bounds</li>
+<li>compute global <code>cellIndex</code> from <code>ChunkMetrics.ChunkPosition_Cells</code> and <code>TerrainMetrics.TerrainSize_Cells.x</code></li>
+</ul>
+<p>For clouds specifically, the job skips cells when:</p>
+<ul>
+<li><code>cellMetrics.IsTransparent</code> <strong>or</strong></li>
+<li><code>cellMetrics.CellHeight_Points &lt;= 0f</code></li>
+</ul>
+<p>That second condition is cloud-specific: clouds are “born” only above a baseline height.</p>
+<h4 id="543-per-cell-meshing-drawcell">5.4.3 Per-cell meshing: <code>DrawCell</code></h4>
+<p><code>DrawCell</code> is the standard “one cell → some triangles” entry point.</p>
+<p>For clouds it renders:</p>
+<ul>
+<li>Top side:
+<ul>
+<li><code>DrawCellPlato(cell, isInverted: false)</code></li>
+<li><code>DrawCellBridges(cell, isInverted: false)</code></li>
+</ul>
+</li>
+<li>Optional bottom side (if <code>CloudsRenderSettings.IsDrawBottomSide</code>):
+<ul>
+<li><code>DrawCellPlato(cell, isInverted: true)</code></li>
+<li><code>DrawCellBridges(cell, isInverted: true)</code></li>
+</ul>
+</li>
+</ul>
+<p>This single pattern explains two important conventions used across the framework:</p>
+<ol>
+<li><strong>Cell is the unit of generation</strong> (each job “stamps” geometry per cell).</li>
+<li><strong>Connectedness is handled during bridge/corner generation</strong>, not by a global triangulation step.</li>
+</ol>
+<h4 id="544-cloud-thickness-how-y-is-chosen">5.4.4 Cloud thickness: how Y is chosen</h4>
+<p>Unlike the surface job (which uses <code>cellMetrics.CellHeight_Units</code> for Y), clouds use a computed thickness:</p>
+<ul>
+<li><code>CalculateCloudThickness(cellMetrics, isInverted)</code></li>
+</ul>
+<p>Implementation idea:</p>
+<ul>
+<li>Start with <code>CloudsRenderSettings.CloudThickness</code></li>
+<li>Scale by normalized height:
+<ul>
+<li><code>clamp(cellMetrics.CellHeight_Points / CloudsRenderSettings.MaxCellHeight, 0..1)</code></li>
+</ul>
+</li>
+<li>If <code>isInverted == true</code>, thickness becomes negative so the bottom side is below zero.</li>
+</ul>
+<p>This is why clouds look volumetric: the “top surface” is at <code>+thickness</code>, and the optional “bottom surface” is at <code>-thickness</code>.</p>
+<h4 id="545-cloud-scale-pillow-effect-how-the-hex-radius-is-modified">5.4.5 Cloud scale (“pillow” effect): how the hex radius is modified</h4>
+<p>Clouds also change the <strong>radius</strong> of the generated hex surface per cell:</p>
+<ul>
+<li><code>CalculateCloudScale(cellMetrics)</code>:
+<ul>
+<li><code>clamp(cellHeightPoints / CloudScaleTreshold, 0..1)</code> (or 1 if threshold is 0)</li>
+</ul>
+</li>
+</ul>
+<p>That scale affects:</p>
+<ul>
+<li><code>platoSize</code> (top hex size)</li>
+<li>cell corner positions used for bridges</li>
+<li>whether two adjacent cloud cells are treated as “connected”</li>
+</ul>
+<p>In <code>DrawCellBridges</code>, a neighbor is treated as connected when:</p>
+<ul>
+<li>neighbor is not transparent</li>
+<li>neighbor scale &gt;= 1</li>
+<li>current cell scale &gt;= 1</li>
+</ul>
+<p>If a neighbor is <strong>not</strong> connected, the job intentionally collapses some bridge/corner heights to <code>0f</code>. This creates the characteristic “puffy edge” instead of a hard bridge to an absent neighbor.</p>
+<h4 id="546-plato-generation-fan-triangulation-around-the-center">5.4.6 Plato generation: “fan triangulation” around the center</h4>
+<p><code>DrawCellPlato</code> creates a simple triangulated hex disk:</p>
+<ol>
+<li>Add a <strong>center vertex</strong> (position at <code>centerPos</code>, Y at <code>cloudThickness</code>)</li>
+<li>Loop 6 corners:
+<ul>
+<li>compute corner positions with <code>HexMath.HexCornerPosition(centerPos, platoSize, cornerIndex, ...)</code></li>
+<li>add two corner vertices per side</li>
+<li>add one triangle connecting <code>center → cornerRight → cornerLeft</code></li>
+</ul>
+</li>
+</ol>
+<p>The important parts shared with the surface/water/rain jobs:</p>
+<ul>
+<li>Plato is always a <strong>center + 6 triangle fan</strong>.</li>
+<li>UVs are computed per-vertex via helper functions:
+<ul>
+<li><code>CalculateUvCell</code> / <code>CalculateUvChunk</code> / <code>CalculateUvTerrain</code> / <code>CalculateUvCellCoord</code></li>
+</ul>
+</li>
+<li>Submesh selection follows atlas vs non-atlas rule:
+<ul>
+<li><code>submeshIndexCenter = RenderSettings.IsUseBiomeAtlas ? 0 : cellMetrics.Biome</code></li>
+</ul>
+</li>
+</ul>
+<p>Cloud-specific part: <strong>inverted triangle winding</strong></p>
+<p>When <code>isInverted == true</code>, the job flips the triangle index order so normals point downward. This is the simplest, cheapest way to render a back-facing “bottom surface” without special shader tricks.</p>
+<h4 id="547-bridge-generation-connecting-two-cells-or-fading-out">5.4.7 Bridge generation: connecting two cells (or fading out)</h4>
+<p>Bridges are the “skirts” connecting cell platos, and they are also what hides gaps between different heights.</p>
+<p>In clouds, <code>DrawCellBridges</code>:</p>
+<ul>
+<li>computes corner positions on the current cell</li>
+<li>queries adjacent cell metrics using <code>CalcAdjacentCellData(...)</code></li>
+<li>computes “target” points in the neighbor cell to bridge toward</li>
+<li>creates triangles for:
+<ul>
+<li>the bridge face between the two cells</li>
+<li>the corner triangles between bridges (to fill the diagonal gaps)</li>
+</ul>
+</li>
+</ul>
+<p>Cloud-specific behavior:</p>
+<ul>
+<li>If <code>isNeighbourConnected == false</code>, some bridge points have their Y forced to <code>0f</code>, which prevents a full bridge and produces a soft edge.</li>
+<li>Plato size on neighbor can differ (neighbor scale affects its corner positions), so the bridge aligns with a scaled neighbor plato.</li>
+</ul>
+<p>Shared behavior with <code>GenerateSurfaceChunkMeshJob</code> and <code>GenerateWaterChunkMeshJob</code>:</p>
+<ul>
+<li>Ground/border selection uses the same logic pattern:
+<ul>
+<li><code>CalculateGroundType_Bridge(...)</code></li>
+<li><code>CalculateGroundType_BridgeCorner(...)</code></li>
+</ul>
+</li>
+<li>Those functions use:
+<ul>
+<li><code>RenderSettings.IsColoredBorders</code></li>
+<li><code>RenderSettings.ColoredSlopeTreshold</code></li>
+<li><code>RenderSettings.BorderSubmeshIndex</code></li>
+<li>biome equality checks</li>
+</ul>
+</li>
+<li>Submesh index is either:
+<ul>
+<li><code>0</code> (atlas)</li>
+<li>or biome-derived index (non-atlas)</li>
+</ul>
+</li>
+</ul>
+<p>Also note: outside-of-terrain adjacency is handled in <code>GetAdjacentCellMetrics(...)</code>. When a neighbor cell is outside the terrain, it is treated as a “missing” cell with very low height, which prevents accidental high bridges across terrain borders.</p>
+<h4 id="548-uv-atlas-how-biomes-map-into-chunkmeshbiomeuvconfig">5.4.8 UV atlas: how biomes map into <code>ChunkMeshBiomeUVConfig</code></h4>
+<p>All jobs that support atlas mode use the same idea:</p>
+<ul>
+<li><code>ChunkMeshBiomeUVConfig.Value</code> is a <code>float4</code>:
+<ul>
+<li><code>xy = minUV</code></li>
+<li><code>zw = maxUV</code></li>
+</ul>
+</li>
+</ul>
+<p><code>CalculateUvCell(...)</code> maps a vertex position into a normalized 0..1 cell space, then remaps into the biome’s UV rect:</p>
+<ul>
+<li><code>uv = normalized * (max-min) + min</code></li>
+</ul>
+<p>This mechanism is shared across <code>GenerateSurfaceChunkMeshJob</code>, <code>GenerateWaterChunkMeshJob</code>, <code>GenerateRainChunkMeshJob</code>, and <code>GenerateCloudsChunkMeshJob</code>.</p>
+<hr>
+<h3 id="55-how-the-other-generators-compare-quick-mental-model">5.5 How the other generators compare (quick mental model)</h3>
+<p>Use this mapping when reading other mesh jobs:</p>
+<ul>
+<li><p><code>GenerateSurfaceChunkMeshJob</code></p>
+<ul>
+<li><strong>Y</strong>: <code>cellMetrics.CellHeight_Units</code></li>
+<li><strong>Radius</strong>: standard hex radius (no scale)</li>
+<li><strong>Skip</strong>: transparent cells</li>
+<li><strong>Bridges</strong>: connect to neighbor heights; optional colored borders.</li>
+</ul>
+</li>
+<li><p><code>GenerateWaterChunkMeshJob</code></p>
+<ul>
+<li><strong>Y</strong>: based on water cell height, but bridges are generated even when one side is transparent.</li>
+<li><strong>Key difference</strong>: special handling of transparent neighbors to avoid holes at the shoreline.</li>
+</ul>
+</li>
+<li><p><code>GenerateRainChunkMeshJob</code></p>
+<ul>
+<li><strong>Y</strong>: constant <code>RainRenderSettings.RainHeight</code> (a plane)</li>
+<li><strong>Radius</strong>: scaled by <code>CalculateRainThickness(cell)</code> to vary coverage</li>
+<li><strong>Skip</strong>: transparent cells</li>
+<li><strong>Bridges</strong>: used to connect partial rain coverage; includes logic to skip when neighbor also has “full” rain thickness.</li>
+</ul>
+</li>
+<li><p><code>GenerateRoadsChunkMeshJob</code></p>
+<ul>
+<li><strong>Submeshes</strong>: explicitly uses submesh <code>0</code> for base and <code>1</code> for roads (not biome-driven)</li>
+<li><strong>UV0</strong>: not a biome atlas rect; it encodes road-specific tiling coordinates</li>
+<li><strong>Connectivity rules</strong>: avoids drawing road segments to transparent neighbors and can enforce a height threshold.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="6-biome-color-map-how-it-is-generated">6) Biome Color Map: how it is generated</h2>
+<p>Biome “color map” here refers to <code>BiomeMap.ColorMap</code> (a <code>Color32</code> per cell) used for visualization/materials that sample a texture-like map.</p>
+<p><code>ChunkMeshLayer.CalculateColorMap(dependency)</code> does:</p>
+<ul>
+<li><code>HeightMap.CalculateColorMap(...)</code></li>
+<li><code>CalculateBiomeColorMap(...)</code></li>
+</ul>
+<h3 id="61-default-biome-color-map-calcdefaultchunkmeshcolormapjob">6.1 Default biome color map (<code>CalcDefaultChunkMeshColorMapJob</code>)</h3>
+<p>Scheduled by <code>CalculateDefaultBiomeColorMap(...)</code> when:</p>
+<ul>
+<li><code>CellMetricsMap.IsDirty == true</code></li>
+<li>and <code>BiomeMap.ColorMap.ColorPalette</code> is created</li>
+</ul>
+<p>Job behavior:</p>
+<ul>
+<li>Only processes cells in dirty chunks (<code>ChunkDirtyGrid</code>)</li>
+<li>If <code>HexCellMetrics.IsTransparent</code> → writes <code>DefaultColor</code></li>
+<li>Else → writes <code>ColorPalette[HexCellMetrics.Biome]</code> (if within palette bounds)</li>
+</ul>
+<h3 id="62-overlapping-biome-color-map-calcoverlappingchunkmeshcolormapjob">6.2 Overlapping biome color map (<code>CalcOverlappingChunkMeshColorMapJob</code>)</h3>
+<p>Scheduled by <code>CalculateOverlapBiomeColorMap(overlappingLayer, ...)</code> when:</p>
+<ul>
+<li>current layer or overlapping layer <code>CellMetricsMap</code> is dirty</li>
+<li>overlapping is enabled via <code>ChunkMeshLayerSettings.HasOverlappingLayer</code> + reference</li>
+</ul>
+<p>Job behavior:</p>
+<ul>
+<li>Only paints a cell if:
+<ul>
+<li>current cell is not transparent</li>
+<li>AND <code>myCellMetrics.CellHeight_Points &gt; otherCellMetrics.CellHeight_Points</code></li>
+</ul>
+</li>
+<li>Otherwise the cell becomes “not painted” (default color), effectively hiding this layer where another layer is higher.</li>
+</ul>
+<p>This is used to stack surfaces (e.g., water under terrain, or secondary overlays).</p>
+<hr>
+<h2 id="7-configuration-assets-what-to-create-in-unity">7) Configuration assets (what to create in Unity)</h2>
+<h3 id="71-base-config-chunkmeshlayerconfigasset">7.1 Base config: <code>ChunkMeshLayerConfigAsset</code></h3>
+<p>Creates <code>ChunkMeshLayer</code> (data-only) and configures:</p>
+<ul>
+<li>init args for:
+<ul>
+<li><code>HeightMapArgs</code></li>
+<li><code>BiomeMapArgs</code></li>
+<li><code>TransparencyMapArgs</code></li>
+</ul>
+</li>
+<li><code>IsAutoPaintBiomes</code> + <code>AutoPaintBiomesLevels</code></li>
+<li><code>ChunkMeshLayerSettings</code></li>
+<li>sync references (<code>SyncHeightMapLayerReference</code>, etc.)</li>
+</ul>
+<h3 id="72-visual-config-visualchunkmeshlayerconfigasset">7.2 Visual config: <code>VisualChunkMeshLayerConfigAsset</code></h3>
+<p>Creates <code>VisualChunkMeshLayer</code> and adds:</p>
+<ul>
+<li><code>IsVisible</code></li>
+<li><code>RenderSettings : ChunkMeshRenderSettings</code></li>
+<li><code>RenderConfigs</code> (per view mode) + <code>DefaultRenderConfig</code></li>
+<li><code>BiomeUvs : List&lt;Sprite&gt;</code><br>
+Converted to <code>BiomeUVConfigs</code> (sprite UV rects) used when <code>RenderSettings.IsUseBiomeAtlas</code> is enabled.</li>
+</ul>
+<h3 id="73-specialized-visual-configs">7.3 Specialized visual configs</h3>
+<ul>
+<li><code>CloudsChunkMeshLayerConfigAsset</code> → creates <code>CloudsChunkMeshLayer</code></li>
+<li><code>RoadsChunkMeshLayerConfigAsset</code> → creates <code>RoadsChunkMeshLayer</code></li>
+<li><code>RainChunkMeshLayerConfigAsset</code> → creates <code>RainChunkMeshLayer</code></li>
+<li><code>WaterChunkMeshLayerConfigAsset</code> → creates <code>WaterChunkMeshLayer</code></li>
+</ul>
+<hr>
+<h2 id="8-creating-a-new-visualchunkmeshlayer-clouds-based-example">8) Creating a new <code>VisualChunkMeshLayer</code> (Clouds-based example)</h2>
+<p>This is the standard extension model in this codebase:</p>
+<ol>
+<li><strong>Create render settings</strong> (a struct) for your feature.</li>
+<li><strong>Create a mesh generation job</strong> (<code>IJob</code>) that writes to <code>MeshSource</code>.</li>
+<li><strong>Create a new layer</strong> deriving from <code>VisualChunkMeshLayer</code> and override <code>ScheduleGenerateMeshJob</code>.</li>
+<li><strong>Create a config interface + ScriptableObject asset</strong> that supplies settings and returns the layer from <code>CreateTerrainLayer()</code>.</li>
+</ol>
+<h3 id="81-minimal-layer-implementation-pattern">8.1 Minimal layer implementation pattern</h3>
+<p>Use <code>CloudsChunkMeshLayer</code> as the template:</p>
+<ul>
+<li>Store settings (e.g., <code>MyEffectRenderSettings</code>)</li>
+<li>In <code>Init&lt;TInitArgs&gt;</code>, read them from a config interface</li>
+<li>In <code>ScheduleGenerateMeshJob</code>, create and schedule your <code>GenerateMyEffectChunkMeshJob</code></li>
+</ul>
+<p>Example shape (documentation snippet only):</p>
+<pre><code class="lang-csharp">public class MyEffectChunkMeshLayer : VisualChunkMeshLayer 
+{ 
+    public MyEffectRenderSettings MySettings = MyEffectRenderSettings.Default;
+    
+    public override void Init&lt;TInitArgs&gt;(HexTerrainSettings settings, TInitArgs initArgs)
+    {
+        base.Init(settings, initArgs);
+
+        if (initArgs is IMyEffectChunkMeshLayerConfig cfg)
+        {
+            MySettings = cfg.MyEffectRenderSettings;
+        }
+    }
+
+    public override JobHandle ScheduleGenerateMeshJob(
+        ChunkMetricsDataLayer chunkMetrics,
+        ChunkMeshSourcesDataLayer chunkMeshSources,
+        CellMetricsDataLayer cellMetrics,
+        int chunkIndex,
+        JobHandle dependency
+    )
+    {
+        var terrainSettings = Settings;
+        if (RenderSettings.IsOverrideSlopeSize)
+        {
+            terrainSettings.SlopeSize = RenderSettings.OverrideSlopeSize;
+        }
+
+        var job = new GenerateMyEffectChunkMeshJob
+        {
+            ChunkIndex = chunkIndex,
+            ChunkMetrics = chunkMetrics.Data[chunkIndex],
+            CellMetrics = cellMetrics.Data,
+            MeshData = chunkMeshSources.Data[chunkIndex],
+            TerrainMetrics = TerrainMetrics,
+            TerrainSettings = terrainSettings,
+            RenderSettings = RenderSettings,
+            BiomeUVs = BiomeUvConfigs,
+            UvChannelCell = 0,
+            UvChannelChunk = 1,
+            UvChannelTerrain = 2,
+            UvChannelCoord = 3,
+            MySettings = MySettings,
+        };
+
+        return job.Schedule(dependency);
+    }
+}
+</code></pre>
+<h3 id="82-job-implementation-guidance">8.2 Job implementation guidance</h3>
+<p>A new mesh job should:</p>
+<ul>
+<li>Call <code>MeshData.Clear()</code></li>
+<li>Iterate chunk cells using <code>ChunkMetrics.ChunkSize_Cells</code> and <code>ChunkMetrics.ChunkPosition_Cells</code></li>
+<li>Skip cells based on:
+<ul>
+<li>transparency</li>
+<li>height thresholds</li>
+<li>your feature’s settings (like Clouds scale threshold)</li>
+</ul>
+</li>
+<li>Use <code>MeshData.AddVertex(...)</code> and <code>MeshData.AddTriangle(submesh, i0, i1, i2)</code></li>
+<li>Compute UV sets using the same semantics as existing jobs to keep materials consistent</li>
+</ul>
+<p>The Clouds job is a good reference because it shows:</p>
+<ul>
+<li>feature-specific thickness/scale calculations</li>
+<li>optional inverted rendering (bottom side)</li>
+<li>how to keep atlas-compatible UV generation</li>
+</ul>
+<h3 id="83-hooking-it-into-the-terrain">8.3 Hooking it into the terrain</h3>
+<p>To actually use the new layer:</p>
+<ul>
+<li>Create a config asset (derive from <code>VisualChunkMeshLayerConfigAsset</code>)</li>
+<li>Override <code>CreateTerrainLayer()</code> to return <code>new MyEffectChunkMeshLayer()</code></li>
+<li>Add that config to whatever system builds a <code>ChunkMeshLayerGroup</code> (via <code>CreateChunkMeshLayerRequest</code> pipeline)</li>
+</ul>
+<hr>
+<h2 id="9-practical-notes-and-common-pitfalls">9) Practical notes and common pitfalls</h2>
+<ul>
+<li><strong>Dirty propagation is mandatory</strong>: if your simulation modifies <code>HeightMap</code> / <code>BiomeMap</code> / <code>TransparencyMap</code>, ensure the relevant data layers are marked dirty so <code>CalcCellMetrics</code> and mesh regeneration runs.</li>
+<li><strong>Mesh generation runs only for dirty + visible chunks</strong> by default. If you “changed something” and see no update, verify:
+<ul>
+<li>chunk is visible (<code>ChunksGridLayer.VisibleChunks</code>)</li>
+<li>chunk was marked dirty in <code>ChunkMeshSources.DirtyChunks</code></li>
+</ul>
+</li>
+<li><strong>Atlas mode</strong> (<code>RenderSettings.IsUseBiomeAtlas</code>) changes submesh usage. Make sure your materials and <code>HexSurfaceRenderConfigAsset</code> match the chosen strategy.</li>
+<li><strong>Roads are special</strong>: they intentionally use dedicated submeshes for base/roads; don’t assume <code>submesh == biome</code>.</li>
+</ul>
+<hr>
+<h2 id="quick-reference-provided-chunk-mesh-layers-and-their-generator-jobs">Quick reference: Provided chunk mesh layers and their generator jobs</h2>
+<table>
+<thead>
+<tr>
+<th>Layer class</th>
+<th>Job</th>
+<th>Extra settings</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>VisualChunkMeshLayer</code> (Surface)</td>
+<td><code>GenerateSurfaceChunkMeshJob</code></td>
+<td><code>ChunkMeshRenderSettings</code></td>
+</tr>
+<tr>
+<td><code>WaterChunkMeshLayer</code></td>
+<td><code>GenerateWaterChunkMeshJob</code></td>
+<td><code>ChunkMeshRenderSettings</code></td>
+</tr>
+<tr>
+<td><code>CloudsChunkMeshLayer</code></td>
+<td><code>GenerateCloudsChunkMeshJob</code></td>
+<td><code>CloudsRenderSettings</code></td>
+</tr>
+<tr>
+<td><code>RainChunkMeshLayer</code></td>
+<td><code>GenerateRainChunkMeshJob</code></td>
+<td><code>RainRenderSettings</code></td>
+</tr>
+<tr>
+<td><code>RoadsChunkMeshLayer</code></td>
+<td><code>GenerateRoadsChunkMeshJob</code></td>
+<td><code>HexRoadsRenderSettings</code></td>
+</tr>
+</tbody>
+</table>
+<p>Biome color map jobs:</p>
+<ul>
+<li>Default: <code>CalcDefaultChunkMeshColorMapJob</code></li>
+<li>Overlap: <code>CalcOverlappingChunkMeshColorMapJob</code></li>
+<li>Metrics: <code>CalcHexCellMetricsJob</code></li>
+<li>MeshData upload: <code>FillMeshDataJob</code></li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/terrain-surface-rendering.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

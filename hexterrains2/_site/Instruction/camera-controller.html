@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#128247; Camera Controller System | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#128247; Camera Controller System | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-camera-controller-system">📷 Camera Controller System</h1>
+
+<p>The Camera Controller provides an ECS-driven camera system designed to smoothly navigate procedural hex terrains. It handles input processing, boundary wrapping (for infinite or looped terrains), camera state saving/loading, and minimap integration.</p>
+<h2 id="overview">Overview</h2>
+<p>The system operates using Unity's Entity Component System (ECS) and relies on an authoring component to configure input keys and speeds. Behind the scenes, the framework handles the creation, update, and cleanup of the physical camera target object.</p>
+<h3 id="features">Features</h3>
+<ul>
+<li><strong>Configurable Input:</strong> Customizable keys for movement, rotation, zoom, acceleration, and movement locking.</li>
+<li><strong>UI Detection:</strong> Safely ignores input when the mouse is hovering over UI elements using the Unity Event System.</li>
+<li><strong>Boundary Wrapping:</strong> Automatically wraps camera position around the terrain bounds if the terrain is configured to be connected horizontally or vertically.</li>
+<li><strong>State Management:</strong> Quick save (F5) and load (F9) of camera position, rotation, and zoom using <code>PlayerPrefs</code>.</li>
+<li><strong>Minimap Integration:</strong> Automatically synchronizes the normalized camera position and rotation mapping with the <code>IMinimapScreen</code> interface.</li>
+</ul>
+<hr>
+<h2 id="setup-and-authoring">Setup and Authoring</h2>
+<p>To use the camera controller, attach the <code>CameraControllerAuthoring</code> script to a GameObject in your subscene. The Baker will automatically convert this into the required ECS setup (<code>CreateCameraControllerRequest</code> and <code>IgnoreCameraZoomInputKeys</code> buffer).</p>
+<h3 id="authoring-properties">Authoring Properties</h3>
+<h4 id="input-keys">Input Keys</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Default Key</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>MoveUpKey</strong></td>
+<td style="text-align: left;"><code>W</code></td>
+<td style="text-align: left;">Moves the camera target forward along the Y axis (2D plane).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MoveDownKey</strong></td>
+<td style="text-align: left;"><code>S</code></td>
+<td style="text-align: left;">Moves the camera target backward.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MoveLeftKey</strong></td>
+<td style="text-align: left;"><code>A</code></td>
+<td style="text-align: left;">Moves the camera target left.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MoveRightKey</strong></td>
+<td style="text-align: left;"><code>D</code></td>
+<td style="text-align: left;">Moves the camera target right.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RotateLeftKey</strong></td>
+<td style="text-align: left;"><code>Q</code></td>
+<td style="text-align: left;">Rotates the camera counter-clockwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RotateRightKey</strong></td>
+<td style="text-align: left;"><code>E</code></td>
+<td style="text-align: left;">Rotates the camera clockwise.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AccelerationKey</strong></td>
+<td style="text-align: left;"><code>LeftShift</code></td>
+<td style="text-align: left;">Multiplies movement speeds by the acceleration modifier.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LockMovementKey</strong></td>
+<td style="text-align: left;"><code>LeftControl</code></td>
+<td style="text-align: left;">Locks the current movement velocity and auto-moves the camera continuously.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>SaveCameraStateKey</strong></td>
+<td style="text-align: left;"><code>F5</code></td>
+<td style="text-align: left;">Saves the current camera rotation, zoom, and position to <code>PlayerPrefs</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LoadCameraStateKey</strong></td>
+<td style="text-align: left;"><code>F9</code></td>
+<td style="text-align: left;">Loads the saved camera state from <code>PlayerPrefs</code>.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="speeds-and-modifiers">Speeds and Modifiers</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Property</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>ZoomSpeed</strong></td>
+<td style="text-align: left;">Scroll wheel zoom sensitivity multiplier.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>MovementSpeed</strong></td>
+<td style="text-align: left;">Base panning movement speed.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>RotationSpeed</strong></td>
+<td style="text-align: left;">Base rotation speed when using <code>Q</code>/<code>E</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>AccelerationMultiplier</strong></td>
+<td style="text-align: left;">Speed multiplier applied when holding the <code>AccelerationKey</code>.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>PreventZoomKeys</strong></td>
+<td style="text-align: left;">List of <code>KeyCode</code>s that, when held, ignore mouse scroll zoom (Defaults: <code>LeftAlt</code>, <code>LeftControl</code>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>IsFindCameraControllerComponentOnScene</strong></td>
+<td style="text-align: left;">If true, automatically tries to find a <code>CameraControllerComponent</code> in the active scene and link it to the target transform during initialization.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="architecture--systems">Architecture &amp; Systems</h2>
+<p>The mechanic is divided into three primary ECS Systems:</p>
+<h3 id="1-createcameracontrollersystem">1. <code>CreateCameraControllerSystem</code></h3>
+<ul>
+<li>Runs in the <code>HexTerrainsInitGroup</code>.</li>
+<li>Processes the <code>CreateCameraControllerRequest</code>.</li>
+<li>Generates a new <code>GameObject</code> named &quot;CameraControllerTarget&quot; to act as the scene anchor.</li>
+<li>Links the active <code>CameraControllerComponent</code> from the scene if requested via <code>IsFindCameraControllerComponentOnScene</code>.</li>
+<li>Assigns the <code>CameraControllerTarget</code> component to track all target attributes and references.</li>
+</ul>
+<h3 id="2-updatecameracontrollersystem">2. <code>UpdateCameraControllerSystem</code></h3>
+<ul>
+<li>Runs in the <code>HexTerrainsUpdateGroup</code>.</li>
+<li>Only updates if the terrain is visible (<code>HexTerrainVisibility</code>).</li>
+<li>Computes framerate-independent deltas for continuous movement, rotation, and zooming based on the configured inputs.</li>
+<li>Handles the locking behavior logic to continuously orbit or pan without further user input.</li>
+<li>Computes out-of-bounds positioning. Using <code>HexTerrainSettings.IsConnectedHorizontally</code> and <code>IsConnectedVertically</code>, it seamlessly wraps the X/Y positions on cyclic environments or clamps them to boundaries for fixed terrains.</li>
+<li>Synchronizes with UI minimaps via the <code>UpdateMinimapScreen</code> lifecycle method.</li>
+</ul>
+<h3 id="3-destroycameracontrollersystem-cleanup">3. <code>DestroyCameraControllerSystem</code> (Cleanup)</h3>
+<ul>
+<li>Runs in the <code>HexTerrainsCleanupGroup</code>.</li>
+<li>Responds to the absence of a <code>HexTerrain</code> component on entities that still possess a <code>CameraControllerTarget</code>.</li>
+<li>Cleans up and destroys the instantiated <code>CameraControllerTarget</code> GameObject to prevent memory and hierarchy leaks.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/camera-controller.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

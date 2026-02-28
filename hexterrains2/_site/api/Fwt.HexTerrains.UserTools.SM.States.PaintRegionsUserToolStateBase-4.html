@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class PaintRegionsUserToolStateBase&lt;TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface&gt; | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class PaintRegionsUserToolStateBase&lt;TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface&gt; | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4">
+
+
+
+  <h1 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4" class="text-break">Class PaintRegionsUserToolStateBase&lt;TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface&gt;</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.StateMachines.SmState.html">SmState</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html">HexTerrainUserToolStateBase</a></div>
+    <div class="level4"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html">BrushUserToolState</a>&lt;TBrushTarget&gt;</div>
+    <div class="level5"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html">BrushUserToolState</a>&lt;TBrushTarget, <a class="xref" href="Fwt.HexTerrains.UserTools.UserToolSettingsDataSource.html">UserToolSettingsDataSource</a>&gt;</div>
+    <div class="level6"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html">BrushUserToolState</a>&lt;TBrushTarget, <a class="xref" href="Fwt.HexTerrains.UserTools.UserToolSettingsDataSource.html">UserToolSettingsDataSource</a>, <a class="xref" href="Fwt.HexTerrains.UserTools.UI.UniversalToolSettingsScreen.html">UniversalToolSettingsScreen</a>&gt;</div>
+    <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html">BrushUserToolState</a>&lt;TBrushTarget, <a class="xref" href="Fwt.HexTerrains.UserTools.UserToolSettingsDataSource.html">UserToolSettingsDataSource</a>, <a class="xref" href="Fwt.HexTerrains.UserTools.UI.UniversalToolSettingsScreen.html">UniversalToolSettingsScreen</a>, TTerrainLayer&gt;</div>
+    <div class="level8"><span class="xref">PaintRegionsUserToolStateBase&lt;TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface&gt;</span></div>
+      <div class="level9"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolState.html">PaintRegionsUserToolState</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByIndex">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.IsGetLayerByIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerIndex">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.TerrainLayerIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByName">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.IsGetLayerByName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerName">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.TerrainLayerName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_ViewModeByLayerIndex">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.ViewModeByLayerIndex</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_Init__1___0_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.Init&lt;TInitArgs&gt;(TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateSettingsScreen">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.UpdateSettingsScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_OnTerrainLayerChanged">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.OnTerrainLayerChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_UpdateDescriptionAndErrorMessageOnDataSource">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.UpdateDescriptionAndErrorMessageOnDataSource()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TrySetViewMode">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.TrySetViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetViewModeByLayerIndex_System_Int32_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.GetViewModeByLayerIndex(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.GetTerrainLayer()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.GetTerrainLayer(TBrushTarget)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_System_Int32_System_String_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.GetTerrainLayer(TBrushTarget, int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_System_Int32_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.GetTerrainLayer(TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_GetTerrainLayer__0_System_String_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.GetTerrainLayer(TBrushTarget, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_SettingsScreen">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;.SettingsScreen</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_PrepareToRun">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_PrepareToStop">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_GetSettingsScreen">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;.GetSettingsScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-3.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_3_UpdateSettingsScreen">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen&gt;.UpdateSettingsScreen()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_DataSource">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.DataSource</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SettingsPlayerPrefsKeyName">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.SettingsPlayerPrefsKeyName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_PrepareToRun">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_InitSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.InitSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_InitDefaultSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.InitDefaultSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_PrepareToStop">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.LoadSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SaveSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.SaveSettings()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SaveSettingsValue__1_System_String___0_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.SaveSettingsValue&lt;TValue&gt;(string, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettingsValue__1_System_String___0_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.LoadSettingsValue&lt;TValue&gt;(string, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_TryLoadSettingsValue__1_System_String___0__">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.TryLoadSettingsValue&lt;TValue&gt;(string, out TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettingsValueOrDefault__1_System_String___0_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.LoadSettingsValueOrDefault&lt;TValue&gt;(string, TValue)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_PrevChangeTimeStamp">BrushUserToolState&lt;TBrushTarget&gt;.PrevChangeTimeStamp</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_TimeTreshold">BrushUserToolState&lt;TBrushTarget&gt;.TimeTreshold</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_CanChangeBrushSize">BrushUserToolState&lt;TBrushTarget&gt;.CanChangeBrushSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_AllowRightMouseButton">BrushUserToolState&lt;TBrushTarget&gt;.AllowRightMouseButton</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_CursorColor">BrushUserToolState&lt;TBrushTarget&gt;.CursorColor</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeModeKey">BrushUserToolState&lt;TBrushTarget&gt;.ChangeModeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeBrushSizeKey">BrushUserToolState&lt;TBrushTarget&gt;.ChangeBrushSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeOpacityKey">BrushUserToolState&lt;TBrushTarget&gt;.ChangeOpacityKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IncreaseBrushSizeKey">BrushUserToolState&lt;TBrushTarget&gt;.IncreaseBrushSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IncreaseBrushSizeKey2">BrushUserToolState&lt;TBrushTarget&gt;.IncreaseBrushSizeKey2</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_DecreaseBrushSizeKey">BrushUserToolState&lt;TBrushTarget&gt;.DecreaseBrushSizeKey</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_DecreaseBrushSizeKey2">BrushUserToolState&lt;TBrushTarget&gt;.DecreaseBrushSizeKey2</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IsTimeTresholdPassed">BrushUserToolState&lt;TBrushTarget&gt;.IsTimeTresholdPassed</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_BrushSize">BrushUserToolState&lt;TBrushTarget&gt;.BrushSize</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_BrushOpacity">BrushUserToolState&lt;TBrushTarget&gt;.BrushOpacity</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ChangeOpacityMultiplier">BrushUserToolState&lt;TBrushTarget&gt;.ChangeOpacityMultiplier</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_SetNewTimestamp">BrushUserToolState&lt;TBrushTarget&gt;.SetNewTimestamp()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_PrepareToRun">BrushUserToolState&lt;TBrushTarget&gt;.PrepareToRun()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_PrepareToStop">BrushUserToolState&lt;TBrushTarget&gt;.PrepareToStop()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_Tick">BrushUserToolState&lt;TBrushTarget&gt;.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_UpdateBrush">BrushUserToolState&lt;TBrushTarget&gt;.UpdateBrush()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_TryApplyBrush">BrushUserToolState&lt;TBrushTarget&gt;.TryApplyBrush()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyToSingleCell_System_Int32_Unity_Mathematics_int2_System_Int32__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyToSingleCell(int, int2, int, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyBrushToAllCells_System_Int32_Fwt_HexTerrains_Data_HexTerrainSettings__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyBrushToAllCells(int, HexTerrainSettings, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyBrushToAllBrushPoints_System_Int32_Unity_Mathematics_int2_System_Int32_Fwt_HexTerrains_Data_HexTerrainSettings__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyBrushToAllBrushPoints(int, int2, int, HexTerrainSettings, TBrushTarget, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_CanBeAppliedToManyPoints_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.CanBeAppliedToManyPoints(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_GetBrushTarget">BrushUserToolState&lt;TBrushTarget&gt;.GetBrushTarget()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TerrainAPI">HexTerrainUserToolStateBase.TerrainAPI</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HexTerrainUserToolSettings">HexTerrainUserToolStateBase.HexTerrainUserToolSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PreviousViewMode">HexTerrainUserToolStateBase.PreviousViewMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_HexTerrainUserToolStateSettings_">HexTerrainUserToolStateBase.Init(HexTerrainUserToolStateSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_IHexTerrainAPI_">HexTerrainUserToolStateBase.Init(IHexTerrainAPI)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init__1_Fwt_HexTerrains_IHexTerrainAPI___0_">HexTerrainUserToolStateBase.Init&lt;TInitArgs&gt;(IHexTerrainAPI, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_ShowSettingsScreen__2___0_">HexTerrainUserToolStateBase.ShowSettingsScreen&lt;TViewData, TScreen&gt;(TViewData)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetUIScreen__1">HexTerrainUserToolStateBase.GetUIScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HideSettingsScreen__1">HexTerrainUserToolStateBase.HideSettingsScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int, Color32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_System_Boolean_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int, Color32, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetTerrainLayer__2_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainUserToolStateBase.GetTerrainLayer&lt;TLayerGroup, TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TrySetViewMode">HexTerrainUserToolStateBase.TrySetViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32_">HexTerrainUserToolStateBase.SetViewMode(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TryRestoreViewMode">HexTerrainUserToolStateBase.TryRestoreViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Settings">UserToolStateBase.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Parent">UserToolStateBase.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_ParentStateMachine">UserToolStateBase.ParentStateMachine</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_UserToolType">UserToolStateBase.UserToolType</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.html">UserTools</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.html">SM</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.html">States</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class PaintRegionsUserToolStateBase&lt;TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface&gt; : BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;, ISmState where TBrushTarget : CellRegionLayerGroup where TTerrainLayer : CellRegionLayer where THexSurfacesList : HexTerrainLayerGroup, IComponentData where THexSurface : ChunkMeshLayer</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TBrushTarget</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TTerrainLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">THexSurfacesList</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">THexSurface</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4__ctor_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4__ctor_Fwt_Core_StateMachines_ISmState_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)">PaintRegionsUserToolStateBase(ISmState)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected PaintRegionsUserToolStateBase(ISmState parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ReadValueKey" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ReadValueKey">ReadValueKey</h4>
+  <div class="markdown level1 summary"><p>When this key is pressed, click will read terrain item under cursor instead of applying it</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public KeyCode ReadValueKey</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">KeyCode</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_CellRegion_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.CellRegion*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_CellRegion" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.CellRegion">CellRegion</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int CellRegion { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ChunkMeshLayerIndex_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ChunkMeshLayerIndex*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ChunkMeshLayerIndex" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ChunkMeshLayerIndex">ChunkMeshLayerIndex</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual int ChunkMeshLayerIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ChunkMeshLayerReference_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ChunkMeshLayerReference*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ChunkMeshLayerReference" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ChunkMeshLayerReference">ChunkMeshLayerReference</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual HexTerrainLayerReference ChunkMeshLayerReference { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_MaxCellHeight_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.MaxCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_MaxCellHeight" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.MaxCellHeight">MaxCellHeight</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float MaxCellHeight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_MinCellHeight_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.MinCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_MinCellHeight" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.MinCellHeight">MinCellHeight</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual float MinCellHeight { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_TerrainLayerIndex_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.TerrainLayerIndex*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_TerrainLayerIndex" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.TerrainLayerIndex">TerrainLayerIndex</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_IsGetLayerByIndex">IsGetLayerByIndex</a> is true, this index is used to get terrain layer from terrain layers list.&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int TerrainLayerIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_TerrainLayerIndex">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.TerrainLayerIndex</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ApplyBrush_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ApplyBrush*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ApplyBrush_System_Int32_Unity_Mathematics_int2_System_Int32__0_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ApplyBrush(System.Int32,Unity.Mathematics.int2,System.Int32,`0,System.Int32)">ApplyBrush(int, int2, int, TBrushTarget, int)</h4>
+  <div class="markdown level1 summary"><p>Applies brush to the brushView. Returns true if changes were applied</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool ApplyBrush(int brushMode, int2 cellCoord, int cellIndex, TBrushTarget brushTarget, int mouseButton)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">brushMode</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TBrushTarget</span></td>
+        <td><span class="parametername">brushTarget</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">mouseButton</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_ApplyBrush_System_Int32_Unity_Mathematics_int2_System_Int32__0_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.ApplyBrush(int, int2, int, TBrushTarget, int)</a></div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_GetCellHeight_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.GetCellHeight*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_GetCellHeight_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.GetCellHeight(System.Int32)">GetCellHeight(int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual float? GetCellHeight(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_Init_Fwt_HexTerrains_UserTools_SM_Data_UserToolStateSettings_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.Init(Fwt.HexTerrains.UserTools.SM.Data.UserToolStateSettings)">Init(UserToolStateSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tool state with the specified settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(UserToolStateSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Data.UserToolStateSettings.html">UserToolStateSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The settings to apply to the tool state. Cannot be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_UserToolStateSettings_">UserToolStateBase.Init(UserToolStateSettings)</a></div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_InitDefaultSettings_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.InitDefaultSettings*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_InitDefaultSettings" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.InitDefaultSettings">InitDefaultSettings()</h4>
+  <div class="markdown level1 summary"><p>Initializes the default settings for the current instance. This method is intended to be overridden in
+derived classes to configure initial values or options as needed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void InitDefaultSettings()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_InitDefaultSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.InitDefaultSettings()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_InitDefaultSettings_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method in a subclass to provide custom initialization logic for default
+settings. The base implementation does not perform any actions.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_Init_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.Init*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_Init__1___0_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.Init``1(``0)">Init&lt;TInitArgs&gt;(TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the tool using the specified initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init&lt;TInitArgs&gt;(TInitArgs args)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">args</span></td>
+        <td><p>The initialization arguments used to configure the tool. If the argument implements IUserToolStateConfig,
+its ToolSettings are used; otherwise, default settings are applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>The type of the initialization arguments used to configure the tool. If the type implements
+IUserToolStateConfig, its ToolSettings will be used; otherwise, default settings are applied.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-4.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_4_Init__1___0_">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource, UniversalToolSettingsScreen, TTerrainLayer&gt;.Init&lt;TInitArgs&gt;(TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_IsAppliedToEveryCellOnMap_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.IsAppliedToEveryCellOnMap*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_IsAppliedToEveryCellOnMap_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.IsAppliedToEveryCellOnMap(System.Int32)">IsAppliedToEveryCellOnMap(int)</h4>
+  <div class="markdown level1 summary"><p>Determines whether the specified brush mode applies to every cell on the map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override bool IsAppliedToEveryCellOnMap(int brushMode)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">brushMode</span></td>
+        <td><p>The brush mode to evaluate. Typically, a value of 1 indicates that the brush is applied to all cells.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the brush mode applies to every cell on the map; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-1.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_1_IsAppliedToEveryCellOnMap_System_Int32_">BrushUserToolState&lt;TBrushTarget&gt;.IsAppliedToEveryCellOnMap(int)</a></div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_LoadSettings_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.LoadSettings*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_LoadSettings" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.LoadSettings">LoadSettings()</h4>
+  <div class="markdown level1 summary"><p>Loads configuration settings for the current instance. Derived classes override this method to implement
+custom settings initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void LoadSettings()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_LoadSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.LoadSettings()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_LoadSettings_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method in a subclass to provide specific logic for loading or
+initializing settings. This method is called during the setup or initialization phase and does not perform
+any actions in the base implementation.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ReadCellData_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ReadCellData*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_ReadCellData__1_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.ReadCellData(`1,Unity.Mathematics.int2)">ReadCellData(TTerrainLayer, int2)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual int ReadCellData(TTerrainLayer layer, int2 cellCoord)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TTerrainLayer</span></td>
+        <td><span class="parametername">layer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">cellCoord</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_SaveSettings_" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.SaveSettings*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_SaveSettings" data-uid="Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.SaveSettings">SaveSettings()</h4>
+  <div class="markdown level1 summary"><p>Saves the current settings to the underlying storage or configuration source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void SaveSettings()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.BrushUserToolState-2.html#Fwt_HexTerrains_UserTools_SM_BrushUserToolState_2_SaveSettings">BrushUserToolState&lt;TBrushTarget, UserToolSettingsDataSource&gt;.SaveSettings()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_SaveSettings_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method in a derived class to implement custom logic for persisting
+settings. This method does not perform any action in the base implementation.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

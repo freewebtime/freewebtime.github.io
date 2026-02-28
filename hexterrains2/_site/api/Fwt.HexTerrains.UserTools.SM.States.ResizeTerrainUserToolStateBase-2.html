@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ResizeTerrainUserToolStateBase&lt;TScreen, TCallback&gt; | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ResizeTerrainUserToolStateBase&lt;TScreen, TCallback&gt; | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2">
+
+
+
+  <h1 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2" class="text-break">Class ResizeTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.Core.StateMachines.SmState.html">SmState</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html">UserToolStateBase</a></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html">HexTerrainUserToolStateBase</a></div>
+    <div class="level4"><span class="xref">ResizeTerrainUserToolStateBase&lt;TScreen, TCallback&gt;</span></div>
+      <div class="level5"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolState.html">ResizeTerrainUserToolState</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TerrainAPI">HexTerrainUserToolStateBase.TerrainAPI</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HexTerrainUserToolSettings">HexTerrainUserToolStateBase.HexTerrainUserToolSettings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PreviousViewMode">HexTerrainUserToolStateBase.PreviousViewMode</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_HexTerrainUserToolStateSettings_">HexTerrainUserToolStateBase.Init(HexTerrainUserToolStateSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init_Fwt_HexTerrains_IHexTerrainAPI_">HexTerrainUserToolStateBase.Init(IHexTerrainAPI)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init__1___0_">HexTerrainUserToolStateBase.Init&lt;TInitArgs&gt;(TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_Init__1_Fwt_HexTerrains_IHexTerrainAPI___0_">HexTerrainUserToolStateBase.Init&lt;TInitArgs&gt;(IHexTerrainAPI, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_ShowSettingsScreen__2___0_">HexTerrainUserToolStateBase.ShowSettingsScreen&lt;TViewData, TScreen&gt;(TViewData)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetUIScreen__1">HexTerrainUserToolStateBase.GetUIScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_HideSettingsScreen__1">HexTerrainUserToolStateBase.HideSettingsScreen&lt;TScreen&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int, Color32)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_System_Int32_UnityEngine_Color32_System_Boolean_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool, int, Color32, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetupTerrainCursor_System_Boolean_">HexTerrainUserToolStateBase.SetupTerrainCursor(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_GetTerrainLayer__2_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainUserToolStateBase.GetTerrainLayer&lt;TLayerGroup, TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TrySetViewMode">HexTerrainUserToolStateBase.TrySetViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32_">HexTerrainUserToolStateBase.SetViewMode(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_TryRestoreViewMode">HexTerrainUserToolStateBase.TryRestoreViewMode()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Settings">UserToolStateBase.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Parent">UserToolStateBase.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_ParentStateMachine">UserToolStateBase.ParentStateMachine</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Init_Fwt_HexTerrains_UserTools_SM_Data_UserToolStateSettings_">UserToolStateBase.Init(UserToolStateSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_Tick">UserToolStateBase.Tick()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.html">UserTools</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.html">SM</a>.<a class="xref" href="Fwt.HexTerrains.UserTools.SM.States.html">States</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ResizeTerrainUserToolStateBase&lt;TScreen, TCallback&gt; : HexTerrainUserToolStateBase, ISmState where TScreen : UIScreen, IViewDataReceiver&lt;TCallback&gt; where TCallback : ResizeTerrainCallbackDataSource, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TCallback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2__ctor_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.#ctor*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2__ctor_Fwt_Core_StateMachines_ISmState_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.#ctor(Fwt.Core.StateMachines.ISmState)">ResizeTerrainUserToolStateBase(ISmState)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected ResizeTerrainUserToolStateBase(ISmState parent)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a></td>
+        <td><span class="parametername">parent</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CallbackDataSource_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.CallbackDataSource*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CallbackDataSource" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.CallbackDataSource">CallbackDataSource</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the callback data source used to provide custom data or behavior for operations.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TCallback CallbackDataSource { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCallback</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CallbackDataSource_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this property in a derived class to supply a specific callback
+implementation. The value may be null if no callback data source is configured.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_Screen_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.Screen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_Screen" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.Screen">Screen</h4>
+  <div class="markdown level1 summary"><p>Gets or sets the current screen associated with a resize terrain operation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TScreen Screen { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_UserToolType_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.UserToolType*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_UserToolType" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.UserToolType">UserToolType</h4>
+  <div class="markdown level1 summary"><p>Type identifier for the user tool. Allows state machine to change states based on tool type instead of state index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override int UserToolType { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.UserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_UserToolStateBase_UserToolType">UserToolStateBase.UserToolType</a></div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CancelResizing_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.CancelResizing*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CancelResizing" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.CancelResizing">CancelResizing()</h4>
+  <div class="markdown level1 summary"><p>Cancels the current resizing operation and resets the tool to the default pointer mode.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CancelResizing()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CancelResizing_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Use this method to abort an active resize action and return the state machine to its
+default interaction mode. This is typically called when the user cancels a drag or resize gesture.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CreateScreenCallback_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.CreateScreenCallback*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CreateScreenCallback" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.CreateScreenCallback">CreateScreenCallback()</h4>
+  <div class="markdown level1 summary"><p>Creates and initializes a new instance of the screen callback object with the appropriate resize and cancel
+handlers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TCallback CreateScreenCallback()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCallback</span></td>
+        <td><p>A new instance of <code class="typeparamref">TCallback</code> configured with resize and cancel callbacks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_CreateScreenCallback_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to customize the initialization of the screen callback object or
+to assign different handlers as needed.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_GetCallbackDataSource_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.GetCallbackDataSource*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_GetCallbackDataSource" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.GetCallbackDataSource">GetCallbackDataSource()</h4>
+  <div class="markdown level1 summary"><p>Retrieves the current callback data source, creating it if it does not already exist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TCallback GetCallbackDataSource()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TCallback</span></td>
+        <td><p>The callback data source instance of type <code class="typeparamref">TCallback</code>. If the data source has not been
+created, a new instance is initialized and returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_GetCallbackDataSource_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method ensures that the callback data source is initialized before returning it.
+Derived classes can override this method to customize the initialization or retrieval logic.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_GetUIScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.GetUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_GetUIScreen" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.GetUIScreen">GetUIScreen()</h4>
+  <div class="markdown level1 summary"><p>Retrieves the current UI screen instance of type <code class="typeparamref">TScreen</code>. If the screen does not
+exist, a new instance is created and returned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual TScreen GetUIScreen()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>The UI screen instance of type <code class="typeparamref">TScreen</code>. If no instance exists, a new one is created
+and returned.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_GetUIScreen_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Subclasses can override this method to customize how the UI screen is retrieved or
+created. The returned instance is cached for subsequent calls.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_HideUIScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.HideUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_HideUIScreen" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.HideUIScreen">HideUIScreen()</h4>
+  <div class="markdown level1 summary"><p>Hides the currently associated UI screen if one is present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void HideUIScreen()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_HideUIScreen_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to customize the behavior when hiding the UI screen. This method
+does nothing if no screen is associated.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_PrepareToRun_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.PrepareToRun*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_PrepareToRun" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.PrepareToRun">PrepareToRun()</h4>
+  <div class="markdown level1 summary"><p>Performs any necessary initialization or setup required before executing the main operation.
+Called by state machine once when state becomes active.
+If state is disabled and then enabled again, this method will be called again.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PrepareToRun()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToRun">HexTerrainUserToolStateBase.PrepareToRun()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_PrepareToRun_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to implement preparation logic specific to the derived class.
+This method should be called prior to running the core functionality to ensure all prerequisites are
+met.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_PrepareToStop_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.PrepareToStop*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_PrepareToStop" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.PrepareToStop">PrepareToStop()</h4>
+  <div class="markdown level1 summary"><p>Performs any necessary actions to prepare the object for stopping or shutdown.
+Called when the state is about to be deactivated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void PrepareToStop()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.html#Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_PrepareToStop">HexTerrainUserToolStateBase.PrepareToStop()</a></div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_PrepareToStop_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Implementations should ensure that all resources are released and any ongoing
+operations are safely terminated before the object is stopped. This method is typically called prior to
+disposing or shutting down the object to ensure a clean transition.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_ResizeTerrain_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.ResizeTerrain*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_ResizeTerrain_Unity_Mathematics_int2_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.ResizeTerrain(Unity.Mathematics.int2)">ResizeTerrain(int2)</h4>
+  <div class="markdown level1 summary"><p>Resizes the terrain to the specified dimensions.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ResizeTerrain(int2 terrainSize)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">int2</span></td>
+        <td><span class="parametername">terrainSize</span></td>
+        <td><p>The new size of the terrain, represented as a two-dimensional vector. Both components must be positive
+integers.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_ResizeTerrain_Unity_Mathematics_int2__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>After resizing, the active user tool is reset to the pointer tool. This method may
+affect the current state of the parent state machine if present.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_ShowUIScreen_" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.ShowUIScreen*"></a>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_ShowUIScreen" data-uid="Fwt.HexTerrains.UserTools.SM.States.ResizeTerrainUserToolStateBase`2.ShowUIScreen">ShowUIScreen()</h4>
+  <div class="markdown level1 summary"><p>Displays the associated UI screen and initializes its view data using the current callback data source.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void ShowUIScreen()</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_States_ResizeTerrainUserToolStateBase_2_ShowUIScreen_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Override this method to customize how the UI screen is shown or how its view data is
+set. This method retrieves the screen instance and callback data source before displaying the screen and
+updating its view data. Derived classes may provide additional logic or modify the initialization
+process.</p>
+</div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.StateMachines.ISmState.html">ISmState</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

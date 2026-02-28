@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Interface IBulkRenderer | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Interface IBulkRenderer | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.BulkRendering.IBulkRenderer">
+
+
+
+  <h1 id="Fwt_Core_BulkRendering_IBulkRenderer" data-uid="Fwt.Core.BulkRendering.IBulkRenderer" class="text-break">Interface IBulkRenderer</h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.BulkRendering.html">BulkRendering</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_BulkRendering_IBulkRenderer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IBulkRenderer</code></pre>
+  </div>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_Materials_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.Materials*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_Materials" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.Materials">Materials</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;Material&gt; Materials { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Material</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_Meshes_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.Meshes*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_Meshes" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.Meshes">Meshes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;Mesh&gt; Meshes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Mesh</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_PropertyBlocks_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.PropertyBlocks*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_PropertyBlocks" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.PropertyBlocks">PropertyBlocks</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">List&lt;MaterialPropertyBlock&gt; PropertyBlocks { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">MaterialPropertyBlock</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_ClearAll_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.ClearAll*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_ClearAll" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.ClearAll">ClearAll()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void ClearAll()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_InitAll_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.InitAll*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_InitAll" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.InitAll">InitAll()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void InitAll()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_MarkDirty_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.MarkDirty*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_MarkDirty" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.MarkDirty">MarkDirty()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void MarkDirty()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RecalcAssetIndexes_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RecalcAssetIndexes*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RecalcAssetIndexes" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RecalcAssetIndexes">RecalcAssetIndexes()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RecalcAssetIndexes()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterMaterial_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterMaterial*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterMaterial_UnityEngine_Material_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterMaterial(UnityEngine.Material)">RegisterMaterial(Material)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int RegisterMaterial(Material material)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Material</span></td>
+        <td><span class="parametername">material</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterMaterialProperties_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterMaterialProperties*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterMaterialProperties_Fwt_Core_BulkRendering_MaterialProperties_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterMaterialProperties(Fwt.Core.BulkRendering.MaterialProperties)">RegisterMaterialProperties(MaterialProperties)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int RegisterMaterialProperties(MaterialProperties materialProperties)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.BulkRendering.MaterialProperties.html">MaterialProperties</a></td>
+        <td><span class="parametername">materialProperties</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterMesh_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterMesh*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterMesh_UnityEngine_Mesh_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterMesh(UnityEngine.Mesh)">RegisterMesh(Mesh)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int RegisterMesh(Mesh mesh)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Mesh</span></td>
+        <td><span class="parametername">mesh</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterPropertyBlock_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterPropertyBlock*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterPropertyBlock_UnityEngine_MaterialPropertyBlock_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterPropertyBlock(UnityEngine.MaterialPropertyBlock)">RegisterPropertyBlock(MaterialPropertyBlock)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int RegisterPropertyBlock(MaterialPropertyBlock propertyBlock)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">MaterialPropertyBlock</span></td>
+        <td><span class="parametername">propertyBlock</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterRenderer_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterRenderer*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RegisterRenderer_UnityEngine_Renderer_UnityEngine_MeshFilter_System_Collections_Generic_IList_Fwt_Core_BulkRendering_BulkRenderItemSettings__System_Int32_System_Int32_System_Int32_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RegisterRenderer(UnityEngine.Renderer,UnityEngine.MeshFilter,System.Collections.Generic.IList{Fwt.Core.BulkRendering.BulkRenderItemSettings},System.Int32,System.Int32,System.Int32)">RegisterRenderer(Renderer, MeshFilter, IList&lt;BulkRenderItemSettings&gt;, int, int, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int RegisterRenderer(Renderer renderer, MeshFilter meshFilter, IList&lt;BulkRenderItemSettings&gt; result, int maxSubmeshCount = -1, int maxMaterials = -1, int maxRenderEntities = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Renderer</span></td>
+        <td><span class="parametername">renderer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">MeshFilter</span></td>
+        <td><span class="parametername">meshFilter</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItemSettings.html">BulkRenderItemSettings</a>&gt;</td>
+        <td><span class="parametername">result</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxSubmeshCount</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxMaterials</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxRenderEntities</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_Unity_Collections_NativeList_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeList{Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,Unity.Jobs.JobHandle)">RenderEntities(NativeList&lt;BulkRenderItem&gt;, Camera, JobHandle)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RenderEntities(NativeList&lt;BulkRenderItem&gt; renderEntities, Camera camera, JobHandle dependency = default)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItem.html">BulkRenderItem</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera)">RenderEntities(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt;, Camera)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RenderEntities(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt; renderEntities, Camera camera)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItemSettings.html">BulkRenderItemSettings</a>, <a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItem.html">BulkRenderItem</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)">RenderEntities(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt;, Camera, Bounds, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RenderEntities(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt; renderEntities, Camera camera, Bounds worldBounds, int maxEntitiesPerKey = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItemSettings.html">BulkRenderItemSettings</a>, <a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItem.html">BulkRenderItem</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxEntitiesPerKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntitiesFast_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntitiesFast*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntitiesFast_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntitiesFast(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)">RenderEntitiesFast(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt;, Camera, Bounds, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RenderEntitiesFast(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt; renderEntities, Camera camera, Bounds worldBounds, int maxEntitiesPerKey = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItemSettings.html">BulkRenderItemSettings</a>, <a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItem.html">BulkRenderItem</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxEntitiesPerKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntitiesFastSlow_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntitiesFastSlow*"></a>
+  <h4 id="Fwt_Core_BulkRendering_IBulkRenderer_RenderEntitiesFastSlow_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_" data-uid="Fwt.Core.BulkRendering.IBulkRenderer.RenderEntitiesFastSlow(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)">RenderEntitiesFastSlow(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt;, Camera, Bounds, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">void RenderEntitiesFastSlow(NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt; renderEntities, Camera camera, Bounds worldBounds, int maxEntitiesPerKey = -1)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeParallelMultiHashMap</span>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItemSettings.html">BulkRenderItemSettings</a>, <a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItem.html">BulkRenderItem</a>&gt;</td>
+        <td><span class="parametername">renderEntities</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Camera</span></td>
+        <td><span class="parametername">camera</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Bounds</span></td>
+        <td><span class="parametername">worldBounds</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">maxEntitiesPerKey</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

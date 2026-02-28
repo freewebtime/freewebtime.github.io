@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ChunkMeshLayerConfigAsset | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ChunkMeshLayerConfigAsset | Hex Terrains Framework ">
+    
+    <meta name="description" content="Defines the configuration asset for a chunk mesh terrain layer, including settings for heightmap and biome map initialization, automatic biome painting, and layer overlap behavior.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset">
+
+
+
+  <h1 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset" class="text-break">Class ChunkMeshLayerConfigAsset</h1>
+  <div class="markdown level0 summary"><p>Defines the configuration asset for a chunk mesh terrain layer, including settings for heightmap and biome map
+initialization, automatic biome painting, and layer overlap behavior.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Object</span></div>
+    <div class="level2"><span class="xref">ScriptableObject</span></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerConfigAsset-1.html">HexTerrainLayerConfigAsset</a>&lt;<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html">ChunkMeshLayer</a>&gt;</div>
+    <div class="level4"><span class="xref">ChunkMeshLayerConfigAsset</span></div>
+      <div class="level5"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.VisualChunkMeshLayerConfigAsset.html">VisualChunkMeshLayerConfigAsset</a></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.HexTerrains.Data.ITerrainLayerFactory.html">ITerrainLayerFactory</a></div>
+    <div><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html">IChunkMeshLayerConfig</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerConfigAsset-1.html#Fwt_HexTerrains_Data_HexTerrainLayerConfigAsset_1_CreateTerrainLayer__1">HexTerrainLayerConfigAsset&lt;ChunkMeshLayer&gt;.CreateTerrainLayer&lt;TTargetLayer&gt;()</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.SetDirty()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.CreateInstance&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetHashCode()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Scene)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <span class="xref">Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">Object.name</span>
+    </div>
+    <div>
+      <span class="xref">Object.hideFlags</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.ChunkMehes.html">ChunkMehes</a>.<a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[CreateAssetMenu(fileName = &quot;ChunkMeshLayerConfigAsset&quot;, menuName = &quot;Fwt/HexTerrains/ChunkMeshes/Chunk Mesh Layer Config&quot;)]
+public class ChunkMeshLayerConfigAsset : HexTerrainLayerConfigAsset&lt;ChunkMeshLayer&gt;, ITerrainLayerFactory, IChunkMeshLayerConfig</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This asset is intended to be used within the Unity Editor to configure chunk mesh layers for
+hex-based terrains. It provides parameters for initializing height and biome maps, as well as options for
+controlling how biomes are automatically assigned based on height thresholds. The asset also supports
+referencing another terrain layer to manage rendering overlaps between layers.</p>
+</div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__autoPaintBiomesLevels" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._autoPaintBiomesLevels">_autoPaintBiomesLevels</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Represents the default set of biome level thresholds used for automatic painting operations. Value at index 0 corresponds to biome 0, index 1 to biome 1, and so on. If the height is below the level at index 0, biome 0 is applied. If the height is between levels at index 0 and 1, biome 1 is applied, etc.&quot;)]
+[SerializeField]
+protected List&lt;float&gt; _autoPaintBiomesLevels</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__biomeMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._biomeMapArgs">_biomeMapArgs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Settings for biome map (cell colors) initialization.&quot;)]
+[SerializeField]
+protected InitColorMapCellValueDataLayerArgs&lt;int&gt; _biomeMapArgs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html">InitColorMapCellValueDataLayerArgs</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__chunkMeshLayerSettings" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._chunkMeshLayerSettings">_chunkMeshLayerSettings</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[Tooltip(&quot;ChunkMeshLayer-specific settings.&quot;)]
+protected ChunkMeshLayerSettings _chunkMeshLayerSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerSettings.html">ChunkMeshLayerSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__heightMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._heightMapArgs">_heightMapArgs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[Tooltip(&quot;Settings for heightmap initialization.&quot;)]
+protected InitColorMapCellValueDataLayerArgs&lt;float&gt; _heightMapArgs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html">InitColorMapCellValueDataLayerArgs</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__isAutoPaintBiomes" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._isAutoPaintBiomes">_isAutoPaintBiomes</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If true, the biome map will be automatically painted based on the height map and the AutoPaintBiomesLevels.&quot;)]
+[SerializeField]
+protected bool _isAutoPaintBiomes</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__overlappingLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._overlappingLayerReference">_overlappingLayerReference</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Reference to another terrain layer that this layer may overlap with. If that layer&#39;s height is bigger than this layer&#39;s height at a given cell, then this layer will not be rendered at that cell on biome color map.&quot;)]
+[SerializeField]
+protected HexTerrainLayerReference _overlappingLayerReference</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__syncBiomeMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._syncBiomeMapLayerReference">_syncBiomeMapLayerReference</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[Tooltip(&quot;Reference to another terrain layer from which to copy biome map values when they are changed there.&quot;)]
+protected HexTerrainLayerReference _syncBiomeMapLayerReference</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__syncHeightMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._syncHeightMapLayerReference">_syncHeightMapLayerReference</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[Tooltip(&quot;Reference to another terrain layer from which to copy height map values when they are changed there.&quot;)]
+protected HexTerrainLayerReference _syncHeightMapLayerReference</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__syncTransparencyMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._syncTransparencyMapLayerReference">_syncTransparencyMapLayerReference</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+[Tooltip(&quot;Reference to another terrain layer from which to copy transparency map values when they are changed there.&quot;)]
+protected HexTerrainLayerReference _syncTransparencyMapLayerReference</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__transparencyMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._transparencyMapArgs">_transparencyMapArgs</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Settings for cell transparency initialization.&quot;)]
+[SerializeField]
+protected InitColorMapCellValueDataLayerArgs&lt;bool&gt; _transparencyMapArgs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html">InitColorMapCellValueDataLayerArgs</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_AutoPaintBiomesLevels_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesLevels*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_AutoPaintBiomesLevels" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesLevels">AutoPaintBiomesLevels</h4>
+  <div class="markdown level1 summary"><p>Represents the default set of biome level thresholds used for automatic painting operations.
+Value at index 0 corresponds to biome 0, index 1 to biome 1, and so on.
+If the height is below the level at index 0, biome 0 is applied.
+If the height is between levels at index 0 and 1, biome 1 is applied, etc.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;float&gt; AutoPaintBiomesLevels { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_BiomeMapArgs_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.BiomeMapArgs*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_BiomeMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.BiomeMapArgs">BiomeMapArgs</h4>
+  <div class="markdown level1 summary"><p>Settings for biome map (cell colors) initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InitColorMapCellValueDataLayerArgs&lt;int&gt; BiomeMapArgs { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html">InitColorMapCellValueDataLayerArgs</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_ChunkMeshLayerSettings_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.ChunkMeshLayerSettings*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_ChunkMeshLayerSettings" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.ChunkMeshLayerSettings">ChunkMeshLayerSettings</h4>
+  <div class="markdown level1 summary"><p>ChunkMeshLayer-specific settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ChunkMeshLayerSettings ChunkMeshLayerSettings { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerSettings.html">ChunkMeshLayerSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_HeightMapArgs_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.HeightMapArgs*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_HeightMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.HeightMapArgs">HeightMapArgs</h4>
+  <div class="markdown level1 summary"><p>Settings for heightmap initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InitColorMapCellValueDataLayerArgs&lt;float&gt; HeightMapArgs { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html">InitColorMapCellValueDataLayerArgs</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_IsAutoPaintBiomes_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.IsAutoPaintBiomes*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_IsAutoPaintBiomes" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.IsAutoPaintBiomes">IsAutoPaintBiomes</h4>
+  <div class="markdown level1 summary"><p>If true, the biome map will be automatically painted based on the height map and the AutoPaintBiomesLevels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsAutoPaintBiomes { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_OverlappingLayerReference_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_OverlappingLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference">OverlappingLayerReference</h4>
+  <div class="markdown level1 summary"><p>Reference to another terrain layer that this layer may overlap with.
+If that layer's height is bigger than this layer's height at a given cell,
+then this layer will not be rendered at that cell on biome color map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainLayerReference OverlappingLayerReference { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncBiomeMapLayerReference_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncBiomeMapLayerReference*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncBiomeMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncBiomeMapLayerReference">SyncBiomeMapLayerReference</h4>
+  <div class="markdown level1 summary"><p>Reference to another terrain layer from which to copy biome map values when they are changed there.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainLayerReference SyncBiomeMapLayerReference { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncHeightMapLayerReference_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncHeightMapLayerReference*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncHeightMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncHeightMapLayerReference">SyncHeightMapLayerReference</h4>
+  <div class="markdown level1 summary"><p>Reference to another terrain layer from which to copy height map values when they are changed there.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainLayerReference SyncHeightMapLayerReference { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncTransparencyMapLayerReference_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncTransparencyMapLayerReference*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncTransparencyMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncTransparencyMapLayerReference">SyncTransparencyMapLayerReference</h4>
+  <div class="markdown level1 summary"><p>Reference to another terrain layer from which to copy transparency map values when they are changed there.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainLayerReference SyncTransparencyMapLayerReference { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_TransparencyMapArgs_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.TransparencyMapArgs*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_TransparencyMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.TransparencyMapArgs">TransparencyMapArgs</h4>
+  <div class="markdown level1 summary"><p>Settings for cell transparency map initialization.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public InitColorMapCellValueDataLayerArgs&lt;bool&gt; TransparencyMapArgs { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html">InitColorMapCellValueDataLayerArgs</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_CreateTerrainLayer_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.CreateTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_CreateTerrainLayer" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.CreateTerrainLayer">CreateTerrainLayer()</h4>
+  <div class="markdown level1 summary"><p>Creates a new instance of a terrain layer for hex-based maps.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override HexTerrainLayer CreateTerrainLayer()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></td>
+        <td><p>A <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a> representing the newly created terrain layer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerConfigAsset-1.html#Fwt_HexTerrains_Data_HexTerrainLayerConfigAsset_1_CreateTerrainLayer">HexTerrainLayerConfigAsset&lt;ChunkMeshLayer&gt;.CreateTerrainLayer()</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.ITerrainLayerFactory.html">ITerrainLayerFactory</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html">IChunkMeshLayerConfig</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDisableGameObject__1___0_">Extensions_UnityObject.SmartDisableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartEnableGameObject__1___0_">Extensions_UnityObject.SmartEnableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

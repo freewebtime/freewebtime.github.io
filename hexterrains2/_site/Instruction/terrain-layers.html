@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>&#129521; Terrain Layers Overview | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="&#129521; Terrain Layers Overview | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="-terrain-layers-overview">🧱 Terrain Layers Overview</h1>
+
+<p>This document explains the HexTerrains <strong>Terrain Layer</strong> architecture: what a layer is, how layers are initialized and updated, how layers are organized into <code>HexTerrainLayerGroup</code>s, which layers are provided by the framework, and how to implement custom layers.</p>
+<blockquote>
+<p>Terminology note: in this framework a “layer” is a <strong>runtime subsystem + data container</strong>. It is <em>not</em> a Unity <code>LayerMask</code>.</p>
+</blockquote>
+<hr>
+<h2 id="table-of-contents">Table of contents</h2>
+<ul>
+<li><a href="#1-what-is-a-terrain-layer">1. What is a Terrain Layer?</a></li>
+<li><a href="#2-hexterrainlayer-lifecycle-and-responsibilities">2. <code>HexTerrainLayer</code>: lifecycle and responsibilities</a></li>
+<li><a href="#3-data-layers-jobs-and-dirty-flags">3. Data layers, jobs, and dirty flags</a></li>
+<li><a href="#4-referencing-other-layers-hexterrainlayerreference">4. Referencing other layers: <code>HexTerrainLayerReference</code></a></li>
+<li><a href="#5-hexterrainlayergroup-organizing-multiple-layers">5. <code>HexTerrainLayerGroup</code>: organizing multiple layers</a></li>
+<li><a href="#6-initialization-patterns">6. Initialization patterns</a></li>
+<li><a href="#7-the-6-main-layer-types-and-how-to-use-them">7. The 6 main layer types (and how to use them)</a>
+<ul>
+<li><a href="#71-chunkmeshlayer">7.1 <code>ChunkMeshLayer</code></a></li>
+<li><a href="#72-cellentitylayer">7.2 <code>CellEntityLayer</code></a></li>
+<li><a href="#73-cellobjectlayer">7.3 <code>CellObjectLayer</code></a></li>
+<li><a href="#74-cellregionlayer">7.4 <code>CellRegionLayer</code></a></li>
+<li><a href="#75-geoplastlayer">7.5 <code>GeoPlastLayer</code></a></li>
+<li><a href="#76-sunterrainlayer-sun-layer">7.6 <code>SunTerrainLayer</code> (Sun Layer)</a></li>
+</ul>
+</li>
+<li><a href="#8-creating-your-own-terrain-layer">8. Creating your own Terrain Layer</a></li>
+<li><a href="#9-best-practices--pitfalls">9. Best practices &amp; pitfalls</a></li>
+</ul>
+<hr>
+<h2 id="1-what-is-a-terrain-layer">1. What is a Terrain Layer?</h2>
+<p>A <strong>Terrain Layer</strong> is a modular unit of terrain functionality. Each layer:</p>
+<ul>
+<li>Owns a coherent set of terrain data (typically stored in native collections / data layers).</li>
+<li>Implements a predictable lifecycle (<code>Init</code>, per-frame work via jobs, <code>Cleanup</code>, <code>Dispose</code>).</li>
+<li>Can depend on other layers (via <code>HexTerrainLayerReference</code>).</li>
+<li>Can be grouped and managed alongside other layers using <code>HexTerrainLayerGroup</code>.</li>
+</ul>
+<p>The goal is to keep the terrain system composable:</p>
+<ul>
+<li>Rendering is separated from simulation.</li>
+<li>Entities are separated from purely visual objects.</li>
+<li>Region logic is separated from geometry.</li>
+<li>Layers can be added/removed/replaced without rewriting the whole pipeline.</li>
+</ul>
+<hr>
+<h2 id="2-hexterrainlayer-lifecycle-and-responsibilities">2. <code>HexTerrainLayer</code>: lifecycle and responsibilities</h2>
+<p>All terrain layers ultimately derive from:</p>
+<ul>
+<li><code>HexTerrainLayer</code> (abstract base class)</li>
+</ul>
+<p>Key members and concepts from <code>HexTerrainLayer</code>:</p>
+<h3 id="core-state">Core state</h3>
+<ul>
+<li><p><code>public string Name { get; set; }</code><br>
+Optional but strongly recommended. <code>HexTerrainLayerGroup</code> can index layers by name.</p>
+</li>
+<li><p><code>public HexTerrainSettings Settings;</code><br>
+The settings this layer was initialized with (terrain size, chunk counts, etc.).</p>
+</li>
+<li><p><code>public HexTerrainLayer ParentLayer { get; set; }</code><br>
+If the layer is inside a group, it typically points to the owning <code>HexTerrainLayerGroup</code>.</p>
+</li>
+</ul>
+<h3 id="lifecycle-methods">Lifecycle methods</h3>
+<ul>
+<li><p><code>Init(HexTerrainSettings settings)</code><br>
+Base method completes jobs, updates settings, and marks data dirty if settings changed.</p>
+</li>
+<li><p><code>Init&lt;TInitArgs&gt;(HexTerrainSettings settings, TInitArgs initArgs)</code><br>
+Used to inject configuration (usually ScriptableObject assets implementing config interfaces).
+Most concrete layers override this to read their config.</p>
+</li>
+<li><p><code>Resize(int2 terrainSize)</code><br>
+Convenience wrapper that updates <code>Settings.TerrainSize</code> then re-<code>Init</code>s.</p>
+</li>
+<li><p><code>CalculateColorMap(JobHandle dependency)</code><br>
+A common “hook” used by several layers to schedule color-map related jobs.</p>
+</li>
+<li><p><code>CompleteAllJobs()</code><br>
+Should complete any outstanding job handles used by the layer’s data layers.</p>
+</li>
+<li><p><code>SetAllDirty(bool isDirty)</code> <em>(abstract)</em><br>
+Marks all internal data layers dirty/clean.</p>
+</li>
+<li><p><code>Cleanup()</code> and <code>CleanupAsync(JobHandle dependency)</code> <em>(abstract)</em><br>
+Used to reset dirty flags and/or schedule “start-of-frame” cleanup jobs.</p>
+</li>
+<li><p><code>Dispose()</code><br>
+Releases native allocations.</p>
+</li>
+</ul>
+<h3 id="cross-layer-access-helpers">Cross-layer access helpers</h3>
+<p><code>HexTerrainLayer</code> provides helper methods to fetch layers from the parent group:</p>
+<ul>
+<li><code>GetTerrainLayerFromParent&lt;TLayer&gt;(int index)</code></li>
+<li><code>GetTerrainLayerFromParent&lt;TLayer&gt;(string name)</code></li>
+<li><code>GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference reference)</code></li>
+</ul>
+<p>These are useful when a layer needs to read/write other layers’ data.</p>
+<hr>
+<h2 id="3-data-layers-jobs-and-dirty-flags">3. Data layers, jobs, and dirty flags</h2>
+<p>Most runtime terrain data in HexTerrains is stored using <em>data layer</em> abstractions (examples seen in the codebase):</p>
+<ul>
+<li><code>CellValueDataLayer&lt;T&gt;</code></li>
+<li><code>ColorMapCellValueDataLayer_Int</code>, <code>ColorMapCellValueDataLayer_Float</code>, …</li>
+<li>Chunk-scoped layers such as:
+<ul>
+<li><code>ChunkMetricsDataLayer</code></li>
+<li><code>ChunkVisibilityDataLayer</code></li>
+<li><code>NativeParallelHashSetDataLayer&lt;int&gt;</code></li>
+<li><code>NativeParallelMultiHashMapDataLayer&lt;TKey, TValue&gt;</code></li>
+<li><code>NativeListDataLayer&lt;T&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p>These wrappers typically provide:</p>
+<ul>
+<li>Native storage (<code>NativeArray</code>, <code>NativeList</code>, hash sets/maps).</li>
+<li>Dirty tracking (global and often per-chunk).</li>
+<li>Job dependency tracking (read/write fences).</li>
+</ul>
+<h3 id="typical-job-scheduling-pattern">Typical job scheduling pattern</h3>
+<p>A common pattern across layers (e.g., <code>ChunksGridLayer</code>, <code>VisualGeoPlastLayer</code>, <code>SunTerrainLayer</code>) looks like:</p>
+<ol>
+<li><strong>Early-out</strong> if nothing is dirty / nothing changed.</li>
+<li><strong>Prepare dependencies</strong>:
+<ul>
+<li><code>PrepareToRead()</code> for inputs</li>
+<li><code>PrepareToWrite()</code> for outputs</li>
+<li>Combine with incoming <code>dependency</code>.</li>
+</ul>
+</li>
+<li><strong>Schedule jobs</strong>.</li>
+<li><strong>Register dependencies</strong> back on data layers:
+<ul>
+<li><code>AddReadDependency(handle)</code> / <code>AddWriteDependency(handle)</code></li>
+</ul>
+</li>
+<li><strong>Mark dirty</strong>:
+<ul>
+<li><code>SetDirty(true)</code></li>
+<li>and often schedule “mark dirty chunks” jobs when using per-chunk dirty sets.</li>
+</ul>
+</li>
+</ol>
+<p>Example (conceptual):</p>
+<pre><code class="lang-csharp">var depsA = inputLayer.PrepareToRead(); 
+var depsB = outputLayer.PrepareToWrite(); 
+dependency = JobHandle.CombineDependencies(dependency, depsA, depsB);
+dependency = job.Schedule(Settings.CellsCount, Settings.CellsPerChunk, dependency);
+inputLayer.AddReadDependency(dependency); 
+outputLayer.AddWriteDependency(dependency); 
+outputLayer.SetDirty(true);
+</code></pre>
+<h3 id="dirty-flags-why-they-matter">Dirty flags: why they matter</h3>
+<p>Dirty flags are used to avoid unnecessary work:</p>
+<ul>
+<li>If a data layer is not dirty, many layers simply return the incoming <code>JobHandle</code> unchanged.</li>
+<li>Some layers also track <em>dirty chunks</em> to minimize chunk mesh regeneration.</li>
+</ul>
+<hr>
+<h2 id="4-referencing-other-layers-hexterrainlayerreference">4. Referencing other layers: <code>HexTerrainLayerReference</code></h2>
+<p><code>HexTerrainLayerReference</code> is a serializable struct used to locate a layer within a <code>HexTerrainLayerGroup</code>.</p>
+<p>It supports:</p>
+<ul>
+<li>Lookup by index (<code>IsSearchByIndex</code>, <code>LayerIndex</code>)</li>
+<li>Lookup by name (<code>IsSearchByName</code>, <code>LayerName</code>)</li>
+<li>Or both (index + name)</li>
+</ul>
+<p>Helpers:</p>
+<ul>
+<li><code>HexTerrainLayerReference.ByLayerIndex(int)</code></li>
+<li><code>HexTerrainLayerReference.ByLayerName(string)</code></li>
+<li><code>HexTerrainLayerReference.ByLayerIndexAndName(int, string)</code></li>
+<li><code>HexTerrainLayerReference.Default</code></li>
+</ul>
+<p>This enables clean cross-layer wiring from configuration assets (e.g., “this GeoPlast layer renders into surface layer X”).</p>
+<hr>
+<h2 id="5-hexterrainlayergroup-organizing-multiple-layers">5. <code>HexTerrainLayerGroup</code>: organizing multiple layers</h2>
+<p>A <code>HexTerrainLayerGroup&lt;TTerrainLayer&gt;</code> is itself a <code>HexTerrainLayer</code>, but its role is to manage a list of child layers.</p>
+<p>Key capabilities (from the framework API surface):</p>
+<ul>
+<li><p>Stores:</p>
+<ul>
+<li><code>List&lt;TTerrainLayer&gt; Layers</code></li>
+<li><code>Dictionary&lt;string, TTerrainLayer&gt; LayersByName</code></li>
+<li><code>Dictionary&lt;string, int&gt; LayerIndexByName</code></li>
+<li><code>Dictionary&lt;TTerrainLayer, int&gt; LayerIndexByInstance</code></li>
+</ul>
+</li>
+<li><p>Provides many <code>GetLayer(...)</code> overloads:</p>
+<ul>
+<li>by index</li>
+<li>by name</li>
+<li>by type</li>
+<li>by <code>HexTerrainLayerReference</code></li>
+</ul>
+</li>
+<li><p>Provides group-wide lifecycle:</p>
+<ul>
+<li><code>Init(...)</code> initializes and/or recreates all child layers.</li>
+<li><code>CalculateColorMap(...)</code> can combine color map job handles from all layers.</li>
+<li><code>SetAllDirty(...)</code>, <code>Cleanup(...)</code>, <code>CleanupAsync(...)</code>, <code>Dispose()</code> forward to all children.</li>
+</ul>
+</li>
+</ul>
+<h3 id="specialized-groups-in-the-framework">Specialized groups in the framework</h3>
+<p>You will commonly work with groups dedicated to specific layer types, e.g.:</p>
+<ul>
+<li><code>ChunkMeshLayerGroup : HexTerrainLayerGroup&lt;ChunkMeshLayer&gt;</code></li>
+<li><code>CellEntityLayerGroup : HexTerrainLayerGroup&lt;CellEntityLayer&gt;</code></li>
+<li><code>CellObjectLayerGroup : HexTerrainLayerGroup&lt;CellObjectLayer&gt;</code></li>
+<li><code>CellRegionLayerGroup : HexTerrainLayerGroup&lt;CellRegionLayer&gt;</code></li>
+<li><code>GeoPlastLayerGroup : HexTerrainLayerGroup&lt;GeoPlastLayer&gt;</code></li>
+</ul>
+<p>These derived groups often add orchestration methods, e.g.:</p>
+<ul>
+<li><code>ChunkMeshLayerGroup.CalcMeshSources(...)</code>, <code>CreateChunkMeshes()</code>, <code>Render(...)</code></li>
+<li><code>CellEntityLayerGroup.CalculateEntities(...)</code>, <code>UpdateEntities(...)</code></li>
+<li><code>GeoPlastLayerGroup.Simulate(...)</code>, <code>Render(...)</code></li>
+<li><code>CellObjectLayerGroup.Render(...)</code></li>
+</ul>
+<h3 id="parent-child-relationship">Parent-child relationship</h3>
+<p>When a layer is created by a group, the group should set:</p>
+<ul>
+<li>child <code>ParentLayer = this</code></li>
+<li>child <code>Name</code> (commonly from creation request args)</li>
+</ul>
+<p>This is what enables <code>GetTerrainLayerFromParent&lt;T&gt;</code> lookups from inside a child layer.</p>
+<hr>
+<h2 id="6-initialization-patterns">6. Initialization patterns</h2>
+<p>Most runtime layers are created and configured using ScriptableObject config assets.</p>
+<h3 id="the-common-pattern">The common pattern</h3>
+<ol>
+<li><strong>Create a config asset</strong> in Unity:
+<ul>
+<li>For example <code>ChunkMeshLayerConfigAsset</code>, <code>CellEntityLayerConfigAsset</code>, <code>GeoPlastLayerConfigAsset</code>, etc.</li>
+</ul>
+</li>
+<li><strong>The config asset implements an interface</strong> used by the layer’s <code>Init&lt;TInitArgs&gt;</code>:
+<ul>
+<li>Example: <code>ChunkMeshLayerConfigAsset : IChunkMeshLayerConfig</code></li>
+</ul>
+</li>
+<li><strong>The asset is used as an init arg</strong> when building the terrain:
+<ul>
+<li>The group creates the layer via <code>CreateTerrainLayer()</code> (factory pattern)</li>
+<li>The group calls <code>InitTerrainLayer(layer, settings, initArgs)</code></li>
+<li>The layer reads config and initializes internal data layers</li>
+</ul>
+</li>
+</ol>
+<h3 id="what-should-happen-in-init">What should happen in <code>Init(...)</code></h3>
+<p>Concrete layers typically do two things:</p>
+<ul>
+<li>Ensure their internal data layers exist and are sized to match <code>settings</code>.</li>
+<li>Apply config parameters, references, and default values.</li>
+</ul>
+<p>Example evidence from the codebase:</p>
+<ul>
+<li><code>ChunksGridLayer.Init(settings)</code> allocates chunk visibility/metrics layers, resets viewport caches, and recalculates metrics when settings change.</li>
+<li><code>SunTerrainLayer.Init&lt;TInitArgs&gt;</code> reads <code>ISunTerrainLayerConfig</code> and populates <code>SunSettings</code>, <code>TargetLayers</code>, and progress values.</li>
+<li><code>VisualGeoPlastLayer.InitLayerData(args)</code> reads <code>IVisualGeoPlastLayerConfig</code> and stores <code>SurfaceLayerRef</code> + visual rendering settings.</li>
+</ul>
+<hr>
+<h2 id="7-the-6-main-layer-types-and-how-to-use-them">7. The 6 main layer types (and how to use them)</h2>
+<p>This section describes the framework’s six “pillar” layer types and the standard workflow for each.</p>
+<blockquote>
+<p>Some types include multiple derived/related layers in the codebase; this section focuses on the conceptual role and the visible API surface.</p>
+</blockquote>
+<hr>
+<h3 id="71-chunkmeshlayer">7.1 <code>ChunkMeshLayer</code></h3>
+<p><strong>Purpose:</strong> Surface-like cell data (height/biome/transparency) and cell metrics used for chunk mesh generation.</p>
+<p>Common data owned by <code>ChunkMeshLayer</code>:</p>
+<ul>
+<li><code>HeightMap : ColorMapCellValueDataLayer_Float</code></li>
+<li><code>BiomeMap : ColorMapCellValueDataLayer_Int</code></li>
+<li><code>TransparencyMap : CellValueDataLayer&lt;bool&gt;</code></li>
+<li><code>CellMetricsMap : CellMetricsDataLayer</code></li>
+<li><code>ChunkMeshLayerSettings : ChunkMeshLayerSettings</code></li>
+<li>Sync references:
+<ul>
+<li><code>SyncHeightMapLayerReference</code></li>
+<li><code>SyncBiomeMapLayerReference</code></li>
+<li><code>SyncTransparencyMapLayerReference</code></li>
+</ul>
+</li>
+</ul>
+<p>Key operations (conceptually):</p>
+<ul>
+<li><strong>Sync</strong> values from another layer (<code>SyncData</code>, <code>SyncHeightMap</code>, etc.)</li>
+<li><strong>Calculate</strong> cell metrics (<code>CalcCellMetrics</code>)</li>
+<li><strong>CalculateColorMap</strong> (often biome/height based)</li>
+<li><strong>Serialize/Deserialize</strong> layer state for persistence</li>
+</ul>
+<h4 id="rendering-pipeline-connection-visualchunkmeshlayer">Rendering pipeline connection: <code>VisualChunkMeshLayer</code></h4>
+<p><code>VisualChunkMeshLayer</code> extends the chunk mesh concept into actual mesh generation and rendering. It typically uses:</p>
+<ul>
+<li><code>ChunkMeshSources</code> (mesh source buffers per chunk)</li>
+<li><code>ChunkMeshes</code> (Unity <code>Mesh</code> instances per chunk)</li>
+<li>Render configs (<code>HexSurfaceRenderConfigAsset</code>) per view mode</li>
+<li>A <code>RenderSettings</code> struct controlling meshing parameters</li>
+</ul>
+<p>Key steps:</p>
+<ol>
+<li><code>CalcMeshSources(...)</code> schedules per-chunk mesh source jobs.</li>
+<li><code>CreateChunkMeshes()</code> uploads mesh data to Unity meshes.</li>
+<li><code>Render(...)</code> draws the meshes (respecting view mode and visibility).</li>
+</ol>
+<h4 id="group-orchestration-chunkmeshlayergroup">Group orchestration: <code>ChunkMeshLayerGroup</code></h4>
+<p><code>ChunkMeshLayerGroup</code> adds methods that operate across many layers:</p>
+<ul>
+<li><code>SyncData(dependency)</code></li>
+<li><code>CalcCellMetrics(dependency)</code></li>
+<li><code>CalcDirtyMeshSources(dependency)</code></li>
+<li><code>CalcMeshSources(chunksGridLayer, dependency)</code></li>
+<li><code>CreateChunkMeshes()</code></li>
+<li><code>Render(chunksGridLayer, viewMode, terrainTransform, camera)</code></li>
+</ul>
+<h4 id="related-but-important-chunksgridlayer">Related but important: <code>ChunksGridLayer</code></h4>
+<p>Even though it is not one of the “six main types”, <code>ChunksGridLayer</code> is foundational for rendering workflows:</p>
+<ul>
+<li>Tracks per-chunk metrics and visibility.</li>
+<li>Calculates visible chunk sets based on camera frustum.</li>
+<li>Provides <code>VisibleChunks</code> as a <code>NativeParallelHashSetDataLayer&lt;int&gt;</code>.</li>
+</ul>
+<p>Most render systems use <code>ChunksGridLayer</code> to avoid generating or rendering offscreen chunks.</p>
+<hr>
+<h3 id="72-cellentitylayer">7.2 <code>CellEntityLayer</code></h3>
+<p><strong>Purpose:</strong> Spawn and update ECS entities associated with terrain cells.</p>
+<p>Key data and members (as seen in <code>CellEntityLayer</code>):</p>
+<ul>
+<li><code>CellEntityViews : CellEntityViewDataLayer</code></li>
+<li><code>NativeList&lt;CellEntityConfig&gt; CellEntityConfigs</code></li>
+<li><code>EntityManager</code></li>
+<li>Optional <code>EntityCommandBuffer</code> for batch structural updates</li>
+<li><code>CalculateEntities(dependency)</code> and <code>UpdateEntities(...)</code></li>
+</ul>
+<p>Configuration pattern:</p>
+<ul>
+<li><code>CellEntityLayerConfigAsset</code> supplies:
+<ul>
+<li>authoring list (<code>CellEntities</code>)</li>
+<li>baked range info (<code>EntityConfigsRangeStart</code>, <code>EntityConfigsRangeSize</code>)</li>
+<li>plus common cell-item config inherited behavior (index/state/transform maps)</li>
+</ul>
+</li>
+</ul>
+<p>Group orchestration:</p>
+<ul>
+<li><code>CellEntityLayerGroup</code> stores the combined baked configs and passes slices into each layer.</li>
+<li>It provides:
+<ul>
+<li><code>CalculateEntities(dependency)</code> across all layers</li>
+<li><code>UpdateEntities(layerEntity, dependency)</code> across all layers</li>
+</ul>
+</li>
+</ul>
+<p>When to use:</p>
+<ul>
+<li>Use <code>CellEntityLayer</code> when cell content should be represented as ECS entities (AI, physics, gameplay systems).</li>
+<li>Prefer <code>CellObjectLayer</code> for large volumes of purely visual, instanced objects.</li>
+</ul>
+<hr>
+<h3 id="73-cellobjectlayer">7.3 <code>CellObjectLayer</code></h3>
+<p><strong>Purpose:</strong> Render a large number of cell-attached visual objects efficiently using bulk instancing.</p>
+<p>Key concepts in <code>CellObjectLayer</code>:</p>
+<ul>
+<li>Uses an <code>IBulkRenderer</code> implementation (from <code>Fwt.Core.BulkRendering</code>) for instanced rendering.</li>
+<li>Maintains LOD logic:
+<ul>
+<li><code>LODSettings : NativeList&lt;CellObjectLayerLODSettings&gt;</code></li>
+<li><code>AllCellObjectsLODSettings : NativeList&lt;CellObjectLODSettings&gt;</code></li>
+<li><code>VisualsByLODLayer : List&lt;BulkRenderItemsDataLayer&gt;</code></li>
+</ul>
+</li>
+<li>Supports “states” per object and multiple submeshes per cell.</li>
+<li>Main runtime entry points:
+<ul>
+<li><code>CalculateCellObjects(...)</code> / <code>CalculateCellObjectsLOD(...)</code></li>
+<li><code>Render(camera, normalizedCameraZoom)</code> or <code>RenderLODs(...)</code></li>
+</ul>
+</li>
+</ul>
+<p>Configuration and baking:</p>
+<ul>
+<li><code>CellObjectLayerConfigAsset</code> (implements <code>ICellObjectLayerConfig</code>) contains:
+<ul>
+<li>object authoring list (<code>ObjectConfigs</code>)</li>
+<li>LOD distances / baked LOD settings</li>
+<li>baked configs, visuals, palette, state configs, etc.</li>
+</ul>
+</li>
+<li>Baking is explicit via context menu commands:
+<ul>
+<li><code>BakeCellObjectConfigs</code></li>
+<li><code>BakeLODSettings</code></li>
+<li><code>ClearBakedData</code></li>
+</ul>
+</li>
+</ul>
+<p>When to use:</p>
+<ul>
+<li>Use for foliage, rocks, props, decorative clutter, or any high-count visuals.</li>
+<li>It is the “visual object” counterpart to <code>CellEntityLayer</code>.</li>
+</ul>
+<hr>
+<h3 id="74-cellregionlayer">7.4 <code>CellRegionLayer</code></h3>
+<p><strong>Purpose:</strong> Maintain and compute “regions” (clusters of cells) and provide region-based lookups.</p>
+<p>Key data (from <code>CellRegionLayer</code>):</p>
+<ul>
+<li><code>CellRegionMap : ColorMapCellValueDataLayer_Int</code><br>
+Per-cell region index.</li>
+<li><code>RegionCells : NativeParallelMultiHashMapDataLayer&lt;int, uint&gt;</code><br>
+Maps region index → set of cell indices.</li>
+<li><code>RegionSizes : NativeListDataLayer&lt;uint&gt;</code><br>
+Stores region sizes.</li>
+</ul>
+<p>Core operations:</p>
+<ul>
+<li><code>CalcRegionsCells(dependency)</code> and <code>CalcRegionsSizes(dependency)</code></li>
+<li><code>GetCellRegion(cellIndex)</code> and setters:
+<ul>
+<li><code>SetCellRegion(...)</code></li>
+<li><code>SetAllCellsRegion(...)</code></li>
+</ul>
+</li>
+<li>Serialization / deserialization support</li>
+</ul>
+<p>Configuration:</p>
+<ul>
+<li><code>CellRegionLayerConfigAsset</code> implements <code>ICellRegionConfig</code>
+<ul>
+<li><code>InitValuesArgs</code> controls default values and color mapping (palette, auto-color mode)</li>
+<li>Provides a context-menu helper: <code>AutoFillColorPalette()</code></li>
+</ul>
+</li>
+</ul>
+<p>When to use:</p>
+<ul>
+<li>Political regions, biome regions, provinces, connected-component labeling, flood-fill results, pathfinding zones, etc.</li>
+</ul>
+<hr>
+<h3 id="75-geoplastlayer">7.5 <code>GeoPlastLayer</code></h3>
+<p><strong>Purpose:</strong> Simulate and/or store “material volumes” on the terrain (amount, density, volume), including derived heights like bedrock and ceiling.</p>
+<p><code>GeoPlastLayer</code> is the base type. It owns maps such as:</p>
+<ul>
+<li><code>AmountMap : ColorMapCellValueDataLayer_Float</code></li>
+<li><code>DensityMap : ColorMapCellValueDataLayer_Float</code></li>
+<li><code>VolumeMap : ColorMapCellValueDataLayer_Float</code></li>
+<li><code>BedrockHeightMap : CellValueDataLayer&lt;float&gt;</code></li>
+<li><code>CeilingHeightMap : CellValueDataLayer&lt;float&gt;</code></li>
+</ul>
+<p>Core phases (exposed by <code>GeoPlastLayerGroup</code> and layers):</p>
+<ul>
+<li><code>PrepareSimulation(...)</code></li>
+<li><code>CalculateSimulation(...)</code></li>
+<li><code>ApplySimulation(...)</code></li>
+<li>Update / derived data phases:
+<ul>
+<li><code>PreparePlastUpdate(...)</code></li>
+<li><code>CalculateDensity(...)</code></li>
+<li><code>CalculateVolume(...)</code></li>
+<li><code>CalculateBedrock(...)</code></li>
+<li><code>CalculateCeiling(...)</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="visual-rendering-visualgeoplastlayer">Visual rendering: <code>VisualGeoPlastLayer</code></h4>
+<p><code>VisualGeoPlastLayer</code> extends <code>GeoPlastLayer</code> and renders plast values into a target <code>ChunkMeshLayer</code>:</p>
+<ul>
+<li><code>SurfaceLayerRef : HexTerrainLayerReference</code></li>
+<li><code>VisualGeoPlastSettings</code>:
+<ul>
+<li>render mode: <code>Amount</code> or <code>Volume</code></li>
+<li>transparency behavior and thresholds</li>
+</ul>
+</li>
+</ul>
+<p>It schedules <code>RenderGeoPlastToHeightMapJob</code> that writes into:</p>
+<ul>
+<li>surface <code>HeightMap</code></li>
+<li>surface <code>BiomeMap</code></li>
+<li>surface <code>TransparencyMap</code></li>
+</ul>
+<p>This is the bridge between simulation data and the visible terrain surface.</p>
+<h4 id="dynamic-simulation-dynamicgeoplastlayer">Dynamic simulation: <code>DynamicGeoPlastLayer</code></h4>
+<p>Adds flow maps and flow potentials:</p>
+<ul>
+<li><code>VolumeFlowPotentialMap</code>, <code>VolumeFlowMap</code></li>
+<li>Target references:
+<ul>
+<li><code>UpFlowTargetLayerRef</code></li>
+<li><code>DownFlowTargetLayerRef</code></li>
+</ul>
+</li>
+<li>Chunk-level incoming sets to optimize updates</li>
+</ul>
+<p>It provides specialized flow computations (vertical and horizontal), and clear passes with <code>ProfilerMarker</code>s.</p>
+<h4 id="material--thermal-materialgeoplastlayer">Material + thermal: <code>MaterialGeoPlastLayer</code></h4>
+<p>Adds:</p>
+<ul>
+<li><code>HeatMap</code>, <code>TemperatureMap</code></li>
+<li><code>HeatFlowPotentialMap</code>, <code>HeatFlowMap</code></li>
+<li>Plus material settings controlling behavior</li>
+</ul>
+<p>This is the primary layer type targeted by the Sun system (see <code>SunTerrainLayer.ApplySunHeat</code>).</p>
+<hr>
+<h3 id="76-sunterrainlayer-sun-layer">7.6 <code>SunTerrainLayer</code> (Sun Layer)</h3>
+<p><strong>Purpose:</strong> A global system layer that simulates sun position and applies heat/cooling to target GeoPlast layers.</p>
+<p>Key state:</p>
+<ul>
+<li><code>SunPosition : float2</code></li>
+<li><code>DayProgress</code>, <code>YearProgress</code></li>
+<li><code>SunSettings</code></li>
+<li><code>TargetLayers : List&lt;SunTargetLayerSettings&gt;</code></li>
+</ul>
+<p>Core behavior:</p>
+<ul>
+<li><code>Simulate(GeoPlastLayerGroup geoPlastLayers, HexTerrainSimulationTimer timer, JobHandle dependency)</code>
+<ul>
+<li>checks tick settings</li>
+<li>moves the sun (<code>MoveTheSun</code>)</li>
+<li>applies sun heat to each configured target layer (<code>ApplySunHeat</code>)</li>
+</ul>
+</li>
+</ul>
+<p><code>ApplySunHeat</code> targets <code>MaterialGeoPlastLayer</code> and writes into its <code>HeatMap</code> using <code>ApplySunHeatJob</code>.</p>
+<p>Persistence:</p>
+<ul>
+<li>Implements <code>ISerializableTerrainLayer</code>:
+<ul>
+<li><code>SerializeLayer(BinaryWriter writer)</code></li>
+<li><code>DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)</code></li>
+</ul>
+</li>
+</ul>
+<p>When to use:</p>
+<ul>
+<li>Day/night cycles, seasonal cycles, climate-driven simulation, energy input for thermal flow, etc.</li>
+</ul>
+<hr>
+<h2 id="8-creating-your-own-terrain-layer">8. Creating your own Terrain Layer</h2>
+<p>A custom layer typically consists of:</p>
+<ol>
+<li>A <strong>config interface</strong> (optional but recommended)</li>
+<li>A <strong>ScriptableObject config asset</strong> that implements that interface and <code>CreateTerrainLayer()</code></li>
+<li>A <strong>layer class</strong> inheriting <code>HexTerrainLayer</code></li>
+<li>(Optional) A <strong>group</strong> inheriting <code>HexTerrainLayerGroup&lt;T&gt;</code> if you want multiple instances</li>
+</ol>
+<h3 id="81-define-a-config-interface">8.1 Define a config interface</h3>
+<p>Keep it small: only what the layer needs at runtime.</p>
+<pre><code class="lang-csharp">using Fwt.HexTerrains.Data;
+
+public interface IMyLayerConfig 
+{ 
+	InitCellValueDataLayerArgs&lt;float&gt; ValuesArgs { get; set; } 
+	float Multiplier { get; set; } 
+}
+</code></pre>
+<h3 id="82-implement-the-layer">8.2 Implement the layer</h3>
+<p>Key points:</p>
+<ul>
+<li>Allocate/resize native data in <code>Init(HexTerrainSettings)</code>.</li>
+<li>Read config in <code>Init&lt;TInitArgs&gt;</code>.</li>
+<li>Use <code>PrepareToRead/Write</code> + <code>AddRead/WriteDependency</code>.</li>
+<li>Respect dirty flags for performance.</li>
+<li>Release native memory in <code>Dispose()</code>.</li>
+</ul>
+<pre><code class="lang-csharp">using Fwt.HexTerrains.Data; 
+using Fwt.HexTerrains.DataLayers; 
+using Unity.Jobs;
+
+public class MyLayer : HexTerrainLayer 
+{ 
+	public float Multiplier { get; private set; } = 1f;
+	public ColorMapCellValueDataLayer_Float Values;
+
+    public override void Init(HexTerrainSettings settings)
+    {
+        Values ??= new ColorMapCellValueDataLayer_Float();
+        Values.InitColoredDataLayer(new InitColorMapCellValueDataLayerArgs&lt;float&gt;
+        {
+            DefaultValue = 0f
+        });
+
+        base.Init(settings);
+    }
+
+    public override void Init&lt;TInitArgs&gt;(HexTerrainSettings settings, TInitArgs initArgs)
+    {
+        base.Init(settings, initArgs);
+
+        if (initArgs is IMyLayerConfig config)
+        {
+            Multiplier = config.Multiplier;
+            InitColoredDataLayer(Values, config.ValuesArgs);
+        }
+    }
+
+    public JobHandle DoWork(JobHandle dependency)
+    {
+        if (Values == null || !Values.IsDirty)
+        {
+            return dependency;
+        }
+
+        var deps = Values.PrepareToWrite();
+        dependency = JobHandle.CombineDependencies(dependency, deps);
+
+        // Schedule jobs here...
+        // dependency = job.Schedule(Settings.CellsCount, Settings.CellsPerChunk, dependency);
+
+        Values.AddWriteDependency(dependency);
+        Values.SetDirty(true);
+        return dependency;
+    }
+
+    public override void SetAllDirty(bool isDirty)
+    {
+        Values?.SetAllChunksDirty(isDirty);
+    }
+
+    public override void CompleteAllJobs()
+    {
+        base.CompleteAllJobs();
+        Values?.CompleteAllJobs();
+    }
+
+    public override void Cleanup()
+    {
+        Values?.Cleanup();
+    }
+
+    public override JobHandle CleanupAsync(JobHandle dependency)
+    {
+        return Values?.CleanupAsync(dependency) ?? dependency;
+    }
+
+    public override void Dispose()
+    {
+        base.Dispose();
+        Values?.Dispose();
+    }
+}
+</code></pre>
+<h3 id="83-create-the-scriptableobject-config-asset">8.3 Create the ScriptableObject config asset</h3>
+<pre><code class="lang-csharp">using Fwt.HexTerrains.Data; 
+using UnityEngine;
+
+[CreateAssetMenu(fileName = &quot;MyLayerConfig&quot;, menuName = &quot;Fwt/HexTerrains/Custom/My Layer Config&quot;)] 
+public class MyLayerConfigAsset : HexTerrainLayerConfigAsset&lt;MyLayer&gt;, IMyLayerConfig 
+{ 
+    [SerializeField] 
+    private InitColorMapCellValueDataLayerArgs&lt;float&gt; _valuesArgs; 
+    
+    [SerializeField] 
+    private float _multiplier = 1f;
+
+    public InitCellValueDataLayerArgs&lt;float&gt; ValuesArgs
+    {
+        get =&gt; _valuesArgs;
+        set =&gt; _valuesArgs = (InitColorMapCellValueDataLayerArgs&lt;float&gt;)value;
+    }
+
+    public float Multiplier { get =&gt; _multiplier; set =&gt; _multiplier = value; }
+
+    public override HexTerrainLayer CreateTerrainLayer()
+    {
+        return new MyLayer();
+    }
+}
+</code></pre>
+<blockquote>
+<p>Implementation note: prefer matching the exact argument type you use (<code>InitCellValueDataLayerArgs&lt;T&gt;</code> vs <code>InitColorMapCellValueDataLayerArgs&lt;T&gt;</code>). The snippet above illustrates the idea; use the appropriate type for your layer’s data.</p>
+</blockquote>
+<h3 id="84-optional-add-a-group">8.4 (Optional) Add a group</h3>
+<p>If you want multiple instances (e.g., multiple <code>MyLayer</code>s), create:</p>
+<ul>
+<li><code>MyLayerGroup : HexTerrainLayerGroup&lt;MyLayer&gt;</code></li>
+</ul>
+<p>Then add orchestration methods the way existing groups do (combine job handles, render loops, etc.).</p>
+<hr>
+<h2 id="9-best-practices--pitfalls">9. Best practices &amp; pitfalls</h2>
+<h3 id="91-always-respect-job-dependencies">9.1 Always respect job dependencies</h3>
+<ul>
+<li>Call <code>PrepareToRead()</code> / <code>PrepareToWrite()</code> before scheduling.</li>
+<li>Combine dependencies with the incoming <code>JobHandle</code>.</li>
+<li>Register the resulting handle back into each data layer.</li>
+</ul>
+<p>This prevents race conditions and hard-to-debug memory safety issues.</p>
+<h3 id="92-avoid-unnecessary-work">9.2 Avoid unnecessary work</h3>
+<ul>
+<li>Use <code>IsDirty</code> checks early.</li>
+<li>Prefer chunk-level dirty sets when generating meshes.</li>
+</ul>
+<h3 id="93-complete-jobs-before-resizing-or-disposing">9.3 Complete jobs before resizing or disposing</h3>
+<ul>
+<li><code>HexTerrainLayer.Init</code> calls <code>CompleteAllJobs()</code> for safety.</li>
+<li>In your layer, override <code>CompleteAllJobs()</code> and complete your data layers too.</li>
+</ul>
+<h3 id="94-keep-unityengine-api-calls-out-of-jobs">9.4 Keep UnityEngine API calls out of jobs</h3>
+<p>Jobs should operate on blittable/native data. Keep any Unity object manipulation (like creating <code>Mesh</code> instances) on the main thread, typically in methods such as <code>CreateChunkMeshes()</code>.</p>
+<h3 id="95-use-hexterrainlayerreference-for-cross-layer-wiring">9.5 Use <code>HexTerrainLayerReference</code> for cross-layer wiring</h3>
+<p>Prefer references over hard-coded indices so configurations remain stable when layer order changes.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<ul>
+<li><code>HexTerrainLayer</code> defines a strict lifecycle and safe job-based data access patterns.</li>
+<li><code>HexTerrainLayerGroup</code> composes layers, provides lookup by name/index/reference, and orchestrates jobs across many layers.</li>
+<li>The framework’s main pillar layers cover:
+<ul>
+<li>surface data &amp; meshes (<code>ChunkMeshLayer</code> / <code>VisualChunkMeshLayer</code>)</li>
+<li>ECS-backed content (<code>CellEntityLayer</code>)</li>
+<li>instanced visuals (<code>CellObjectLayer</code>)</li>
+<li>region clustering (<code>CellRegionLayer</code>)</li>
+<li>geo/material simulation (<code>GeoPlastLayer</code> family)</li>
+<li>global energy input (<code>SunTerrainLayer</code>)</li>
+</ul>
+</li>
+<li>Custom layers follow the same pattern: config interface + config asset + layer class (+ optional group).</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/terrain-layers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

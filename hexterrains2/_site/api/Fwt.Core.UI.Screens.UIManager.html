@@ -1,0 +1,2158 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class UIManager | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class UIManager | Hex Terrains Framework ">
+    
+    <meta name="description" content="Base class for MonoBehaviour component that controls UI screens. If you want it to collect all existing screens from scene, override IsCollectUIScreensFromSceneOnStart property . Call an ApplyConfig() method to make the UI system be able to create screens by request (it uses prefabs copied from the list provided into this method) .">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.Core.UI.Screens.UIManager">
+
+
+
+  <h1 id="Fwt_Core_UI_Screens_UIManager" data-uid="Fwt.Core.UI.Screens.UIManager" class="text-break">Class UIManager</h1>
+  <div class="markdown level0 summary"><p>Base class for MonoBehaviour component that controls UI screens.
+If you want it to collect all existing screens from scene,
+override IsCollectUIScreensFromSceneOnStart property <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_IsCollectUIScreensFromSceneOnStart">IsCollectUIScreensFromSceneOnStart</a>.
+Call an ApplyConfig() method to make the UI system be able to create screens by request
+(it uses prefabs copied from the list provided into this method) <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_ApplyConfig_System_Collections_Generic_IList_Fwt_Core_UI_Screens_UIScreen__">ApplyConfig(IList&lt;UIScreen&gt;)</a>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Object</span></div>
+    <div class="level2"><span class="xref">Component</span></div>
+    <div class="level3"><span class="xref">Behaviour</span></div>
+    <div class="level4"><span class="xref">MonoBehaviour</span></div>
+    <div class="level5"><span class="xref">UIManager</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.Core.UI.Screens.IUISystemAPI.html">IUISystemAPI</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">MonoBehaviour.IsInvoking()</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.CancelInvoke()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.Invoke(string, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.InvokeRepeating(string, float, float)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.CancelInvoke(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.IsInvoking(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StartCoroutine(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine(IEnumerator)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StartCoroutine_Auto(IEnumerator)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.ienumerator">MonoBehaviour.StopCoroutine(IEnumerator)</a>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.StopCoroutine(Coroutine)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">MonoBehaviour.StopCoroutine(string)</a>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.StopAllCoroutines()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">MonoBehaviour.print(object)</a>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.destroyCancellationToken</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.useGUILayout</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.didStart</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.didAwake</span>
+    </div>
+    <div>
+      <span class="xref">MonoBehaviour.runInEditMode</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.enabled</span>
+    </div>
+    <div>
+      <span class="xref">Behaviour.isActiveAndEnabled</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponent(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.TryGetComponent(Type, out Component)</a>
+    </div>
+    <div>
+      <span class="xref">Component.TryGetComponent&lt;T&gt;(out T)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.GetComponent(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInChildren(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInChildren&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInChildren(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInChildren&lt;T&gt;(bool, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentsInChildren&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponentsInChildren&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentInParent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentInParent&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponentsInParent(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Component.GetComponentsInParent&lt;T&gt;(bool, List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentsInParent&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Component.GetComponents(Type, List&lt;Component&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">Component.GetComponents&lt;T&gt;(List&lt;T&gt;)</a>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponents&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Component.GetComponentIndex()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.CompareTag(string)</a>
+    </div>
+    <div>
+      <span class="xref">Component.CompareTag(TagHandle)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessageUpwards(string, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, object, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.SendMessage(string, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object, SendMessageOptions)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">Component.BroadcastMessage(string, SendMessageOptions)</a>
+    </div>
+    <div>
+      <span class="xref">Component.transform</span>
+    </div>
+    <div>
+      <span class="xref">Component.gameObject</span>
+    </div>
+    <div>
+      <span class="xref">Component.tag</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetHashCode()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Scene)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <span class="xref">Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">Object.name</span>
+    </div>
+    <div>
+      <span class="xref">Object.hideFlags</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.Core.html">Core</a>.<a class="xref" href="Fwt.Core.UI.html">UI</a>.<a class="xref" href="Fwt.Core.UI.Screens.html">Screens</a></h6>
+  <h6><strong>Assembly</strong>: fwt.core.dll</h6>
+  <h5 id="Fwt_Core_UI_Screens_UIManager_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class UIManager : MonoBehaviour, IUISystemAPI</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_AllScreens" data-uid="Fwt.Core.UI.Screens.UIManager.AllScreens">AllScreens</h4>
+  <div class="markdown level1 summary"><p>List of all screens system knows about (created by the system or found in the scene).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;UIScreen&gt; AllScreens</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_ScreenPrefabByName" data-uid="Fwt.Core.UI.Screens.UIManager.ScreenPrefabByName">ScreenPrefabByName</h4>
+  <div class="markdown level1 summary"><p>Dictionary of all prefabs of the UI Screens this system can create.
+Key - Screen name.
+This dictionary is filled when AddScreenPrefab() is called <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_AddScreenPrefab_Fwt_Core_UI_Screens_UIScreen_">AddScreenPrefab(UIScreen)</a>.
+<a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_ApplyConfig_System_Collections_Generic_IList_Fwt_Core_UI_Screens_UIScreen__">ApplyConfig(IList&lt;UIScreen&gt;)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, UIScreen&gt; ScreenPrefabByName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_ScreenPrefabByType" data-uid="Fwt.Core.UI.Screens.UIManager.ScreenPrefabByType">ScreenPrefabByType</h4>
+  <div class="markdown level1 summary"><p>Dictionary of all prefabs of the UI Screens this system can create.
+Key - Screen type.
+this dictionary is filled when AddScreenPrefab() is called <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_AddScreenPrefab_Fwt_Core_UI_Screens_UIScreen_">AddScreenPrefab(UIScreen)</a>.
+<a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_ApplyConfig_System_Collections_Generic_IList_Fwt_Core_UI_Screens_UIScreen__">ApplyConfig(IList&lt;UIScreen&gt;)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Type, UIScreen&gt; ScreenPrefabByType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_ScreenPrefabs" data-uid="Fwt.Core.UI.Screens.UIManager.ScreenPrefabs">ScreenPrefabs</h4>
+  <div class="markdown level1 summary"><p>List of all prefabs of the UI Screens this system can create.
+This list is filled when AddScreenPrefab() is called <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_AddScreenPrefab_Fwt_Core_UI_Screens_UIScreen_">AddScreenPrefab(UIScreen)</a>.
+<a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_ApplyConfig_System_Collections_Generic_IList_Fwt_Core_UI_Screens_UIScreen__">ApplyConfig(IList&lt;UIScreen&gt;)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public List&lt;UIScreen&gt; ScreenPrefabs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_ScreensByName" data-uid="Fwt.Core.UI.Screens.UIManager.ScreensByName">ScreensByName</h4>
+  <div class="markdown level1 summary"><p>Dictionary of all screens system knows about (created by the system or found in the scene).
+Key - Screen name. <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_CreateScreen_System_String_">CreateScreen(string)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;string, UIScreen&gt; ScreensByName</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a>, <a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_ScreensByType" data-uid="Fwt.Core.UI.Screens.UIManager.ScreensByType">ScreensByType</h4>
+  <div class="markdown level1 summary"><p>Dictionary of all screens system knows about (created by the system or found in the scene).
+Key - Screen type. <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_CreateScreen_System_Type_">CreateScreen(Type)</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Dictionary&lt;Type, UIScreen&gt; ScreensByType</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.dictionary-2">Dictionary</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a>, <a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_Core_UI_Screens_UIManager_isCollectUIScreensFromSceneOnStart" data-uid="Fwt.Core.UI.Screens.UIManager.isCollectUIScreensFromSceneOnStart">isCollectUIScreensFromSceneOnStart</h4>
+  <div class="markdown level1 summary"><p>If true, will collect all the UIScreens from the scene using Objecct.FindAllObjectsOfType in Start() method <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_Start">Start()</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[SerializeField]
+protected bool isCollectUIScreensFromSceneOnStart</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_IsCollectUIScreensFromSceneOnStart_" data-uid="Fwt.Core.UI.Screens.UIManager.IsCollectUIScreensFromSceneOnStart*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_IsCollectUIScreensFromSceneOnStart" data-uid="Fwt.Core.UI.Screens.UIManager.IsCollectUIScreensFromSceneOnStart">IsCollectUIScreensFromSceneOnStart</h4>
+  <div class="markdown level1 summary"><p>If true, OnCreate will collect all UIScreens from the scene using Objecct.FindAllObjectsOfType</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool IsCollectUIScreensFromSceneOnStart { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_UIRoot_" data-uid="Fwt.Core.UI.Screens.UIManager.UIRoot*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_UIRoot" data-uid="Fwt.Core.UI.Screens.UIManager.UIRoot">UIRoot</h4>
+  <div class="markdown level1 summary"><p>Root object of the UI system.
+This object is created if none is found in the scene.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public UIRoot UIRoot { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIRoot.html">UIRoot</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_UIScreenRoot_" data-uid="Fwt.Core.UI.Screens.UIManager.UIScreenRoot*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_UIScreenRoot" data-uid="Fwt.Core.UI.Screens.UIManager.UIScreenRoot">UIScreenRoot</h4>
+  <div class="markdown level1 summary"><p>Root transforms for place a UIScreen when it is created.
+The transform of the UIRoot <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_UIRoot">UIRoot</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Transform UIScreenRoot { get; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Transform</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_AddScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.AddScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_AddScreenPrefab_Fwt_Core_UI_Screens_UIScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.AddScreenPrefab(Fwt.Core.UI.Screens.UIScreen)">AddScreenPrefab(UIScreen)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void AddScreenPrefab(UIScreen screenPrefab)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><span class="parametername">screenPrefab</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_ApplyConfig_" data-uid="Fwt.Core.UI.Screens.UIManager.ApplyConfig*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_ApplyConfig_System_Collections_Generic_IList_Fwt_Core_UI_Screens_UIScreen__" data-uid="Fwt.Core.UI.Screens.UIManager.ApplyConfig(System.Collections.Generic.IList{Fwt.Core.UI.Screens.UIScreen})">ApplyConfig(IList&lt;UIScreen&gt;)</h4>
+  <div class="markdown level1 summary"><p>Copies the provided list of screen prefabs into the system,
+so it can use those prefabs to create screens on request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void ApplyConfig(IList&lt;UIScreen&gt; screenPrefabs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a>&gt;</td>
+        <td><span class="parametername">screenPrefabs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CollectChildScreens_" data-uid="Fwt.Core.UI.Screens.UIManager.CollectChildScreens*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CollectChildScreens" data-uid="Fwt.Core.UI.Screens.UIManager.CollectChildScreens">CollectChildScreens()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Collect Child Screens&quot;)]
+protected virtual void CollectChildScreens()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CollectUIScreensFromScene_" data-uid="Fwt.Core.UI.Screens.UIManager.CollectUIScreensFromScene*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CollectUIScreensFromScene" data-uid="Fwt.Core.UI.Screens.UIManager.CollectUIScreensFromScene">CollectUIScreensFromScene()</h4>
+  <div class="markdown level1 summary"><p>Collects all UI screens present in the current scene and registers them for further processing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void CollectUIScreensFromScene()</code></pre>
+  </div>
+  <h5 id="Fwt_Core_UI_Screens_UIManager_CollectUIScreensFromScene_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method searches for all instances of UIScreen in the scene, including inactive
+ones, and registers each found screen. If no UI screens are found, the method exits without performing any
+actions.</p>
+</div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CreateScreen_Fwt_Core_UI_Screens_UIScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen(Fwt.Core.UI.Screens.UIScreen)">CreateScreen(UIScreen)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen CreateScreen(UIScreen screenPrefab)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><span class="parametername">screenPrefab</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CreateScreen_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen(System.String)">CreateScreen(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a new screen of the specified name.
+Takes a prefab in the ScreenPrefabByName dictionary <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_ScreenPrefabByName">ScreenPrefabByName</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen CreateScreen(string screenName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td><p>name of the UIScreen taken from UIScreen.Name when importing prefabs<a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html#Fwt_Core_UI_Screens_UIScreen_Name">Name</a></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><p>created UIScreen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CreateScreen_System_Type_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen(System.Type)">CreateScreen(Type)</h4>
+  <div class="markdown level1 summary"><p>Creates a new screen of the specified type.
+Takes a prefab in the ScreenPrefabByType dictionary <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_ScreenPrefabByType">ScreenPrefabByType</a></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen CreateScreen(Type screenType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">screenType</span></td>
+        <td><p>type of the screen to create (looks for prefab in ScreenPrefabByType dictionary)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><p>created UIScreen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CreateScreen__1" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen``1">CreateScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Creates a new screen of the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen CreateScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>screen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to create</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_CreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_CreateScreen__1_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.CreateScreen``1(System.String)">CreateScreen&lt;TScreen&gt;(string)</h4>
+  <div class="markdown level1 summary"><p>Creates a new screen of the specified type.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen CreateScreen&lt;TScreen&gt;(string screenName) where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>screen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to create</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DeleteAllScreenPrefabs_" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteAllScreenPrefabs*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DeleteAllScreenPrefabs" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteAllScreenPrefabs">DeleteAllScreenPrefabs()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteAllScreenPrefabs()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DeleteScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DeleteScreenPrefab_Fwt_Core_UI_Screens_UIScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteScreenPrefab(Fwt.Core.UI.Screens.UIScreen)">DeleteScreenPrefab(UIScreen)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteScreenPrefab(UIScreen screenPrefab)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><span class="parametername">screenPrefab</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DeleteScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DeleteScreenPrefab_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteScreenPrefab(System.String)">DeleteScreenPrefab(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteScreenPrefab(string screenName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DeleteScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DeleteScreenPrefab__1" data-uid="Fwt.Core.UI.Screens.UIManager.DeleteScreenPrefab``1">DeleteScreenPrefab&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DeleteScreenPrefab&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DestroyAllScreens_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyAllScreens*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DestroyAllScreens" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyAllScreens">DestroyAllScreens()</h4>
+  <div class="markdown level1 summary"><p>Destroys all UIScreen instances known by the system <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_AllScreens">AllScreens</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DestroyAllScreens()</code></pre>
+  </div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_Fwt_Core_UI_Screens_UIScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen(Fwt.Core.UI.Screens.UIScreen)">DestroyScreen(UIScreen)</h4>
+  <div class="markdown level1 summary"><p>Destroys the specified screen instance.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DestroyScreen(UIScreen screen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><span class="parametername">screen</span></td>
+        <td><p>screen instance to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the screen was destroyed successfully; otherwise, false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen(System.String)">DestroyScreen(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void DestroyScreen(string screenName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_System_Type_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen(System.Type)">DestroyScreen(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DestroyScreen(Type screenType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">screenType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_DestroyScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_DestroyScreen__1" data-uid="Fwt.Core.UI.Screens.UIManager.DestroyScreen``1">DestroyScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Destroys the specified screen.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool DestroyScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the screen was destroyed successfully; otherwise, false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of a screen to destroy</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_FindObjectOnScene_" data-uid="Fwt.Core.UI.Screens.UIManager.FindObjectOnScene*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_FindObjectOnScene__1___0__UnityEngine_FindObjectsInactive_" data-uid="Fwt.Core.UI.Screens.UIManager.FindObjectOnScene``1(``0@,UnityEngine.FindObjectsInactive)">FindObjectOnScene&lt;TObject&gt;(ref TObject, FindObjectsInactive)</h4>
+  <div class="markdown level1 summary"><p>Finds the first active or inactive object of the specified type in the scene, or returns the provided
+reference if it is already assigned.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TObject FindObjectOnScene&lt;TObject&gt;(ref TObject obj, FindObjectsInactive filter = FindObjectsInactive.Include) where TObject : MonoBehaviour</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TObject</span></td>
+        <td><span class="parametername">obj</span></td>
+        <td><p>A reference to the object to find. If this reference is already assigned, it is returned without performing
+a search.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">FindObjectsInactive</span></td>
+        <td><span class="parametername">filter</span></td>
+        <td><p>Specifies whether to include inactive objects in the search. The default is FindObjectsInactive.Include.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TObject</span></td>
+        <td><p>The found object of type TObject, or null if no such object exists in the scene.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TObject</span></td>
+        <td><p>The type of MonoBehaviour to search for in the scene.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_Core_UI_Screens_UIManager_FindObjectOnScene__1___0__UnityEngine_FindObjectsInactive__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method uses Unity's FindFirstObjectByType to locate the object if the provided
+reference is null. If the object is not found, the reference remains null.</p>
+</div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen(System.String)">GetOrCreateScreen(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen GetOrCreateScreen(string screenName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen_System_Type_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen(System.Type)">GetOrCreateScreen(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen GetOrCreateScreen(Type screenType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">screenType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen__1" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen``1">GetOrCreateScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Gets an existing screen of the specified type, or creates a new one if it doesn't exist.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetOrCreateScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td><p>screen instance</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to get or create</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetOrCreateScreen__1_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.GetOrCreateScreen``1(System.String)">GetOrCreateScreen&lt;TScreen&gt;(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetOrCreateScreen&lt;TScreen&gt;(string screenName) where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreen_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreen(System.String)">GetScreen(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen GetScreen(string screenName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreen_System_Type_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreen(System.Type)">GetScreen(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen GetScreen(Type screenType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">screenType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab(System.String)">GetScreenPrefab(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen GetScreenPrefab(string screenName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab_System_Type_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab(System.Type)">GetScreenPrefab(Type)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual UIScreen GetScreenPrefab(Type screenType)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Type</a></td>
+        <td><span class="parametername">screenType</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab__1" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab``1">GetScreenPrefab&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetScreenPrefab&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreenPrefab__1_System_String_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreenPrefab``1(System.String)">GetScreenPrefab&lt;TScreen&gt;(string)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetScreenPrefab&lt;TScreen&gt;(string screenName) where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">screenName</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetScreen__1" data-uid="Fwt.Core.UI.Screens.UIManager.GetScreen``1">GetScreen&lt;TScreen&gt;()</h4>
+  <div class="markdown level1 summary"><p>Gets an existing screen of the specified type if found.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual TScreen GetScreen&lt;TScreen&gt;() where TScreen : UIScreen</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TScreen</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TScreen</span></td>
+        <td><p>type of the screen to get</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_GetUIRoot_" data-uid="Fwt.Core.UI.Screens.UIManager.GetUIRoot*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_GetUIRoot_Fwt_Core_UI_Screens_UIRoot__" data-uid="Fwt.Core.UI.Screens.UIManager.GetUIRoot(Fwt.Core.UI.Screens.UIRoot@)">GetUIRoot(ref UIRoot)</h4>
+  <div class="markdown level1 summary"><p>Gets the existing UIRoot instance if provided; otherwise, creates and returns a new UIRoot component
+attached to a new GameObject.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual UIRoot GetUIRoot(ref UIRoot uiRoot)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIRoot.html">UIRoot</a></td>
+        <td><span class="parametername">uiRoot</span></td>
+        <td><p>A reference to a UIRoot instance. If this parameter is not null, the existing instance is returned;
+otherwise, a new instance is created.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIRoot.html">UIRoot</a></td>
+        <td><p>The UIRoot instance, either the provided one or a newly created instance if the provided reference is null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_Core_UI_Screens_UIManager_GetUIRoot_Fwt_Core_UI_Screens_UIRoot___remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method ensures that a UIRoot component is available for UI management. If a new
+UIRoot is created, it is attached to a GameObject named &quot;UI Root&quot;.</p>
+</div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_InitExistingScreens_" data-uid="Fwt.Core.UI.Screens.UIManager.InitExistingScreens*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_InitExistingScreens" data-uid="Fwt.Core.UI.Screens.UIManager.InitExistingScreens">InitExistingScreens()</h4>
+  <div class="markdown level1 summary"><p>Registers all existing user interface screens in the <a class="xref" href="Fwt.Core.UI.Screens.UIManager.html#Fwt_Core_UI_Screens_UIManager_AllScreens">AllScreens</a> collection for fast search.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual void InitExistingScreens()</code></pre>
+  </div>
+  <h5 id="Fwt_Core_UI_Screens_UIManager_InitExistingScreens_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Call this method to ensure that all screens currently present in the collection are
+registered and available for interaction. This method does not create new screens; it only registers those
+that already exist in the collection. The collection of screens must not be null, and each screen should be
+valid for registration.</p>
+</div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_IsCursorOverUI_" data-uid="Fwt.Core.UI.Screens.UIManager.IsCursorOverUI*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_IsCursorOverUI" data-uid="Fwt.Core.UI.Screens.UIManager.IsCursorOverUI">IsCursorOverUI()</h4>
+  <div class="markdown level1 summary"><p>Returns true if some UI element is under the cursor.
+Uses the</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool IsCursorOverUI()</code></pre>
+  </div>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_RegisterUIScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.RegisterUIScreen*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_RegisterUIScreen_Fwt_Core_UI_Screens_UIScreen_" data-uid="Fwt.Core.UI.Screens.UIManager.RegisterUIScreen(Fwt.Core.UI.Screens.UIScreen)">RegisterUIScreen(UIScreen)</h4>
+  <div class="markdown level1 summary"><p>Registers a user interface screen with the system for management and retrieval.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool RegisterUIScreen(UIScreen screen)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.UI.Screens.UIScreen.html">UIScreen</a></td>
+        <td><span class="parametername">screen</span></td>
+        <td><p>The UIScreen instance to register. This parameter must not be null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the screen was successfully registered; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_Core_UI_Screens_UIManager_RegisterUIScreen_Fwt_Core_UI_Screens_UIScreen__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the screen has a non-empty Name property, it is indexed for quick retrieval by
+name. The screen is also indexed by its type. This method enables dynamic management of UI screens at
+runtime.</p>
+</div>
+
+
+  <a id="Fwt_Core_UI_Screens_UIManager_Start_" data-uid="Fwt.Core.UI.Screens.UIManager.Start*"></a>
+  <h4 id="Fwt_Core_UI_Screens_UIManager_Start" data-uid="Fwt.Core.UI.Screens.UIManager.Start">Start()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual void Start()</code></pre>
+  </div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.UI.Screens.IUISystemAPI.html">IUISystemAPI</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDisableGameObject__1___0_">Extensions_UnityObject.SmartDisableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartEnableGameObject__1___0_">Extensions_UnityObject.SmartEnableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

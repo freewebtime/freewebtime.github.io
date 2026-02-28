@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Getting Started | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Getting Started | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="getting-started">Getting Started</h1>
+
+<p><img src="images/GameView.png" alt="Terrain View"></p>
+<h2 id="demo-scenes">Demo Scenes</h2>
+<ol>
+<li><p>Install package from asset store.</p>
+</li>
+<li><p>If you use a Universal Render Pipeline, you are good to go. But if you use a High Definition Render Pipeline, extract HDRP assets from included DemoAssets_HDRP.unitypackage (<code>Assets/freewebtime/Samples/HexTerrains_Demo/DemoAssets_HDRP.unitypackage</code>). Double click on the DemoAssets_HDRP.unitypackage, in the popup ensure that all assets are selected and press &quot;Import&quot; button. This will overwrite URP assets with HDRP ones in your demo scenes.</p>
+<p><img src="images/InstallHDRPAssets.png" alt="Install HDRP Assets"></p>
+</li>
+<li><p>Navigate to folder <code>Assets/freewebtime/Samples/HexTerrains_Demo/Scenes</code></p>
+</li>
+<li><p>Open <code>Static Terrains</code> scene or <code>Dynamic Terrains</code> scene</p>
+<p><img src="images/DemoScene.png" alt="Demo Scene" title="Open a Showcase scene"></p>
+</li>
+<li><p>Press &quot;Play&quot; button</p>
+<p><img src="images/GameplayOnDemoScene.png" alt="Gameplay on Demo Scene"></p>
+</li>
+<li><p>To create another terrain, select &quot;System&quot; User Tool category, then &quot;Create New&quot;</p>
+<p><img src="images/CreateNewTerrainButton.png" alt="Create Terrain"></p>
+</li>
+<li><p>In openned window select a terrain prefab and put the settings you want.</p>
+<p><img src="images/CreateNewTerrainPopup.png" alt="Create Terrain Popup"></p>
+</li>
+<li><p>Press &quot;Create&quot; button</p>
+</li>
+<li><p>Enjoy!</p>
+<p><img src="images/PressPlay.png" alt="Gameplay" title="Created terrain"></p>
+</li>
+</ol>
+<h2 id="in-game-terrain-editor">In-game terrain editor</h2>
+<ol>
+<li><p>In-game editor is a State Machine called (see class <code>UserToolStateMachine</code>). State Machine has a set of User Tool States like Deform Terrain, Paint Biomes, Paint Cell Items, Paint Countries, etc. Every UserToolState communicates with a Terrain using a proxy implementation of the <code>IHexTerrainAPI</code> (see <code>HexTerrainAPI</code> class).</p>
+</li>
+<li><p>All User Tools are split between a set of categories:</p>
+<ul>
+<li><p><code>Surfaces Tools</code></p>
+<p>(Deform, Level, Noise, Smooth, Apply Heightmap, Paint Biome, Auto-paint Biome, Stamp Height, Stamp Biome, Set Layer Visibility)</p>
+<p><img src="images/SurfaceTools.png" alt="Ground Tools"></p>
+</li>
+<li><p><code>Cell Objects</code></p>
+<p>(Paint Cell Object, Stamp Cell Object, Cell Object Index, Cell Object State, Cell Object Position, Cell Object Rotation, Cell Object Scale)</p>
+<p><img src="images/CellObjectTools.png" alt="Cell Items"></p>
+</li>
+<li><p><code>Cell Entities</code></p>
+<p>(Paint Cell Entity, Stamp Cell Entity, Cell Entity Index, Cell Entity State, Cell Entity Position, Cell Entity Rotation, Cell Entity Scale)</p>
+<p><img src="images/CellEntityTools.png" alt="Cell Entities"></p>
+</li>
+<li><p><code>Cell Regions</code></p>
+<p>(Paint Regions, Stamp Regions)</p>
+<p><img src="images/CellRegionTools.png" alt="Provinces"></p>
+</li>
+<li><p><code>GeoPlast Amount Tools</code></p>
+<p>(Level, Apply Heightmap, Deform, Noise, Smooth, Stamp)</p>
+<p><img src="images/GeoPlastAmountTools.png" alt="GeoPlast Amount"></p>
+</li>
+<li><p><code>GeoPlast Density Tools</code></p>
+<p>(Level, Apply Heightmap, Deform, Noise, Smooth, Stamp)</p>
+<p><img src="images/GeoPlastDensityTools.png" alt="GeoPlast Amount"></p>
+</li>
+<li><p><code>GeoPlast Heat Tools</code></p>
+<p>(Level, Apply Heightmap, Deform, Noise, Smooth, Stamp, Sun)</p>
+<p><img src="images/GeoPlastHeatTools.png" alt="GeoPlast Amount"></p>
+</li>
+<li><p><code>System Tools</code></p>
+<p>(Toggle Visibility, Resize Terrain, Save Terrain, Load Terrain, Create New)</p>
+<p><img src="images/SystemTools.png" alt="System"></p>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="view-modes">View Modes</h2>
+<h3 id="how-to-change-the-view-mode">How to change the View Mode</h3>
+<p>To change a view mode, click on &quot;View Mode&quot; dropdown and select an option you want.</p>
+<p><img src="images/ViewModes.png" alt="View Modes"></p>
+<p>Hex Terrain supports rendering in a different view modes. View mode is a number, the value of the <code>HexTerrainViewMode</code> component on a Terrain Entity.</p>
+<pre><code class="lang-csharp">    /// &lt;summary&gt;
+    /// Contains the current view mode of the terrain.
+    /// &lt;/summary&gt;
+    public struct HexTerrainViewMode : IComponentData
+    {
+        /// &lt;summary&gt;
+        /// The current view mode of the terrain.
+        /// &lt;/summary&gt;
+        public int Value;
+    }
+</code></pre>
+<p>Take a look at the Terrain Prefab. The Hex Terrain Authoring component has a <code>View Mode Collection Config</code> field.</p>
+<h3 id="how-to-setup-view-modes">How to Setup View Modes</h3>
+<p><img src="images/ViewModeCollectionOnTerrainAuthoring.png" alt="View Mode Collection on Terrain Prefab"></p>
+<p><code>View Mode Collection Config</code> is a scriptable object that can be created by selecting <code>Create/Fwt/HexTerrains/View Modes/ViewMode Collection config</code></p>
+<p><img src="images/CreateViewModeCollectionAsset.png" alt="Create View Mode Collection Config"></p>
+<p>The asset holds a collection of View Mode configs. You may want to have different collections of View Modes for different terrains:</p>
+<p><img src="images/ViewModeCollectionAsset.png" alt="View Mode Collection Asset"></p>
+<p>There are several built-in view modes already, but it's very easy to expand the list. Here are few examples:</p>
+<ul>
+<li><p>Default View Mode (Regular terrain view)</p>
+<p><img src="images/ViewModeNormal.png" alt="ViewMode Normal"></p>
+</li>
+<li><p>Biomes View Mode</p>
+<p><img src="images/ViewModeBiomes.png" alt="ViewMode Biome"></p>
+</li>
+<li><p>Heighmap View Mode</p>
+<p><img src="images/ViewModeHeightmap.png" alt="ViewMode Heightmap"></p>
+</li>
+<li><p>Provinces View Mode</p>
+<p><img src="images/ViewModeProvinces.png" alt="ViewMode Provinces"></p>
+</li>
+<li><p>Ocean Heat View Mode</p>
+<p><img src="images/ViewModeOceanHeat.png" alt="ViewMode Countries"></p>
+</li>
+<li><p>Ocean Temperature View Mode</p>
+<p><img src="images/ViewModeOceanTemperature.png" alt="ViewMode Countries"></p>
+</li>
+<li><p>And others (see &quot;Assets/Samples/com.freewebtime.hexterrains/2.0.0/HexTerrains_Demo/Configs/ViewModes&quot; folder)</p>
+</li>
+</ul>
+<p>To setup a ViewMode, create a new ViewMode asset scriptable object:</p>
+<p><img src="images/CreateViewModeAsset.png" alt="Create ViewMode Asset"></p>
+<p>Configure the ViewMode asset:</p>
+<p><img src="images/ConfigureViewModeAsset.png" alt="Configure ViewMode Asset"></p>
+<p>Add as much ColorMap layers as you need, and set which data should be displayed on each of them, and from which terrain layer to get the data.</p>
+<p>For example, there is a &quot;Default&quot; View Mode that fills 6 textures with color data: Ground Biome, Cell Entities, Cell Objects, Ocean Biomes, Snow Biomes, Clouds Biomes. All 6 textures are filled with colors from respective data layers and then are sent to the Minimap UI where are displayed together one on top of another. See preconfigured ViewMode configs for more details. Note that textures that are filled with colors should have Read/Write option enabled in the texture import settings:</p>
+<p><img src="images/ReadWriteEnabledTexture.png" alt="Enable Read/Write for Textures"></p>
+<p>Most of data layers support a color map (they have a color map NativeArray and they fill a corresponding pixel with a color that respresents the current cell value). For example, the ChunkMesh has a BiomeMap data layer and each biome has it's own color:</p>
+<p><img src="images/BiomesColorMapPalette.png" alt="Biomes Color Palette"></p>
+<p>or, for example, the Color setup for each Cell Object:</p>
+<p><img src="images/CellObjectColors.png" alt="Cell Object Colors"></p>
+<h3 id="terrain-materials-by-view-mode">Terrain materials by View Mode</h3>
+<p>Take a look at configuration of one of your ChunkMesh Layer configs. For example, the Earth Ground Chunk Mesh Layer (<code>Assets/freewebtime/Samples/HexTerrains_Demo/Configs/Terrain Layers/ChunkMesh/Ground_Earth ChunkMesh</code>). You can see a <code>Render Configs</code> list and a <code>Default Render Config</code>. When ViewMode is 0, the ChunkMesh layer is rendered with <code>RenderConfigs[0]</code>, when ViewMode is 1, it uses <code>RenderConfigs[1]</code>, and so on. If there is no Render Config at index of a View Mode, the layer is rendered with <code>Default Render Config</code>. This way you can setup different looks in different View Modes.</p>
+<p><img src="images/RenderConfigs.png" alt="Terrain Render Configs"></p>
+<p>Render Config is a collection of Materials to be used for a generated Terrain Chunk Mesh (one material per submesh):</p>
+<p><img src="images/RenderConfigs_Materials2.png" alt="Color Map Textures2"></p>
+<p><img src="images/RenderConfigs_Materials.png" alt="Color Map Textures2"></p>
+<p>If you want to render a color map data on a terrain directly (the colors from Minimap on a terrain surface), in a terrain material for a specific ViewMode use the same texture that is used on Minimap UI, and make a material that uses UV3 (fourth UV set):</p>
+<p><img src="images/ColorMapShader.png" alt="Color Map Shader"></p>
+<p><img src="images/ColorMapMaterial.png" alt="Color Map Textures3"></p>
+<h2 id="create-terrain-on-scene-load">Create terrain on scene load</h2>
+<p>If you want to have a terrain loaded at scene load, just put on the subscene a terrain prefab. If you have a <code>HexTerrainEditor</code> prefab on the scene, set a reference to the terrain prefab in the <code>User Tools State Machine Authoring</code> script in the field <code>Terrain</code>.</p>
+<p>You can find Terrain prefabs in the Samples folder by path &quot;HexTerrains_Demo/Prefabs/Prefabs&quot;</p>
+<p><img src="images/TerrainPrefabs.png" alt="Terrain Prefabs"></p>
+<p>Put a prefab you want on the subscene. Now the terrain will be baked and appear on a scene in Play mode.</p>
+<p>If you have a Terrain Editor on the subscene, set it a reference to the terrain authoring game object.</p>
+<p><img src="images/ReferenceToATerrainEntity.png" alt="Terrain Entity Reference"></p>
+<blockquote>
+<p>Note: if you don't set a reference to the terrain on the HexTerrainEditor, you will not be able to edit a terrain using the User Tools Panel at the bottom center of the screen.</p>
+</blockquote>
+<blockquote>
+<p>Note: HexTerrainEditor prefab is optional. It is needed for having the User Tools Panel to be created. For your gameplay it might not be needed, so feel free to get rid of it.</p>
+</blockquote>
+<h2 id="how-to-interact-with-a-terrain">How to interact with a Terrain</h2>
+<ol>
+<li>To see how it's done, take a look at interface <code>IHexTerrainAPI</code> and it's example implementation <code>HexTerrainAPI</code> class:</li>
+</ol>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// Provides a comprehensive interface for interacting with hexagonal terrain systems, enabling access to terrain
+/// entities, layers, settings, and related UI and environment functionality.
+/// &lt;/summary&gt;
+/// &lt;remarks&gt;The IHexTerrainAPI interface exposes methods and properties for managing and querying various
+/// aspects of a hex terrain, including cell data, terrain layers, brush controls, visibility, and persistence. It
+/// supports advanced operations such as layer manipulation, raycasting, prefab configuration, and UI screen
+/// management. Implementations should ensure thread safety and proper initialization of terrain entities and layers
+/// before use. This interface is intended for use in applications that require dynamic and granular control over
+/// hex terrain features, such as editors or simulation tools.&lt;/remarks&gt;
+public interface IHexTerrainAPI
+{
+    ///...
+    
+    /// &lt;summary&gt;
+    /// Returns a terrain layer of type &lt;typeparamref name=&quot;TTerrainLayer&quot;/&gt; from the terrain layer group &lt;typeparamref name=&quot;TTerrainLayerGroup&quot;/&gt; from the Terrain Entity
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TTerrainLayer&quot;&gt;Type of the Terrain layer to get from a layer group&lt;/typeparam&gt;
+    /// &lt;typeparam name=&quot;TTerrainLayerGroup&quot;&gt;Type of the Terrain Layer Group to find on the entity&lt;/typeparam&gt;
+    /// &lt;param name=&quot;layerReference&quot;&gt;reference data to needed layer&lt;/param&gt;
+    /// &lt;returns&gt;terrain layer if found and null otherwise&lt;/returns&gt;
+    TTerrainLayer GetTerrainLayer&lt;TTerrainLayerGroup, TTerrainLayer&gt;(HexTerrainLayerReference layerReference)
+        where TTerrainLayer : HexTerrainLayer
+        where TTerrainLayerGroup : HexTerrainLayerGroup
+    {
+        var layerGroup = GetTerrainLayer&lt;TTerrainLayerGroup&gt;();
+        if (layerGroup != null)
+        {
+            return layerGroup.GetLayer&lt;TTerrainLayer&gt;(layerReference);
+        }
+
+        return null;
+    }
+
+
+    /// &lt;summary&gt;Returns the HeightMap value at the specified cell index from the specified ChunkMeshLayer.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TLayerGroup&quot;&gt;type of HexTerrainLayerGroup entity component to get the ChunkMeshLayer from&lt;/typeparam&gt;
+    /// &lt;typeparam name=&quot;TLayer&quot;&gt;type of ChunkMeshLayer from the HexTerrainLayerGroup to get a cell value from&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a value from&lt;/param&gt;
+    /// &lt;param name=&quot;layerReference&quot;&gt;reference to the layer to get a cell value from&lt;/param&gt;
+    /// &lt;returns&gt;value if found or null if not found&lt;/returns&gt;
+    float? GetCellHeight&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference)
+        where TLayerGroup : HexTerrainLayerGroup, IComponentData
+        where TLayer : ChunkMeshLayer;
+
+
+    /// &lt;summary&gt;
+    /// Sets the HeightMap value at the specified cell index at the specified ChunkMeshLayer.
+    /// &lt;/summary&gt;
+    /// &lt;typeparam name=&quot;TLayerGroup&quot;&gt;type of HexTerrainLayerGroup entity component to get the ChunkMeshLayer from&lt;/typeparam&gt;
+    /// &lt;typeparam name=&quot;TLayer&quot;&gt;type of ChunkMeshLayer from the HexTerrainLayerGroup to set a cell value at&lt;/typeparam&gt;
+    /// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set a value at&lt;/param&gt;
+    /// &lt;param name=&quot;layerReference&quot;&gt;reference to the layer to set a cell value at&lt;/param&gt;
+    /// &lt;param name=&quot;value&quot;&gt;value to set&lt;/param&gt;
+    /// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+    bool SetCellHeight&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference, float value)
+        where TLayerGroup : HexTerrainLayerGroup, IComponentData
+        where TLayer : ChunkMeshLayer;
+
+
+    /// ...    
+}
+</code></pre>
+<p>In general all the interactions are done by accessing components on the Terrain Entity:</p>
+<pre><code class="lang-csharp">/// &lt;summary&gt;
+/// returns a data layer from the TerrainEntity &lt;see cref=&quot;TerrainEntity&quot;/&gt; 
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;TDataLayer&quot;&gt;&lt;/typeparam&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+public virtual TDataLayer GetTerrainLayer&lt;TDataLayer&gt;() where TDataLayer : class
+{
+    if (!EntityManager.Exists(TerrainEntity) || !EntityManager.TryGetComponentObject&lt;TDataLayer&gt;(TerrainEntity, out var dataLayer))
+    {
+        return default;
+    }
+    return dataLayer;
+}
+
+/// &lt;summary&gt;Returns the HeightMap value at the specified cell index from the specified ChunkMeshLayer.
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;TLayerGroup&quot;&gt;type of HexTerrainLayerGroup entity component to get the ChunkMeshLayer from&lt;/typeparam&gt;
+/// &lt;typeparam name=&quot;TLayer&quot;&gt;type of ChunkMeshLayer from the HexTerrainLayerGroup to get a cell value from&lt;/typeparam&gt;
+/// &lt;param name=&quot;cellIndex&quot;&gt;cell index to get a value from&lt;/param&gt;
+/// &lt;param name=&quot;layerReference&quot;&gt;reference to the layer to get a cell value from&lt;/param&gt;
+/// &lt;returns&gt;value if found or null if not found&lt;/returns&gt;
+public virtual float? GetCellHeight&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference)
+    where TLayerGroup : HexTerrainLayerGroup, IComponentData
+    where TLayer : ChunkMeshLayer
+{
+    var layersList = GetTerrainLayer&lt;TLayerGroup&gt;();
+    if (layersList == null)
+    {
+        return default;
+    }
+
+    var terrainLayer = layersList.GetLayer&lt;TLayer&gt;(layerReference);
+    if (terrainLayer == null)
+    {
+        return default;
+    }
+
+    var dataLayer = terrainLayer.HeightMap;
+
+    if (!dataLayer.TryGetData(cellIndex, out var value))
+    {
+        return default;
+    }
+
+    return value;
+}
+
+/// &lt;summary&gt;
+/// Sets the HeightMap value at the specified cell index at the specified ChunkMeshLayer.
+/// &lt;/summary&gt;
+/// &lt;typeparam name=&quot;TLayerGroup&quot;&gt;type of HexTerrainLayerGroup entity component to get the ChunkMeshLayer from&lt;/typeparam&gt;
+/// &lt;typeparam name=&quot;TLayer&quot;&gt;type of ChunkMeshLayer from the HexTerrainLayerGroup to set a cell value at&lt;/typeparam&gt;
+/// &lt;param name=&quot;cellIndex&quot;&gt;cell index to set a value at&lt;/param&gt;
+/// &lt;param name=&quot;layerReference&quot;&gt;reference to the layer to set a cell value at&lt;/param&gt;
+/// &lt;param name=&quot;value&quot;&gt;value to set&lt;/param&gt;
+/// &lt;returns&gt;true if value has been set, otherwise - false&lt;/returns&gt;
+public virtual bool SetCellHeight&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference, float value)
+    where TLayerGroup : HexTerrainLayerGroup, IComponentData
+    where TLayer : ChunkMeshLayer
+{
+    var layersList = GetTerrainLayer&lt;TLayerGroup&gt;();
+    if (layersList == null)
+    {
+        return false;
+    }
+    var terrainLayer = layersList.GetLayer&lt;TLayer&gt;(layerReference);
+    if (terrainLayer == null)
+    {
+        return false;
+    }
+
+    var dataLayer = terrainLayer.HeightMap;
+    if (dataLayer == null)
+    {
+        return false;
+    }
+
+    return dataLayer.TrySetData(cellIndex, value);
+}
+</code></pre>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/getting-started.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

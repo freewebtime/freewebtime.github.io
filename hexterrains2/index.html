@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Hex Terrain Framework 2 – Modular, High-Performance Hex-Based World System for Unity DOTS | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Hex Terrain Framework 2 – Modular, High-Performance Hex-Based World System for Unity DOTS | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="favicon.ico">
+      <link rel="stylesheet" href="styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="styles/docfx.css">
+      <link rel="stylesheet" href="styles/main.css">
+      <meta property="docfx:navrel" content="toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" height="100%" src="logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hex-terrain-framework-2--modular-high-performance-hex-based-world-system-for-unity-dots"><strong>Hex Terrain Framework 2 – Modular, High-Performance Hex-Based World System for Unity DOTS</strong></h1>
+
+<h2 id="documentation">Documentation</h2>
+<p><a href="https://www.freewebtime.com/hexterrains2/Instruction/index.html">Instruction</a></p>
+<p><a href="https://www.freewebtime.com/hexterrains2/api/index.html">API Reference</a></p>
+<p><strong>Hex Terrains Framework 2</strong> is a high-performance hex-based terrain and world simulation system built on Unity DOTS (Entities 1.0, Jobs, Burst).
+Designed for large-scale strategy, 4X, simulation, and sandbox games, it enables the creation of massive, interactive hex worlds with modular architecture, runtime editing, and efficient parallel processing.
+This is not just a terrain renderer — it is a scalable, layered world system built for long-term production use.</p>
+<p>Each Terrain is implemented as a single ECS Entity composed of modular Terrain Layers.</p>
+<p>Each Terrain Layer encapsulates its own structured Data Layers (per-cell maps) and rendering logic.</p>
+<p>This separation allows clean simulation design, high performance, and full extensibility.</p>
+<h2 id="terrain-layer-systems">Terrain Layer Systems</h2>
+<p><strong>Chunk Mesh Layers</strong></p>
+<p>(Ground, Water, Snow, Roads, Clouds, Rain, etc.)</p>
+<ul>
+<li>Procedurally generated mesh per chunk</li>
+<li>Fully independent surface layers</li>
+<li>Custom or built-in mesh generators</li>
+<li>Designed for layered environmental rendering</li>
+</ul>
+<p><strong>Cell Region Layers</strong></p>
+<p>(Countries, Provinces, Territories, etc.)</p>
+<ul>
+<li>Assigns a Region index per cell</li>
+<li>Caches cell indices per Region for fast queries</li>
+<li>Tracks total cell count per Region</li>
+<li>Automatically renders terrain using Region-based colors</li>
+</ul>
+<p><strong>Cell Entity Layers</strong></p>
+<p>(Trees, Buildings, Units, Props, etc.)</p>
+<ul>
+<li>One ECS Entity per cell</li>
+<li>Fully compatible with ECS workflows</li>
+<li>Suitable for simulation-heavy gameplay systems</li>
+</ul>
+<p><strong>Cell Object Layers</strong></p>
+<p>(Trees, Buildings, Props, etc.)</p>
+<ul>
+<li>Lightweight static visual objects per cell</li>
+<li>Optimized alternative to ECS Entities</li>
+<li>Designed to support millions of objects per terrain</li>
+</ul>
+<p><strong>GeoPlast Layers</strong></p>
+<p>(Ground, Ocean, Snow, Atmosphere, Clouds, etc.)
+Volumetric environmental simulation per cell, supporting:</p>
+<ul>
+<li>Amount</li>
+<li>Density</li>
+<li>Volume</li>
+<li>Heat</li>
+<li>Temperature</li>
+</ul>
+<p>Features:</p>
+<ul>
+<li>Layer stacking (Water above Ground, Air above Water, Clouds above Air, etc.)</li>
+<li>Horizontal material flow (Ocean currents, cloud movement, lava, pollution, etc.)</li>
+<li>Vertical flow between layers
+<ul>
+<li>Clouds condense into Rain</li>
+<li>Water freezes into Snow</li>
+<li>Snow melts into Water</li>
+<li>Water evaporates into Clouds</li>
+</ul>
+</li>
+</ul>
+<p>This enables emergent environmental behavior driven by simulation rather than scripted effects.</p>
+<p><strong>Sun Layer</strong></p>
+<ul>
+<li>A dynamic heat source that moves across the terrain.</li>
+<li>Configurable as a circular zone or directional line</li>
+<li>Heats nearby cells and cools distant ones</li>
+<li>Acts as the primary energy driver for climate simulation</li>
+</ul>
+<blockquote>
+<p>The Sun Layer interacts with GeoPlast systems to produce natural weather cycles, freezing, melting, evaporation, precipitation, and heat-based material flow.</p>
+</blockquote>
+<h2 id="core-features">Core Features</h2>
+<p><strong>Runtime Terrain Editing</strong></p>
+<ul>
+<li>Modular extendable in-game terrain editor. Allows to edit all the data on the terrain</li>
+<li>Brush-based editing (size, opacity, stamping, sampling, auto-paint)</li>
+<li>Real-time feedback</li>
+<li>In-game UI Toolkit editor</li>
+</ul>
+<p><strong>Dynamic Terrain Creation</strong></p>
+<ul>
+<li>Create terrains at runtime</li>
+<li>Custom dimensions, terrain settings, and resolution</li>
+<li>Regenerate or resize without restarting</li>
+</ul>
+<p><strong>Modular Terrain Layer Architecture</strong></p>
+<p>Create custom Terrain Layers composed of Data Maps such as height, biomes, regions, resources, entities, or custom gameplay values.</p>
+<p>Each Data Layer:</p>
+<ul>
+<li>Is self-contained</li>
+<li>Uses per-chunk dirty flag tracking</li>
+<li>Supports job-safe dependency management</li>
+<li>Is architecturally separated from rendering</li>
+</ul>
+<p><strong>Highly Optimized Mesh Generation</strong></p>
+<ul>
+<li>Burst-compiled jobs</li>
+<li>Chunk-based rebuild system</li>
+<li>Minimal allocations</li>
+<li>Extendable with custom generators</li>
+</ul>
+<p><strong>Minimap with Viewport Sync</strong></p>
+<ul>
+<li>Real-time rendering of any data layer</li>
+<li>Click-to-center navigation</li>
+<li>Camera position indicator</li>
+</ul>
+<p><strong>Save / Load Support</strong></p>
+<ul>
+<li>Modular binary serialization</li>
+<li>Saves full terrain state</li>
+<li>Includes all layers and runtime modifications</li>
+</ul>
+<p><strong>Wraparound Map Support</strong></p>
+<ul>
+<li>Horizontal and vertical edge wrapping</li>
+<li>Seamless camera traversal</li>
+<li>Suitable for globe-style or Civilization-like maps</li>
+</ul>
+<p><strong>Performance by Default</strong></p>
+<ul>
+<li>Designed with scalability as a core principle — you only pay performance cost for the features you actually use.</li>
+<li>Feature-driven architecture ensures no unnecessary systems run in the background</li>
+<li>Mesh regeneration is limited to modified and visible chunks only</li>
+<li>Parallelized calculations powered by Burst-compiled jobs</li>
+<li>Optimized for large-scale terrains</li>
+</ul>
+<blockquote>
+<p>Performance tested in standalone builds on terrains up to 4096 × 2048 (8,388,608 cells), maintaining up to 90 FPS (hardware-dependent).</p>
+</blockquote>
+<h3 id="technical-highlights"><strong>Technical Highlights</strong></h3>
+<p><strong>Unity Requirements</strong></p>
+<ul>
+<li>Unity 6000.0.50f1 or newer</li>
+<li>Requires Entities (ECS 1.0) package</li>
+<li>Uses Burst and Jobs packages</li>
+<li>Compatible with URP and HDRP (core system is render pipeline agnostic)</li>
+</ul>
+<blockquote>
+<p>Note: The optional Terrain Brush implementation uses DecalProjector and therefore depends on the active Render Pipeline. Everything else is Render Pipeline agnostic.</p>
+</blockquote>
+<p><strong>Architecture</strong></p>
+<ul>
+<li>Terrain is implemented as a single ECS Entity</li>
+<li>Chunk-based spatial partitioning</li>
+<li>Terrain composed of modular Terrain Layers</li>
+<li>Each Terrain Layer encapsulates structured Data Layers (per-cell maps)</li>
+<li>Per-chunk dirty flag tracking for selective rebuilds</li>
+<li>Job-safe read/write dependency management</li>
+</ul>
+<p><strong>Rendering</strong></p>
+<ul>
+<li>Hybrid rendering approach</li>
+<li>Uses Graphics.DrawMeshInstanced for mesh layers</li>
+<li>Optional ECS-based Cell Entity rendering</li>
+<li>Custom mesh generator interface for extensibility</li>
+<li>Layered surface rendering (ground, water, snow, etc.)</li>
+</ul>
+<p><strong>Simulation Systems</strong></p>
+<ul>
+<li>Volumetric GeoPlast material system</li>
+<li>Horizontal and vertical material flow</li>
+<li>Heat-based interaction model</li>
+<li>Sun-driven environmental simulation</li>
+</ul>
+<p><strong>Performance Characteristics</strong></p>
+<ul>
+<li>Burst-accelerated hex math (axial and offset coordinates)</li>
+<li>Parallel chunk mesh generation</li>
+<li>Selective regeneration of modified visible chunks</li>
+<li>Designed for large-scale terrains (tested up to 4096 × 2048 cells in standalone builds)</li>
+</ul>
+<p><strong>Extensibility</strong></p>
+<ul>
+<li>Custom Terrain Layers supported</li>
+<li>Custom Data Layers supported</li>
+<li>Custom mesh generators supported</li>
+<li>Suitable for integration with gameplay ECS systems</li>
+<li>Designed for multi-terrain projects</li>
+</ul>
+<p><strong>Serialization</strong></p>
+<ul>
+<li>Modular binary serialization</li>
+<li>Full terrain state save/load</li>
+<li>Supports runtime modifications</li>
+</ul>
+<h3 id="ideal-for"><strong>Ideal For</strong></h3>
+<ul>
+<li>4X and Strategy Games</li>
+<li>Simulation and Economy Games</li>
+<li>City Builders</li>
+<li>Custom World Editors</li>
+<li>ECS Learning Projects</li>
+<li>Games that require <strong>fully interactive hex terrain with high performance</strong></li>
+</ul>
+<hr>
+<h3 id="included"><strong>Included</strong></h3>
+<ul>
+<li>Full source code (C# + DOTS)</li>
+<li>Demo project with HDRP and URP samples</li>
+<li>In-game terrain editor with sample tools</li>
+<li>Procedural brushes and auto-painting systems</li>
+<li>Modular, extendable UI framework</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/index.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

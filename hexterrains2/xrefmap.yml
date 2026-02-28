@@ -72848,6 +72848,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Data.HexTerrainSettings.ClampCellIndex
   nameWithType: HexTerrainSettings.ClampCellIndex
+- uid: Fwt.HexTerrains.Data.HexTerrainSettings.ClampChunkCoordinate(Unity.Mathematics.int2)
+  name: ClampChunkCoordinate(int2)
+  href: api/Fwt.HexTerrains.Data.HexTerrainSettings.html#Fwt_HexTerrains_Data_HexTerrainSettings_ClampChunkCoordinate_Unity_Mathematics_int2_
+  commentId: M:Fwt.HexTerrains.Data.HexTerrainSettings.ClampChunkCoordinate(Unity.Mathematics.int2)
+  fullName: Fwt.HexTerrains.Data.HexTerrainSettings.ClampChunkCoordinate(Unity.Mathematics.int2)
+  nameWithType: HexTerrainSettings.ClampChunkCoordinate(int2)
+- uid: Fwt.HexTerrains.Data.HexTerrainSettings.ClampChunkCoordinate*
+  name: ClampChunkCoordinate
+  href: api/Fwt.HexTerrains.Data.HexTerrainSettings.html#Fwt_HexTerrains_Data_HexTerrainSettings_ClampChunkCoordinate_
+  commentId: Overload:Fwt.HexTerrains.Data.HexTerrainSettings.ClampChunkCoordinate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Data.HexTerrainSettings.ClampChunkCoordinate
+  nameWithType: HexTerrainSettings.ClampChunkCoordinate
 - uid: Fwt.HexTerrains.Data.HexTerrainSettings.ClampCoordinate(Unity.Mathematics.int2)
   name: ClampCoordinate(int2)
   href: api/Fwt.HexTerrains.Data.HexTerrainSettings.html#Fwt_HexTerrains_Data_HexTerrainSettings_ClampCoordinate_Unity_Mathematics_int2_

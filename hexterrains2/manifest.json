@@ -52,6 +52,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Instruction/chunk-meshes.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/chunk-meshes.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Instruction/data-layers.md",
       "output": {
         ".html": {
@@ -866,16 +876,6 @@
       "output": {
         ".html": {
           "relative_path": "Instruction/terrain-surface-rendering.html"
-        }
-      },
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "Instruction/terrain-surfaces.md",
-      "output": {
-        ".html": {
-          "relative_path": "Instruction/terrain-surfaces.html"
         }
       },
       "version": ""

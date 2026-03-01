@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>User Interface (UI) in Hex Terrains Framework | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="User Interface (UI) in Hex Terrains Framework | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="user-interface-ui-in-hex-terrains-framework">User Interface (UI) in Hex Terrains Framework</h1>
+
+<p>Hex Terrains Framework UI is built on <strong>Unity UI Toolkit</strong> and a lightweight MVVM-style pattern:</p>
+<ul>
+<li><strong>View</strong>: <code>UIDocument</code> + UXML/USS (UI Toolkit)</li>
+<li><strong>View host / screen</strong>: <code>UIScreen</code> (and derived types) that own the <code>UIDocument</code> and control show/hide</li>
+<li><strong>View model / data</strong>: plain C# objects (usually derived from <code>UIDataSource</code>) assigned to <code>rootVisualElement.dataSource</code></li>
+<li><strong>Binding</strong>: UI Toolkit <strong>data binding</strong> (binding paths + change/version tracking)</li>
+</ul>
+<p>This document explains the core pieces and how to use them together.</p>
+<hr>
+<h2 id="ui-toolkit-usage-in-the-framework">UI Toolkit usage in the framework</h2>
+<h3 id="what-ui-toolkit-provides">What UI Toolkit provides</h3>
+<p>UI Toolkit is Unity’s retained-mode UI system:</p>
+<ul>
+<li>Layout + styling via <strong>UXML</strong> and <strong>USS</strong></li>
+<li>A runtime UI root via <code>UIDocument</code></li>
+<li>A binding system that can <strong>bind VisualElement properties</strong> to properties on a C# <code>dataSource</code> object</li>
+</ul>
+<p>Hex Terrains Framework leans into this by:</p>
+<ul>
+<li>Using <code>UIDocument</code> for screens (<code>UIScreen</code> and friends)</li>
+<li>Putting all runtime “state” into data sources (typically <code>UIDataSource</code>)</li>
+<li>Using UI Toolkit binding paths to connect UXML elements to that data</li>
+</ul>
+<h3 id="the-binding-root-visualelementdatasource">The binding root: <code>VisualElement.dataSource</code></h3>
+<p>A screen assigns its view-data to the document root:</p>
+<ul>
+<li><code>UIDocument.rootVisualElement.dataSource = viewData;</code></li>
+</ul>
+<p>Once set, UI elements in that document can bind to properties on that object using <strong>binding paths</strong>.</p>
+<p>This is the single most important rule: <strong>if the root <code>dataSource</code> is not set, bindings won’t resolve</strong>.</p>
+<hr>
+<h2 id="screens-uiscreen-and-screen-management">Screens: <code>UIScreen</code> and screen management</h2>
+<h3 id="uiscreen-a-ui-toolkit-screen-prefab"><code>UIScreen</code>: a UI Toolkit screen prefab</h3>
+<p>File: <code>com.freewebtime.core/Runtime/UI/UIScreen.cs</code></p>
+<p><code>UIScreen</code> is a <code>MonoBehaviour</code> that hosts a <code>UIDocument</code> (via <code>UIDocumentView</code>) and implements <code>IUIScreen</code>:</p>
+<ul>
+<li><code>Show()</code> → <code>gameObject.SetActive(true)</code></li>
+<li><code>Hide()</code> → <code>gameObject.SetActive(false)</code></li>
+<li><code>Name</code> → used for lookup/creation by name</li>
+</ul>
+<p>A <code>UIScreen</code> is typically used as a <strong>prefab</strong>:</p>
+<ul>
+<li>prefab contains <code>UIScreen</code> + <code>UIDocument</code></li>
+<li><code>UIDocument</code> references a UXML asset (and optional panel settings, USS, etc.)</li>
+</ul>
+<h3 id="uidocumentview-and-uidocumentviewtviewdata"><code>UIDocumentView</code> and <code>UIDocumentView&lt;TViewData&gt;</code></h3>
+<p>File: <code>com.freewebtime.core/Runtime/UI/UIDocumentView.cs</code></p>
+<p><code>UIDocumentView</code> contains common helpers:</p>
+<ul>
+<li>Auto-finds <code>UIDocument</code> on <code>Start()</code> / <code>OnValidate()</code></li>
+<li>Calls <code>InitUI()</code> on enable and <code>DisposeUI()</code> on disable</li>
+<li>Utility methods like <code>TryGetRootElement(out root)</code></li>
+</ul>
+<p><code>UIDocumentView&lt;TViewData&gt;</code> implements the standard “bind view-data to the document” flow:</p>
+<ul>
+<li>Stores a private <code>_viewData</code></li>
+<li>On <code>InitUI()</code> sets <code>rootVisualElement.dataSource = _viewData</code></li>
+<li>Exposes <code>SetViewData(TViewData viewData)</code></li>
+</ul>
+<h3 id="uiscreentviewdata"><code>UIScreen&lt;TViewData&gt;</code></h3>
+<p>File: <code>com.freewebtime.core/Runtime/UI/UIScreen.cs</code></p>
+<p><code>UIScreen&lt;TViewData&gt;</code> is the common base for “screen + view-data” prefabs:</p>
+<ul>
+<li>It has a serialized <code>_viewData</code> field (so you can assign a default instance in prefab/scene)</li>
+<li>It sets <code>rootVisualElement.dataSource = _viewData</code> in <code>InitUI()</code></li>
+<li>It exposes <code>SetViewData(viewData)</code> to update the binding target at runtime</li>
+</ul>
+<h3 id="screen-api-iuisystemapi">Screen API: <code>IUISystemAPI</code></h3>
+<p>File: <code>com.freewebtime.core/Runtime/UI/IUISystemAPI.cs</code></p>
+<p>The framework standardizes screen operations behind:</p>
+<ul>
+<li><code>CreateScreen&lt;TScreen&gt;()</code></li>
+<li><code>GetOrCreateScreen&lt;TScreen&gt;()</code></li>
+<li><code>GetScreen&lt;TScreen&gt;()</code></li>
+<li><code>DestroyScreen&lt;TScreen&gt;()</code> / <code>DestroyScreen(UIScreen screen)</code></li>
+</ul>
+<h3 id="uimanager-monobehaviour-screen-manager"><code>UIManager</code>: MonoBehaviour screen manager</h3>
+<p>File: <code>com.freewebtime.core/Runtime/UI/UIManager.cs</code></p>
+<p><code>UIManager</code> is a <code>MonoBehaviour</code> implementation of <code>IUISystemAPI</code> that:</p>
+<ul>
+<li>Stores screen <strong>prefabs</strong>:
+<ul>
+<li><code>ScreenPrefabs</code></li>
+<li><code>ScreenPrefabByName</code></li>
+<li><code>ScreenPrefabByType</code></li>
+</ul>
+</li>
+<li>Stores created/registered <strong>instances</strong>:
+<ul>
+<li><code>AllScreens</code></li>
+<li><code>ScreensByName</code></li>
+<li><code>ScreensByType</code></li>
+</ul>
+</li>
+<li>Instantiates screens under a <code>UIRoot</code> transform (<code>UIScreenRoot</code>)</li>
+<li>Optionally collects screens already present in the scene:
+<ul>
+<li><code>IsCollectUIScreensFromSceneOnStart</code></li>
+<li><code>CollectUIScreensFromScene()</code></li>
+</ul>
+</li>
+<li>Provides <code>IsCursorOverUI()</code> (EventSystem-based)</li>
+</ul>
+<p>In practice:</p>
+<ol>
+<li>Put <code>UIManager</code> in your scene (bootstrap).</li>
+<li>Provide it a list of screen prefabs (via <code>ApplyConfig(...)</code> or by calling <code>AddScreenPrefab(...)</code>).</li>
+<li>Request screens with <code>GetOrCreateScreen&lt;TScreen&gt;()</code>.</li>
+</ol>
+<h3 id="uisystembase-ecs-screen-manager"><code>UISystemBase</code>: ECS screen manager</h3>
+<p>File: <code>com.freewebtime.core.ecs/Runtime/UI/UISystemBase.cs</code></p>
+<p>If you run UI creation from an Entities <code>SystemBase</code>, use <code>UISystemBase</code> (also implements <code>IUISystemAPI</code>).</p>
+<p>It mirrors <code>UIManager</code>’s logic (prefabs + instances + dictionaries), but is designed to live in the ECS world.</p>
+<h3 id="convenience-via-ihexterrainapi">Convenience via <code>IHexTerrainAPI</code></h3>
+<p>File: <code>com.freewebtime.hexterrains/Runtime/IHexTerrainAPI.cs</code> and <code>HexTerrainAPI.cs</code></p>
+<p><code>HexTerrainAPI</code> exposes UI helpers that forward to its <code>UISystemAPI</code>:</p>
+<ul>
+<li><code>CreateUIScreen&lt;TScreen&gt;()</code></li>
+<li><code>GetOrCreateUIScreen&lt;TScreen&gt;()</code></li>
+<li><code>GetUIScreen&lt;TScreen&gt;()</code></li>
+<li><code>DestroyUIScreen&lt;TScreen&gt;()</code> / <code>DestroyUIScreen(UIScreen screen)</code></li>
+</ul>
+<p>This is what tools/states typically use to show tool-related screens.</p>
+<hr>
+<h2 id="data-sources-and-change-tracking-uidatasource">Data sources and change tracking (<code>UIDataSource</code>)</h2>
+<h3 id="uidatasource-base-class-for-bindable-view-models"><code>UIDataSource</code>: base class for bindable view-models</h3>
+<p>File: <code>com.freewebtime.uitoolkit/Runtime/DataSources/UIDataSource.cs</code></p>
+<p><code>UIDataSource</code> is the standard base for view-data in the framework:</p>
+<ul>
+<li>Holds a monotonically increasing <code>Version</code></li>
+<li>Implements <code>CommitChanges()</code> → increments <code>Version</code></li>
+<li>Implements view-hash via <code>GetViewHashCode()</code> returning <code>Version</code></li>
+</ul>
+<p>Conceptually:</p>
+<ul>
+<li><strong>Every meaningful change</strong> to UI-facing data should call <code>CommitChanges()</code>.</li>
+<li>The binding system can use the view-hash/version to decide when to re-read values.</li>
+</ul>
+<p>Recommended pattern for properties:</p>
+<ul>
+<li>Mark bindable properties with <code>[CreateProperty]</code></li>
+<li>In the setter, call <code>CommitChanges()</code> when the value changes</li>
+</ul>
+<pre><code class="lang-csharp">// Typical pattern (used throughout the framework) 
+[CreateProperty] 
+public int BrushSize 
+{ 
+	get =&gt; _brushSize; 
+	set 
+	{ 
+		if (_brushSize == value) return; 
+		_brushSize = value; CommitChanges(); 
+	} 
+}
+</code></pre>
+<h3 id="createproperty-and-what-it-means"><code>[CreateProperty]</code> and what it means</h3>
+<p>Many data-source properties in this framework use <code>Unity.Properties</code>:</p>
+<ul>
+<li><code>[CreateProperty]</code> marks a property as discoverable by Unity’s property/binding infrastructure.</li>
+<li>In practice: <strong>if you want to bind to it, make it a property and mark it</strong>.</li>
+</ul>
+<blockquote>
+<p>Tip: Avoid binding directly to public fields. Prefer properties with <code>[CreateProperty]</code>.</p>
+</blockquote>
+<hr>
+<h2 id="data-binding-binding-paths--datasource">Data binding: binding paths + <code>dataSource</code></h2>
+<h3 id="binding-model-in-one-diagram">Binding model in one diagram</h3>
+<pre><code class="lang-mermaid">graph TD; 
+A[&quot;UIScreen / UIDocumentView&quot;] --&gt; B[&quot;UIDocument.rootVisualElement&quot;]; 
+B --&gt; C[&quot;rootVisualElement.dataSource = viewData&quot;]; 
+C --&gt; D[&quot;UXML elements with binding paths&quot;]; 
+D --&gt; E[&quot;UI Toolkit reads properties via paths&quot;]; 
+F[&quot;UIDataSource.CommitChanges()&quot;] --&gt; G[&quot;Version++ / view hash changes&quot;]; 
+G --&gt; E;
+</code></pre>
+<h3 id="two-binding-styles-youll-see">Two binding styles you’ll see</h3>
+<h4 id="1-uxml-declarative-bindings-recommended-for-simple-cases">1 UXML declarative bindings (recommended for simple cases)</h4>
+<p>In UI Toolkit you typically bind element properties using binding paths set in UXML (exact attribute names vary by element/property).</p>
+<p>General idea:</p>
+<ul>
+<li>Set the screen root <code>dataSource</code> to some view-data object.</li>
+<li>Bind UI fields to <code>PropertyName</code> on that object.</li>
+</ul>
+<p>Example (conceptual):</p>
+<pre><code class="lang-xml">&lt;ui:Label binding-path=&quot;Title&quot; /&gt; 
+&lt;ui:SliderInt binding-path=&quot;BrushSize&quot; /&gt;
+</code></pre>
+<h4 id="2-code-driven-bindings-used-by-custom-controls">2 Code-driven bindings (used by custom controls)</h4>
+<p>Some framework elements set up bindings in C# when attached to panel.</p>
+<p>Example: <code>UIButton</code> binds its own <code>OnClick</code> property using <code>SetBinding(...)</code> and a data-source path.</p>
+<hr>
+<h2 id="fwtuitoolkit-controls"><code>Fwt.UIToolkit</code> controls</h2>
+<h3 id="uibutton-bindable-click-target"><code>UIButton</code>: bindable click target</h3>
+<p>File: <code>com.freewebtime.uitoolkit/Runtime/UIButton.cs</code></p>
+<p><code>UIButton</code> is a UI Toolkit <code>Button</code> with an additional bindable property:</p>
+<ul>
+<li><code>OnClick</code> (type <code>object</code>) — can receive:
+<ul>
+<li><code>Action</code></li>
+<li><code>UnityEvent</code></li>
+<li><code>UIButtonDataSource</code> (see below)</li>
+</ul>
+</li>
+<li><code>OnClickPath</code> (<code>string</code>, UXML attribute <code>onClick</code>) — property path used to bind <code>OnClick</code> at runtime</li>
+</ul>
+<p>How it works:</p>
+<ul>
+<li>On <code>AttachToPanelEvent</code>, if <code>OnClickPath</code> is not empty:
+<ul>
+<li><code>UIButton</code> calls <code>SetBinding(...)</code> to bind its <code>OnClick</code> property from <code>dataSourcePath = OnClickPath</code></li>
+</ul>
+</li>
+<li>On click / navigation submit:
+<ul>
+<li>It calls <code>ProcessOnClick()</code> and invokes whatever was bound into <code>OnClick</code></li>
+</ul>
+</li>
+</ul>
+<p>This enables an MVVM-like flow where the view binds to a view-model “command” without requiring hard-coded callbacks.</p>
+<h4 id="uxml-usage">UXML usage</h4>
+<p>Conceptual UXML (namespace setup depends on your project’s UXML settings):</p>
+<pre><code class="lang-xml">&lt;fwt:UIButton name=&quot;ApplyButton&quot; onClick=&quot;Apply&quot; text=&quot;Apply&quot; /&gt;
+</code></pre>
+<p>And your view-data object would expose <code>Apply</code> as one of:</p>
+<ul>
+<li>an <code>Action</code></li>
+<li>a <code>UnityEvent</code></li>
+<li>a <code>UIButtonDataSource</code> (with <code>OnClick</code>)</li>
+</ul>
+<h4 id="uibutton-binding-gotcha"><code>UIButton</code> binding gotcha</h4>
+<p><code>OnClickPath</code> defaults to <code>&quot;OnClick&quot;</code>. If your data source uses a different property name, set <code>onClick=&quot;YourPropertyName&quot;</code>.</p>
+<hr>
+<h2 id="built-in-data-sources">Built-in data sources</h2>
+<h3 id="uibuttondatasource"><code>UIButtonDataSource</code></h3>
+<p>File: <code>com.freewebtime.uitoolkit/Runtime/DataSources/UIButtonDataSource.cs</code></p>
+<p><code>UIButtonDataSource : UIDataSource</code> is a reusable model for “button-like” UI:</p>
+<ul>
+<li><code>Text</code> (<code>string</code>) — calls <code>CommitChanges()</code> on set</li>
+<li><code>OnClick</code> (<code>Action</code>) — calls <code>CommitChanges()</code> on set</li>
+<li><code>IconTexture</code> (<code>Texture2D</code>) — calls <code>CommitChanges()</code> on change</li>
+<li><code>IconSprite</code> (<code>Sprite</code>) — calls <code>CommitChanges()</code> on change</li>
+</ul>
+<p><code>UIButton.ProcessOnClick()</code> explicitly supports this type:</p>
+<ul>
+<li>if <code>OnClick</code> is a <code>UIButtonDataSource</code>, it invokes <code>buttonDataSource.OnClick</code></li>
+</ul>
+<p>So you can either:</p>
+<ul>
+<li>bind <code>UIButton.OnClick</code> to an <code>Action</code> property, <strong>or</strong></li>
+<li>bind it to a <code>UIButtonDataSource</code> and keep button data grouped.</li>
+</ul>
+<h3 id="valueeditordatasource-and-valueeditordatasourcetvalue"><code>ValueEditorDataSource</code> and <code>ValueEditorDataSource&lt;TValue&gt;</code></h3>
+<p>File: <code>com.freewebtime.uitoolkit/Runtime/ValueEditors/DataSources/ValueEditorDataSource.cs</code></p>
+<p>This is the base abstraction for “editable setting/value” UI models.</p>
+<p>Key members:</p>
+<ul>
+<li><code>Name</code> (display name / label)</li>
+<li><code>IsVisible</code> → exposed as <code>[CreateProperty] DisplayStyle</code> (Flex/None)</li>
+<li><code>IsClampValue</code> + <code>ClampValue(...)</code> helper</li>
+<li><code>ValueChanged</code> event hook (invoked from <code>CommitChanges()</code>)</li>
+</ul>
+<p><code>ValueEditorDataSource&lt;TValue&gt;</code> adds the actual value:</p>
+<ul>
+<li><code>[CreateProperty] TValue Value</code> with change detection and <code>CommitChanges()</code></li>
+<li><code>ValueType</code> returns <code>typeof(TValue)</code></li>
+</ul>
+<p>This makes it possible to build generic “value editor” UIs where:</p>
+<ul>
+<li>the UI displays a list of <code>ValueEditorDataSource</code></li>
+<li>the concrete editor type is chosen by <code>ValueType</code> (int/float/bool/enum/etc.)</li>
+<li>visibility is driven by <code>DisplayStyle</code></li>
+</ul>
+<blockquote>
+<p>Note: The framework’s UI layer typically consumes these via tool settings screens (see below).</p>
+</blockquote>
+<hr>
+<h2 id="tool-settings-ui-in-hex-terrains">Tool settings UI in Hex Terrains</h2>
+<p>Hex Terrains tools commonly display a settings screen while active (see <code>UserTools</code> documentation for the tool lifecycle).</p>
+<h3 id="toolsettingsscreen-and-toolsettingsscreentsettings"><code>ToolSettingsScreen</code> and <code>ToolSettingsScreen&lt;TSettings&gt;</code></h3>
+<p>File: <code>com.freewebtime.hexterrains/Runtime/UserTools/UI/ToolSettingsScreen.cs</code></p>
+<p>This is a specialization of <code>UIScreen</code> meant for tool settings.</p>
+<p><code>ToolSettingsScreen&lt;TSettings&gt;</code>:</p>
+<ul>
+<li>Implements <code>IViewDataReceiver&lt;TSettings&gt;</code></li>
+<li>Sets <code>rootVisualElement.dataSource = viewData</code> on init / set</li>
+</ul>
+<h3 id="universaltoolsettingsscreen"><code>UniversalToolSettingsScreen</code></h3>
+<p>File: <code>com.freewebtime.hexterrains/Runtime/UserTools/UI/UniversalToolSettingsScreen.cs</code></p>
+<p>A convenience concrete type:</p>
+<ul>
+<li><code>UniversalToolSettingsScreen : ToolSettingsScreen&lt;UserToolSettingsDataSource&gt;</code></li>
+</ul>
+<p>This is the “default” settings screen many tools use.</p>
+<h3 id="usertoolsettingsdatasource"><code>UserToolSettingsDataSource</code></h3>
+<p>File: <code>com.freewebtime.hexterrains/Runtime/UserTools/DataSources/UserToolSettingsDataSource.cs</code></p>
+<p>This is the standard view-data for tool settings UI:</p>
+<ul>
+<li><code>Description</code> + <code>ErrorMessage</code> are <code>[CreateProperty]</code></li>
+<li>Also exposes <code>[CreateProperty]</code> <code>DescriptionDisplayStyle</code> / <code>ErrorMessageDisplayStyle</code>
+<ul>
+<li>automatically hides UI blocks if strings are empty</li>
+</ul>
+</li>
+<li><code>Values : List&lt;ValueEditorDataSource&gt;</code>
+<ul>
+<li>collection of setting entries shown by the UI (typically via a <code>ListView</code>)</li>
+</ul>
+</li>
+</ul>
+<p>Common usage pattern:</p>
+<ol>
+<li>A tool creates/owns a <code>UserToolSettingsDataSource</code>.</li>
+<li>The tool fills <code>Values</code> with <code>ValueEditorDataSource&lt;T&gt;</code> entries.</li>
+<li>The tool shows <code>UniversalToolSettingsScreen</code> and calls <code>SetViewData(dataSource)</code>.</li>
+</ol>
+<hr>
+<h2 id="putting-it-together-typical-runtime-flow">Putting it together (typical runtime flow)</h2>
+<h3 id="1-configure-a-ui-system">1 Configure a UI system</h3>
+<p>Pick one:</p>
+<ul>
+<li><code>UIManager</code> (MonoBehaviour)</li>
+<li><code>UISystemBase</code> (Entities <code>SystemBase</code>)</li>
+</ul>
+<p>Register screen prefabs using <code>ApplyConfig(...)</code> or <code>AddScreenPrefab(...)</code>.</p>
+<h3 id="2-create-or-get-a-screen">2 Create or get a screen</h3>
+<p>Via <code>IUISystemAPI</code>:</p>
+<ul>
+<li><code>var screen = uiSystemApi.GetOrCreateScreen&lt;MyScreen&gt;();</code></li>
+</ul>
+<p>Or via <code>IHexTerrainAPI</code>:</p>
+<ul>
+<li><code>var screen = terrainApi.GetOrCreateUIScreen&lt;UniversalToolSettingsScreen&gt;();</code></li>
+</ul>
+<h3 id="3-provide-view-data">3 Provide view-data</h3>
+<ul>
+<li>Use <code>UIScreen&lt;TViewData&gt;</code> / <code>ToolSettingsScreen&lt;TSettings&gt;</code> patterns where possible.</li>
+<li>Call <code>SetViewData(...)</code> with a view-data instance (often a <code>UIDataSource</code>).</li>
+</ul>
+<h3 id="4-bind-in-uxml-andor-via-custom-elements">4 Bind in UXML and/or via custom elements</h3>
+<ul>
+<li>In UXML: bind label/text/values by binding paths.</li>
+<li>For command-like actions: use <code>Fwt.UIToolkit.UIButton</code> with <code>onClick=&quot;SomeProperty&quot;</code>.</li>
+</ul>
+<h3 id="5-when-data-changes-call-commitchanges">5 When data changes, call <code>CommitChanges()</code></h3>
+<ul>
+<li>Data sources derived from <code>UIDataSource</code> should call <code>CommitChanges()</code> in setters.</li>
+<li>This increments <code>Version</code> so the UI binding system can refresh.</li>
+</ul>
+<hr>
+<h2 id="practical-guidelines--gotchas">Practical guidelines / gotchas</h2>
+<ul>
+<li><strong>Keep the view-data instance stable</strong> while the screen is shown.
+<ul>
+<li>Prefer mutating properties + <code>CommitChanges()</code> rather than replacing the whole data source repeatedly.</li>
+</ul>
+</li>
+<li><strong>Use <code>[CreateProperty]</code></strong> on anything you want to bind to.</li>
+<li><strong>Always call <code>CommitChanges()</code></strong> when a bound value changes (or <code>MarkDirty()</code> if you intentionally only signal “something changed”).</li>
+<li><strong>Binding paths must match property names</strong> exactly (case-sensitive in most binding contexts).</li>
+<li><strong>Prefer <code>UIScreen&lt;TViewData&gt;</code></strong> (or <code>ToolSettingsScreen&lt;TSettings&gt;</code>) for consistent “assign <code>dataSource</code>” behavior.</li>
+<li>When using <code>UIButton</code>:
+<ul>
+<li>Set <code>onClick</code> to the correct property path</li>
+<li>Provide <code>Action</code> / <code>UnityEvent</code> / <code>UIButtonDataSource</code> at that path</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="related-docs">Related docs</h2>
+<ul>
+<li><a href="user-tools.html">User Tools</a> (how tools show/hide settings screens during tool activation)</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/user-interface.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

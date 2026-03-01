@@ -895,6 +895,26 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Instruction/user-interface.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/user-interface.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/user-tools.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/user-tools.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "README.md",
       "output": {
         ".html": {
@@ -11849,6 +11869,188 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.UserTools.SM.States.CellItems",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.CellObjects",
       "Summary": null
     },
     {

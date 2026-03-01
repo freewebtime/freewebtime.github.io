@@ -98648,6 +98648,438 @@ references:
   fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellItems.StampCellItemUserToolState(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).SetCellDataToTarget
   nameWithType: StampCellItemUserToolState<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.SetCellDataToTarget
   nameWithType.vb: StampCellItemUserToolState(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).SetCellDataToTarget
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects
+  name: Fwt.HexTerrains.UserTools.SM.States.CellObjects
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.html
+  commentId: N:Fwt.HexTerrains.UserTools.SM.States.CellObjects
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects
+  nameWithType: Fwt.HexTerrains.UserTools.SM.States.CellObjects
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState
+  name: PaintCellObjectIndexUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState
+  nameWithType: PaintCellObjectIndexUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectIndexUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectIndexUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.PaintCellObjectIndexUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectIndexUserToolState.PaintCellObjectIndexUserToolState(ISmState)
+  nameWithType.vb: PaintCellObjectIndexUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.#ctor*
+  name: PaintCellObjectIndexUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectIndexUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.PaintCellObjectIndexUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolState.New
+  nameWithType: PaintCellObjectIndexUserToolState.PaintCellObjectIndexUserToolState
+  nameWithType.vb: PaintCellObjectIndexUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4
+  name: PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4
+  name.vb: PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  nameWithType: PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  nameWithType.vb: PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectIndexUserToolStateBase(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectIndexUserToolStateBase_4__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectIndexUserToolStateBase(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectIndexUserToolStateBase(ISmState)
+  nameWithType.vb: PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.#ctor*
+  name: PaintCellObjectIndexUserToolStateBase
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectIndexUserToolStateBase_4__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectIndexUserToolStateBase
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+  nameWithType: PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectIndexUserToolStateBase
+  nameWithType.vb: PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectIndexUserToolStateBase_4_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectIndexUserToolStateBase_4_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase`4.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectIndexUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectIndexUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState
+  name: PaintCellObjectPositionUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState
+  nameWithType: PaintCellObjectPositionUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectPositionUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectPositionUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.PaintCellObjectPositionUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectPositionUserToolState.PaintCellObjectPositionUserToolState(ISmState)
+  nameWithType.vb: PaintCellObjectPositionUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.#ctor*
+  name: PaintCellObjectPositionUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectPositionUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.PaintCellObjectPositionUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolState.New
+  nameWithType: PaintCellObjectPositionUserToolState.PaintCellObjectPositionUserToolState
+  nameWithType.vb: PaintCellObjectPositionUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4
+  name: PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4
+  name.vb: PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  nameWithType: PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  nameWithType.vb: PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectPositionUserToolStateBase(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectPositionUserToolStateBase_4__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectPositionUserToolStateBase(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectPositionUserToolStateBase(ISmState)
+  nameWithType.vb: PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.#ctor*
+  name: PaintCellObjectPositionUserToolStateBase
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectPositionUserToolStateBase_4__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectPositionUserToolStateBase
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+  nameWithType: PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectPositionUserToolStateBase
+  nameWithType.vb: PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectPositionUserToolStateBase_4_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectPositionUserToolStateBase_4_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase`4.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectPositionUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectPositionUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState
+  name: PaintCellObjectRotationUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState
+  nameWithType: PaintCellObjectRotationUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectRotationUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectRotationUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.PaintCellObjectRotationUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectRotationUserToolState.PaintCellObjectRotationUserToolState(ISmState)
+  nameWithType.vb: PaintCellObjectRotationUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.#ctor*
+  name: PaintCellObjectRotationUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectRotationUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.PaintCellObjectRotationUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolState.New
+  nameWithType: PaintCellObjectRotationUserToolState.PaintCellObjectRotationUserToolState
+  nameWithType.vb: PaintCellObjectRotationUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4
+  name: PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4
+  name.vb: PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  nameWithType: PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  nameWithType.vb: PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectRotationUserToolStateBase(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectRotationUserToolStateBase_4__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectRotationUserToolStateBase(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectRotationUserToolStateBase(ISmState)
+  nameWithType.vb: PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.#ctor*
+  name: PaintCellObjectRotationUserToolStateBase
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectRotationUserToolStateBase_4__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectRotationUserToolStateBase
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+  nameWithType: PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectRotationUserToolStateBase
+  nameWithType.vb: PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectRotationUserToolStateBase_4_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectRotationUserToolStateBase_4_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase`4.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectRotationUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectRotationUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState
+  name: PaintCellObjectScaleUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState
+  nameWithType: PaintCellObjectScaleUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectScaleUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectScaleUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.PaintCellObjectScaleUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectScaleUserToolState.PaintCellObjectScaleUserToolState(ISmState)
+  nameWithType.vb: PaintCellObjectScaleUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.#ctor*
+  name: PaintCellObjectScaleUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectScaleUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.PaintCellObjectScaleUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolState.New
+  nameWithType: PaintCellObjectScaleUserToolState.PaintCellObjectScaleUserToolState
+  nameWithType.vb: PaintCellObjectScaleUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4
+  name: PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4
+  name.vb: PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  nameWithType: PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  nameWithType.vb: PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectScaleUserToolStateBase(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectScaleUserToolStateBase_4__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectScaleUserToolStateBase(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectScaleUserToolStateBase(ISmState)
+  nameWithType.vb: PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.#ctor*
+  name: PaintCellObjectScaleUserToolStateBase
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectScaleUserToolStateBase_4__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectScaleUserToolStateBase
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+  nameWithType: PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectScaleUserToolStateBase
+  nameWithType.vb: PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectScaleUserToolStateBase_4_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectScaleUserToolStateBase_4_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase`4.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectScaleUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectScaleUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState
+  name: PaintCellObjectStateUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState
+  nameWithType: PaintCellObjectStateUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectStateUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectStateUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.PaintCellObjectStateUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectStateUserToolState.PaintCellObjectStateUserToolState(ISmState)
+  nameWithType.vb: PaintCellObjectStateUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.#ctor*
+  name: PaintCellObjectStateUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectStateUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.PaintCellObjectStateUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolState.New
+  nameWithType: PaintCellObjectStateUserToolState.PaintCellObjectStateUserToolState
+  nameWithType.vb: PaintCellObjectStateUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4
+  name: PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4
+  name.vb: PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+  nameWithType: PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>
+  nameWithType.vb: PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectStateUserToolStateBase(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectStateUserToolStateBase_4__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectStateUserToolStateBase(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectStateUserToolStateBase(ISmState)
+  nameWithType.vb: PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.#ctor*
+  name: PaintCellObjectStateUserToolStateBase
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectStateUserToolStateBase_4__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectStateUserToolStateBase
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+  nameWithType: PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.PaintCellObjectStateUserToolStateBase
+  nameWithType.vb: PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectStateUserToolStateBase_4_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectStateUserToolStateBase_4_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase`4.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+  nameWithType: PaintCellObjectStateUserToolStateBase<TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer>.UserToolType
+  nameWithType.vb: PaintCellObjectStateUserToolStateBase(Of TBrushTarget, TTerrainLayer, TChunkMeshLayerGroup, TChunkMeshLayer).UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState
+  name: PaintCellObjectsUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState
+  nameWithType: PaintCellObjectsUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: PaintCellObjectsUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectsUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.PaintCellObjectsUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: PaintCellObjectsUserToolState.PaintCellObjectsUserToolState(ISmState)
+  nameWithType.vb: PaintCellObjectsUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.#ctor*
+  name: PaintCellObjectsUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectsUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.PaintCellObjectsUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.New
+  nameWithType: PaintCellObjectsUserToolState.PaintCellObjectsUserToolState
+  nameWithType.vb: PaintCellObjectsUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectsUserToolState_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.UserToolType
+  nameWithType: PaintCellObjectsUserToolState.UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_PaintCellObjectsUserToolState_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.PaintCellObjectsUserToolState.UserToolType
+  nameWithType: PaintCellObjectsUserToolState.UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState
+  name: StampCellObjectUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.html
+  commentId: T:Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState
+  nameWithType: StampCellObjectUserToolState
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name: StampCellObjectUserToolState(ISmState)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_StampCellObjectUserToolState__ctor_Fwt_Core_StateMachines_ISmState_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.#ctor(Fwt.Core.StateMachines.ISmState)
+  name.vb: New(ISmState)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.StampCellObjectUserToolState(Fwt.Core.StateMachines.ISmState)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.New(Fwt.Core.StateMachines.ISmState)
+  nameWithType: StampCellObjectUserToolState.StampCellObjectUserToolState(ISmState)
+  nameWithType.vb: StampCellObjectUserToolState.New(ISmState)
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.#ctor*
+  name: StampCellObjectUserToolState
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_StampCellObjectUserToolState__ctor_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.#ctor
+  isSpec: "True"
+  name.vb: New
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.StampCellObjectUserToolState
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.New
+  nameWithType: StampCellObjectUserToolState.StampCellObjectUserToolState
+  nameWithType.vb: StampCellObjectUserToolState.New
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.UserToolType
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_StampCellObjectUserToolState_UserToolType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.UserToolType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.UserToolType
+  nameWithType: StampCellObjectUserToolState.UserToolType
+- uid: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.UserToolType*
+  name: UserToolType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_CellObjects_StampCellObjectUserToolState_UserToolType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.UserToolType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.CellObjects.StampCellObjectUserToolState.UserToolType
+  nameWithType: StampCellObjectUserToolState.UserToolType
 - uid: Fwt.HexTerrains.UserTools.SM.States.CreateNewTerrainUserToolState
   name: CreateNewTerrainUserToolState
   href: api/Fwt.HexTerrains.UserTools.SM.States.CreateNewTerrainUserToolState.html

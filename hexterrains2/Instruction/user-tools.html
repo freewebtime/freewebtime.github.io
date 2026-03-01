@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>UserTools | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="UserTools | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="usertools">UserTools</h1>
+
+<p><code>UserTools</code> is the HexTerrains runtime “tooling” layer: a set of interactive states (tools) driven by a state machine. A tool is represented by a <code>UserToolStateBase</code> (or a derived class) and is typically selected by a <code>UserToolTypes</code> id.</p>
+<p>At runtime you:</p>
+<ol>
+<li>Build a <code>UserToolsStateMachine</code></li>
+<li>Initialize it with a list of tool configs (<code>IUserToolStateConfig</code>, usually <code>UserToolStateConfigAsset</code> ScriptableObjects)</li>
+<li>Initialize it with the current <code>IHexTerrainAPI</code></li>
+<li>Switch active tool by <code>UserToolTypes</code></li>
+<li>Call <code>Tick()</code> each frame</li>
+</ol>
+<hr>
+<h2 id="key-types-overview">Key types overview</h2>
+<h3 id="usertooltypes"><code>UserToolTypes</code></h3>
+<p><code>UserToolTypes</code> is the canonical list of tool ids (ints) used to switch tools without relying on state indices.</p>
+<p>File: <code>Runtime\UserTools\UserToolTypes.cs</code></p>
+<p>Example:</p>
+<ul>
+<li><code>UserToolTypes.Pointer</code></li>
+<li><code>UserToolTypes.PaintCellObjects</code> (value <code>306</code>)</li>
+</ul>
+<hr>
+<h2 id="usertoolstatebase"><code>UserToolStateBase</code></h2>
+<p>File: <code>Runtime\UserTools\SM\UserToolStateBase.cs</code></p>
+<p><code>UserToolStateBase</code> is the root base class for tool states. It inherits <code>SmState</code> (from <code>Fwt.Core.StateMachines</code>) and adds:</p>
+<ul>
+<li><code>UserToolType</code> (abstract <code>int</code>): the id used by <code>UserToolsStateMachine</code> to find and switch the tool.</li>
+<li><code>Settings</code> (<code>UserToolStateSettings</code>): basic tool metadata (currently only <code>Name</code>).</li>
+<li><code>Init(UserToolStateSettings)</code> and <code>Init&lt;TInitArgs&gt;(TInitArgs)</code>:
+<ul>
+<li>If <code>TInitArgs</code> implements <code>IUserToolStateConfig</code>, the tool is initialized with <code>IUserToolStateConfig.ToolSettings</code>.</li>
+<li>Otherwise, default settings (<code>UserToolStateSettings.Default</code>) are used.</li>
+</ul>
+</li>
+</ul>
+<p>Notes:</p>
+<ul>
+<li><code>Tick()</code> is virtual and empty here. Actual tool behavior is implemented in derived states.</li>
+</ul>
+<hr>
+<h2 id="tool-state-families-derived-from-usertoolstatebase">Tool state families (derived from <code>UserToolStateBase</code>)</h2>
+<h3 id="hexterrainusertoolstatebase"><code>HexTerrainUserToolStateBase</code></h3>
+<p>File: <code>Runtime\UserTools\SM\HexTerrainUserToolStateBase.cs</code></p>
+<p>Adds HexTerrains integration to a tool state:</p>
+<ul>
+<li><code>TerrainAPI</code> (<code>IHexTerrainAPI</code>): the runtime API entry point for terrain operations and UI.</li>
+<li><code>HexTerrainUserToolSettings</code> (<code>HexTerrainUserToolStateSettings</code>): currently controls view mode behavior:
+<ul>
+<li><code>IsChangeViewMode</code></li>
+<li><code>RequiredViewMode</code></li>
+</ul>
+</li>
+<li>Lifecycle integration:
+<ul>
+<li><code>PrepareToRun()</code> stores current view mode and optionally switches to the required view mode.</li>
+<li><code>PrepareToStop()</code> optionally restores the previous view mode.</li>
+</ul>
+</li>
+<li>UI helpers:
+<ul>
+<li><code>GetUIScreen&lt;TScreen&gt;()</code> via <code>TerrainAPI.GetOrCreateUIScreen&lt;TScreen&gt;()</code></li>
+<li><code>ShowSettingsScreen(...)</code> / <code>HideSettingsScreen&lt;TScreen&gt;()</code></li>
+</ul>
+</li>
+<li>Cursor helpers:
+<ul>
+<li><code>SetupTerrainCursor(...)</code> variants for visibility, size, color, resizability.</li>
+</ul>
+</li>
+</ul>
+<p>This is the typical base for any tool that needs terrain data, cursor, and/or UI.</p>
+<h3 id="brush-tools-brushusertoolstate">Brush tools: <code>BrushUserToolState&lt;...&gt;</code></h3>
+<p>File: <code>Runtime\UserTools\SM\BrushUserToolState.cs</code></p>
+<p>Brush tools are interactive tools that apply an operation to one or many cells based on:</p>
+<ul>
+<li>mouse input</li>
+<li>raycast hit (<code>TerrainAPI.GetRaycastData()</code>)</li>
+<li>brush size / opacity (<code>TerrainAPI.GetBrushSize()</code>, <code>TerrainAPI.GetBrushOpacity()</code>)</li>
+</ul>
+<h4 id="brushusertoolstatetbrushtarget"><code>BrushUserToolState&lt;TBrushTarget&gt;</code></h4>
+<p>Core brush behavior:</p>
+<ul>
+<li>Input and interaction settings:
+<ul>
+<li><code>TimeTreshold</code> (rate limit between brush applies)</li>
+<li><code>CanChangeBrushSize</code></li>
+<li><code>AllowRightMouseButton</code></li>
+<li>hotkeys: <code>ChangeModeKey</code>, <code>ChangeBrushSizeKey</code>, <code>ChangeOpacityKey</code>, plus +/- keys</li>
+<li><code>CursorColor</code></li>
+</ul>
+</li>
+<li><code>Tick()</code>:
+<ol>
+<li>updates cursor and brush parameters (<code>UpdateBrush()</code>)</li>
+<li>attempts to apply brush (<code>TryApplyBrush()</code>)</li>
+</ol>
+</li>
+<li>Brush application rules:
+<ul>
+<li>brush mode is <code>0</code> by default, <code>1</code> when <code>ChangeModeKey</code> is held</li>
+<li>calls one of:
+<ul>
+<li><code>ApplyBrushToAllCells(...)</code> (if <code>IsAppliedToEveryCellOnMap(brushMode)</code> is true)</li>
+<li><code>ApplyToSingleCell(...)</code> (single cell or non-resizable brush)</li>
+<li><code>ApplyBrushToAllBrushPoints(...)</code> (area brush using <code>HexMath.GetCellsRange_Offset(...)</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The tool-specific operation is implemented by overriding:
+<ul>
+<li><code>ApplyBrush(int brushMode, int2 cellCoord, int cellIndex, TBrushTarget brushTarget, int mouseButton)</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="brush-tools-with-persistent-settings-data-source--playerprefs">Brush tools with persistent settings (data source + PlayerPrefs)</h4>
+<p>Brush tools often use the additional generic layers:</p>
+<ul>
+<li><p><code>BrushUserToolState&lt;TBrushTarget, TSettings&gt;</code></p>
+<ul>
+<li>adds <code>DataSource</code> (usually a UI-friendly settings model)</li>
+<li>loads settings on start (<code>PrepareToRun()</code> → <code>InitSettings()</code> → <code>LoadSettings()</code>)</li>
+<li>saves settings on stop (<code>PrepareToStop()</code> → <code>SaveSettings()</code>)</li>
+<li>includes helpers to store values in <code>PlayerPrefs</code>:
+<ul>
+<li><code>SaveSettingsValue&lt;TValue&gt;(...)</code></li>
+<li><code>LoadSettingsValueOrDefault&lt;TValue&gt;(...)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><code>BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen&gt;</code></p>
+<ul>
+<li>shows/hides a settings UI screen while the tool is active</li>
+<li>uses <code>ShowSettingsScreen(...)</code> from <code>HexTerrainUserToolStateBase</code></li>
+</ul>
+</li>
+<li><p><code>BrushUserToolState&lt;TBrushTarget, TSettings, TSettingsScreen, TTerrainLayer&gt;</code></p>
+<ul>
+<li>adds a standard way to resolve the active terrain layer by index and/or name</li>
+<li>supports per-layer view mode mapping (<code>ViewModeByLayerIndex</code>)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="cell-item-painting-tool-states">Cell-item painting tool states</h2>
+<p>A representative chain (simplified):</p>
+<ul>
+<li><code>UserToolStateBase</code>
+<ul>
+<li><code>HexTerrainUserToolStateBase</code>
+<ul>
+<li><code>BrushUserToolState&lt;...&gt;</code>
+<ul>
+<li><code>PaintCellItemUserToolStateBase&lt;...&gt;</code>
+<ul>
+<li><code>PaintCellItemAllDataUserToolStateBase&lt;...&gt;</code>
+<ul>
+<li><code>PaintCellObjectsUserToolState</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="paintcellitemusertoolstatebase"><code>PaintCellItemUserToolStateBase&lt;...&gt;</code></h3>
+<p>File: <code>Runtime\UserTools\SM\States\CellItems\PaintCellItemUserToolStateBase.cs</code></p>
+<p>Builds a standard “paint a cell item layer” tool:</p>
+<ul>
+<li>Uses <code>UserToolSettingsDataSource</code> + <code>UniversalToolSettingsScreen</code></li>
+<li>Adds common parameters to <code>DataSource</code>:
+<ul>
+<li><code>TerrainLayerIndex</code></li>
+<li><code>ChunkMeshLayerIndex</code></li>
+<li>optional filters:
+<ul>
+<li><code>IsCheckCellHeight</code>, <code>MinCellHeight</code>, <code>MaxCellHeight</code></li>
+<li><code>IsCheckBiome</code>, <code>MinBiomeIndex</code>, <code>MaxBiomeIndex</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Supports “read value under cursor instead of painting”:
+<ul>
+<li><code>ReadCellKey</code> (default <code>LeftAlt</code>, configurable)</li>
+</ul>
+</li>
+</ul>
+<h3 id="paintcellitemalldatausertoolstatebase"><code>PaintCellItemAllDataUserToolStateBase&lt;...&gt;</code></h3>
+<p>File: <code>Runtime\UserTools\SM\States\CellItems\PaintCellItemAllDataUserToolStateBase.cs</code></p>
+<p>Adds parameters for painting all common item fields:</p>
+<ul>
+<li><code>ItemIndex</code>, <code>ItemState</code></li>
+<li><code>ItemPosition</code>, <code>ItemRotation</code>, <code>ItemScale</code></li>
+</ul>
+<p>Implements <code>ApplyBrush(...)</code>:</p>
+<ul>
+<li>If <code>ReadCellKey</code> is held: reads the cell values from the layer and updates the tool parameters (no painting).</li>
+<li>Brush mode <code>0</code>: paints only the targeted cell (subject to optional filters).</li>
+<li>Brush mode <code>1</code>: paints every cell (or filtered subset), depending on filter flags.</li>
+</ul>
+<hr>
+<h2 id="tool-configuration-usertoolstateconfigasset-and-derived-types">Tool configuration: <code>UserToolStateConfigAsset</code> and derived types</h2>
+<h3 id="iusertoolstateconfig"><code>IUserToolStateConfig</code></h3>
+<p>File: <code>Runtime\UserTools\SM\Data\IUserToolStateConfig.cs</code></p>
+<p>A tool config must provide:</p>
+<ul>
+<li><code>ToolSettings</code> (<code>UserToolStateSettings</code>)</li>
+<li><code>CreateUserToolState(ISmState parent)</code> (factory method)</li>
+</ul>
+<h3 id="usertoolstateconfigasset"><code>UserToolStateConfigAsset</code></h3>
+<p>File: <code>Runtime\UserTools\SM\Configs\UserToolStateConfigAsset.cs</code></p>
+<p>A Unity <code>ScriptableObject</code> implementation of <code>IUserToolStateConfig</code>:</p>
+<ul>
+<li>serialized <code>UserToolStateSettings _toolSettings</code></li>
+<li>abstract <code>CreateUserToolState(...)</code></li>
+</ul>
+<p>This is the most common way to declare tools in the Unity Editor and initialize them in a consistent way.</p>
+<h3 id="hexterrain-specific-config-layers">HexTerrain-specific config layers</h3>
+<p>These add more config surfaces without changing the state machine contract:</p>
+<ul>
+<li><p><code>HexTerrainUserToolStateConfigAsset</code></p>
+<ul>
+<li>adds <code>HexTerrainUserToolStateSettings TerrainToolSettings</code></li>
+</ul>
+</li>
+<li><p><code>HexTerrainBrushUserToolStateConfigAsset</code></p>
+<ul>
+<li>adds brush behavior fields (time threshold, keys, cursor color, etc.)</li>
+<li>matches what <code>BrushUserToolState&lt;TBrushTarget&gt;.Init&lt;TInitArgs&gt;()</code> consumes via <code>IHexTerrainBrushUserToolStateConfig</code></li>
+</ul>
+</li>
+<li><p><code>HexTerrainLayerGroupBrushUserToolStateConfigAsset</code></p>
+<ul>
+<li>adds <code>ViewModeByLayerIndex</code></li>
+</ul>
+</li>
+<li><p><code>PaintCellItemUserToolStateConfigAsset</code></p>
+<ul>
+<li>adds <code>ReadValueKey</code> (key used to read cell value under cursor)</li>
+</ul>
+</li>
+</ul>
+<p>Tool-specific config assets usually derive from one of these and implement <code>CreateUserToolState(...)</code>.</p>
+<hr>
+<h2 id="initialization-flow-usertools--state-machine">Initialization flow (UserTools + state machine)</h2>
+<h3 id="usertoolsstatemachine"><code>UserToolsStateMachine</code></h3>
+<p>File: <code>Runtime\UserTools\SM\UserToolsStateMachine.cs</code></p>
+<p><code>UserToolsStateMachine</code> is a specialized <code>SmStateMachine</code> that:</p>
+<ul>
+<li>stores states in the base <code>States</code> list (state-machine order)</li>
+<li>additionally indexes tool states by <code>UserToolType</code> (<code>StatesByType</code>) for fast selection</li>
+</ul>
+<p>Key methods:</p>
+<ul>
+<li><code>InitStates&lt;TInitArgs&gt;(IEnumerable&lt;TInitArgs&gt; requests)</code> where <code>TInitArgs : IUserToolStateConfig</code>
+<ul>
+<li>creates/replaces states based on the config sequence</li>
+<li>calls <code>state.Init(request)</code> for each created/reused state</li>
+</ul>
+</li>
+<li><code>InitStates(IHexTerrainAPI terrainAPI)</code>
+<ul>
+<li>for each state in <code>States</code>, if it is a <code>HexTerrainUserToolStateBase</code>, calls <code>userToolState.Init(terrainAPI)</code></li>
+</ul>
+</li>
+<li><code>SwitchStateByUserToolType(int userToolType)</code>
+<ul>
+<li>finds a tool in <code>StatesByType</code> and switches the state machine to it (calls <code>PrepareToStop()</code> on the previous state and <code>PrepareToRun()</code> on the new state via <code>SmStateMachine.SwitchState(...)</code>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="how-tools-are-typically-initialized">How tools are typically initialized</h3>
+<p>A common initialization sequence is:</p>
+<ol>
+<li>Prepare a list of configs (usually <code>UserToolStateConfigAsset</code> references from the Inspector)</li>
+<li>Create <code>UserToolsStateMachine</code></li>
+<li>Call:
+<ul>
+<li><code>userToolsSm.Init(configs, terrainAPI)</code><br>
+(this calls <code>Init(configs)</code> then <code>Init(terrainAPI)</code>)</li>
+</ul>
+</li>
+</ol>
+<p>In update loop:</p>
+<ul>
+<li>call <code>userToolsSm.Tick()</code> every frame</li>
+</ul>
+<p>On shutdown:</p>
+<ul>
+<li>call <code>userToolsSm.Dispose()</code> (disposes disposable states)</li>
+<li>optionally <code>ClearStates()</code> if you need to rebuild the tool set</li>
+</ul>
+<pre><code class="lang-mermaid">graph TD;
+    A[&quot;Unity bootstrap (MonoBehaviour / system)&quot;] --&gt; B[&quot;Create UserToolsStateMachine&quot;] 
+    B --&gt; C[&quot;Init(configAssets) → create states + apply config&quot;] 
+    C --&gt; D[&quot;Init(terrainAPI) → inject IHexTerrainAPI into hex-terrain states&quot;] 
+    D --&gt; E[&quot;Select tool: SwitchStateByUserToolType((int)UserToolTypes.X)&quot;] 
+    E --&gt; F[&quot;Each frame: Tick() → tool logic&quot;] 
+    E --&gt; G[&quot;State transition: old PrepareToStop() / new PrepareToRun()&quot;]
+</code></pre>
+<hr>
+<h2 id="how-to-use-usertools">How to use UserTools</h2>
+<h3 id="1-provide-tool-configs">1) Provide tool configs</h3>
+<p>Create (or reference) a set of <code>UserToolStateConfigAsset</code> ScriptableObjects. Each config must implement <code>CreateUserToolState(...)</code>.</p>
+<h3 id="2-initialize-state-machine">2) Initialize state machine</h3>
+<p>Call <code>UserToolsStateMachine.Init(...)</code> with:</p>
+<ul>
+<li>configs (<code>IEnumerable&lt;IUserToolStateConfig&gt;</code>)</li>
+<li><code>IHexTerrainAPI</code></li>
+</ul>
+<h3 id="3-switch-tools">3) Switch tools</h3>
+<p>Switch by type id (<code>UserToolTypes</code>) using:</p>
+<ul>
+<li><code>SwitchStateByUserToolType((int)UserToolTypes.PaintCellObjects)</code></li>
+</ul>
+<h3 id="4-tick">4) Tick</h3>
+<p>Call <code>Tick()</code> each frame from your update loop. Brush tools apply operations during <code>Tick()</code> based on input + raycast hit.</p>
+<hr>
+<h2 id="creating-a-new-usertool-example-paintcellobjectsusertoolstate">Creating a new UserTool (example: <code>PaintCellObjectsUserToolState</code>)</h2>
+<p><code>PaintCellObjectsUserToolState</code> is a minimal “concrete tool state” because all behavior is inherited from <code>PaintCellItemAllDataUserToolStateBase&lt;...&gt;</code>.</p>
+<p>File: <code>Runtime\UserTools\SM\States\CellObjects\PaintCellObjectsUserToolState.cs</code></p>
+<pre><code class="lang-csharp">public class PaintCellObjectsUserToolState : PaintCellItemAllDataUserToolStateBase&lt;CellObjectLayerGroup, CellObjectLayer, ChunkMeshLayerGroup, ChunkMeshLayer&gt; 
+{ 
+    public override int UserToolType =&gt; (int)UserToolTypes.PaintCellObjects;
+    public PaintCellObjectsUserToolState(ISmState parent) : base(parent) { }
+}
+</code></pre>
+<h3 id="step-by-step-adding-a-similar-tool">Step-by-step: adding a similar tool</h3>
+<h4 id="step-1-addchoose-a-usertooltypes-id">Step 1: Add/choose a <code>UserToolTypes</code> id</h4>
+<p>If you are adding a brand new tool type, add a new enum value to <code>UserToolTypes</code> (or reuse an existing one).</p>
+<h4 id="step-2-implement-the-tool-state">Step 2: Implement the tool state</h4>
+<p>Option A (simple): inherit an existing base (like <code>PaintCellItemAllDataUserToolStateBase</code>) and only override <code>UserToolType</code>.</p>
+<p>Option B (custom): inherit <code>UserToolStateBase</code> / <code>HexTerrainUserToolStateBase</code> / <code>BrushUserToolState&lt;TBrushTarget&gt;</code> and implement:</p>
+<ul>
+<li><code>ApplyBrush(...)</code> (for brush tools)</li>
+<li>optional UI settings (via the <code>BrushUserToolState&lt;..., TSettings, TSettingsScreen&gt;</code> layers)</li>
+</ul>
+<h4 id="step-3-create-a-config-asset-for-the-tool-recommended">Step 3: Create a config asset for the tool (recommended)</h4>
+<p>Create a ScriptableObject config asset so the tool can be instantiated and configured from the editor.</p>
+<p>Below is an example config asset for <code>PaintCellObjectsUserToolState</code>. Place it near other tool configs (for consistency, under <code>Runtime\UserTools\SM\Configs\States\...</code>).</p>
+<p>com.freewebtime.hexterrains\Runtime\UserTools\SM\Configs\States\CellObjects\PaintCellObjectsUserToolStateConfigAsset.cs:</p>
+<pre><code class="lang-csharp">using Fwt.Core.StateMachines; 
+using Fwt.HexTerrains.UserTools.SM; 
+using UnityEngine;
+
+namespace Fwt.HexTerrains.UserTools.SM.Configs 
+{ 
+    [CreateAssetMenu( fileName = &quot;PaintCellObjectsUserToolStateConfig&quot;, menuName = &quot;Fwt/HexTerrains/UserTools/Paint Cell Objects Tool Config&quot; )] 
+    public class PaintCellObjectsUserToolStateConfigAsset : PaintCellItemUserToolStateConfigAsset 
+    { 
+        public override UserToolStateBase CreateUserToolState(ISmState parent) 
+        { 
+            return new States.CellObjects.PaintCellObjectsUserToolState(parent); 
+        } 
+    } 
+}
+</code></pre>
+<h4 id="step-4-register-the-config-in-your-tool-initialization-list">Step 4: Register the config in your tool initialization list</h4>
+<p>Add the created config asset to the collection passed into <code>UserToolsStateMachine.Init(configs, terrainAPI)</code>.</p>
+<h4 id="step-5-switch-to-the-tool-at-runtime">Step 5: Switch to the tool at runtime</h4>
+<pre><code class="lang-csharp">userToolsSm.SwitchStateByUserToolType((int)UserToolTypes.PaintCellObjects);
+</code></pre>
+<hr>
+<h2 id="notes--gotchas">Notes / gotchas</h2>
+<ul>
+<li><code>UserToolsStateMachine</code> indexes tools by <code>UserToolStateBase.UserToolType</code>. If two states return the same <code>UserToolType</code>, the last one added wins in <code>StatesByType</code>.</li>
+<li>Brush tools intentionally rate-limit changes via <code>TimeTreshold</code>.</li>
+<li>Many brush tools persist user parameters via <code>PlayerPrefs</code> (see <code>BrushUserToolState&lt;TBrushTarget, TSettings&gt;</code>). If you change setting key names, existing saved values may no longer load.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/user-tools.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>GeoPlast Layers (Data, Simulation, Rendering) | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="GeoPlast Layers (Data, Simulation, Rendering) | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="geoplast-layers-data-simulation-rendering">GeoPlast Layers (Data, Simulation, Rendering)</h1>
+
+<p>This page documents the <code>GeoPlastLayer</code> base class and all layers that inherit from it, including how GeoPlast layers are <strong>created</strong>, <strong>initialized</strong>, <strong>updated</strong>, <strong>simulated</strong>, <strong>rendered</strong>, <strong>cleaned up</strong>, <strong>serialized</strong>, and <strong>disposed</strong>.</p>
+<p>It also explains the <strong>simulation timing model</strong>:</p>
+<ul>
+<li><code>HexTerrainSimulationTimer</code> (global simulation time + throttling)</li>
+<li><code>FrameCycleSettings</code> (per-feature simulation cadence, e.g., heat every 8th simulation frame)</li>
+</ul>
+<hr>
+<h2 id="1-class-hierarchy">1. Class hierarchy</h2>
+<p>GeoPlast layers form a small inheritance chain:</p>
+<ul>
+<li><code>HexTerrainLayer</code>
+<ul>
+<li><code>GeoPlastLayer</code>
+<ul>
+<li><code>VisualGeoPlastLayer</code>
+<ul>
+<li><code>DynamicGeoPlastLayer</code>
+<ul>
+<li><code>MaterialGeoPlastLayer</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>In short:</p>
+<ul>
+<li><code>GeoPlastLayer</code> = storage + volume/ceiling computation + simulation hooks.</li>
+<li><code>VisualGeoPlastLayer</code> = renders layer maps into a <code>ChunkMeshLayer</code> (heightmap/transparency).</li>
+<li><code>DynamicGeoPlastLayer</code> = <strong>volume flow</strong> simulation (horizontal + vertical via up/down links).</li>
+<li><code>MaterialGeoPlastLayer</code> = <strong>heat</strong> (heat amount + temperature), <strong>heat diffusion</strong>, <strong>heat advection with volume flow</strong>, <strong>temperature-driven vertical volume flow</strong>, and optional <strong>density-by-temperature</strong>.</li>
+</ul>
+<hr>
+<h2 id="2-core-data-model-geoplastlayer">2. Core data model (<code>GeoPlastLayer</code>)</h2>
+<p><code>GeoPlastLayer</code> stores per-cell scalar fields (implemented as data layers):</p>
+<table>
+<thead>
+<tr>
+<th>Concept</th>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Plast “mass”</td>
+<td><code>AmountMap</code></td>
+<td><code>ColorMapCellValueDataLayer_Float</code></td>
+<td>Amount of geo plast (unitless “amount”).</td>
+</tr>
+<tr>
+<td>Density</td>
+<td><code>DensityMap</code></td>
+<td><code>ColorMapCellValueDataLayer_Float</code></td>
+<td>Density factor (volume per amount).</td>
+</tr>
+<tr>
+<td>Volume</td>
+<td><code>VolumeMap</code></td>
+<td><code>ColorMapCellValueDataLayer_Float</code></td>
+<td>Computed: <code>Amount * Density</code>.</td>
+</tr>
+<tr>
+<td>Bedrock height</td>
+<td><code>BedrockHeightMap</code></td>
+<td><code>CellValueDataLayer&lt;float&gt;</code></td>
+<td>Base height for this layer (usually copied from bedrock layer’s ceiling).</td>
+</tr>
+<tr>
+<td>Ceiling height</td>
+<td><code>CeilingHeightMap</code></td>
+<td><code>CellValueDataLayer&lt;float&gt;</code></td>
+<td>Computed: <code>BedrockHeight + Volume</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>Additionally:</p>
+<ul>
+<li><code>GeoPlastSettings</code> (base density + whether a bedrock reference is required)</li>
+<li><code>BedrockPlastReference</code> (<code>HexTerrainLayerReference</code>) to another <code>GeoPlastLayer</code> that acts as bedrock source</li>
+</ul>
+<h3 id="21-amount-vs-density-vs-volume">2.1 “Amount vs Density vs Volume”</h3>
+<p>GeoPlast uses a common pattern:</p>
+<ul>
+<li><strong>Amount</strong> is the conserved-ish “stuff” that moves between cells and layers.</li>
+<li><strong>Density</strong> converts that to volume/height for rendering and flow computations.</li>
+<li><strong>Volume</strong> is derived:
+<ul>
+<li><code>Volume = clamp(Amount * Density, 0, +inf)</code> (<code>CalculateGeoPlastVolumeJob</code>)</li>
+</ul>
+</li>
+</ul>
+<p>This is important because:</p>
+<ul>
+<li>Flow simulation is computed primarily in <strong>volume space</strong> (height/volume differences).</li>
+<li>Application of flow typically changes <strong>AmountMap</strong> (converted back using density).</li>
+</ul>
+<hr>
+<h2 id="3-creation--initialization">3. Creation &amp; initialization</h2>
+<h3 id="31-authoring-unity-scene--ecs-buffers">3.1 Authoring (Unity scene → ECS buffers)</h3>
+<p>GeoPlast layers are requested via authoring components:</p>
+<ul>
+<li><code>GeoPlastLayerGroupAuthoring</code> bakes a buffer of <code>CreateGeoPlastLayerRequest</code> onto the terrain entity.
+<ul>
+<li>Each request stores:
+<ul>
+<li><code>Name</code></li>
+<li><code>Args</code> = <code>GeoPlastLayerConfigAsset</code> (a ScriptableObject factory + init config)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Relevant code:</p>
+<ul>
+<li><code>GeoPlastLayerGroupAuthoring</code> creates <code>CreateGeoPlastLayerRequest</code> entries.</li>
+<li><code>CreateGeoPlastLayerRequest</code> implements <code>ITerrainLayerFactory</code> and calls <code>Args.Value.CreateTerrainLayer()</code>.</li>
+</ul>
+<h3 id="32-config-assets-layer-factories--init-config">3.2 Config assets (layer factories + init config)</h3>
+<p>The package provides config assets matching the inheritance chain:</p>
+<ul>
+<li><code>GeoPlastLayerConfigAsset</code> → creates <code>GeoPlastLayer</code></li>
+<li><code>VisualGeoPlastLayerConfigAsset</code> → creates <code>VisualGeoPlastLayer</code></li>
+<li><code>DynamicGeoPlastLayerConfigAsset</code> → creates <code>DynamicGeoPlastLayer</code></li>
+<li><code>MaterialGeoPlastLayerConfigAsset</code> → creates <code>MaterialGeoPlastLayer</code></li>
+</ul>
+<p>Each config asset implements the matching init interface:</p>
+<ul>
+<li><code>IInitGeoPlastLayerConfig</code></li>
+<li><code>IVisualGeoPlastLayerConfig</code></li>
+<li><code>IInitDynamicGeoPlastLayerArgs</code></li>
+<li><code>IInitMaterialGeoPlastLayerArgs</code></li>
+</ul>
+<p>These interfaces supply:</p>
+<ul>
+<li>settings structs (GeoPlast / Visual / Dynamic / Material)</li>
+<li>initialization args for maps (amount, density, volume, heat, temperature)</li>
+<li>layer references (bedrock; up/down flow targets; chunk mesh layer target)</li>
+</ul>
+<h3 id="33-runtime-initialization-init">3.3 Runtime initialization (<code>Init</code>)</h3>
+<p>All GeoPlast layers follow this pattern:</p>
+<ol>
+<li><code>Init(HexTerrainSettings settings)</code> allocates/initializes data layers to match <code>settings.CellsCount</code>.</li>
+<li><code>Init(settings, args)</code> calls base <code>Init(settings)</code> and then <code>InitLayerData(args)</code> to apply config and initial map data.</li>
+</ol>
+<p>Notable behavior:</p>
+<ul>
+<li>If <code>GeoPlastSettings.HasBedrock == false</code>, <code>BedrockHeightMap</code> is filled with 0 during init.</li>
+</ul>
+<hr>
+<h2 id="4-update-vs-simulation-two-pipelines">4. Update vs Simulation (two pipelines)</h2>
+<p>GeoPlast has two distinct “pipelines” you typically run every frame:</p>
+<h3 id="41-update-pipeline-derived-maps-recomputed-when-dirty">4.1 Update pipeline (derived maps, recomputed when dirty)</h3>
+<p>This computes maps that are <em>derived from other maps</em> and uses dirty flags to skip work.</p>
+<p><code>GeoPlastLayerGroup.Update()</code> runs, in order:</p>
+<ol>
+<li><code>PreparePlastUpdate()</code></li>
+<li><code>CalculateDensity()</code></li>
+<li><code>CalculateVolume()</code></li>
+<li><code>CalculateBedrockAndCeiling()</code></li>
+<li><code>DoPlastUpdate()</code></li>
+</ol>
+<p>Base <code>GeoPlastLayer</code> implements:</p>
+<ul>
+<li><code>CalculateVolume()</code> (only if <code>AmountMap</code> or <code>DensityMap</code> dirty)</li>
+<li><code>CalculateBedrock()</code> (copies bedrock ceiling → bedrock height, if enabled and bedrock ceiling dirty)</li>
+<li><code>CalculateCeiling()</code> (only if bedrock or volume dirty)</li>
+</ul>
+<p>Derived types extend <code>PreparePlastUpdate()</code> / <code>CalculateDensity()</code>:</p>
+<ul>
+<li><code>MaterialGeoPlastLayer</code> computes:
+<ul>
+<li><code>TemperatureMap</code> = <code>HeatMap / AmountMap</code> (<code>CalculateGeoPlastTemperatureJob</code>)</li>
+<li>density optionally scales by temperature (<code>CalculateGeoPlastDensityByTemperatureJob</code>)</li>
+</ul>
+</li>
+</ul>
+<h3 id="42-simulation-pipeline-behavioral-movement-over-time">4.2 Simulation pipeline (behavioral “movement” over time)</h3>
+<p>Simulation is a 3-stage hook model called by <code>GeoPlastLayerGroup.Simulate(...)</code>:</p>
+<ol>
+<li><code>PrepareSimulation(simTime, group, deps)</code></li>
+<li><code>CalculateSimulation(simTime, group, deps)</code></li>
+<li><code>ApplySimulation(simTime, group, deps)</code></li>
+</ol>
+<p>The intent is:</p>
+<ul>
+<li><strong>Prepare</strong>: clear/prepare intermediate buffers (flow potentials, flow maps, dirty chunk sets).</li>
+<li><strong>Calculate</strong>: compute “what should happen” (potentials + flow maps).</li>
+<li><strong>Apply</strong>: apply flow maps to persistent state (amount/heat maps).</li>
+</ul>
+<p><code>GeoPlastLayerGroup</code> also guards against double-simulating the same timer frame:</p>
+<ul>
+<li>It stores <code>LastSimulationFrame</code> and ignores repeated calls with the same <code>simulationTime.FrameCount</code>.</li>
+</ul>
+<hr>
+<h2 id="5-simulation-timing">5. Simulation timing</h2>
+<h3 id="51-hexterrainsimulationtimer-global-simulation-clock">5.1 <code>HexTerrainSimulationTimer</code> (global simulation clock)</h3>
+<p><code>HexTerrainSimulationTimer</code> is an ECS component containing:</p>
+<ul>
+<li><code>Elapsed</code> (total simulation seconds)</li>
+<li><code>DeltaTime</code> (seconds since last simulation frame; used in flow speeds)</li>
+<li><code>TimeScale</code></li>
+<li><code>FrameCount</code> (simulation frame index)</li>
+<li><code>SimulationDelay</code> + <code>SimulationDelayCounter</code> (skip simulation frames globally)</li>
+<li>fixed timestep controls: <code>IsFixedTimeStep</code>, <code>FixedTimeStep</code></li>
+<li>pause controls: <code>IsPaused</code>, <code>IsTickAndPause</code></li>
+</ul>
+<h4 id="creation">Creation</h4>
+<p><code>HexTerrainSimulationAuthoring</code> bakes a <code>HexTerrainSimulationTimer</code> component with initial values (time scale, delay, pause flags, fixed step).</p>
+<h4 id="updates-conceptual-contract">Updates (conceptual contract)</h4>
+<p>This package expects some “timer update” step in your world that:</p>
+<ul>
+<li>stops advancing if <code>IsPaused</code> is true</li>
+<li>advances one tick then pauses when <code>IsTickAndPause</code> is set</li>
+<li>uses <code>SimulationDelay</code>/<code>SimulationDelayCounter</code> to skip simulation ticks globally</li>
+<li>updates <code>DeltaTime</code>, <code>Elapsed</code>, and increments <code>FrameCount</code> on simulation ticks</li>
+</ul>
+<blockquote>
+<p>The GeoPlast systems consume the <em>result</em> of this contract (especially <code>DeltaTime</code> and <code>FrameCount</code>) rather than implementing the timer progression themselves.</p>
+</blockquote>
+<h3 id="52-framecyclesettings-per-feature-cadence">5.2 <code>FrameCycleSettings</code> (per-feature cadence)</h3>
+<p><code>FrameCycleSettings</code> is used to run a <em>specific</em> simulation feature on only certain simulation frames:</p>
+<ul>
+<li><code>FramesCycleLength</code>: cycle length in simulation frames</li>
+<li><code>FramesCycleOffset</code>: which frame inside the cycle is active</li>
+</ul>
+<p>A frame is a “tick” for the cycle if:</p>
+<pre><code class="lang-csharp">simulationTime.FrameCount % FramesCycleLength == FramesCycleOffset
+</code></pre>
+<h4 id="example">Example</h4>
+<p>If:</p>
+<ul>
+<li><code>FramesCycleLength = 4</code></li>
+<li><code>FramesCycleOffset = 2</code></li>
+</ul>
+<p>Then the feature runs on simulation frames:</p>
+<ul>
+<li>2, 6, 10, 14, ...</li>
+</ul>
+<h4 id="where-its-used">Where it’s used</h4>
+<ul>
+<li><code>DynamicGeoPlastSettings.VolumeFlowFrameCycle</code> controls <strong>volume flow</strong> cadence</li>
+<li><code>MaterialGeoPlastSettings.HeatFlowFrameCycle</code> controls <strong>independent heat diffusion</strong> cadence</li>
+</ul>
+<p>This means you can run:</p>
+<ul>
+<li>volume flow every 2nd simulation frame</li>
+<li>heat diffusion every 8th simulation frame
+…while still updating derived maps every frame (if needed) via the update pipeline.</li>
+</ul>
+<hr>
+<h2 id="6-volume-flow-dynamic-geoplast">6. Volume flow (Dynamic GeoPlast)</h2>
+<h3 id="61-data-structures-volumeflowpotentialmap-and-volumeflowmap">6.1 Data structures: <code>VolumeFlowPotentialMap</code> and <code>VolumeFlowMap</code></h3>
+<p><code>DynamicGeoPlastLayer</code> adds:</p>
+<ul>
+<li><code>VolumeFlowPotentialMap : FlowMapDataLayer</code></li>
+<li><code>VolumeFlowMap : FlowMapDataLayer</code></li>
+<li><code>IncomingVolumeFlowChunks : NativeParallelHashSetDataLayer&lt;int&gt;</code></li>
+</ul>
+<p><code>FlowMapDataLayer</code> is a <code>CellValueDataLayer&lt;FixedArray8&lt;float&gt;&gt;</code> plus a scalar <code>TotalFlowMap</code>.</p>
+<p><code>FixedArray8&lt;float&gt;</code> slots map to <code>FlowDirections</code>:</p>
+<ul>
+<li>0..5 = hex neighbors</li>
+<li>6 = Up</li>
+<li>7 = Down</li>
+</ul>
+<p>Semantics used by jobs:</p>
+<ul>
+<li>Potential maps store “desired” flow <em>capacity</em> per direction.</li>
+<li>Flow maps store actual flow amounts per direction for this tick.</li>
+<li>Total flow maps store sum of all outflow from a cell.</li>
+</ul>
+<h3 id="62-simulation-gating">6.2 Simulation gating</h3>
+<p>Volume flow simulation runs only when both are true:</p>
+<ul>
+<li>some flow direction is enabled (<code>GeoPlastFlowSettings.IsAnyFlowEnabled</code>)</li>
+<li>the current simulation frame matches the configured <code>FrameCycleSettings</code></li>
+</ul>
+<p>Code path:</p>
+<ul>
+<li><code>DynamicGeoPlastSettings.IsAnyFlowEnabledAndIsSimulationTick(simTimer)</code></li>
+</ul>
+<h3 id="63-prepare-stage">6.3 Prepare stage</h3>
+<p><code>DynamicGeoPlastLayer.PrepareSimulation(...)</code> clears:</p>
+<ul>
+<li><code>VolumeFlowPotentialMap</code> + <code>TotalFlowMap</code> → zeros</li>
+<li><code>VolumeFlowMap</code> + <code>TotalFlowMap</code> → zeros</li>
+<li><code>IncomingVolumeFlowChunks</code> → cleared</li>
+</ul>
+<p>This prevents stale flow data from previous simulation ticks.</p>
+<h3 id="64-calculate-stage-potential--flow-map">6.4 Calculate stage (potential → flow map)</h3>
+<p>The calculation is split:</p>
+<h4 id="641-horizontal-volume-flow-potential">6.4.1 Horizontal volume flow potential</h4>
+<p><code>CalculateHorizontalVolumeFlowPotentialJob</code> computes neighbor potentials using <strong>ceiling height differences</strong>:</p>
+<ul>
+<li><code>ceiling = bedrock + volumeLeft</code></li>
+<li><code>heightDifference = myCeiling - neighborCeiling</code></li>
+<li>potential is <code>max(heightDifference, 0)</code>, thresholded</li>
+<li>it then proportionally distributes and caps potential based on available volume</li>
+</ul>
+<p>Important details:</p>
+<ul>
+<li>Potential is computed using <code>volumeLeft = max(myVolume - alreadyAssignedPotential, 0)</code>, so vertical potentials can “consume” available volume too.</li>
+<li>The algorithm includes a <code>* 0.5f</code> factor when distributing potential share.</li>
+</ul>
+<h4 id="642-vertical-volume-flow-potential">6.4.2 Vertical volume flow potential</h4>
+<p><code>DynamicGeoPlastLayer</code> base implementation returns no vertical potential.
+<code>MaterialGeoPlastLayer</code> overrides this to compute vertical potential based on temperature (see §8.6).</p>
+<h4 id="643-flow-map-from-potentials">6.4.3 Flow map from potentials</h4>
+<p><code>CalculateVolumeFlowMapJob</code> converts potentials to actual per-direction flow:</p>
+<ul>
+<li>Flow speed per direction is <code>clamp(FlowSpeed * simulationTimer.DeltaTime, 0..1)</code></li>
+<li>It computes an outflow amount per slot (0..7) and a total outflow.</li>
+<li>For horizontal flow (0..5), it marks neighbor chunks in <code>IncomingFlowChunks</code> so only affected chunks do expensive “incoming sum” work during apply.</li>
+</ul>
+<h3 id="65-apply-stage-flow-map--amountmap">6.5 Apply stage (flow map → AmountMap)</h3>
+<p>Applying volume flow is done in three steps:</p>
+<ol>
+<li><p><strong>Horizontal inflow</strong> (<code>ApplyHorizontalVolumeFlowMapJob</code>)</p>
+<ul>
+<li>For a cell, sum inflow from neighbors’ flow maps.</li>
+<li>Convert inflow volume → inflow amount using <em>neighbor density</em>:
+<ul>
+<li><code>flowAmount = flowVolume / neighbourDensity</code></li>
+</ul>
+</li>
+<li>Add to <code>AmountMap</code>.</li>
+</ul>
+</li>
+<li><p><strong>Vertical transfer to other layers</strong> (<code>ApplyVerticalVolumeFlowMapJob</code>)</p>
+<ul>
+<li>Uses <code>UpFlowTargetLayerRef</code> / <code>DownFlowTargetLayerRef</code> to find the target layer.</li>
+<li>For each cell, take <code>FlowMap[cell][Up|Down]</code>, convert to amount via density, and add to target layer’s <code>AmountMap</code>.</li>
+</ul>
+</li>
+<li><p><strong>Subtract outflow from source</strong> (<code>ApplyVolumeFlowFromCellJob</code>)</p>
+<ul>
+<li>Uses <code>TotalFlowMap[cell]</code> (total outflow volume)</li>
+<li>Converts volume out → amount out via density</li>
+<li><code>AmountMap[cell] -= flownOutVolume / density</code></li>
+</ul>
+</li>
+</ol>
+<p>This separation is why vertical apply jobs only add to targets: the source subtraction is centralized and uses <code>TotalFlowMap</code>.</p>
+<hr>
+<h2 id="7-rendering-visual-geoplast">7. Rendering (Visual GeoPlast)</h2>
+<p><code>VisualGeoPlastLayer</code> renders into a <code>ChunkMeshLayer</code> referenced by <code>SurfaceLayerRef</code>.</p>
+<h3 id="71-render-modes">7.1 Render modes</h3>
+<p><code>VisualGeoPlastSettings.RenderMode</code> selects which scalar drives the surface height:</p>
+<ul>
+<li><code>Amount</code>: render <code>AmountMap</code> directly</li>
+<li><code>Volume</code>: render <code>VolumeMap</code></li>
+<li><code>Ceiling</code>: render <code>CeilingHeightMap</code> (but uses <code>VolumeMap</code> as “amount proxy” for transparency/threshold logic)</li>
+</ul>
+<h3 id="72-render-job">7.2 Render job</h3>
+<p>Rendering is performed by <code>RenderGeoPlastToHeightMapJob</code>:</p>
+<ul>
+<li>reads:
+<ul>
+<li>chosen render values map</li>
+<li>chosen render amount map (for transparency/zero-height thresholding)</li>
+<li>dirty chunk grid of the render values</li>
+</ul>
+</li>
+<li>writes:
+<ul>
+<li><code>ChunkMeshLayer.HeightMap</code></li>
+<li><code>ChunkMeshLayer.TransparencyMap</code></li>
+<li>(biome map is present but currently unused in the job)</li>
+</ul>
+</li>
+</ul>
+<p>Key behaviors:</p>
+<ul>
+<li>If the render-values chunk isn’t dirty, the job skips the cell early.</li>
+<li>Transparency is computed by <code>renderAmount &lt;= TransparencyTreshold</code> and depends on <code>IsRenderZeroAsTransparent</code>.</li>
+<li>“Minimum visible height” is enforced by <code>ZeroHeightTreshold</code>:
+<ul>
+<li>If non-transparent and <code>0 &lt; renderAmount &lt; ZeroHeightTreshold</code>, the rendered height is increased so that tiny amounts are still visible.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="8-heat-and-temperature-material-geoplast">8. Heat and temperature (Material GeoPlast)</h2>
+<p><code>MaterialGeoPlastLayer</code> adds heat simulation on top of volume simulation.</p>
+<h3 id="81-heat-is-stored-as-heat-amount">8.1 Heat is stored as “heat amount”</h3>
+<ul>
+<li><code>HeatMap</code> stores a scalar “heat amount” per cell.</li>
+<li>Temperature is derived:
+<ul>
+<li><code>Temperature = Heat / Amount</code> (<code>CalculateGeoPlastTemperatureJob</code>)</li>
+<li>If <code>Amount &lt;= 0</code>, temperature is set to 0.</li>
+</ul>
+</li>
+</ul>
+<p>This design allows:</p>
+<ul>
+<li>heat to move independently (diffusion)</li>
+<li>heat to be advected with moving plast volume</li>
+</ul>
+<h3 id="82-heat-advection-with-volume-flow-heat-flows-with-volume">8.2 Heat advection with volume flow (heat flows <em>with</em> volume)</h3>
+<p>When volume flows, a corresponding “heat flow” is derived from it:</p>
+<p><code>ApplyVolumeFlowMapToHeatFlowMapJob</code>:</p>
+<ul>
+<li>For each direction:
+<ul>
+<li><code>flowShare = flowVolume / myVolume</code></li>
+<li><code>heatToDirection = myHeat * flowShare</code></li>
+</ul>
+</li>
+<li>Accumulates into <code>HeatFlowMap</code> and <code>TotalHeatFlowMap</code></li>
+</ul>
+<p>This is what makes heat “ride along” with flowing material.</p>
+<h3 id="83-independent-heat-diffusion-heat-flows-without-volume">8.3 Independent heat diffusion (heat flows without volume)</h3>
+<p>Material heat diffusion is a separate simulation feature with its own:</p>
+<ul>
+<li><code>HeatFlowFrameCycle</code></li>
+<li><code>HeatFlowPotentialMap</code></li>
+<li><code>HeatFlowMap</code></li>
+<li><code>IncomingHeatFlowChunks</code></li>
+</ul>
+<p>It uses the same generic <code>CalculateVolumeFlowMapJob</code>, but with <code>HeatMap</code> passed as the “volume” array, meaning:</p>
+<ul>
+<li>the mechanics of potential → flow map → apply are shared,</li>
+<li>but the <em>potentials</em> are computed specifically for heat.</li>
+</ul>
+<h3 id="84-horizontal-heat-diffusion-potential">8.4 Horizontal heat diffusion potential</h3>
+<p><code>CalculateHorizontalHeatFlowPotentialJob</code> computes potential based on <strong>overlapping volume columns</strong> between adjacent cells:</p>
+<ul>
+<li>Compute overlap height:
+<ul>
+<li><code>commonBedrock = max(myBedrock, neighborBedrock)</code></li>
+<li><code>commonCeiling = min(myCeiling, neighborCeiling)</code></li>
+<li><code>touchingHeight = commonCeiling - commonBedrock</code></li>
+</ul>
+</li>
+<li>If <code>touchingHeight &lt;= 0</code>, there is no contact → no heat flow.</li>
+<li>Otherwise, a touching share is applied to a per-side heat budget.</li>
+</ul>
+<p>This models “heat diffuses where volumes touch”.</p>
+<h3 id="85-vertical-heat-flow-potential-between-layers">8.5 Vertical heat flow potential (between layers)</h3>
+<p><code>CalculateVerticalHeatFlowPotentialJob</code> computes vertical potential when:</p>
+<ul>
+<li>source has volume and heat</li>
+<li>target has volume (it must be able to “receive” heat in a meaningful way)</li>
+</ul>
+<p>It uses a simplified touching model:</p>
+<ul>
+<li><code>touchingVolume = min(myVolume * 0.5, 1)</code></li>
+<li><code>touchingShare = touchingVolume / myVolume</code></li>
+<li><code>potential = touchingShare * heatLeft</code></li>
+</ul>
+<h3 id="86-temperature-driven-vertical-volume-flow-between-layers">8.6 Temperature-driven vertical volume flow (between layers)</h3>
+<p><code>MaterialGeoPlastLayer</code> overrides vertical volume flow potential calculation using:</p>
+<ul>
+<li><code>VerticalFlowByTemperatureSettings</code> per direction (<code>UpFlowByTemperatureSettings</code>, <code>DownFlowByTemperatureSettings</code>)</li>
+<li>an <code>ExponentialCurve</code> evaluated by cell temperature</li>
+</ul>
+<p><code>CalculateVerticalVolumeFlowPotentialJob</code>:</p>
+<ul>
+<li><code>temperatureFactor = curve.Evaluate(myTemperature)</code></li>
+<li><code>potential = min(BaseFlow * temperatureFactor, volumeLeft)</code></li>
+<li>writes the result into potential slot <code>Up (6)</code> or <code>Down (7)</code></li>
+</ul>
+<p>This is how you implement “evaporation/condensation” style behavior:</p>
+<ul>
+<li>hot cells produce up-potential</li>
+<li>cold cells produce down-potential
+…depending on the curve you author.</li>
+</ul>
+<h3 id="87-applying-heat-flow-horizontal--vertical--subtract-outflow">8.7 Applying heat flow (horizontal + vertical + subtract outflow)</h3>
+<p>Heat uses the same 3-step application pattern as volume:</p>
+<ol>
+<li><code>ApplyHorizontalHeatFlowMapJob</code> adds incoming heat from neighbors.</li>
+<li><code>ApplyVerticalHeatFlowMapJob</code> transfers heat to linked layers via up/down references.</li>
+<li><code>ApplyHeatFlowFromCellJob</code> subtracts total heat outflow from the source cell.</li>
+</ol>
+<h3 id="88-when-does-heat-apply">8.8 When does heat apply?</h3>
+<p>In <code>MaterialGeoPlastLayer.ApplySimulation(...)</code>:</p>
+<ul>
+<li>Heat apply happens if <strong>either</strong>:
+<ul>
+<li>volume flow is ticking this frame (because advected heat exists), <strong>or</strong></li>
+<li>heat flow is ticking this frame (because diffusion is computed)</li>
+</ul>
+</li>
+</ul>
+<p>This ensures heat stays consistent with volume movement even if diffusion runs less frequently.</p>
+<hr>
+<h2 id="9-vertical-linking-model-updown-flow-targets">9. Vertical linking model (Up/Down flow targets)</h2>
+<p>Vertical movement is organized by explicit layer references:</p>
+<ul>
+<li><code>UpFlowTargetLayerRef</code> and <code>DownFlowTargetLayerRef</code> exist on <code>DynamicGeoPlastLayer</code></li>
+<li>They are configured through:
+<ul>
+<li><code>IInitDynamicGeoPlastLayerArgs.UpFlowTargetLayerReference</code></li>
+<li><code>IInitDynamicGeoPlastLayerArgs.DownFlowTargetLayerReference</code></li>
+</ul>
+</li>
+</ul>
+<p>At runtime, <code>GetVerticalFlowTarget&lt;T&gt;(...)</code> uses <code>GetTerrainLayerFromParent&lt;T&gt;</code> to resolve the target from the parent <code>GeoPlastLayerGroup</code>.</p>
+<p>Key constraints:</p>
+<ul>
+<li>For <strong>volume vertical flow</strong>, the target is resolved as <code>GeoPlastLayer</code>.</li>
+<li>For <strong>heat vertical flow</strong>, the target is resolved as <code>MaterialGeoPlastLayer</code>.
+<ul>
+<li>If you link to a non-material target, vertical heat diffusion won’t find a target and will no-op.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="10-cleanup-completion-disposal-serialization">10. Cleanup, completion, disposal, serialization</h2>
+<h3 id="101-cleanup">10.1 Cleanup</h3>
+<p>Each layer implements:</p>
+<ul>
+<li><code>Cleanup()</code> (sync)</li>
+<li><code>CleanupAsync(JobHandle)</code> (job-scheduled cleanup)</li>
+</ul>
+<p>Base <code>GeoPlastLayer.Cleanup()</code> calls cleanup on:</p>
+<ul>
+<li>amount/density/volume maps</li>
+<li>bedrock and ceiling maps</li>
+</ul>
+<p>Derived layers extend this to clean flow maps, heat maps, hash sets, etc.</p>
+<h3 id="102-completing-jobs">10.2 Completing jobs</h3>
+<p><code>CompleteAllJobs()</code> exists to safely get/set values immediately (e.g., for serialization or debug queries).
+Each layer completes jobs for its owned maps (including their colormaps where applicable).</p>
+<h3 id="103-dispose">10.3 Dispose</h3>
+<p><code>Dispose()</code> releases native allocations owned by data layers.</p>
+<p>Important: <code>HexTerrainLayer.ParentLayer</code> is <em>not</em> disposed when a child is disposed.</p>
+<h3 id="104-serialization">10.4 Serialization</h3>
+<p><code>GeoPlastLayer</code> implements <code>ISerializableTerrainLayer</code> and serializes:</p>
+<ul>
+<li><code>AmountMap</code></li>
+<li><code>DensityMap</code></li>
+</ul>
+<p><code>MaterialGeoPlastLayer</code> extends serialization by serializing:</p>
+<ul>
+<li><code>HeatMap</code></li>
+</ul>
+<p>Derived/computed maps such as:</p>
+<ul>
+<li><code>VolumeMap</code></li>
+<li><code>BedrockHeightMap</code></li>
+<li><code>CeilingHeightMap</code></li>
+<li>flow maps
+…are expected to be recomputed after load via the update pipeline.</li>
+</ul>
+<hr>
+<h2 id="11-how-to-use-practical-setup">11. How to use (practical setup)</h2>
+<ol>
+<li>Add <code>HexTerrainAuthoring</code> to create the terrain entity.</li>
+<li>Add <code>ChunkMeshLayerGroupAuthoring</code> and define at least one <code>ChunkMeshLayer</code> (surface) used for height rendering.</li>
+<li>Add <code>GeoPlastLayerGroupAuthoring</code> and list your GeoPlast layers:
+<ul>
+<li>Choose config asset type based on needed features:
+<ul>
+<li><code>GeoPlastLayerConfigAsset</code> (data only)</li>
+<li><code>VisualGeoPlastLayerConfigAsset</code> (rendering)</li>
+<li><code>DynamicGeoPlastLayerConfigAsset</code> (volume flow)</li>
+<li><code>MaterialGeoPlastLayerConfigAsset</code> (heat + temperature behavior)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Configure:
+<ul>
+<li><code>BedrockPlastReference</code> if <code>GeoPlastSettings.HasBedrock</code> is enabled.</li>
+<li><code>ChunkMeshLayerReference</code> (visual layers) to point at the surface mesh layer.</li>
+<li><code>UpFlowTargetLayerReference</code> / <code>DownFlowTargetLayerReference</code> for vertical links.</li>
+<li><code>FrameCycleSettings</code> for performance control per feature (volume vs heat).</li>
+</ul>
+</li>
+<li>Ensure the world updates:
+<ul>
+<li><code>HexTerrainSimulationTimer</code> (advancing <code>FrameCount</code> + <code>DeltaTime</code>)</li>
+<li>calls into:
+<ul>
+<li><code>GeoPlastLayerGroup.Update(...)</code> (derived map computations)</li>
+<li><code>GeoPlastLayerGroup.Simulate(simTime, ...)</code> (flow/heat behaviors)</li>
+<li><code>GeoPlastLayerGroup.Render(...)</code> (visualization)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="12-how-to-extend">12. How to extend</h2>
+<h3 id="121-add-a-new-geoplast-layer-type">12.1 Add a new GeoPlast layer type</h3>
+<p>Recommended approach:</p>
+<ol>
+<li><p>Create a new layer class deriving the closest base:</p>
+<ul>
+<li>rendering only → derive <code>VisualGeoPlastLayer</code></li>
+<li>volume behavior → derive <code>DynamicGeoPlastLayer</code></li>
+<li>heat/material behavior → derive <code>MaterialGeoPlastLayer</code></li>
+</ul>
+</li>
+<li><p>Override hooks with correct stage semantics:</p>
+<ul>
+<li><code>PrepareSimulation(...)</code>:
+<ul>
+<li>clear intermediate maps / hash sets used by your simulation</li>
+</ul>
+</li>
+<li><code>CalculateSimulation(...)</code>:
+<ul>
+<li>compute potentials and flow maps (schedule jobs, mark dirty)</li>
+</ul>
+</li>
+<li><code>ApplySimulation(...)</code>:
+<ul>
+<li>apply flow maps into persistent maps (amount/heat/etc)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Follow the existing job safety pattern:</p>
+<ul>
+<li>call <code>PrepareToRead()</code> / <code>PrepareToWrite()</code></li>
+<li>combine dependencies</li>
+<li><code>AddReadDependency()</code> / <code>AddWriteDependency()</code></li>
+<li>set dirty flags (<code>SetDirty(true)</code>) on outputs</li>
+</ul>
+</li>
+</ol>
+<h3 id="122-provide-an-authorable-config-asset">12.2 Provide an authorable config asset</h3>
+<p>Create a ScriptableObject config asset that:</p>
+<ul>
+<li>derives from an existing config asset type (for reuse), or <code>HexTerrainLayerConfigAsset&lt;T&gt;</code></li>
+<li>implements the appropriate init interface</li>
+<li>overrides <code>CreateTerrainLayer()</code> to construct your derived layer class</li>
+</ul>
+<p>This lets <code>CreateGeoPlastLayerRequest</code> instantiate your layer from authoring without custom runtime code.</p>
+<h3 id="123-extend-flow-logic">12.3 Extend flow logic</h3>
+<p>Common extension points:</p>
+<ul>
+<li>Custom horizontal flow potential (override <code>CalculateHorizontalVolumeFlowPotential(...)</code>)</li>
+<li>Custom vertical flow (override <code>CalculateVerticalVolumeFlowPotential(...)</code>)</li>
+<li>Custom coupling between volume and heat (override <code>ApplyVolumeFlowMapToHeatFlowMap(...)</code>)</li>
+<li>Custom rendering (override <code>RenderGeoPlast(...)</code> or render into additional chunk mesh maps)</li>
+</ul>
+<hr>
+<h2 id="13-terminology-mapping-requested-names">13. Terminology mapping (requested names)</h2>
+<p>This package uses “maps” directly; conceptually they correspond to:</p>
+<ul>
+<li><strong>VolumeFlowPotential</strong> → <code>DynamicGeoPlastLayer.VolumeFlowPotentialMap</code></li>
+<li><strong>VolumeFlowMap</strong> → <code>DynamicGeoPlastLayer.VolumeFlowMap</code></li>
+<li><strong>HeatFlowPotential</strong> → <code>MaterialGeoPlastLayer.HeatFlowPotentialMap</code></li>
+<li><strong>HeatFlowMap</strong> → <code>MaterialGeoPlastLayer.HeatFlowMap</code></li>
+</ul>
+<p>Each is a <code>FlowMapDataLayer</code>:</p>
+<ul>
+<li>a per-cell <code>FixedArray8&lt;float&gt;</code> (6 neighbors + up + down)</li>
+<li>plus a scalar <code>TotalFlowMap</code> for outflow totals.</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/geo-plast-layers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

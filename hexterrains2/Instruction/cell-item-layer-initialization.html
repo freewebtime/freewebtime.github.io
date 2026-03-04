@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>CellItemLayerConfigAsset (and derived layer config assets) | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="CellItemLayerConfigAsset (and derived layer config assets) | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cellitemlayerconfigasset-and-derived-layer-config-assets"><code>CellItemLayerConfigAsset</code> (and derived layer config assets)</h1>
+
+<p><img src="images/CellObjectLayerConfigAsset.png" alt="Cell Object Layer Config Asset">
+<img src="images/CellEntityLayerConfigAsset.png" alt="Cell Entity Layer Config Asset"></p>
+<p><code>CellItemLayerConfigAsset&lt;TLayer&gt;</code> is the common base <code>ScriptableObject</code> config for all “cell item” style layers: layers that store <em>one item per cell</em> plus per-cell transform components (position/rotation/scale) that can later be used to spawn entities or render instanced meshes.</p>
+<p>It plays two roles:</p>
+<ol>
+<li><p><strong>Layer factory</strong><br>
+Inherits <code>HexTerrainLayerConfigAsset&lt;TLayer&gt;</code> which implements <code>ITerrainLayerFactory</code>, so <code>HexTerrainLayerGroup&lt;T&gt;</code> can call <code>CreateTerrainLayer()</code> on the asset to instantiate the correct runtime layer.</p>
+</li>
+<li><p><strong>Initialization payload</strong><br>
+Implements <code>ICellItemLayerConfig</code>, which <code>CellItemLayer.Init(settings, initArgs)</code> reads to initialize all the internal data layers.</p>
+</li>
+</ol>
+<blockquote>
+<p>Source: <code>com.freewebtime.hexterrains/Runtime/CellItems/Data/CellItemLayerConfigAsset.cs</code></p>
+</blockquote>
+<hr>
+<h2 id="how-this-config-is-used-during-terrain-initialization">How this config is used during terrain initialization</h2>
+<p>A typical terrain setup uses <code>HexTerrainLayerGroup&lt;TLayer&gt;</code> and passes a list of config assets as init args. During initialization:</p>
+<ul>
+<li><code>HexTerrainLayerGroup&lt;T&gt;.CreateTerrainLayer(initArgs)</code> detects <code>initArgs is ITerrainLayerFactory</code> and creates the runtime layer via <code>CreateTerrainLayer()</code>.</li>
+<li>Then <code>layer.Init(settings, initArgs)</code> is called.</li>
+<li><code>CellItemLayer.Init&lt;TInitArgs&gt;</code> checks <code>initArgs is ICellItemLayerConfig</code> and:
+<ul>
+<li>copies references/settings into the layer</li>
+<li>initializes cell-value data layers (<code>ItemIndexMap</code>, <code>ItemStateMap</code>, <code>ItemPositionMap</code>, <code>ItemRotationMap</code>, <code>ItemScaleMap</code>)</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-mermaid">flowchart TD 
+A[&quot;Init args list contains cell-item config assets&quot;] --&gt; B[&quot;HexTerrainLayerGroup&lt;T&gt;.InitLayers(...)&quot;] 
+B --&gt; C[&quot;CreateTerrainLayer(initArgs) uses ITerrainLayerFactory&quot;] 
+C --&gt; D[&quot;Runtime layer created (CellItemLayer / CellEntityLayer / CellObjectLayer)&quot;] 
+D --&gt; E[&quot;layer.Init(settings, initArgs)&quot;] 
+E --&gt; F[&quot;CellItemLayer.Init&lt;T&gt; reads ICellItemLayerConfig and initializes maps&quot;] 
+E --&gt; G[&quot;Derived layers read their extra config (ICellEntityLayerConfig / ICellObjectLayerConfig)&quot;]
+</code></pre>
+<hr>
+<h1 id="base-config-cellitemlayerconfigassettlayer">Base config: <code>CellItemLayerConfigAsset&lt;TLayer&gt;</code></h1>
+<p>This base class defines the shared fields used by <strong>all</strong> cell-item layers.</p>
+<h2 id="1-_cellitemtranformsettings--cellitemtransformsettings">1) <code>_cellItemTranformSettings</code> / <code>CellItemTransformSettings</code></h2>
+<p>Type: <code>CellItemTransformSettingsEditor</code> (serialized) → implicitly converts to <code>CellItemTransformSettings</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Layer-wide transform settings applied during transform calculation (in addition to per-cell local position/rotation/scale maps).</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied in <code>CellItemLayer.Init&lt;T&gt;</code>:
+<ul>
+<li><code>ItemTransformSettings = config.CellItemTransformSettings</code></li>
+</ul>
+</li>
+<li>Consumed by <code>CellItemLayer.UpdateLocalTransforms()</code> → schedules <code>CalculateCellItemTransformsJob</code> using:
+<ul>
+<li><code>TransformSettings = ItemTransformSettings</code></li>
+</ul>
+</li>
+</ul>
+<p>Notes on <code>CellItemTransformSettingsEditor</code> fields (what you see in the Inspector):</p>
+<ul>
+<li><code>IsAbsoluteValues</code>, <code>ObjectTranslation</code>, <code>ObjectRotation</code>, <code>ObjectScale</code>: author the base transform.</li>
+<li><code>IsAutoRotation</code>, <code>RotationY</code>, <code>OffsetFromCenter</code>: optional editor helpers for computing rotation/offset.</li>
+<li>Produces <code>CellItemTransformSettings.Transform</code> (a matrix), cached into position/rotation/scale in <code>CellItemTransformSettings</code>.</li>
+</ul>
+<hr>
+<h2 id="2-_surfacelayerreference--surfacelayerreference">2) <code>_surfaceLayerReference</code> / <code>SurfaceLayerReference</code></h2>
+<p>Type: <code>HexTerrainLayerReference</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Which surface layer (usually a <code>ChunkMeshLayer</code>) the cell items should treat as “ground” for placement.</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied in <code>CellItemLayer.Init&lt;T&gt;</code>:
+<ul>
+<li><code>SurfaceLayerReference = config.SurfaceLayerReference</code></li>
+</ul>
+</li>
+<li>Used later by <code>CellObjectLayer.CalculateCellObjects(...)</code> to resolve:
+<ul>
+<li><code>surfaceLayer = chunkMeshes.GetLayer&lt;ChunkMeshLayer&gt;(SurfaceLayerReference)</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-_overlapsurfacelayerreference--overlapsurfacelayerreference">3) <code>_overlapSurfaceLayerReference</code> / <code>OverlapSurfaceLayerReference</code></h2>
+<p>Type: <code>HexTerrainLayerReference</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Optional “overlap” surface. If set, placement logic can choose whichever surface is higher at a given cell. The cell item will be placed on the “overlap” surface if it’s higher than the main <code>SurfaceLayerReference</code> surface.</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied in <code>CellItemLayer.Init&lt;T&gt;</code>:
+<ul>
+<li><code>OverlapSurfaceLayerReference = config.OverlapSurfaceLayerReference</code></li>
+</ul>
+</li>
+<li>Used later by <code>CellObjectLayer.CalculateCellObjects(...)</code> to resolve:
+<ul>
+<li><code>overlapSurfaceLayer = chunkMeshes.GetLayer&lt;ChunkMeshLayer&gt;(OverlapSurfaceLayerReference)</code></li>
+</ul>
+</li>
+<li>Affects which job variant is scheduled:
+<ul>
+<li><code>CalcCellObjectsLODLayerJob</code> (no overlap)</li>
+<li><code>CalcCellObjectsLODLayerJob_OverlapSurface</code> (with overlap)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="4-_cellitemindexargs--cellitemindexargs">4) <code>_cellItemIndexArgs</code> / <code>CellItemIndexArgs</code></h2>
+<p>Type: <code>InitColorMapCellValueDataLayerArgs&lt;int&gt;</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Initialization rules for <code>CellItemLayer.ItemIndexMap</code> (per-cell item index).</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li><code>CellItemLayer.Init&lt;T&gt;</code> calls:
+<ul>
+<li><code>InitColoredDataLayer(ItemIndexMap, config.CellItemIndexArgs)</code></li>
+</ul>
+</li>
+</ul>
+<p>Implications:</p>
+<ul>
+<li>This is the <em>primary</em> “what item is in the cell” value.</li>
+<li>It also drives <code>ItemIndexMap</code>’s color map (palette-based), which is used by some layers (notably <code>CellObjectLayer</code> and <code>CellEntityLayer</code>) for visualization/minimap/debug coloring.</li>
+</ul>
+<hr>
+<h2 id="5-_cellitemstateargs--cellitemstateargs">5) <code>_cellItemStateArgs</code> / <code>CellItemStateArgs</code></h2>
+<p>Type: <code>InitCellValueDataLayerArgs&lt;int&gt;</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Initialization rules for <code>ItemStateMap</code> (per-cell item state/variant).</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li><code>CellItemLayer.Init&lt;T&gt;</code> calls:
+<ul>
+<li><code>InitDataLayer(ItemStateMap, config.CellItemStateArgs)</code></li>
+</ul>
+</li>
+</ul>
+<p>Implications:</p>
+<ul>
+<li>State is typically interpreted by derived layers to pick visuals or prefab variants.</li>
+</ul>
+<hr>
+<h2 id="6-_cellitemlocalpositionargs--cellitemlocalpositionargs">6) <code>_cellItemLocalPositionArgs</code> / <code>CellItemLocalPositionArgs</code></h2>
+<p>Type: <code>InitCellValueDataLayerArgs&lt;float3&gt;</code></p>
+<p>Used by:</p>
+<ul>
+<li><code>CellItemLayer.Init&lt;T&gt;</code> → <code>InitDataLayer(ItemPositionMap, config.CellItemLocalPositionArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Per-cell local translation relative to the cell’s placement reference.</li>
+</ul>
+<hr>
+<h2 id="7-_cellitemlocalrotationargs--cellitemlocalrotationargs">7) <code>_cellItemLocalRotationArgs</code> / <code>CellItemLocalRotationArgs</code></h2>
+<p>Type: <code>InitCellValueDataLayerArgs&lt;quaternion&gt;</code></p>
+<p>Used by:</p>
+<ul>
+<li><code>CellItemLayer.Init&lt;T&gt;</code> → <code>InitDataLayer(ItemRotationMap, config.CellItemLocalRotationArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Per-cell local rotation.</li>
+</ul>
+<hr>
+<h2 id="8-_cellitemlocalscaleargs--cellitemlocalscaleargs">8) <code>_cellItemLocalScaleArgs</code> / <code>CellItemLocalScaleArgs</code></h2>
+<p>Type: <code>InitCellValueDataLayerArgs&lt;float3&gt;</code></p>
+<p>Used by:</p>
+<ul>
+<li><code>CellItemLayer.Init&lt;T&gt;</code> → <code>InitDataLayer(ItemScaleMap, config.CellItemLocalScaleArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Per-cell local scale.</li>
+</ul>
+<hr>
+<h2 id="how-the-above-maps-affect-cellitemlayer-initialization">How the above maps affect <code>CellItemLayer</code> initialization</h2>
+<p><code>CellItemLayer.Init(settings)</code> always creates/initializes the required data layers (sizes, allocators).<br>
+Then <code>CellItemLayer.Init(settings, initArgs)</code> applies your config:</p>
+<ul>
+<li><code>ItemTransformSettings</code>, <code>SurfaceLayerReference</code>, <code>OverlapSurfaceLayerReference</code> are stored on the layer.</li>
+<li><code>ItemIndexMap</code>, <code>ItemStateMap</code>, <code>ItemPositionMap</code>, <code>ItemRotationMap</code>, <code>ItemScaleMap</code> are initialized/fill-populated based on the args.</li>
+</ul>
+<p><code>ItemTransformMap</code> is <strong>not directly initialized by the config</strong>. Instead, it’s computed when <code>UpdateLocalTransforms()</code> runs, based on:</p>
+<ul>
+<li><code>ItemPositionMap</code> + <code>ItemRotationMap</code> + <code>ItemScaleMap</code></li>
+<li>and <code>ItemTransformSettings</code> (from the config)</li>
+</ul>
+<hr>
+<h1 id="derived-config-assets-inherited-from-cellitemlayerconfigassettlayer">Derived config assets (inherited from <code>CellItemLayerConfigAsset&lt;TLayer&gt;</code>)</h1>
+<h2 id="cellentitylayerconfigasset"><code>CellEntityLayerConfigAsset</code></h2>
+<blockquote>
+<p>Source: <code>com.freewebtime.hexterrains/Runtime/CellEntities/Data/CellEntityLayerConfigAsset.cs</code></p>
+</blockquote>
+<p>Factory mapping:</p>
+<ul>
+<li><code>CellEntityLayerConfigAsset.CreateTerrainLayer()</code> → <code>new CellEntityLayer()</code></li>
+</ul>
+<p>Additional fields:</p>
+<h3 id="_cellentities--cellentities"><code>_cellEntities</code> / <code>CellEntities</code></h3>
+<p>Type: <code>List&lt;CellEntityConfigAuthoring&gt;</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Editor/baking-time authoring list for entity-prefab-backed cell items.</li>
+</ul>
+<p>How it’s used:</p>
+<ul>
+<li>Not consumed directly by <code>CellEntityLayer.Init(settings, initArgs)</code> at runtime.</li>
+<li>Typically baked into a combined <code>DynamicBuffer&lt;CellEntityConfig&gt;</code> on the terrain entity (the runtime code consumes the baked configs via the range fields below).</li>
+</ul>
+<h3 id="_entityconfigsrangestart--entityconfigsrangestart"><code>_entityConfigsRangeStart</code> / <code>EntityConfigsRangeStart</code></h3>
+<p>Type: <code>int</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Start index into the <strong>combined baked entity-config buffer</strong> (shared across layers).</li>
+</ul>
+<p>Where it’s used during initialization:</p>
+<ul>
+<li>In <code>CellEntityLayer.Init(settings, ICellEntityLayerConfig args, NativeArray&lt;CellEntityConfig&gt; cellEntityConfigs)</code>:
+<ul>
+<li>selects the slice: <code>GetCellEntityConfigs(cellEntityConfigs, args.EntityConfigsRangeStart, args.EntityConfigsRangeSize)</code></li>
+<li>then calls <code>InitCellEntitiesConfigs(slice)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="_entityconfigsrangesize--entityconfigsrangesize"><code>_entityConfigsRangeSize</code> / <code>EntityConfigsRangeSize</code></h3>
+<p>Type: <code>int</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Size of the slice belonging to this layer in the combined baked buffer.</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Same place as <code>EntityConfigsRangeStart</code> (slice length).</li>
+</ul>
+<h4 id="what-initcellentitiesconfigs-does-with-the-slice">What <code>InitCellEntitiesConfigs(...)</code> does with the slice</h4>
+<p>During initialization it:</p>
+<ul>
+<li>copies configs into <code>CellEntityLayer.CellEntityConfigs</code> (<code>NativeList&lt;CellEntityConfig&gt;</code>)</li>
+<li>builds a color palette from <code>CellEntityConfig.Color</code></li>
+<li>initializes <code>ItemIndexMap</code>’s palette with those colors:
+<ul>
+<li><code>ItemIndexMap.InitColorPalette(colorPalette)</code></li>
+</ul>
+</li>
+</ul>
+<p>Why it matters:</p>
+<ul>
+<li><code>ItemIndexMap</code> values are treated as <em>indices into <code>CellEntityConfigs</code></em>.</li>
+<li>The palette allows consistent visualization of “which entity index is in this cell”.</li>
+</ul>
+<hr>
+<h2 id="cellobjectlayerconfigasset"><code>CellObjectLayerConfigAsset</code></h2>
+<blockquote>
+<p>Source: <code>com.freewebtime.hexterrains/Runtime/CellObjects/Data/CellObjectLayerConfigAsset.cs</code></p>
+</blockquote>
+<p>Factory mapping:</p>
+<ul>
+<li><code>CellObjectLayerConfigAsset.CreateTerrainLayer()</code> → <code>new CellObjectLayer()</code></li>
+</ul>
+<p>This asset contains both:</p>
+<ul>
+<li>runtime-used fields (renderer + baked visuals + LOD settings), and</li>
+<li>editor/baking inputs (authoring objects, bake helpers).</li>
+</ul>
+<p>Additional fields and how they participate in <code>CellObjectLayer</code> initialization:</p>
+<h3 id="_bulkrendererasset--bulkrenderer"><code>_bulkRendererAsset</code> / <code>BulkRenderer</code></h3>
+<p>Type: <code>BulkRendererAsset</code> (serialized), exposed as <code>IBulkRenderer</code></p>
+<p>Where it’s used during initialization:</p>
+<ul>
+<li>In <code>CellObjectLayer.Init&lt;T&gt;</code>:
+<ul>
+<li><code>BulkRenderer = args.BulkRenderer</code></li>
+</ul>
+</li>
+</ul>
+<p>Used later during rendering:</p>
+<ul>
+<li><code>CellObjectLayer.Render(...)</code> uses <code>BulkRenderer.RenderEntities(...)</code>.</li>
+</ul>
+<hr>
+<h3 id="_uselodsettings--uselodsettings"><code>_useLODSettings</code> / <code>UseLODSettings</code></h3>
+<p>Type: <code>bool</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Whether this layer should use the layer-wide LOD ranges derived from <code>_LODDistances</code> / <code>_LODSettings</code>.</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Primarily affects editor-side baking (<code>BakeLODSettings</code>) and the getter <code>GetObjectsLODSettings()</code>.</li>
+<li>Runtime consumes the resulting <code>LODSettings</code> list (below).</li>
+</ul>
+<hr>
+<h3 id="_loddistances--loddistances"><code>_LODDistances</code> / <code>LODDistances</code></h3>
+<p>Type: <code>List&lt;float&gt;</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Editor-friendly input for LOD band distances (each entry becomes a max distance for a LOD band).</li>
+</ul>
+<p>Used by:</p>
+<ul>
+<li><code>BakeLODSettings()</code> to produce <code>_LODSettings</code>.</li>
+</ul>
+<hr>
+<h3 id="_lodsettings--lodsettings"><code>_LODSettings</code> / <code>LODSettings</code></h3>
+<p>Type: <code>List&lt;CellObjectLayerLODSettings&gt;</code></p>
+<p>Where it’s used during initialization:</p>
+<ul>
+<li>In <code>CellObjectLayer.Init&lt;T&gt;</code> when <code>initArgs is ICellObjectLayerConfig</code>:
+<ul>
+<li>copies list into <code>CellObjectLayer.LODSettings</code> (native list)</li>
+<li>sets <code>CellObjectLayer.LODsCount = args.LODsCount</code></li>
+</ul>
+</li>
+</ul>
+<p>Also used later:</p>
+<ul>
+<li><code>RenderLODs(...)</code> selects which LOD layer to render based on camera zoom and <code>LODSettings</code>.</li>
+</ul>
+<hr>
+<h3 id="baked-data-fields-_bakedobjectconfigs-_bakedobjectstateconfigs-_bakedvisualitemsettings-_bakedstateslodsettings-_colorpalette">Baked data fields (<code>_bakedObjectConfigs</code>, <code>_bakedObjectStateConfigs</code>, <code>_bakedVisualItemSettings</code>, <code>_bakedStatesLODSettings</code>, <code>_colorPalette</code>)</h3>
+<p>Types:</p>
+<ul>
+<li><code>List&lt;CellObjectConfig&gt;</code> (<code>BakedObjectConfigs</code>)</li>
+<li><code>List&lt;CellObjectStateConfig&gt;</code> (<code>BakedObjectStateConfigs</code>)</li>
+<li><code>List&lt;CellObjectVisualItemSettings&gt;</code> (<code>BakedVisualItemSettings</code>)</li>
+<li><code>List&lt;CellObjectLODSettings&gt;</code> (<code>BakedStatesLODSettings</code>)</li>
+<li><code>List&lt;Color32&gt;</code> (<code>ColorPalette</code>)</li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>These represent the precomputed runtime-ready data used by jobs that compute per-cell render items.</li>
+</ul>
+<p>Where they’re used during initialization:</p>
+<ul>
+<li>In <code>CellObjectLayer.Init&lt;T&gt;</code>:
+<ul>
+<li>calls <code>InitVisuals(...)</code> using:
+<ul>
+<li><code>args.GetCellObjectConfigs()</code> (usually <code>BakedObjectConfigs</code>)</li>
+<li><code>args.GetCellObjectStateConfigs()</code></li>
+<li><code>args.GetColorPalette()</code> (used to set <code>ItemIndexMap.ColorMap</code> palette)</li>
+<li><code>args.GetVisualItemSettings()</code> (usually <code>BakedVisualItemSettings</code>)</li>
+<li><code>args.GetObjectStatesLODSettings()</code> (usually <code>BakedStatesLODSettings</code>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>Key effect:</p>
+<ul>
+<li>Populates <code>CellObjectLayer.AllCellObjectVisuals</code> and <code>CellObjectLayer.AllCellObjectsLODSettings</code></li>
+<li>Updates the <code>ItemIndexMap</code> color palette via <code>UpdateColorPalette(copyColorPaletteFrom)</code></li>
+</ul>
+<hr>
+<h3 id="_statescountperobject--statescountperobject"><code>_statesCountPerObject</code> / <code>StatesCountPerObject</code></h3>
+<p>Type: <code>int</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Defines how <code>ItemStateMap</code> values map into baked state data.</li>
+<li>Common pattern: <code>globalStateIndex = (objectIndex * StatesCountPerObject) + stateIndex</code>.</li>
+</ul>
+<p>Where it’s used during initialization:</p>
+<ul>
+<li>In <code>CellObjectLayer.Init&lt;T&gt;</code>:
+<ul>
+<li><code>StatesCountPerObject = args.StatesCountPerObject</code></li>
+</ul>
+</li>
+</ul>
+<p>Where it’s used later:</p>
+<ul>
+<li>Passed into <code>CalcCellObjectsLODLayerJob*</code> as <code>StatesCountPerObject</code>.</li>
+</ul>
+<hr>
+<h3 id="_maxsubmeshespercell--maxsubmeshespercell"><code>_maxSubmeshesPerCell</code> / <code>MaxSubmeshesPerCell</code></h3>
+<p>Type: <code>int</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Upper bound for how many render sub-items a single cell object can emit (capacity planning).</li>
+</ul>
+<p>Where it’s used during initialization:</p>
+<ul>
+<li>In <code>CellObjectLayer.Init&lt;T&gt;</code>:
+<ul>
+<li><code>MaxSubmeshesPerCell = args.MaxSubmeshesPerCell</code></li>
+</ul>
+</li>
+<li>Then <code>InitRenderEntitiesLODs()</code> allocates/initializes each <code>BulkRenderItemsDataLayer</code> with:
+<ul>
+<li><code>Settings.CellsCount * MaxSubmeshesPerCell</code></li>
+</ul>
+</li>
+</ul>
+<p>Impact:</p>
+<ul>
+<li>Directly affects memory/capacity of the per-LOD render-items buffers.</li>
+</ul>
+<hr>
+<h1 id="summary-which-runtime-layer-each-config-asset-creates">Summary: which runtime layer each config asset creates</h1>
+<table>
+<thead>
+<tr>
+<th>Config asset</th>
+<th>Runtime layer created by <code>CreateTerrainLayer()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CellEntityLayerConfigAsset</code></td>
+<td><code>CellEntityLayer</code></td>
+</tr>
+<tr>
+<td><code>CellObjectLayerConfigAsset</code></td>
+<td><code>CellObjectLayer</code></td>
+</tr>
+</tbody>
+</table>
+<p>Both inherit the shared initialization behavior from <code>CellItemLayerConfigAsset&lt;TLayer&gt;</code> via <code>CellItemLayer.Init(settings, initArgs)</code>.</p>
+<hr>
+<h2 id="appendix-shared-init-args-structs-used-by-this-config">Appendix: shared init-args structs used by this config</h2>
+<h3 id="initcellvaluedatalayerargst"><code>InitCellValueDataLayerArgs&lt;T&gt;</code></h3>
+<p>Used by: state, local position, local rotation, local scale</p>
+<p>Key fields:</p>
+<ul>
+<li><code>DefaultValue</code> (used when resizing layers)</li>
+<li><code>IsFillWithValue</code> + <code>FillValue</code></li>
+<li><code>IsFillWithRandomValues</code> + <code>RandomMinValue</code> + <code>RandomMaxValue</code></li>
+<li><code>IsApplySourceTexture</code> + <code>SourceTexture</code> + <code>SourceTextureValueOffset</code> + <code>SourceTextureValueScale</code></li>
+</ul>
+<h3 id="initcolormapcellvaluedatalayerargst"><code>InitColorMapCellValueDataLayerArgs&lt;T&gt;</code></h3>
+<p>Used by: <code>CellItemIndexArgs</code> (index map + palette + optional auto-color mode)</p>
+<p>Adds:</p>
+<ul>
+<li><code>ColorPalette</code></li>
+<li><code>AutoColorMapMode</code></li>
+<li>plus <code>MinValue</code>/<code>MaxValue</code> used by some color mapping modes</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/cell-item-layer-initialization.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

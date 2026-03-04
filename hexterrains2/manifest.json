@@ -42,10 +42,50 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "Instruction/cell-items.md",
+      "source_relative_path": "Instruction/cell-item-layer-initialization.md",
       "output": {
         ".html": {
-          "relative_path": "Instruction/cell-items.html"
+          "relative_path": "Instruction/cell-item-layer-initialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/cell-item-layers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/cell-item-layers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/cell-region-layer-initialization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/cell-region-layer-initialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/cell-region-layers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/cell-region-layers.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/chunk-mesh-layer-initialization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/chunk-mesh-layer-initialization.html"
         }
       },
       "version": ""
@@ -76,6 +116,26 @@
       "output": {
         ".html": {
           "relative_path": "Instruction/execution-order.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/geo-plast-layer-initialization.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/geo-plast-layer-initialization.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/geo-plast-layers.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/geo-plast-layers.html"
         }
       },
       "version": ""
@@ -152,6 +212,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/CellEntityLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellEntityLayerConfigAsset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/CellEntityLayerGroupAuthoring.png",
       "output": {
         "resource": {
@@ -182,6 +252,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/CellObjectLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellObjectLayerConfigAsset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/CellObjectLayerGroupAuthoring.png",
       "output": {
         "resource": {
@@ -202,6 +282,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/CellRegionLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellRegionLayerConfigAsset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/CellRegionLayerGroupAuthoring.png",
       "output": {
         "resource": {
@@ -216,6 +306,16 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/CellRegionTools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/ChunkMeshLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/ChunkMeshLayerConfigAsset.png"
         }
       },
       "version": ""
@@ -452,6 +552,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/GeoPlastLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/GeoPlastLayerConfigAsset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/GeoPlastLayerGroupAuthoring.png",
       "output": {
         "resource": {
@@ -652,6 +762,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/SunLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/SunLayerConfigAsset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/SurfaceTools.png",
       "output": {
         "resource": {
@@ -836,6 +956,16 @@
       "output": {
         ".html": {
           "relative_path": "Instruction/roadmap.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "Instruction/sun-terrain-layer.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/sun-terrain-layer.html"
         }
       },
       "version": ""
@@ -7925,6 +8055,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowFromCellJob.yml",
       "output": {
         ".html": {
@@ -7949,6 +8107,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMap",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob",
       "Summary": null
     },
     {
@@ -8089,6 +8261,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVerticalVolumeFlowPotentialJob",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob",
       "Summary": null
     },
     {
@@ -9227,6 +9413,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Suns.Data.CreateSunTerrainLayerRequest.yml",
       "output": {
         ".html": {
@@ -9251,6 +9451,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Suns.Data.ISunTerrainLayerConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Suns.Data.SunDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Suns.Data.SunDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Suns.Data.SunDirection",
       "Summary": null
     },
     {
@@ -9307,6 +9521,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Suns.Data.SunTerrainLayerConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup",
       "Summary": null
     },
     {
@@ -9391,6 +9619,48 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Suns.SunLayerBaker",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem",
       "Summary": null
     },
     {

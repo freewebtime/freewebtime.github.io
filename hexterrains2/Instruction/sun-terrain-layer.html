@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Sun Terrain Layer (Sun simulation → heat/cooling on GeoPlast) | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Sun Terrain Layer (Sun simulation → heat/cooling on GeoPlast) | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="sun-terrain-layer-sun-simulation--heatcooling-on-geoplast">Sun Terrain Layer (Sun simulation → heat/cooling on GeoPlast)</h1>
+
+<p><img src="images/SunLayerConfigAsset.png" alt="Sun Terrain Layer Config"></p>
+<p>This page documents the <code>SunTerrainLayer</code> feature:</p>
+<ul>
+<li>how a sun layer is <strong>created</strong> and <strong>initialized</strong></li>
+<li>how it <strong>moves</strong> over the terrain (day/year progression)</li>
+<li>how it <strong>applies heat and cooling</strong> to <strong>GeoPlast <code>MaterialGeoPlastLayer</code></strong> instances</li>
+<li>what <code>SunTerrainLayerConfigAsset</code> and <code>CreateSunLayerRequest</code> do</li>
+</ul>
+<hr>
+<h2 id="1-main-types-at-a-glance">1. Main types (at a glance)</h2>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SunTerrainLayer</code></td>
+<td>Runtime layer: computes <code>SunPosition</code> over time and schedules <code>ApplySunHeatJob</code> for target GeoPlast layers.</td>
+</tr>
+<tr>
+<td><code>SunTerrainLayerGroup</code></td>
+<td>Holds multiple <code>SunTerrainLayer</code> instances and simulates them in list order. Prevents double-simulating the same simulation frame.</td>
+</tr>
+<tr>
+<td><code>SunTerrainLayerGroupAuthoring</code> + <code>SunLayerBaker</code></td>
+<td>Authoring + baking: produces an ECS buffer of <code>CreateSunLayerRequest</code> on the terrain entity.</td>
+</tr>
+<tr>
+<td><code>SunTerrainLayerConfigAsset</code></td>
+<td>ScriptableObject config implementing <code>ISunTerrainLayerConfig</code> (settings + target list + initial day/year progress).</td>
+</tr>
+<tr>
+<td><code>CreateSunLayerRequest</code></td>
+<td>ECS buffer element: <code>{ Name, Args(ConfigAssetRef) }</code> used to create/init layers in the group.</td>
+</tr>
+<tr>
+<td><code>ApplySunHeatJob</code></td>
+<td>Burst job: per-cell heat/cooling update into the target <code>MaterialGeoPlastLayer.HeatMap</code>.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-authoring--ecs-how-a-sun-layer-is-created">2. Authoring → ECS: how a Sun layer is created</h2>
+<h3 id="21-sunterrainlayergroupauthoring-scene-authoring">2.1 <code>SunTerrainLayerGroupAuthoring</code> (scene authoring)</h3>
+<p><code>SunTerrainLayerGroupAuthoring</code> is a <code>MonoBehaviour</code> with a list of authoring entries:</p>
+<ul>
+<li><code>Name</code> (string)</li>
+<li><code>Config</code> (<code>SunTerrainLayerConfigAsset</code>)</li>
+</ul>
+<h3 id="22-baking-sunlayerbaker">2.2 Baking (<code>SunLayerBaker</code>)</h3>
+<p>During baking, <code>SunLayerBaker</code> adds a <code>DynamicBuffer&lt;CreateSunLayerRequest&gt;</code> to the terrain entity and fills it:</p>
+<ul>
+<li><code>CreateSunLayerRequest.Name</code> = authoring name</li>
+<li><code>CreateSunLayerRequest.Args.Value</code> = the <code>SunTerrainLayerConfigAsset</code> reference</li>
+</ul>
+<p>This mirrors how GeoPlast layers are requested (see <code>GeoPlastLayerGroupAuthoring</code> / <code>CreateGeoPlastLayerRequest</code>):</p>
+<blockquote>
+<p><code>CreateSunLayerRequest</code> implements <code>ITerrainLayerFactory</code> and can delegate layer creation to the config asset.</p>
+</blockquote>
+<hr>
+<h2 id="3-runtime-container-sunterrainlayergroup">3. Runtime container: <code>SunTerrainLayerGroup</code></h2>
+<p><code>SunTerrainLayerGroup : HexTerrainLayerGroup&lt;SunTerrainLayer&gt;, IComponentData</code> is the runtime container.</p>
+<h3 id="31-per-request-creation-and-naming">3.1 Per-request creation and naming</h3>
+<p><code>SunTerrainLayerGroup.CreateTerrainLayer(request)</code>:</p>
+<ul>
+<li>creates a <code>SunTerrainLayer</code> instance (default creation path)</li>
+<li>if <code>request.Args.Value != null</code>, sets:
+<ul>
+<li><code>layer.Name = request.Name.ToString()</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="32-initialization-with-sunterrainlayerconfigasset">3.2 Initialization with <code>SunTerrainLayerConfigAsset</code></h3>
+<p><code>SunTerrainLayerGroup.InitTerrainLayer(layer, settings, request)</code> calls:</p>
+<ul>
+<li><code>layer.Init(settings, request.Args.Value)</code></li>
+</ul>
+<p>This is where the ScriptableObject config is actually applied (see next section).</p>
+<h3 id="33-simulation-cadence-guard-per-simulation-frame">3.3 Simulation cadence guard (per simulation frame)</h3>
+<p><code>SunTerrainLayerGroup.Simulate(...)</code> stores <code>LastSimulationFrame</code> and returns early if the same <code>HexTerrainSimulationTimer.FrameCount</code> is passed again.</p>
+<p>This avoids applying sun heat twice when multiple systems call simulate within the same simulation tick.</p>
+<hr>
+<h2 id="4-sunterrainlayer-lifecycle--fields">4. <code>SunTerrainLayer</code> lifecycle &amp; fields</h2>
+<h3 id="41-core-state">4.1 Core state</h3>
+<p><code>SunTerrainLayer</code> stores:</p>
+<ul>
+<li><code>float2 SunPosition</code> (center of the sun in “cell-coordinate space”)</li>
+<li><code>float DayProgress</code> in <code>[0..1]</code> (fraction of a day cycle)</li>
+<li><code>float YearProgress</code> in <code>[0..1]</code> (fraction of a year cycle)</li>
+<li><code>SunSettings SunSettings</code></li>
+<li><code>List&lt;SunTargetLayerSettings&gt; TargetLayers</code></li>
+</ul>
+<h3 id="42-initialization-initsettings-config">4.2 Initialization (<code>Init(settings, config)</code>)</h3>
+<p>When initialized with an <code>ISunTerrainLayerConfig</code> (which <code>SunTerrainLayerConfigAsset</code> implements), the layer copies:</p>
+<ul>
+<li><code>SunSettings = config.SunSettings</code></li>
+<li><code>TargetLayers = config.TargetLayers</code> (list is created/cleared/copied)</li>
+<li><code>DayProgress = config.DayProgress</code></li>
+<li><code>YearProgress = config.YearProgress</code></li>
+</ul>
+<hr>
+<h2 id="5-configuration-types">5. Configuration types</h2>
+<h2 id="51-sunterrainlayerconfigasset">5.1 <code>SunTerrainLayerConfigAsset</code></h2>
+<p><code>SunTerrainLayerConfigAsset : ScriptableObject, ISunTerrainLayerConfig</code> provides:</p>
+<ul>
+<li><code>SunSettings SunSettings</code></li>
+<li><code>IList&lt;SunTargetLayerSettings&gt; TargetLayers</code></li>
+<li><code>float DayProgress</code> (initial)</li>
+<li><code>float YearProgress</code> (initial)</li>
+</ul>
+<p>It also exposes <code>CreateTerrainLayer() =&gt; new SunTerrainLayer()</code>, but in the current implementation this factory method is <strong>not used by</strong> <code>CreateSunLayerRequest</code> (because the request is not an <code>ITerrainLayerFactory</code>).</p>
+<h2 id="52-createsunlayerrequest">5.2 <code>CreateSunLayerRequest</code></h2>
+<p><code>CreateSunLayerRequest : IBufferElementData</code> contains:</p>
+<ul>
+<li><code>FixedString128Bytes Name</code> — the layer name used by <code>SunTerrainLayerGroup</code> for lookup/registration</li>
+<li><code>UnityObjectRef&lt;SunTerrainLayerConfigAsset&gt; Args</code> — ScriptableObject reference used for initialization</li>
+</ul>
+<h2 id="53-sunsettings">5.3 <code>SunSettings</code></h2>
+<p><code>SunSettings</code> controls:</p>
+<ul>
+<li>whether simulation is enabled (<code>IsEnabled</code>)</li>
+<li>day/year timing (<code>DayLength</code>, <code>YearLengthInDays</code>)</li>
+<li>movement shape (<code>Direction</code>, <code>PlanetAngle</code>)</li>
+<li>heat/cooling parameters (<code>SunRadius</code>, <code>HeatIntensity</code>, <code>CoolingIntensity</code>, <code>SunHeatCurve</code>)</li>
+<li>simulation cadence (<code>FrameCycleSettings SimulationSettings</code>)</li>
+</ul>
+<h3 id="simulation-cadence-framecyclesettings">Simulation cadence: <code>FrameCycleSettings</code></h3>
+<p><code>SunTerrainLayer.Simulate(...)</code> runs only when:</p>
+<ul>
+<li><code>SunSettings.IsEnabled == true</code></li>
+<li><code>SunSettings.SimulationSettings.IsSimulationTick(simTimer) == true</code></li>
+</ul>
+<p><code>FrameCycleSettings.IsSimulationTick</code> is:</p>
+<ul>
+<li>always true when <code>FramesCycleLength &lt;= 1</code></li>
+<li>otherwise: <code>simTimer.FrameCount % FramesCycleLength == FramesCycleOffset</code></li>
+</ul>
+<hr>
+<h2 id="6-sun-movement-over-terrain-movethesun">6. Sun movement over terrain (<code>MoveTheSun</code>)</h2>
+<p><code>SunTerrainLayer.MoveTheSun(simTimer)</code> updates both:</p>
+<ol>
+<li><code>SunPosition</code> from current <code>DayProgress</code>/<code>YearProgress</code></li>
+<li>the progress values themselves using <code>simTimer.DeltaTime</code></li>
+</ol>
+<h3 id="61-horizontal-position-daynight">6.1 Horizontal position (day/night)</h3>
+<ul>
+<li><code>dayProgress = DayProgress % 1</code></li>
+<li>if <code>Direction == EastToWest</code>, it flips:
+<ul>
+<li><code>dayProgress = 1 - dayProgress</code></li>
+</ul>
+</li>
+<li>horizontal coordinate:
+<ul>
+<li><code>SunPosition.x = dayProgress * Settings.TerrainSize.x</code></li>
+</ul>
+</li>
+</ul>
+<p>So the sun travels across the full terrain width every in-game “day”.</p>
+<h3 id="62-vertical-position-seasons">6.2 Vertical position (seasons)</h3>
+<p>Vertical offset is a sinusoidal function of <code>YearProgress</code>:</p>
+<ul>
+<li><code>verticalProgress = sin(radians(360 * YearProgress))</code></li>
+<li><code>terrainHalfHeight = Settings.TerrainSize.y / 2</code></li>
+<li><code>maxVerticalOffset = terrainHalfHeight * PlanetAngle</code></li>
+<li><code>SunPosition.y = terrainHalfHeight + verticalProgress * maxVerticalOffset</code></li>
+</ul>
+<p>Interpretation:</p>
+<ul>
+<li><code>PlanetAngle = 0</code> → sun stays on the equator (no seasons)</li>
+<li><code>PlanetAngle = 1</code> → full swing from one “pole” to the other over a year</li>
+</ul>
+<h3 id="63-progress-accumulation">6.3 Progress accumulation</h3>
+<ul>
+<li><code>deltaDay = (DayLength &gt; 0) ? simTimer.DeltaTime / DayLength : 0</code></li>
+<li><code>DayProgress = (DayProgress + deltaDay) % 1</code></li>
+</ul>
+<p>Year progresses in “days”:</p>
+<ul>
+<li><code>deltaYear = (YearLengthInDays &gt; 0) ? deltaDay / YearLengthInDays : 0</code></li>
+<li><code>YearProgress = (YearProgress + deltaYear) % 1</code></li>
+</ul>
+<hr>
+<h2 id="7-applying-heatcooling-to-geoplast-simulate--applysunheat">7. Applying heat/cooling to GeoPlast (<code>Simulate</code> → <code>ApplySunHeat</code>)</h2>
+<h3 id="71-which-target-layers-can-be-affected">7.1 Which target layers can be affected?</h3>
+<p>Each <code>SunTargetLayerSettings</code> points at a GeoPlast layer via <code>HexTerrainLayerReference TargetLayerReference</code>.</p>
+<p>At runtime, <code>SunTerrainLayer.ApplySunHeat(...)</code> resolves:</p>
+<ul>
+<li><code>MaterialGeoPlastLayer targetLayer = geoPlastLayers.GetLayer&lt;MaterialGeoPlastLayer&gt;(TargetLayerReference)</code></li>
+</ul>
+<p>It will <strong>only</strong> apply to <code>MaterialGeoPlastLayer</code> (because it requires <code>AmountMap</code> and <code>HeatMap</code>).</p>
+<h3 id="72-scheduling-model">7.2 Scheduling model</h3>
+<p>For each configured target:</p>
+<ul>
+<li>read dependencies are acquired from <code>AmountMap</code></li>
+<li>write dependencies are acquired from <code>HeatMap</code></li>
+<li><code>ApplySunHeatJob</code> is scheduled over <code>Settings.CellsCount</code> with a batch size of <code>Settings.CellsPerChunk</code></li>
+<li>dirty chunk tracking is written into <code>targetLayer.HeatMap.DirtyChunks</code></li>
+</ul>
+<p>Finally:</p>
+<ul>
+<li><code>HeatMap</code> is marked dirty (<code>HeatMap.SetDirty(true)</code>), so downstream update/render steps can recompute dependent maps.</li>
+</ul>
+<hr>
+<h2 id="8-applysunheatjob-exact-heatcooling-behavior">8. <code>ApplySunHeatJob</code>: exact heat/cooling behavior</h2>
+<p><code>ApplySunHeatJob.Execute(cellIndex)</code>:</p>
+<h3 id="81-cells-with-no-material-are-ignored">8.1 Cells with no material are ignored</h3>
+<p>If <code>AmountMap[cellIndex] &lt;= 0</code> the job returns immediately.</p>
+<p>Effect:</p>
+<ul>
+<li>empty cells do not get heated</li>
+<li>empty cells do not get cooled</li>
+<li><code>HeatMap</code> remains unchanged there</li>
+</ul>
+<h3 id="82-heatcooling-gating-flags-per-target">8.2 Heat/cooling gating flags per target</h3>
+<p>If both are false, nothing happens:</p>
+<ul>
+<li><code>IsApplyHeat == false</code> AND <code>IsCoolDown == false</code> → return</li>
+</ul>
+<h3 id="83-heat-formula">8.3 Heat formula</h3>
+<p>If <code>IsApplyHeat</code>:</p>
+<ol>
+<li>Compute distance-to-sun based on <code>SunType</code>:</li>
+</ol>
+<ul>
+<li><code>SunType.Circle</code>:
+<ul>
+<li>distance = Euclidean distance to <code>SunPosition</code></li>
+<li>if the terrain is connected/wrapped, it tests shifted positions <code>(x,y) ∈ {-1,0,1}²</code> (respecting <code>Settings.IsConnectedHorizontally/Vertically</code>) to find a closer wrap-around distance</li>
+</ul>
+</li>
+<li><code>SunType.Line</code>:
+<ul>
+<li>distance = <code>abs(SunPosition.y - cellPosition.y)</code></li>
+<li>if vertically connected, it also tests wrap-around distances by shifting <code>cellPosition.y</code> by <code>±TerrainSize.y</code></li>
+</ul>
+</li>
+<li><code>SunType.EveryCell</code>:
+<ul>
+<li>distance = 0 (all cells treated as “under the sun”)</li>
+</ul>
+</li>
+</ul>
+<ol start="2">
+<li>Evaluate the heat curve:</li>
+</ol>
+<ul>
+<li><code>curveFactor = SunHeatCurve.Evaluate(distanceToSun)</code></li>
+</ul>
+<ol start="3">
+<li>Accumulate:</li>
+</ol>
+<ul>
+<li><code>deltaHeat += HeatIntensity * DeltaTime * curveFactor * HeatIntensityMultiplier</code></li>
+</ul>
+<h3 id="84-cooling-formula-night--out-of-sun-cooling">8.4 Cooling formula (night / out-of-sun cooling)</h3>
+<p>Cooling is applied only when:</p>
+<ul>
+<li><code>IsCoolDown == true</code></li>
+<li>AND the sun did not add any heat for this cell in this tick (<code>deltaHeat &lt;= 0</code>)</li>
+</ul>
+<p>Then:</p>
+<ul>
+<li><code>deltaHeat -= CoolingIntensity * DeltaTime * CoolingAmountMultiplier</code></li>
+</ul>
+<p>Important implication:</p>
+<ul>
+<li>To actually <em>reduce</em> heat, <code>CoolingIntensity</code> should typically be <strong>positive</strong> (because it is subtracted).</li>
+<li>Heat is clamped to non-negative after update (see below), so “below zero cold” is not represented in <code>HeatMap</code>.</li>
+</ul>
+<h3 id="85-clamp-and-dirty-chunks">8.5 Clamp and dirty chunks</h3>
+<p>Final write:</p>
+<ul>
+<li><code>HeatMap[cellIndex] = max(HeatMap[cellIndex] + deltaHeat, 0)</code></li>
+</ul>
+<p>Dirty marking:</p>
+<ul>
+<li>computes <code>chunkIndex = TerrainSettings.GetChunkIndexByCellIndex(cellIndex)</code></li>
+<li>adds it to <code>DirtyChunks</code></li>
+</ul>
+<hr>
+<h2 id="9-how-sun-heat-affects-geoplast-temperature-and-why-it-matters">9. How sun heat affects GeoPlast “temperature” (and why it matters)</h2>
+<p>The sun writes into <code>MaterialGeoPlastLayer.HeatMap</code>.</p>
+<p>Downstream in GeoPlast update:</p>
+<ul>
+<li><code>TemperatureMap</code> is derived from:
+<ul>
+<li><code>Temperature = Heat / Amount</code></li>
+</ul>
+</li>
+<li>many behaviors (e.g., temperature-driven density or vertical flow) depend on temperature</li>
+</ul>
+<p>So the sun’s effect typically propagates as:</p>
+<ol>
+<li>sun modifies <code>HeatMap</code></li>
+<li>GeoPlast update recomputes <code>TemperatureMap</code></li>
+<li>subsequent GeoPlast simulations (heat diffusion/advection, temperature-dependent density/flow) use the updated temperature</li>
+</ol>
+<hr>
+<h2 id="10-serialization-notes-current-behavior">10. Serialization notes (current behavior)</h2>
+<p><code>SunTerrainLayer</code> implements <code>ISerializableTerrainLayer</code> and serializes:</p>
+<ul>
+<li><code>SunPosition</code>, <code>DayProgress</code>, <code>YearProgress</code></li>
+<li><code>SunSettings</code> (enabled, timing, geometry, intensities, heat curve parameters, sun type, direction)</li>
+</ul>
+<hr>
+<h2 id="11-practical-setup-checklist">11. Practical setup checklist</h2>
+<ol>
+<li>Add <code>SunTerrainLayerGroupAuthoring</code> to the terrain GameObject.</li>
+<li>Add one or more layer entries:
+<ul>
+<li>set <code>Name</code></li>
+<li>assign a <code>SunTerrainLayerConfigAsset</code></li>
+</ul>
+</li>
+<li>In the config asset:
+<ul>
+<li>enable <code>SunSettings.IsEnabled</code></li>
+<li>set <code>DayLength</code>, <code>YearLengthInDays</code>, <code>PlanetAngle</code></li>
+<li>choose <code>SunType</code> and <code>SunRadius</code></li>
+<li>configure <code>HeatIntensity</code>, <code>SunHeatCurve</code></li>
+<li>optionally configure cooling (<code>IsCoolDown</code> per target + <code>CoolingIntensity</code>)</li>
+<li>define <code>TargetLayers</code> that reference <strong>MaterialGeoPlastLayer</strong> layers (by name and/or index via <code>HexTerrainLayerReference</code>)</li>
+</ul>
+</li>
+</ol>
+<hr>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/sun-terrain-layer.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

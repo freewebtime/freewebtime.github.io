@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>ChunkMeshLayerConfigAsset | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="ChunkMeshLayerConfigAsset | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="chunkmeshlayerconfigasset"><code>ChunkMeshLayerConfigAsset</code></h1>
+
+<p><img src="images/ChunkMeshLayerConfigAsset.png" alt="Chunk Mesh Layer Config Asset"></p>
+<p><code>ChunkMeshLayerConfigAsset</code> is a Unity <code>ScriptableObject</code> used as <em>both</em>:</p>
+<ol>
+<li>A <strong>terrain-layer factory</strong> (it implements <code>ITerrainLayerFactory</code> via <code>HexTerrainLayerConfigAsset&lt;T&gt;</code>), and</li>
+<li>A <strong>layer initialization/config payload</strong> (it implements <code>IChunkMeshLayerConfig</code>).</li>
+</ol>
+<p>It configures how a <code>ChunkMeshLayer</code> (and derived layers) initialize their internal data layers:</p>
+<ul>
+<li>height per cell (<code>HeightMap</code>)</li>
+<li>biome per cell (<code>BiomeMap</code>)</li>
+<li>transparency per cell (<code>TransparencyMap</code>)</li>
+<li>optional auto-biome painting from height</li>
+<li>optional data syncing from other layers</li>
+<li>optional overlap/transparency rules</li>
+</ul>
+<hr>
+<h2 id="wherehow-this-config-is-used-during-terrain-initialization">Where/how this config is used during terrain initialization</h2>
+<p>Terrain layers are commonly hosted inside a <code>HexTerrainLayerGroup&lt;TTerrainLayer&gt;</code>. During initialization, the group:</p>
+<ul>
+<li>iterates the provided init-args list (often a list of config assets),</li>
+<li>creates the runtime layer instance using <code>ITerrainLayerFactory</code> (if implemented),</li>
+<li>then calls <code>layer.Init(settings, initArgs)</code> to apply the config.</li>
+</ul>
+<p>Key implementation detail:</p>
+<ul>
+<li><p><code>HexTerrainLayerGroup&lt;TTerrainLayer&gt;.CreateTerrainLayer(initArgs)</code>:</p>
+<ul>
+<li>if <code>initArgs is ITerrainLayerFactory</code>, it calls <code>factory.CreateTerrainLayer&lt;TTerrainLayer&gt;()</code></li>
+<li>otherwise it uses <code>Activator.CreateInstance&lt;TTerrainLayer&gt;()</code></li>
+</ul>
+</li>
+<li><p><code>ChunkMeshLayer.Init(settings, initArgs)</code>:</p>
+<ul>
+<li>checks <code>initArgs is IChunkMeshLayerConfig</code></li>
+<li>copies settings/references</li>
+<li>initializes height/biome/transparency maps from the provided init args</li>
+<li>optionally auto-paints biomes based on height thresholds</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-mermaid">flowchart TD 
+A[&quot;Scene/Bootstrap code provides a list of layer config assets&quot;] --&gt; B[&quot;HexTerrainLayerGroup&lt;T&gt;.Init(settings, initArgsList)&quot;] 
+B --&gt; C[&quot;For each initArgs: CreateTerrainLayer(initArgs)&quot;] 
+C --&gt; D[&quot;If initArgs implements ITerrainLayerFactory: call CreateTerrainLayer() on the asset&quot;] 
+D --&gt; E[&quot;layer.Init(settings, initArgs)&quot;] 
+E --&gt; F[&quot;ChunkMeshLayer.Init&lt;T&gt; reads IChunkMeshLayerConfig and initializes maps&quot;] 
+E --&gt; G[&quot;VisualChunkMeshLayer.Init&lt;T&gt; (if applicable) copies render/UV settings&quot;] 
+E --&gt; H[&quot;Roads/Rain/Clouds layers copy their specialized settings (if applicable)&quot;]
+</code></pre>
+<hr>
+<h2 id="field-reference-chunkmeshlayerconfigasset">Field reference: <code>ChunkMeshLayerConfigAsset</code></h2>
+<blockquote>
+<p>Source: <code>com.freewebtime.hexterrains/Runtime/ChunkMeshes/Data/ChunkMeshLayerConfigAsset.cs</code></p>
+</blockquote>
+<h3 id="height-map-args-_heightmapargs--heightmapargs"><code>Height Map Args</code> (<code>_heightMapArgs</code> / <code>HeightMapArgs</code>)</h3>
+<p>Type: <code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code></p>
+<p>Controls <em>initialization</em> of the layer’s per-cell height data (<code>ChunkMeshLayer.HeightMap</code>).</p>
+<p>How it’s used:</p>
+<ul>
+<li><code>ChunkMeshLayer.Init&lt;T&gt;</code> calls <code>InitColoredDataLayer(HeightMap, config.HeightMapArgs)</code></li>
+<li>This can fill with a constant, random range, or apply a source texture.</li>
+<li>Also configures color palette + auto-color mode for the height color map (if used).</li>
+</ul>
+<p>Typical meaning:</p>
+<ul>
+<li>This is the base “terrain elevation” for this layer (or any per-cell scalar the layer interprets as height).</li>
+</ul>
+<hr>
+<h3 id="transparency-map-args-_transparencymapargs--transparencymapargs"><code>Transparency Map Args</code> (<code>_transparencyMapArgs</code> / <code>TransparencyMapArgs</code>)</h3>
+<p>Type: <code>InitColorMapCellValueDataLayerArgs&lt;bool&gt;</code></p>
+<p>Controls initialization of the per-cell transparency flags (<code>ChunkMeshLayer.TransparencyMap</code>).</p>
+<p>How it’s used:</p>
+<ul>
+<li><code>ChunkMeshLayer.Init&lt;T&gt;</code> calls <code>InitDataLayer(TransparencyMap, config.TransparencyMapArgs)</code></li>
+<li>Can fill all transparent/opaque, randomize (bool), or derive from a texture (depending on implementation support).</li>
+</ul>
+<p>Typical meaning:</p>
+<ul>
+<li>Marks cells that should be treated as transparent/hidden in rendering or downstream calculations.</li>
+<li>This is also used when calculating “dirty mesh sources” (mesh regeneration triggers).</li>
+</ul>
+<hr>
+<h3 id="biome-map-args-_biomemapargs--biomemapargs"><code>Biome Map Args</code> (<code>_biomeMapArgs</code> / <code>BiomeMapArgs</code>)</h3>
+<p>Type: <code>InitColorMapCellValueDataLayerArgs&lt;int&gt;</code></p>
+<p>Controls initialization of per-cell biome indices (<code>ChunkMeshLayer.BiomeMap</code>).</p>
+<p>How it’s used:</p>
+<ul>
+<li><code>ChunkMeshLayer.Init&lt;T&gt;</code> calls <code>InitColoredDataLayer(BiomeMap, config.BiomeMapArgs)</code></li>
+<li>Biome values typically map to:
+<ul>
+<li><strong>submesh/material index</strong> (standard rendering), or</li>
+<li><strong>atlas UV selection</strong> (when <code>RenderSettings.IsUseBiomeAtlas</code> is enabled in visual layers)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="is-auto-paint-biomes-_isautopaintbiomes--isautopaintbiomes"><code>Is Auto Paint Biomes</code> (<code>_isAutoPaintBiomes</code> / <code>IsAutoPaintBiomes</code>)</h3>
+<p>Type: <code>bool</code></p>
+<p>If enabled, the biome map is overwritten (painted) from the height map using <code>AutoPaintBiomesLevels</code>.</p>
+<p>How it’s used:</p>
+<ul>
+<li>In <code>ChunkMeshLayer.Init&lt;T&gt;</code>:
+<ul>
+<li>if <code>config.IsAutoPaintBiomes</code>, calls:
+<ul>
+<li><code>FillBiomeByHeight(BiomeMap.Data, HeightMap.Data, config.AutoPaintBiomesLevels)</code></li>
+</ul>
+</li>
+<li>then marks the whole biome map dirty.</li>
+</ul>
+</li>
+</ul>
+<p>Implications:</p>
+<ul>
+<li>Any biome values produced by <code>BiomeMapArgs</code> can be replaced by this step.</li>
+</ul>
+<hr>
+<h3 id="auto-paint-biomes-levels-_autopaintbiomeslevels--autopaintbiomeslevels"><code>Auto Paint Biomes Levels</code> (<code>_autoPaintBiomesLevels</code> / <code>AutoPaintBiomesLevels</code>)</h3>
+<p>Type: <code>List&lt;float&gt;</code></p>
+<p>A list of height thresholds used to assign biome indices.</p>
+<p>Algorithm (as implemented):</p>
+<ul>
+<li>For each cell height <code>h</code>, find the <strong>highest index</strong> <code>i</code> such that <code>levels[i] &lt;= h</code></li>
+<li>Assign <code>biome = i</code></li>
+<li>If the list is null/empty, biome defaults to <code>0</code></li>
+</ul>
+<p>Practical guidance:</p>
+<ul>
+<li>Index in the list is the biome index that will be assigned.</li>
+<li>Example (levels <code>[0, 1, 2]</code>):
+<ul>
+<li><code>h &lt; 1</code> → biome <code>0</code></li>
+<li><code>1 &lt;= h &lt; 2</code> → biome <code>1</code></li>
+<li><code>h &gt;= 2</code> → biome <code>2</code></li>
+</ul>
+</li>
+</ul>
+<hr>
+<h3 id="chunk-mesh-layer-settings-_chunkmeshlayersettings--chunkmeshlayersettings"><code>Chunk Mesh Layer Settings</code> (<code>_chunkMeshLayerSettings</code> / <code>ChunkMeshLayerSettings</code>)</h3>
+<p>Type: <code>ChunkMeshLayerSettings</code></p>
+<p>Controls layer-specific rules used primarily during cell-metrics and color-map calculation:</p>
+<h4 id="useheighttresholdfortransparency"><code>UseHeightTresholdForTransparency</code></h4>
+<p>If <code>true</code>, cell metrics calculation uses a height threshold to treat cells as transparent (see <code>CalcHexCellMetricsJob</code> usage).</p>
+<h4 id="heighttresholdfortransparency"><code>HeightTresholdForTransparency</code></h4>
+<p>Height cutoff used when <code>UseHeightTresholdForTransparency</code> is enabled.</p>
+<h4 id="hasoverlappinglayer"><code>HasOverlappingLayer</code></h4>
+<p>If <code>true</code>, biome color map calculation can be influenced by an overlapping layer.</p>
+<h4 id="overlappinglayerreference"><code>OverlappingLayerReference</code></h4>
+<p>A <code>HexTerrainLayerReference</code> to another <code>ChunkMeshLayer</code>. When overlapping is enabled, biome color calculation can mark cells transparent if they are lower than the overlapping layer at the same cell index.</p>
+<p>Where it shows up:</p>
+<ul>
+<li><code>ChunkMeshLayer.CalculateBiomeColorMap()</code> chooses overlap-aware logic when enabled.</li>
+</ul>
+<hr>
+<h3 id="sync-height-map-layer-reference-_syncheightmaplayerreference--syncheightmaplayerreference"><code>Sync Height Map Layer Reference</code> (<code>_syncHeightMapLayerReference</code> / <code>SyncHeightMapLayerReference</code>)</h3>
+<p>Type: <code>HexTerrainLayerReference</code></p>
+<p>If set, this layer can copy (<code>sync</code>) height values from another <code>ChunkMeshLayer</code> during runtime syncing.</p>
+<p>Where it’s used:</p>
+<ul>
+<li><code>ChunkMeshLayer.SyncHeightMap()</code></li>
+</ul>
+<p>Behavior summary:</p>
+<ul>
+<li>Finds referenced layer in <code>ParentLayer</code> via <code>HexTerrainLayerReference</code></li>
+<li>If either source or target map is dirty, schedules a sync job and marks target dirty.</li>
+</ul>
+<hr>
+<h3 id="sync-biome-map-layer-reference-_syncbiomemaplayerreference--syncbiomemaplayerreference"><code>Sync Biome Map Layer Reference</code> (<code>_syncBiomeMapLayerReference</code> / <code>SyncBiomeMapLayerReference</code>)</h3>
+<p>Type: <code>HexTerrainLayerReference</code></p>
+<p>Same concept as height syncing, but for biome values.</p>
+<p>Where it’s used:</p>
+<ul>
+<li><code>ChunkMeshLayer.SyncBiomeMap()</code></li>
+</ul>
+<hr>
+<h3 id="sync-transparency-map-layer-reference-_synctransparencymaplayerreference--synctransparencymaplayerreference"><code>Sync Transparency Map Layer Reference</code> (<code>_syncTransparencyMapLayerReference</code> / <code>SyncTransparencyMapLayerReference</code>)</h3>
+<p>Type: <code>HexTerrainLayerReference</code></p>
+<p>Same concept as height syncing, but for transparency flags.</p>
+<p>Where it’s used:</p>
+<ul>
+<li><code>ChunkMeshLayer.SyncTransparencyMap()</code></li>
+</ul>
+<hr>
+<h3 id="createterrainlayer"><code>CreateTerrainLayer()</code></h3>
+<p>Factory method override (important for initialization flow).</p>
+<p>Default mapping:</p>
+<ul>
+<li><code>ChunkMeshLayerConfigAsset.CreateTerrainLayer()</code> → <code>new ChunkMeshLayer()</code></li>
+</ul>
+<p>This is what enables <code>HexTerrainLayerGroup&lt;T&gt;.CreateTerrainLayer(initArgs)</code> to instantiate the correct runtime layer type when the init-args object is a config asset.</p>
+<hr>
+<h2 id="shared-nested-type-initcolormapcellvaluedatalayerargstvalue">Shared nested type: <code>InitColorMapCellValueDataLayerArgs&lt;TValue&gt;</code></h2>
+<p>These args appear in the inspector as foldouts for <code>HeightMapArgs</code>, <code>BiomeMapArgs</code>, and <code>TransparencyMapArgs</code>.</p>
+<h3 id="value-range--defaults">Value range / defaults</h3>
+<ul>
+<li><code>MinValue</code>: used for some calculations (not a hard clamp)</li>
+<li><code>MaxValue</code>: used for some calculations (not a hard clamp)</li>
+<li><code>DefaultValue</code>: used when layers resize and new cells are added</li>
+</ul>
+<h3 id="initialization-mode-toggles-usually-you-enable-one">Initialization mode toggles (usually you enable one)</h3>
+<ul>
+<li><code>IsFillWithValue</code> + <code>FillValue</code></li>
+<li><code>IsFillWithRandomValues</code> + <code>RandomMinValue</code> + <code>RandomMaxValue</code></li>
+<li><code>IsApplySourceTexture</code> + <code>SourceTexture</code> + <code>SourceTextureValueOffset</code> + <code>SourceTextureValueScale</code></li>
+</ul>
+<h3 id="color-map-configuration-for-colored-layers">Color map configuration (for colored layers)</h3>
+<ul>
+<li><code>ColorPalette</code>: palette used to compute a color map</li>
+<li><code>AutoColorMapMode</code>:
+<ul>
+<li><code>GradientThroughPalette</code>: value normalized between <code>MinValue..MaxValue</code> drives palette gradient</li>
+<li><code>ColorIndexByValue</code>: integer value used as palette index</li>
+<li><code>Custom</code>: derived/custom logic</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="shared-nested-type-hexterrainlayerreference">Shared nested type: <code>HexTerrainLayerReference</code></h2>
+<p>A generic way to reference another layer in the same <code>HexTerrainLayerGroup</code>:</p>
+<ul>
+<li><code>IsSearchByIndex</code> + <code>LayerIndex</code></li>
+<li><code>IsSearchByName</code> + <code>LayerName</code></li>
+</ul>
+<p>Used by:</p>
+<ul>
+<li>sync references (<code>SyncHeightMapLayerReference</code>, etc.)</li>
+<li>overlap reference (<code>ChunkMeshLayerSettings.OverlappingLayerReference</code>)</li>
+</ul>
+<hr>
+<h1 id="inherited-config-assets-derived-from-chunkmeshlayerconfigasset">Inherited config assets (derived from <code>ChunkMeshLayerConfigAsset</code>)</h1>
+<h2 id="visualchunkmeshlayerconfigasset"><code>VisualChunkMeshLayerConfigAsset</code></h2>
+<p>Base class for <em>renderable</em> chunk mesh layers.</p>
+<p>Factory mapping:</p>
+<ul>
+<li><code>VisualChunkMeshLayerConfigAsset.CreateTerrainLayer()</code> → <code>new VisualChunkMeshLayer()</code></li>
+</ul>
+<p>Additional fields:</p>
+<h3 id="is-visible-_isvisible--isvisible"><code>Is Visible</code> (<code>_isVisible</code> / <code>IsVisible</code>)</h3>
+<p>If <code>false</code>, the layer will skip mesh generation/rendering (<code>VisualChunkMeshLayer.CalcMeshSources</code> returns early).</p>
+<h3 id="render-settings-_rendersettings--rendersettings"><code>Render Settings</code> (<code>_renderSettings</code> / <code>RenderSettings</code>)</h3>
+<p>Type: <code>ChunkMeshRenderSettings</code></p>
+<p>Key sub-fields:</p>
+<ul>
+<li><code>HeightOffset</code>: vertical render offset (commonly used for water)</li>
+<li><code>IsColoredBorders</code>, <code>BorderSubmeshIndex</code>, <code>ColoredSlopeTreshold</code>, <code>BorderSize</code>: border rendering rules</li>
+<li><code>IsUseBiomeAtlas</code>: if true, biome selection uses atlas UVs instead of biome-index materials</li>
+<li><code>UVScale</code>: global UV scaling</li>
+<li><code>IsOverrideSlopeSize</code> / <code>OverrideSlopeSize</code>: optional slope size override during mesh generation</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied into <code>VisualChunkMeshLayer.RenderSettings</code> during <code>Init&lt;T&gt;</code>.</li>
+<li>Affects mesh generation jobs (<code>GenerateSurfaceChunkMeshJob</code>, etc.).</li>
+</ul>
+<h3 id="render-configs-_renderconfigs--renderconfigs"><code>Render Configs</code> (<code>_renderConfigs</code> / <code>RenderConfigs</code>)</h3>
+<p>Type: <code>List&lt;HexSurfaceRenderConfigAsset&gt;</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Index is the terrain “view mode” (viewMode 0 → config 0, etc.)</li>
+<li>Each config provides:
+<ul>
+<li><code>Materials[]</code> (material index typically = biome/submesh index)</li>
+<li>shadow flags</li>
+</ul>
+</li>
+</ul>
+<h3 id="default-render-config-_defaultrenderconfig--defaultrenderconfig"><code>Default Render Config</code> (<code>_defaultRenderConfig</code> / <code>DefaultRenderConfig</code>)</h3>
+<p>Fallback if the requested view mode has no entry in <code>RenderConfigs</code>.</p>
+<h3 id="biome-uvs-_biomeuvs--biomeuvs"><code>Biome UVs</code> (<code>_biomeUvs</code> / <code>BiomeUvs</code>)</h3>
+<p>Type: <code>List&lt;Sprite&gt;</code></p>
+<p>Used to generate <code>ChunkMeshBiomeUVConfig</code> entries:</p>
+<ul>
+<li>Each sprite’s UV rect is extracted and stored.</li>
+<li>Only used when <code>RenderSettings.IsUseBiomeAtlas</code> is enabled (atlas workflow).</li>
+</ul>
+<hr>
+<h2 id="waterchunkmeshlayerconfigasset"><code>WaterChunkMeshLayerConfigAsset</code></h2>
+<p>Factory mapping:</p>
+<ul>
+<li><code>WaterChunkMeshLayerConfigAsset.CreateTerrainLayer()</code> → <code>new WaterChunkMeshLayer()</code></li>
+</ul>
+<p>Adds <strong>no new serialized fields</strong> beyond <code>VisualChunkMeshLayerConfigAsset</code>.</p>
+<p>Practical notes:</p>
+<ul>
+<li>Usually configured with a small <code>RenderSettings.HeightOffset</code> to prevent z-fighting with the ground surface.</li>
+<li>Uses a specialized mesh generator job (<code>GenerateWaterChunkMeshJob</code>) in <code>WaterChunkMeshLayer</code>.</li>
+</ul>
+<hr>
+<h2 id="roadschunkmeshlayerconfigasset"><code>RoadsChunkMeshLayerConfigAsset</code></h2>
+<p>Factory mapping:</p>
+<ul>
+<li><code>RoadsChunkMeshLayerConfigAsset.CreateTerrainLayer()</code> → <code>new RoadsChunkMeshLayer()</code></li>
+</ul>
+<p>Adds:</p>
+<h3 id="roads-render-settings-_roadsrendersettings--roadsrendersettings"><code>Roads Render Settings</code> (<code>_roadsRenderSettings</code> / <code>RoadsRenderSettings</code>)</h3>
+<p>Type: <code>HexRoadsRenderSettings</code></p>
+<p>Fields:</p>
+<ul>
+<li><code>RoadThickness</code>: relative to hex radius (0..1)</li>
+<li><code>RoadsTileScalePlato</code>: UV tiling for flat road segments</li>
+<li><code>RoadsTileScaleBridge</code>: UV tiling for “bridge” segments</li>
+<li><code>CrossRoadsUvScale</code>: UV scaling for cell-center crossroads</li>
+<li><code>IsUseHeightTreshold</code>: only render road connections if neighbor height delta is small enough</li>
+<li><code>HeightTreshold</code>: the allowed height delta</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied into <code>RoadsChunkMeshLayer.RoadsRenderSettings</code> during init.</li>
+<li>Passed into <code>GenerateRoadsChunkMeshJob</code>.</li>
+</ul>
+<hr>
+<h2 id="cloudschunkmeshlayerconfigasset"><code>CloudsChunkMeshLayerConfigAsset</code></h2>
+<p>Factory mapping:</p>
+<ul>
+<li><code>CloudsChunkMeshLayerConfigAsset.CreateTerrainLayer()</code> → <code>new CloudsChunkMeshLayer()</code></li>
+</ul>
+<p>Adds:</p>
+<h3 id="clouds-render-settings-_cloudsrendersettings--cloudsrendersettings"><code>Clouds Render Settings</code> (<code>_cloudsRenderSettings</code> / <code>CloudsRenderSettings</code>)</h3>
+<p>Type: <code>CloudsRenderSettings</code></p>
+<p>Fields:</p>
+<ul>
+<li><code>CloudThickness</code>: max volumetric thickness at/above <code>MaxCellHeight</code></li>
+<li><code>MaxCellHeight</code>: height at which thickness is considered max</li>
+<li><code>CloudScaleTreshold</code>: below this height, cloud scale fades toward 0</li>
+<li><code>IsDrawBottomSide</code>: whether underside faces are generated/rendered</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied into <code>CloudsChunkMeshLayer.CloudsRenderSettings</code> during init.</li>
+<li>Passed into <code>GenerateCloudsChunkMeshJob</code>.</li>
+</ul>
+<hr>
+<h2 id="rainchunkmeshlayerconfigasset"><code>RainChunkMeshLayerConfigAsset</code></h2>
+<p>Factory mapping:</p>
+<ul>
+<li><code>RainChunkMeshLayerConfigAsset.CreateTerrainLayer()</code> → <code>new RainChunkMeshLayer()</code></li>
+</ul>
+<p>Adds:</p>
+<h3 id="rain-render-settings-_rainrendersettings--rainrendersettings"><code>Rain Render Settings</code> (<code>_rainRenderSettings</code> / <code>RainRenderSettings</code>)</h3>
+<p>Type: <code>RainRenderSettings</code></p>
+<p>Fields:</p>
+<ul>
+<li><code>RainHeight</code>: vertical start height above terrain from which rain is generated</li>
+<li><code>MaxCellHeight</code>: terrain height at which rain effect reaches its max (visual scaling is typically interpolated)</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Copied into <code>RainChunkMeshLayer.RainRenderSettings</code> during init.</li>
+<li>Passed into <code>GenerateRainChunkMeshJob</code>.</li>
+</ul>
+<hr>
+<h2 id="summary-runtime-layer-created-by-each-config-asset">Summary: runtime layer created by each config asset</h2>
+<table>
+<thead>
+<tr>
+<th>Config asset</th>
+<th>Runtime layer instance returned by <code>CreateTerrainLayer()</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ChunkMeshLayerConfigAsset</code></td>
+<td><code>ChunkMeshLayer</code></td>
+</tr>
+<tr>
+<td><code>VisualChunkMeshLayerConfigAsset</code></td>
+<td><code>VisualChunkMeshLayer</code></td>
+</tr>
+<tr>
+<td><code>WaterChunkMeshLayerConfigAsset</code></td>
+<td><code>WaterChunkMeshLayer</code></td>
+</tr>
+<tr>
+<td><code>RoadsChunkMeshLayerConfigAsset</code></td>
+<td><code>RoadsChunkMeshLayer</code></td>
+</tr>
+<tr>
+<td><code>CloudsChunkMeshLayerConfigAsset</code></td>
+<td><code>CloudsChunkMeshLayer</code></td>
+</tr>
+<tr>
+<td><code>RainChunkMeshLayerConfigAsset</code></td>
+<td><code>RainChunkMeshLayer</code></td>
+</tr>
+</tbody>
+</table>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/chunk-mesh-layer-initialization.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

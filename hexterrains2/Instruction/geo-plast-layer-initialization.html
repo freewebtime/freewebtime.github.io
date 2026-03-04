@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>GeoPlastLayer initialization (and GeoPlastLayerConfigAsset inheritance chain) | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="GeoPlastLayer initialization (and GeoPlastLayerConfigAsset inheritance chain) | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="geoplastlayer-initialization-and-geoplastlayerconfigasset-inheritance-chain"><code>GeoPlastLayer</code> initialization (and <code>GeoPlastLayerConfigAsset</code> inheritance chain)</h1>
+
+<p><img src="images/GeoPlastLayerConfigAsset.png" alt="Geo Plast Layer Config Asset"></p>
+<p>A <code>GeoPlastLayer</code> is a terrain layer that stores per-cell “plast” data (amount/density/volume) and derives additional maps (bedrock height, ceiling height). Derived GeoPlast layers add rendering and simulation (flow/heat) behavior.</p>
+<p>Initialization is driven by <strong>ScriptableObject config assets</strong> (<code>GeoPlastLayerConfigAsset</code> and its derived types) which are passed to the runtime through <code>CreateGeoPlastLayerRequest</code> elements in a <code>GeoPlastLayerGroup</code>.</p>
+<hr>
+<h2 id="wherehow-configs-are-applied-at-runtime">Where/how configs are applied at runtime</h2>
+<p>GeoPlast layers are hosted by <code>GeoPlastLayerGroup : HexTerrainLayerGroup&lt;GeoPlastLayer&gt;</code>.</p>
+<p>Instead of passing config assets directly, the group expects init args of type <code>CreateGeoPlastLayerRequest</code>, which contains:</p>
+<ul>
+<li><code>Name</code> (a <code>FixedString128Bytes</code>)</li>
+<li><code>Args</code> (a <code>UnityObjectRef&lt;GeoPlastLayerConfigAsset&gt;</code>)</li>
+</ul>
+<p>During group initialization:</p>
+<ul>
+<li><p><code>GeoPlastLayerGroup.CreateTerrainLayer(initArgs)</code>:</p>
+<ul>
+<li>calls <code>base.CreateTerrainLayer(initArgs)</code></li>
+<li>if <code>initArgs is CreateGeoPlastLayerRequest</code>, uses <code>request.Name</code> to set <code>layer.Name</code></li>
+</ul>
+</li>
+<li><p><code>GeoPlastLayerGroup.InitTerrainLayer(layer, settings, initArgs)</code>:</p>
+<ul>
+<li>if <code>initArgs is CreateGeoPlastLayerRequest args</code>, it calls:
+<ul>
+<li><code>layer.Init(settings, args.Args.Value)</code></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>The key detail is that <code>args.Args.Value</code> can be any derived asset type (<code>VisualGeoPlastLayerConfigAsset</code>, <code>DynamicGeoPlastLayerConfigAsset</code>, <code>MaterialGeoPlastLayerConfigAsset</code>). Each runtime layer reads the “extra” fields via <code>is IVisualGeoPlastLayerConfig</code>, <code>is IInitDynamicGeoPlastLayerArgs</code>, etc.</p>
+<pre><code class="lang-mermaid">flowchart TD 
+A[&quot;Terrain entity has DynamicBuffer&lt;CreateGeoPlastLayerRequest&gt;&quot;] --&gt; B[&quot;GeoPlastLayerGroup.Init(...)&quot;] 
+B --&gt; C[&quot;CreateTerrainLayer(request) → request.Args.Value.CreateTerrainLayer()&quot;] 
+C --&gt; D[&quot;Runtime layer created (GeoPlastLayer / VisualGeoPlastLayer / DynamicGeoPlastLayer / MaterialGeoPlastLayer)&quot;] 
+D --&gt; E[&quot;InitTerrainLayer(...) calls layer.Init(settings, config)&quot;] 
+E --&gt; F[&quot;GeoPlastLayer.Init(settings) allocates all base maps&quot;] 
+E --&gt; G[&quot;InitLayerData(config) applies settings + init args (with is ... checks for derived configs)&quot;]
+</code></pre>
+<hr>
+<h1 id="geoplastlayer-initialization-behavior"><code>GeoPlastLayer</code> initialization behavior</h1>
+<h2 id="stage-1-allocation-geoplastlayerinitsettings">Stage 1: allocation (<code>GeoPlastLayer.Init(settings)</code>)</h2>
+<p>Always created/initialized (per cell):</p>
+<ul>
+<li><code>AmountMap</code> (<code>ColorMapCellValueDataLayer_Float</code>)</li>
+<li><code>DensityMap</code> (<code>ColorMapCellValueDataLayer_Float</code>)</li>
+<li><code>VolumeMap</code> (<code>ColorMapCellValueDataLayer_Float</code>)</li>
+<li><code>BedrockHeightMap</code> (<code>CellValueDataLayer&lt;float&gt;</code>)</li>
+<li><code>CeilingHeightMap</code> (<code>CellValueDataLayer&lt;float&gt;</code>)</li>
+</ul>
+<p>Special-case:</p>
+<ul>
+<li>If <code>GeoPlastSettings.HasBedrock == false</code>, <code>BedrockHeightMap</code> is filled with <code>0</code> during <code>Init(settings)</code>.</li>
+</ul>
+<h2 id="stage-2-config-application-geoplastlayerinitsettings-iinitgeoplastlayerconfig-args">Stage 2: config application (<code>GeoPlastLayer.Init(settings, IInitGeoPlastLayerConfig args)</code>)</h2>
+<p>Calls <code>InitLayerData(args)</code>, which:</p>
+<ul>
+<li><p>Copies layer-wide settings/references:</p>
+<ul>
+<li><code>GeoPlastSettings = args.GeoPlastSettings</code></li>
+<li><code>BedrockPlastReference = args.BedrockPlastReference</code></li>
+</ul>
+</li>
+<li><p>Initializes value maps using config-provided init args:</p>
+<ul>
+<li><code>InitColoredDataLayer(AmountMap, args.AmountArgs)</code></li>
+<li><code>InitColoredDataLayer(DensityMap, args.DensityArgs)</code></li>
+<li><code>InitColoredDataLayer(VolumeMap, args.VolumeArgs)</code></li>
+</ul>
+</li>
+</ul>
+<p>Implication:</p>
+<ul>
+<li><code>AmountMap</code>, <code>DensityMap</code>, <code>VolumeMap</code> are <em>authorable initial state</em>. After that, runtime update/simulation may overwrite derived maps (and may recompute <code>VolumeMap</code> based on amount+density).</li>
+</ul>
+<hr>
+<h1 id="config-assets-and-how-they-affect-initialization">Config assets and how they affect initialization</h1>
+<h2 id="1-base-config-geoplastlayerconfigasset">1) Base config: <code>GeoPlastLayerConfigAsset</code></h2>
+<p>Source: <code>com.freewebtime.hexterrains/Runtime/GeoPlasts/Data/GeoPlastLayerConfigAsset.cs</code><br>
+Creates: <code>new GeoPlastLayer()</code></p>
+<p>Implements: <code>IInitGeoPlastLayerConfig</code></p>
+<h3 id="_geoplastsettings--geoplastsettings-geoplastsettings"><code>_geoPlastSettings</code> / <code>GeoPlastSettings</code> (<code>GeoPlastSettings</code>)</h3>
+<p>Affects:</p>
+<ul>
+<li><strong>Bedrock behavior</strong>
+<ul>
+<li>If <code>HasBedrock</code> is false, <code>BedrockHeightMap</code> is initialized to <code>0</code> and <code>CalculateBedrock()</code> becomes a no-op.</li>
+</ul>
+</li>
+<li><strong>Density math in some derived jobs</strong>
+<ul>
+<li>Used by jobs like <code>CalculateGeoPlastDensityByTemperatureJob</code> (via derived layers), as the “global” geo plast settings input.</li>
+</ul>
+</li>
+</ul>
+<p>Fields inside <code>GeoPlastSettings</code>:</p>
+<ul>
+<li><code>Density</code><br>
+A base density concept for the plast system. (Most of the base layer’s volume calculation uses <code>DensityMap</code> directly; temperature-based density uses this as an input in derived logic.)</li>
+<li><code>HasBedrock</code><br>
+Enables bedrock-copying behavior and bedrock-based calculations.</li>
+</ul>
+<h3 id="_bedrocklayerreference--bedrockplastreference-hexterrainlayerreference"><code>_bedrockLayerReference</code> / <code>BedrockPlastReference</code> (<code>HexTerrainLayerReference</code>)</h3>
+<p>Meaning:</p>
+<ul>
+<li>Points to another <code>GeoPlastLayer</code> that acts as bedrock for this layer.</li>
+</ul>
+<p>Used by:</p>
+<ul>
+<li><code>GeoPlastLayer.CalculateBedrock()</code>:
+<ul>
+<li>resolves bedrock layer via <code>GetTerrainLayerFromParent&lt;GeoPlastLayer&gt;(BedrockPlastReference)</code></li>
+<li>copies bedrock’s <code>CeilingHeightMap</code> into this layer’s <code>BedrockHeightMap</code></li>
+</ul>
+</li>
+</ul>
+<p>Affects:</p>
+<ul>
+<li><code>CalculateCeiling()</code> (ceiling = bedrock height + volume)</li>
+<li>Flow potential calculations in dynamic/material layers (they depend on bedrock/ceiling comparisons)</li>
+</ul>
+<h3 id="_amountargs--amountargs-initcolormapcellvaluedatalayerargsfloat"><code>_amountArgs</code> / <code>AmountArgs</code> (<code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>InitColoredDataLayer(AmountMap, AmountArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Controls initial plast <strong>amount per cell</strong> (and its color map configuration).</li>
+</ul>
+<p>Practical use:</p>
+<ul>
+<li>Fill with a constant (uniform plast), random range (noise), or apply a source texture.</li>
+</ul>
+<h3 id="_densityargs--densityargs-initcolormapcellvaluedatalayerargsfloat"><code>_densityArgs</code> / <code>DensityArgs</code> (<code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>InitColoredDataLayer(DensityMap, DensityArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Controls initial <strong>density per cell</strong> (units of volume per 1 unit of amount in this layer’s model).</li>
+</ul>
+<p>Affects:</p>
+<ul>
+<li><code>CalculateVolume()</code> because volume is computed from <code>AmountMap</code> and <code>DensityMap</code>.</li>
+</ul>
+<h3 id="_volumeargs--volumeargs-initcolormapcellvaluedatalayerargsfloat"><code>_volumeArgs</code> / <code>VolumeArgs</code> (<code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>InitColoredDataLayer(VolumeMap, VolumeArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Initial volume values (mainly useful as a starting state).</li>
+</ul>
+<p>Important:</p>
+<ul>
+<li>Runtime <code>CalculateVolume()</code> can overwrite <code>VolumeMap</code> whenever <code>AmountMap</code> or <code>DensityMap</code> is dirty.</li>
+</ul>
+<hr>
+<h2 id="2-visual-config-visualgeoplastlayerconfigasset">2) Visual config: <code>VisualGeoPlastLayerConfigAsset</code></h2>
+<p>Source: <code>.../VisualGeoPlastLayerConfigAsset.cs</code><br>
+Creates: <code>new VisualGeoPlastLayer()</code></p>
+<p>Implements: <code>IVisualGeoPlastLayerConfig</code> (extends <code>IInitGeoPlastLayerConfig</code>)</p>
+<h3 id="_chunkmeshlayerreference--chunkmeshlayerreference-hexterrainlayerreference"><code>_chunkMeshLayerReference</code> / <code>ChunkMeshLayerReference</code> (<code>HexTerrainLayerReference</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>VisualGeoPlastLayer.InitLayerData(...)</code> sets:
+<ul>
+<li><code>SurfaceLayerRef = visualArgs.ChunkMeshLayerReference</code></li>
+</ul>
+</li>
+</ul>
+<p>Used later:</p>
+<ul>
+<li><code>VisualGeoPlastLayer.RenderGeoPlast(...)</code> resolves:
+<ul>
+<li><code>ChunkMeshLayer surfaceLayer = chunkMeshLayerList.GetLayer&lt;ChunkMeshLayer&gt;(SurfaceLayerRef)</code></li>
+</ul>
+</li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Which <code>ChunkMeshLayer</code> the GeoPlast values are rendered <em>onto</em> (height/biome/transparency).</li>
+</ul>
+<h3 id="_visualgeoplastsettings--visualgeoplastsettings-visualgeoplastsettings"><code>_visualGeoPlastSettings</code> / <code>VisualGeoPlastSettings</code> (<code>VisualGeoPlastSettings</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>VisualGeoPlastLayer.InitLayerData(...)</code> sets:
+<ul>
+<li><code>VisualGeoPlastSettings = visualArgs.VisualGeoPlastSettings</code></li>
+</ul>
+</li>
+</ul>
+<p>Used later:</p>
+<ul>
+<li><code>RenderGeoPlastToHeightMapJob</code> reads <code>VisualGeoPlastSettings</code> to decide how to write height/biome/transparency.</li>
+</ul>
+<p>Key fields:</p>
+<ul>
+<li><code>RenderMode</code> (<code>Ceiling</code>, <code>Amount</code>, <code>Volume</code>)
+<ul>
+<li>Controls which map is rendered to the surface heightmap:
+<ul>
+<li><code>Amount</code>: uses <code>AmountMap</code></li>
+<li><code>Volume</code>: uses <code>VolumeMap</code></li>
+<li><code>Ceiling</code>: uses <code>CeilingHeightMap</code> and <code>VolumeMap</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>IsRenderZeroAsTransparent</code>
+<ul>
+<li>If true, “zero-ish” cells become transparent in the target surface’s <code>TransparencyMap</code>.</li>
+</ul>
+</li>
+<li><code>ZeroHeightTreshold</code>
+<ul>
+<li>Enforces a minimum height when rendering non-zero values.</li>
+</ul>
+</li>
+<li><code>TransparencyTreshold</code>
+<ul>
+<li>Values at/below this threshold can be treated as transparent (depending on <code>IsRenderZeroAsTransparent</code>).</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="3-dynamic-config-dynamicgeoplastlayerconfigasset">3) Dynamic config: <code>DynamicGeoPlastLayerConfigAsset</code></h2>
+<p>Source: <code>.../DynamicGeoPlastLayerConfigAsset.cs</code><br>
+Creates: <code>new DynamicGeoPlastLayer()</code></p>
+<p>Implements: <code>IInitDynamicGeoPlastLayerArgs</code> (extends <code>IVisualGeoPlastLayerConfig</code>)</p>
+<h3 id="_dynamicsettings--dynamicsettings-dynamicgeoplastsettings"><code>_dynamicSettings</code> / <code>DynamicSettings</code> (<code>DynamicGeoPlastSettings</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>DynamicGeoPlastLayer.InitLayerData(...)</code> sets:
+<ul>
+<li><code>DynamicSettings = dynamicArgs.DynamicSettings</code></li>
+</ul>
+</li>
+</ul>
+<p>Affects:</p>
+<ul>
+<li>Whether flow simulation runs this tick:
+<ul>
+<li><code>DynamicSettings.IsAnyFlowEnabledAndIsSimulationTick(simulationTimer)</code></li>
+</ul>
+</li>
+<li>Which flow types are enabled:
+<ul>
+<li><code>DynamicSettings.VolumeFlowSettings.HorizontalFlowSettings</code></li>
+<li><code>...UpFlowSettings</code>, <code>...DownFlowSettings</code></li>
+</ul>
+</li>
+</ul>
+<p>Fields inside <code>DynamicGeoPlastSettings</code>:</p>
+<ul>
+<li><code>VolumeFlowFrameCycle</code> (<code>FrameCycleSettings</code>)
+<ul>
+<li>Controls simulation frequency (every N frames, with an offset).</li>
+</ul>
+</li>
+<li><code>VolumeFlowSettings</code> (<code>GeoPlastFlowSettings</code>)
+<ul>
+<li>Controls horizontal/up/down flow enablement and speeds (via <code>DirectionFlowSettings</code>).</li>
+</ul>
+</li>
+</ul>
+<h3 id="_upflowtargetlayerreference--upflowtargetlayerreference-hexterrainlayerreference"><code>_upFlowTargetLayerReference</code> / <code>UpFlowTargetLayerReference</code> (<code>HexTerrainLayerReference</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>UpFlowTargetLayerRef = dynamicArgs.UpFlowTargetLayerReference</code></li>
+</ul>
+<p>Used later:</p>
+<ul>
+<li>Vertical flow “up” resolves target via <code>GetTerrainLayerFromParent&lt;T&gt;(UpFlowTargetLayerRef)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Which GeoPlast layer receives <em>upward</em> flow from this layer (evaporation/melting-like mechanics depending on implementation).</li>
+</ul>
+<h3 id="_downflowtargetlayerreference--downflowtargetlayerreference-hexterrainlayerreference"><code>_downFlowTargetLayerReference</code> / <code>DownFlowTargetLayerReference</code> (<code>HexTerrainLayerReference</code>)</h3>
+<p>Same idea as up flow, but for downward flow (condensation/freezing-like mechanics depending on implementation).</p>
+<hr>
+<h2 id="4-material-config-materialgeoplastlayerconfigasset">4) Material config: <code>MaterialGeoPlastLayerConfigAsset</code></h2>
+<p>Source: <code>.../MaterialGeoPlastLayerConfigAsset.cs</code><br>
+Creates: <code>new MaterialGeoPlastLayer()</code></p>
+<p>Implements: <code>IInitMaterialGeoPlastLayerArgs</code> (extends <code>IInitDynamicGeoPlastLayerArgs</code>)</p>
+<h3 id="_materialsettings--materialsettings-materialgeoplastsettings"><code>_materialSettings</code> / <code>MaterialSettings</code> (<code>MaterialGeoPlastSettings</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>MaterialGeoPlastLayer.InitLayerData(...)</code> sets:
+<ul>
+<li><code>MaterialSettings = materialArgs.MaterialSettings</code></li>
+</ul>
+</li>
+</ul>
+<p>Affects:</p>
+<ul>
+<li>Heat flow simulation (frequency + flow settings)</li>
+<li>Temperature-driven vertical flow behavior</li>
+<li>Whether density scales by temperature (<code>DensityByTemperatureSettings.TemperatureScalesDensity</code>)</li>
+</ul>
+<p>Key fields inside <code>MaterialGeoPlastSettings</code>:</p>
+<ul>
+<li><code>HeatFlowFrameCycle</code> (<code>FrameCycleSettings</code>)</li>
+<li><code>HeatFlowSettings</code> (<code>GeoPlastFlowSettings</code>)</li>
+<li><code>UpFlowByTemperatureSettings</code> / <code>DownFlowByTemperatureSettings</code> (<code>VerticalFlowByTemperatureSettings</code>)
+<ul>
+<li>Includes <code>BaseFlow</code> and <code>FlowMultiplierCurve</code> (<code>ExponentialCurve</code>)</li>
+</ul>
+</li>
+<li><code>DensityByTemperatureSettings</code> (<code>DensityByTemperatureSettings</code>)
+<ul>
+<li>Includes <code>TemperatureScalesDensity</code>, <code>DensityScale</code>, <code>DensityByTemperatureFactorCurve</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="_heatmapargs--heatmapargs-initcolormapcellvaluedatalayerargsfloat"><code>_heatMapArgs</code> / <code>HeatMapArgs</code> (<code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>InitColoredDataLayer(HeatMap, HeatMapArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Initial heat amount per cell.</li>
+</ul>
+<h3 id="_temperaturemapargs--temperaturemapargs-initcolormapcellvaluedatalayerargsfloat"><code>_temperatureMapArgs</code> / <code>TemperatureMapArgs</code> (<code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code>)</h3>
+<p>Used during init:</p>
+<ul>
+<li><code>InitColoredDataLayer(TemperatureMap, TemperatureMapArgs)</code></li>
+</ul>
+<p>Meaning:</p>
+<ul>
+<li>Initial temperature per cell.</li>
+</ul>
+<p>Note:</p>
+<ul>
+<li><code>MaterialGeoPlastLayer.CalculateTemperature()</code> can recompute temperature from <code>HeatMap</code> and <code>AmountMap</code> later when those maps are dirty.</li>
+</ul>
+<hr>
+<h1 id="how-to-use-these-config-assets-typical-workflow">How to use these config assets (typical workflow)</h1>
+<ol>
+<li><p>Create the config asset matching the runtime layer you want:</p>
+<ul>
+<li><code>GeoPlastLayerConfigAsset</code> → static, non-visual</li>
+<li><code>VisualGeoPlastLayerConfigAsset</code> → renders onto a <code>ChunkMeshLayer</code></li>
+<li><code>DynamicGeoPlastLayerConfigAsset</code> → adds volume flow simulation</li>
+<li><code>MaterialGeoPlastLayerConfigAsset</code> → adds heat/temperature + temperature-dependent behavior</li>
+</ul>
+</li>
+<li><p>Add a <code>CreateGeoPlastLayerRequest</code> to the terrain entity:</p>
+<ul>
+<li><code>Args</code> must reference the config asset (stored as <code>UnityObjectRef&lt;GeoPlastLayerConfigAsset&gt;</code>)</li>
+<li><code>Name</code> is optional but recommended (helps debugging/logs)</li>
+</ul>
+</li>
+<li><p>Ensure referenced layers exist and are resolvable by <code>HexTerrainLayerReference</code>:</p>
+<ul>
+<li><code>BedrockPlastReference</code> (if <code>HasBedrock</code>)</li>
+<li><code>ChunkMeshLayerReference</code> (for visual rendering)</li>
+<li><code>UpFlowTargetLayerReference</code> / <code>DownFlowTargetLayerReference</code> (for vertical flow)</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="appendix-initcolormapcellvaluedatalayerargsfloat-what-matters-at-init">Appendix: <code>InitColorMapCellValueDataLayerArgs&lt;float&gt;</code> (what matters at init)</h2>
+<p>These args control initial values and color map settings for <code>AmountMap</code>, <code>DensityMap</code>, <code>VolumeMap</code>, <code>HeatMap</code>, <code>TemperatureMap</code>.</p>
+<p>Common controls:</p>
+<ul>
+<li>Fill modes:
+<ul>
+<li><code>IsFillWithValue</code> + <code>FillValue</code></li>
+<li><code>IsFillWithRandomValues</code> + <code>RandomMinValue</code> / <code>RandomMaxValue</code></li>
+<li><code>IsApplySourceTexture</code> + <code>SourceTexture</code> (+ offset/scale)</li>
+</ul>
+</li>
+<li>Color map:
+<ul>
+<li><code>ColorPalette</code></li>
+<li><code>AutoColorMapMode</code></li>
+<li><code>MinValue</code> / <code>MaxValue</code> (used by some auto-color modes)</li>
+</ul>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/geo-plast-layer-initialization.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

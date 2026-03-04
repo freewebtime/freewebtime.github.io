@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>CellRegionLayer (Regions) — lifecycle, updates, rendering | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="CellRegionLayer (Regions) — lifecycle, updates, rendering | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cellregionlayer-regions--lifecycle-updates-rendering"><code>CellRegionLayer</code> (Regions) — lifecycle, updates, rendering</h1>
+
+<p>This document explains how <code>CellRegionLayer</code> stores “region per cell” data, how it is created/initialized, how derived region data is rebuilt, and how the per-cell <code>ColorMap</code> is copied into <code>Texture2D</code> instances during a frame.</p>
+<hr>
+<h2 id="1-what-cellregionlayer-is">1) What <code>CellRegionLayer</code> is</h2>
+<p><code>CellRegionLayer</code> (file: <code>Runtime/Regions/Data/CellRegionLayer.cs</code>) is a <code>HexTerrainLayer</code> responsible for:</p>
+<ul>
+<li>Storing <strong>one integer region id per cell</strong> (<code>CellRegionMap</code>)</li>
+<li>Building <strong>derived structures</strong> for region queries:
+<ul>
+<li><code>RegionCells</code>: region id → list of cell indices in that region</li>
+<li><code>RegionSizes</code>: region id → number of cells in that region</li>
+</ul>
+</li>
+<li>Producing a <strong>per-cell color buffer</strong> (<code>CellRegionMap.ColorMap</code>) that can be copied to a <code>Texture2D</code> for UI/material usage</li>
+</ul>
+<h3 id="core-data-layers">Core data layers</h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CellRegionMap</code></td>
+<td><code>ColorMapCellValueDataLayer_Int</code></td>
+<td>The authoritative “region id per cell” map (+ an associated <code>ColorMap</code>)</td>
+</tr>
+<tr>
+<td><code>RegionCells</code></td>
+<td><code>NativeParallelMultiHashMapDataLayer&lt;int, uint&gt;</code></td>
+<td>Built from <code>CellRegionMap</code> when it changes</td>
+</tr>
+<tr>
+<td><code>RegionSizes</code></td>
+<td><code>NativeListDataLayer&lt;uint&gt;</code></td>
+<td>Built from <code>CellRegionMap</code> when it changes (length is set to <code>255</code>)</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-cellregion-is-simply-an-integer-value-per-cell">2) “CellRegion is simply an integer value per cell”</h2>
+<p><code>CellRegionMap</code> stores an <code>int</code> per cell index.</p>
+<ul>
+<li><strong>Cell index</strong>: linear index in <code>[0 .. CellsCount-1]</code></li>
+<li><strong>Cell value</strong>: region id (<code>int</code>)
+<ul>
+<li>Expected to be <strong>non-negative</strong></li>
+</ul>
+</li>
+</ul>
+<h3 id="dirty-tracking-why-updates-are-cheap">Dirty tracking (why updates are cheap)</h3>
+<p>All these data layers are <strong>chunked</strong> (derive from <code>ChunkedDataLayer</code>). When you set one cell value, only the cell’s chunk (and sometimes neighbors if the cell sits on a chunk edge) is marked dirty.</p>
+<p>Key behavior (from <code>ChunkedDataLayer</code> / <code>NativeListChunkedDataLayer</code>):</p>
+<ul>
+<li><code>TrySetData(index, value)</code> → <code>SetData(index, value)</code> → <code>SetCellDirty(index, checkEdges: true)</code></li>
+<li><code>SetCellDirty(...)</code>:
+<ul>
+<li>marks the chunk dirty in <code>ChunkDirtyGrid</code></li>
+<li>adds chunk index to <code>DirtyChunks</code></li>
+<li>calls <code>SetDirty(true)</code> on the layer</li>
+</ul>
+</li>
+</ul>
+<p>This is what makes per-frame recalculation scalable: jobs can skip cells whose chunks aren’t dirty.</p>
+<hr>
+<h2 id="3-initialization-how-a-cellregionlayer-is-created-and-initialized">3) Initialization: how a <code>CellRegionLayer</code> is created and initialized</h2>
+<p>There are two layers of “ownership”:</p>
+<ol>
+<li>The <strong>layer instance</strong>: <code>CellRegionLayer</code></li>
+<li>The <strong>group component</strong> attached to the terrain ECS entity: <code>CellRegionLayerGroup</code></li>
+</ol>
+<h3 id="31-cellregionlayergroup-what-it-is">3.1 <code>CellRegionLayerGroup</code> (what it is)</h3>
+<p><code>CellRegionLayerGroup</code> (file: <code>Runtime/Regions/Data/CellRegionLayerGroup.cs</code>) is:</p>
+<ul>
+<li>a managed ECS component: <code>class CellRegionLayerGroup : HexTerrainLayerGroup&lt;CellRegionLayer&gt;, IComponentData</code></li>
+<li>a container for <strong>multiple</strong> <code>CellRegionLayer</code> instances</li>
+</ul>
+<p>This is the standard pattern in this framework: a <em>group</em> component is attached to a terrain entity, and it contains one or more managed layer instances.</p>
+<h3 id="32-createcellregionlayergrouprequest--layer-creation">3.2 <code>CreateCellRegionLayerGroupRequest</code> → layer creation</h3>
+<p><code>CreateCellRegionLayerGroupRequest</code> (file: <code>Runtime/Regions/Data/CreateCellRegionLayerGroupRequest.cs</code>) is a buffer element that can create a layer:</p>
+<ul>
+<li>It holds:
+<ul>
+<li><code>Name</code> (<code>FixedString128Bytes</code>)</li>
+<li><code>Args</code> (<code>UnityObjectRef&lt;CellRegionLayerConfigAsset&gt;</code>)</li>
+</ul>
+</li>
+<li><code>CreateTerrainLayer()</code> calls <code>config.CreateTerrainLayer()</code> which returns <code>new CellRegionLayer()</code>.</li>
+</ul>
+<h3 id="33-cellregionlayerconfigasset-how-init-parameters-are-authored">3.3 <code>CellRegionLayerConfigAsset</code> (how init parameters are authored)</h3>
+<p><code>CellRegionLayerConfigAsset</code> (file: <code>Runtime/Regions/Data/CellRegionLayerConfigAsset.cs</code>) provides:</p>
+<ul>
+<li><code>InitValuesArgs</code> of type <code>InitColorMapCellValueDataLayerArgs&lt;int&gt;</code>
+<ul>
+<li>initial fill options (fill constant/random/from texture)</li>
+<li>min/max values (used by some color modes)</li>
+<li><code>AutoColorMapMode</code></li>
+<li><code>ColorPalette</code> (list of <code>Color32</code>)</li>
+</ul>
+</li>
+<li><code>AutoFillColorPalette()</code> helper (editor context menu)
+<ul>
+<li>uses <code>AutoColorMapSettings</code> to generate a palette sized for <code>MaxValue</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="34-group-hooks-that-actually-initialize-the-layer">3.4 Group hooks that actually initialize the layer</h3>
+<p><code>CellRegionLayerGroup</code> overrides two important methods:</p>
+<ul>
+<li><code>CreateTerrainLayer&lt;TInitArgs&gt;(initArgs)</code>
+<ul>
+<li>creates the layer (usually via factory)</li>
+<li>sets <code>layer.Name</code> from the request</li>
+</ul>
+</li>
+<li><code>InitTerrainLayer&lt;TInitArgs&gt;(layer, settings, initArgs)</code>
+<ul>
+<li>calls <code>layer.Init(settings, request.Args.Value)</code> if the init args match</li>
+</ul>
+</li>
+</ul>
+<h3 id="35-cellregionlayerinit-what-gets-allocated-and-configured">3.5 <code>CellRegionLayer.Init(...)</code>: what gets allocated and configured</h3>
+<p><code>CellRegionLayer.Init(HexTerrainSettings settings)</code> allocates/initializes:</p>
+<ul>
+<li><code>CellRegionMap</code> → <code>Init(settings.CellsCount, settings)</code></li>
+<li><code>RegionCells</code> → <code>Init(settings.CellsCount, Allocator.Persistent)</code></li>
+<li><code>RegionSizes</code> → <code>Init(255, Allocator.Persistent)</code></li>
+<li>then <code>base.Init(settings)</code> which updates <code>Settings</code> and may mark dirty on resize</li>
+</ul>
+<p><code>CellRegionLayer.Init(settings, ICellRegionConfig args)</code> then applies config:</p>
+<ul>
+<li><code>InitColoredDataLayer(CellRegionMap, args.InitValuesArgs)</code></li>
+</ul>
+<p>That call delegates to the extension <code>ColorMapCellValueDataLayer&lt;T&gt;.InitColoredDataLayer(args)</code> which:</p>
+<ul>
+<li>applies fill options (<code>IsFillWithValue</code>, <code>IsFillWithRandomValues</code>, <code>IsApplySourceTexture</code>)</li>
+<li>sets <code>AutoColorMapMode</code>, <code>MinValue</code>, <code>MaxValue</code> when the layer supports auto color mapping</li>
+<li>initializes the <code>ColorPalette</code></li>
+<li>marks all chunks dirty</li>
+</ul>
+<hr>
+<h2 id="4-updating-values-at-runtime">4) Updating values at runtime</h2>
+<h3 id="41-writing-values">4.1 Writing values</h3>
+<p>Primary API:</p>
+<ul>
+<li><code>SetCellRegion(int cellIndex, int regionIndex)</code>
+<ul>
+<li>calls <code>CellRegionMap.TrySetData(cellIndex, regionIndex)</code></li>
+<li>this marks the affected chunk(s) dirty</li>
+</ul>
+</li>
+</ul>
+<p>Bulk API:</p>
+<ul>
+<li><code>SetAllCellsRegion(int regionIndex)</code>
+<ul>
+<li>fills the entire map</li>
+<li>marks all chunks dirty</li>
+</ul>
+</li>
+</ul>
+<p>Read API:</p>
+<ul>
+<li><code>GetCellRegion(int cellIndex)</code> returns <code>int?</code></li>
+</ul>
+<h3 id="42-rebuilding-derived-region-data">4.2 Rebuilding derived region data</h3>
+<p>When region ids change, you often need:</p>
+<ul>
+<li><code>CalcRegionsCells(dependency)</code><br>
+Builds <code>RegionCells</code> (region → cells list)</li>
+<li><code>CalcRegionsSizes(dependency)</code><br>
+Builds <code>RegionSizes</code> (region → count)</li>
+</ul>
+<p>Both methods bail out unless <code>CellRegionMap.IsDirty == true</code>.</p>
+<h4 id="calcregionscells-job"><code>CalcRegionsCells(...)</code> job</h4>
+<ul>
+<li>Clears <code>RegionCells</code></li>
+<li>Schedules <code>CalcRegionsCellsJob</code> (<code>IJobParallelFor</code>):
+<ul>
+<li>reads <code>CellValuesMap[index]</code> (region id)</li>
+<li>does <code>SortedValues.Add(regionId, (uint)index)</code></li>
+</ul>
+</li>
+</ul>
+<h4 id="calcregionssizes-job"><code>CalcRegionsSizes(...)</code> job</h4>
+<ul>
+<li>Ensures <code>RegionSizes</code> length is <code>255</code></li>
+<li>Resets all entries to 0</li>
+<li>Schedules <code>CalcRegionsSizesJob</code> (<code>IJob</code>):
+<ul>
+<li>loops through all cells</li>
+<li>increments <code>RegionSizes[regionId]</code></li>
+</ul>
+</li>
+</ul>
+<p>Important constraint:</p>
+<ul>
+<li><code>CalcRegionsSizesJob</code> assumes region ids are valid indices (non-negative). In practice, keep region ids &gt;= 0.</li>
+</ul>
+<hr>
+<h2 id="5-how-the-integer-region-id-becomes-a-cell-color">5) How the integer region id becomes a cell color</h2>
+<p><code>CellRegionMap</code> is <code>ColorMapCellValueDataLayer_Int</code>, which derives from:</p>
+<ul>
+<li><code>AutoColorMapCellValueDataLayer&lt;int&gt;</code> → <code>ColorMapCellValueDataLayer&lt;int&gt;</code></li>
+<li>and owns:
+<ul>
+<li>the values (<code>NativeList&lt;int&gt; Data</code>)</li>
+<li>the colors (<code>ColorMapDataLayer ColorMap</code>), which is a <code>CellColorsDataLayer</code> + a <code>ColorPalette</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="51-color-calculation-modes">5.1 Color calculation modes</h3>
+<p><code>AutoColorMapCellValueDataLayer&lt;T&gt;.CalculateColorMap(dependency)</code> chooses a mode:</p>
+<ul>
+<li><code>GradientThroughPalette</code></li>
+<li><code>ColorIndexByValue</code></li>
+<li><code>Custom</code></li>
+</ul>
+<p>For region visualization, the typical choice is:</p>
+<ul>
+<li><code>AutoColorMapMode.ColorIndexByValue</code></li>
+</ul>
+<h3 id="52-colorindexbyvalue-palette-lookup">5.2 <code>ColorIndexByValue</code>: palette lookup</h3>
+<p><code>ColorMapCellValueDataLayer_Int.CalculateColorMap_ColorIndexByValue(...)</code> schedules <code>GetCellValueColorsFromPaletteJob_Int</code>:</p>
+<ul>
+<li>For each cell index:
+<ul>
+<li>skips work if the cell’s chunk is not dirty (<code>ChunkDirtyGrid</code>)</li>
+<li><code>value = CellValues[index]</code> (region id)</li>
+<li>if <code>0 &lt;= value &lt; ColorPalette.Length</code>: <code>Color = ColorPalette[value]</code></li>
+<li>else <code>Color = DefaultColor</code> (default is transparent)</li>
+</ul>
+</li>
+</ul>
+<p>Result: <code>CellRegionMap.ColorMap.Data[index]</code> becomes the final per-cell color.</p>
+<hr>
+<h2 id="6-how-colormap-is-copied-to-a-texture2d">6) How <code>ColorMap</code> is copied to a <code>Texture2D</code></h2>
+<p>The actual CPU → Texture2D copy happens in <code>CellColorsDataLayer.ApplyColorsToTexture(Texture2D texture)</code>:</p>
+<ol>
+<li><p><code>CompleteAllJobs()</code><br>
+Ensures any scheduled color calculation jobs are finished before reading <code>ColorMap.Data</code>.</p>
+</li>
+<li><p>Ensure texture size matches terrain size<br>
+If <code>texture.width/height != Settings.TerrainSize.x/y</code>:</p>
+<ul>
+<li><code>texture.Reinitialize(width, height, TextureFormat.RGBA32, mipmaps: false)</code> (defaults)</li>
+</ul>
+</li>
+<li><p>Upload pixels + apply</p>
+<ul>
+<li><code>texture.SetPixelData(ColorMap.Data.AsArray(), 0)</code></li>
+<li><code>texture.Apply()</code></li>
+</ul>
+</li>
+</ol>
+<p>So the <code>Texture2D</code> ends up containing a 2D image where each pixel corresponds to one terrain cell.</p>
+<hr>
+<h2 id="7-what-happens-during-a-frame-render-side-path">7) What happens during a frame (render-side path)</h2>
+<p>The system that performs the per-frame texture update is:</p>
+<ul>
+<li><code>UpdateColorMapTexturesSystem</code> (file: <code>Runtime/Systems/UpdateColorMapTexturesSystem.cs</code>)</li>
+<li>runs in <code>HexTerrainsRenderGroup</code> (presentation phase)</li>
+</ul>
+<h3 id="71-system-call-chain">7.1 System call chain</h3>
+<p><code>UpdateColorMapTexturesSystem.OnUpdate()</code> does:</p>
+<ul>
+<li>Query terrains with:
+<ul>
+<li><code>HexTerrain</code>, <code>HexTerrainViewMode</code>, <code>HexTerrainVisibility</code>, <code>ViewModeCollectionConfigComponent</code></li>
+<li>excluding <code>NotInitializedTerrain</code></li>
+</ul>
+</li>
+<li>If not visible → returns</li>
+<li>Loads the current view-mode config from <code>ViewModeCollectionConfigAsset</code></li>
+<li>Computes <code>isViewModeDirty</code> if the <code>HexTerrainViewMode</code> component changed since last frame</li>
+<li>Calls:
+<ul>
+<li><code>viewModeConfig.UpdateColorMap(EntityManager, terrainEntity, isViewModeDirty)</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="72-view-mode-config-decides-which-maps-are-copied">7.2 View-mode config decides <em>which</em> map(s) are copied</h3>
+<p><code>ViewModeConfigAssetBase</code> provides helpers for pulling layers from ECS:</p>
+<ul>
+<li><code>GetTerrainLayer&lt;TLayerComponent, TLayer&gt;(...)</code>
+<ul>
+<li>uses <code>entityManager.TryGetComponentObject&lt;TLayerComponent&gt;(terrainEntity, out layerComponent)</code></li>
+<li>then <code>layerComponent.GetLayer&lt;TLayer&gt;(layerReference)</code></li>
+</ul>
+</li>
+</ul>
+<p>Two common view-mode config implementations:</p>
+<ul>
+<li><code>ViewModeConfigAsset</code> (texture list driven)</li>
+<li><code>UniversalViewModeConfigAsset</code> (explicit list of “items” each with a texture)</li>
+</ul>
+<p>For regions, <code>UniversalViewModeConfigAsset</code> uses:</p>
+<ul>
+<li><code>GetTerrainLayer&lt;CellRegionLayerGroup, CellRegionLayer&gt;(...)</code></li>
+<li>then returns <code>cellRegionLayer.CellRegionMap?.ColorMap</code></li>
+</ul>
+<h3 id="73-the-final-copy-if-dirty-condition">7.3 The final “copy if dirty” condition</h3>
+<p>All view-mode implementations ultimately call:</p>
+<ul>
+<li><code>ViewModeConfigAssetBase.UpdateColorMapTexture(CellColorsDataLayer colorMap, bool isViewModeDirty, Texture2D texture)</code></li>
+</ul>
+<p>It copies <strong>only if</strong>:</p>
+<ul>
+<li><code>colorMap.IsDirty == true</code> <strong>or</strong> <code>isViewModeDirty == true</code></li>
+</ul>
+<p>And the copy itself is:</p>
+<ul>
+<li><code>colorMap.ApplyColorsToTexture(texture)</code></li>
+</ul>
+<hr>
+<h2 id="8-cleanup-and-disposal">8) Cleanup and disposal</h2>
+<h3 id="81-cleanup-per-frame-dirty-reset">8.1 <code>Cleanup()</code> (per-frame dirty reset)</h3>
+<p><code>CellRegionLayer.Cleanup()</code> calls:</p>
+<ul>
+<li><code>CellRegionMap.Cleanup()</code></li>
+<li><code>RegionSizes.Cleanup()</code></li>
+<li><code>RegionCells.Cleanup()</code></li>
+</ul>
+<p>Most layers implement cleanup at the beginning of frame by clearing dirty chunk flags when <code>IsDirty</code> is true, so it is possible to cheaply detect new changes down the frame.</p>
+<p>There is also:</p>
+<ul>
+<li><code>CleanupAsync(dependency)</code> which schedules the “clear dirty flags” work as jobs and combines dependencies.</li>
+</ul>
+<h3 id="82-dispose-free-persistent-memory">8.2 <code>Dispose()</code> (free persistent memory)</h3>
+<p><code>CellRegionLayer.Dispose()</code> disposes:</p>
+<ul>
+<li><code>CellRegionMap</code> (includes its <code>ColorMap</code> + palette)</li>
+<li><code>RegionCells</code></li>
+<li><code>RegionSizes</code></li>
+</ul>
+<p><code>CellColorsDataLayer.ApplyColorsToTexture()</code> and <code>CellRegionLayer.SerializeLayer()</code> both call <code>CompleteAllJobs()</code> to ensure no jobs are still using disposed native memory.</p>
+<hr>
+<h2 id="9-serialization">9) Serialization</h2>
+<p><code>CellRegionLayer</code> supports <code>ISerializableTerrainLayer</code>:</p>
+<ul>
+<li><code>SerializeLayer(BinaryWriter writer)</code>
+<ul>
+<li><code>CompleteAllJobs()</code></li>
+<li>serializes <code>CellRegionMap</code> (values)</li>
+</ul>
+</li>
+<li><code>DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)</code>
+<ul>
+<li><code>CompleteAllJobs()</code></li>
+<li><code>Init(terrainSettings)</code> to ensure correct sizing</li>
+<li>deserializes <code>CellRegionMap</code></li>
+<li><code>SetAllDirty(true)</code> to force refresh (including <code>ColorMap</code> recalculation + texture copy)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="10-summary-diagram-frame-flow">10) Summary diagram (frame flow)</h2>
+<pre><code class="lang-mermaid">flowchart TD 
+A[&quot;Gameplay/editor code modifies regions (SetCellRegion / SetAllCellsRegion)&quot;] --&gt; B[&quot;CellRegionMap marks chunks dirty (ChunkDirtyGrid + DirtyChunks)&quot;] 
+B --&gt; C[&quot;Optional: CalcRegionsCells / CalcRegionsSizes rebuild derived region data&quot;] 
+B --&gt; D[&quot;CellRegionMap.CalculateColorMap schedules jobs (palette lookup or gradient)&quot;] 
+D --&gt; E[&quot;Presentation: UpdateColorMapTexturesSystem calls viewModeConfig.UpdateColorMap(...)&quot;] 
+E --&gt; F[&quot;ViewModeConfig chooses CellRegionMap.ColorMap and target Texture2D&quot;] 
+F --&gt; G[&quot;CellColorsDataLayer.ApplyColorsToTexture completes jobs, SetPixelData, Apply&quot;]
+</code></pre>
+<hr>
+<h2 id="practical-notes--gotchas">Practical notes / gotchas</h2>
+<ul>
+<li><p><strong>Region id range matters</strong></p>
+<ul>
+<li>For palette-based coloring (<code>ColorIndexByValue</code>), region ids should be valid palette indices.</li>
+<li>For <code>RegionSizes</code> indexing, keep region ids non-negative and within <code>[0..InitValuesArgs.MaxValue]</code></li>
+</ul>
+</li>
+<li><p><strong>Texture size is terrain size</strong></p>
+<ul>
+<li>The target <code>Texture2D</code> is reinitialized to <code>Settings.TerrainSize</code> if needed.</li>
+</ul>
+</li>
+<li><p><strong>Color calculation is separate from texture copy</strong></p>
+<ul>
+<li>The render system copies <code>ColorMap</code> → <code>Texture2D</code>.</li>
+<li>The <code>ColorMap</code> itself must be calculated (typically via <code>CellRegionLayer.CalculateColorMap(...)</code> / <code>CellRegionMap.CalculateColorMap(...)</code> in your update pipeline). The copy step will block until jobs complete, but it won’t invent colors if you never schedule the calculation.</li>
+</ul>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/cell-region-layers.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

@@ -673,7 +673,13 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
 
   <a id="Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_ScheduleMarkDirtyChunksDirtyJob_" data-uid="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer`1.ScheduleMarkDirtyChunksDirtyJob*"></a>
   <h4 id="Fwt_HexTerrains_DataLayers_HexTerrainNativeListChunkedDataLayer_1_ScheduleMarkDirtyChunksDirtyJob_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.DataLayers.HexTerrainNativeListChunkedDataLayer`1.ScheduleMarkDirtyChunksDirtyJob(Unity.Jobs.JobHandle)">ScheduleMarkDirtyChunksDirtyJob(JobHandle)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>If DirtyChunks native parallel hash set contains chunk indexes that are not marked as dirty in ChunkDirtyGrid, call this function.
+It schedules a job that marks all chunks in DirtyChunks as dirty in ChunkDirtyGrid.
+Some jobs that update data simply add dirty chunk index to the DirtyChunks native parallel hash set,
+but they don't mark those chunks as dirty in the ChunkDirtyGrid,
+because the IJobParallelFor does not allow to write in any index except the one the Execute(index) function is called with.
+This function is responsible for marking those chunks as dirty in the ChunkDirtyGrid.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -692,7 +698,8 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
       <tr>
         <td><span class="xref">JobHandle</span></td>
         <td><span class="parametername">dependency</span></td>
-        <td></td>
+        <td><p>job handle to schedule a job with as a dependency</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -707,7 +714,8 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
     <tbody>
       <tr>
         <td><span class="xref">JobHandle</span></td>
-        <td></td>
+        <td><p>job handle of scheduled job</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -770,5 +778,8 @@ and also all adjacent chunks are also marked dirty. So if the top edge is dirty,
     <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
 </html>

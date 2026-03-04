@@ -184,6 +184,15 @@
       <a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlast_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_">VisualGeoPlastLayer.RenderGeoPlast(ChunkMeshLayerGroup, JobHandle)</a>
     </div>
     <div>
+      <a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastVolume_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_">VisualGeoPlastLayer.RenderGeoPlastVolume(ChunkMeshLayerGroup, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastAmount_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_">VisualGeoPlastLayer.RenderGeoPlastAmount(ChunkMeshLayerGroup, JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastCeiling_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_">VisualGeoPlastLayer.RenderGeoPlastCeiling(ChunkMeshLayerGroup, JobHandle)</a>
+    </div>
+    <div>
       <a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_ScheduleRenderGeoPlastJob_Fwt_HexTerrains_DataLayers_CellValueDataLayer_System_Single__Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_Float_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_Float_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_Int_Fwt_HexTerrains_DataLayers_CellValueDataLayer_System_Boolean__Unity_Jobs_JobHandle_">VisualGeoPlastLayer.ScheduleRenderGeoPlastJob(CellValueDataLayer&lt;float&gt;, ColorMapCellValueDataLayer_Float, ColorMapCellValueDataLayer_Float, ColorMapCellValueDataLayer_Int, CellValueDataLayer&lt;bool&gt;, JobHandle)</a>
     </div>
     <div>
@@ -1094,7 +1103,7 @@ completes.</p>
   <a id="Fwt_HexTerrains_GeoPlasts_Data_MaterialGeoPlastLayer_CalculateHorizontalHeatFlowPotential_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.MaterialGeoPlastLayer.CalculateHorizontalHeatFlowPotential*"></a>
   <h4 id="Fwt_HexTerrains_GeoPlasts_Data_MaterialGeoPlastLayer_CalculateHorizontalHeatFlowPotential_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.GeoPlasts.Data.MaterialGeoPlastLayer.CalculateHorizontalHeatFlowPotential(Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup,Unity.Jobs.JobHandle)">CalculateHorizontalHeatFlowPotential(HexTerrainSimulationTimer, GeoPlastLayerGroup, JobHandle)</h4>
   <div class="markdown level1 summary"><p>Default implementation of the horizontal flow potential calculation.
-Flows to neighboring cells trying to equalize the height difference between height of ceiling between adjacent cells.</p>
+Heat diffuses to adjacent cells based on the touching volume between cells.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2189,5 +2198,8 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
 </html>

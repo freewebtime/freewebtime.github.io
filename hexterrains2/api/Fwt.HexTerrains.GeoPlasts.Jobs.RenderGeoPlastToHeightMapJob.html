@@ -170,58 +170,6 @@ public NativeParallelHashSet&lt;int&gt;.ParallelWriter BiomeMapDirtyChunks</code
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_CeilingDirtyChunksMap" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingDirtyChunksMap">CeilingDirtyChunksMap</h4>
-  <div class="markdown level1 summary"><p>Map of CeilingMap dirty chunks. Only to dirty chunks the calculations are applied</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
-public NativeArray&lt;bool&gt; CeilingDirtyChunksMap</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_CeilingMap" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingMap">CeilingMap</h4>
-  <div class="markdown level1 summary"><p>Amount of ceiling height of GeoPlast per cell</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
-public NativeArray&lt;float&gt; CeilingMap</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_GeoPlastSettings" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.GeoPlastSettings">GeoPlastSettings</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -296,13 +244,66 @@ public NativeParallelHashSet&lt;int&gt;.ParallelWriter HeightMapDirtyChunks</cod
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderAmount" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmount">RenderAmount</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderAmountMap" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmountMap">RenderAmountMap</h4>
+  <div class="markdown level1 summary"><p>This value is used to determine is the cell is transparent or not. It also used in ZeroHeight treshold calculation.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ReadOnly]
-public NativeArray&lt;float&gt; RenderAmount</code></pre>
+public NativeArray&lt;float&gt; RenderAmountMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderValuesDirtyChunksMap" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesDirtyChunksMap">RenderValuesDirtyChunksMap</h4>
+  <div class="markdown level1 summary"><p>Map of RenderValues dirty chunks. If the chunk is not dirty, it means that the RenderValues of all cells in the chunk are unchanged, and we can skip processing this chunk in this job.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;bool&gt; RenderValuesDirtyChunksMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderValuesMap" data-uid="Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesMap">RenderValuesMap</h4>
+  <div class="markdown level1 summary"><p>This value is translated to the height of the cell in the heightmap.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;float&gt; RenderValuesMap</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -500,5 +501,8 @@ public void Execute(int cellIndex)</code></pre>
     <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
 </html>

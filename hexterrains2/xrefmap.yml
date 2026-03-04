@@ -66710,19 +66710,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.IsAutoPaintBiomes
   nameWithType: ChunkMeshLayerConfigAsset.IsAutoPaintBiomes
-- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference
-  name: OverlappingLayerReference
-  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_OverlappingLayerReference
-  commentId: P:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference
-  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference
-  nameWithType: ChunkMeshLayerConfigAsset.OverlappingLayerReference
-- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference*
-  name: OverlappingLayerReference
-  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_OverlappingLayerReference_
-  commentId: Overload:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference
-  nameWithType: ChunkMeshLayerConfigAsset.OverlappingLayerReference
 - uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncBiomeMapLayerReference
   name: SyncBiomeMapLayerReference
   href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncBiomeMapLayerReference
@@ -66805,12 +66792,6 @@ references:
   commentId: F:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._isAutoPaintBiomes
   fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._isAutoPaintBiomes
   nameWithType: ChunkMeshLayerConfigAsset._isAutoPaintBiomes
-- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._overlappingLayerReference
-  name: _overlappingLayerReference
-  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__overlappingLayerReference
-  commentId: F:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._overlappingLayerReference
-  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._overlappingLayerReference
-  nameWithType: ChunkMeshLayerConfigAsset._overlappingLayerReference
 - uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._syncBiomeMapLayerReference
   name: _syncBiomeMapLayerReference
   href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__syncBiomeMapLayerReference
@@ -67699,12 +67680,6 @@ references:
   commentId: F:Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.MaxCellHeight
   fullName: Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.MaxCellHeight
   nameWithType: RainRenderSettings.MaxCellHeight
-- uid: Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.MaxRainThickness
-  name: MaxRainThickness
-  href: api/Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.html#Fwt_HexTerrains_ChunkMehes_Data_RainRenderSettings_MaxRainThickness
-  commentId: F:Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.MaxRainThickness
-  fullName: Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.MaxRainThickness
-  nameWithType: RainRenderSettings.MaxRainThickness
 - uid: Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.RainHeight
   name: RainHeight
   href: api/Fwt.HexTerrains.ChunkMehes.Data.RainRenderSettings.html#Fwt_HexTerrains_ChunkMehes_Data_RainRenderSettings_RainHeight
@@ -80979,6 +80954,45 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlast
   nameWithType: VisualGeoPlastLayer.RenderGeoPlast
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastAmount(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)
+  name: RenderGeoPlastAmount(ChunkMeshLayerGroup, JobHandle)
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastAmount_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastAmount(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastAmount(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup, Unity.Jobs.JobHandle)
+  nameWithType: VisualGeoPlastLayer.RenderGeoPlastAmount(ChunkMeshLayerGroup, JobHandle)
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastAmount*
+  name: RenderGeoPlastAmount
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastAmount_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastAmount
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastAmount
+  nameWithType: VisualGeoPlastLayer.RenderGeoPlastAmount
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastCeiling(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)
+  name: RenderGeoPlastCeiling(ChunkMeshLayerGroup, JobHandle)
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastCeiling_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastCeiling(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastCeiling(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup, Unity.Jobs.JobHandle)
+  nameWithType: VisualGeoPlastLayer.RenderGeoPlastCeiling(ChunkMeshLayerGroup, JobHandle)
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastCeiling*
+  name: RenderGeoPlastCeiling
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastCeiling_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastCeiling
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastCeiling
+  nameWithType: VisualGeoPlastLayer.RenderGeoPlastCeiling
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastVolume(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)
+  name: RenderGeoPlastVolume(ChunkMeshLayerGroup, JobHandle)
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastVolume_Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerGroup_Unity_Jobs_JobHandle_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastVolume(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup,Unity.Jobs.JobHandle)
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastVolume(Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerGroup, Unity.Jobs.JobHandle)
+  nameWithType: VisualGeoPlastLayer.RenderGeoPlastVolume(ChunkMeshLayerGroup, JobHandle)
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastVolume*
+  name: RenderGeoPlastVolume
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_RenderGeoPlastVolume_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastVolume
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.RenderGeoPlastVolume
+  nameWithType: VisualGeoPlastLayer.RenderGeoPlastVolume
 - uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.ScheduleRenderGeoPlastJob(Fwt.HexTerrains.DataLayers.CellValueDataLayer{System.Single},Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer_Float,Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer_Float,Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer_Int,Fwt.HexTerrains.DataLayers.CellValueDataLayer{System.Boolean},Unity.Jobs.JobHandle)
   name: ScheduleRenderGeoPlastJob(CellValueDataLayer<float>, ColorMapCellValueDataLayer_Float, ColorMapCellValueDataLayer_Float, ColorMapCellValueDataLayer_Int, CellValueDataLayer<bool>, JobHandle)
   href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastLayer.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastLayer_ScheduleRenderGeoPlastJob_Fwt_HexTerrains_DataLayers_CellValueDataLayer_System_Single__Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_Float_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_Float_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_Int_Fwt_HexTerrains_DataLayers_CellValueDataLayer_System_Boolean__Unity_Jobs_JobHandle_
@@ -81085,6 +81099,12 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.Amount
   fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.Amount
   nameWithType: VisualGeoPlastRenderMode.Amount
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.Ceiling
+  name: Ceiling
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastRenderMode_Ceiling
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.Ceiling
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.Ceiling
+  nameWithType: VisualGeoPlastRenderMode.Ceiling
 - uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.Volume
   name: Volume
   href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastRenderMode.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastRenderMode_Volume
@@ -81396,6 +81416,128 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalFlowMapJob.TerrainSettings
   fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalFlowMapJob.TerrainSettings
   nameWithType: ApplyVerticalFlowMapJob.TerrainSettings
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob
+  name: ApplyVerticalHeatFlowMapJob
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html
+  commentId: T:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob
+  nameWithType: ApplyVerticalHeatFlowMapJob
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute(System.Int32)
+  name: Execute(int)
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_Execute_System_Int32_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute(System.Int32)
+  name.vb: Execute(Integer)
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute(int)
+  fullName.vb: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute(Integer)
+  nameWithType: ApplyVerticalHeatFlowMapJob.Execute(int)
+  nameWithType.vb: ApplyVerticalHeatFlowMapJob.Execute(Integer)
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute*
+  name: Execute
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_Execute_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.Execute
+  nameWithType: ApplyVerticalHeatFlowMapJob.Execute
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.FlowDirection
+  name: FlowDirection
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_FlowDirection
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.FlowDirection
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.FlowDirection
+  nameWithType: ApplyVerticalHeatFlowMapJob.FlowDirection
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.FlowMap
+  name: FlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_FlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.FlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.FlowMap
+  nameWithType: ApplyVerticalHeatFlowMapJob.FlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.SourceAmountDirtyChunks
+  name: SourceAmountDirtyChunks
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_SourceAmountDirtyChunks
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.SourceAmountDirtyChunks
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.SourceAmountDirtyChunks
+  nameWithType: ApplyVerticalHeatFlowMapJob.SourceAmountDirtyChunks
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TargetAmountDirtyChunks
+  name: TargetAmountDirtyChunks
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_TargetAmountDirtyChunks
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TargetAmountDirtyChunks
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TargetAmountDirtyChunks
+  nameWithType: ApplyVerticalHeatFlowMapJob.TargetAmountDirtyChunks
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TargetAmountMap
+  name: TargetAmountMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_TargetAmountMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TargetAmountMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TargetAmountMap
+  nameWithType: ApplyVerticalHeatFlowMapJob.TargetAmountMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TerrainSettings
+  name: TerrainSettings
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalHeatFlowMapJob_TerrainSettings
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TerrainSettings
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalHeatFlowMapJob.TerrainSettings
+  nameWithType: ApplyVerticalHeatFlowMapJob.TerrainSettings
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob
+  name: ApplyVerticalVolumeFlowMapJob
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html
+  commentId: T:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob
+  nameWithType: ApplyVerticalVolumeFlowMapJob
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.DensityMap
+  name: DensityMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_DensityMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.DensityMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.DensityMap
+  nameWithType: ApplyVerticalVolumeFlowMapJob.DensityMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute(System.Int32)
+  name: Execute(int)
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_Execute_System_Int32_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute(System.Int32)
+  name.vb: Execute(Integer)
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute(int)
+  fullName.vb: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute(Integer)
+  nameWithType: ApplyVerticalVolumeFlowMapJob.Execute(int)
+  nameWithType.vb: ApplyVerticalVolumeFlowMapJob.Execute(Integer)
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute*
+  name: Execute
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_Execute_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.Execute
+  nameWithType: ApplyVerticalVolumeFlowMapJob.Execute
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.FlowDirection
+  name: FlowDirection
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_FlowDirection
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.FlowDirection
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.FlowDirection
+  nameWithType: ApplyVerticalVolumeFlowMapJob.FlowDirection
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.FlowMap
+  name: FlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_FlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.FlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.FlowMap
+  nameWithType: ApplyVerticalVolumeFlowMapJob.FlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.SourceAmountDirtyChunks
+  name: SourceAmountDirtyChunks
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_SourceAmountDirtyChunks
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.SourceAmountDirtyChunks
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.SourceAmountDirtyChunks
+  nameWithType: ApplyVerticalVolumeFlowMapJob.SourceAmountDirtyChunks
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TargetAmountDirtyChunks
+  name: TargetAmountDirtyChunks
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_TargetAmountDirtyChunks
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TargetAmountDirtyChunks
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TargetAmountDirtyChunks
+  nameWithType: ApplyVerticalVolumeFlowMapJob.TargetAmountDirtyChunks
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TargetAmountMap
+  name: TargetAmountMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_TargetAmountMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TargetAmountMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TargetAmountMap
+  nameWithType: ApplyVerticalVolumeFlowMapJob.TargetAmountMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TerrainSettings
+  name: TerrainSettings
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVerticalVolumeFlowMapJob_TerrainSettings
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TerrainSettings
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVerticalVolumeFlowMapJob.TerrainSettings
+  nameWithType: ApplyVerticalVolumeFlowMapJob.TerrainSettings
 - uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowFromCellJob
   name: ApplyVolumeFlowFromCellJob
   href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowFromCellJob.html
@@ -81506,6 +81648,64 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMap.VolumeMap
   fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMap.VolumeMap
   nameWithType: ApplyVolumeFlowMapToHeatFlowMap.VolumeMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob
+  name: ApplyVolumeFlowMapToHeatFlowMapJob
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html
+  commentId: T:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute(System.Int32)
+  name: Execute(int)
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_Execute_System_Int32_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute(System.Int32)
+  name.vb: Execute(Integer)
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute(int)
+  fullName.vb: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute(Integer)
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.Execute(int)
+  nameWithType.vb: ApplyVolumeFlowMapToHeatFlowMapJob.Execute(Integer)
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute*
+  name: Execute
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_Execute_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.Execute
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.Execute
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.FlowMap
+  name: FlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_FlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.FlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.FlowMap
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.FlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.HeatFlowMap
+  name: HeatFlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_HeatFlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.HeatFlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.HeatFlowMap
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.HeatFlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.HeatMap
+  name: HeatMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_HeatMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.HeatMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.HeatMap
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.HeatMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.TotalFlowMap
+  name: TotalFlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_TotalFlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.TotalFlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.TotalFlowMap
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.TotalFlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.TotalHeatFlowMap
+  name: TotalHeatFlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_TotalHeatFlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.TotalHeatFlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.TotalHeatFlowMap
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.TotalHeatFlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.VolumeMap
+  name: VolumeMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_ApplyVolumeFlowMapToHeatFlowMapJob_VolumeMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.VolumeMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.ApplyVolumeFlowMapToHeatFlowMapJob.VolumeMap
+  nameWithType: ApplyVolumeFlowMapToHeatFlowMapJob.VolumeMap
 - uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalcPropertyMapFlowJob
   name: CalcPropertyMapFlowJob
   href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalcPropertyMapFlowJob.html
@@ -82116,6 +82316,82 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVerticalVolumeFlowPotentialJob.VolumeMap
   fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVerticalVolumeFlowPotentialJob.VolumeMap
   nameWithType: CalculateVerticalVolumeFlowPotentialJob.VolumeMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob
+  name: CalculateVolumeFlowMapJob
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html
+  commentId: T:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob
+  nameWithType: CalculateVolumeFlowMapJob
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.DeltaTime
+  name: DeltaTime
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_DeltaTime
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.DeltaTime
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.DeltaTime
+  nameWithType: CalculateVolumeFlowMapJob.DeltaTime
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute(System.Int32)
+  name: Execute(int)
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_Execute_System_Int32_
+  commentId: M:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute(System.Int32)
+  name.vb: Execute(Integer)
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute(int)
+  fullName.vb: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute(Integer)
+  nameWithType: CalculateVolumeFlowMapJob.Execute(int)
+  nameWithType.vb: CalculateVolumeFlowMapJob.Execute(Integer)
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute*
+  name: Execute
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_Execute_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.Execute
+  nameWithType: CalculateVolumeFlowMapJob.Execute
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowMap
+  name: FlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_FlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowMap
+  nameWithType: CalculateVolumeFlowMapJob.FlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowPotentialMap
+  name: FlowPotentialMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_FlowPotentialMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowPotentialMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowPotentialMap
+  nameWithType: CalculateVolumeFlowMapJob.FlowPotentialMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowSettings
+  name: FlowSettings
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_FlowSettings
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowSettings
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.FlowSettings
+  nameWithType: CalculateVolumeFlowMapJob.FlowSettings
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.IncomingFlowChunks
+  name: IncomingFlowChunks
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_IncomingFlowChunks
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.IncomingFlowChunks
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.IncomingFlowChunks
+  nameWithType: CalculateVolumeFlowMapJob.IncomingFlowChunks
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TerrainSettings
+  name: TerrainSettings
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_TerrainSettings
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TerrainSettings
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TerrainSettings
+  nameWithType: CalculateVolumeFlowMapJob.TerrainSettings
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TotalFlowMap
+  name: TotalFlowMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_TotalFlowMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TotalFlowMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TotalFlowMap
+  nameWithType: CalculateVolumeFlowMapJob.TotalFlowMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TotalFlowPotentialMap
+  name: TotalFlowPotentialMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_TotalFlowPotentialMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TotalFlowPotentialMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.TotalFlowPotentialMap
+  nameWithType: CalculateVolumeFlowMapJob.TotalFlowPotentialMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.VolumeMap
+  name: VolumeMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_CalculateVolumeFlowMapJob_VolumeMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.VolumeMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.CalculateVolumeFlowMapJob.VolumeMap
+  nameWithType: CalculateVolumeFlowMapJob.VolumeMap
 - uid: Fwt.HexTerrains.GeoPlasts.Jobs.GeoPlastMath
   name: GeoPlastMath
   href: api/Fwt.HexTerrains.GeoPlasts.Jobs.GeoPlastMath.html
@@ -82188,18 +82464,6 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.BiomeMapDirtyChunks
   fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.BiomeMapDirtyChunks
   nameWithType: RenderGeoPlastToHeightMapJob.BiomeMapDirtyChunks
-- uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingDirtyChunksMap
-  name: CeilingDirtyChunksMap
-  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_CeilingDirtyChunksMap
-  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingDirtyChunksMap
-  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingDirtyChunksMap
-  nameWithType: RenderGeoPlastToHeightMapJob.CeilingDirtyChunksMap
-- uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingMap
-  name: CeilingMap
-  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_CeilingMap
-  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingMap
-  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.CeilingMap
-  nameWithType: RenderGeoPlastToHeightMapJob.CeilingMap
 - uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.Execute(System.Int32)
   name: Execute(int)
   href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_Execute_System_Int32_
@@ -82234,12 +82498,24 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.HeightMapDirtyChunks
   fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.HeightMapDirtyChunks
   nameWithType: RenderGeoPlastToHeightMapJob.HeightMapDirtyChunks
-- uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmount
-  name: RenderAmount
-  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderAmount
-  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmount
-  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmount
-  nameWithType: RenderGeoPlastToHeightMapJob.RenderAmount
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmountMap
+  name: RenderAmountMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderAmountMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmountMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderAmountMap
+  nameWithType: RenderGeoPlastToHeightMapJob.RenderAmountMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesDirtyChunksMap
+  name: RenderValuesDirtyChunksMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderValuesDirtyChunksMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesDirtyChunksMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesDirtyChunksMap
+  nameWithType: RenderGeoPlastToHeightMapJob.RenderValuesDirtyChunksMap
+- uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesMap
+  name: RenderValuesMap
+  href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_RenderValuesMap
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesMap
+  fullName: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.RenderValuesMap
+  nameWithType: RenderGeoPlastToHeightMapJob.RenderValuesMap
 - uid: Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.TerrainSettings
   name: TerrainSettings
   href: api/Fwt.HexTerrains.GeoPlasts.Jobs.RenderGeoPlastToHeightMapJob.html#Fwt_HexTerrains_GeoPlasts_Jobs_RenderGeoPlastToHeightMapJob_TerrainSettings
@@ -86947,6 +87223,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset.InitValuesArgs
   nameWithType: CellRegionLayerConfigAsset.InitValuesArgs
+- uid: Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset._autoColorMapSettings
+  name: _autoColorMapSettings
+  href: api/Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset.html#Fwt_HexTerrains_Regions_Data_CellRegionLayerConfigAsset__autoColorMapSettings
+  commentId: F:Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset._autoColorMapSettings
+  fullName: Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset._autoColorMapSettings
+  nameWithType: CellRegionLayerConfigAsset._autoColorMapSettings
 - uid: Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset._initValuesArgs
   name: _initValuesArgs
   href: api/Fwt.HexTerrains.Regions.Data.CellRegionLayerConfigAsset.html#Fwt_HexTerrains_Regions_Data_CellRegionLayerConfigAsset__initValuesArgs
@@ -87028,19 +87310,6 @@ references:
   commentId: T:Fwt.HexTerrains.Regions.Data.ICellRegionConfig
   fullName: Fwt.HexTerrains.Regions.Data.ICellRegionConfig
   nameWithType: ICellRegionConfig
-- uid: Fwt.HexTerrains.Regions.Data.ICellRegionConfig.AutoFillColorPalette
-  name: AutoFillColorPalette()
-  href: api/Fwt.HexTerrains.Regions.Data.ICellRegionConfig.html#Fwt_HexTerrains_Regions_Data_ICellRegionConfig_AutoFillColorPalette
-  commentId: M:Fwt.HexTerrains.Regions.Data.ICellRegionConfig.AutoFillColorPalette
-  fullName: Fwt.HexTerrains.Regions.Data.ICellRegionConfig.AutoFillColorPalette()
-  nameWithType: ICellRegionConfig.AutoFillColorPalette()
-- uid: Fwt.HexTerrains.Regions.Data.ICellRegionConfig.AutoFillColorPalette*
-  name: AutoFillColorPalette
-  href: api/Fwt.HexTerrains.Regions.Data.ICellRegionConfig.html#Fwt_HexTerrains_Regions_Data_ICellRegionConfig_AutoFillColorPalette_
-  commentId: Overload:Fwt.HexTerrains.Regions.Data.ICellRegionConfig.AutoFillColorPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.Regions.Data.ICellRegionConfig.AutoFillColorPalette
-  nameWithType: ICellRegionConfig.AutoFillColorPalette
 - uid: Fwt.HexTerrains.Regions.Data.ICellRegionConfig.CreateTerrainLayer
   name: CreateTerrainLayer()
   href: api/Fwt.HexTerrains.Regions.Data.ICellRegionConfig.html#Fwt_HexTerrains_Regions_Data_ICellRegionConfig_CreateTerrainLayer
@@ -87897,6 +88166,37 @@ references:
   commentId: N:Fwt.HexTerrains.Suns.Data
   fullName: Fwt.HexTerrains.Suns.Data
   nameWithType: Fwt.HexTerrains.Suns.Data
+- uid: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest
+  name: CreateSunLayerRequest
+  href: api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.html
+  commentId: T:Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest
+  fullName: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest
+  nameWithType: CreateSunLayerRequest
+- uid: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.Args
+  name: Args
+  href: api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.html#Fwt_HexTerrains_Suns_Data_CreateSunLayerRequest_Args
+  commentId: F:Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.Args
+  fullName: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.Args
+  nameWithType: CreateSunLayerRequest.Args
+- uid: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.CreateTerrainLayer
+  name: CreateTerrainLayer()
+  href: api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.html#Fwt_HexTerrains_Suns_Data_CreateSunLayerRequest_CreateTerrainLayer
+  commentId: M:Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.CreateTerrainLayer
+  fullName: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.CreateTerrainLayer()
+  nameWithType: CreateSunLayerRequest.CreateTerrainLayer()
+- uid: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.CreateTerrainLayer*
+  name: CreateTerrainLayer
+  href: api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.html#Fwt_HexTerrains_Suns_Data_CreateSunLayerRequest_CreateTerrainLayer_
+  commentId: Overload:Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.CreateTerrainLayer
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.CreateTerrainLayer
+  nameWithType: CreateSunLayerRequest.CreateTerrainLayer
+- uid: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.Name
+  name: Name
+  href: api/Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.html#Fwt_HexTerrains_Suns_Data_CreateSunLayerRequest_Name
+  commentId: F:Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.Name
+  fullName: Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest.Name
+  nameWithType: CreateSunLayerRequest.Name
 - uid: Fwt.HexTerrains.Suns.Data.CreateSunTerrainLayerRequest
   name: CreateSunTerrainLayerRequest
   href: api/Fwt.HexTerrains.Suns.Data.CreateSunTerrainLayerRequest.html
@@ -87967,6 +88267,24 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Suns.Data.ISunTerrainLayerConfig.YearProgress
   nameWithType: ISunTerrainLayerConfig.YearProgress
+- uid: Fwt.HexTerrains.Suns.Data.SunDirection
+  name: SunDirection
+  href: api/Fwt.HexTerrains.Suns.Data.SunDirection.html
+  commentId: T:Fwt.HexTerrains.Suns.Data.SunDirection
+  fullName: Fwt.HexTerrains.Suns.Data.SunDirection
+  nameWithType: SunDirection
+- uid: Fwt.HexTerrains.Suns.Data.SunDirection.EastToWest
+  name: EastToWest
+  href: api/Fwt.HexTerrains.Suns.Data.SunDirection.html#Fwt_HexTerrains_Suns_Data_SunDirection_EastToWest
+  commentId: F:Fwt.HexTerrains.Suns.Data.SunDirection.EastToWest
+  fullName: Fwt.HexTerrains.Suns.Data.SunDirection.EastToWest
+  nameWithType: SunDirection.EastToWest
+- uid: Fwt.HexTerrains.Suns.Data.SunDirection.WestToEast
+  name: WestToEast
+  href: api/Fwt.HexTerrains.Suns.Data.SunDirection.html#Fwt_HexTerrains_Suns_Data_SunDirection_WestToEast
+  commentId: F:Fwt.HexTerrains.Suns.Data.SunDirection.WestToEast
+  fullName: Fwt.HexTerrains.Suns.Data.SunDirection.WestToEast
+  nameWithType: SunDirection.WestToEast
 - uid: Fwt.HexTerrains.Suns.Data.SunSettings
   name: SunSettings
   href: api/Fwt.HexTerrains.Suns.Data.SunSettings.html
@@ -87998,6 +88316,12 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Suns.Data.SunSettings.Default
   nameWithType: SunSettings.Default
+- uid: Fwt.HexTerrains.Suns.Data.SunSettings.Direction
+  name: Direction
+  href: api/Fwt.HexTerrains.Suns.Data.SunSettings.html#Fwt_HexTerrains_Suns_Data_SunSettings_Direction
+  commentId: F:Fwt.HexTerrains.Suns.Data.SunSettings.Direction
+  fullName: Fwt.HexTerrains.Suns.Data.SunSettings.Direction
+  nameWithType: SunSettings.Direction
 - uid: Fwt.HexTerrains.Suns.Data.SunSettings.HeatIntensity
   name: HeatIntensity
   href: api/Fwt.HexTerrains.Suns.Data.SunSettings.html#Fwt_HexTerrains_Suns_Data_SunSettings_HeatIntensity
@@ -88379,6 +88703,63 @@ references:
   commentId: F:Fwt.HexTerrains.Suns.Data.SunTerrainLayerConfigAsset._yearProgress
   fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerConfigAsset._yearProgress
   nameWithType: SunTerrainLayerConfigAsset._yearProgress
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup
+  name: SunTerrainLayerGroup
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html
+  commentId: T:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup
+  nameWithType: SunTerrainLayerGroup
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer*
+  name: CreateTerrainLayer
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_CreateTerrainLayer_
+  commentId: Overload:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer
+  nameWithType: SunTerrainLayerGroup.CreateTerrainLayer
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer``1(``0)
+  name: CreateTerrainLayer<TInitArgs>(TInitArgs)
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_CreateTerrainLayer__1___0_
+  commentId: M:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer``1(``0)
+  name.vb: CreateTerrainLayer(Of TInitArgs)(TInitArgs)
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer<TInitArgs>(TInitArgs)
+  fullName.vb: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.CreateTerrainLayer(Of TInitArgs)(TInitArgs)
+  nameWithType: SunTerrainLayerGroup.CreateTerrainLayer<TInitArgs>(TInitArgs)
+  nameWithType.vb: SunTerrainLayerGroup.CreateTerrainLayer(Of TInitArgs)(TInitArgs)
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer*
+  name: InitTerrainLayer
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_InitTerrainLayer_
+  commentId: Overload:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer
+  nameWithType: SunTerrainLayerGroup.InitTerrainLayer
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer``1(Fwt.HexTerrains.Suns.Data.SunTerrainLayer,Fwt.HexTerrains.Data.HexTerrainSettings,``0)
+  name: InitTerrainLayer<TInitArgs>(SunTerrainLayer, HexTerrainSettings, TInitArgs)
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_InitTerrainLayer__1_Fwt_HexTerrains_Suns_Data_SunTerrainLayer_Fwt_HexTerrains_Data_HexTerrainSettings___0_
+  commentId: M:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer``1(Fwt.HexTerrains.Suns.Data.SunTerrainLayer,Fwt.HexTerrains.Data.HexTerrainSettings,``0)
+  name.vb: InitTerrainLayer(Of TInitArgs)(SunTerrainLayer, HexTerrainSettings, TInitArgs)
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer<TInitArgs>(Fwt.HexTerrains.Suns.Data.SunTerrainLayer, Fwt.HexTerrains.Data.HexTerrainSettings, TInitArgs)
+  fullName.vb: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.InitTerrainLayer(Of TInitArgs)(Fwt.HexTerrains.Suns.Data.SunTerrainLayer, Fwt.HexTerrains.Data.HexTerrainSettings, TInitArgs)
+  nameWithType: SunTerrainLayerGroup.InitTerrainLayer<TInitArgs>(SunTerrainLayer, HexTerrainSettings, TInitArgs)
+  nameWithType.vb: SunTerrainLayerGroup.InitTerrainLayer(Of TInitArgs)(SunTerrainLayer, HexTerrainSettings, TInitArgs)
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.LastSimulationFrame
+  name: LastSimulationFrame
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_LastSimulationFrame
+  commentId: F:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.LastSimulationFrame
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.LastSimulationFrame
+  nameWithType: SunTerrainLayerGroup.LastSimulationFrame
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.Simulate(Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup,Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Unity.Jobs.JobHandle)
+  name: Simulate(GeoPlastLayerGroup, HexTerrainSimulationTimer, JobHandle)
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_Simulate_Fwt_HexTerrains_GeoPlasts_Data_GeoPlastLayerGroup_Fwt_HexTerrains_Simulations_Data_HexTerrainSimulationTimer_Unity_Jobs_JobHandle_
+  commentId: M:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.Simulate(Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup,Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer,Unity.Jobs.JobHandle)
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.Simulate(Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup, Fwt.HexTerrains.Simulations.Data.HexTerrainSimulationTimer, Unity.Jobs.JobHandle)
+  nameWithType: SunTerrainLayerGroup.Simulate(GeoPlastLayerGroup, HexTerrainSimulationTimer, JobHandle)
+- uid: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.Simulate*
+  name: Simulate
+  href: api/Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.html#Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_Simulate_
+  commentId: Overload:Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.Simulate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup.Simulate
+  nameWithType: SunTerrainLayerGroup.Simulate
 - uid: Fwt.HexTerrains.Suns.Data.SunType
   name: SunType
   href: api/Fwt.HexTerrains.Suns.Data.SunType.html
@@ -88391,6 +88772,12 @@ references:
   commentId: F:Fwt.HexTerrains.Suns.Data.SunType.Circle
   fullName: Fwt.HexTerrains.Suns.Data.SunType.Circle
   nameWithType: SunType.Circle
+- uid: Fwt.HexTerrains.Suns.Data.SunType.EveryCell
+  name: EveryCell
+  href: api/Fwt.HexTerrains.Suns.Data.SunType.html#Fwt_HexTerrains_Suns_Data_SunType_EveryCell
+  commentId: F:Fwt.HexTerrains.Suns.Data.SunType.EveryCell
+  fullName: Fwt.HexTerrains.Suns.Data.SunType.EveryCell
+  nameWithType: SunType.EveryCell
 - uid: Fwt.HexTerrains.Suns.Data.SunType.Line
   name: Line
   href: api/Fwt.HexTerrains.Suns.Data.SunType.html#Fwt_HexTerrains_Suns_Data_SunType_Line
@@ -88509,12 +88896,12 @@ references:
   commentId: T:Fwt.HexTerrains.Suns.SunLayerBaker
   fullName: Fwt.HexTerrains.Suns.SunLayerBaker
   nameWithType: SunLayerBaker
-- uid: Fwt.HexTerrains.Suns.SunLayerBaker.Bake(Fwt.HexTerrains.Suns.SunLayerAuthoring)
-  name: Bake(SunLayerAuthoring)
-  href: api/Fwt.HexTerrains.Suns.SunLayerBaker.html#Fwt_HexTerrains_Suns_SunLayerBaker_Bake_Fwt_HexTerrains_Suns_SunLayerAuthoring_
-  commentId: M:Fwt.HexTerrains.Suns.SunLayerBaker.Bake(Fwt.HexTerrains.Suns.SunLayerAuthoring)
-  fullName: Fwt.HexTerrains.Suns.SunLayerBaker.Bake(Fwt.HexTerrains.Suns.SunLayerAuthoring)
-  nameWithType: SunLayerBaker.Bake(SunLayerAuthoring)
+- uid: Fwt.HexTerrains.Suns.SunLayerBaker.Bake(Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring)
+  name: Bake(SunTerrainLayerGroupAuthoring)
+  href: api/Fwt.HexTerrains.Suns.SunLayerBaker.html#Fwt_HexTerrains_Suns_SunLayerBaker_Bake_Fwt_HexTerrains_Suns_SunTerrainLayerGroupAuthoring_
+  commentId: M:Fwt.HexTerrains.Suns.SunLayerBaker.Bake(Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring)
+  fullName: Fwt.HexTerrains.Suns.SunLayerBaker.Bake(Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring)
+  nameWithType: SunLayerBaker.Bake(SunTerrainLayerGroupAuthoring)
 - uid: Fwt.HexTerrains.Suns.SunLayerBaker.Bake*
   name: Bake
   href: api/Fwt.HexTerrains.Suns.SunLayerBaker.html#Fwt_HexTerrains_Suns_SunLayerBaker_Bake_
@@ -88522,12 +88909,90 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.Suns.SunLayerBaker.Bake
   nameWithType: SunLayerBaker.Bake
+- uid: Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring
+  name: SunTerrainLayerAuthoring
+  href: api/Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.html
+  commentId: T:Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring
+  fullName: Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring
+  nameWithType: SunTerrainLayerAuthoring
+- uid: Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.Config
+  name: Config
+  href: api/Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.html#Fwt_HexTerrains_Suns_SunTerrainLayerAuthoring_Config
+  commentId: F:Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.Config
+  fullName: Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.Config
+  nameWithType: SunTerrainLayerAuthoring.Config
+- uid: Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.Name
+  name: Name
+  href: api/Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.html#Fwt_HexTerrains_Suns_SunTerrainLayerAuthoring_Name
+  commentId: F:Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.Name
+  fullName: Fwt.HexTerrains.Suns.SunTerrainLayerAuthoring.Name
+  nameWithType: SunTerrainLayerAuthoring.Name
+- uid: Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring
+  name: SunTerrainLayerGroupAuthoring
+  href: api/Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.html
+  commentId: T:Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring
+  fullName: Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring
+  nameWithType: SunTerrainLayerGroupAuthoring
+- uid: Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.Layers
+  name: Layers
+  href: api/Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.html#Fwt_HexTerrains_Suns_SunTerrainLayerGroupAuthoring_Layers
+  commentId: F:Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.Layers
+  fullName: Fwt.HexTerrains.Suns.SunTerrainLayerGroupAuthoring.Layers
+  nameWithType: SunTerrainLayerGroupAuthoring.Layers
 - uid: Fwt.HexTerrains.Suns.Systems
   name: Fwt.HexTerrains.Suns.Systems
   href: api/Fwt.HexTerrains.Suns.Systems.html
   commentId: N:Fwt.HexTerrains.Suns.Systems
   fullName: Fwt.HexTerrains.Suns.Systems
   nameWithType: Fwt.HexTerrains.Suns.Systems
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem
+  name: CreateSunTerrainLayerGroupSystem
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html
+  commentId: T:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem
+  nameWithType: CreateSunTerrainLayerGroupSystem
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest},Unity.Entities.EntityCommandBuffer)
+  name: CreateTerrainLayer(Entity, HexTerrainSettings, DynamicBuffer<CreateSunLayerRequest>, EntityCommandBuffer)
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html#Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_CreateTerrainLayer_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainSettings_Unity_Entities_DynamicBuffer_Fwt_HexTerrains_Suns_Data_CreateSunLayerRequest__Unity_Entities_EntityCommandBuffer_
+  commentId: M:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainSettings,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest},Unity.Entities.EntityCommandBuffer)
+  name.vb: CreateTerrainLayer(Entity, HexTerrainSettings, DynamicBuffer(Of CreateSunLayerRequest), EntityCommandBuffer)
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Entities.DynamicBuffer<Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest>, Unity.Entities.EntityCommandBuffer)
+  fullName.vb: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrainSettings, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.Suns.Data.CreateSunLayerRequest), Unity.Entities.EntityCommandBuffer)
+  nameWithType: CreateSunTerrainLayerGroupSystem.CreateTerrainLayer(Entity, HexTerrainSettings, DynamicBuffer<CreateSunLayerRequest>, EntityCommandBuffer)
+  nameWithType.vb: CreateSunTerrainLayerGroupSystem.CreateTerrainLayer(Entity, HexTerrainSettings, DynamicBuffer(Of CreateSunLayerRequest), EntityCommandBuffer)
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer*
+  name: CreateTerrainLayer
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html#Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_CreateTerrainLayer_
+  commentId: Overload:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.CreateTerrainLayer
+  nameWithType: CreateSunTerrainLayerGroupSystem.CreateTerrainLayer
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler
+  name: OnCreateForCompiler()
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html#Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnCreateForCompiler
+  commentId: M:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler()
+  nameWithType: CreateSunTerrainLayerGroupSystem.OnCreateForCompiler()
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler*
+  name: OnCreateForCompiler
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html#Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnCreateForCompiler_
+  commentId: Overload:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler
+  nameWithType: CreateSunTerrainLayerGroupSystem.OnCreateForCompiler
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnUpdate
+  name: OnUpdate()
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html#Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnUpdate
+  commentId: M:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnUpdate
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnUpdate()
+  nameWithType: CreateSunTerrainLayerGroupSystem.OnUpdate()
+- uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnUpdate*
+  name: OnUpdate
+  href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.html#Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnUpdate_
+  commentId: Overload:Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnUpdate
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnUpdate
+  nameWithType: CreateSunTerrainLayerGroupSystem.OnUpdate
 - uid: Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerSystem
   name: CreateSunTerrainLayerSystem
   href: api/Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerSystem.html
@@ -91236,6 +91701,12 @@ references:
   commentId: F:Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.CancelCallback
   fullName: Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.CancelCallback
   nameWithType: ResizeTerrainCallbackDataSource.CancelCallback
+- uid: Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.InitialTerrainSize
+  name: InitialTerrainSize
+  href: api/Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.html#Fwt_HexTerrains_UserTools_ResizeTerrainCallbackDataSource_InitialTerrainSize
+  commentId: F:Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.InitialTerrainSize
+  fullName: Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.InitialTerrainSize
+  nameWithType: ResizeTerrainCallbackDataSource.InitialTerrainSize
 - uid: Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.ResizeCallback
   name: ResizeCallback
   href: api/Fwt.HexTerrains.UserTools.ResizeTerrainCallbackDataSource.html#Fwt_HexTerrains_UserTools_ResizeTerrainCallbackDataSource_ResizeCallback
@@ -100856,15 +101327,15 @@ references:
   fullName.vb: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.New
   nameWithType: SunSettingsUserToolState.SunSettingsUserToolState
   nameWithType.vb: SunSettingsUserToolState.New
-- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(System.Int32,Unity.Mathematics.int2,System.Int32,Fwt.HexTerrains.Suns.Data.SunTerrainLayer,System.Int32)
-  name: ApplyBrush(int, int2, int, SunTerrainLayer, int)
-  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_ApplyBrush_System_Int32_Unity_Mathematics_int2_System_Int32_Fwt_HexTerrains_Suns_Data_SunTerrainLayer_System_Int32_
-  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(System.Int32,Unity.Mathematics.int2,System.Int32,Fwt.HexTerrains.Suns.Data.SunTerrainLayer,System.Int32)
-  name.vb: ApplyBrush(Integer, int2, Integer, SunTerrainLayer, Integer)
-  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(int, Unity.Mathematics.int2, int, Fwt.HexTerrains.Suns.Data.SunTerrainLayer, int)
-  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(Integer, Unity.Mathematics.int2, Integer, Fwt.HexTerrains.Suns.Data.SunTerrainLayer, Integer)
-  nameWithType: SunSettingsUserToolState.ApplyBrush(int, int2, int, SunTerrainLayer, int)
-  nameWithType.vb: SunSettingsUserToolState.ApplyBrush(Integer, int2, Integer, SunTerrainLayer, Integer)
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(System.Int32,Unity.Mathematics.int2,System.Int32,Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup,System.Int32)
+  name: ApplyBrush(int, int2, int, SunTerrainLayerGroup, int)
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_ApplyBrush_System_Int32_Unity_Mathematics_int2_System_Int32_Fwt_HexTerrains_Suns_Data_SunTerrainLayerGroup_System_Int32_
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(System.Int32,Unity.Mathematics.int2,System.Int32,Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup,System.Int32)
+  name.vb: ApplyBrush(Integer, int2, Integer, SunTerrainLayerGroup, Integer)
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(int, Unity.Mathematics.int2, int, Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup, int)
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush(Integer, Unity.Mathematics.int2, Integer, Fwt.HexTerrains.Suns.Data.SunTerrainLayerGroup, Integer)
+  nameWithType: SunSettingsUserToolState.ApplyBrush(int, int2, int, SunTerrainLayerGroup, int)
+  nameWithType.vb: SunSettingsUserToolState.ApplyBrush(Integer, int2, Integer, SunTerrainLayerGroup, Integer)
 - uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ApplyBrush*
   name: ApplyBrush
   href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_ApplyBrush_
@@ -100963,6 +101434,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.ExtractDataFromTerrain
   nameWithType: SunSettingsUserToolState.ExtractDataFromTerrain
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.HeatingIntensity
+  name: HeatingIntensity
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_HeatingIntensity
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.HeatingIntensity
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.HeatingIntensity
+  nameWithType: SunSettingsUserToolState.HeatingIntensity
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.HeatingIntensity*
+  name: HeatingIntensity
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_HeatingIntensity_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.HeatingIntensity
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.HeatingIntensity
+  nameWithType: SunSettingsUserToolState.HeatingIntensity
 - uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.InitDefaultSettings
   name: InitDefaultSettings()
   href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_InitDefaultSettings
@@ -101041,6 +101525,240 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.MinCurveValue
   nameWithType: SunSettingsUserToolState.MinCurveValue
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCoolingIntensityChanged
+  name: OnCoolingIntensityChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCoolingIntensityChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCoolingIntensityChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCoolingIntensityChanged()
+  nameWithType: SunSettingsUserToolState.OnCoolingIntensityChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCoolingIntensityChanged*
+  name: OnCoolingIntensityChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCoolingIntensityChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCoolingIntensityChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCoolingIntensityChanged
+  nameWithType: SunSettingsUserToolState.OnCoolingIntensityChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveFactorChanged
+  name: OnCurveFactorChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCurveFactorChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveFactorChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveFactorChanged()
+  nameWithType: SunSettingsUserToolState.OnCurveFactorChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveFactorChanged*
+  name: OnCurveFactorChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCurveFactorChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveFactorChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveFactorChanged
+  nameWithType: SunSettingsUserToolState.OnCurveFactorChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueOffsetChanged
+  name: OnCurveOutputValueOffsetChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCurveOutputValueOffsetChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueOffsetChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueOffsetChanged()
+  nameWithType: SunSettingsUserToolState.OnCurveOutputValueOffsetChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueOffsetChanged*
+  name: OnCurveOutputValueOffsetChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCurveOutputValueOffsetChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueOffsetChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueOffsetChanged
+  nameWithType: SunSettingsUserToolState.OnCurveOutputValueOffsetChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueScaleChanged
+  name: OnCurveOutputValueScaleChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCurveOutputValueScaleChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueScaleChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueScaleChanged()
+  nameWithType: SunSettingsUserToolState.OnCurveOutputValueScaleChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueScaleChanged*
+  name: OnCurveOutputValueScaleChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnCurveOutputValueScaleChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueScaleChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnCurveOutputValueScaleChanged
+  nameWithType: SunSettingsUserToolState.OnCurveOutputValueScaleChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayLengthChanged
+  name: OnDayLengthChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnDayLengthChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayLengthChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayLengthChanged()
+  nameWithType: SunSettingsUserToolState.OnDayLengthChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayLengthChanged*
+  name: OnDayLengthChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnDayLengthChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayLengthChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayLengthChanged
+  nameWithType: SunSettingsUserToolState.OnDayLengthChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayProgressChanged
+  name: OnDayProgressChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnDayProgressChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayProgressChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayProgressChanged()
+  nameWithType: SunSettingsUserToolState.OnDayProgressChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayProgressChanged*
+  name: OnDayProgressChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnDayProgressChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayProgressChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnDayProgressChanged
+  nameWithType: SunSettingsUserToolState.OnDayProgressChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnEnableSunChanged
+  name: OnEnableSunChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnEnableSunChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnEnableSunChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnEnableSunChanged()
+  nameWithType: SunSettingsUserToolState.OnEnableSunChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnEnableSunChanged*
+  name: OnEnableSunChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnEnableSunChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnEnableSunChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnEnableSunChanged
+  nameWithType: SunSettingsUserToolState.OnEnableSunChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnHeatingIntensityChanged
+  name: OnHeatingIntensityChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnHeatingIntensityChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnHeatingIntensityChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnHeatingIntensityChanged()
+  nameWithType: SunSettingsUserToolState.OnHeatingIntensityChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnHeatingIntensityChanged*
+  name: OnHeatingIntensityChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnHeatingIntensityChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnHeatingIntensityChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnHeatingIntensityChanged
+  nameWithType: SunSettingsUserToolState.OnHeatingIntensityChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnInvertCurveChanged
+  name: OnInvertCurveChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnInvertCurveChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnInvertCurveChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnInvertCurveChanged()
+  nameWithType: SunSettingsUserToolState.OnInvertCurveChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnInvertCurveChanged*
+  name: OnInvertCurveChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnInvertCurveChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnInvertCurveChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnInvertCurveChanged
+  nameWithType: SunSettingsUserToolState.OnInvertCurveChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMaxCurveValueChanged
+  name: OnMaxCurveValueChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnMaxCurveValueChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMaxCurveValueChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMaxCurveValueChanged()
+  nameWithType: SunSettingsUserToolState.OnMaxCurveValueChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMaxCurveValueChanged*
+  name: OnMaxCurveValueChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnMaxCurveValueChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMaxCurveValueChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMaxCurveValueChanged
+  nameWithType: SunSettingsUserToolState.OnMaxCurveValueChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMinCurveValueChanged
+  name: OnMinCurveValueChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnMinCurveValueChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMinCurveValueChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMinCurveValueChanged()
+  nameWithType: SunSettingsUserToolState.OnMinCurveValueChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMinCurveValueChanged*
+  name: OnMinCurveValueChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnMinCurveValueChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMinCurveValueChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnMinCurveValueChanged
+  nameWithType: SunSettingsUserToolState.OnMinCurveValueChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnPlanetAngleChanged
+  name: OnPlanetAngleChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnPlanetAngleChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnPlanetAngleChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnPlanetAngleChanged()
+  nameWithType: SunSettingsUserToolState.OnPlanetAngleChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnPlanetAngleChanged*
+  name: OnPlanetAngleChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnPlanetAngleChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnPlanetAngleChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnPlanetAngleChanged
+  nameWithType: SunSettingsUserToolState.OnPlanetAngleChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunDirectionChanged
+  name: OnSunDirectionChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnSunDirectionChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunDirectionChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunDirectionChanged()
+  nameWithType: SunSettingsUserToolState.OnSunDirectionChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunDirectionChanged*
+  name: OnSunDirectionChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnSunDirectionChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunDirectionChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunDirectionChanged
+  nameWithType: SunSettingsUserToolState.OnSunDirectionChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunRadiusChanged
+  name: OnSunRadiusChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnSunRadiusChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunRadiusChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunRadiusChanged()
+  nameWithType: SunSettingsUserToolState.OnSunRadiusChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunRadiusChanged*
+  name: OnSunRadiusChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnSunRadiusChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunRadiusChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunRadiusChanged
+  nameWithType: SunSettingsUserToolState.OnSunRadiusChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunTypeChanged
+  name: OnSunTypeChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnSunTypeChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunTypeChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunTypeChanged()
+  nameWithType: SunSettingsUserToolState.OnSunTypeChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunTypeChanged*
+  name: OnSunTypeChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnSunTypeChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunTypeChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnSunTypeChanged
+  nameWithType: SunSettingsUserToolState.OnSunTypeChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnTerrainLayerChanged
+  name: OnTerrainLayerChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnTerrainLayerChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnTerrainLayerChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnTerrainLayerChanged()
+  nameWithType: SunSettingsUserToolState.OnTerrainLayerChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnTerrainLayerChanged*
+  name: OnTerrainLayerChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnTerrainLayerChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnTerrainLayerChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnTerrainLayerChanged
+  nameWithType: SunSettingsUserToolState.OnTerrainLayerChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearLengthChanged
+  name: OnYearLengthChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnYearLengthChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearLengthChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearLengthChanged()
+  nameWithType: SunSettingsUserToolState.OnYearLengthChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearLengthChanged*
+  name: OnYearLengthChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnYearLengthChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearLengthChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearLengthChanged
+  nameWithType: SunSettingsUserToolState.OnYearLengthChanged
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearProgressChanged
+  name: OnYearProgressChanged()
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnYearProgressChanged
+  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearProgressChanged
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearProgressChanged()
+  nameWithType: SunSettingsUserToolState.OnYearProgressChanged()
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearProgressChanged*
+  name: OnYearProgressChanged
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_OnYearProgressChanged_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearProgressChanged
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.OnYearProgressChanged
+  nameWithType: SunSettingsUserToolState.OnYearProgressChanged
 - uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.PlanetAngle
   name: PlanetAngle
   href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_PlanetAngle
@@ -101093,32 +101811,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveDataToTerrain
   nameWithType: SunSettingsUserToolState.SaveDataToTerrain
-- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveSettings
-  name: SaveSettings()
-  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SaveSettings
-  commentId: M:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveSettings
-  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveSettings()
-  nameWithType: SunSettingsUserToolState.SaveSettings()
-- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveSettings*
-  name: SaveSettings
-  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SaveSettings_
-  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveSettings
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunDirection
+  name: SunDirection
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunDirection
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunDirection
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunDirection
+  nameWithType: SunSettingsUserToolState.SunDirection
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunDirection*
+  name: SunDirection
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunDirection_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunDirection
   isSpec: "True"
-  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SaveSettings
-  nameWithType: SunSettingsUserToolState.SaveSettings
-- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunIntensity
-  name: SunIntensity
-  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunIntensity
-  commentId: P:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunIntensity
-  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunIntensity
-  nameWithType: SunSettingsUserToolState.SunIntensity
-- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunIntensity*
-  name: SunIntensity
-  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunIntensity_
-  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunIntensity
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunIntensity
-  nameWithType: SunSettingsUserToolState.SunIntensity
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunDirection
+  nameWithType: SunSettingsUserToolState.SunDirection
 - uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunRadius
   name: SunRadius
   href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunRadius
@@ -101132,6 +101837,32 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunRadius
   nameWithType: SunSettingsUserToolState.SunRadius
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunType
+  name: SunType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunType
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunType
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunType
+  nameWithType: SunSettingsUserToolState.SunType
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunType*
+  name: SunType
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_SunType_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunType
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.SunType
+  nameWithType: SunSettingsUserToolState.SunType
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.TerrainLayerIndex
+  name: TerrainLayerIndex
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_TerrainLayerIndex
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.TerrainLayerIndex
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.TerrainLayerIndex
+  nameWithType: SunSettingsUserToolState.TerrainLayerIndex
+- uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.TerrainLayerIndex*
+  name: TerrainLayerIndex
+  href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_TerrainLayerIndex_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.TerrainLayerIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.TerrainLayerIndex
+  nameWithType: SunSettingsUserToolState.TerrainLayerIndex
 - uid: Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.UserToolType
   name: UserToolType
   href: api/Fwt.HexTerrains.UserTools.SM.States.GeoPlasts.SunSettingsUserToolState.html#Fwt_HexTerrains_UserTools_SM_States_GeoPlasts_SunSettingsUserToolState_UserToolType
@@ -101745,6 +102476,23 @@ references:
   fullName.vb: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase(Of TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface).IsAppliedToEveryCellOnMap
   nameWithType: PaintRegionsUserToolStateBase<TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface>.IsAppliedToEveryCellOnMap
   nameWithType.vb: PaintRegionsUserToolStateBase(Of TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface).IsAppliedToEveryCellOnMap
+- uid: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.IsCheckCellHeight
+  name: IsCheckCellHeight
+  href: api/Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_IsCheckCellHeight
+  commentId: P:Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.IsCheckCellHeight
+  fullName: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase<TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface>.IsCheckCellHeight
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase(Of TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface).IsCheckCellHeight
+  nameWithType: PaintRegionsUserToolStateBase<TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface>.IsCheckCellHeight
+  nameWithType.vb: PaintRegionsUserToolStateBase(Of TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface).IsCheckCellHeight
+- uid: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.IsCheckCellHeight*
+  name: IsCheckCellHeight
+  href: api/Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_IsCheckCellHeight_
+  commentId: Overload:Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.IsCheckCellHeight
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase<TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface>.IsCheckCellHeight
+  fullName.vb: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase(Of TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface).IsCheckCellHeight
+  nameWithType: PaintRegionsUserToolStateBase<TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface>.IsCheckCellHeight
+  nameWithType.vb: PaintRegionsUserToolStateBase(Of TBrushTarget, TTerrainLayer, THexSurfacesList, THexSurface).IsCheckCellHeight
 - uid: Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase`4.LoadSettings
   name: LoadSettings()
   href: api/Fwt.HexTerrains.UserTools.SM.States.PaintRegionsUserToolStateBase-4.html#Fwt_HexTerrains_UserTools_SM_States_PaintRegionsUserToolStateBase_4_LoadSettings

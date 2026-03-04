@@ -474,32 +474,6 @@ protected bool _isAutoPaintBiomes</code></pre>
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__overlappingLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._overlappingLayerReference">_overlappingLayerReference</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Reference to another terrain layer that this layer may overlap with. If that layer&#39;s height is bigger than this layer&#39;s height at a given cell, then this layer will not be rendered at that cell on biome color map.&quot;)]
-[SerializeField]
-protected HexTerrainLayerReference _overlappingLayerReference</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__syncBiomeMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._syncBiomeMapLayerReference">_syncBiomeMapLayerReference</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -739,34 +713,6 @@ If the height is between levels at index 0 and 1, biome 1 is applied, etc.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_OverlappingLayerReference_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference*"></a>
-  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_OverlappingLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.OverlappingLayerReference">OverlappingLayerReference</h4>
-  <div class="markdown level1 summary"><p>Reference to another terrain layer that this layer may overlap with.
-If that layer's height is bigger than this layer's height at a given cell,
-then this layer will not be rendered at that cell on biome color map.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public HexTerrainLayerReference OverlappingLayerReference { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <a id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncBiomeMapLayerReference_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncBiomeMapLayerReference*"></a>
   <h4 id="Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_SyncBiomeMapLayerReference" data-uid="Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.SyncBiomeMapLayerReference">SyncBiomeMapLayerReference</h4>
   <div class="markdown level1 summary"><p>Reference to another terrain layer from which to copy biome map values when they are changed there.</p>
@@ -965,5 +911,8 @@ then this layer will not be rendered at that cell on biome color map.</p>
     <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
 </html>

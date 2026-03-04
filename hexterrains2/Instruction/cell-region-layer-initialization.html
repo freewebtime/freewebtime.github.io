@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>CellRegionLayerConfigAsset | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="CellRegionLayerConfigAsset | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cellregionlayerconfigasset"><code>CellRegionLayerConfigAsset</code></h1>
+
+<p><img src="images/CellRegionLayerConfigAsset.png" alt="Cell Region Layer Config Asset"></p>
+<p><code>CellRegionLayerConfigAsset</code> is a Unity <code>ScriptableObject</code> that configures how a <code>CellRegionLayer</code> initializes its <strong>cell → region index map</strong> (<code>CellRegionMap</code>), including its <strong>color palette / auto color mapping</strong>.</p>
+<p>It plays two roles:</p>
+<ol>
+<li><p><strong>Layer factory</strong><br>
+Inherits <code>HexTerrainLayerConfigAsset&lt;CellRegionLayer&gt;</code> (implements <code>ITerrainLayerFactory</code>), so a <code>HexTerrainLayerGroup&lt;T&gt;</code> can call <code>CreateTerrainLayer()</code> on the asset to instantiate a <code>CellRegionLayer</code>.</p>
+</li>
+<li><p><strong>Initialization payload</strong><br>
+Implements <code>ICellRegionConfig</code>, which <code>CellRegionLayer.Init(settings, args)</code> consumes to initialize the region map.</p>
+</li>
+</ol>
+<blockquote>
+<p>Source: <code>com.freewebtime.hexterrains/Runtime/Regions/Data/CellRegionLayerConfigAsset.cs</code></p>
+</blockquote>
+<hr>
+<h2 id="how-this-config-is-used-during-cellregionlayer-initialization">How this config is used during <code>CellRegionLayer</code> initialization</h2>
+<p>At runtime the <code>CellRegionLayer</code> is initialized in two stages:</p>
+<ol>
+<li><p><code>CellRegionLayer.Init(settings)</code> allocates/initializes the internal data layers:</p>
+<ul>
+<li><code>CellRegionMap</code> (per-cell region index)</li>
+<li><code>RegionCells</code> (region index → list of cells)</li>
+<li><code>RegionSizes</code> (region index → cell count), initialized to capacity <code>255</code></li>
+</ul>
+</li>
+<li><p><code>CellRegionLayer.Init(settings, ICellRegionConfig args)</code> applies the config:</p>
+<ul>
+<li>calls <code>InitColoredDataLayer(CellRegionMap, args.InitValuesArgs)</code> to initialize:
+<ul>
+<li>the region indices (optionally filled/random/texture-driven)</li>
+<li>the color palette &amp; auto-color-map mode for <code>CellRegionMap.ColorMap</code></li>
+<li>dirty flags (so downstream computations can react)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code class="lang-mermaid">flowchart TD 
+A[&quot;Scene passes CellRegionLayerConfigAsset as init args&quot;] --&gt; B[&quot;HexTerrainLayerGroup&lt;T&gt;.CreateTerrainLayer(initArgs)&quot;] 
+B --&gt; C[&quot;CellRegionLayerConfigAsset.CreateTerrainLayer() → new CellRegionLayer()&quot;] 
+C --&gt; D[&quot;CellRegionLayer.Init(settings) allocates Region layers&quot;] 
+D --&gt; E[&quot;CellRegionLayer.Init(settings, args) applies InitValuesArgs to CellRegionMap&quot;] 
+E --&gt; F[&quot;CellRegionMap becomes dirty → CalcRegionsCells(Entity, CellRegionLayer, int) / CalcRegionsSizes(JobHandle) can run&quot;]
+</code></pre>
+<h3 id="what-initialization-affects-later">What initialization affects later</h3>
+<p>Because <code>InitColoredDataLayer(...)</code> marks chunks dirty, the following methods will typically do work after initialization (or after edits):</p>
+<ul>
+<li><code>CellRegionLayer.CalculateColorMap(...)</code> (uses palette + values)</li>
+<li><code>CellRegionLayer.CalcRegionsCells(...)</code> (rebuilds <code>RegionCells</code>) — runs only if <code>CellRegionMap.IsDirty</code></li>
+<li><code>CellRegionLayer.CalcRegionsSizes(...)</code> (recomputes <code>RegionSizes</code>) — runs only if <code>CellRegionMap.IsDirty</code></li>
+</ul>
+<hr>
+<h1 id="field-reference-cellregionlayerconfigasset">Field reference: <code>CellRegionLayerConfigAsset</code></h1>
+<h2 id="1-init-values-args-_initvaluesargs--initvaluesargs">1) <code>Init Values Args</code> (<code>_initValuesArgs</code> / <code>InitValuesArgs</code>)</h2>
+<p>Type: <code>InitColorMapCellValueDataLayerArgs&lt;int&gt;</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Controls how <code>CellRegionLayer.CellRegionMap</code> is initialized:
+<ul>
+<li>what integer region index each cell starts with</li>
+<li>how the color map is generated (palette + auto-color-map mode)</li>
+</ul>
+</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>In <code>CellRegionLayer.Init(settings, ICellRegionConfig args)</code>:
+<ul>
+<li><code>InitColoredDataLayer(CellRegionMap, args.InitValuesArgs)</code></li>
+</ul>
+</li>
+</ul>
+<p>What it affects:</p>
+<ul>
+<li><strong>Initial region assignment</strong> (the values stored in <code>CellRegionMap.Data</code>)</li>
+<li><strong>Color map rendering</strong> of regions (via <code>CellRegionMap.ColorMap</code>), which depends on:
+<ul>
+<li><code>InitValuesArgs.ColorPalette</code></li>
+<li><code>InitValuesArgs.AutoColorMapMode</code></li>
+<li><code>InitValuesArgs.MinValue</code> / <code>MaxValue</code> (depending on the selected mode)</li>
+</ul>
+</li>
+</ul>
+<p>Important implementation behavior (from <code>InitColoredDataLayer</code> extension):</p>
+<ul>
+<li>Always calls <code>InitDataLayer(...)</code> first (fill/random/texture apply if enabled)</li>
+<li>If the data layer supports auto color mapping, applies:
+<ul>
+<li><code>AutoColorMapMode</code>, <code>MinValue</code>, <code>MaxValue</code></li>
+</ul>
+</li>
+<li>Calls <code>InitColorPalette(args.ColorPalette)</code></li>
+<li>Marks all chunks dirty</li>
+</ul>
+<h3 id="practical-constraints-implied-by-cellregionlayer">Practical constraints implied by <code>CellRegionLayer</code></h3>
+<ul>
+<li><code>RegionSizes</code> is initialized with a fixed length <code>255</code>, and region-size calculation assumes a fixed-size array of 255 entries.</li>
+<li>In practice, keep region indices in a range that matches that (<code>0..254</code> or <code>0..255</code> depending on how you treat the last slot). The layer jobs allocate/clear <code>255</code> entries each time.</li>
+</ul>
+<hr>
+<h2 id="2-auto-color-map-settings-_autocolormapsettings">2) <code>Auto Color Map Settings</code> (<code>_autoColorMapSettings</code>)</h2>
+<p>Type: <code>AutoColorMapSettings</code></p>
+<p>Meaning:</p>
+<ul>
+<li>Editor/runtime helper settings used to <strong>generate</strong> a color palette (list of <code>Color32</code>) for region indices.</li>
+</ul>
+<p>Where it’s used:</p>
+<ul>
+<li>Only inside the config asset method:
+<ul>
+<li><code>AutoFillColorPalette()</code></li>
+</ul>
+</li>
+<li>That method calls:
+<ul>
+<li><code>_autoColorMapSettings.AutoFillColorPalette(_initValuesArgs.ColorPalette, _initValuesArgs.MaxValue, true);</code></li>
+</ul>
+</li>
+</ul>
+<p>What it affects:</p>
+<ul>
+<li>It mutates <code>InitValuesArgs.ColorPalette</code> in-place (clears and refills it).</li>
+<li>By default it makes the <strong>first color transparent</strong> (<code>isFirstColorTransparent = true</code>), which is commonly used to represent “region 0 = unassigned/none”.</li>
+</ul>
+<h3 id="autocolormapsettings-fields-generation-behavior"><code>AutoColorMapSettings</code> fields (generation behavior)</h3>
+<p>These fields control how the palette is generated in HSV space:</p>
+<ul>
+<li><p><code>StepsPerCircle</code><br>
+Used to compute how many “circles” of colors exist (affects saturation/brightness progression per circle).<br>
+(Note: the current hue calculation uses <code>HueStep * i</code>, so “circle” impacts saturation/brightness more than hue.)</p>
+</li>
+<li><p><code>CircleOffset</code><br>
+Present in the struct but currently not applied (the offset formula is commented out in <code>AutoFillColorPalette</code>).</p>
+</li>
+<li><p><code>MinSaturation</code>, <code>MaxSaturation</code><br>
+Saturation is interpolated from min→max across circles.</p>
+</li>
+<li><p><code>MinBrightness</code>, <code>MaxBrightness</code><br>
+Brightness/value is interpolated from min→max across circles.</p>
+</li>
+<li><p><code>HueStep</code><br>
+Hue progresses by <code>HueStep</code> per color: <code>hue = (HueStep * i) % 1f</code>.</p>
+</li>
+</ul>
+<hr>
+<h2 id="3-autofillcolorpalette-context-menu-action">3) <code>AutoFillColorPalette()</code> (context menu action)</h2>
+<p>This is not a serialized field, but it’s part of the asset’s authoring workflow.</p>
+<p>How it’s intended to be used:</p>
+<ul>
+<li>In the Inspector, right-click the asset header and run <code>AutoFillColorPalette</code>.</li>
+<li>It regenerates <code>InitValuesArgs.ColorPalette</code> based on:
+<ul>
+<li><code>InitValuesArgs.MaxValue</code> (the requested palette “count”)</li>
+<li><code>_autoColorMapSettings</code> parameters</li>
+<li>with the first color set to transparent</li>
+</ul>
+</li>
+</ul>
+<p>What to watch:</p>
+<ul>
+<li>The generated palette size depends on the exact value passed as <code>count</code> (<code>InitValuesArgs.MaxValue</code> as implemented).</li>
+<li>If you expect a palette entry for region index <code>MaxValue</code> <em>and</em> region indices are inclusive, verify the palette length matches your indexing scheme (this method does exactly what it’s coded to do).</li>
+</ul>
+<hr>
+<h1 id="summary-what-this-asset-controls-vs-what-it-does-not">Summary: what this asset controls vs what it does not</h1>
+<p>Controls directly (during init):</p>
+<ul>
+<li><code>CellRegionMap</code> initial values (region indices per cell)</li>
+<li><code>CellRegionMap</code> color palette + auto-color-map mode</li>
+</ul>
+<p>Controls indirectly (via dirty flags / downstream jobs):</p>
+<ul>
+<li>Whether <code>RegionCells</code> / <code>RegionSizes</code> will be recomputed after init</li>
+</ul>
+<p>Does <strong>not</strong> directly configure:</p>
+<ul>
+<li>The maximum region count used by <code>RegionSizes</code> (hardcoded to <code>255</code> in <code>CellRegionLayer.Init</code>)</li>
+<li>Any region “metadata” beyond an integer id (names, borders, etc. are outside this layer)</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=Docs/Instruction/cell-region-layer-initialization.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

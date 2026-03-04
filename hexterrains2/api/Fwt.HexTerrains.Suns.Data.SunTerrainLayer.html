@@ -92,8 +92,6 @@
   <div class="implements">
     <h5>Implements</h5>
     <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
-    <div><span class="xref">IComponentData</span></div>
-    <div><span class="xref">IQueryTypeParameter</span></div>
     <div><a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a></div>
   </div>
   <div class="inheritedMembers">
@@ -160,7 +158,7 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_Suns_Data_SunTerrainLayer_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class SunTerrainLayer : HexTerrainLayer, IDisposable, IComponentData, IQueryTypeParameter, ISerializableTerrainLayer</code></pre>
+    <pre><code class="lang-csharp hljs">public class SunTerrainLayer : HexTerrainLayer, IDisposable, ISerializableTerrainLayer</code></pre>
   </div>
   <h3 id="fields">Fields
 </h3>
@@ -720,12 +718,6 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
   </div>
   <div>
-      <span class="xref">Unity.Entities.IComponentData</span>
-  </div>
-  <div>
-      <span class="xref">Unity.Entities.IQueryTypeParameter</span>
-  </div>
-  <div>
       <a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a>
   </div>
   <h3 id="extensionmethods">Extension Methods</h3>
@@ -777,5 +769,8 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
     <script type="text/javascript" src="../styles/docfx.js"></script>
     <script type="text/javascript" src="../styles/main.js"></script>
-  </body>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
 </html>

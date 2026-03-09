@@ -11745,6 +11745,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.MineralsAmountHeightmapHeatUserToolConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.MineralsAmountHeightmapHeatUserToolConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.MineralsAmountHeightmapHeatUserToolConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.NoiseCellMineralsAmountUserToolStateConfigAsset.yml",
       "output": {
         ".html": {
@@ -11811,6 +11839,20 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothCellMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothMineralsAmountUserToolStateConfigAsset",
       "Summary": null
     },
     {

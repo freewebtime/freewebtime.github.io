@@ -177,9 +177,6 @@
       <span class="xref">ComponentSystemBase.WorldUpdateAllocator</span>
     </div>
     <div>
-      <span class="xref">ComponentSystemBase.OnCreate()</span>
-    </div>
-    <div>
       <span class="xref">ComponentSystemBase.OnStartRunning()</span>
     </div>
     <div>
@@ -292,6 +289,32 @@
     <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsInitGroup))]
 public class CreateSunTerrainLayerGroupSystem : SystemBase</code></pre>
   </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem__query" data-uid="Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem._query">_query</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected EntityQuery _query</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityQuery</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="methods">Methods
 </h3>
 
@@ -336,6 +359,23 @@ public class CreateSunTerrainLayerGroupSystem : SystemBase</code></pre>
       </tr>
     </tbody>
   </table>
+
+
+  <a id="Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnCreate_" data-uid="Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreate*"></a>
+  <h4 id="Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnCreate" data-uid="Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreate">OnCreate()</h4>
+  <div class="markdown level1 summary"><p>Called when this system is created.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected override void OnCreate()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><span class="xref">Unity.Entities.ComponentSystemBase.OnCreate()</span></div>
+  <h5 id="Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnCreate_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Implement an OnCreate() function to set up system resources when it is created.</p>
+<p>OnCreate is invoked before the the first time <span class="xref">Unity.Entities.ComponentSystemBase.OnStartRunning()</span> and OnUpdate are invoked.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_Suns_Systems_CreateSunTerrainLayerGroupSystem_OnCreateForCompiler_" data-uid="Fwt.HexTerrains.Suns.Systems.CreateSunTerrainLayerGroupSystem.OnCreateForCompiler*"></a>

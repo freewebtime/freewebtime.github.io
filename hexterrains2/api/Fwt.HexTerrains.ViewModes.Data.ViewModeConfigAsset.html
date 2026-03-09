@@ -1,0 +1,1730 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class ViewModeConfigAsset | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class ViewModeConfigAsset | Hex Terrains Framework ">
+    
+    <meta name="description" content="Provides a base class for view mode configuration assets that manage color map updates for various terrain layers in a Unity environment.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset">
+
+
+
+  <h1 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset" class="text-break">Class ViewModeConfigAsset</h1>
+  <div class="markdown level0 summary"><p>Provides a base class for view mode configuration assets that manage color map updates for various terrain
+layers in a Unity environment.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><span class="xref">Object</span></div>
+    <div class="level2"><span class="xref">ScriptableObject</span></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html">ViewModeConfigAssetBase</a></div>
+    <div class="level4"><span class="xref">ViewModeConfigAsset</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="Fwt.HexTerrains.ViewModes.Data.IViewModeConfig.html">IViewModeConfig</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase__name">ViewModeConfigAssetBase._name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_Name">ViewModeConfigAssetBase.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase__description">ViewModeConfigAssetBase._description</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_Description">ViewModeConfigAssetBase.Description</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase__colorMapTexturesTemp">ViewModeConfigAssetBase._colorMapTexturesTemp</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase__icon">ViewModeConfigAssetBase._icon</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_Icon">ViewModeConfigAssetBase.Icon</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_UpdateColorMap_Unity_Entities_EntityManager_Unity_Entities_Entity_System_Boolean_">ViewModeConfigAssetBase.UpdateColorMap(EntityManager, Entity, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_IsSupportedLayer__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_">ViewModeConfigAssetBase.IsSupportedLayer&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_UpdateColorMapTexture_Fwt_HexTerrains_DataLayers_CellColorsDataLayer_System_Boolean_UnityEngine_Texture2D_">ViewModeConfigAssetBase.UpdateColorMapTexture(CellColorsDataLayer, bool, Texture2D)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_GetTerrainLayer__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_">ViewModeConfigAssetBase.GetTerrainLayer&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.SetDirty()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">ScriptableObject.CreateInstance(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">ScriptableObject.CreateInstance(Type)</a>
+    </div>
+    <div>
+      <span class="xref">ScriptableObject.CreateInstance&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetInstanceID()</span>
+    </div>
+    <div>
+      <span class="xref">Object.GetHashCode()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">Object.Equals(object)</a>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.InstantiateAsync&lt;T&gt;(T, Transform, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, Vector3, Quaternion, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Transform, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.threading.cancellationtoken">Object.InstantiateAsync&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, Vector3, Quaternion, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">Object.InstantiateAsync&lt;T&gt;(T, int, ReadOnlySpan&lt;Vector3&gt;, ReadOnlySpan&lt;Quaternion&gt;, InstantiateParameters, CancellationToken)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Scene)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, InstantiateParameters)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate(Object, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate(Object, Transform, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Vector3, Quaternion, Transform)</span>
+    </div>
+    <div>
+      <span class="xref">Object.Instantiate&lt;T&gt;(T, Transform)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.Instantiate&lt;T&gt;(T, Transform, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.Destroy(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.Destroy(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.DestroyImmediate(Object, bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyImmediate(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsByType(Type, FindObjectsInactive, FindObjectsSortMode)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DontDestroyOnLoad(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">Object.DestroyObject(Object, float)</a>
+    </div>
+    <div>
+      <span class="xref">Object.DestroyObject(Object)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindSceneObjectsOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeIncludingAssets(Type)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectsOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectsByType&lt;T&gt;(FindObjectsInactive, FindObjectsSortMode)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindObjectOfType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">Object.FindObjectOfType&lt;T&gt;(bool)</a>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;()</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindFirstObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <span class="xref">Object.FindAnyObjectByType&lt;T&gt;(FindObjectsInactive)</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectsOfTypeAll(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindObjectOfType(Type, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindFirstObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.type">Object.FindAnyObjectByType(Type, FindObjectsInactive)</a>
+    </div>
+    <div>
+      <span class="xref">Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">Object.name</span>
+    </div>
+    <div>
+      <span class="xref">Object.hideFlags</span>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.ViewModes.html">ViewModes</a>.<a class="xref" href="Fwt.HexTerrains.ViewModes.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class ViewModeConfigAsset : ViewModeConfigAssetBase, IViewModeConfig</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This abstract class defines common functionality for updating color maps associated with
+terrain layers, such as height, biome, cell regions, and specialized GeoPlast layers. Derived classes should
+implement the required logic for updating color maps based on the current view mode. The class is intended to be
+used as a ScriptableObject asset and supports integration with Unity's Entity Component System (ECS).</p>
+</div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset__colorMapTextures" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset._colorMapTextures">_colorMapTextures</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Collection of color map textures to copy colors from data layers onto.&quot;)]
+[SerializeField]
+protected List&lt;Texture2D&gt; _colorMapTextures</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Texture2D</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_ColorMapTextures_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.ColorMapTextures*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_ColorMapTextures" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.ColorMapTextures">ColorMapTextures</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected List&lt;Texture2D&gt; ColorMapTextures { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Texture2D</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_CheckIfAvailableAndAddTexture_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.CheckIfAvailableAndAddTexture*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_CheckIfAvailableAndAddTexture__2_System_Collections_Generic_List_UnityEngine_Texture2D__System_Int32_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.CheckIfAvailableAndAddTexture``2(System.Collections.Generic.List{UnityEngine.Texture2D},System.Int32,Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference)">CheckIfAvailableAndAddTexture&lt;TLayerComponent, TLayer&gt;(List&lt;Texture2D&gt;, int, EntityManager, Entity, HexTerrainLayerReference)</h4>
+  <div class="markdown level1 summary"><p>Checks whether the specified texture is available and supported for the given terrain layer, and adds it to
+the provided texture list if so.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool CheckIfAvailableAndAddTexture&lt;TLayerComponent, TLayer&gt;(List&lt;Texture2D&gt; colorMapTexturesTemp, int textureIndex, EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : HexTerrainLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Texture2D</span>&gt;</td>
+        <td><span class="parametername">colorMapTexturesTemp</span></td>
+        <td><p>The list to which the texture will be added if available and supported. Cannot be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The index of the texture to check and add. Must be within the bounds of the available textures.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to query component data for the terrain entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain to check for the specified layer.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to validate support for.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the texture is available, supported, and was added to the list; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The component type representing the terrain layer group. Must implement HexTerrainLayerGroup and
+IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The mesh layer type associated with the terrain layer. Must inherit from ChunkMeshLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_CheckIfAvailableAndAddTexture__2_System_Collections_Generic_List_UnityEngine_Texture2D__System_Int32_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method performs validation on the input parameters and ensures that the
+specified layer is supported before adding the texture. No changes are made if any validation
+fails.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_GetColorMapTexture_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.GetColorMapTexture*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_GetColorMapTexture_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.GetColorMapTexture(System.Int32)">GetColorMapTexture(int)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the color map texture at the specified index from the <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_ColorMapTextures">ColorMapTextures</a> collection.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected Texture2D GetColorMapTexture(int textureIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The zero-based index of the color map texture to retrieve. Must be within the bounds of the color map
+texture collection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Texture2D</span></td>
+        <td><p>The texture at the specified index if available; otherwise, null.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_GetColorMapTexture_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Returns null if the color map texture collection is not initialized or if the
+specified index is out of range.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_GetColorMapTextures_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.GetColorMapTextures*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_GetColorMapTextures_Unity_Entities_EntityManager_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.GetColorMapTextures(Unity.Entities.EntityManager,Unity.Entities.Entity)">GetColorMapTextures(EntityManager, Entity)</h4>
+  <div class="markdown level1 summary"><p>Retrieves the collection of color map textures available for the specified terrain entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override IList&lt;Texture2D&gt; GetColorMapTextures(EntityManager entityManager, Entity terrainEntity)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The entity manager used to access and query entities and their components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain for which to retrieve color map textures.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;<span class="xref">Texture2D</span>&gt;</td>
+        <td><p>A list of <span class="xref">UnityEngine.Texture2D</span> objects representing the color map textures for the specified terrain
+entity. The list is empty if no color map textures are found.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html#Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAssetBase_GetColorMapTextures_Unity_Entities_EntityManager_Unity_Entities_Entity_">ViewModeConfigAssetBase.GetColorMapTextures(EntityManager, Entity)</a></div>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateCellEntityColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateCellEntityColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateCellEntityColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateCellEntityColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateCellEntityColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the color map for cell entities in the specified terrain layer using the provided textures buffer
+and layer reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateCellEntityColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : CellEntityLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entities within the terrain.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain whose cell entity color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, the default texture is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The component type representing the terrain layer group. Must implement HexTerrainLayerGroup and
+IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The cell entity layer type associated with the terrain layer. Must inherit from CellEntityLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateCellObjectColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateCellObjectColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateCellObjectColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateCellObjectColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateCellObjectColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the color map for cell objects in the specified terrain layer using the provided textures buffer and
+layer reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateCellObjectColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : CellObjectLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entities and their components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain whose cell object color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, all relevant textures may be updated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The type of the terrain layer group component, which must implement HexTerrainLayerGroup and IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The type of the cell object layer to update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateCellRegionColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateCellRegionColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateCellRegionColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateCellRegionColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateCellRegionColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the color map for a cell region layer associated with the specified terrain entity and layer
+reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateCellRegionColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : CellRegionLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entity data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The terrain entity whose cell region color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, all relevant textures may be updated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The component type representing the terrain layer group. Must implement HexTerrainLayerGroup and
+IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The cell region layer type to update. Must inherit from CellRegionLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateChunkMeshBiomeColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateChunkMeshBiomeColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateChunkMeshBiomeColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateChunkMeshBiomeColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateChunkMeshBiomeColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the biome color map for a chunk mesh layer using the specified terrain layer and color map textures.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateChunkMeshBiomeColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : ChunkMeshLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and manage entities and their components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain for which the biome color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to be used for the update operation.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, all relevant textures may be updated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the biome color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The component type representing the terrain layer group. Must implement HexTerrainLayerGroup and
+IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The chunk mesh layer type to update. Must inherit from ChunkMeshLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateChunkMeshHeightColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateChunkMeshHeightColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateChunkMeshHeightColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateChunkMeshHeightColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateChunkMeshHeightColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the height-based color map texture for a terrain chunk mesh layer if the specified layer is present.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateChunkMeshHeightColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : ChunkMeshLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and manage entities and their components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain chunk whose color map is to be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, the default texture is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map was successfully updated; otherwise, false if the specified terrain layer is not
+present.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The component type representing the terrain layer group. Must implement HexTerrainLayerGroup and
+IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The chunk mesh layer type to update. Must inherit from ChunkMeshLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateColorMapTexture_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateColorMapTexture*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateColorMapTexture_Fwt_HexTerrains_DataLayers_CellColorsDataLayer_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateColorMapTexture(Fwt.HexTerrains.DataLayers.CellColorsDataLayer,System.Boolean,System.Int32)">UpdateColorMapTexture(CellColorsDataLayer, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the color map texture for the specified data layer if the color map or view mode is marked as dirty.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateColorMapTexture(CellColorsDataLayer colorMap, bool isViewModeDirty, int textureIndex = 0)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellColorsDataLayer.html">CellColorsDataLayer</a></td>
+        <td><span class="parametername">colorMap</span></td>
+        <td><p>The color map data layer to update. Cannot be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the texture to be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The index of the texture to update within the buffer. If not specified, the color map's default texture
+index is used. Must be within the bounds of the buffer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map texture was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateColorMapTexture_Fwt_HexTerrains_DataLayers_CellColorsDataLayer_System_Boolean_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method only updates the texture if the color map or view mode is dirty and the
+specified texture exists in the buffer. No action is taken if the color map is not dirty, the view mode is
+not dirty, or the texture is unavailable.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateColorMap__2___0_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateColorMap``2(``0,System.Boolean,System.Int32)">UpdateColorMap&lt;TDataLayer, TCellValue&gt;(TDataLayer, bool, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected bool UpdateColorMap&lt;TDataLayer, TCellValue&gt;(TDataLayer dataLayer, bool isViewModeDirty, int textureIndex = 0) where TDataLayer : ColorMapCellValueDataLayer&lt;TCellValue&gt; where TCellValue : unmanaged</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TDataLayer</span></td>
+        <td><span class="parametername">dataLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TDataLayer</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TCellValue</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastAmountColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastAmountColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastAmountColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastAmountColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateGeoPlastAmountColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the color map for the specified GeoPlast terrain layer using the provided textures buffer and layer
+reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateGeoPlastAmountColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : GeoPlastLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entities and their components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain whose color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the specific terrain layer to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, the default texture is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The type of the terrain layer group component, which must implement HexTerrainLayerGroup and IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The type of the GeoPlast terrain layer to update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastDensityColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastDensityColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastDensityColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastDensityColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateGeoPlastDensityColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the density color map for a specified GeoPlast terrain layer using the provided texture buffer and
+layer reference.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateGeoPlastDensityColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : GeoPlastLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entity components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain whose density color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the specific terrain layer to update.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If not specified, all relevant textures may be updated.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the density color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The type of the terrain layer group component, which must implement IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The type of the GeoPlast terrain layer to update.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastHeatColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastHeatColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastHeatColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastHeatColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateGeoPlastHeatColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the heat color map texture for a specified terrain layer if the layer exists.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateGeoPlastHeatColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : MaterialGeoPlastLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entity components.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain whose heat color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the terrain layer to identify which layer's heat color map should be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, the default texture is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the heat color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The type of the terrain layer group component, which must implement IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The type of the material layer associated with the terrain.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastTemperatureColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastTemperatureColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastTemperatureColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastTemperatureColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateGeoPlastTemperatureColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateGeoPlastTemperatureColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : MaterialGeoPlastLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastVolumeColorMap_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastVolumeColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_ViewModes_Data_ViewModeConfigAsset_UpdateGeoPlastVolumeColorMap__2_Unity_Entities_EntityManager_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Boolean_System_Int32_" data-uid="Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.UpdateGeoPlastVolumeColorMap``2(Unity.Entities.EntityManager,Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Boolean,System.Int32)">UpdateGeoPlastVolumeColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager, Entity, HexTerrainLayerReference, bool, int)</h4>
+  <div class="markdown level1 summary"><p>Updates the color map texture for a GeoPlast volume layer associated with the specified terrain entity.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual bool UpdateGeoPlastVolumeColorMap&lt;TLayerComponent, TLayer&gt;(EntityManager entityManager, Entity terrainEntity, HexTerrainLayerReference layerReference, bool isViewModeDirty, int textureIndex = 0) where TLayerComponent : HexTerrainLayerGroup, IComponentData where TLayer : GeoPlastLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EntityManager</span></td>
+        <td><span class="parametername">entityManager</span></td>
+        <td><p>The EntityManager instance used to access and modify entity data.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td><p>The entity representing the terrain whose volume color map will be updated.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>A reference to the specific terrain layer to update within the terrain entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isViewModeDirty</span></td>
+        <td><p>Indicates whether the view mode has changed and requires the color map to be refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">textureIndex</span></td>
+        <td><p>The optional index of the texture to update. If null, the default texture is used.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the color map was successfully updated; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerComponent</span></td>
+        <td><p>The component type representing a group of terrain layers. Must implement HexTerrainLayerGroup and
+IComponentData.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>The terrain layer type to update. Must derive from GeoPlastLayer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.IViewModeConfig.html">IViewModeConfig</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy__1___0_">Extensions_UnityObject.SmartDestroy&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDisableGameObject__1___0_">Extensions_UnityObject.SmartDisableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartEnableGameObject__1___0_">Extensions_UnityObject.SmartEnableGameObject&lt;TObject&gt;(TObject)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

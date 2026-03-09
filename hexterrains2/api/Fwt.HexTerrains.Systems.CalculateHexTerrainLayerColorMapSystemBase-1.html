@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalculateHexTerrainLayerColorMapSystemBase&lt;TTerrainLayer&gt; | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity Entity Component System (ECS) framework.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,9 @@
 
 
   <h1 id="Fwt_HexTerrains_Systems_CalculateHexTerrainLayerColorMapSystemBase_1" data-uid="Fwt.HexTerrains.Systems.CalculateHexTerrainLayerColorMapSystemBase`1" class="text-break">Class CalculateHexTerrainLayerColorMapSystemBase&lt;TTerrainLayer&gt;</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity
+Entity Component System (ECS) framework.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -93,6 +95,7 @@
       <div class="level4"><a class="xref" href="Fwt.HexTerrains.CellObjects.Systems.CalcCellObjectsColorMapSystem.html">CalcCellObjectsColorMapSystem</a></div>
       <div class="level4"><a class="xref" href="Fwt.HexTerrains.ChunkMehes.Systems.CalcChunkMeshColorMapSystem.html">CalcChunkMeshColorMapSystem</a></div>
       <div class="level4"><a class="xref" href="Fwt.HexTerrains.GeoPlasts.Systems.CalcGeoPlastColorMapSystem.html">CalcGeoPlastColorMapSystem</a></div>
+      <div class="level4"><a class="xref" href="Fwt.HexTerrains.Minerals.Systems.CalcCellMineralsColorMapSystem.html">CalcCellMineralsColorMapSystem</a></div>
       <div class="level4"><a class="xref" href="Fwt.HexTerrains.Regions.Systems.CalcRegionsColorMapSystem.html">CalcRegionsColorMapSystem</a></div>
   </div>
   <div class="inheritedMembers">
@@ -306,17 +309,29 @@ public abstract class CalculateHexTerrainLayerColorMapSystemBase&lt;TTerrainLaye
     <tbody>
       <tr>
         <td><span class="parametername">TTerrainLayer</span></td>
-        <td></td>
+        <td><p>The type of the terrain layer to process. Must inherit from HexTerrainLayer and implement IComponentData.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_Systems_CalculateHexTerrainLayerColorMapSystemBase_1_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Inheritors should implement specific color map calculation logic for different terrain layer
+types by overriding the CalculateColorMap method. The system manages visibility checks and can skip processing
+of invisible terrains if the IsSkipInvisibleTerrains property is set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>. This class is
+intended to be used as part of the hex terrain rendering pipeline and ensures that only relevant terrain layers
+are processed each frame.</p>
+</div>
   <h3 id="properties">Properties
 </h3>
 
 
   <a id="Fwt_HexTerrains_Systems_CalculateHexTerrainLayerColorMapSystemBase_1_IsSkipInvisibleTerrains_" data-uid="Fwt.HexTerrains.Systems.CalculateHexTerrainLayerColorMapSystemBase`1.IsSkipInvisibleTerrains*"></a>
   <h4 id="Fwt_HexTerrains_Systems_CalculateHexTerrainLayerColorMapSystemBase_1_IsSkipInvisibleTerrains" data-uid="Fwt.HexTerrains.Systems.CalculateHexTerrainLayerColorMapSystemBase`1.IsSkipInvisibleTerrains">IsSkipInvisibleTerrains</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>If true, the system will skip processing for terrains that are not visible.
+If false, the system will calculate color maps for all terrains regardless of their visibility status.
+The default value is false, meaning that by default, the system will process all terrains.
+Override this property in derived classes to change the behavior as needed.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">

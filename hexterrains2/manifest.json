@@ -62,6 +62,16 @@
     },
     {
       "type": "Conceptual",
+      "source_relative_path": "Instruction/cell-minerals-layer.md",
+      "output": {
+        ".html": {
+          "relative_path": "Instruction/cell-minerals-layer.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
       "source_relative_path": "Instruction/cell-region-layer-initialization.md",
       "output": {
         ".html": {
@@ -236,6 +246,26 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/CellEntityTools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/CellMineralsLayerConfigAsset.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellMineralsLayerConfigAsset.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/CellMineralsLayerGroupAuthoring.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellMineralsLayerGroupAuthoring.png"
         }
       },
       "version": ""
@@ -666,6 +696,16 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/LayerGroups.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/MineralsViewMode.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/MineralsViewMode.png"
         }
       },
       "version": ""
@@ -3617,6 +3657,34 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.AttachMinimapScreenAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.AttachMinimapScreenAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.AttachMinimapScreenAuthoring",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.AttachMinimapScreenBaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.AttachMinimapScreenBaker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.AttachMinimapScreenBaker",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Brushes.CreateHexTerrainBrushViewRequest.yml",
       "output": {
         ".html": {
@@ -4453,7 +4521,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorMapSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellEntities.Systems.CalcCellEntityColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4481,7 +4549,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntityLayersSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellEntities.Systems.CleanupCellEntityLayersSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5027,7 +5095,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellObjects.Systems.CalcCellObjectsColorMapSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellObjects.Systems.CalcCellObjectsColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5041,7 +5109,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellObjects.Systems.CleanupCellObjectLayerSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellObjects.Systems.CleanupCellObjectLayerSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -5853,7 +5921,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.ChunkMehes.Data.CreateChunkMeshLayerRequest",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ChunkMehes.Data.CreateChunkMeshLayerRequest.yml\" sourcestartlinenumber=\"1\">Represents a request to create a terrain layer using a specified chunk mesh layer configuration.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6273,7 +6341,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.ChunkMehes.Systems.CalcChunkMeshColorMapSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ChunkMehes.Systems.CalcChunkMeshColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -6315,7 +6383,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.ChunkMehes.Systems.CleanupChunkMeshLayersSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ChunkMehes.Systems.CleanupChunkMeshLayersSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8331,7 +8399,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.GeoPlasts.Systems.CalcGeoPlastColorMapSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.GeoPlasts.Systems.CalcGeoPlastColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8345,7 +8413,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -8867,6 +8935,174 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Data.CellMineralsLayer",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.yml\" sourcestartlinenumber=\"1\">Terrain layer that holds the mineral data for each cell in the hex terrain.\nIt contains two maps: one for the mineral indices and another for the mineral amounts.\nThe mineral index map uses an unsigned integer to represent the type of mineral present in each cell,\nwhile the mineral amount map uses a float to represent the quantity of minerals present in each cell.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayerConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayerConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Data.CellMineralsLayerConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.yml\" sourcestartlinenumber=\"1\">Represents a group of cell minerals layers within a hexagonal terrain system, providing functionality to create\nand initialize terrain layers based on specified parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Data.CreateCellMineralsLayerRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Data.CreateCellMineralsLayerRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Data.CreateCellMineralsLayerRequest",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Data.CreateCellMineralsLayerRequest.yml\" sourcestartlinenumber=\"1\">Buffer element data that represents a request to create a <xref href=\"Fwt.HexTerrains.Minerals.Data.CellMineralsLayer\" data-throw-if-not-resolved=\"false\"></xref> with the specified name and arguments.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Data.ICellMineralsLayerConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Data.ICellMineralsLayerConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Data.ICellMineralsLayerConfig",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Data.ICellMineralsLayerConfig.yml\" sourcestartlinenumber=\"1\">Interface for a <xref href=\"Fwt.HexTerrains.Minerals.Data.CellMineralsLayer\" data-throw-if-not-resolved=\"false\"></xref> configuration. Used to initialize the <xref href=\"Fwt.HexTerrains.Minerals.Data.CellMineralsLayer\" data-throw-if-not-resolved=\"false\"></xref> with the provided parameters.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Data",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.yml\" sourcestartlinenumber=\"1\">Represents a parallel job that generates a color map for a hexagonal terrain based on mineral indices and their\ncorresponding amounts.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Jobs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Jobs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Jobs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Systems.CalcCellMineralsColorMapSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Systems.CalcCellMineralsColorMapSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Systems.CalcCellMineralsColorMapSystem",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Systems.CalcCellMineralsColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Systems.CleanupCellMineralsColorMapSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Systems.CleanupCellMineralsColorMapSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Systems.CleanupCellMineralsColorMapSystem",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Systems.CleanupCellMineralsColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Systems.CreateCellMineralsLayerGroupSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Systems.CreateCellMineralsLayerGroupSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Systems.CreateCellMineralsLayerGroupSystem",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Minerals.Systems.CreateCellMineralsLayerGroupSystem.yml\" sourcestartlinenumber=\"1\">Initializes and manages the creation of mineral layer groups for hex terrain entities based on pending requests.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Minerals.Systems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Minerals.Systems.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Minerals.Systems",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.GeoPlasts.DataLayers.FlowMapDataLayer.yml",
       "output": {
         ".html": {
@@ -8891,6 +9127,62 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.GeoPlasts.DataLayers",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerAuthoring",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerGroupAuthoring.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerGroupAuthoring.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerGroupAuthoring",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerGroupBaker.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerGroupBaker.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.CellMineralsLayerGroupBaker",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Packages.com.freewebtime.hexterrains.Runtime.Minerals",
       "Summary": null
     },
     {
@@ -9087,7 +9379,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Regions.Systems.CalcRegionsColorMapSystem",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Regions.Systems.CalcRegionsColorMapSystem.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -9105,6 +9397,20 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Regions.Systems.CleanupCellRegionLayerGroupSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Regions.Systems.CleanupCellRegionLayerGroupSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Regions.Systems.CleanupCellRegionLayerGroupSystem",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Regions.Systems.CleanupCellRegionLayerGroupSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.Regions.Systems.CleanupHexRegionsLayerGroupSystem.yml",
       "output": {
         ".html": {
@@ -9114,7 +9420,21 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Regions.Systems.CleanupHexRegionsLayerGroupSystem",
+      "Title": "Fwt.HexTerrains.Regions.Systems.CleanupCellRegionsLayerGroupSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Regions.Systems.CreateCellRegionLayerGroupSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Regions.Systems.CreateCellRegionLayerGroupSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Regions.Systems.CreateCellRegionLayerGroupSystem",
       "Summary": null
     },
     {
@@ -9128,7 +9448,7 @@
       "version": "",
       "Uid": null,
       "IsMRef": true,
-      "Title": "Fwt.HexTerrains.Regions.Systems.CreateHexRegionsLayerGroupSystem",
+      "Title": "Fwt.HexTerrains.Regions.Systems.CreateCellRegionsLayerGroupSystem",
       "Summary": null
     },
     {
@@ -9759,7 +10079,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CalculateHexTerrainLayerColorMapSystemBase<TTerrainLayer>",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CalculateHexTerrainLayerColorMapSystemBase-1.yml\" sourcestartlinenumber=\"1\">Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity\nEntity Component System (ECS) framework.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -9774,6 +10094,20 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.Systems.CleanupChunksGridLayerSystem",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CleanupChunksGridLayerSystem.yml\" sourcestartlinenumber=\"1\">System that cleans up the <xref href=\"Fwt.HexTerrains.Data.ChunksGridLayer\" data-throw-if-not-resolved=\"false\"></xref> (usually it cleans up the dirty flags)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem<TTerrainLayer>",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.yml\" sourcestartlinenumber=\"1\">Provides a base system for cleaning up hex terrain layers based on their visibility status during the update\ncycle.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -11373,6 +11707,160 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.CellMineralsAmountHeightmapHeatUserToolConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.CellMineralsAmountHeightmapHeatUserToolConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.CellMineralsAmountHeightmapHeatUserToolConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformCellMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformCellMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformCellMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.NoiseCellMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.NoiseCellMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.NoiseCellMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralIndexUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralIndexUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralIndexUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothCellMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothCellMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothCellMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralIndexUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralIndexUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralIndexUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsAmountUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsAmountUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsAmountUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsUserToolStateConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsUserToolStateConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsUserToolStateConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.Configs.SunSettingsUserToolStateConfig.yml",
       "output": {
         ".html": {
@@ -12717,6 +13205,160 @@
     },
     {
       "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.ApplyHeightmapToCellMineralsAmountUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.ApplyHeightmapToCellMineralsAmountUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.ApplyHeightmapToCellMineralsAmountUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.DeformCellMineralsAmountUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.DeformCellMineralsAmountUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.DeformCellMineralsAmountUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.NoiseCellMineralsAmountUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.NoiseCellMineralsAmountUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.NoiseCellMineralsAmountUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralIndexUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralIndexUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralIndexUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralsAmountUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralsAmountUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralsAmountUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralsUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralsUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.PaintCellMineralsUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.SmoothCellMineralsAmountUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.SmoothCellMineralsAmountUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.SmoothCellMineralsAmountUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralIndexUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralIndexUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralIndexUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralsAmountUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralsAmountUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralsAmountUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralsUserToolState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralsUserToolState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals.StampCellMineralsUserToolState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.Minerals.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.UserTools.SM.States.Minerals",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
       "source_relative_path": "api/Fwt.HexTerrains.UserTools.SM.States.PaintChunkMeshTransparencyUserToolState.yml",
       "output": {
         ".html": {
@@ -13483,6 +14125,342 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.UserTools",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.AttachMinimapScreenRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.AttachMinimapScreenRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.AttachMinimapScreenRequest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.CreateViewModeConfigByAssetRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.CreateViewModeConfigByAssetRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.CreateViewModeConfigByAssetRequest",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.CreateViewModeConfigByAssetRequest.yml\" sourcestartlinenumber=\"1\">Represents a request to create view mode configs on the terrain entity and save the <xref href=\"Fwt.HexTerrains.ViewModes.Data.CreateViewModeConfigByAssetRequest.ConfigAsset\" data-throw-if-not-resolved=\"false\"></xref> in it.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode.yml\" sourcestartlinenumber=\"1\">Contains the current view mode of the terrain.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IHexTerrainViewModeSubscriber.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IHexTerrainViewModeSubscriber.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.IHexTerrainViewModeSubscriber",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IViewModeCollectionConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IViewModeCollectionConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.IViewModeCollectionConfig",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.IViewModeCollectionConfig.yml\" sourcestartlinenumber=\"1\">Represents a configuration that provides a collection of available view mode configuration items</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IViewModeConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IViewModeConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.IViewModeConfig",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.IViewModeConfig.yml\" sourcestartlinenumber=\"1\">Defines the configuration interface for a view mode, including its name and logic for updating color map\ntextures associated with terrain entities.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IViewModeConfigsComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.IViewModeConfigsComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.IViewModeConfigsComponent",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.IViewModeConfigsComponent.yml\" sourcestartlinenumber=\"1\">Represents a component that provides configuration for a view mode collection.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.MinimapScreenReference.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.MinimapScreenReference.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.MinimapScreenReference",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.yml\" sourcestartlinenumber=\"1\">Request struct used to set the view mode of a terrain entity, allowing specification by either index or name. This struct can be used to request a change in the view mode of a terrain, providing flexibility in how the desired view mode is identified.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.UniversalViewModeDataLayerTypes.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.UniversalViewModeDataLayerTypes.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.UniversalViewModeDataLayerTypes",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.UniversalViewModeItemConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.UniversalViewModeItemConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.UniversalViewModeItemConfig",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.UniversalViewModeConfigAsset",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeCollectionConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeCollectionConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.ViewModeCollectionConfigAsset",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.ViewModeCollectionConfigAsset.yml\" sourcestartlinenumber=\"1\">Represents a configuration that provides a collection of available view mode configuration items</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAsset.yml\" sourcestartlinenumber=\"1\">Provides a base class for view mode configuration assets that manage color map updates for various terrain\nlayers in a Unity environment.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigAssetBase.yml\" sourcestartlinenumber=\"1\">Provides a base class for view mode configuration assets that manage color map updates for various terrain\nlayers in a Unity environment.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigsComponent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigsComponent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data.ViewModeConfigsComponent",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Data.ViewModeConfigsComponent.yml\" sourcestartlinenumber=\"1\">Component that holds a reference to the collection of view mode configurations for a terrain entity.\nThis component is used to provide access to the available view modes\nand their configurations for systems that need to respond to changes in the terrain's view mode.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Data.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Data.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Data",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.AttachMinimapScreenSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.AttachMinimapScreenSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems.AttachMinimapScreenSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.CreateViewModeConfigsComponentSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.CreateViewModeConfigsComponentSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems.CreateViewModeConfigsComponentSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateColorMapTexturesSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateColorMapTexturesSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems.UpdateColorMapTexturesSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenOnVsibilityChangeSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenOnVsibilityChangeSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenOnVsibilityChangeSystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenSystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenSystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenSystem",
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.ViewModes.Systems.UpdateMiniMapScreenSystem.yml\" sourcestartlinenumber=\"1\">Provides a base system for updating minimap screens associated with hex terrain entities during the pre-render\nphase.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateViewModesConfigOnUISystem.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.UpdateViewModesConfigOnUISystem.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems.UpdateViewModesConfigOnUISystem",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.ViewModes.Systems.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.ViewModes.Systems",
       "Summary": null
     },
     {

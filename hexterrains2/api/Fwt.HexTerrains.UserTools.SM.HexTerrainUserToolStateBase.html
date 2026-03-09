@@ -607,13 +607,13 @@ disposing or shutting down the object to ensure a clean transition.</p>
 
 
   <a id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetViewMode*"></a>
-  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetViewMode(System.Int32)">SetViewMode(int)</h4>
+  <h4 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_Fwt_HexTerrains_ViewModes_Data_SetViewModeRequest_" data-uid="Fwt.HexTerrains.UserTools.SM.HexTerrainUserToolStateBase.SetViewMode(Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest)">SetViewMode(SetViewModeRequest)</h4>
   <div class="markdown level1 summary"><p>Sets the current terrain view mode to the specified value.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected virtual void SetViewMode(int viewMode)</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void SetViewMode(SetViewModeRequest request)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -626,14 +626,13 @@ disposing or shutting down the object to ensure a clean transition.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">viewMode</span></td>
-        <td><p>The view mode to apply to the terrain. Must be a valid mode recognized by the terrain API.</p>
-</td>
+        <td><a class="xref" href="Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.html">SetViewModeRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
-  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_System_Int32__remarks">Remarks</h5>
+  <h5 id="Fwt_HexTerrains_UserTools_SM_HexTerrainUserToolStateBase_SetViewMode_Fwt_HexTerrains_ViewModes_Data_SetViewModeRequest__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>This method stores the previous view mode before updating to the new mode. Derived
 classes can override this method to implement custom behavior when changing view modes.</p>
 </div>

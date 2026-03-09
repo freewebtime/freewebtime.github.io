@@ -131,6 +131,16 @@
       <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.StampRegionsUserToolStateConfigAsset.html">StampRegionsUserToolStateConfigAsset</a></div>
       <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.StampSurfaceBiomeUserToolStateConfigAsset.html">StampSurfaceBiomeUserToolStateConfigAsset</a></div>
       <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.StampSurfaceHeightUserToolStateConfigAsset.html">StampSurfaceHeightUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.CellMineralsAmountHeightmapHeatUserToolConfigAsset.html">CellMineralsAmountHeightmapHeatUserToolConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.DeformCellMineralsAmountUserToolStateConfigAsset.html">DeformCellMineralsAmountUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.NoiseCellMineralsAmountUserToolStateConfigAsset.html">NoiseCellMineralsAmountUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralIndexUserToolStateConfigAsset.html">PaintCellMineralIndexUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsAmountUserToolStateConfigAsset.html">PaintCellMineralsAmountUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.PaintCellMineralsToolStateConfigAsset.html">PaintCellMineralsToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.SmoothCellMineralsAmountUserToolStateConfigAsset.html">SmoothCellMineralsAmountUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralIndexUserToolStateConfigAsset.html">StampCellMineralIndexUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsAmountUserToolStateConfigAsset.html">StampCellMineralsAmountUserToolStateConfigAsset</a></div>
+      <div class="level7"><a class="xref" href="Fwt.HexTerrains.UserTools.SM.Configs.States.CellMinerals.StampCellMineralsUserToolStateConfigAsset.html">StampCellMineralsUserToolStateConfigAsset</a></div>
   </div>
   <div class="implements">
     <h5>Implements</h5>
@@ -468,7 +478,7 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of view modes for each layer index.\nIndex = layer index, value = view mode for that layer active.&quot;)]
 [SerializeField]
-protected List&lt;int&gt; _viewModeByLayerIndex</code></pre>
+protected List&lt;SetViewModeRequest&gt; _viewModeByLayerIndex</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -480,7 +490,7 @@ protected List&lt;int&gt; _viewModeByLayerIndex</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.html">SetViewModeRequest</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -497,7 +507,7 @@ Index = layer index, value = view mode for that layer active.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;int&gt; ViewModeByLayerIndex { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;SetViewModeRequest&gt; ViewModeByLayerIndex { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -509,7 +519,7 @@ Index = layer index, value = view mode for that layer active.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.html">SetViewModeRequest</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>

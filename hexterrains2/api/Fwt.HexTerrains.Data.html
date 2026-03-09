@@ -118,19 +118,6 @@ Each nested layer must be derived from TTerrainLayer type.</p>
 </section>
       <h4><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainUtils.html">HexTerrainUtils</a></h4>
       <section></section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.UniversalViewModeConfigAsset.html">UniversalViewModeConfigAsset</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.ViewModeCollectionConfigAsset.html">ViewModeCollectionConfigAsset</a></h4>
-      <section><p>Represents a configuration that provides a collection of available view mode configuration items</p>
-</section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.ViewModeConfigAsset.html">ViewModeConfigAsset</a></h4>
-      <section><p>Provides a base class for view mode configuration assets that manage color map updates for various terrain
-layers in a Unity environment.</p>
-</section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.ViewModeConfigAssetBase.html">ViewModeConfigAssetBase</a></h4>
-      <section><p>Provides a base class for view mode configuration assets that manage color map updates for various terrain
-layers in a Unity environment.</p>
-</section>
     <h3 id="structs">
 Structs
 </h3>
@@ -190,9 +177,6 @@ Contains information about the cell's biome, position, coordinate, byte height (
       <section><p>Struct for storing hex terrain settings like TerrainSize, ChunkSize, HexRotation, HexLayout, etc.
 Has methods for converting between pixel and cell coordinates, getting cell index by coordinates, etc.</p>
 </section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a></h4>
-      <section><p>Contains the current view mode of the terrain.</p>
-</section>
       <h4><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html">HexTerrainVisibility</a></h4>
       <section><p>Component to indicate whether the hex terrain is visible or not.
 Change <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainVisibility.html#Fwt_HexTerrains_Data_HexTerrainVisibility_Value">Value</a> to false to exclude the hex terrain from rendering.</p>
@@ -208,12 +192,6 @@ fill options, randomization, source texture settings, and color mapping details.
       <h4><a class="xref" href="Fwt.HexTerrains.Data.NotInitializedTerrain.html">NotInitializedTerrain</a></h4>
       <section><p>While this component is present on terrain entity, it's not fully initialized.
 It is removed from entity at the end of <a class="xref" href="Fwt.HexTerrains.HexTerrainsInitGroup.html">HexTerrainsInitGroup</a></p>
-</section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.UniversalViewModeConfigAsset.UniversalViewModeItemConfig.html">UniversalViewModeConfigAsset.UniversalViewModeItemConfig</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.ViewModeCollectionConfigComponent.html">ViewModeCollectionConfigComponent</a></h4>
-      <section><p>Represents a component that provides configuration for a collection of view modes within an entity. Used to
-reference and manage the asset containing view mode settings.</p>
 </section>
     <h3 id="interfaces">
 Interfaces
@@ -231,16 +209,6 @@ automatic color mapping mode, color palette, and texture index settings.</p>
       <h4><a class="xref" href="Fwt.HexTerrains.Data.ITerrainLayerFactory.html">ITerrainLayerFactory</a></h4>
       <section><p>Defines a factory for creating terrain layer instances used in hex-based map systems.</p>
 </section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.IViewModeCollectionConfig.html">IViewModeCollectionConfig</a></h4>
-      <section><p>Represents a configuration that provides a collection of available view mode configuration items</p>
-</section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.IViewModeCollectionConfigComponent.html">IViewModeCollectionConfigComponent</a></h4>
-      <section><p>Represents a component that provides configuration for a view mode collection.</p>
-</section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.IViewModeConfig.html">IViewModeConfig</a></h4>
-      <section><p>Defines the configuration interface for a view mode, including its name and logic for updating color map
-textures associated with terrain entities.</p>
-</section>
     <h3 id="enums">
 Enums
 </h3>
@@ -248,8 +216,6 @@ Enums
       <section><p>Enumeration of all available modes for automatic color mapping in IColorMapHexTerrainLayer.</p>
 </section>
       <h4><a class="xref" href="Fwt.HexTerrains.Data.HexDirections3d.html">HexDirections3d</a></h4>
-      <section></section>
-      <h4><a class="xref" href="Fwt.HexTerrains.Data.UniversalViewModeConfigAsset.UniversalViewModeDataLayerTypes.html">UniversalViewModeConfigAsset.UniversalViewModeDataLayerTypes</a></h4>
       <section></section>
 
 

@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CleanupGeoPlastLayersSystem | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Provides a base system for cleaning up hex terrain layers based on their visibility status during the update cycle.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,17 +81,29 @@
 
 
   <h1 id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem" data-uid="Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem" class="text-break">Class CleanupGeoPlastLayersSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides a base system for cleaning up hex terrain layers based on their visibility status during the update
+cycle.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
     <div class="level1"><span class="xref">ComponentSystemBase</span></div>
     <div class="level2"><span class="xref">SystemBase</span></div>
-    <div class="level3"><span class="xref">CleanupGeoPlastLayersSystem</span></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.html">CleanupHexTerrainLayerSystem</a>&lt;<a class="xref" href="Fwt.HexTerrains.GeoPlasts.Data.GeoPlastLayerGroup.html">GeoPlastLayerGroup</a>&gt;</div>
+    <div class="level4"><span class="xref">CleanupGeoPlastLayersSystem</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.html#Fwt_HexTerrains_Systems_CleanupHexTerrainLayerSystem_1_IsSkipInvisibleTerrains">CleanupHexTerrainLayerSystem&lt;GeoPlastLayerGroup&gt;.IsSkipInvisibleTerrains</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.html#Fwt_HexTerrains_Systems_CleanupHexTerrainLayerSystem_1_OnCreate">CleanupHexTerrainLayerSystem&lt;GeoPlastLayerGroup&gt;.OnCreate()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Systems.CleanupHexTerrainLayerSystem-1.html#Fwt_HexTerrains_Systems_CleanupHexTerrainLayerSystem_1_OnUpdate">CleanupHexTerrainLayerSystem&lt;GeoPlastLayerGroup&gt;.OnUpdate()</a>
+    </div>
     <div>
       <span class="xref">SystemBase.Dependency</span>
     </div>
@@ -175,9 +187,6 @@
     </div>
     <div>
       <span class="xref">ComponentSystemBase.WorldUpdateAllocator</span>
-    </div>
-    <div>
-      <span class="xref">ComponentSystemBase.OnCreate()</span>
     </div>
     <div>
       <span class="xref">ComponentSystemBase.OnStartRunning()</span>
@@ -289,53 +298,13 @@
   <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
   <h5 id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[UpdateInGroup(typeof(HexTerrainsCleanupGroup))]
-public class CleanupGeoPlastLayersSystem : SystemBase</code></pre>
+    <pre><code class="lang-csharp hljs">public class CleanupGeoPlastLayersSystem : CleanupHexTerrainLayerSystem&lt;GeoPlastLayerGroup&gt;</code></pre>
   </div>
-  <h3 id="methods">Methods
-</h3>
-
-
-  <a id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_OnCreateForCompiler_" data-uid="Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem.OnCreateForCompiler*"></a>
-  <h4 id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_OnCreateForCompiler" data-uid="Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem.OnCreateForCompiler">OnCreateForCompiler()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnCreateForCompiler()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Unity.Entities.ComponentSystemBase.OnCreateForCompiler()</span></div>
-
-
-  <a id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_OnUpdate_" data-uid="Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem.OnUpdate*"></a>
-  <h4 id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_OnUpdate" data-uid="Fwt.HexTerrains.GeoPlasts.Systems.CleanupGeoPlastLayersSystem.OnUpdate">OnUpdate()</h4>
-  <div class="markdown level1 summary"><p>Implement <code>OnUpdate()</code> to perform the major work of this system.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">protected override void OnUpdate()</code></pre>
-  </div>
-  <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">Unity.Entities.SystemBase.OnUpdate()</span></div>
-  <h5 id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_OnUpdate_remarks">Remarks</h5>
-  <div class="markdown level1 remarks"><p>
-By default, the system invokes `OnUpdate()` once every frame on the main thread.
-To skip OnUpdate if all of the system's [EntityQueries] are empty, use the
-[RequireMatchingQueriesForUpdateAttribute]. To limit when OnUpdate is invoked, you can
-specify components that must exist, or queries that match specific Entities. To do
-this, call <span class="xref">Unity.Entities.ComponentSystemBase.RequireForUpdate&lt;T&gt;()</span> or
-<span class="xref">Unity.Entities.ComponentSystemBase.RequireForUpdate(Unity.Entities.EntityQuery)</span>
-in the system's OnCreate method. For more information, see [ShouldRunSystem].
-</p>
-<p>
-The [Entities.ForEach] and [Job.WithCode] constructions provide convenient mechanisms for defining jobs.
-You can also instantiate and schedule an <span class="xref">Unity.Entities.IJobChunk</span> instance; you can use the
-[C# Job System] or you can perform work on the main thread. If you call <span class="xref">Unity.Entities.EntityManager</span> methods
-that perform structural changes on the main thread, be sure to arrange the system order to minimize the
-performance impact of the resulting [sync points].
-</p>
+  <h5 id="Fwt_HexTerrains_GeoPlasts_Systems_CleanupGeoPlastLayersSystem_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This system processes entities containing the specified terrain layer type and a visibility
+component. If the IsSkipInvisibleTerrains property is set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>, the system skips cleanup
+for terrains that are not visible. Cleanup operations are performed asynchronously during the system's update
+phase. Inherit from this class to implement custom cleanup logic for specific terrain layer types.</p>
 </div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>

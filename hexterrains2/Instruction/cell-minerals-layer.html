@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Cell Minerals Layer | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Cell Minerals Layer | Hex Terrains Framework ">
+    
+    
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="cell-minerals-layer">Cell Minerals Layer</h1>
+
+<p><img src="images/CellMineralsLayerConfigAsset.png" alt="Cell Minerals Layer Config"></p>
+<p>This page documents the <strong>CellMinerals</strong> feature as implemented by:</p>
+<ul>
+<li><code>CellMineralsLayer</code> (runtime data + color map generation)</li>
+<li><code>ICellMineralsLayerConfig</code> (config contract)</li>
+<li><code>CellMineralsLayerConfigAsset</code> (default authoring + config implementation)</li>
+<li><code>CellMineralsLayerGroup</code> / <code>CreateCellMineralsLayerRequest</code> (ECS-friendly creation pattern)</li>
+</ul>
+<hr>
+<h2 id="what-problem-it-solves">What problem it solves</h2>
+<p><code>CellMineralsLayer</code> stores <em>per-cell mineral data</em> on a hex terrain:</p>
+<ol>
+<li><strong>Mineral type</strong> per cell (an integer ID, stored as <code>uint</code>)</li>
+<li><strong>Mineral amount</strong> per cell (stored as <code>float</code>)</li>
+<li><strong>A derived color map</strong> (<code>Color32</code> per cell) intended for visualization (minimap, overlays, debug views, etc.)</li>
+</ol>
+<p>The color map encodes mineral type via a palette color, and mineral amount via interpolation between a default color and that palette color.</p>
+<hr>
+<h2 id="core-types-and-responsibilities">Core types and responsibilities</h2>
+<h3 id="cellmineralslayer-runtime"><code>CellMineralsLayer</code> (runtime)</h3>
+<p>File: <code>Runtime/Minerals/Data/CellMineralsLayerGroup.cs</code></p>
+<p>Holds four runtime data layers:</p>
+<ul>
+<li><p><code>MineralIndexMap</code> : <code>ColorMapCellValueDataLayer_UInt</code><br>
+Per-cell mineral <strong>ID</strong> (palette index). Also owns a <code>ColorMap</code> (per-cell <code>Color32</code>) and a <code>ColorPalette</code> (<code>Color32[]</code>).</p>
+</li>
+<li><p><code>AmountMap</code> : <code>CellValueDataLayer&lt;float&gt;</code><br>
+Per-cell mineral <strong>amount</strong>.</p>
+</li>
+<li><p><code>MinMineralAmount</code> : <code>NativeListDataLayer&lt;float&gt;</code><br>
+Per-mineral threshold list (index = mineral ID). Used during color map calculation.</p>
+</li>
+<li><p><code>MaxMineralAmount</code> : <code>NativeListDataLayer&lt;float&gt;</code><br>
+Per-mineral threshold list (index = mineral ID). Used during color map calculation.</p>
+</li>
+</ul>
+<p>Key override:</p>
+<ul>
+<li><code>CalculateColorMap(JobHandle)</code> schedules <code>CalcMineralsColorMapJob</code> to update <code>MineralIndexMap.ColorMap</code>.</li>
+</ul>
+<hr>
+<h3 id="icellmineralslayerconfig-configuration-contract"><code>ICellMineralsLayerConfig</code> (configuration contract)</h3>
+<p>File: <code>Runtime/Minerals/Data/CellMineralsLayerConfigAsset.cs</code></p>
+<p>Defines what a config must provide to initialize a <code>CellMineralsLayer</code>:</p>
+<ul>
+<li><code>MineralIndexMap</code> : <code>IInitColorMapCellValueDataLayerArgs&lt;uint&gt;</code></li>
+<li><code>MineralsAmountMap</code> : <code>IInitCellValueDataLayerArgs&lt;float&gt;</code></li>
+<li><code>MinMineralsAmount</code> : <code>IList&lt;float&gt;</code></li>
+<li><code>MaxMineralsAmount</code> : <code>IList&lt;float&gt;</code></li>
+</ul>
+<p>This is what <code>CellMineralsLayer.Init(settings, initArgs)</code> checks for:</p>
+<pre><code class="lang-csharp">if (initArgs is ICellMineralsLayerConfig cellMineralsLayerConfig) 
+{ 
+	InitColoredDataLayer(MineralIndexMap, cellMineralsLayerConfig.MineralIndexMap); 
+	InitDataLayer(AmountMap, cellMineralsLayerConfig.MineralsAmountMap); 
+	MinMineralAmount.CopyValuesFrom(cellMineralsLayerConfig.MinMineralsAmount); 
+	MaxMineralAmount.CopyValuesFrom(cellMineralsLayerConfig.MaxMineralsAmount); 
+}
+</code></pre>
+<hr>
+<h3 id="cellmineralslayerconfigasset-default-authoring--implementation"><code>CellMineralsLayerConfigAsset</code> (default authoring + implementation)</h3>
+<p>File: <code>Runtime/Minerals/Data/CellMineralsLayerConfigAsset.cs</code></p>
+<p>A Unity <code>ScriptableObject</code> you create in the Editor to author a minerals layer.</p>
+<ul>
+<li>Implements <code>ICellMineralsLayerConfig</code></li>
+<li>Inherits <code>HexTerrainLayerConfigAsset&lt;CellMineralsLayer&gt;</code></li>
+<li><code>CreateTerrainLayer()</code> returns <code>new CellMineralsLayer()</code></li>
+</ul>
+<p>Create menu path (from <code>[CreateAssetMenu]</code>):</p>
+<ul>
+<li><code>Assets &gt; Create &gt; Fwt &gt; HexTerrains &gt; CellMinerals &gt; Cell Minerals Layer Config</code></li>
+</ul>
+<hr>
+<h2 id="how-a-cellmineralslayer-is-authored-editor-workflow">How a <code>CellMineralsLayer</code> is authored (Editor workflow)</h2>
+<ol>
+<li>Create a <code>CellMineralsLayerConfigAsset</code>.</li>
+<li>Configure these serialized fields:</li>
+</ol>
+<h3 id="a-_mineralindexmap--runtime-cellmineralslayermineralindexmap">A) <code>_mineralIndexMap</code> → runtime: <code>CellMineralsLayer.MineralIndexMap</code></h3>
+<p>Type: <code>InitColorMapCellValueDataLayerArgs&lt;uint&gt;</code></p>
+<p>Used to initialize:</p>
+<ul>
+<li>the per-cell <strong>mineral IDs</strong> (values stored in <code>MineralIndexMap.Data</code>)</li>
+<li>the <strong>color palette</strong> (values stored in <code>MineralIndexMap.ColorMap.ColorPalette</code>)</li>
+<li>optional fill/random/texture-based initialization of IDs (depending on what <code>InitColoredDataLayer(...)</code> applies)</li>
+</ul>
+<p><strong>Most important runtime impact for visualization</strong>:</p>
+<ul>
+<li><code>ColorPalette</code>: element at index <code>mineralId</code> is the <em>base mineral color</em>.</li>
+</ul>
+<blockquote>
+<p>Note: <code>CellMineralsLayer</code> uses a <em>custom</em> job for the final color map, but it still relies on <code>MineralIndexMap.ColorMap.ColorPalette</code> being created/populated.</p>
+</blockquote>
+<h3 id="b-_mineralsamountmap--runtime-cellmineralslayeramountmap">B) <code>_mineralsAmountMap</code> → runtime: <code>CellMineralsLayer.AmountMap</code></h3>
+<p>Type: <code>InitCellValueDataLayerArgs&lt;float&gt;</code></p>
+<p>Used to initialize per-cell mineral <strong>amounts</strong> (<code>AmountMap.Data</code>), with optional:</p>
+<ul>
+<li>constant fill</li>
+<li>random fill</li>
+<li>texture-based initialization</li>
+</ul>
+<h3 id="c-_minmineralsamount--runtime-cellmineralslayerminmineralamount">C) <code>_minMineralsAmount</code> → runtime: <code>CellMineralsLayer.MinMineralAmount</code></h3>
+<p>Type: <code>List&lt;float&gt;</code> (index = mineral ID)</p>
+<p>Controls the <strong>low threshold</strong> for interpolation.</p>
+<h3 id="d-_maxmineralsamount--runtime-cellmineralslayermaxmineralamount">D) <code>_maxMineralsAmount</code> → runtime: <code>CellMineralsLayer.MaxMineralAmount</code></h3>
+<p>Type: <code>List&lt;float&gt;</code> (index = mineral ID)</p>
+<p>Controls the <strong>high threshold</strong> for interpolation.</p>
+<hr>
+<h2 id="how-a-cellmineralslayer-is-created">How a <code>CellMineralsLayer</code> is created</h2>
+<p>There are two common creation paths in this codebase.</p>
+<h3 id="1-ecs-path-cellmineralslayergroup--createcellmineralslayerrequest">1) ECS path: <code>CellMineralsLayerGroup</code> + <code>CreateCellMineralsLayerRequest</code></h3>
+<p>File: <code>Runtime/Minerals/Data/CellMineralsLayerGroup.cs</code></p>
+<ul>
+<li><code>CellMineralsLayerGroup</code> is a <code>HexTerrainLayerGroup&lt;CellMineralsLayer&gt;</code> and an <code>IComponentData</code> (managed component).</li>
+<li>Layers are created using init-args; if those init-args implement <code>ITerrainLayerFactory</code>, the group calls the factory.</li>
+</ul>
+<p><code>CreateCellMineralsLayerRequest</code> is both:</p>
+<ul>
+<li><code>IBufferElementData</code> (so you can store requests in a DynamicBuffer)</li>
+<li><code>ITerrainLayerFactory</code> (so it can create the layer)</li>
+</ul>
+<p>Creation behavior:</p>
+<ul>
+<li><code>CreateCellMineralsLayerRequest.CreateTerrainLayer()</code> calls <code>Args.Value.CreateTerrainLayer()</code></li>
+<li><code>CellMineralsLayerGroup.CreateTerrainLayer(...)</code> sets <code>layer.Name</code> from the request</li>
+<li><code>CellMineralsLayerGroup.InitTerrainLayer(...)</code> calls <code>layer.Init(settings, request.Args.Value)</code></li>
+</ul>
+<p>So the authored <code>CellMineralsLayerConfigAsset</code> is used as:</p>
+<ul>
+<li>the <strong>factory</strong> (<code>CreateTerrainLayer()</code>)</li>
+<li>the <strong>init args</strong> (<code>ICellMineralsLayerConfig</code>)</li>
+</ul>
+<h3 id="2-non-ecsmanual-path">2) Non-ECS/manual path</h3>
+<p>You can create and initialize directly:</p>
+<ul>
+<li><code>var layer = new CellMineralsLayer();</code></li>
+<li><code>layer.Init(settings, configAsset);</code> (because <code>configAsset</code> implements <code>ICellMineralsLayerConfig</code>)</li>
+</ul>
+<hr>
+<h2 id="usage">Usage</h2>
+<p>This section ties the minerals layer into the existing <strong>ViewModes + Minimap</strong> pipeline in this package.</p>
+<h3 id="a-ensure-the-layer-exists-on-the-terrain-entity">A) Ensure the layer exists on the terrain entity</h3>
+<p><code>CellMineralsLayerGroup</code> is a managed ECS component (a class). View-mode code retrieves it via <code>EntityManager.TryGetComponentObject&lt;T&gt;(...)</code>, so it must be added as a <em>component object</em>.</p>
+<p>At a high level you need:</p>
+<ol>
+<li><code>CellMineralsLayerGroup</code> on the terrain entity (as a component object)</li>
+<li>A buffer of <code>CreateCellMineralsLayerRequest</code> entries (one entry per minerals layer instance you want)</li>
+<li>A system (or existing init pipeline) that calls <code>CellMineralsLayerGroup.Init(settings, requests)</code> during terrain initialization</li>
+</ol>
+<p>Example (illustrative) ECS authoring/baking intent:</p>
+<pre><code class="lang-csharp">// PSEUDOCODE/EXAMPLE (not copy-paste-ready without your project-specific authoring types): 
+AddComponentObject(terrainEntity, new CellMineralsLayerGroup()); 
+var buf = AddBuffer&lt;CreateCellMineralsLayerRequest&gt;(terrainEntity); 
+buf.Add(new CreateCellMineralsLayerRequest 
+{ 
+	Name = &quot;Minerals&quot;, 
+	Args = mineralsConfigAsset 
+});
+</code></pre>
+<p>Important: the request’s <code>Name</code> is what you later use with <code>HexTerrainLayerReference.ByLayerName(&quot;...&quot;)</code>.</p>
+<h3 id="b-visualize-minerals-via-view-modes-minimap--overlays">B) Visualize minerals via View Modes (minimap / overlays)</h3>
+<p>The render pipeline is:</p>
+<ul>
+<li><code>UpdateColorMapTexturesSystem</code> selects the current <code>IViewModeConfig</code> from <code>ViewModeConfigsComponent.Value</code></li>
+<li>then calls <code>viewModeConfig.UpdateColorMap(EntityManager, terrainEntity, isViewModeDirty)</code></li>
+<li>that view mode is responsible for copying some layer’s color map into one of its configured textures (via <code>CellColorsDataLayer.ApplyColorsToTexture</code>)</li>
+</ul>
+<p>The minimap UI wiring is:</p>
+<ul>
+<li><code>AttachMinimapScreenSystem</code> attaches <code>MinimapScreenReference</code> using <code>EnvironmentAPIComponent</code></li>
+<li><code>UpdateViewModesConfigOnUISystem</code> pushes the terrain’s <code>ViewModeConfigsComponent.Value</code> into the minimap screen (<code>minimapScreen.SetViewModesConfig(...)</code>)</li>
+<li><code>UpdateMiniMapScreenSystem</code> updates the selected view mode (<code>minimapScreen.SetViewMode(...)</code>)</li>
+</ul>
+<h4 id="implement-a-minerals-view-mode-config-asset">Implement a “Minerals” view mode config asset</h4>
+<p>The simplest approach is to create a <code>ViewModeConfigAsset</code> that:</p>
+<ul>
+<li>finds the target <code>CellMineralsLayer</code> (by name or index)</li>
+<li>updates a texture from <code>layer.MineralIndexMap.ColorMap</code></li>
+</ul>
+<p>Example view mode config (copy/paste into your project as a starting point):</p>
+<pre><code class="lang-csharp">using Fwt.HexTerrains.Data; 
+using Fwt.HexTerrains.DataLayers; 
+using Fwt.HexTerrains.Minerals.Data; 
+using Fwt.HexTerrains.ViewModes.Data; 
+using Unity.Entities; using UnityEngine;
+
+[CreateAssetMenu(menuName = &quot;Fwt/HexTerrains/View Modes/Minerals&quot;, fileName = &quot;ViewMode_Minerals&quot;)] 
+public class MineralsViewModeConfigAsset : ViewModeConfigAsset 
+{ 
+    [Header(&quot;Minerals Layer Lookup&quot;)] 
+    [SerializeField] 
+    private HexTerrainLayerReference _mineralsLayer = HexTerrainLayerReference.ByLayerName(&quot;Minerals&quot;);
+
+    [Header(&quot;Output&quot;)]
+    [SerializeField] 
+    private int _textureIndex = 0;
+
+    public override bool UpdateColorMap(EntityManager entityManager, Entity terrainEntity, bool isViewModeDirty)
+    {
+        // Find the minerals layer (managed component object on the terrain entity)
+        var layer = GetTerrainLayer&lt;CellMineralsLayerGroup, CellMineralsLayer&gt;(entityManager, terrainEntity, _mineralsLayer);
+        if (layer == null)
+        {
+            return false;
+        }
+
+        // Copy CellMineralsLayer -&gt; MineralIndexMap.ColorMap into a texture slot owned by this view mode config
+        // (ColorMap gets produced by CellMineralsLayer.CalculateColorMap -&gt; CalcMineralsColorMapJob)
+        return UpdateColorMap&lt;ColorMapCellValueDataLayer&lt;uint&gt;, uint&gt;(layer.MineralIndexMap, isViewModeDirty, _textureIndex);
+    }
+}
+</code></pre>
+<p>Then:</p>
+<ol>
+<li>Create a <code>ViewModeCollectionConfigAsset</code></li>
+<li>Add your <code>ViewMode_Minerals</code> asset to its <code>ViewModes</code> list</li>
+<li>Assign that collection to <code>HexTerrainAuthoring.ViewModeCollectionConfig</code></li>
+<li>Set <code>HexTerrainAuthoring.ViewMode</code> to the index of your minerals view mode (or switch <code>HexTerrainViewMode</code> at runtime)</li>
+</ol>
+<hr>
+<h2 id="how-it-works-color-map-calculation">How it works: color map calculation</h2>
+<h3 id="when-it-runs">When it runs</h3>
+<p><code>CellMineralsLayer.CalculateColorMap(...)</code> schedules <code>CalcMineralsColorMapJob</code>.</p>
+<p>It early-outs if any required inputs are missing:</p>
+<ul>
+<li><code>MineralIndexMap</code></li>
+<li><code>MineralIndexMap.ColorMap</code></li>
+<li><code>MineralIndexMap.ColorMap.ColorPalette.IsCreated</code></li>
+<li><code>AmountMap</code></li>
+<li><code>MinMineralAmount</code></li>
+<li><code>MaxMineralAmount</code></li>
+</ul>
+<h3 id="dirty-chunk-optimization">Dirty-chunk optimization</h3>
+<p>The job skips work unless either of these are dirty for the cell’s chunk:</p>
+<ul>
+<li><code>MineralIndexMap.ChunkDirtyGrid[chunkIndex]</code></li>
+<li><code>AmountMap.ChunkDirtyGrid[chunkIndex]</code></li>
+</ul>
+<p>So changing mineral IDs or amounts only forces recalculation in affected chunks.</p>
+<h3 id="the-exact-color-formula">The exact color formula</h3>
+<p>File: <code>Runtime/Minerals/Jobs/CalcMineralsColorMapJob.cs</code></p>
+<p>For each cell, it computes:</p>
+<ol>
+<li><p>Look up:</p>
+<ul>
+<li><code>minAmount = MinMineralAmount[mineralIndex]</code></li>
+<li><code>maxAmount = MaxMineralAmount[mineralIndex]</code></li>
+<li><code>mineralColor = ColorPalette[mineralIndex]</code></li>
+</ul>
+</li>
+<li><p>Compute interpolation parameter:</p>
+</li>
+</ol>
+<ul>
+<li><code>t = math.unlerp(minAmount, maxAmount, mineralsAmount)</code></li>
+</ul>
+<ol start="3">
+<li>Write final color:</li>
+</ol>
+<ul>
+<li><code>result = Color32.Lerp(DefaultColor, mineralColor, t)</code></li>
+</ul>
+<ol start="4">
+<li><code>ColorMap[cellIndex] = result</code></li>
+</ol>
+<h4 id="behavior-at-extremes">Behavior at extremes</h4>
+<p>Given Unity’s <code>Lerp</code> clamping behavior:</p>
+<ul>
+<li><code>mineralsAmount &lt;= minAmount</code> → returns <code>DefaultColor</code></li>
+<li><code>mineralsAmount &gt;= maxAmount</code> → returns <code>mineralColor</code></li>
+<li>between → interpolates RGBA from default to palette color</li>
+</ul>
+<h4 id="out-of-range-handling">Out-of-range handling</h4>
+<p>If <code>mineralIndex</code> is outside <em>any</em> of these arrays:</p>
+<ul>
+<li><code>MinMineralAmount</code></li>
+<li><code>MaxMineralAmount</code></li>
+<li><code>ColorPalette</code></li>
+</ul>
+<p>Then the job returns <code>DefaultColor</code>.</p>
+<h3 id="about-transparency">About “transparency”</h3>
+<p>Despite the config comments talking about “transparent at min, opaque at max”, the implementation is more general:</p>
+<ul>
+<li>The job interpolates <strong>full <code>Color32</code> RGBA</strong>, not “alpha only”.</li>
+<li>Transparency depends on the <strong>alpha values</strong> of:
+<ul>
+<li><code>DefaultColor</code></li>
+<li><code>ColorPalette[mineralIndex]</code></li>
+</ul>
+</li>
+</ul>
+<p>Current <code>CellMineralsLayer</code> sets:</p>
+<ul>
+<li><code>DefaultColor = new Color32(255, 255, 255, 255)</code> (opaque white)</li>
+</ul>
+<p>So, as-is, the “min amount” endpoint is <strong>opaque white</strong>, not transparent.</p>
+<p>If you want “min = fully transparent”, the typical approach is:</p>
+<ul>
+<li>use a transparent default color (e.g. <code>Color32(0,0,0,0)</code>), and/or</li>
+<li>set palette colors’ alpha appropriately</li>
+</ul>
+<p>In this package, the cleanest way is to override <code>CellMineralsLayer.CalculateMineralsColorMap(...)</code> (or fork and change the default).</p>
+<hr>
+<h2 id="runtime-property-mapping-config--runtime">Runtime property mapping (config → runtime)</h2>
+<table>
+<thead>
+<tr>
+<th><code>CellMineralsLayerConfigAsset</code> property</th>
+<th>Runtime target</th>
+<th>Used for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MineralIndexMap</code> (<code>_mineralIndexMap</code>)</td>
+<td><code>CellMineralsLayer.MineralIndexMap</code></td>
+<td>Initializes per-cell mineral IDs and <em>creates/populates the palette</em> used by the minerals color map.</td>
+</tr>
+<tr>
+<td><code>MineralsAmountMap</code> (<code>_mineralsAmountMap</code>)</td>
+<td><code>CellMineralsLayer.AmountMap</code></td>
+<td>Initializes per-cell mineral amounts.</td>
+</tr>
+<tr>
+<td><code>MinMineralsAmount</code> (<code>_minMineralsAmount</code>)</td>
+<td><code>CellMineralsLayer.MinMineralAmount</code></td>
+<td>Per-mineral “low” threshold for interpolation (<code>math.unlerp</code>).</td>
+</tr>
+<tr>
+<td><code>MaxMineralsAmount</code> (<code>_maxMineralsAmount</code>)</td>
+<td><code>CellMineralsLayer.MaxMineralAmount</code></td>
+<td>Per-mineral “high” threshold for interpolation (<code>math.unlerp</code>).</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="how-to-set-up-cellmineralslayerconfigasset-correctly">How to set up <code>CellMineralsLayerConfigAsset</code> correctly</h2>
+<h3 id="1-decide-your-mineral-id-space">1) Decide your mineral ID space</h3>
+<p>If your IDs range from <code>0..N-1</code>, then you must ensure <strong>all three</strong> lists cover that range:</p>
+<ul>
+<li><code>MineralIndexMap.ColorPalette.Count &gt;= N</code></li>
+<li><code>MinMineralsAmount.Count &gt;= N</code></li>
+<li><code>MaxMineralsAmount.Count &gt;= N</code></li>
+</ul>
+<p>Otherwise, those cells will render as <code>DefaultColor</code>.</p>
+<h3 id="2-configure-the-palette-mineralindexmapcolorpalette">2) Configure the palette (<code>MineralIndexMap.ColorPalette</code>)</h3>
+<p>Set one <code>Color32</code> per mineral ID.</p>
+<p>Example convention:</p>
+<ul>
+<li>index <code>0</code> = “no mineral” (choose a neutral color)</li>
+<li>index <code>1</code> = iron (red-brown)</li>
+<li>index <code>2</code> = copper (orange)</li>
+<li>etc.</li>
+</ul>
+<h3 id="3-configure-amount-thresholds-minmineralsamount--maxmineralsamount">3) Configure amount thresholds (<code>MinMineralsAmount</code> / <code>MaxMineralsAmount</code>)</h3>
+<p>For each mineral ID <code>i</code>:</p>
+<ul>
+<li><code>MinMineralsAmount[i]</code> = the amount that maps to the “default” endpoint</li>
+<li><code>MaxMineralsAmount[i]</code> = the amount that maps to the “palette color” endpoint</li>
+</ul>
+<p>Keep in mind:</p>
+<ul>
+<li><code>math.unlerp(a,b,x)</code> behaves poorly if <code>a == b</code> (division by zero semantics); avoid equal min/max.</li>
+<li>Swapping min/max flips the gradient direction.</li>
+</ul>
+<h3 id="4-initialize-the-data-ids--amounts">4) Initialize the data (IDs + amounts)</h3>
+<p>Use <code>_mineralIndexMap</code> and <code>_mineralsAmountMap</code> to define how maps are initialized:</p>
+<ul>
+<li>Fill constant</li>
+<li>Fill random</li>
+<li>Apply source texture (if enabled)</li>
+</ul>
+<p>Exactly which options you enable depends on your authoring intent (debug fill vs. real generation).</p>
+<hr>
+<h2 id="updating-minerals-at-runtime">Updating minerals at runtime</h2>
+<p><code>CellMineralsLayer</code> provides direct setters:</p>
+<ul>
+<li><code>SetMineralIndex(int cellIndex, uint mineralIndex)</code></li>
+<li><code>SetMineralsAmount(int cellIndex, float mineralsAmount)</code></li>
+</ul>
+<p>After changes, color map updates occur when the terrain pipeline calls <code>CalculateColorMap(...)</code> and the affected chunks are marked dirty by the underlying data layers.</p>
+<p>If you need a full refresh:</p>
+<ul>
+<li>call <code>layer.SetAllDirty(true)</code> to force recalculation.</li>
+</ul>
+<hr>
+<h2 id="cleanup-and-disposal-lifecycle">Cleanup and disposal (lifecycle)</h2>
+<h3 id="per-frame-cleanup">Per-frame cleanup</h3>
+<p><code>CellMineralsLayer.Cleanup()</code> calls:</p>
+<ul>
+<li><code>MineralIndexMap.Cleanup()</code></li>
+<li><code>AmountMap.Cleanup()</code></li>
+<li><code>MinMineralAmount.Cleanup()</code></li>
+<li><code>MaxMineralAmount.Cleanup()</code></li>
+</ul>
+<p>There is also <code>CleanupAsync(JobHandle)</code> which schedules async cleanup and returns a combined dependency.</p>
+<p>This is typically where dirty flags are reset/compacted by the data layer implementations.</p>
+<h3 id="disposing">Disposing</h3>
+<p><code>CellMineralsLayer.Dispose()</code> disposes all owned native resources:</p>
+<ul>
+<li><code>MineralIndexMap.Dispose()</code></li>
+<li><code>AmountMap.Dispose()</code></li>
+<li><code>MinMineralAmount.Dispose()</code></li>
+<li><code>MaxMineralAmount.Dispose()</code></li>
+</ul>
+<p>Then calls <code>base.Dispose()</code>.</p>
+<p>If the layer is part of a <code>HexTerrainLayerGroup&lt;T&gt;</code>, disposing the group disposes nested layers as well.</p>
+<hr>
+<h2 id="troubleshooting-checklist">Troubleshooting checklist</h2>
+<ul>
+<li><p>Color map stays unchanged:</p>
+<ul>
+<li>Ensure <code>CalculateColorMap(...)</code> is being called in your update pipeline.</li>
+<li>Ensure dirty flags are being set (or call <code>SetAllDirty(true)</code> once).</li>
+</ul>
+</li>
+<li><p>Cells render as the default color:</p>
+<ul>
+<li>Mineral ID exceeds palette length, or min/max list lengths.</li>
+<li>One of the required inputs is missing (<code>ColorPalette</code> not created).</li>
+</ul>
+</li>
+<li><p>“Transparency by amount” not working as expected:</p>
+<ul>
+<li>The job interpolates RGBA from <code>DefaultColor</code> to palette color.</li>
+<li>Current <code>DefaultColor</code> is opaque white; adjust via override if you need transparent-at-min behavior.</li>
+</ul>
+</li>
+</ul>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://dev.azure.com/animovies/HexTerrainsFramework/_git/Fwt.HexTerrains.Framework?path=docs/Instruction/cell-minerals-layer.md&amp;version=GBmain&amp;line=1" class="contribution-link">Edit this page</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

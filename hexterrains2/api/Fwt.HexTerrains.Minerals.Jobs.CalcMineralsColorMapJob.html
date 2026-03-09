@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Struct CalcMineralsColorMapJob | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Struct CalcMineralsColorMapJob | Hex Terrains Framework ">
+    
+    <meta name="description" content="Represents a parallel job that generates a color map for a hexagonal terrain based on mineral indices and their corresponding amounts.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob">
+
+
+
+  <h1 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob" class="text-break">Struct CalcMineralsColorMapJob</h1>
+  <div class="markdown level0 summary"><p>Represents a parallel job that generates a color map for a hexagonal terrain based on mineral indices and their
+corresponding amounts.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">IJobParallelFor</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Minerals.html">Minerals</a>.<a class="xref" href="Fwt.HexTerrains.Minerals.Jobs.html">Jobs</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public struct CalcMineralsColorMapJob : IJobParallelFor</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This job is designed for use with Unity's Burst compiler and the job system to efficiently
+process large terrain datasets. It updates the color map by evaluating mineral data for each cell, using a color
+palette and configurable minimum and maximum thresholds to determine the resulting color and transparency. Only
+cells within chunks marked as dirty for mineral index or amount are recalculated, optimizing performance for
+dynamic terrain updates.</p>
+</div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_ColorMap" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.ColorMap">ColorMap</h4>
+  <div class="markdown level1 summary"><p>Output array of colors that are filled in the job. Each cell's color is determined based on the mineral index and amount, using the provided color palette and thresholds. The alpha value of the color is calculated to represent the transparency based on the mineral amount relative to the defined minimum and maximum values.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[WriteOnly]
+public NativeArray&lt;Color32&gt; ColorMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_ColorPalette" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.ColorPalette">ColorPalette</h4>
+  <div class="markdown level1 summary"><p>Gets the color palette used for determining the cell color. For each mineral index there should be a corresponding color in this palette. The alpha value of the color will be calculated based on the mineral amount and the defined minimum and maximum thresholds.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;Color32&gt; ColorPalette</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_DefaultColor" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.DefaultColor">DefaultColor</h4>
+  <div class="markdown level1 summary"><p>Color that is used if the mineral index or amount is out of range of the provided color palette or min/max thresholds. This color can be set to a default value (e.g., transparent) to indicate that no valid mineral data is present for a cell. The job will return this color for any cell where the mineral index exceeds the bounds of the color palette or where the mineral amount is outside the defined minimum and maximum thresholds. This ensures that cells with invalid or missing mineral data are visually distinguishable in the resulting color map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Color32 DefaultColor</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MaxMineralAmount" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.MaxMineralAmount">MaxMineralAmount</h4>
+  <div class="markdown level1 summary"><p>Gets a read-only array containing the maximum amount of minerals that can be stored for each element.
+If the actual amount is greater than this value, the color of the cell will be fully opaque.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;float&gt; MaxMineralAmount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MinMineralAmount" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.MinMineralAmount">MinMineralAmount</h4>
+  <div class="markdown level1 summary"><p>Gets the minimum required amounts for each mineral as a read-only array.
+If the actual amount is less than this value, the color of the cell will be fully transparent.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;float&gt; MinMineralAmount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralIndexMap" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.MineralIndexMap">MineralIndexMap</h4>
+  <div class="markdown level1 summary"><p>Gets the mapping of mineral indices, represented as a read-only array of unsigned integers.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;uint&gt; MineralIndexMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralIndexMap_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This array provides a direct mapping of mineral indices used in the application.</p>
+</div>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralsAmountDirtyChunksGrid" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.MineralsAmountDirtyChunksGrid">MineralsAmountDirtyChunksGrid</h4>
+  <div class="markdown level1 summary"><p>Gets the grid that indicates whether the mineral amounts in the corresponding chunks are marked as dirty and
+require recalculation.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;bool&gt; MineralsAmountDirtyChunksGrid</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralsAmountDirtyChunksGrid_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each element in the array represents the dirty state of a chunk. A value of <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> means the mineral amount for that chunk has been modified and needs to be updated. This
+property is read-only.</p>
+</div>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralsAmountMap" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.MineralsAmountMap">MineralsAmountMap</h4>
+  <div class="markdown level1 summary"><p>Gets the read-only array of mineral amounts mapped to their respective indices.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;float&gt; MineralsAmountMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralsAmountMap_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This array provides a representation of the mineral amounts available in the
+environment.</p>
+</div>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralsIndexDirtyChunksGrid" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.MineralsIndexDirtyChunksGrid">MineralsIndexDirtyChunksGrid</h4>
+  <div class="markdown level1 summary"><p>Gets the read-only grid that indicates which mineral index chunks are marked as dirty and require recalculating.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeArray&lt;bool&gt; MineralsIndexDirtyChunksGrid</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_MineralsIndexDirtyChunksGrid_remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>Each element in the array corresponds to a chunk in the minerals index. A value of
+<a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> indicates that the associated chunk has been modified and needs to be updated or
+processed. The array is read-only and should not be modified directly.</p>
+</div>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_TerrainSettings" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.TerrainSettings">TerrainSettings</h4>
+  <div class="markdown level1 summary"><p>Terrain Settings of Minerals Layer</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public HexTerrainSettings TerrainSettings</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_Execute_" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.Execute*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_Execute_System_Int32_" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.Execute(System.Int32)">Execute(int)</h4>
+  <div class="markdown level1 summary"><p>Performs work against a specific iteration index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public void Execute(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_GetMineralColor_" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.GetMineralColor*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Jobs_CalcMineralsColorMapJob_GetMineralColor_System_UInt32_System_Single_" data-uid="Fwt.HexTerrains.Minerals.Jobs.CalcMineralsColorMapJob.GetMineralColor(System.UInt32,System.Single)">GetMineralColor(uint, float)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[BurstCompile]
+public Color32 GetMineralColor(uint mineralIndex, float mineralsAmount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">mineralIndex</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">mineralsAmount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Color32</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <span class="xref">Unity.Jobs.IJobParallelFor</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_ValueType__1___0_System_Int32_">HashExtensions.GetHashCode_ValueType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

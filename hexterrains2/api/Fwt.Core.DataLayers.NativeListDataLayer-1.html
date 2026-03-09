@@ -349,7 +349,8 @@
 
   <a id="Fwt_Core_DataLayers_NativeListDataLayer_1_Cleanup_" data-uid="Fwt.Core.DataLayers.NativeListDataLayer`1.Cleanup*"></a>
   <h4 id="Fwt_Core_DataLayers_NativeListDataLayer_1_Cleanup" data-uid="Fwt.Core.DataLayers.NativeListDataLayer`1.Cleanup">Cleanup()</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the dirty flags of the layer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -359,7 +360,8 @@
 
   <a id="Fwt_Core_DataLayers_NativeListDataLayer_1_CleanupAsync_" data-uid="Fwt.Core.DataLayers.NativeListDataLayer`1.CleanupAsync*"></a>
   <h4 id="Fwt_Core_DataLayers_NativeListDataLayer_1_CleanupAsync_Unity_Jobs_JobHandle_" data-uid="Fwt.Core.DataLayers.NativeListDataLayer`1.CleanupAsync(Unity.Jobs.JobHandle)">CleanupAsync(JobHandle)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Resets the dirty flags of the layer.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -378,7 +380,8 @@
       <tr>
         <td><span class="xref">JobHandle</span></td>
         <td><span class="parametername">dependency</span></td>
-        <td></td>
+        <td><p>input dependency to use into a scheduled job (not used in a <a class="xref" href="Fwt.Core.DataLayers.NativeListDataLayer-1.html">NativeListDataLayer&lt;TItem&gt;</a>)</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -393,7 +396,56 @@
     <tbody>
       <tr>
         <td><span class="xref">JobHandle</span></td>
-        <td></td>
+        <td><p>job handle of all scheduled jobs. (in <a class="xref" href="Fwt.Core.DataLayers.NativeListDataLayer-1.html">NativeListDataLayer&lt;TItem&gt;</a> returns the input dependency)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_Core_DataLayers_NativeListDataLayer_1_CopyValuesFrom_" data-uid="Fwt.Core.DataLayers.NativeListDataLayer`1.CopyValuesFrom*"></a>
+  <h4 id="Fwt_Core_DataLayers_NativeListDataLayer_1_CopyValuesFrom_System_Collections_Generic_IList__0__" data-uid="Fwt.Core.DataLayers.NativeListDataLayer`1.CopyValuesFrom(System.Collections.Generic.IList{`0})">CopyValuesFrom(IList&lt;TItem&gt;)</h4>
+  <div class="markdown level1 summary"><p>Sets the amount of items in the layer to the provided list count and copies values from the provided list to the layer.
+If a layer is not initialized, returns false.
+If the provided list count is different from the current layer size,
+the layer will be resized to match the list count and new cells will be filled with DefaultValue.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool CopyValuesFrom(IList&lt;TItem&gt; items)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.ilist-1">IList</a>&lt;TItem&gt;</td>
+        <td><span class="parametername">items</span></td>
+        <td><p>list of values to copy from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if successfull, otherwise = false.</p>
+</td>
       </tr>
     </tbody>
   </table>

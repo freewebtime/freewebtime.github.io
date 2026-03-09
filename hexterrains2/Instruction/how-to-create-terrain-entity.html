@@ -151,6 +151,17 @@ public partial class AttachMainCameraToTerrainSystem : SystemBase
 <p>This component adds a <code>CellRegionLayerGroup</code> component to the Terrain Entity. This LayerGroup holds a list of <code>CellRegionLayer</code> layers such as Provinces, Countries, etc. <code>CellRegionLayer</code> has a <code>CellRegionMap</code> (int per cell), <code>RegionCells</code> (<code>NativeParallelMultiHashMap&lt;int, uint&gt;</code> where key is a region index and values is a collection of cell indexes of the cells that are belong to that region), <code>RegionSizes</code> (uint per cell where index is a region index and value is the amount of cells of that region). <code>RegionCells</code> and <code>RegionSizes</code> are recalculated when <code>CellRegionMap</code> values change.
 <code>CellRegionMap</code> is a data layer with embedded color map, so whenever the data is changed, the colors in that color map are updated. That colors can be copied into the <code>Texture2D</code> instance to be displayed on UI or in terrain material to color the terrain cells into the respective colors (for example, to paint each cell into the color of the country that cell belongs to).</p>
 <p>This component is totally optional and in default implementation no other layers depend on it.</p>
+<h3 id="cellmineralslayergroup"><code>CellMineralsLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/CellMineralsLayerGroupAuthoring.png" alt="CellMineralsLayerGroup authoring"></p>
+<p>This component adds a <code>CellMineralsLayerGroup</code> to the Terrain Entity. This LayerGroup holds a list of <code>CellMineralsLayer</code> layers such as Underground, DissolvedInWater, etc.</p>
+<p><code>CellMineralsLayer</code> has <code>MineralIndexMap</code> (uint per cell), <code>AmountMap</code> (float per cell), <code>MinMineralAmount</code> (float per possible mineral index), <code>MaxMineralAmount</code> (float per possible mineral index). The <code>MineralIndexMap</code> has a <code>ColorMap</code>, and the colors are calculated this way: for each cell the <code>MineralIndex</code> is taken from <code>MineralIndexMap</code>. Then from the palette at index == MineralIndex the color is taken. The cell will be exactly this color if the <code>MineralsAmount</code> (from <code>AmountMap</code>) is equals or greater than <code>MaxMineralAmount[MineralIndex]</code>. If MineralsAmount is equals or less than MinMineralAmount[MineralIndex], then the color will be default color (Color32(255, 255, 255, 255)). If MineralsAmount is between MinMineralAmount[MineralIndex] and MaxMineralAmount[MineralIndex], then the color will be an interpolation result between default color and a color from palette with interpolation progress equals to <code>math.unlerp(MinMineralAmount[MineralIndex], MaxMineralAmount[MineralIndex], MineralsAmount)</code>.</p>
+<p>So in general this layer holds the Mineral Id and Minerals Amount per cell and calculates a color map based on MineralIndex color palette and MineralsAmount. When this data changes, the color map is recalculated.</p>
+<blockquote>
+<p>This component is totally optional and in default implementation no other layers depend on it.</p>
+</blockquote>
 <h3 id="cellobjectlayergroup"><code>CellObjectLayerGroup</code></h3>
 <blockquote>
 <p>Optional component</p>

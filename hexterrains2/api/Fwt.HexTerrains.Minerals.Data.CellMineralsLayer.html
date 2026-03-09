@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CellMineralsLayer | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CellMineralsLayer | Hex Terrains Framework ">
+    
+    <meta name="description" content="Terrain layer that holds the mineral data for each cell in the hex terrain. It contains two maps: one for the mineral indices and another for the mineral amounts. The mineral index map uses an unsigned integer to represent the type of mineral present in each cell, while the mineral amount map uses a float to represent the quantity of minerals present in each cell.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer">
+
+
+
+  <h1 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer" class="text-break">Class CellMineralsLayer</h1>
+  <div class="markdown level0 summary"><p>Terrain layer that holds the mineral data for each cell in the hex terrain.
+It contains two maps: one for the mineral indices and another for the mineral amounts.
+The mineral index map uses an unsigned integer to represent the type of mineral present in each cell,
+while the mineral amount map uses a float to represent the quantity of minerals present in each cell.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></div>
+    <div class="level2"><span class="xref">CellMineralsLayer</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Name">HexTerrainLayer.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Settings">HexTerrainLayer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ParentLayer">HexTerrainLayer.ParentLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Resize_Unity_Mathematics_int2_">HexTerrainLayer.Resize(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__">HexTerrainLayer.InitColoredDataLayer&lt;TValue&gt;(ColorMapCellValueDataLayer&lt;TValue&gt;, IInitColorMapCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitDataLayer__1_Fwt_HexTerrains_DataLayers_CellValueDataLayer___0__Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs___0__">HexTerrainLayer.InitDataLayer&lt;TValue&gt;(CellValueDataLayer&lt;TValue&gt;, IInitCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CompleteAllJobs">HexTerrainLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ToString">HexTerrainLayer.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Minerals.html">Minerals</a>.<a class="xref" href="Fwt.HexTerrains.Minerals.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CellMineralsLayer : HexTerrainLayer, IDisposable</code></pre>
+  </div>
+  <h3 id="fields">Fields
+</h3>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_AmountMap" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.AmountMap">AmountMap</h4>
+  <div class="markdown level1 summary"><p>Map of mineral amounts, where the value of each cell is a float representing the amount of minerals present in that cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public CellValueDataLayer&lt;float&gt; AmountMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.CellValueDataLayer-1.html">CellValueDataLayer</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_MaxMineralAmount" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.MaxMineralAmount">MaxMineralAmount</h4>
+  <div class="markdown level1 summary"><p>List of max values per each type of mineral in cell.
+Technically this does not restrict the actual amount of minerals in a cell,
+but it can be used for visualization purposes
+(e.g. to calculate the transparency of the mineral color in the color map,
+where MinMineralsAmount means fully transparent and MaxMineralsAmount means fully opaque).
+Index = mineral id, value = max amount for that mineral in a cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeListDataLayer&lt;float&gt; MaxMineralAmount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.NativeListDataLayer-1.html">NativeListDataLayer</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_MinMineralAmount" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.MinMineralAmount">MinMineralAmount</h4>
+  <div class="markdown level1 summary"><p>List of min values per each type of mineral in cell.
+Technically this does not restrict the actual amount of minerals in a cell,
+but it can be used for visualization purposes
+(e.g. to calculate the transparency of the mineral color in the color map,
+where MinMineralsAmount means fully transparent and MaxMineralsAmount means fully opaque).
+Index = mineral id, value = max amount for that mineral in a cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public NativeListDataLayer&lt;float&gt; MinMineralAmount</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.Core.DataLayers.NativeListDataLayer-1.html">NativeListDataLayer</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_MineralIndexMap" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.MineralIndexMap">MineralIndexMap</h4>
+  <div class="markdown level1 summary"><p>Map of mineral indices, where the value of each cell is an index representing the type of mineral present in that cell.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public ColorMapCellValueDataLayer_UInt MineralIndexMap</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer_UInt.html">ColorMapCellValueDataLayer_UInt</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_CalculateColorMap_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.CalculateColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_CalculateColorMap_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.CalculateColorMap(Unity.Jobs.JobHandle)">CalculateColorMap(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Schedules the calculation of the color map, ensuring it is executed after the specified job dependency
+completes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JobHandle CalculateColorMap(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td><p>A job handle representing the dependency that must be completed before the color map calculation begins.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><p>A job handle that can be used to track the completion of the color map calculation job.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CalculateColorMap_Unity_Jobs_JobHandle_">HexTerrainLayer.CalculateColorMap(JobHandle)</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_CalculateMineralsColorMap_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.CalculateMineralsColorMap*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_CalculateMineralsColorMap_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.CalculateMineralsColorMap(Unity.Jobs.JobHandle)">CalculateMineralsColorMap(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Calculates the color map for the minerals layer (minerals color with transparency related to mineral amount), which can be used for visualization purposes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">protected virtual JobHandle CalculateMineralsColorMap(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.notimplementedexception">NotImplementedException</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Cleanup_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Cleanup*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Cleanup" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Cleanup">Cleanup()</h4>
+  <div class="markdown level1 summary"><p>Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Cleanup()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Cleanup">HexTerrainLayer.Cleanup()</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_CleanupAsync_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.CleanupAsync*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_CleanupAsync_Unity_Jobs_JobHandle_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.CleanupAsync(Unity.Jobs.JobHandle)">CleanupAsync(JobHandle)</h4>
+  <div class="markdown level1 summary"><p>Async version of Cleanup() <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Cleanup">Cleanup()</a>
+Difference between regular Cleanup() is that it schedules jobs that clean up data layers,
+so you don't have to wait for the results and can continue working.
+Every frame there is a cleanup stage. This function is called.
+Usually used to clean the dirty flags.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override JobHandle CleanupAsync(JobHandle dependency)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td><span class="parametername">dependency</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">JobHandle</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CleanupAsync_Unity_Jobs_JobHandle_">HexTerrainLayer.CleanupAsync(JobHandle)</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Dispose_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Dispose*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Dispose" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"><p>Disposes all allocated native memory.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Dispose()</code></pre>
+  </div>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Dispose">HexTerrainLayer.Dispose()</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_GetMineralIndex_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.GetMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_GetMineralIndex_System_Int32_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.GetMineralIndex(System.Int32)">GetMineralIndex(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the index of the mineral in the specified cell, or null if there is no mineral index map or if the cell index is out of range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint? GetMineralIndex(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</td>
+        <td><p>the mineral index from the specified cell or null if there is no such cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_GetMineralsAmount_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.GetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_GetMineralsAmount_System_Int32_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.GetMineralsAmount(System.Int32)">GetMineralsAmount(int)</h4>
+  <div class="markdown level1 summary"><p>Returns the amount of minerals in the specified cell, or null if there is no minerals amount map or if the cell index is out of range.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public float? GetMineralsAmount(int cellIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td><p>the minerals amount in the specified cell or null if there is no such cell</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Init_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
+  <div class="markdown level1 summary"><p>Initializes/Reinitializes the area data.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init(HexTerrainSettings settings)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>new terrain settings</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayer.Init(HexTerrainSettings)</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Init_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Init*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,``0)">Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the terrain system using the specified settings and initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void Init&lt;TInitArgs&gt;(HexTerrainSettings settings, TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>The configuration settings to apply when initializing the terrain system. Cannot be null.</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td><p>Additional arguments required for initialization. The expected type and usage depend on the implementation.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>The type of the initialization arguments to be used during terrain system setup.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_">HexTerrainLayer.Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.SetAllDirty*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetAllDirty_System_Boolean_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.SetAllDirty(System.Boolean)">SetAllDirty(bool)</h4>
+  <div class="markdown level1 summary"><p>Sets all data layers dirty value.
+If isDirty is true, all data layers will be marked as dirty and will be recalculated on the next frame.
+If isDirty is false, all data layers will be marked as clean and will not be recalculated on the next frame.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void SetAllDirty(bool isDirty)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><span class="parametername">isDirty</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_SetAllDirty_System_Boolean_">HexTerrainLayer.SetAllDirty(bool)</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetMineralIndex_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.SetMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetMineralIndex_System_Int32_System_UInt32_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.SetMineralIndex(System.Int32,System.UInt32)">SetMineralIndex(int, uint)</h4>
+  <div class="markdown level1 summary"><p>Sets the mineral index for the specified cell in the mineral index map.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetMineralIndex(int cellIndex, uint mineralIndex)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>The zero-based index of the cell whose mineral index is to be set. Must be within the bounds of the mineral
+index map.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">mineralIndex</span></td>
+        <td><p>The mineral index value to assign to the specified cell. This value should correspond to a valid mineral
+type.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the mineral index was successfully set; otherwise, false if the mineral index map is not
+initialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetMineralIndex_System_Int32_System_UInt32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method does not modify the mineral index map if it has not been
+initialized.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetMineralsAmount_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.SetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_SetMineralsAmount_System_Int32_System_Single_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.SetMineralsAmount(System.Int32,System.Single)">SetMineralsAmount(int, float)</h4>
+  <div class="markdown level1 summary"><p>Sets the amount of minerals for the specified cell index.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool SetMineralsAmount(int cellIndex, float mineralsAmount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>The zero-based index of the cell whose minerals amount is to be set. Must be within the valid range of the
+minerals amount map.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">mineralsAmount</span></td>
+        <td><p>The amount of minerals to assign to the specified cell. This value must be non-negative.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the minerals amount was successfully set; otherwise, false if the minerals amount map is not
+initialized.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

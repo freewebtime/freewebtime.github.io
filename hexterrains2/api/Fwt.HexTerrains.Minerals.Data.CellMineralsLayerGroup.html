@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+
+  <head>
+    <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+      <title>Class CellMineralsLayerGroup | Hex Terrains Framework </title>
+      <meta name="viewport" content="width=device-width">
+      <meta name="title" content="Class CellMineralsLayerGroup | Hex Terrains Framework ">
+    
+    <meta name="description" content="Represents a group of cell minerals layers within a hexagonal terrain system, providing functionality to create and initialize terrain layers based on specified parameters.">
+      <link rel="shortcut icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
+      <link rel="stylesheet" href="../styles/docfx.css">
+      <link rel="stylesheet" href="../styles/main.css">
+      <meta property="docfx:navrel" content="../toc.html">
+      <meta property="docfx:tocrel" content="toc.html">
+    
+    <meta property="docfx:rel" content="../">
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" height="100%" src="../logo.png" alt="Hex Terrains Framework">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div class="container body-content">
+
+        <div id="search-results">
+          <div class="search-list">Search Results for <span></span></div>
+          <div class="sr-items">
+            <p><i class="glyphicon glyphicon-refresh index-loading"></i></p>
+          </div>
+          <ul id="pagination" data-first=First data-prev=Previous data-next=Next data-last=Last></ul>
+        </div>
+      </div>
+      <div role="main" class="container body-content hide-when-search">
+
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup">
+
+
+
+  <h1 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup" class="text-break">Class CellMineralsLayerGroup</h1>
+  <div class="markdown level0 summary"><p>Represents a group of cell minerals layers within a hexagonal terrain system, providing functionality to create
+and initialize terrain layers based on specified parameters.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+    <div class="level1"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></div>
+    <div class="level2"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup.html">HexTerrainLayerGroup</a></div>
+    <div class="level3"><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html">HexTerrainLayerGroup</a>&lt;<a class="xref" href="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.html">CellMineralsLayer</a>&gt;</div>
+    <div class="level4"><span class="xref">CellMineralsLayerGroup</span></div>
+  </div>
+  <div class="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a></div>
+    <div><a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a></div>
+    <div><span class="xref">IComponentData</span></div>
+    <div><span class="xref">IQueryTypeParameter</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayersCount">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.LayersCount</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Layers">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.Layers</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayersByName">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.LayersByName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayerIndexByName">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.LayerIndexByName</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_LayerIndexByInstance">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.LayerIndexByInstance</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings_System_Collections_Generic_IEnumerable___0__">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.Init&lt;TInitLayerArgs&gt;(HexTerrainSettings, IEnumerable&lt;TInitLayerArgs&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Init_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.Init(HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_InitLayers__1_Fwt_HexTerrains_Data_HexTerrainSettings_System_Collections_Generic_IEnumerable___0__">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.InitLayers&lt;TInitLayerArgs&gt;(HexTerrainSettings, IEnumerable&lt;TInitLayerArgs&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_InitLayers_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.InitLayers(HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer_System_Int32_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer_System_String_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_CalculateColorMap_Unity_Jobs_JobHandle_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.CalculateColorMap(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_Int32_System_Boolean_System_String_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer&lt;TTargetLayer&gt;(int, bool, string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_String_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer&lt;TTargetLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_Int32_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer&lt;TTargetLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_System_Int32_System_String_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer&lt;TTargetLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer&lt;TTargetLayer&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_GetLayer__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.GetLayer&lt;TTargetLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SetOrAddLayer_System_Int32__0_System_Boolean_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.SetOrAddLayer(int, CellMineralsLayer, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SetLayer_System_Int32__0_System_Boolean_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.SetLayer(int, CellMineralsLayer, bool, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_AddLayer__0_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.AddLayer(CellMineralsLayer)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RemoveLayer_System_Int32_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.RemoveLayer(int, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RemoveLayer_System_String_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.RemoveLayer(string, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RemoveLayer__0_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.RemoveLayer(CellMineralsLayer, bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_RegisterLayer__0_System_Int32_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.RegisterLayer(CellMineralsLayer, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_UnregisterLayer__0_System_Int32_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.UnregisterLayer(CellMineralsLayer, int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SetAllDirty_System_Boolean_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.SetAllDirty(bool)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Cleanup">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.Cleanup()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_CleanupAsync_Unity_Jobs_JobHandle_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.CleanupAsync(JobHandle)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_Dispose">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_SerializeLayer_System_IO_BinaryWriter_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.SerializeLayer(BinaryWriter)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_DeserializeLayer_System_IO_BinaryReader_Fwt_HexTerrains_Data_HexTerrainSettings_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.DeserializeLayer(BinaryReader, HexTerrainSettings)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Name">HexTerrainLayer.Name</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Settings">HexTerrainLayer.Settings</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ParentLayer">HexTerrainLayer.ParentLayer</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_">HexTerrainLayer.Init&lt;TInitArgs&gt;(HexTerrainSettings, TInitArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_Resize_Unity_Mathematics_int2_">HexTerrainLayer.Resize(int2)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__">HexTerrainLayer.InitColoredDataLayer&lt;TValue&gt;(ColorMapCellValueDataLayer&lt;TValue&gt;, IInitColorMapCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_InitDataLayer__1_Fwt_HexTerrains_DataLayers_CellValueDataLayer___0__Fwt_HexTerrains_Data_IInitCellValueDataLayerArgs___0__">HexTerrainLayer.InitDataLayer&lt;TValue&gt;(CellValueDataLayer&lt;TValue&gt;, IInitCellValueDataLayerArgs&lt;TValue&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_System_Int32_System_String_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(int, string)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_GetTerrainLayerFromParent__1_Fwt_HexTerrains_Data_HexTerrainLayerReference_">HexTerrainLayer.GetTerrainLayerFromParent&lt;TLayer&gt;(HexTerrainLayerReference)</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_CompleteAllJobs">HexTerrainLayer.CompleteAllJobs()</a>
+    </div>
+    <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html#Fwt_HexTerrains_Data_HexTerrainLayer_ToString">HexTerrainLayer.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="Fwt.html">Fwt</a>.<a class="xref" href="Fwt.HexTerrains.html">HexTerrains</a>.<a class="xref" href="Fwt.HexTerrains.Minerals.html">Minerals</a>.<a class="xref" href="Fwt.HexTerrains.Minerals.Data.html">Data</a></h6>
+  <h6><strong>Assembly</strong>: fwt.hexterrains.dll</h6>
+  <h5 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class CellMineralsLayerGroup : HexTerrainLayerGroup&lt;CellMineralsLayer&gt;, IDisposable, ISerializableTerrainLayer, IComponentData, IQueryTypeParameter</code></pre>
+  </div>
+  <h5 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This class extends HexTerrainLayerGroup to manage CellMineralsLayer instances and implements
+IComponentData for compatibility with ECS architectures. It enables customized initialization and creation of
+terrain layers using initialization arguments, supporting flexible configuration of mineral layers in hex-based
+terrains.</p>
+</div>
+  <h3 id="methods">Methods
+</h3>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup_CreateTerrainLayer_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.CreateTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup_CreateTerrainLayer__1___0_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.CreateTerrainLayer``1(``0)">CreateTerrainLayer&lt;TInitArgs&gt;(TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>This function is called to create a new terrain layer of type TTerrainLayer.
+Default implementation uses an Activator to create a new instance of TTerrainLayer,
+expecting that the TTerrainLayer has a parameterless constructor.
+Override this function in your derived class to have a custom way of creating a terrain layer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override CellMineralsLayer CreateTerrainLayer&lt;TInitArgs&gt;(TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td><p>Initialization arguments for creating a layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.html">CellMineralsLayer</a></td>
+        <td><p>Returns a created instance of the terrain layer of type (inherited from) TTerrainLayer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>Init terrain layer arguments object that is used in create layer process. Default implementation ignores this parameter, but in your overrided implementation it may be needed</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_CreateTerrainLayer__1___0_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.CreateTerrainLayer&lt;TInitArgs&gt;(TInitArgs)</a></div>
+
+
+  <a id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup_InitTerrainLayer_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.InitTerrainLayer*"></a>
+  <h4 id="Fwt_HexTerrains_Minerals_Data_CellMineralsLayerGroup_InitTerrainLayer__1_Fwt_HexTerrains_Minerals_Data_CellMineralsLayer_Fwt_HexTerrains_Data_HexTerrainSettings___0_" data-uid="Fwt.HexTerrains.Minerals.Data.CellMineralsLayerGroup.InitTerrainLayer``1(Fwt.HexTerrains.Minerals.Data.CellMineralsLayer,Fwt.HexTerrains.Data.HexTerrainSettings,``0)">InitTerrainLayer&lt;TInitArgs&gt;(CellMineralsLayer, HexTerrainSettings, TInitArgs)</h4>
+  <div class="markdown level1 summary"><p>Initializes the terrain layer with the specified settings and initialization arguments.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public override void InitTerrainLayer&lt;TInitArgs&gt;(CellMineralsLayer layer, HexTerrainSettings settings, TInitArgs initArgs)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Minerals.Data.CellMineralsLayer.html">CellMineralsLayer</a></td>
+        <td><span class="parametername">layer</span></td>
+        <td><p>nested terrain layer to be initialized with provided init args</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td><span class="parametername">settings</span></td>
+        <td><p>HexTerrainSettings of the terrain this layers list is attached to</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">TInitArgs</span></td>
+        <td><span class="parametername">initArgs</span></td>
+        <td><p>Initialization arguments for provided nested terrain layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TInitArgs</span></td>
+        <td><p>Initialization arguments for a nested terrain layer</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="overrides">Overrides</h5>
+  <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerGroup-1.html#Fwt_HexTerrains_Data_HexTerrainLayerGroup_1_InitTerrainLayer__1__0_Fwt_HexTerrains_Data_HexTerrainSettings___0_">HexTerrainLayerGroup&lt;CellMineralsLayer&gt;.InitTerrainLayer&lt;TInitArgs&gt;(CellMineralsLayer, HexTerrainSettings, TInitArgs)</a></div>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.idisposable">IDisposable</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.HexTerrains.Data.ISerializableTerrainLayer.html">ISerializableTerrainLayer</a>
+  </div>
+  <div>
+      <span class="xref">Unity.Entities.IComponentData</span>
+  </div>
+  <div>
+      <span class="xref">Unity.Entities.IQueryTypeParameter</span>
+  </div>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartDestroy_System_Object_">Extensions_UnityObject.SmartDestroy(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetComponent__1_System_Object_">Extensions_UnityObject.SmartGetComponent&lt;TComponent&gt;(object)</a>
+  </div>
+  <div>
+      <a class="xref" href="Fwt.Core.Extensions_UnityObject.html#Fwt_Core_Extensions_UnityObject_SmartGetGameGameObject_System_Object_">Extensions_UnityObject.SmartGetGameGameObject(object)</a>
+  </div>
+
+</article>
+          </div>
+
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+                <h5>In this article</h5>
+                <div></div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+      
+      <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script type="text/javascript" src="../styles/docfx.vendor.min.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>
+      mermaid.initialize({ startOnLoad: true });
+    </script>  </body>
+</html>

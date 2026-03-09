@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Struct CreateChunkMeshLayerRequest | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Represents a request to create a terrain layer using a specified chunk mesh layer configuration.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,8 @@
 
 
   <h1 id="Fwt_HexTerrains_ChunkMehes_Data_CreateChunkMeshLayerRequest" data-uid="Fwt.HexTerrains.ChunkMehes.Data.CreateChunkMeshLayerRequest" class="text-break">Struct CreateChunkMeshLayerRequest</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a request to create a terrain layer using a specified chunk mesh layer configuration.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="implements">
     <h5>Implements</h5>
@@ -115,12 +116,20 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public struct CreateChunkMeshLayerRequest : IBufferElementData, ITerrainLayerFactory</code></pre>
   </div>
+  <h5 id="Fwt_HexTerrains_ChunkMehes_Data_CreateChunkMeshLayerRequest_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>This struct is used in buffer-based data structures to facilitate the creation of terrain
+layers in a chunked mesh system. It implements both the IBufferElementData and ITerrainLayerFactory interfaces,
+allowing it to be used in ECS-based workflows and to generate terrain layers based on the provided configuration
+asset. The Name field identifies the layer, while the Args field holds a reference to the configuration asset
+required for layer creation.</p>
+</div>
   <h3 id="fields">Fields
 </h3>
 
 
   <h4 id="Fwt_HexTerrains_ChunkMehes_Data_CreateChunkMeshLayerRequest_Args" data-uid="Fwt.HexTerrains.ChunkMehes.Data.CreateChunkMeshLayerRequest.Args">Args</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Configuration asset reference used to initialize the newly created terrain layer with.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
@@ -144,7 +153,8 @@
 
 
   <h4 id="Fwt_HexTerrains_ChunkMehes_Data_CreateChunkMeshLayerRequest_Name" data-uid="Fwt.HexTerrains.ChunkMehes.Data.CreateChunkMeshLayerRequest.Name">Name</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Name of the terrain layer to be created.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">

@@ -1397,7 +1397,7 @@ user tools screen is available.</p>
 
   <a id="Fwt_HexTerrains_EnvironmentAPI_GetViewMode_" data-uid="Fwt.HexTerrains.EnvironmentAPI.GetViewMode*"></a>
   <h4 id="Fwt_HexTerrains_EnvironmentAPI_GetViewMode_Unity_Entities_Entity_" data-uid="Fwt.HexTerrains.EnvironmentAPI.GetViewMode(Unity.Entities.Entity)">GetViewMode(Entity)</h4>
-  <div class="markdown level1 summary"><p>Returns the view mode of the terrainEntity <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a>.</p>
+  <div class="markdown level1 summary"><p>Returns the view mode of the terrainEntity <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode.html">HexTerrainViewMode</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -1993,8 +1993,63 @@ Returns true if value was set</p>
 
 
   <a id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_" data-uid="Fwt.HexTerrains.EnvironmentAPI.SetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_Unity_Entities_Entity_Fwt_HexTerrains_ViewModes_Data_SetViewModeRequest_" data-uid="Fwt.HexTerrains.EnvironmentAPI.SetViewMode(Unity.Entities.Entity,Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest)">SetViewMode(Entity, SetViewModeRequest)</h4>
+  <div class="markdown level1 summary"><p>Sets the view mode based on the parameters specified in the request.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetViewMode(Entity terrainEntity, SetViewModeRequest request)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest.html">SetViewModeRequest</a></td>
+        <td><span class="parametername">request</span></td>
+        <td><p>An object that specifies the view mode to set, either by index or by name. The request must indicate which
+method to use.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if the view mode is successfully set; otherwise, false.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_Unity_Entities_Entity_Fwt_HexTerrains_ViewModes_Data_SetViewModeRequest__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If neither the view mode index nor the view mode name is specified in the request,
+the method returns false.</p>
+</div>
+
+
+  <a id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_" data-uid="Fwt.HexTerrains.EnvironmentAPI.SetViewMode*"></a>
   <h4 id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_Unity_Entities_Entity_System_Int32_" data-uid="Fwt.HexTerrains.EnvironmentAPI.SetViewMode(Unity.Entities.Entity,System.Int32)">SetViewMode(Entity, int)</h4>
-  <div class="markdown level1 summary"><p>Sets the view mode on the terrainEntity <a class="xref" href="Fwt.HexTerrains.Data.HexTerrainViewMode.html">HexTerrainViewMode</a>.</p>
+  <div class="markdown level1 summary"><p>Sets the view mode on the terrainEntity <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode.html">HexTerrainViewMode</a>.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
@@ -2020,6 +2075,56 @@ Returns true if value was set</p>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">viewMode</span></td>
         <td><p>new view mode</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_" data-uid="Fwt.HexTerrains.EnvironmentAPI.SetViewMode*"></a>
+  <h4 id="Fwt_HexTerrains_EnvironmentAPI_SetViewMode_Unity_Entities_Entity_System_String_" data-uid="Fwt.HexTerrains.EnvironmentAPI.SetViewMode(Unity.Entities.Entity,System.String)">SetViewMode(Entity, string)</h4>
+  <div class="markdown level1 summary"><p>Sets the view mode on the TerrainEntity <a class="xref" href="Fwt.HexTerrains.ViewModes.Data.HexTerrainViewMode.html">HexTerrainViewMode</a> by view mode name.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public virtual bool SetViewMode(Entity terrainEntity, string viewModeName)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Entity</span></td>
+        <td><span class="parametername">terrainEntity</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">viewModeName</span></td>
+        <td><p>name of the new view mode</p>
 </td>
       </tr>
     </tbody>

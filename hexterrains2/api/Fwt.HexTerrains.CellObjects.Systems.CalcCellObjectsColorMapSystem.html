@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CalcCellObjectsColorMapSystem | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity Entity Component System (ECS) framework.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,9 @@
 
 
   <h1 id="Fwt_HexTerrains_CellObjects_Systems_CalcCellObjectsColorMapSystem" data-uid="Fwt.HexTerrains.CellObjects.Systems.CalcCellObjectsColorMapSystem" class="text-break">Class CalcCellObjectsColorMapSystem</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Provides an abstract base class for systems that calculate color maps for hex terrain layers within the Unity
+Entity Component System (ECS) framework.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -301,6 +303,13 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class CalcCellObjectsColorMapSystem : CalculateHexTerrainLayerColorMapSystemBase&lt;CellObjectLayerGroup&gt;</code></pre>
   </div>
+  <h5 id="Fwt_HexTerrains_CellObjects_Systems_CalcCellObjectsColorMapSystem_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>Inheritors should implement specific color map calculation logic for different terrain layer
+types by overriding the CalculateColorMap method. The system manages visibility checks and can skip processing
+of invisible terrains if the IsSkipInvisibleTerrains property is set to <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a>. This class is
+intended to be used as part of the hex terrain rendering pipeline and ensures that only relevant terrain layers
+are processed each frame.</p>
+</div>
   <h3 id="extensionmethods">Extension Methods</h3>
   <div>
       <a class="xref" href="Fwt.Core.HashExtensions.html#Fwt_Core_HashExtensions_GetHashCode_RefType__1___0_System_Int32_">HashExtensions.GetHashCode_RefType&lt;TValue&gt;(TValue, int)</a>

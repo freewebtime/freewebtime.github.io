@@ -272,6 +272,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/CellMineralsTools.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellMineralsTools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/CellObjectColors.png",
       "output": {
         "resource": {

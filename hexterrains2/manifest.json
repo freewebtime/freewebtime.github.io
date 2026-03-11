@@ -872,6 +872,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/SunLayerGroupAuthoring.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/SunLayerGroupAuthoring.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/SurfaceTools.png",
       "output": {
         "resource": {
@@ -1082,10 +1092,30 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/architecture-diagram.png~",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/architecture-diagram.png~"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/initialization-flow.png",
       "output": {
         "resource": {
           "relative_path": "Instruction/images/initialization-flow.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/initialization-flow.png~",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/initialization-flow.png~"
         }
       },
       "version": ""

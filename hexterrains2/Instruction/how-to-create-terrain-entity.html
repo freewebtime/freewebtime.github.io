@@ -200,6 +200,15 @@ When <code>ItemPositionMap</code> or <code>ItemRotationMap</code> or <code>ItemS
 <blockquote>
 <p>There is also an ability to set a vertical flow targets (up and down) to exchange volume between GeoPlast layers. For instance, to simulate evaporation from water to clouds or to simulate condensation from clouds back to water. Default implementation of the DynamicGeoPlastLayer does not calculate a vertical flow, but there is a MaterialGeoPlastLayer that has an implementation of the vertical flow depending on the Temperature (so you can have a freezing/evaporating water, melting snow, etc).</p>
 </blockquote>
+<p>This layer is optional. In default implementation almost no other layers depend on it (except <code>SunTerrainLayer</code>, see below).</p>
+<h3 id="sunlayergroup"><code>SunLayerGroup</code></h3>
+<blockquote>
+<p>Optional component</p>
+</blockquote>
+<p><img src="images/SunLayerGroupAuthoring.png" alt="SunTerrainLayerGroup authoring"></p>
+<p>This component adds a <code>SunTerrainLayerGroup</code> to the Terrain Entity. This LayerGroup holds a list of <code>SunTerrainLayer</code> layers such as Earth Sun Line, Earth Sun Circle, Mars Sun, etc.</p>
+<p>SunTerrainLayer has <code>float2 SunPosition</code>, <code>float DayProgress</code> and <code>float YearProgress</code>. Each simulation tick it moves the sun (changes the <code>SunPosition</code> value), and then applies heat to the GeoPlast layers, so the heat-based simulation happen (like volume expansion, water evaporation/freezing, snow melting, etc.)</p>
+<p>This layer is optional. In default implementation no other layers depend on it.</p>
 <h2 id="runtime">Runtime</h2>
 <h3 id="initialization-process">Initialization process</h3>
 <p>Because the Terrain Layers are managed IComponentData components, it is not possible to bake them directly on Entity. So instead baking adds the CreateLayerRequest components.</p>

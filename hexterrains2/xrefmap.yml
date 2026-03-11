@@ -82724,6 +82724,22 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainAPI.GetCellIndexUnderCursor
   nameWithType: HexTerrainAPI.GetCellIndexUnderCursor
+- uid: Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex*
+  name: GetCellMineralIndex
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetCellMineralIndex_
+  commentId: Overload:Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex
+  nameWithType: HexTerrainAPI.GetCellMineralIndex
+- uid: Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name: GetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetCellMineralIndex__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_
+  commentId: M:Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name.vb: GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
+  fullName: Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  fullName.vb: Fwt.HexTerrains.HexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  nameWithType: HexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  nameWithType.vb: HexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
 - uid: Fwt.HexTerrains.HexTerrainAPI.GetCellObject*
   name: GetCellObject
   href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetCellObject_
@@ -82930,6 +82946,22 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainAPI.GetIsVisibleBrush
   nameWithType: HexTerrainAPI.GetIsVisibleBrush
+- uid: Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount*
+  name: GetMineralsAmount
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetMineralsAmount_
+  commentId: Overload:Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount
+  nameWithType: HexTerrainAPI.GetMineralsAmount
+- uid: Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name: GetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetMineralsAmount__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_
+  commentId: M:Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name.vb: GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
+  fullName: Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  fullName.vb: Fwt.HexTerrains.HexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  nameWithType: HexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  nameWithType.vb: HexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
 - uid: Fwt.HexTerrains.HexTerrainAPI.GetOrCreateUIScreen*
   name: GetOrCreateUIScreen
   href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetOrCreateUIScreen_
@@ -83213,6 +83245,22 @@ references:
   fullName.vb: Fwt.HexTerrains.HexTerrainAPI.SetCellHeight(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference, Single)
   nameWithType: HexTerrainAPI.SetCellHeight<TLayerGroup, TLayer>(int, HexTerrainLayerReference, float)
   nameWithType.vb: HexTerrainAPI.SetCellHeight(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, Single)
+- uid: Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex*
+  name: SetCellMineralIndex
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_SetCellMineralIndex_
+  commentId: Overload:Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex
+  nameWithType: HexTerrainAPI.SetCellMineralIndex
+- uid: Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.UInt32)
+  name: SetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference, uint)
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_SetCellMineralIndex__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_UInt32_
+  commentId: M:Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.UInt32)
+  name.vb: SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, UInteger)
+  fullName: Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference, uint)
+  fullName.vb: Fwt.HexTerrains.HexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference, UInteger)
+  nameWithType: HexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference, uint)
+  nameWithType.vb: HexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, UInteger)
 - uid: Fwt.HexTerrains.HexTerrainAPI.SetCellObject*
   name: SetCellObject
   href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_SetCellObject_
@@ -83357,6 +83405,22 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.HexTerrainAPI.SetIsVisibleBrush
   nameWithType: HexTerrainAPI.SetIsVisibleBrush
+- uid: Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount*
+  name: SetMineralsAmount
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_SetMineralsAmount_
+  commentId: Overload:Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount
+  nameWithType: HexTerrainAPI.SetMineralsAmount
+- uid: Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Single)
+  name: SetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference, float)
+  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_SetMineralsAmount__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Single_
+  commentId: M:Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Single)
+  name.vb: SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, Single)
+  fullName: Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference, float)
+  fullName.vb: Fwt.HexTerrains.HexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference, Single)
+  nameWithType: HexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference, float)
+  nameWithType.vb: HexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, Single)
 - uid: Fwt.HexTerrains.HexTerrainAPI.SetViewMode(Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest)
   name: SetViewMode(SetViewModeRequest)
   href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_SetViewMode_Fwt_HexTerrains_ViewModes_Data_SetViewModeRequest_
@@ -85074,6 +85138,49 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.IHexTerrainAPI.GetCellIndexUnderCursor
   nameWithType: IHexTerrainAPI.GetCellIndexUnderCursor
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex*
+  name: GetCellMineralIndex
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex_
+  commentId: Overload:Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex
+  nameWithType: IHexTerrainAPI.GetCellMineralIndex
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name: GetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name.vb: GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  nameWithType: IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  nameWithType.vb: IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.Int32)
+  name: GetCellMineralIndex<TLayerGroup, TLayer>(int, int)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_System_Int32_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.Int32)
+  name.vb: GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, int)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer)
+  nameWithType: IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, int)
+  nameWithType.vb: IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.Int32,System.String)
+  name: GetCellMineralIndex<TLayerGroup, TLayer>(int, int, string)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_System_Int32_System_String_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.Int32,System.String)
+  name.vb: GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, String)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, int, string)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, String)
+  nameWithType: IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, int, string)
+  nameWithType.vb: IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, String)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.String)
+  name: GetCellMineralIndex<TLayerGroup, TLayer>(int, string)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_System_String_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.String)
+  name.vb: GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, String)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, string)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, String)
+  nameWithType: IHexTerrainAPI.GetCellMineralIndex<TLayerGroup, TLayer>(int, string)
+  nameWithType.vb: IHexTerrainAPI.GetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, String)
 - uid: Fwt.HexTerrains.IHexTerrainAPI.GetCellObject*
   name: GetCellObject
   href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetCellObject_
@@ -85442,6 +85549,49 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.IHexTerrainAPI.GetIsVisibleBrush
   nameWithType: IHexTerrainAPI.GetIsVisibleBrush
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount*
+  name: GetMineralsAmount
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount_
+  commentId: Overload:Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount
+  nameWithType: IHexTerrainAPI.GetMineralsAmount
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name: GetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  name.vb: GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference)
+  nameWithType: IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
+  nameWithType.vb: IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.Int32)
+  name: GetMineralsAmount<TLayerGroup, TLayer>(int, int)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_System_Int32_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.Int32)
+  name.vb: GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, int)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer)
+  nameWithType: IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, int)
+  nameWithType.vb: IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.Int32,System.String)
+  name: GetMineralsAmount<TLayerGroup, TLayer>(int, int, string)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_System_Int32_System_String_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.Int32,System.String)
+  name.vb: GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, String)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, int, string)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, String)
+  nameWithType: IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, int, string)
+  nameWithType.vb: IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, String)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.String)
+  name: GetMineralsAmount<TLayerGroup, TLayer>(int, string)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_System_String_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.String)
+  name.vb: GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, String)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, string)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, String)
+  nameWithType: IHexTerrainAPI.GetMineralsAmount<TLayerGroup, TLayer>(int, string)
+  nameWithType.vb: IHexTerrainAPI.GetMineralsAmount(Of TLayerGroup, TLayer)(Integer, String)
 - uid: Fwt.HexTerrains.IHexTerrainAPI.GetOrCreateUIScreen*
   name: GetOrCreateUIScreen
   href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetOrCreateUIScreen_
@@ -85802,6 +85952,49 @@ references:
   fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetCellHeight(Of TLayerGroup, TLayer)(Integer, String, Single)
   nameWithType: IHexTerrainAPI.SetCellHeight<TLayerGroup, TLayer>(int, string, float)
   nameWithType.vb: IHexTerrainAPI.SetCellHeight(Of TLayerGroup, TLayer)(Integer, String, Single)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex*
+  name: SetCellMineralIndex
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex_
+  commentId: Overload:Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex
+  nameWithType: IHexTerrainAPI.SetCellMineralIndex
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.UInt32)
+  name: SetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference, uint)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_UInt32_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.UInt32)
+  name.vb: SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, UInteger)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference, uint)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference, UInteger)
+  nameWithType: IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, HexTerrainLayerReference, uint)
+  nameWithType.vb: IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, UInteger)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.Int32,System.String,System.UInt32)
+  name: SetCellMineralIndex<TLayerGroup, TLayer>(int, int, string, uint)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_System_Int32_System_String_System_UInt32_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.Int32,System.String,System.UInt32)
+  name.vb: SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, String, UInteger)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, int, string, uint)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, String, UInteger)
+  nameWithType: IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, int, string, uint)
+  nameWithType.vb: IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, String, UInteger)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.Int32,System.UInt32)
+  name: SetCellMineralIndex<TLayerGroup, TLayer>(int, int, uint)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_System_Int32_System_UInt32_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.Int32,System.UInt32)
+  name.vb: SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, UInteger)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, int, uint)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, UInteger)
+  nameWithType: IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, int, uint)
+  nameWithType.vb: IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, Integer, UInteger)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.String,System.UInt32)
+  name: SetCellMineralIndex<TLayerGroup, TLayer>(int, string, uint)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_System_String_System_UInt32_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.String,System.UInt32)
+  name.vb: SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, String, UInteger)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, string, uint)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, String, UInteger)
+  nameWithType: IHexTerrainAPI.SetCellMineralIndex<TLayerGroup, TLayer>(int, string, uint)
+  nameWithType.vb: IHexTerrainAPI.SetCellMineralIndex(Of TLayerGroup, TLayer)(Integer, String, UInteger)
 - uid: Fwt.HexTerrains.IHexTerrainAPI.SetCellObject*
   name: SetCellObject
   href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetCellObject_
@@ -86124,6 +86317,49 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.IHexTerrainAPI.SetIsVisibleBrush
   nameWithType: IHexTerrainAPI.SetIsVisibleBrush
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount*
+  name: SetMineralsAmount
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount_
+  commentId: Overload:Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount
+  nameWithType: IHexTerrainAPI.SetMineralsAmount
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Single)
+  name: SetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference, float)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Single_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Single)
+  name.vb: SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, Single)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, Fwt.HexTerrains.Data.HexTerrainLayerReference, float)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference, Single)
+  nameWithType: IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, HexTerrainLayerReference, float)
+  nameWithType.vb: IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference, Single)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.Int32,System.Single)
+  name: SetMineralsAmount<TLayerGroup, TLayer>(int, int, float)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_System_Int32_System_Single_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.Int32,System.Single)
+  name.vb: SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, Single)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, int, float)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, Single)
+  nameWithType: IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, int, float)
+  nameWithType.vb: IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, Single)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.Int32,System.String,System.Single)
+  name: SetMineralsAmount<TLayerGroup, TLayer>(int, int, string, float)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_System_Int32_System_String_System_Single_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.Int32,System.String,System.Single)
+  name.vb: SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, String, Single)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, int, string, float)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, String, Single)
+  nameWithType: IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, int, string, float)
+  nameWithType.vb: IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, Integer, String, Single)
+- uid: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.String,System.Single)
+  name: SetMineralsAmount<TLayerGroup, TLayer>(int, string, float)
+  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_System_String_System_Single_
+  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.String,System.Single)
+  name.vb: SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, String, Single)
+  fullName: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, string, float)
+  fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, String, Single)
+  nameWithType: IHexTerrainAPI.SetMineralsAmount<TLayerGroup, TLayer>(int, string, float)
+  nameWithType.vb: IHexTerrainAPI.SetMineralsAmount(Of TLayerGroup, TLayer)(Integer, String, Single)
 - uid: Fwt.HexTerrains.IHexTerrainAPI.SetViewMode(Fwt.HexTerrains.ViewModes.Data.SetViewModeRequest)
   name: SetViewMode(SetViewModeRequest)
   href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_SetViewMode_Fwt_HexTerrains_ViewModes_Data_SetViewModeRequest_

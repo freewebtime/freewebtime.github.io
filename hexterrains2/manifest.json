@@ -192,6 +192,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/AutoPaintUserToolConfig.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/AutoPaintUserToolConfig.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/BiomesColorMapPalette.png",
       "output": {
         "resource": {
@@ -966,6 +976,26 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/UserInterfaceDiagram.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/UserToolPanelAuthoring.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/UserToolPanelAuthoring.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/UserToolsCollection.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/UserToolsCollection.png"
         }
       },
       "version": ""

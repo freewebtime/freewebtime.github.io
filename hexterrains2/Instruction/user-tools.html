@@ -79,6 +79,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="usertools">UserTools</h1>
 
+<p><img src="images/SurfaceTools.png" alt="User Tools"></p>
 <p><code>UserTools</code> is the HexTerrains runtime “tooling” layer: a set of interactive states (tools) driven by a state machine. A tool is represented by a <code>UserToolStateBase</code> (or a derived class) and is typically selected by a <code>UserToolTypes</code> id.</p>
 <p>At runtime you:</p>
 <ol>
@@ -387,6 +388,7 @@
 <hr>
 <h2 id="how-to-use-usertools">How to use UserTools</h2>
 <h3 id="1-provide-tool-configs">1) Provide tool configs</h3>
+<p><img src="images/AutoPaintUserToolConfig.png" alt="UserTool config"></p>
 <p>Create (or reference) a set of <code>UserToolStateConfigAsset</code> ScriptableObjects. Each config must implement <code>CreateUserToolState(...)</code>.</p>
 <h3 id="2-initialize-state-machine">2) Initialize state machine</h3>
 <p>Call <code>UserToolsStateMachine.Init(...)</code> with:</p>
@@ -442,10 +444,14 @@ namespace Fwt.HexTerrains.UserTools.SM.Configs
 }
 </code></pre>
 <h4 id="step-4-register-the-config-in-your-tool-initialization-list">Step 4: Register the config in your tool initialization list</h4>
+<p><img src="images/UserToolsCollection.png" alt="User tool panel authoring"></p>
 <p>Add the created config asset to the collection passed into <code>UserToolsStateMachine.Init(configs, terrainAPI)</code>.</p>
 <h4 id="step-5-switch-to-the-tool-at-runtime">Step 5: Switch to the tool at runtime</h4>
 <pre><code class="lang-csharp">userToolsSm.SwitchStateByUserToolType((int)UserToolTypes.PaintCellObjects);
 </code></pre>
+<h4 id="step-6-add-the-user-tool-button-to-the-usertool-panel">Step 6. Add the User Tool Button to the UserTool panel</h4>
+<p>If you use a provided Samples UserToolPanel, then add a button to the hierarchy</p>
+<p><img src="images/UserToolPanelAuthoring.png" alt="User tool panel authoring"></p>
 <hr>
 <h2 id="notes--gotchas">Notes / gotchas</h2>
 <ul>

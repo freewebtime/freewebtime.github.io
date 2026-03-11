@@ -1489,6 +1489,300 @@ Destroys existing terrain</p>
   </table>
 
 
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)">GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, HexTerrainLayerReference)</h4>
+  <div class="markdown level1 summary"><p>Returns the MineralIndexMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">uint? GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>reference to the layer to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_System_Int32_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.Int32)">GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, int)</h4>
+  <div class="markdown level1 summary"><p>Returns the MineralIndexMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">uint? GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_System_Int32_System_String_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.Int32,System.String)">GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, int, string)</h4>
+  <div class="markdown level1 summary"><p>Returns the MineralIndexMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">uint? GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex, string layerName) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetCellMineralIndex__2_System_Int32_System_String_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellMineralIndex``2(System.Int32,System.String)">GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, string)</h4>
+  <div class="markdown level1 summary"><p>Returns the MineralIndexMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">uint? GetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, string layerName) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_IHexTerrainAPI_GetCellObject_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellObject*"></a>
   <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetCellObject__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetCellObject``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)">GetCellObject&lt;TLayerGroup, TLayer&gt;(int, HexTerrainLayerReference)</h4>
   <div class="markdown level1 summary"><p>Returns the CellObjectMap value at the specified cell index from the specified CellObjectLayer.</p>
@@ -3529,6 +3823,300 @@ This list can be sent to the UI to display available terrain prefabs for the use
   </table>
 
 
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference)">GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, HexTerrainLayerReference)</h4>
+  <div class="markdown level1 summary"><p>Returns the AmountMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float? GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>reference to the layer to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_System_Int32_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.Int32)">GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, int)</h4>
+  <div class="markdown level1 summary"><p>Returns the AmountMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float? GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_System_Int32_System_String_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.Int32,System.String)">GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, int, string)</h4>
+  <div class="markdown level1 summary"><p>Returns the AmountMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float? GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex, string layerName) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetMineralsAmount__2_System_Int32_System_String_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetMineralsAmount``2(System.Int32,System.String)">GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, string)</h4>
+  <div class="markdown level1 summary"><p>Returns the AmountMap value at the specified cell index from the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">float? GetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, string layerName) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to get a value from</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>?</td>
+        <td><p>value if found or null if not found</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to get a cell value from</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_IHexTerrainAPI_GetOrCreateUIScreen_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetOrCreateUIScreen*"></a>
   <h4 id="Fwt_HexTerrains_IHexTerrainAPI_GetOrCreateUIScreen__1" data-uid="Fwt.HexTerrains.IHexTerrainAPI.GetOrCreateUIScreen``1">GetOrCreateUIScreen&lt;TScreen&gt;()</h4>
   <div class="markdown level1 summary"><p>Gets an existing screen of the specified type, or creates a new one if it doesn't exist.</p>
@@ -5160,6 +5748,324 @@ Usually means if terrain has this data layer.</p>
       <tr>
         <td><span class="parametername">TLayer</span></td>
         <td><p>type of ChunkMeshLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_UInt32_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.UInt32)">SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, HexTerrainLayerReference, uint)</h4>
+  <div class="markdown level1 summary"><p>Sets the MineralIndexMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference, uint value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>reference to the layer to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_System_Int32_System_String_System_UInt32_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.Int32,System.String,System.UInt32)">SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, int, string, uint)</h4>
+  <div class="markdown level1 summary"><p>Sets the MineralIndexMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex, string layerName, uint value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_System_Int32_System_UInt32_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.Int32,System.UInt32)">SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, int, uint)</h4>
+  <div class="markdown level1 summary"><p>Sets the MineralIndexMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex, uint value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetCellMineralIndex__2_System_Int32_System_String_System_UInt32_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetCellMineralIndex``2(System.Int32,System.String,System.UInt32)">SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int, string, uint)</h4>
+  <div class="markdown level1 summary"><p>Sets the MineralIndexMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetCellMineralIndex&lt;TLayerGroup, TLayer&gt;(int cellIndex, string layerName, uint value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
 </td>
       </tr>
     </tbody>
@@ -7277,6 +8183,324 @@ Returns true if value was set</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
         <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_Fwt_HexTerrains_Data_HexTerrainLayerReference_System_Single_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,Fwt.HexTerrains.Data.HexTerrainLayerReference,System.Single)">SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, HexTerrainLayerReference, float)</h4>
+  <div class="markdown level1 summary"><p>Sets the AmountMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, HexTerrainLayerReference layerReference, float value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerReference.html">HexTerrainLayerReference</a></td>
+        <td><span class="parametername">layerReference</span></td>
+        <td><p>reference to the layer to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_System_Int32_System_Single_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.Int32,System.Single)">SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, int, float)</h4>
+  <div class="markdown level1 summary"><p>Sets the AmountMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex, float value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_System_Int32_System_String_System_Single_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.Int32,System.String,System.Single)">SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, int, string, float)</h4>
+  <div class="markdown level1 summary"><p>Sets the AmountMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, int layerIndex, string layerName, float value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">layerIndex</span></td>
+        <td><p>index of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount*"></a>
+  <h4 id="Fwt_HexTerrains_IHexTerrainAPI_SetMineralsAmount__2_System_Int32_System_String_System_Single_" data-uid="Fwt.HexTerrains.IHexTerrainAPI.SetMineralsAmount``2(System.Int32,System.String,System.Single)">SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int, string, float)</h4>
+  <div class="markdown level1 summary"><p>Sets the AmountMap value at the specified cell index at the specified CellMineralsLayer.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">bool SetMineralsAmount&lt;TLayerGroup, TLayer&gt;(int cellIndex, string layerName, float value) where TLayerGroup : HexTerrainLayerGroup, IComponentData where TLayer : CellMineralsLayer</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellIndex</span></td>
+        <td><p>cell index to set a value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></td>
+        <td><span class="parametername">layerName</span></td>
+        <td><p>name of the layer in HexTerrainLayerGroup to set a cell value at</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>value to set</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
+        <td><p>true if value has been set, otherwise - false</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TLayerGroup</span></td>
+        <td><p>type of HexTerrainLayerGroup entity component to get the CellMineralsLayer from</p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TLayer</span></td>
+        <td><p>type of CellMineralsLayer from the HexTerrainLayerGroup to set a cell value at</p>
 </td>
       </tr>
     </tbody>

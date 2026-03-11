@@ -119,13 +119,38 @@ public struct CalcCellEntityEntitiesJob : IJobParallelFor</code></pre>
 </h3>
 
 
-  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntities" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntities">CellEntities</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityConfigs" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityConfigs">CellEntityConfigs</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ReadOnly]
-public NativeList&lt;int&gt; CellEntities</code></pre>
+public NativeArray&lt;CellEntityStateConfig&gt; CellEntityConfigs</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html">CellEntityStateConfig</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityIndexMap" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityIndexMap">CellEntityIndexMap</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">[ReadOnly]
+public NativeList&lt;int&gt; CellEntityIndexMap</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -144,38 +169,13 @@ public NativeList&lt;int&gt; CellEntities</code></pre>
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityConfigs" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityConfigs">CellEntityConfigs</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityStateMap" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStateMap">CellEntityStateMap</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[ReadOnly]
-public NativeArray&lt;CellEntityConfig&gt; CellEntityConfigs</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityStates" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStates">CellEntityStates</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ReadOnly]
-public NativeList&lt;int&gt; CellEntityStates</code></pre>
+public NativeList&lt;int&gt; CellEntityStateMap</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -341,6 +341,30 @@ public NativeParallelMultiHashMap&lt;Entity, int&gt;.ParallelWriter RemoveEntity
     <tbody>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainSettings.html">HexTerrainSettings</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <h4 id="Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_StatesCountPerEntityIndex" data-uid="Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.StatesCountPerEntityIndex">StatesCountPerEntityIndex</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int StatesCountPerEntityIndex</code></pre>
+  </div>
+  <h5 class="fieldValue">Field Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td></td>
       </tr>
     </tbody>

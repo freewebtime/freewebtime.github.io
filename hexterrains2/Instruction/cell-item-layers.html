@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>CellItemLayer, CellObjectLayer, CellEntityLayer — concept, lifecycle, frame cycle, rendering &amp; entities | Hex Terrains Framework </title>
+      <title>Cell Items: CellItemLayer, CellObjectLayer, and CellEntityLayer | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="CellItemLayer, CellObjectLayer, CellEntityLayer — concept, lifecycle, frame cycle, rendering &amp; entities | Hex Terrains Framework ">
+      <meta name="title" content="Cell Items: CellItemLayer, CellObjectLayer, and CellEntityLayer | Hex Terrains Framework ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -77,638 +77,510 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="cellitemlayer-cellobjectlayer-cellentitylayer--concept-lifecycle-frame-cycle-rendering--entities"><code>CellItemLayer</code>, <code>CellObjectLayer</code>, <code>CellEntityLayer</code> — concept, lifecycle, frame cycle, rendering &amp; entities</h1>
+<h1 id="cell-items-cellitemlayer-cellobjectlayer-and-cellentitylayer">Cell Items: <code>CellItemLayer</code>, <code>CellObjectLayer</code>, and <code>CellEntityLayer</code></h1>
 
-<p>This document explains the “cell item” layer family:</p>
+<p><img src="images/CellItems.png" alt="Cell Items"></p>
+<p>This page explains the “Cell Item” concept in HexTerrains and how it is implemented by:</p>
 <ul>
-<li><code>CellItemLayer</code> (base data + transforms per cell)</li>
-<li><code>CellObjectLayer</code> (renders per-cell objects via <code>IBulkRenderer</code> / <code>BulkRendererAsset</code>)</li>
-<li><code>CellEntityLayer</code> (spawns/despawns ECS entities per cell and keeps them in sync)</li>
+<li><code>CellItemLayer</code> (base data model: <em>what item is in a cell + its per-cell transform</em>)</li>
+<li><code>CellObjectLayer</code> (visualization via GPU instancing / bulk rendering)</li>
+<li><code>CellEntityLayer</code> (visualization &amp; gameplay via ECS entities)</li>
 </ul>
-<p>It focuses on:</p>
+<p>It also covers the key data layers (<code>ItemIndexMap</code>, <code>ItemStateMap</code>, <code>ItemPositionMap</code>, <code>ItemRotationMap</code>, <code>ItemScaleMap</code>, <code>ItemTransformMap</code>), how LOD is selected, and how <code>CacheCellEntityDataSystem</code> prevents ECS structural-change issues during mass terrain destruction.</p>
+<hr>
+<h2 id="1-the-core-idea-cell-item">1. The core idea: “Cell Item”</h2>
+<p>A <strong>Cell Item</strong> is “something attached to a terrain cell”.</p>
+<p>Every cell can independently store:</p>
 <ul>
-<li>how the layers store data</li>
-<li>how dirty tracking affects recalculation</li>
-<li>what happens every frame (update → calculate → render → cleanup)</li>
-<li>initialization and disposal responsibilities</li>
-<li>how to use each layer correctly</li>
+<li><strong>Which item</strong> is placed there (<code>ItemIndexMap</code>)</li>
+<li><strong>Which variation/state</strong> of that item is active (<code>ItemStateMap</code>)</li>
+<li><strong>How the item is locally transformed</strong> within the cell (<code>ItemPositionMap</code>, <code>ItemRotationMap</code>, <code>ItemScaleMap</code>)</li>
+<li>A derived <strong>local TRS matrix</strong> (<code>ItemTransformMap</code>) used for fast visualization</li>
+</ul>
+<p>Two main implementations then <em>consume</em> this data:</p>
+<ul>
+<li><strong><code>CellObjectLayer</code></strong>: converts Cell Items into render instances (mesh/material batches), rendered with <code>IBulkRenderer</code>.</li>
+<li><strong><code>CellEntityLayer</code></strong>: converts Cell Items into ECS entity instances (instantiate/destroy/update).</li>
 </ul>
 <hr>
-<h2 id="1-core-idea-an-item-per-cell">1) Core idea: “an item per cell”</h2>
-<p>A <strong>cell item layer</strong> represents <em>at most one logical thing per cell</em> (a tile prop, a building, a resource entity, etc.). The thing is described by:</p>
+<h2 id="2-cellitemlayer-base-class">2. <code>CellItemLayer</code> (base class)</h2>
+<p><code>CellItemLayer : HexTerrainLayer, ISerializableTerrainLayer</code> is the shared foundation for “one item per cell”.</p>
+<h3 id="21-data-layers-owned-by-cellitemlayer">2.1 Data layers owned by <code>CellItemLayer</code></h3>
+<h4 id="itemindexmap-colormapcellvaluedatalayer_int"><code>ItemIndexMap</code> (<code>ColorMapCellValueDataLayer_Int</code>)</h4>
 <ul>
-<li><strong>Item index</strong>: <em>what</em> is in the cell (<code>ItemIndexMap</code>)</li>
-<li><strong>Item state</strong>: a variation or stage (<code>ItemStateMap</code>)</li>
-<li><strong>Local transform parts</strong>:
+<li><strong>Stored value</strong>: <code>int</code> per cell</li>
+<li><strong>Meaning</strong>: “item type index” (e.g., tree=5, rock=8, none=0 depending on your convention)</li>
+<li><strong>Extra capability</strong>: includes a <code>ColorMap</code> (<code>ColorMapDataLayer</code>) so the item index can be <strong>visualized as colors</strong>.</li>
+</ul>
+<p><strong>How it’s visualized</strong></p>
 <ul>
-<li><code>ItemPositionMap</code> (<code>float3</code>)</li>
-<li><code>ItemRotationMap</code> (<code>quaternion</code>)</li>
-<li><code>ItemScaleMap</code> (<code>float3</code>)</li>
+<li><code>CellItemLayer.CalculateColorMap()</code> calls <code>ItemIndexMap.CalculateColorMap(...)</code>.</li>
+<li><code>ColorMapCellValueDataLayer_Int</code> can generate a per-cell <code>Color32</code> map using a palette:
+<ul>
+<li><code>AutoColorMapMode.ColorIndexByValue</code>: palette index = cell value</li>
+<li><code>AutoColorMapMode.GradientThroughPalette</code>: normalized value mapped across the palette</li>
 </ul>
 </li>
-<li><strong>Precomputed local matrix</strong>:
+</ul>
+<p>This color map is typically fed into a texture used by terrain materials, debug views, minimaps, etc. (the exact consumer is outside <code>CellItemLayer</code>, but the data is produced here).</p>
+<h4 id="itemstatemap-cellvaluedatalayerint"><code>ItemStateMap</code> (<code>CellValueDataLayer&lt;int&gt;</code>)</h4>
 <ul>
-<li><code>ItemTransformMap</code> (<code>Matrix4x4</code>) = combined local TRS (plus optional transform settings)</li>
+<li><strong>Stored value</strong>: <code>int</code> per cell</li>
+<li><strong>Meaning</strong>: “state/variation of the item type”
+<ul>
+<li>Example: growth stage, damaged state, season variant, orientation preset index, etc.</li>
 </ul>
 </li>
 </ul>
-<p>These fields live in <code>CellItemLayer</code> (<code>Runtime/CellItems/Data/CellItemLayer.cs</code>).</p>
+<p><strong>How it’s visualized</strong></p>
+<ul>
+<li><code>ItemStateMap</code> is <em>not</em> color-mapped by default.</li>
+<li>Instead, it is <strong>consumed by derived layers</strong>:
+<ul>
+<li><code>CellObjectLayer</code>: selects <strong>which visuals</strong> to render for this item (state affects the LOD/visuals lookup).</li>
+<li><code>CellEntityLayer</code>: selects <strong>which prefab</strong> to instantiate for this item (state affects prefab selection).</li>
+</ul>
+</li>
+</ul>
+<h4 id="itempositionmap-cellvaluedatalayerfloat3"><code>ItemPositionMap</code> (<code>CellValueDataLayer&lt;float3&gt;</code>)</h4>
+<ul>
+<li><strong>Stored value</strong>: per-cell local translation (relative to the cell)</li>
+</ul>
+<h4 id="itemrotationmap-cellvaluedatalayerquaternion"><code>ItemRotationMap</code> (<code>CellValueDataLayer&lt;quaternion&gt;</code>)</h4>
+<ul>
+<li><strong>Stored value</strong>: per-cell local rotation</li>
+</ul>
+<h4 id="itemscalemap-cellvaluedatalayerfloat3"><code>ItemScaleMap</code> (<code>CellValueDataLayer&lt;float3&gt;</code>)</h4>
+<ul>
+<li><strong>Stored value</strong>: per-cell local scale</li>
+</ul>
+<h4 id="itemtransformmap-cellvaluedatalayermatrix4x4"><code>ItemTransformMap</code> (<code>CellValueDataLayer&lt;Matrix4x4&gt;</code>)</h4>
+<ul>
+<li><strong>Stored value</strong>: per-cell <strong>local</strong> transform matrix (TRS), <em>derived from the maps above</em></li>
+<li><strong>Purpose</strong>: avoid recomputing TRS repeatedly in rendering/entity-placement code</li>
+</ul>
+<blockquote>
+<p>Note: <code>ItemTransformMap</code> is <em>calculated</em>, and is <strong>not serialized</strong> by <code>CellItemLayer</code>. Only index/state/pos/rot/scale are serialized.</p>
+</blockquote>
 <hr>
-<h2 id="2-cellitemlayer-data-dirty-tracking-update-serialization-disposal">2) <code>CellItemLayer</code>: data, dirty tracking, update, serialization, disposal</h2>
-<h3 id="21-data-layers-inside-cellitemlayer">2.1 Data layers inside <code>CellItemLayer</code></h3>
-<p><code>CellItemLayer</code> allocates a “per cell” data layer for each attribute:</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>ItemIndexMap</code></td>
-<td><code>ColorMapCellValueDataLayer_Int</code></td>
-<td><code>cellIndex -&gt; itemIndex</code> (also has a color map for visualization)</td>
-</tr>
-<tr>
-<td><code>ItemStateMap</code></td>
-<td><code>CellValueDataLayer&lt;int&gt;</code></td>
-<td><code>cellIndex -&gt; state</code></td>
-</tr>
-<tr>
-<td><code>ItemPositionMap</code></td>
-<td><code>CellValueDataLayer&lt;float3&gt;</code></td>
-<td><code>cellIndex -&gt; local position</code></td>
-</tr>
-<tr>
-<td><code>ItemRotationMap</code></td>
-<td><code>CellValueDataLayer&lt;quaternion&gt;</code></td>
-<td><code>cellIndex -&gt; local rotation</code></td>
-</tr>
-<tr>
-<td><code>ItemScaleMap</code></td>
-<td><code>CellValueDataLayer&lt;float3&gt;</code></td>
-<td><code>cellIndex -&gt; local scale</code></td>
-</tr>
-<tr>
-<td><code>ItemTransformMap</code></td>
-<td><code>CellValueDataLayer&lt;Matrix4x4&gt;</code></td>
-<td><code>cellIndex -&gt; local transform matrix</code></td>
-</tr>
-</tbody>
-</table>
-<p>Each is <strong>chunked</strong> and has:</p>
+<h2 id="3-how-itemtransformmap-is-calculated">3. How <code>ItemTransformMap</code> is calculated</h2>
+<h3 id="31-per-layer-transform-settings-cellitemtransformsettings">3.1 Per-layer transform settings: <code>CellItemTransformSettings</code></h3>
+<p>Each layer has <code>ItemTransformSettings</code> (<code>CellItemTransformSettings</code>) which exposes a <code>Transform</code> matrix plus helpers for position/rotation/scale.</p>
+<p>This is a <strong>layer-wide</strong> transform applied to every cell item (in addition to per-cell TRS).</p>
+<h3 id="32-calculation-job-calculatecellitemtransformsjob">3.2 Calculation job: <code>CalculateCellItemTransformsJob</code></h3>
+<p><code>CellItemLayer.UpdateLocalTransforms(...)</code> schedules <code>CalculateCellItemTransformsJob</code> when any of:</p>
 <ul>
-<li><code>IsDirty</code> flag</li>
-<li>per-chunk dirty grid (<code>ChunkDirtyGrid</code>)</li>
-<li>job dependency tracking (<code>PrepareToRead</code>, <code>PrepareToWrite</code>, <code>AddReadDependency</code>, <code>AddWriteDependency</code>)</li>
+<li><code>ItemPositionMap.IsDirty</code></li>
+<li><code>ItemRotationMap.IsDirty</code></li>
+<li><code>ItemScaleMap.IsDirty</code></li>
 </ul>
-<p>This is why updates can run “only when something changed”.</p>
-<h3 id="22-initialization">2.2 Initialization</h3>
-<p><code>CellItemLayer.Init(HexTerrainSettings settings)</code> ensures all maps exist and are sized to <code>settings.CellsCount</code>.</p>
-<p><code>CellItemLayer.Init&lt;TInitArgs&gt;(..., initArgs)</code> applies configuration when <code>initArgs</code> implements <code>ICellItemLayerConfig</code>:</p>
+<p>For each dirty cell (filtered by per-chunk dirty grid), the job computes:</p>
+<ol>
+<li>Per-cell TRS:
 <ul>
-<li><code>ItemTransformSettings</code></li>
-<li><code>SurfaceLayerReference</code></li>
-<li><code>OverlapSurfaceLayerReference</code></li>
-<li>initial data fill for index/state/pos/rot/scale (via <code>InitDataLayer(...)</code> helpers and <code>InitColoredDataLayer(...)</code> for index)</li>
+<li><code>TRS(ItemPositionMap[cell], ItemRotationMap[cell], ItemScaleMap[cell])</code></li>
 </ul>
-<h3 id="23-per-frame-update-updatecellitems--updatelocaltransforms">2.3 Per-frame update: <code>UpdateCellItems()</code> → <code>UpdateLocalTransforms()</code></h3>
-<p><code>CellItemLayer.UpdateCellItems(dependency)</code> primarily calls:</p>
-<ul>
-<li><code>UpdateLocalTransforms(dependency)</code></li>
-</ul>
-<p><code>UpdateLocalTransforms</code>:</p>
-<ul>
-<li>returns early if <code>ItemPositionMap</code>, <code>ItemRotationMap</code>, and <code>ItemScaleMap</code> are not dirty</li>
-<li>schedules <code>CalculateCellItemTransformsJob</code></li>
-<li>writes <code>ItemTransformMap</code> and marks it dirty</li>
-</ul>
-<p>So the base layer’s “output” that other layers consume is typically:</p>
-<ul>
-<li><code>ItemIndexMap</code></li>
-<li><code>ItemStateMap</code></li>
-<li><code>ItemTransformMap</code></li>
-</ul>
-<h3 id="24-serialization">2.4 Serialization</h3>
-<p><code>CellItemLayer</code> implements <code>ISerializableTerrainLayer</code>:</p>
-<ul>
-<li><code>SerializeLayer(BinaryWriter)</code> serializes: index/state/pos/rot/scale</li>
-<li><code>DeserializeLayer(BinaryReader, settings)</code> restores the same and then calls <code>SetAllDirty(true)</code></li>
-</ul>
-<p>Notes:</p>
-<ul>
-<li>It calls <code>CompleteAllJobs()</code> before serializing/deserializing to ensure data safety.</li>
-</ul>
-<h3 id="25-cleanup-vs-dispose">2.5 Cleanup vs Dispose</h3>
-<p>There are 3 different “end of frame / end of life” concepts:</p>
-<ul>
-<li><p><code>Cleanup()</code> / <code>CleanupAsync(...)</code><br>
-Clears dirty flags/chunk dirty grids (so next frame won’t recompute unless something changes again).</p>
 </li>
-<li><p><code>Dispose()</code><br>
-Permanently frees native memory (<code>NativeList</code>, <code>NativeParallel...</code> collections) owned by the layer.</p>
+<li>Apply layer-wide transform:
+<ul>
+<li><code>ItemTransformMap[cell] = ItemTransformSettings.Transform * TRS(...)</code></li>
+</ul>
 </li>
-<li><p><code>CompleteAllJobs()</code><br>
-Synchronization point used before serialization or when safe CPU reads are required.</p>
-</li>
+</ol>
+<p>So conceptually:</p>
+<ul>
+<li><code>ItemTransformMap[cell]</code> = <strong>LayerTransform × CellLocalTRS</strong></li>
+</ul>
+<h3 id="33-why-this-matters">3.3 Why this matters</h3>
+<p>Derived layers (<code>CellObjectLayer</code>, and typically placement systems for <code>CellEntityLayer</code>) can treat <code>ItemTransformMap[cell]</code> as <em>the item’s local offset inside the cell</em>, already packaged as a matrix, which is ideal for batch operations (jobs + instancing).</p>
+<hr>
+<h2 id="4-how-itemtransformmap-is-used-to-visualize-cell-items">4. How <code>ItemTransformMap</code> is used to visualize Cell Items</h2>
+<h3 id="41-the-missing-piece-the-surface-transform">4.1 The missing piece: the “surface transform”</h3>
+<p>Cell Items don’t exist in isolation. They are placed “on a surface”.</p>
+<p>In this codebase, that “surface” is typically a <code>ChunkMeshLayer</code> which provides per-cell metrics (<code>ChunkMeshLayer.CellMetricsMap</code>), including:</p>
+<ul>
+<li><code>HexCellMetrics.CellTransform_Local</code> (cell center transform relative to the chunk origin)</li>
+<li><code>HexCellMetrics.CenterPosition_Global</code> / <code>CellHeight_Units</code>, etc.</li>
+</ul>
+<h3 id="42-final-transform-used-for-rendering-in-cellobjectlayer">4.2 Final transform used for rendering in <code>CellObjectLayer</code></h3>
+<p>When building render instances, the job multiplies matrices like this:</p>
+<ul>
+<li><code>cellTransform = cellMetrics.CellTransform_Local * ItemTransformMap[cell]</code></li>
+<li><code>worldTransform = chunkVisibility.Transform * cellTransform * visual.Transform</code></li>
+</ul>
+<p>So the full chain becomes:</p>
+<ul>
+<li><strong>Chunk placement</strong> (wrap/offset/visibility positioning)</li>
+<li>× <strong>Cell center placement</strong></li>
+<li>× <strong>Cell item local TRS</strong> (including layer-wide <code>ItemTransformSettings</code>)</li>
+<li>× <strong>Per-visual extra transform</strong> (mesh pivot correction, sub-part offset, etc.)</li>
 </ul>
 <hr>
-<h2 id="3-frame-cycle-overview-how-derived-layers-fit-in">3) Frame cycle overview (how derived layers fit in)</h2>
-<pre><code class="lang-mermaid">flowchart TD 
-A[&quot;Gameplay writes: ItemIndex/State/Pos/Rot/Scale&quot;] --&gt; B[&quot;Dirty flags are set on changed chunks&quot;] 
-B --&gt; C[&quot;Update phase: CellItemLayer.UpdateCellItems()&quot;] 
-C --&gt; D[&quot;Job: compute ItemTransformMap (local matrices)&quot;] 
-D --&gt; E[&quot;Derived layer calculates view data&quot;] 
-E --&gt; F[&quot;Render or ECS updates happen&quot;] 
-F --&gt; G[&quot;Cleanup phase: clear dirty flags (Cleanup()/CleanupAsync(JobHandle))&quot;]
-</code></pre>
-<p>Derived layers differ mainly at step <strong>E/F</strong>:</p>
-<ul>
-<li><code>CellObjectLayer</code>: builds render batches (<code>BulkRenderItemsDataLayer</code>) and calls <code>IBulkRenderer</code> to draw.</li>
-<li><code>CellEntityLayer</code>: decides which ECS entities should exist per cell, instantiates/destroys them, and systems update their transform/visibility.</li>
-</ul>
-<hr>
-<h2 id="4-cellobjectlayer-how-static-cell-objects-are-baked-calculated-and-rendered">4) <code>CellObjectLayer</code>: how static “cell objects” are baked, calculated, and rendered</h2>
-<p>Files:</p>
-<ul>
-<li><code>Runtime/CellObjects/Data/CellObjectLayer.cs</code></li>
-<li><code>Runtime/CellObjects/Data/CellObjectLayerConfigAsset.cs</code></li>
-<li><code>Runtime/CellObjects/CellObjectConfigAuthoring.cs</code></li>
-<li><code>Runtime/CellObjects/CellObjectPrefabAuthoring.cs</code></li>
-<li><code>Runtime/CellObjects/CellObjectPrefabLODAuthoring.cs</code></li>
-<li><code>Runtime/CellObjects/Jobs/CalcCellObjectsLODLayerJob.cs</code></li>
-</ul>
-<h3 id="41-what-cellobjectlayer-adds-on-top-of-cellitemlayer">4.1 What <code>CellObjectLayer</code> adds on top of <code>CellItemLayer</code></h3>
-<p><code>CellObjectLayer</code> inherits all base “item” data and adds:</p>
+<h2 id="5-cellobjectlayer-renders-one-object-per-cell-via-bulk-rendering">5. <code>CellObjectLayer</code> (renders one object per cell via bulk rendering)</h2>
+<p><code>CellObjectLayer : CellItemLayer, ISerializableTerrainLayer</code></p>
+<h3 id="51-what-it-adds-on-top-of-cellitemlayer">5.1 What it adds on top of <code>CellItemLayer</code></h3>
 <ul>
 <li><code>IBulkRenderer BulkRenderer</code></li>
-<li>LOD selection config:
+<li>LOD selection:
 <ul>
 <li><code>NativeList&lt;CellObjectLayerLODSettings&gt; LODSettings</code></li>
 <li><code>int LODsCount</code></li>
 </ul>
 </li>
-<li>Baked visuals data (copied into native memory on init):
+<li>Visual definitions:
 <ul>
 <li><code>NativeList&lt;CellObjectVisualItemSettings&gt; AllCellObjectVisuals</code></li>
 <li><code>NativeList&lt;CellObjectLODSettings&gt; AllCellObjectsLODSettings</code></li>
 </ul>
 </li>
-<li>Render outputs per LOD:
+<li>Output “render instance buffers”:
 <ul>
-<li><code>List&lt;BulkRenderItemsDataLayer&gt; VisualsByLODLayer</code>
-<ul>
-<li>each is a <code>NativeParallelMultiHashMapDataLayer&lt;BulkRenderItemSettings, BulkRenderItem&gt;</code></li>
+<li><code>List&lt;BulkRenderItemsDataLayer&gt; VisualsByLOD</code> (one buffer per LOD)</li>
 </ul>
 </li>
 </ul>
-</li>
+<h3 id="52-visual-definitions-how-objects-become-renderable-instances">5.2 Visual definitions: how objects become renderable instances</h3>
+<h4 id="cellobjectvisualitemsettings"><code>CellObjectVisualItemSettings</code></h4>
+<p>A single “visual piece” contains:</p>
+<ul>
+<li><code>BulkRenderItemSettings RenderItemSettings</code> (mesh/material/submesh/layer/shadows/property block)</li>
+<li><code>Matrix4x4 Transform</code> (extra local transform for this visual)</li>
 </ul>
-<p>Capacity detail:</p>
+<p>A single cell object may have <strong>multiple visuals</strong>, e.g.:</p>
 <ul>
-<li>each LOD output is initialized to <code>Settings.CellsCount * MaxSubmeshesPerCell</code></li>
-<li>because <code>NativeParallelMultiHashMap</code> capacity must be known up-front for job writes</li>
+<li>trunk mesh + leaf mesh</li>
+<li>multiple submeshes/material passes</li>
+<li>decorative attachments</li>
 </ul>
-<h3 id="42-baking-step-editor-precomputing-bulkrenderitemsettings">4.2 Baking step (Editor): precomputing <code>BulkRenderItemSettings</code></h3>
-<p>The key performance concept: <strong>render setup is baked once</strong> (mesh/material/submesh/property block selection) and runtime only computes transforms.</p>
-<p><code>CellObjectLayerConfigAsset.BakeCellObjectConfigs()</code> does this:</p>
-<ol>
-<li>Iterates <code>ObjectConfigs</code> (list of <code>CellObjectConfigAuthoring</code>)</li>
-<li>Each authoring contains multiple <em>states</em> (<code>CellObjectPrefabAuthoring</code>)</li>
-<li>Each state contains multiple <em>LODs</em> (<code>CellObjectPrefabLODAuthoring</code>)</li>
-<li>Each LOD has a list of <code>MeshRenderer</code>s to be rendered</li>
-</ol>
-<p>For each <code>MeshRenderer</code>:</p>
+<h4 id="cellobjectlodsettings"><code>CellObjectLODSettings</code></h4>
+<p>For a given (ObjectIndex, State, LOD) combination:</p>
 <ul>
-<li>it calls <code>bulkRenderer.RegisterRenderer(renderer, meshFilter, ...)</code></li>
-<li>which returns a list of <code>BulkRenderItemSettings</code> describing <strong>what to draw</strong>
-<ul>
-<li>mesh index, material index, submesh index, layer, shadows, property block index, etc.</li>
-</ul>
-</li>
-</ul>
-<p>Then the baker stores:</p>
-<ul>
-<li><code>CellObjectVisualItemSettings</code>:
-<ul>
-<li><code>RenderItemSettings</code> (the baked “what to draw”)</li>
-<li><code>Transform</code> (renderer’s <code>localToWorldMatrix</code> as a relative transform)</li>
-</ul>
-</li>
-<li><code>CellObjectLODSettings</code> ranges per <code>(objectIndex, state, lodIndex)</code>:
-<ul>
+<li><code>HasVisuals</code></li>
 <li><code>VisualsStartIndex</code></li>
 <li><code>VisualsCount</code></li>
-<li><code>HasVisuals</code></li>
+</ul>
+<p>This points into <code>AllCellObjectVisuals</code> (a flat list holding visuals for <em>all</em> objects/states/LODs).</p>
+<h4 id="indexing-formula-used-at-runtime">Indexing formula used at runtime</h4>
+<p>In the job, LOD settings index is computed as:</p>
+<p><code>cellObjectLODSettingsIndex = objectIndex * StatesCountPerObject * LODsCount + state * LODsCount + lodIndex</code></p>
+<p>This means the config is treated as a flattened 3D table:</p>
+<ul>
+<li>dimension 1: object index</li>
+<li>dimension 2: state</li>
+<li>dimension 3: LOD</li>
+</ul>
+<h3 id="53-how-visuals-are-calculated-calculatecellobjectslod">5.3 How visuals are calculated (<code>CalculateCellObjectsLOD</code>)</h3>
+<p><code>CellObjectLayer.CalculateCellObjectsLOD(...)</code> produces render instances into a <code>BulkRenderItemsDataLayer</code> (a <code>NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt;</code>).</p>
+<p>Key inputs:</p>
+<ul>
+<li>Cell item selection: <code>ItemIndexMap</code>, <code>ItemStateMap</code></li>
+<li>Placement: <code>ItemTransformMap</code></li>
+<li>Surface placement: <code>ChunkMeshLayer.CellMetricsMap</code></li>
+<li>Visibility &amp; chunk transforms: <code>ChunksGridLayer.ChunkVisibility</code></li>
+<li>Optional overlap surface: <code>OverlapSurfaceLayerReference</code> selects the higher of two surfaces</li>
+</ul>
+<p>The core job (<code>CalcCellObjectsLODLayerJob</code> / <code>_OverlapSurface</code>) does:</p>
+<ol>
+<li>Skip cells whose chunk is not visible (<code>ChunkVisibilityGrid[chunkIndex].IsVisible == false</code>)</li>
+<li>Read <code>ItemIndexMap[cell]</code> and <code>ItemStateMap[cell]</code></li>
+<li>Resolve <code>(objectIndex, state, lodIndex)</code> → <code>CellObjectLODSettings</code></li>
+<li>Resolve <code>CellObjectLODSettings</code> → visuals range in <code>AllCellObjectVisuals</code></li>
+<li>Build final transform per visual:
+<ul>
+<li><code>render.Transform = chunkTransform * (cellMetrics.CellTransform_Local * ItemTransformMap[cell]) * visual.Transform</code></li>
+</ul>
+</li>
+<li>Add to multi-hashmap bucketed by <code>visual.RenderItemSettings</code>:
+<ul>
+<li><code>RenderEntities.Add(settingsKey, renderItem)</code></li>
+</ul>
+</li>
+</ol>
+<p>This output is what gets rendered later.</p>
+<h3 id="54-rendering-renderlods">5.4 Rendering (<code>RenderLODs</code>)</h3>
+<p><code>CellObjectLayer.RenderLODs(camera, normalizedCameraZoom)</code> selects exactly <strong>one</strong> LOD to render:</p>
+<ul>
+<li>It iterates <code>LODSettings[lodIndex]</code> and checks:
+<ul>
+<li><code>normalizedCameraZoom &gt;= MinDistance &amp;&amp; normalizedCameraZoom &lt;= MaxDistance</code></li>
 </ul>
 </li>
 </ul>
-<p>At runtime, <code>CellObjectLayer.Init(...)</code> copies these baked lists into:</p>
+<blockquote>
+<p>Important: <strong>LOD distance here is not world-space distance</strong> from object/camera.
+It is a <strong>normalized camera zoom</strong> value (a “zoom level” abstraction).<br>
+This makes LOD switching stable for top-down/strategy cameras where zoom is the primary “detail driver”.</p>
+</blockquote>
+<p>Once the chosen LOD is found, it calls:</p>
 <ul>
-<li><code>AllCellObjectVisuals</code> (native)</li>
-<li><code>AllCellObjectsLODSettings</code> (native)</li>
+<li><code>Render(camera, BulkRenderer, VisualsByLOD[lodIndex])</code></li>
 </ul>
-<h3 id="43-runtime-calculation-converting-cell-data-into-render-batches">4.3 Runtime calculation: converting cell data into render batches</h3>
-<p>Core entrypoints:</p>
+<p>which ultimately calls:</p>
 <ul>
-<li><code>CalculateCellObjects(...)</code></li>
-<li><code>CalculateCellObjectsLODSs(...)</code></li>
-<li><code>CalculateCellObjectsLOD(...)</code></li>
+<li><code>BulkRenderer.RenderEntities(renderItemsDataLayer.Data, camera, bounds)</code></li>
 </ul>
-<p><code>CalculateCellObjectsLOD(...)</code> does:</p>
+<h3 id="55-how-bulk-rendering-works-ibulkrenderer--bulkrendererasset">5.5 How bulk rendering works (<code>IBulkRenderer</code> + <code>BulkRendererAsset</code>)</h3>
+<h4 id="input-format">Input format</h4>
+<p>Rendering input is a <code>NativeParallelMultiHashMap&lt;BulkRenderItemSettings, BulkRenderItem&gt;</code>:</p>
 <ul>
-<li>early-out unless something relevant is dirty:
-<ul>
-<li><code>ItemIndexMap</code>, <code>ItemStateMap</code>, <code>ItemTransformMap</code></li>
-<li>surface metrics dirty (<code>surfaceLayer.CellMetricsMap</code>, optional overlap surface)</li>
-<li>visibility dirty (new visible chunks in <code>chunksLayer.ChunkVisibility</code>)</li>
+<li><strong>Key</strong>: <code>BulkRenderItemSettings</code> (mesh/material/submesh/layer/shadows/property block)</li>
+<li><strong>Value</strong>: <code>BulkRenderItem</code> (contains <code>Transform</code>)</li>
 </ul>
-</li>
-<li>clears the LOD render batch:
+<p>This structure naturally groups instances by “GPU state”.</p>
+<h4 id="bulkrenderitemsettings"><code>BulkRenderItemSettings</code></h4>
+<p>Implements <code>IEquatable</code> and <code>IComparable</code>, and includes:</p>
 <ul>
-<li><code>renderItemsDataLayer.Data.ClearNativeParallelMultiHashMapAsync(...)</code></li>
+<li><code>MeshIndex</code>, <code>SubmeshIndex</code>, <code>MaterialIndex</code></li>
+<li><code>ShadowMode</code>, <code>ReceiveShadows</code>, <code>Layer</code>, <code>PropertyBlockIndex</code></li>
 </ul>
-</li>
-<li>schedules one of:
+<p>Items with the same settings can be rendered in one instanced batch.</p>
+<h4 id="bulkrendererasset-default-implementation"><code>BulkRendererAsset</code> (default implementation)</h4>
+<p><code>BulkRendererAsset</code> is a <code>ScriptableObject</code> that:</p>
 <ul>
-<li><code>CalcCellObjectsLODLayerJob</code></li>
-<li><code>CalcCellObjectsLODLayerJob_OverlapSurface</code></li>
+<li>stores the shared <code>Meshes</code>, <code>Materials</code>, and <code>MaterialPropertyBlock</code>s</li>
+<li>has helpers to “register” renderer assets and obtain indices</li>
 </ul>
-</li>
-</ul>
-<p>Job behavior (per cell):</p>
+<p>Rendering is performed using <code>BulkRendererUtils.Render(...)</code>, which chooses:</p>
 <ul>
-<li>skip if the cell’s chunk is not visible (<code>ChunkVisibilityGrid[chunkIndex].IsVisible == false</code>)</li>
-<li>read:
-<ul>
-<li><code>cellObjectIndex = ItemIndexMap[cellIndex]</code></li>
-<li><code>cellObjectState = ItemStateMap[cellIndex]</code></li>
+<li><code>Graphics.DrawMesh</code> when there is exactly 1 instance</li>
+<li><code>Graphics.DrawMeshInstanced</code> or <code>Graphics.RenderMeshInstanced</code> when there are many instances</li>
 </ul>
-</li>
-<li>compute the state/LOD lookup index:
+<p><strong>Why batching matters</strong></p>
 <ul>
-<li><code>cellObjectIndex * StatesCountPerObject * LODsCount + cellObjectState * LODsCount + LODIndex</code></li>
-</ul>
-</li>
-<li>for every visual in that LOD:
-<ul>
-<li>produce a <code>BulkRenderItem</code> with a final matrix:
-<ul>
-<li><code>chunkTransform * (cellMetrics.CellTransform_Local * ItemTransformMap[cellIndex]) * visual.Transform</code></li>
-</ul>
-</li>
-<li>add it to <code>NativeParallelMultiHashMap</code> under key <code>visual.RenderItemSettings</code></li>
-</ul>
-</li>
-</ul>
-<p>Result:</p>
-<ul>
-<li><code>VisualsByLODLayer[lodIndex]</code> becomes a grouped set of “instances to draw” keyed by <code>BulkRenderItemSettings</code>.</li>
-</ul>
-<h3 id="44-rendering-cellobjectlayerrenderlods--ibulkrenderer">4.4 Rendering: <code>CellObjectLayer.RenderLODs(...)</code> → <code>IBulkRenderer</code></h3>
-<p>Render path:</p>
-<ul>
-<li><code>CellObjectLayerGroup.Render(camera, normalizedCameraZoom)</code> calls <code>CellObjectLayer.Render(...)</code></li>
-<li><code>RenderLODs</code> selects <em>one</em> LOD based on <code>normalizedCameraZoom</code> and <code>LODSettings</code></li>
-<li>then calls <code>Render(camera, BulkRenderer, renderEntitiesLOD)</code></li>
-</ul>
-<p><code>Render(...)</code>:</p>
-<ul>
-<li>opens the render batch data layer for read</li>
-<li>computes a conservative <code>worldBounds</code></li>
-<li>calls:
-<ul>
-<li><code>IBulkRenderer.RenderEntities(renderItemsDataLayer.Data, camera, worldBounds)</code></li>
-</ul>
-</li>
+<li>Instancing reduces draw calls drastically by drawing N transforms of the same mesh/material in a single call.</li>
+<li>Unity’s instancing APIs typically cap one call to <strong>1023 transforms</strong> per batch (hence <code>_maxTransformsPerPass = 1023</code>).</li>
 </ul>
 <hr>
-<h2 id="5-ibulkrenderer--bulkrendererasset-how-batched-data-becomes-draw-calls">5) <code>IBulkRenderer</code> / <code>BulkRendererAsset</code>: how batched data becomes draw calls</h2>
-<p>Files:</p>
-<ul>
-<li><code>Runtime/BulkRendering/IBulkRenderer.cs</code></li>
-<li><code>Runtime/BulkRendering/BulkRendererAsset.cs</code></li>
-<li><code>Runtime/BulkRendering/BulkRendererUtils.cs</code></li>
-<li><code>Runtime/BulkRendering/BulkRenderItemSettings.cs</code></li>
-</ul>
-<h3 id="51-what-ibulkrenderer-provides">5.1 What <code>IBulkRenderer</code> provides</h3>
-<p><code>IBulkRenderer</code> is both:</p>
-<ul>
-<li>a <strong>registry</strong> for meshes/materials/property blocks</li>
-<li>and a <strong>renderer</strong> that consumes batched <code>BulkRenderItem</code>s</li>
-</ul>
-<p>Key responsibilities:</p>
-<ul>
-<li>registration:
-<ul>
-<li><code>RegisterMesh</code>, <code>RegisterMaterial</code>, <code>RegisterPropertyBlock</code>, <code>RegisterRenderer(...)</code></li>
-</ul>
-</li>
-<li>rendering:
-<ul>
-<li><code>RenderEntities(...)</code> overloads for different input forms</li>
-</ul>
-</li>
-</ul>
-<h3 id="52-default-implementation-bulkrendererasset">5.2 Default implementation: <code>BulkRendererAsset</code></h3>
-<p><code>BulkRendererAsset</code> stores:</p>
-<ul>
-<li><code>List&lt;Mesh&gt; Meshes</code></li>
-<li><code>List&lt;Material&gt; Materials</code></li>
-<li><code>List&lt;MaterialPropertyBlock&gt; PropertyBlocks</code></li>
-<li>dictionaries to keep unique indices per asset instance id</li>
-</ul>
-<p>When <code>RegisterRenderer(renderer, meshFilter, result, ...)</code> is called:</p>
-<ul>
-<li>it inspects the mesh and renderer materials</li>
-<li>it registers mesh/material/property blocks into the asset lists if needed</li>
-<li>it appends one or more <code>BulkRenderItemSettings</code> describing:
-<ul>
-<li>which mesh</li>
-<li>which submesh</li>
-<li>which material</li>
-<li>shadow and layer flags</li>
-<li>optional property block index</li>
-</ul>
-</li>
-</ul>
-<p>This is the “precalculation” step that allows runtime to remain lightweight.</p>
-<h3 id="53-how-draw-calls-are-issued">5.3 How draw calls are issued</h3>
-<p><code>BulkRendererUtils.Render(...)</code> chooses:</p>
-<ul>
-<li><code>Graphics.DrawMesh</code> for a single instance</li>
-<li><code>Graphics.DrawMeshInstanced</code> / <code>Graphics.RenderMeshInstanced</code> for many instances</li>
-</ul>
-<p>The renderer groups by <code>BulkRenderItemSettings</code> so each group becomes one instanced draw call (or a few calls, if the group is large).</p>
-<hr>
-<h2 id="6-cellentitylayer-spawningdespawning-and-keeping-entities-synchronized">6) <code>CellEntityLayer</code>: spawning/despawning and keeping entities synchronized</h2>
-<p>Files:</p>
-<ul>
-<li><code>Runtime/CellEntities/Data/CellEntityLayer.cs</code></li>
-<li><code>Runtime/CellEntities/DataLayers/CellEntityViewDataLayer.cs</code></li>
-<li><code>Runtime/CellEntities/Jobs/CalcCellEntityEntitiesJob.cs</code></li>
-<li><code>Runtime/CellEntities/Jobs/SaveCreatedCellEntityEntitiesJob.cs</code></li>
-<li><code>Runtime/CellEntities/Jobs/SaveClearedCellEntityEntitiesJob.cs</code></li>
-<li><code>Runtime/CellEntities/Systems/PlaybackUpdateCellEntityCommandBuffersSystem.cs</code></li>
-<li><code>Runtime/CellEntities/Systems/UpdateCellEntityEntitiesStateSystem.cs</code></li>
-</ul>
-<h3 id="61-what-cellentitylayer-adds">6.1 What <code>CellEntityLayer</code> adds</h3>
-<p>On top of <code>CellItemLayer</code>, it adds:</p>
+<h2 id="6-cellentitylayer-spawns-ecs-entities-per-cell-item">6. <code>CellEntityLayer</code> (spawns ECS entities per cell item)</h2>
+<p><code>CellEntityLayer : CellItemLayer, ISerializableTerrainLayer</code></p>
+<h3 id="61-what-it-adds">6.1 What it adds</h3>
 <ul>
 <li><code>CellEntityViewDataLayer CellEntityViews</code>
 <ul>
-<li>stores <code>CellEntityView { Prefab, Instance }</code> per cell</li>
-<li>also stores request buffers:
-<ul>
-<li><code>CreateEntityRequests: prefab -&gt; cellIndex</code></li>
-<li><code>RemoveEntityRequests: instance -&gt; cellIndex</code></li>
-<li><code>ClearedCells</code></li>
-<li><code>EntityByChunkIndex</code></li>
+<li>per cell: which prefab is used, and which instance exists</li>
+<li>plus request buffers for create/remove</li>
 </ul>
 </li>
-</ul>
-</li>
-<li><code>NativeList&lt;CellEntityConfig&gt; CellEntityConfigs</code>
+<li><code>NativeList&lt;CellEntityStateConfig&gt; CellEntityConfigs</code>
 <ul>
-<li>per <em>entity index</em> configuration (color + prefab mapping per state)</li>
+<li>config table mapping (index/state) → prefab</li>
 </ul>
 </li>
 <li><code>EntityManager EntityManager</code></li>
-<li>an <code>EntityCommandBuffer</code> used to add components/shared components from jobs:
+<li>An <code>EntityCommandBuffer</code> for setting shared components on created instances:
 <ul>
-<li><code>SetChunkIndexCommandBuffer</code></li>
-<li><code>SetChunkIndexCommandBufferDependency</code></li>
+<li><code>CellEntityTerrainReference</code> (shared)</li>
+<li><code>HexChunkGridIndex</code> (shared)</li>
+<li><code>HexCellIndex</code> (component)</li>
 </ul>
 </li>
 </ul>
-<h3 id="62-step-1--decide-what-entities-should-exist-calculateentities">6.2 Step 1 — Decide what entities should exist: <code>CalculateEntities()</code></h3>
-<p><code>CellEntityLayer.CalculateEntities(dependency)</code>:</p>
-<ul>
-<li>early-out if nothing dirty:
-<ul>
-<li><code>ItemIndexMap</code>, <code>ItemStateMap</code>, <code>CellEntityViews</code></li>
-</ul>
-</li>
-<li>clears and re-inits request structures:
-<ul>
-<li><code>CellEntityViews.ClearRemoveAndCreateRequests()</code></li>
-<li><code>CellEntityViews.Init(Settings.CellsCount, Settings)</code></li>
-</ul>
-</li>
-<li>merges dirty grids from <code>ItemIndexMap</code> and <code>ItemStateMap</code> into <code>CellEntityViews</code></li>
-<li>schedules <code>CalcCellEntityEntitiesJob</code></li>
-</ul>
-<p><code>CalcCellEntityEntitiesJob</code> (per dirty cell):</p>
-<ul>
-<li>reads <code>(cellEntityIndex, cellEntityState)</code></li>
-<li>uses <code>CellEntityConfigs[cellEntityIndex]</code> to compute <code>neededPrefab</code>:
-<ul>
-<li>it matches <code>cellEntityState</code> against <code>StatePerPrefab</code></li>
-</ul>
-</li>
-<li>compares to current view (<code>CellEntityViews[cellIndex].Prefab</code>)</li>
-<li>emits:
-<ul>
-<li>remove request if a prefab was previously present</li>
-<li>create request if a prefab is now required</li>
-<li>cleared cell index if it was removed and not replaced</li>
-</ul>
-</li>
-</ul>
-<p>No structural changes happen here; it only computes requests.</p>
-<h3 id="63-step-2--apply-requests-updateentities">6.3 Step 2 — Apply requests: <code>UpdateEntities(...)</code></h3>
-<p><code>CellEntityLayer.UpdateEntities(layerEntity, layerIndex, dependency)</code>:</p>
-<ul>
-<li>early-out unless <code>CellEntityViews.IsDirty</code></li>
-</ul>
-<p>Then it:</p>
+<h3 id="62-how-it-decides-what-to-instantiatedestroy-calculateentities">6.2 How it decides what to instantiate/destroy (<code>CalculateEntities</code>)</h3>
+<p><code>CalculateEntities(...)</code> schedules <code>CalcCellEntityEntitiesJob</code> which:</p>
+<p>For each <strong>dirty</strong> cell (chunk filtered via dirty grid):</p>
 <ol>
-<li>Creates an ECB (<code>SetChunkIndexCommandBuffer = new EntityCommandBuffer(Allocator.TempJob)</code>).</li>
-<li>Iterates <strong>unique prefabs</strong> in <code>CreateEntityRequests</code>:
+<li>Reads:
 <ul>
-<li><code>EntityManager.Instantiate(prefab, requestsCount, Allocator.TempJob)</code></li>
+<li><code>ItemIndexMap[cell]</code> (entity index)</li>
+<li><code>ItemStateMap[cell]</code> (entity state)</li>
+<li>current view: <code>CellEntityViews[cell]</code> (current prefab + instance)</li>
 </ul>
 </li>
-<li>Schedules <code>SaveCreatedCellEntityEntitiesJob</code> per prefab:
+<li>Computes the <strong>needed prefab</strong> using:</li>
+</ol>
+<p><code>stateConfigIndex = index * StatesCountPerEntityIndex + state</code></p>
+<p>then:</p>
+<p><code>neededPrefab = CellEntityConfigs[stateConfigIndex].Prefab</code> (or <code>Entity.Null</code> if invalid)</p>
+<ol start="3">
+<li>Compares with the currently stored prefab:</li>
+</ol>
 <ul>
-<li>fills <code>CellEntityViews[cellIndex] = { Prefab, Instance }</code></li>
-<li>adds instance into <code>EntityByChunkIndex</code></li>
-<li>enqueues structural additions via ECB:
+<li>If different:
+<ul>
+<li>enqueue old instance for removal (<code>RemoveEntityRequests</code>)</li>
+<li>enqueue new prefab for creation (<code>CreateEntityRequests</code>)</li>
+<li>if removing without creating replacement, record cell in <code>ClearedCells</code></li>
+</ul>
+</li>
+</ul>
+<p><strong>Result</strong></p>
+<ul>
+<li>After the job, <code>CellEntityViews</code> contains:
+<ul>
+<li>a stable “current view per cell”</li>
+<li>and two request maps telling the main thread what to instantiate/destroy</li>
+</ul>
+</li>
+</ul>
+<h3 id="63-how-it-instantiates-and-destroys-updateentities">6.3 How it instantiates and destroys (<code>UpdateEntities</code>)</h3>
+<p><code>UpdateEntities(terrainEntity, layerIndex, ...)</code> runs on the main thread and uses <code>EntityManager</code>.</p>
+<p>Creation flow:</p>
+<ol>
+<li>Collect unique prefab keys from <code>CreateEntityRequests</code></li>
+<li>For each prefab:
+<ul>
+<li><code>EntityManager.Instantiate(prefab, requestsCount, ...)</code></li>
+<li>schedule <code>SaveCreatedCellEntityEntitiesJob</code> to:
+<ul>
+<li>write <code>CellEntityViews[cell] = { Prefab, Instance }</code></li>
+<li>add instance to <code>EntityByChunkIndex</code></li>
+<li>enqueue component additions via <code>EntityCommandBuffer.ParallelWriter</code>:
 <ul>
 <li><code>CellEntityTerrainReference { Value = terrainEntity }</code> (shared)</li>
-<li><code>HexChunkGridIndex { Value=chunkIndex, TerrainEntity, LayerIndex }</code> (shared)</li>
-<li><code>HexCellIndex { Value = cellIndex }</code> (component)</li>
+<li><code>HexChunkGridIndex { Value = chunkIndex, TerrainEntity = terrainEntity, LayerIndex = layerIndex }</code> (shared)</li>
+<li><code>HexCellIndex { Value = cellIndex }</code></li>
 </ul>
 </li>
 </ul>
 </li>
-<li>Schedules <code>SaveClearedCellEntityEntitiesJob</code>:
+</ul>
+</li>
+</ol>
+<p>Cleanup flow:</p>
 <ul>
-<li>sets <code>CellEntityViews[cellIndex] = { Entity.Null, Entity.Null }</code> for cleared cells</li>
+<li><code>SaveClearedCellEntityEntitiesJob</code> sets cleared cells to <code>Entity.Null</code> in <code>CellEntityViews</code>.</li>
 </ul>
-</li>
-<li>Destroys instances in <code>RemoveEntityRequests</code> on the main thread:
+<p>Removal flow:</p>
+<ul>
+<li>If <code>RemoveEntityRequests</code> is not empty, it destroys those instances via:
 <ul>
 <li><code>EntityManager.DestroyEntity(entitiesToRemove)</code></li>
 </ul>
 </li>
-</ol>
-<p>Why ECB here:</p>
-<ul>
-<li>the code instantiates on the main thread, but adding shared components for many entities is pushed into a job via <code>EntityCommandBuffer.ParallelWriter</code>, then played back later.</li>
 </ul>
-<h3 id="64-step-3--playback-structural-changes-playbackupdatecellentitycommandbufferssystem">6.4 Step 3 — Playback structural changes: <code>PlaybackUpdateCellEntityCommandBuffersSystem</code></h3>
-<p><code>PlaybackUpdateCellEntityCommandBuffersSystem</code> runs in <code>HexTerrainsStartPreRenderGroup</code> and calls:</p>
+<h3 id="64-playback-of-the-command-buffer-playbacksetchunkindexcommandbuffer">6.4 Playback of the command buffer (<code>PlaybackSetChunkIndexCommandBuffer</code>)</h3>
+<p>The shared component additions and <code>HexCellIndex</code> additions are delayed through an <code>EntityCommandBuffer</code> to:</p>
 <ul>
-<li><code>layer.PlaybackSetChunkIndexCommandBuffer()</code></li>
+<li>avoid structural changes immediately in the middle of layer processing</li>
+<li>ensure job dependencies are completed first</li>
 </ul>
-<p><code>PlaybackSetChunkIndexCommandBuffer()</code>:</p>
+<p>Call <code>CellEntityLayer.PlaybackSetChunkIndexCommandBuffer()</code> after <code>UpdateEntities(...)</code> work is scheduled/completed as appropriate for your frame pipeline.</p>
+<h3 id="65-terrain-visibility-changes-and-surface-layer-changes">6.5 Terrain visibility changes and surface layer changes</h3>
+<p>What is explicitly implemented in the code shown:</p>
 <ul>
-<li>completes <code>SetChunkIndexCommandBufferDependency</code></li>
-<li>plays back the ECB into <code>EntityManager</code></li>
-<li>disposes the ECB</li>
+<li>Systems such as <code>CalcCellEntityEntitiesSystem</code> and <code>UpdateCellEntitiesSystem</code> skip work when <code>HexTerrainVisibility.Value</code> is <code>false</code>.</li>
 </ul>
-<p>This is the point when the spawned entities actually receive their terrain/chunk/cell components.</p>
+<p>What is enabled by the design (and commonly implemented in companion systems):</p>
+<ul>
+<li>Each created entity receives:
+<ul>
+<li><code>HexCellIndex</code> (cell identity)</li>
+<li><code>HexChunkGridIndex</code> (chunk identity + terrain reference + layer index)</li>
+<li><code>CellEntityTerrainReference</code> (terrain identity)</li>
+</ul>
+</li>
+</ul>
+<p>This makes it efficient for other systems to:</p>
+<ul>
+<li>update entity transforms when:
+<ul>
+<li>the terrain surface (<code>ChunkMeshLayer.CellMetricsMap</code>) changes (height/normal/transform)</li>
+<li>chunk visibility transforms change (wrapping / connected edges)</li>
+</ul>
+</li>
+<li>cull/disable entities when chunks become invisible (using chunk index grouping)</li>
+</ul>
+<p><code>CellEntityLayer</code> itself focuses on <strong>lifecycle (instantiate/destroy)</strong>; transform/placement updates are typically handled by separate ECS transform systems using the components above.</p>
 <hr>
-<h2 id="7-keeping-entity-transforms-and-visibility-updated-data-changes--ecs-state">7) Keeping entity transforms and visibility updated (data changes → ECS state)</h2>
-<p>System:</p>
+<h2 id="7-cachecellentitydatasystem-safe-cleanup-during-mass-terrain-destruction">7. <code>CacheCellEntityDataSystem</code> (safe cleanup during mass terrain destruction)</h2>
+<h3 id="71-the-problem-it-solves">7.1 The problem it solves</h3>
+<p>Destroying many terrain entities in one frame can cause problematic ECS structural-change patterns:</p>
 <ul>
-<li><code>UpdateCellEntityLayerEntitiesStateSystem</code> (<code>Runtime/CellEntities/Systems/UpdateCellEntityEntitiesStateSystem.cs</code>)</li>
+<li>Terrain entity A is destroyed</li>
+<li>Its <code>CellEntityLayerGroup</code> component object is removed/destroyed</li>
+<li>Cell entities for A must also be destroyed</li>
+<li>Repeating this for many terrains can cause heavy structural churn and ordering hazards</li>
 </ul>
-<p>Update group ordering:</p>
+<h3 id="72-what-the-system-does">7.2 What the system does</h3>
+<p><code>CacheCellEntityDataSystem</code> runs late (<code>PresentationSystemGroup</code>, <code>OrderLast = true</code>) and uses two queries:</p>
 <ul>
-<li>runs in <code>HexTerrainsStartPreRenderGroup</code></li>
-<li>runs <strong>after</strong> <code>PlaybackUpdateCellEntityCommandBuffersSystem</code>
+<li><strong>New terrains with entity layers</strong>:
 <ul>
-<li>so newly spawned entities have the required components before transform updates</li>
+<li>has <code>CellEntityLayerGroup</code></li>
+<li>excludes <code>CellEntityDataCache</code></li>
+</ul>
+</li>
+<li><strong>Destroyed terrains</strong> (layer group gone, but cache still present):
+<ul>
+<li>excludes <code>CellEntityLayerGroup</code></li>
+<li>has <code>CellEntityDataCache</code></li>
 </ul>
 </li>
 </ul>
-<h3 id="71-what-it-updates">7.1 What it updates</h3>
-<p>Depending on what changed, it updates:</p>
+<h3 id="73-caching-cachenewcellentitylayer">7.3 Caching (<code>CacheNewCellEntityLayer</code>)</h3>
+<p>For each new terrain entity:</p>
 <ul>
-<li><code>PostTransformMatrix</code> (entity transform)</li>
-<li><code>CellEntitityVisibility</code> (a component storing a <code>bool Value</code>)</li>
-</ul>
-<h3 id="72-when-it-runs-per-layer">7.2 When it runs per layer</h3>
-<p>For each terrain and each <code>CellEntityLayer</code>, it checks dirtiness:</p>
+<li>reads <code>CellEntityLayerGroup</code></li>
+<li>extracts and stores references to each layer’s <code>CellEntityViews</code> (<code>CellEntityViewDataLayer</code>)</li>
+<li>writes a cleanup component:
 <ul>
-<li>“data dirty” if any of these are dirty:
-<ul>
-<li>surface <code>CellMetricsMap</code> (and optional overlap surface metrics)</li>
-<li>chunk visibility map has newly visible chunks</li>
-<li><code>cellEntityViews.IsDirty</code></li>
-<li><code>cellItemTransforms.IsDirty</code> (<code>ItemTransformMap</code> from <code>CellItemLayer</code>)</li>
+<li><code>CellEntityDataCache { Layers = List&lt;CellEntityViewDataLayer&gt; }</code></li>
 </ul>
 </li>
-<li>“visibility dirty” if <code>HexTerrainVisibility</code> component changed on the terrain entity since last update</li>
 </ul>
-<p>Then it chooses one path:</p>
+<p>This cache survives even after the <code>CellEntityLayerGroup</code> component object disappears.</p>
+<h3 id="74-disposal-after-terrain-is-destroyed-cleardestroyedcellentities">7.4 Disposal after terrain is destroyed (<code>ClearDestroyedCellEntities</code>)</h3>
+<p>When a terrain entity no longer has <code>CellEntityLayerGroup</code> but still has <code>CellEntityDataCache</code>:</p>
 <ul>
-<li>only data dirty → <code>UpdateCellEntitiesState(...)</code></li>
-<li>only visibility dirty → <code>UpdateCellEntitiesVisibilities(...)</code></li>
-<li>both → <code>UpdateCellEntitiesStateAndVisibilities(...)</code></li>
-</ul>
-<h3 id="73-how-the-transform-is-computed">7.3 How the transform is computed</h3>
-<p><code>UpdateCellEnitiesStateJob</code> / <code>UpdateCellEntitiesStateAndVisibilityJob</code> computes per entity:</p>
+<li>it iterates cached <code>CellEntityViewDataLayer</code>s</li>
+<li>for each view layer:
 <ul>
-<li>find <code>chunkIndex</code> from the entity’s shared <code>HexChunkGridIndex</code></li>
-<li>skip whole chunk if no relevant dirty grids are set for that chunk</li>
-<li>read <code>cellIndex</code> from <code>HexCellIndex</code></li>
-<li>compute <code>cellPosition</code>:
-<ul>
-<li><code>CellMetrics[cellIndex].CenterPosition_Global</code></li>
-<li>plus <code>ChunkVisibilityMap[chunkIndex].ChunkOffset</code> (if present)</li>
+<li>iterates all <code>CellEntityView</code> items and destroys non-null instances via an <code>EntityCommandBuffer</code></li>
+<li>disposes the view layer (<code>layer.Dispose()</code>)</li>
 </ul>
 </li>
-<li>final matrix:
-<ul>
-<li><code>(Matrix4x4)terrainLocalToWorld * TRS(cellPosition + TransformSettings.Position, TransformSettings.Rotation, TransformSettings.Scale) * LocalTransforms[cellIndex]</code></li>
+<li>removes the cache component from the terrain entity</li>
 </ul>
-</li>
-<li>writes to <code>PostTransformMatrix</code></li>
-</ul>
-<p>If overlap surface is used, the job variant chooses the higher surface metrics before computing.</p>
-<h3 id="74-how-visibility-is-applied">7.4 How visibility is applied</h3>
+<p><strong>Why this helps</strong></p>
 <ul>
-<li>If only terrain visibility changed:
-<ul>
-<li><code>UpdateCellEntitiesVisibilityMarkerJob</code> writes <code>CellEntitityVisibility.Value = isTerrainVisible</code> for all matching entities.</li>
-</ul>
-</li>
-<li>If both changed:
-<ul>
-<li><code>UpdateCellEntitiesStateAndVisibilityJob</code> updates both visibility and transforms in one pass.</li>
-</ul>
-</li>
+<li>Cell entities are destroyed <em>after</em> the terrain entity is already “logically destroyed” (group removed),
+reducing the chance of unsafe structural changes occurring while multiple terrain entities are being removed.</li>
 </ul>
 <hr>
-<h2 id="8-practical-usage-guide">8) Practical usage guide</h2>
-<h3 id="81-using-cellobjectlayer-rendered-non-ecs">8.1 Using <code>CellObjectLayer</code> (rendered, non-ECS)</h3>
+<h2 id="8-practical-usage-guide">8. Practical usage guide</h2>
+<h3 id="81-choosing-a-layer-type">8.1 Choosing a layer type</h3>
+<ul>
+<li>Use <code>CellObjectLayer</code> when you want <strong>fast visuals</strong> (instanced rendering) and don’t need per-item ECS behavior.</li>
+<li>Use <code>CellEntityLayer</code> when you want <strong>ECS-driven behavior</strong> per cell item (AI, interaction, physics, gameplay logic).</li>
+</ul>
+<h3 id="82-setting-item-data">8.2 Setting item data</h3>
+<p>At runtime, modify:</p>
+<ul>
+<li><code>SetCellItemIndex(cellIndex, itemIndex)</code></li>
+<li><code>SetCellItemState(cellIndex, state)</code></li>
+<li>optionally local TRS maps:
+<ul>
+<li><code>SetCellItemLocalPosition(...)</code>, <code>SetCellItemLocalRotation(...)</code>, <code>SetCellItemLocalScale(...)</code></li>
+</ul>
+</li>
+</ul>
+<p>Then ensure your update pipeline calls:</p>
+<ul>
+<li><code>UpdateCellItems(...)</code> (or at least <code>UpdateLocalTransforms(...)</code>) so <code>ItemTransformMap</code> stays current.</li>
+</ul>
+<h3 id="83-rendering-cell-objects-typical-frame">8.3 Rendering cell objects (typical frame)</h3>
 <ol>
-<li>Create a <code>CellObjectLayerConfigAsset</code>.</li>
-<li>Assign a <code>BulkRendererAsset</code> to <code>BulkRenderer</code>.</li>
-<li>Fill <code>ObjectConfigs</code> with <code>CellObjectConfigAuthoring</code> entries:
-<ul>
-<li>each entry references state prefabs (<code>CellObjectPrefabAuthoring</code>)</li>
-<li>each state contains LOD authorings (<code>CellObjectPrefabLODAuthoring</code>) with <code>MeshRenderer</code> lists</li>
-</ul>
-</li>
-<li>Ensure baking runs (the asset runs <code>BakeCellObjectConfigs()</code> on <code>OnValidate</code>).</li>
-<li>At runtime:
-<ul>
-<li>set <code>ItemIndexMap</code> / <code>ItemStateMap</code> to choose the object + state</li>
-<li>optionally set local position/rotation/scale maps</li>
-<li>call <code>UpdateCellItems()</code> to update <code>ItemTransformMap</code></li>
-<li>call <code>CalculateCellObjectsLODSs(...)</code> to populate render batches</li>
-<li>call <code>CellObjectLayerGroup.Render(camera, normalizedCameraZoom)</code> to draw</li>
-</ul>
-</li>
+<li>Ensure surface <code>ChunkMeshLayer.CellMetricsMap</code> and <code>ChunksGridLayer.ChunkVisibility</code> are up to date.</li>
+<li>Call <code>CellObjectLayer.CalculateCellObjects(...)</code> to populate <code>VisualsByLOD[lod]</code>.</li>
+<li>Call <code>CellObjectLayer.Render(camera, normalizedCameraZoom)</code>.</li>
 </ol>
-<h3 id="82-using-cellentitylayer-ecs-entities-per-cell">8.2 Using <code>CellEntityLayer</code> (ECS entities per cell)</h3>
+<h3 id="84-updating-cell-entities-typical-frame">8.4 Updating cell entities (typical frame)</h3>
 <ol>
-<li>Create a <code>CellEntityLayerConfigAsset</code> and set <code>CellEntities</code> authoring list.</li>
-<li>Ensure baking produces a <code>NativeArray&lt;CellEntityConfig&gt;</code> on the terrain (consumed by <code>CellEntityLayerGroup.Init(...)</code>).</li>
-<li>At runtime:
-<ul>
-<li>set <code>ItemIndexMap[cellIndex]</code> to the entity type index</li>
-<li>set <code>ItemStateMap[cellIndex]</code> to choose which prefab to spawn for that entity type</li>
-</ul>
-</li>
-<li>Per update cycle:
-<ul>
-<li><code>CellEntityLayerGroup.CalculateEntities(...)</code> schedules request calculation</li>
-<li><code>CellEntityLayerGroup.UpdateEntities(terrainEntity, ...)</code> instantiates/destroys and queues ECB additions</li>
-<li><code>PlaybackUpdateCellEntityCommandBuffersSystem</code> plays back ECB (adds terrain/chunk/cell components)</li>
-<li><code>UpdateCellEntityLayerEntitiesStateSystem</code> updates transforms/visibility based on dirty data</li>
-</ul>
-</li>
+<li>Call <code>CellEntityLayer.CalculateEntities(...)</code> to compute create/remove requests.</li>
+<li>Call <code>CellEntityLayer.UpdateEntities(terrainEntity, layerIndex, ...)</code> to instantiate/destroy.</li>
+<li>Call <code>CellEntityLayer.PlaybackSetChunkIndexCommandBuffer()</code> to apply component additions.</li>
 </ol>
 <hr>
-<h2 id="9-disposal-responsibilities-and-common-pitfalls">9) Disposal responsibilities and common pitfalls</h2>
-<h3 id="91-dont-confuse-cleanup-with-dispose">9.1 Don’t confuse <code>Cleanup()</code> with <code>Dispose()</code></h3>
+<h2 id="9-mental-model-summary">9. Mental model summary</h2>
 <ul>
-<li><code>Cleanup()</code> is expected to run every frame (or periodically) to clear dirty flags.</li>
-<li><code>Dispose()</code> must run when the terrain/layer is destroyed to release native memory and, for <code>CellEntityLayer</code>, ensure spawned entities are destroyed.</li>
+<li><code>ItemIndexMap</code>: <em>what</em> (and also provides a color visualization via its <code>ColorMap</code>)</li>
+<li><code>ItemStateMap</code>: <em>which variant</em> (affects prefab/visual selection)</li>
+<li><code>ItemPositionMap</code> / <code>ItemRotationMap</code> / <code>ItemScaleMap</code>: <em>local per-cell TRS inputs</em></li>
+<li><code>ItemTransformMap</code>: derived <em>local TRS matrix</em> = <code>ItemTransformSettings.Transform × TRS(position, rotation, scale)</code></li>
+<li><code>CellObjectLayer</code>: converts cells → render instances (<code>BulkRenderItemSettings</code> + transform) → instanced rendering</li>
+<li><code>CellEntityLayer</code>: converts cells → prefab choice → instantiate/destroy ECS entities, tags them with cell/chunk/terrain identity</li>
+<li><code>CacheCellEntityDataSystem</code>: ensures entities can be safely cleaned up even when many terrains are destroyed together</li>
 </ul>
-<h3 id="92-entity-destruction-on-layer-disposalresize">9.2 Entity destruction on layer disposal/resize</h3>
-<p><code>CellEntityViewDataLayer</code> overrides item disposal:</p>
-<ul>
-<li>when a <code>CellEntityView</code> item is disposed, it destroys <code>item.Instance</code> via <code>EntityManager.DestroyEntity(...)</code> (if it exists)</li>
-</ul>
-<p>It also tracks “discarded cells” on <code>Init(layerSize)</code> and adds their entities to removal requests, preventing leaks when terrain shrinks.</p>
-<h3 id="93-ensure-correct-ordering-for-entities">9.3 Ensure correct ordering for entities</h3>
-<p>For correct results, entity lifecycle typically requires this order:</p>
-<ol>
-<li>calculate spawn/despawn requests</li>
-<li>instantiate/destroy entities</li>
-<li>playback ECB that adds required components</li>
-<li>update transform + visibility</li>
-</ol>
-<p>The built-in system ordering enforces this via <code>HexTerrainsStartPreRenderGroup</code> and <code>[UpdateAfter(typeof(PlaybackUpdateCellEntityCommandBuffersSystem))]</code>.</p>
-<hr>
 
 </article>
           </div>

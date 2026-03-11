@@ -252,6 +252,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/CellItems.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellItems.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/CellMineralsLayerConfigAsset.png",
       "output": {
         "resource": {
@@ -342,10 +352,30 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/CellRegionLayerInitDiagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/CellRegionLayerInitDiagram.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/CellRegionTools.png",
       "output": {
         "resource": {
           "relative_path": "Instruction/images/CellRegionTools.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/ChunkMeshLayer.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/ChunkMeshLayer.png"
         }
       },
       "version": ""
@@ -592,6 +622,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/GeoPlastLayer.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/GeoPlastLayer.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/GeoPlastLayerConfigAsset.png",
       "output": {
         "resource": {
@@ -606,6 +646,16 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/GeoPlastLayerGroupAuthoring.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/GeoPlastLayerInitDiagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/GeoPlastLayerInitDiagram.png"
         }
       },
       "version": ""
@@ -862,6 +912,16 @@
     },
     {
       "type": "Resource",
+      "source_relative_path": "Instruction/images/TerrainInitDiagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/TerrainInitDiagram.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
       "source_relative_path": "Instruction/images/TerrainPrefabs.png",
       "output": {
         "resource": {
@@ -886,6 +946,26 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/ToolsPanel.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/UserInterfaceDiagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/UserInterfaceDiagram.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/UserToolsDiagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/UserToolsDiagram.png"
         }
       },
       "version": ""
@@ -986,6 +1066,26 @@
       "output": {
         "resource": {
           "relative_path": "Instruction/images/ViewModes.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/architecture-diagram.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/architecture-diagram.png"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "Instruction/images/initialization-flow.png",
+      "output": {
+        "resource": {
+          "relative_path": "Instruction/images/initialization-flow.png"
         }
       },
       "version": ""
@@ -4153,7 +4253,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellEntities.Data.CellEntityLayer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.yml\" sourcestartlinenumber=\"1\">Represents a terrain layer that manages cell entities, providing functionality for initializing, updating, and\ncleaning up entity data associated with each cell. Supports asynchronous operations and integrates with Unity's\nEntity Component System (ECS) for efficient entity lifecycle management.</p>\n"
     },
     {
       "type": "ManagedReference",
@@ -4210,6 +4310,20 @@
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellEntities.Data.CellEntityRenderer",
       "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellEntities.Data.CellEntityRenderer.yml\" sourcestartlinenumber=\"1\">Represents a buffer element that stores a reference to a child entity for use in cell-based entity hierarchies.\nThis child entity will be hid or shown based on the visibility state of the terrain.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig",
+      "Summary": null
     },
     {
       "type": "ManagedReference",
@@ -4671,7 +4785,7 @@
       "Uid": null,
       "IsMRef": true,
       "Title": "Fwt.HexTerrains.CellItems.Data.CellItemLayer",
-      "Summary": null
+      "Summary": "<p sourcefile=\"api/Fwt.HexTerrains.CellItems.Data.CellItemLayer.yml\" sourcestartlinenumber=\"1\">Represents a terrain layer that manages items placed within cells of a hex-based terrain system, providing\nfunctionality to track, manipulate, and retrieve item indices, states, positions, rotations, scales, and\ntransformations for each cell.</p>\n"
     },
     {
       "type": "ManagedReference",

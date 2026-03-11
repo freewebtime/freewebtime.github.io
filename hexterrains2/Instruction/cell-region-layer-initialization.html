@@ -116,6 +116,7 @@ Implements <code>ICellRegionConfig</code>, which <code>CellRegionLayer.Init(sett
 </ul>
 </li>
 </ol>
+<p><img src="images/CellRegionLayerInitDiagram.png" alt="Cell Region Layer Init"></p>
 <pre><code class="lang-mermaid">flowchart TD 
 A[&quot;Scene passes CellRegionLayerConfigAsset as init args&quot;] --&gt; B[&quot;HexTerrainLayerGroup&lt;T&gt;.CreateTerrainLayer(initArgs)&quot;] 
 B --&gt; C[&quot;CellRegionLayerConfigAsset.CreateTerrainLayer() → new CellRegionLayer()&quot;] 

@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CellItemLayer | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Represents a terrain layer that manages items placed within cells of a hex-based terrain system, providing functionality to track, manipulate, and retrieve item indices, states, positions, rotations, scales, and transformations for each cell.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,10 @@
 
 
   <h1 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer" class="text-break">Class CellItemLayer</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a terrain layer that manages items placed within cells of a hex-based terrain system, providing
+functionality to track, manipulate, and retrieve item indices, states, positions, rotations, scales, and
+transformations for each cell.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -156,6 +159,13 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class CellItemLayer : HexTerrainLayer, IDisposable, ISerializableTerrainLayer</code></pre>
   </div>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>The CellItemLayer class enables dynamic placement and transformation of items relative to the
+terrain surface in a hexagonal grid layout. It supports efficient rendering and flexible item management by
+maintaining per-cell data for item properties and transformations. This class also provides methods for
+serializing and deserializing layer data, updating item transforms, and batch operations on cell items. Thread
+safety and job scheduling are considered for performance in large-scale terrain systems.</p>
+</div>
   <h3 id="fields">Fields
 </h3>
 
@@ -526,7 +536,7 @@ Returns false if the layer does not support deserialization.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool DeserializeLayer(BinaryReader reader, HexTerrainSettings terrainSettings)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -584,11 +594,12 @@ Returns false if the layer does not support deserialization.</p>
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemIndex_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemIndex*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemIndex_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemIndex(System.Int32)">GetCellItemIndex(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the index of the item associated with the specified cell index, if it exists.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? GetCellItemIndex(int cellIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual int? GetCellItemIndex(int cellIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -603,7 +614,9 @@ Returns false if the layer does not support deserialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell for which to retrieve the item index. Must be within the valid range of the
+item index map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -618,19 +631,25 @@ Returns false if the layer does not support deserialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
-        <td></td>
+        <td><p>The index of the item associated with the specified cell index, or null if the cell index is not found.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemIndex_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method opens the item index map for reading before attempting to retrieve the
+item index. Ensure that the item index map is properly initialized before calling this method.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalPosition_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalPosition*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalPosition_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalPosition(System.Int32)">GetCellItemLocalPosition(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the local position of the item located at the specified cell index, if available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float3? GetCellItemLocalPosition(int cellIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual float3? GetCellItemLocalPosition(int cellIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -645,7 +664,9 @@ Returns false if the layer does not support deserialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell for which to obtain the item's local position. Must be within the valid
+range of the item position map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -660,7 +681,9 @@ Returns false if the layer does not support deserialization.</p>
     <tbody>
       <tr>
         <td><span class="xref">float3</span>?</td>
-        <td></td>
+        <td><p>A nullable <code>float3</code> representing the local position of the item if it exists at the specified index;
+otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -668,11 +691,12 @@ Returns false if the layer does not support deserialization.</p>
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalRotation_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalRotation*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalRotation_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalRotation(System.Int32)">GetCellItemLocalRotation(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the local rotation of the cell item at the specified index, if available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public quaternion? GetCellItemLocalRotation(int cellIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual quaternion? GetCellItemLocalRotation(int cellIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -687,7 +711,9 @@ Returns false if the layer does not support deserialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell item whose local rotation is to be retrieved. Must be within the valid
+range of the item rotation map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -702,19 +728,26 @@ Returns false if the layer does not support deserialization.</p>
     <tbody>
       <tr>
         <td><span class="xref">quaternion</span>?</td>
-        <td></td>
+        <td><p>A nullable quaternion representing the local rotation of the specified cell item, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>
+if the item does not exist or the rotation is unavailable.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalRotation_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the specified index does not correspond to a valid cell item, the method
+returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalScale_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalScale*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalScale_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalScale(System.Int32)">GetCellItemLocalScale(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the local scale of the item at the specified cell index, if available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public float3? GetCellItemLocalScale(int cellIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual float3? GetCellItemLocalScale(int cellIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -729,7 +762,9 @@ Returns false if the layer does not support deserialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell for which to retrieve the local scale. Must be within the valid range of
+the item scale map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -744,19 +779,25 @@ Returns false if the layer does not support deserialization.</p>
     <tbody>
       <tr>
         <td><span class="xref">float3</span>?</td>
-        <td></td>
+        <td><p>A nullable <code>float3</code> representing the local scale of the item at the specified cell index, or <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a> if the index is invalid or no scale data exists for the cell.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalScale_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item scale map is not available or the specified index is out of range, the
+method returns <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/keywords/null">null</a>.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalTransform_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalTransform*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalTransform_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemLocalTransform(System.Int32)">GetCellItemLocalTransform(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the local transformation matrix for the specified cell item index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public Matrix4x4? GetCellItemLocalTransform(int cellIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual Matrix4x4? GetCellItemLocalTransform(int cellIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -771,7 +812,9 @@ Returns false if the layer does not support deserialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The index of the cell item for which to retrieve the local transformation. Must be a valid index within the
+bounds of the item transform map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -786,19 +829,26 @@ Returns false if the layer does not support deserialization.</p>
     <tbody>
       <tr>
         <td><span class="xref">Matrix4x4</span>?</td>
-        <td></td>
+        <td><p>A nullable <span class="xref">UnityEngine.Matrix4x4</span> representing the local transformation matrix of the specified cell item,
+or null if the item does not exist.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemLocalTransform_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item transform map is not initialized or the specified index is invalid, the
+method returns null.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemState_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemState*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemState_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.GetCellItemState(System.Int32)">GetCellItemState(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Retrieves the state of the item at the specified cell index, if available.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int? GetCellItemState(int cellIndex)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual int? GetCellItemState(int cellIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -813,7 +863,9 @@ Returns false if the layer does not support deserialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell for which to retrieve the item state. Must be within the valid range of the
+item state map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -828,10 +880,16 @@ Returns false if the layer does not support deserialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>?</td>
-        <td></td>
+        <td><p>The state of the item at the specified cell index, or null if the index is invalid or the item state is not
+found.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_GetCellItemState_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item state map is not initialized or the specified index is out of range, this
+method returns null.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_Init_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.Init*"></a>
@@ -926,7 +984,7 @@ Returns false if the layer does not support serialization.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SerializeLayer(BinaryWriter writer)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SerializeLayer(BinaryWriter writer)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -966,11 +1024,12 @@ Returns false if the layer does not support serialization.</p>
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsItemIndex_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsItemIndex*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsItemIndex_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsItemIndex(System.Int32)">SetAllCellsItemIndex(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the specified item index for all cells in the collection.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetAllCellsItemIndex(int value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsItemIndex(int value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -985,7 +1044,8 @@ Returns false if the layer does not support serialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The item index value to assign to every cell. Must be a non-negative integer.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1000,19 +1060,24 @@ Returns false if the layer does not support serialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if all cells were successfully updated with the specified index; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsItemIndex_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the map is not available, the method returns false without making any changes.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsItemState_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsItemState*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsItemState_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsItemState(System.Int32)">SetAllCellsItemState(int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the state of all cells in the item state map to the specified value.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetAllCellsItemState(int value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsItemState(int value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1027,7 +1092,8 @@ Returns false if the layer does not support serialization.</p>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The integer value to assign to each cell's state.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1042,19 +1108,25 @@ Returns false if the layer does not support serialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the operation succeeds and all cell states are updated; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsItemState_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method attempts to open the item state map for writing before updating cell
+states. If the item state map is null, the method returns false and no changes are made.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalPosition_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalPosition*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalPosition_Unity_Mathematics_float3_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalPosition(Unity.Mathematics.float3)">SetAllCellsLocalPosition(float3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local position of all cells to the specified value.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetAllCellsLocalPosition(float3 value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsLocalPosition(float3 value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1069,7 +1141,8 @@ Returns false if the layer does not support serialization.</p>
       <tr>
         <td><span class="xref">float3</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The new local position to assign to all cells, represented as a <code>float3</code> structure.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1084,19 +1157,25 @@ Returns false if the layer does not support serialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the operation succeeds and all cell positions are updated; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalPosition_Unity_Mathematics_float3__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method opens the item position map for writing before updating cell positions.
+Ensure that the item position map is initialized before calling this method.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalRotation_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalRotation*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalRotation_Unity_Mathematics_quaternion_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalRotation(Unity.Mathematics.quaternion)">SetAllCellsLocalRotation(quaternion)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local rotation for all cells to the specified quaternion value.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetAllCellsLocalRotation(quaternion value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsLocalRotation(quaternion value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1111,7 +1190,8 @@ Returns false if the layer does not support serialization.</p>
       <tr>
         <td><span class="xref">quaternion</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The quaternion representing the local rotation to apply to all cells.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1126,19 +1206,26 @@ Returns false if the layer does not support serialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the rotation was successfully applied to all cells; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalRotation_Unity_Mathematics_quaternion__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method attempts to open the ItemRotationMap for writing and fills it with the
+provided rotation value. Ensure that the ItemRotationMap is initialized before calling this
+method.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalScale_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalScale*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalScale_Unity_Mathematics_float3_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalScale(Unity.Mathematics.float3)">SetAllCellsLocalScale(float3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local scale for all cells in the item scale map to the specified value.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetAllCellsLocalScale(float3 value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsLocalScale(float3 value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1153,7 +1240,9 @@ Returns false if the layer does not support serialization.</p>
       <tr>
         <td><span class="xref">float3</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The new local scale to apply to each cell. This value determines the size and appearance of all cells in the
+map.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1168,19 +1257,25 @@ Returns false if the layer does not support serialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the operation succeeds and all cells are updated; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalScale_Unity_Mathematics_float3__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The method attempts to open the item scale map for writing before applying the new
+scale. Ensure that the item scale map is initialized and available before calling this method.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalTransform_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalTransform*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalTransform_UnityEngine_Matrix4x4_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllCellsLocalTransform(UnityEngine.Matrix4x4)">SetAllCellsLocalTransform(Matrix4x4)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local transformation matrix for all cells in the item transform map.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetAllCellsLocalTransform(Matrix4x4 value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetAllCellsLocalTransform(Matrix4x4 value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1195,7 +1290,9 @@ Returns false if the layer does not support serialization.</p>
       <tr>
         <td><span class="xref">Matrix4x4</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The transformation matrix to apply to all cells. This matrix defines the local position, rotation, and scale
+of the cells.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1210,10 +1307,15 @@ Returns false if the layer does not support serialization.</p>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the transformation was successfully applied to all cells; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllCellsLocalTransform_UnityEngine_Matrix4x4__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method opens the item transform map for writing before applying the
+transformation. If the item transform map is null, the method returns false.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetAllDirty_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetAllDirty*"></a>
@@ -1250,11 +1352,12 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemIndex_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemIndex*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemIndex_System_Int32_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemIndex(System.Int32,System.Int32)">SetCellItemIndex(int, int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the item index for a specified cell in the item index map.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetCellItemIndex(int cellIndex, int value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItemIndex(int cellIndex, int value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1269,12 +1372,14 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell to update. Must be within the valid range of the item index map.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The item index value to assign to the specified cell.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1289,19 +1394,25 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the item index was successfully set; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemIndex_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item index map is null, the method returns false and no changes are made. The
+item index map is opened for writing before attempting to set the value.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalPosition_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalPosition*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalPosition_System_Int32_Unity_Mathematics_float3_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalPosition(System.Int32,Unity.Mathematics.float3)">SetCellItemLocalPosition(int, float3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local position of a cell item at the specified index within the item position map.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetCellItemLocalPosition(int cellIndex, float3 value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItemLocalPosition(int cellIndex, float3 value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1316,12 +1427,15 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell item whose local position is to be set. Must be within the valid range of
+the item position map.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">float3</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The new local position to assign to the cell item, represented as a <span class="xref">Unity.Mathematics.float3</span> structure.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1336,19 +1450,25 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the local position was successfully set; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalPosition_System_Int32_Unity_Mathematics_float3__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item position map is null, the method returns false and no changes are made.
+The item position map is opened for writing before attempting to set the position.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalRotation_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalRotation*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalRotation_System_Int32_Unity_Mathematics_quaternion_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalRotation(System.Int32,Unity.Mathematics.quaternion)">SetCellItemLocalRotation(int, quaternion)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local rotation of a cell item at the specified index.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetCellItemLocalRotation(int cellIndex, quaternion value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItemLocalRotation(int cellIndex, quaternion value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1363,12 +1483,15 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell item whose local rotation is to be set. Must be within the valid range of
+the item rotation map.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">quaternion</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The quaternion value representing the desired local rotation to assign to the cell item.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1383,19 +1506,25 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the local rotation was successfully set; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalRotation_System_Int32_Unity_Mathematics_quaternion__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item rotation map is null, the method returns false and no rotation is set.
+The item rotation map is opened for writing before attempting to set the rotation.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalScale_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalScale*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalScale_System_Int32_Unity_Mathematics_float3_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalScale(System.Int32,Unity.Mathematics.float3)">SetCellItemLocalScale(int, float3)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local scale for the specified cell item in the item scale map.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetCellItemLocalScale(int cellIndex, float3 value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItemLocalScale(int cellIndex, float3 value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1410,12 +1539,15 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell item whose local scale is to be set. Must be within the valid range of the
+item scale map.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">float3</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The new local scale to assign to the cell item, represented as a float3 structure.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1430,19 +1562,25 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the local scale was successfully set; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalScale_System_Int32_Unity_Mathematics_float3__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>The method attempts to open the item scale map for writing before setting the scale.
+If the item scale map is null, the method returns false and no changes are made.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalTransform_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalTransform*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalTransform_System_Int32_UnityEngine_Matrix4x4_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemLocalTransform(System.Int32,UnityEngine.Matrix4x4)">SetCellItemLocalTransform(int, Matrix4x4)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the local transformation matrix for the specified cell item.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetCellItemLocalTransform(int cellIndex, Matrix4x4 value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItemLocalTransform(int cellIndex, Matrix4x4 value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1457,12 +1595,16 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell item whose local transformation is to be updated. Must be within the valid
+range of the item transform map.</p>
+</td>
       </tr>
       <tr>
         <td><span class="xref">Matrix4x4</span></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The transformation matrix to assign to the specified cell item. This matrix defines the new local
+transformation.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1477,19 +1619,25 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the transformation was successfully set; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemLocalTransform_System_Int32_UnityEngine_Matrix4x4__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>This method attempts to open the item transform map for writing before setting the
+transformation. If the item transform map is null, the method returns false.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemState_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemState*"></a>
   <h4 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemState_System_Int32_System_Int32_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.SetCellItemState(System.Int32,System.Int32)">SetCellItemState(int, int)</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Sets the state value for the specified cell item.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool SetCellItemState(int cellIndex, int value)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual bool SetCellItemState(int cellIndex, int value)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -1504,12 +1652,16 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">cellIndex</span></td>
-        <td></td>
+        <td><p>The zero-based index of the cell item whose state is to be set. Must be within the valid range of the item
+state map.</p>
+</td>
       </tr>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
         <td><span class="parametername">value</span></td>
-        <td></td>
+        <td><p>The new state value to assign to the cell item. The value should be within the acceptable range defined by
+the application.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -1524,10 +1676,15 @@ If isDirty is false, all data layers will be marked as clean and will not be rec
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
+        <td><p>true if the state was successfully set; otherwise, false.</p>
+</td>
       </tr>
     </tbody>
   </table>
+  <h5 id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_SetCellItemState_System_Int32_System_Int32__remarks">Remarks</h5>
+  <div class="markdown level1 remarks"><p>If the item state map is null, the method returns false and no changes are made. The
+item state map is opened for writing before attempting to set the state.</p>
+</div>
 
 
   <a id="Fwt_HexTerrains_CellItems_Data_CellItemLayer_UpdateCellItems_" data-uid="Fwt.HexTerrains.CellItems.Data.CellItemLayer.UpdateCellItems*"></a>

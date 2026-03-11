@@ -1369,15 +1369,15 @@ references:
   fullName.vb: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap(Of Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem), UnityEngine.Camera)
   nameWithType: BulkRendererAsset.RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera)
   nameWithType.vb: BulkRendererAsset.RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera)
-- uid: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)
-  name: RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds, int)
-  href: api/Fwt.Core.BulkRendering.BulkRendererAsset.html#Fwt_Core_BulkRendering_BulkRendererAsset_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_
-  commentId: M:Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)
-  name.vb: RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds, Integer)
-  fullName: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap<Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem>, UnityEngine.Camera, UnityEngine.Bounds, int)
-  fullName.vb: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap(Of Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem), UnityEngine.Camera, UnityEngine.Bounds, Integer)
-  nameWithType: BulkRendererAsset.RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds, int)
-  nameWithType.vb: BulkRendererAsset.RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds, Integer)
+- uid: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds)
+  name: RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds)
+  href: api/Fwt.Core.BulkRendering.BulkRendererAsset.html#Fwt_Core_BulkRendering_BulkRendererAsset_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_
+  commentId: M:Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds)
+  name.vb: RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds)
+  fullName: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap<Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem>, UnityEngine.Camera, UnityEngine.Bounds)
+  fullName.vb: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities(Unity.Collections.NativeParallelMultiHashMap(Of Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem), UnityEngine.Camera, UnityEngine.Bounds)
+  nameWithType: BulkRendererAsset.RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds)
+  nameWithType.vb: BulkRendererAsset.RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds)
 - uid: Fwt.Core.BulkRendering.BulkRendererAsset.RenderEntities*
   name: RenderEntities
   href: api/Fwt.Core.BulkRendering.BulkRendererAsset.html#Fwt_Core_BulkRendering_BulkRendererAsset_RenderEntities_
@@ -1763,15 +1763,15 @@ references:
   fullName.vb: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap(Of Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem), UnityEngine.Camera)
   nameWithType: IBulkRenderer.RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera)
   nameWithType.vb: IBulkRenderer.RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera)
-- uid: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)
-  name: RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds, int)
-  href: api/Fwt.Core.BulkRendering.IBulkRenderer.html#Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_System_Int32_
-  commentId: M:Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds,System.Int32)
-  name.vb: RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds, Integer)
-  fullName: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap<Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem>, UnityEngine.Camera, UnityEngine.Bounds, int)
-  fullName.vb: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap(Of Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem), UnityEngine.Camera, UnityEngine.Bounds, Integer)
-  nameWithType: IBulkRenderer.RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds, int)
-  nameWithType.vb: IBulkRenderer.RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds, Integer)
+- uid: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds)
+  name: RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds)
+  href: api/Fwt.Core.BulkRendering.IBulkRenderer.html#Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_Unity_Collections_NativeParallelMultiHashMap_Fwt_Core_BulkRendering_BulkRenderItemSettings_Fwt_Core_BulkRendering_BulkRenderItem__UnityEngine_Camera_UnityEngine_Bounds_
+  commentId: M:Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap{Fwt.Core.BulkRendering.BulkRenderItemSettings,Fwt.Core.BulkRendering.BulkRenderItem},UnityEngine.Camera,UnityEngine.Bounds)
+  name.vb: RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds)
+  fullName: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap<Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem>, UnityEngine.Camera, UnityEngine.Bounds)
+  fullName.vb: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities(Unity.Collections.NativeParallelMultiHashMap(Of Fwt.Core.BulkRendering.BulkRenderItemSettings, Fwt.Core.BulkRendering.BulkRenderItem), UnityEngine.Camera, UnityEngine.Bounds)
+  nameWithType: IBulkRenderer.RenderEntities(NativeParallelMultiHashMap<BulkRenderItemSettings, BulkRenderItem>, Camera, Bounds)
+  nameWithType.vb: IBulkRenderer.RenderEntities(NativeParallelMultiHashMap(Of BulkRenderItemSettings, BulkRenderItem), Camera, Bounds)
 - uid: Fwt.Core.BulkRendering.IBulkRenderer.RenderEntities*
   name: RenderEntities
   href: api/Fwt.Core.BulkRendering.IBulkRenderer.html#Fwt_Core_BulkRendering_IBulkRenderer_RenderEntities_
@@ -57557,15 +57557,15 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.Bake
   nameWithType: CellEntitiesLayersBaker.Bake
-- uid: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset,System.Int32,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})
-  name: BakeCellEntities(CellEntityLayerConfigAsset, int, DynamicBuffer<CellEntityConfig>)
-  href: api/Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.html#Fwt_HexTerrains_CellEntities_CellEntitiesLayersBaker_BakeCellEntities_Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_System_Int32_Unity_Entities_DynamicBuffer_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__
-  commentId: M:Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset,System.Int32,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})
-  name.vb: BakeCellEntities(CellEntityLayerConfigAsset, Integer, DynamicBuffer(Of CellEntityConfig))
-  fullName: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset, int, Unity.Entities.DynamicBuffer<Fwt.HexTerrains.CellEntities.Data.CellEntityConfig>)
-  fullName.vb: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset, Integer, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.CellEntities.Data.CellEntityConfig))
-  nameWithType: CellEntitiesLayersBaker.BakeCellEntities(CellEntityLayerConfigAsset, int, DynamicBuffer<CellEntityConfig>)
-  nameWithType.vb: CellEntitiesLayersBaker.BakeCellEntities(CellEntityLayerConfigAsset, Integer, DynamicBuffer(Of CellEntityConfig))
+- uid: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset,System.Int32,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})
+  name: BakeCellEntities(CellEntityLayerConfigAsset, int, DynamicBuffer<CellEntityStateConfig>)
+  href: api/Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.html#Fwt_HexTerrains_CellEntities_CellEntitiesLayersBaker_BakeCellEntities_Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_System_Int32_Unity_Entities_DynamicBuffer_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__
+  commentId: M:Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset,System.Int32,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})
+  name.vb: BakeCellEntities(CellEntityLayerConfigAsset, Integer, DynamicBuffer(Of CellEntityStateConfig))
+  fullName: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset, int, Unity.Entities.DynamicBuffer<Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig>)
+  fullName.vb: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset, Integer, Unity.Entities.DynamicBuffer(Of Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig))
+  nameWithType: CellEntitiesLayersBaker.BakeCellEntities(CellEntityLayerConfigAsset, int, DynamicBuffer<CellEntityStateConfig>)
+  nameWithType.vb: CellEntitiesLayersBaker.BakeCellEntities(CellEntityLayerConfigAsset, Integer, DynamicBuffer(Of CellEntityStateConfig))
 - uid: Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities*
   name: BakeCellEntities
   href: api/Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.html#Fwt_HexTerrains_CellEntities_CellEntitiesLayersBaker_BakeCellEntities_
@@ -57610,12 +57610,6 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring
   fullName: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring
   nameWithType: CellEntityConfigAuthoring
-- uid: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.Color
-  name: Color
-  href: api/Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.html#Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_Color
-  commentId: F:Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.Color
-  fullName: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.Color
-  nameWithType: CellEntityConfigAuthoring.Color
 - uid: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.Name
   name: Name
   href: api/Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.html#Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_Name
@@ -57640,12 +57634,12 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfig.State
   fullName: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfig.State
   nameWithType: CellEntityConfigAuthoring.PrefabConfig.State
-- uid: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfigs
-  name: PrefabConfigs
-  href: api/Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.html#Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_PrefabConfigs
-  commentId: F:Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfigs
-  fullName: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfigs
-  nameWithType: CellEntityConfigAuthoring.PrefabConfigs
+- uid: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.States
+  name: States
+  href: api/Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.html#Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_States
+  commentId: F:Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.States
+  fullName: Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.States
+  nameWithType: CellEntityConfigAuthoring.States
 - uid: Fwt.HexTerrains.CellEntities.CellEntityLayerAuthoring
   name: CellEntityLayerAuthoring
   href: api/Fwt.HexTerrains.CellEntities.CellEntityLayerAuthoring.html
@@ -57807,37 +57801,21 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.EntityManager
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.EntityManager
   nameWithType: CellEntityLayer.EntityManager
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs(Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},System.Int32,System.Int32)
-  name: GetCellEntityConfigs(NativeArray<CellEntityConfig>, int, int)
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_GetCellEntityConfigs_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__System_Int32_System_Int32_
-  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs(Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},System.Int32,System.Int32)
-  name.vb: GetCellEntityConfigs(NativeArray(Of CellEntityConfig), Integer, Integer)
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs(Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CellEntityConfig>, int, int)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs(Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CellEntityConfig), Integer, Integer)
-  nameWithType: CellEntityLayer.GetCellEntityConfigs(NativeArray<CellEntityConfig>, int, int)
-  nameWithType.vb: CellEntityLayer.GetCellEntityConfigs(NativeArray(Of CellEntityConfig), Integer, Integer)
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs*
-  name: GetCellEntityConfigs
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_GetCellEntityConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs
-  nameWithType: CellEntityLayer.GetCellEntityConfigs
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
   name: Init(HexTerrainSettings)
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_
   commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)
   nameWithType: CellEntityLayer.Init(HexTerrainSettings)
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})
-  name: Init(HexTerrainSettings, ICellEntityLayerConfig, NativeArray<CellEntityConfig>)
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__
-  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})
-  name.vb: Init(HexTerrainSettings, ICellEntityLayerConfig, NativeArray(Of CellEntityConfig))
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CellEntityConfig>)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig, Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CellEntityConfig))
-  nameWithType: CellEntityLayer.Init(HexTerrainSettings, ICellEntityLayerConfig, NativeArray<CellEntityConfig>)
-  nameWithType.vb: CellEntityLayer.Init(HexTerrainSettings, ICellEntityLayerConfig, NativeArray(Of CellEntityConfig))
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig,Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})
+  name: Init(HexTerrainSettings, ICellEntityLayerConfig, NativeSlice<CellEntityStateConfig>)
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_Unity_Collections_NativeSlice_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__
+  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig,Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})
+  name.vb: Init(HexTerrainSettings, ICellEntityLayerConfig, NativeSlice(Of CellEntityStateConfig))
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig, Unity.Collections.NativeSlice<Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig>)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings, Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig, Unity.Collections.NativeSlice(Of Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig))
+  nameWithType: CellEntityLayer.Init(HexTerrainSettings, ICellEntityLayerConfig, NativeSlice<CellEntityStateConfig>)
+  nameWithType.vb: CellEntityLayer.Init(HexTerrainSettings, ICellEntityLayerConfig, NativeSlice(Of CellEntityStateConfig))
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init*
   name: Init
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_
@@ -57845,15 +57823,15 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init
   nameWithType: CellEntityLayer.Init
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})
-  name: InitCellEntitiesConfigs(NativeSlice<CellEntityConfig>)
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_InitCellEntitiesConfigs_Unity_Collections_NativeSlice_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__
-  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})
-  name.vb: InitCellEntitiesConfigs(NativeSlice(Of CellEntityConfig))
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice<Fwt.HexTerrains.CellEntities.Data.CellEntityConfig>)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice(Of Fwt.HexTerrains.CellEntities.Data.CellEntityConfig))
-  nameWithType: CellEntityLayer.InitCellEntitiesConfigs(NativeSlice<CellEntityConfig>)
-  nameWithType.vb: CellEntityLayer.InitCellEntitiesConfigs(NativeSlice(Of CellEntityConfig))
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})
+  name: InitCellEntitiesConfigs(NativeSlice<CellEntityStateConfig>)
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_InitCellEntitiesConfigs_Unity_Collections_NativeSlice_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__
+  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})
+  name.vb: InitCellEntitiesConfigs(NativeSlice(Of CellEntityStateConfig))
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice<Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig>)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice(Of Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig))
+  nameWithType: CellEntityLayer.InitCellEntitiesConfigs(NativeSlice<CellEntityStateConfig>)
+  nameWithType.vb: CellEntityLayer.InitCellEntitiesConfigs(NativeSlice(Of CellEntityStateConfig))
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs*
   name: InitCellEntitiesConfigs
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_InitCellEntitiesConfigs_
@@ -57902,6 +57880,19 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.SetChunkIndexCommandBufferDependency
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.SetChunkIndexCommandBufferDependency
   nameWithType: CellEntityLayer.SetChunkIndexCommandBufferDependency
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex
+  name: StatesCountPerEntityIndex
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_StatesCountPerEntityIndex
+  commentId: P:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex
+  nameWithType: CellEntityLayer.StatesCountPerEntityIndex
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex*
+  name: StatesCountPerEntityIndex
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_StatesCountPerEntityIndex_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex
+  nameWithType: CellEntityLayer.StatesCountPerEntityIndex
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.UpdateEntities(Unity.Entities.Entity,System.Int32,Unity.Jobs.JobHandle)
   name: UpdateEntities(Entity, int, JobHandle)
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_UpdateEntities_Unity_Entities_Entity_System_Int32_Unity_Jobs_JobHandle_
@@ -57924,19 +57915,19 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset
   nameWithType: CellEntityLayerConfigAsset
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellEntities
-  name: CellEntities
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_CellEntities
-  commentId: P:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellEntities
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellEntities
-  nameWithType: CellEntityLayerConfigAsset.CellEntities
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellEntities*
-  name: CellEntities
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_CellEntities_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellEntities
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellItemPrefabs
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_CellItemPrefabs
+  commentId: P:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellItemPrefabs
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellItemPrefabs
+  nameWithType: CellEntityLayerConfigAsset.CellItemPrefabs
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellItemPrefabs*
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_CellItemPrefabs_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellItemPrefabs
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellEntities
-  nameWithType: CellEntityLayerConfigAsset.CellEntities
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CellItemPrefabs
+  nameWithType: CellEntityLayerConfigAsset.CellItemPrefabs
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CreateTerrainLayer
   name: CreateTerrainLayer()
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_CreateTerrainLayer
@@ -57950,50 +57941,31 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.CreateTerrainLayer
   nameWithType: CellEntityLayerConfigAsset.CreateTerrainLayer
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeSize
-  name: EntityConfigsRangeSize
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_EntityConfigsRangeSize
-  commentId: P:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeSize
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeSize
-  nameWithType: CellEntityLayerConfigAsset.EntityConfigsRangeSize
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeSize*
-  name: EntityConfigsRangeSize
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_EntityConfigsRangeSize_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeSize
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.StatesCountPerItem
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_StatesCountPerItem
+  commentId: P:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.StatesCountPerItem
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.StatesCountPerItem
+  nameWithType: CellEntityLayerConfigAsset.StatesCountPerItem
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.StatesCountPerItem*
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_StatesCountPerItem_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.StatesCountPerItem
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeSize
-  nameWithType: CellEntityLayerConfigAsset.EntityConfigsRangeSize
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeStart
-  name: EntityConfigsRangeStart
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_EntityConfigsRangeStart
-  commentId: P:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeStart
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeStart
-  nameWithType: CellEntityLayerConfigAsset.EntityConfigsRangeStart
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeStart*
-  name: EntityConfigsRangeStart
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_EntityConfigsRangeStart_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeStart
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.EntityConfigsRangeStart
-  nameWithType: CellEntityLayerConfigAsset.EntityConfigsRangeStart
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._cellEntities
-  name: _cellEntities
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset__cellEntities
-  commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._cellEntities
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._cellEntities
-  nameWithType: CellEntityLayerConfigAsset._cellEntities
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._entityConfigsRangeSize
-  name: _entityConfigsRangeSize
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset__entityConfigsRangeSize
-  commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._entityConfigsRangeSize
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._entityConfigsRangeSize
-  nameWithType: CellEntityLayerConfigAsset._entityConfigsRangeSize
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._entityConfigsRangeStart
-  name: _entityConfigsRangeStart
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset__entityConfigsRangeStart
-  commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._entityConfigsRangeStart
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._entityConfigsRangeStart
-  nameWithType: CellEntityLayerConfigAsset._entityConfigsRangeStart
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.StatesCountPerItem
+  nameWithType: CellEntityLayerConfigAsset.StatesCountPerItem
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._cellItemPrefabs
+  name: _cellItemPrefabs
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset__cellItemPrefabs
+  commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._cellItemPrefabs
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._cellItemPrefabs
+  nameWithType: CellEntityLayerConfigAsset._cellItemPrefabs
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._statesCountPerItem
+  name: _statesCountPerItem
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset__statesCountPerItem
+  commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._statesCountPerItem
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset._statesCountPerItem
+  nameWithType: CellEntityLayerConfigAsset._statesCountPerItem
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup
   name: CellEntityLayerGroup
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.html
@@ -58065,15 +58037,15 @@ references:
   fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.InitTerrainLayer(Of TInitArgs)(Fwt.HexTerrains.CellEntities.Data.CellEntityLayer, Fwt.HexTerrains.Data.HexTerrainSettings, TInitArgs)
   nameWithType: CellEntityLayerGroup.InitTerrainLayer<TInitArgs>(CellEntityLayer, HexTerrainSettings, TInitArgs)
   nameWithType.vb: CellEntityLayerGroup.InitTerrainLayer(Of TInitArgs)(CellEntityLayer, HexTerrainSettings, TInitArgs)
-- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,System.Collections.Generic.IEnumerable{``0},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},Unity.Entities.EntityManager)
-  name: Init<TInitLayerArgs>(HexTerrainSettings, IEnumerable<TInitLayerArgs>, NativeArray<CellEntityConfig>, EntityManager)
-  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerGroup_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings_System_Collections_Generic_IEnumerable___0__Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__Unity_Entities_EntityManager_
-  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,System.Collections.Generic.IEnumerable{``0},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},Unity.Entities.EntityManager)
-  name.vb: Init(Of TInitLayerArgs)(HexTerrainSettings, IEnumerable(Of TInitLayerArgs), NativeArray(Of CellEntityConfig), EntityManager)
-  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init<TInitLayerArgs>(Fwt.HexTerrains.Data.HexTerrainSettings, System.Collections.Generic.IEnumerable<TInitLayerArgs>, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CellEntityConfig>, Unity.Entities.EntityManager)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init(Of TInitLayerArgs)(Fwt.HexTerrains.Data.HexTerrainSettings, System.Collections.Generic.IEnumerable(Of TInitLayerArgs), Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CellEntityConfig), Unity.Entities.EntityManager)
-  nameWithType: CellEntityLayerGroup.Init<TInitLayerArgs>(HexTerrainSettings, IEnumerable<TInitLayerArgs>, NativeArray<CellEntityConfig>, EntityManager)
-  nameWithType.vb: CellEntityLayerGroup.Init(Of TInitLayerArgs)(HexTerrainSettings, IEnumerable(Of TInitLayerArgs), NativeArray(Of CellEntityConfig), EntityManager)
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,System.Collections.Generic.IEnumerable{``0},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig},Unity.Entities.EntityManager)
+  name: Init<TInitLayerArgs>(HexTerrainSettings, IEnumerable<TInitLayerArgs>, NativeArray<CellEntityStateConfig>, EntityManager)
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerGroup_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings_System_Collections_Generic_IEnumerable___0__Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__Unity_Entities_EntityManager_
+  commentId: M:Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,System.Collections.Generic.IEnumerable{``0},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig},Unity.Entities.EntityManager)
+  name.vb: Init(Of TInitLayerArgs)(HexTerrainSettings, IEnumerable(Of TInitLayerArgs), NativeArray(Of CellEntityStateConfig), EntityManager)
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init<TInitLayerArgs>(Fwt.HexTerrains.Data.HexTerrainSettings, System.Collections.Generic.IEnumerable<TInitLayerArgs>, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig>, Unity.Entities.EntityManager)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.Init(Of TInitLayerArgs)(Fwt.HexTerrains.Data.HexTerrainSettings, System.Collections.Generic.IEnumerable(Of TInitLayerArgs), Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig), Unity.Entities.EntityManager)
+  nameWithType: CellEntityLayerGroup.Init<TInitLayerArgs>(HexTerrainSettings, IEnumerable<TInitLayerArgs>, NativeArray<CellEntityStateConfig>, EntityManager)
+  nameWithType.vb: CellEntityLayerGroup.Init(Of TInitLayerArgs)(HexTerrainSettings, IEnumerable(Of TInitLayerArgs), NativeArray(Of CellEntityStateConfig), EntityManager)
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.UpdateEntities(Unity.Entities.Entity,Unity.Jobs.JobHandle)
   name: UpdateEntities(Entity, JobHandle)
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityLayerGroup.html#Fwt_HexTerrains_CellEntities_Data_CellEntityLayerGroup_UpdateEntities_Unity_Entities_Entity_Unity_Jobs_JobHandle_
@@ -58129,6 +58101,18 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityRenderer.Value
   fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityRenderer.Value
   nameWithType: CellEntityRenderer.Value
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig
+  name: CellEntityStateConfig
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html
+  commentId: T:Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig
+  nameWithType: CellEntityStateConfig
+- uid: Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.Prefab
+  name: Prefab
+  href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html#Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig_Prefab
+  commentId: F:Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.Prefab
+  fullName: Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.Prefab
+  nameWithType: CellEntityStateConfig.Prefab
 - uid: Fwt.HexTerrains.CellEntities.Data.CellEntityTerrainReference
   name: CellEntityTerrainReference
   href: api/Fwt.HexTerrains.CellEntities.Data.CellEntityTerrainReference.html
@@ -58229,64 +58213,50 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.Name
   fullName: Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.Name
   nameWithType: CreateCellEntityLayerRequest.Name
+- uid: Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.PrefabsRangeSize
+  name: PrefabsRangeSize
+  href: api/Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.html#Fwt_HexTerrains_CellEntities_Data_CreateCellEntityLayerRequest_PrefabsRangeSize
+  commentId: F:Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.PrefabsRangeSize
+  fullName: Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.PrefabsRangeSize
+  nameWithType: CreateCellEntityLayerRequest.PrefabsRangeSize
+- uid: Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.PrefabsRangeStart
+  name: PrefabsRangeStart
+  href: api/Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.html#Fwt_HexTerrains_CellEntities_Data_CreateCellEntityLayerRequest_PrefabsRangeStart
+  commentId: F:Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.PrefabsRangeStart
+  fullName: Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest.PrefabsRangeStart
+  nameWithType: CreateCellEntityLayerRequest.PrefabsRangeStart
 - uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig
   name: ICellEntityLayerConfig
   href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html
   commentId: T:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig
   fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig
   nameWithType: ICellEntityLayerConfig
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities
-  name: CellEntities
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellEntities
-  commentId: P:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities
-  nameWithType: ICellEntityLayerConfig.CellEntities
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities*
-  name: CellEntities
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellEntities_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities
+- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellItemPrefabs
+  commentId: P:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs
+  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs
+  nameWithType: ICellEntityLayerConfig.CellItemPrefabs
+- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs*
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellItemPrefabs_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities
-  nameWithType: ICellEntityLayerConfig.CellEntities
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer
-  name: CreateTerrainLayer()
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CreateTerrainLayer
-  commentId: M:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer()
-  nameWithType: ICellEntityLayerConfig.CreateTerrainLayer()
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer*
-  name: CreateTerrainLayer
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CreateTerrainLayer_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer
+  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs
+  nameWithType: ICellEntityLayerConfig.CellItemPrefabs
+- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_StatesCountPerItem
+  commentId: P:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem
+  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem
+  nameWithType: ICellEntityLayerConfig.StatesCountPerItem
+- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem*
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_StatesCountPerItem_
+  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer
-  nameWithType: ICellEntityLayerConfig.CreateTerrainLayer
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize
-  name: EntityConfigsRangeSize
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeSize
-  commentId: P:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize
-  nameWithType: ICellEntityLayerConfig.EntityConfigsRangeSize
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize*
-  name: EntityConfigsRangeSize
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeSize_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize
-  nameWithType: ICellEntityLayerConfig.EntityConfigsRangeSize
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart
-  name: EntityConfigsRangeStart
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeStart
-  commentId: P:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart
-  nameWithType: ICellEntityLayerConfig.EntityConfigsRangeStart
-- uid: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart*
-  name: EntityConfigsRangeStart
-  href: api/Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.html#Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeStart_
-  commentId: Overload:Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart
-  nameWithType: ICellEntityLayerConfig.EntityConfigsRangeStart
+  fullName: Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem
+  nameWithType: ICellEntityLayerConfig.StatesCountPerItem
 - uid: Fwt.HexTerrains.CellEntities.DataLayers
   name: Fwt.HexTerrains.CellEntities.DataLayers
   href: api/Fwt.HexTerrains.CellEntities.DataLayers.html
@@ -58455,24 +58425,24 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob
   fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob
   nameWithType: CalcCellEntityEntitiesJob
-- uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntities
-  name: CellEntities
-  href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntities
-  commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntities
-  fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntities
-  nameWithType: CalcCellEntityEntitiesJob.CellEntities
 - uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityConfigs
   name: CellEntityConfigs
   href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityConfigs
   commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityConfigs
   fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityConfigs
   nameWithType: CalcCellEntityEntitiesJob.CellEntityConfigs
-- uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStates
-  name: CellEntityStates
-  href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityStates
-  commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStates
-  fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStates
-  nameWithType: CalcCellEntityEntitiesJob.CellEntityStates
+- uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityIndexMap
+  name: CellEntityIndexMap
+  href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityIndexMap
+  commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityIndexMap
+  fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityIndexMap
+  nameWithType: CalcCellEntityEntitiesJob.CellEntityIndexMap
+- uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStateMap
+  name: CellEntityStateMap
+  href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityStateMap
+  commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStateMap
+  fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityStateMap
+  nameWithType: CalcCellEntityEntitiesJob.CellEntityStateMap
 - uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.CellEntityViews
   name: CellEntityViews
   href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_CellEntityViews
@@ -58525,6 +58495,12 @@ references:
   commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.Settings
   fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.Settings
   nameWithType: CalcCellEntityEntitiesJob.Settings
+- uid: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.StatesCountPerEntityIndex
+  name: StatesCountPerEntityIndex
+  href: api/Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.html#Fwt_HexTerrains_CellEntities_Jobs_CalcCellEntityEntitiesJob_StatesCountPerEntityIndex
+  commentId: F:Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.StatesCountPerEntityIndex
+  fullName: Fwt.HexTerrains.CellEntities.Jobs.CalcCellEntityEntitiesJob.StatesCountPerEntityIndex
+  nameWithType: CalcCellEntityEntitiesJob.StatesCountPerEntityIndex
 - uid: Fwt.HexTerrains.CellEntities.Jobs.SaveClearedCellEntityEntitiesJob
   name: SaveClearedCellEntityEntitiesJob
   href: api/Fwt.HexTerrains.CellEntities.Jobs.SaveClearedCellEntityEntitiesJob.html
@@ -59717,15 +59693,15 @@ references:
   commentId: T:Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem
   fullName: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem
   nameWithType: CreateCellEntityLayerGroupSystem
-- uid: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrain,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},Unity.Entities.EntityCommandBuffer)
-  name: CreateLayers(Entity, HexTerrain, NativeArray<CreateCellEntityLayerRequest>, NativeArray<CellEntityConfig>, EntityCommandBuffer)
-  href: api/Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.html#Fwt_HexTerrains_CellEntities_Systems_CreateCellEntityLayerGroupSystem_CreateLayers_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrain_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CreateCellEntityLayerRequest__Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__Unity_Entities_EntityCommandBuffer_
-  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrain,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},Unity.Entities.EntityCommandBuffer)
-  name.vb: CreateLayers(Entity, HexTerrain, NativeArray(Of CreateCellEntityLayerRequest), NativeArray(Of CellEntityConfig), EntityCommandBuffer)
-  fullName: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrain, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest>, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CellEntityConfig>, Unity.Entities.EntityCommandBuffer)
-  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrain, Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest), Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CellEntityConfig), Unity.Entities.EntityCommandBuffer)
-  nameWithType: CreateCellEntityLayerGroupSystem.CreateLayers(Entity, HexTerrain, NativeArray<CreateCellEntityLayerRequest>, NativeArray<CellEntityConfig>, EntityCommandBuffer)
-  nameWithType.vb: CreateCellEntityLayerGroupSystem.CreateLayers(Entity, HexTerrain, NativeArray(Of CreateCellEntityLayerRequest), NativeArray(Of CellEntityConfig), EntityCommandBuffer)
+- uid: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrain,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig},Unity.Entities.EntityCommandBuffer)
+  name: CreateLayers(Entity, HexTerrain, NativeArray<CreateCellEntityLayerRequest>, NativeArray<CellEntityStateConfig>, EntityCommandBuffer)
+  href: api/Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.html#Fwt_HexTerrains_CellEntities_Systems_CreateCellEntityLayerGroupSystem_CreateLayers_Unity_Entities_Entity_Fwt_HexTerrains_Data_HexTerrain_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CreateCellEntityLayerRequest__Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__Unity_Entities_EntityCommandBuffer_
+  commentId: M:Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity,Fwt.HexTerrains.Data.HexTerrain,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest},Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig},Unity.Entities.EntityCommandBuffer)
+  name.vb: CreateLayers(Entity, HexTerrain, NativeArray(Of CreateCellEntityLayerRequest), NativeArray(Of CellEntityStateConfig), EntityCommandBuffer)
+  fullName: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrain, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest>, Unity.Collections.NativeArray<Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig>, Unity.Entities.EntityCommandBuffer)
+  fullName.vb: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers(Unity.Entities.Entity, Fwt.HexTerrains.Data.HexTerrain, Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CreateCellEntityLayerRequest), Unity.Collections.NativeArray(Of Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig), Unity.Entities.EntityCommandBuffer)
+  nameWithType: CreateCellEntityLayerGroupSystem.CreateLayers(Entity, HexTerrain, NativeArray<CreateCellEntityLayerRequest>, NativeArray<CellEntityStateConfig>, EntityCommandBuffer)
+  nameWithType.vb: CreateCellEntityLayerGroupSystem.CreateLayers(Entity, HexTerrain, NativeArray(Of CreateCellEntityLayerRequest), NativeArray(Of CellEntityStateConfig), EntityCommandBuffer)
 - uid: Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.CreateLayers*
   name: CreateLayers
   href: api/Fwt.HexTerrains.CellEntities.Systems.CreateCellEntityLayerGroupSystem.html#Fwt_HexTerrains_CellEntities_Systems_CreateCellEntityLayerGroupSystem_CreateLayers_
@@ -60894,37 +60870,22 @@ references:
   commentId: T:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring
   fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring
   nameWithType: CellObjectConfigAuthoring
-- uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.Color
-  name: Color
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_Color
-  commentId: F:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.Color
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.Color
-  nameWithType: CellObjectConfigAuthoring.Color
-- uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(System.Int32,Fwt.Core.Collections.FixedList8{Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig}@,Fwt.Core.BulkRendering.IBulkRenderer,System.Action{UnityEngine.GameObject})
-  name: ExtractCellObjectConfig(int, out FixedList8<CellObjectStateConfig>, IBulkRenderer, Action<GameObject>)
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_System_Int32_Fwt_Core_Collections_FixedList8_Fwt_HexTerrains_CellObjects_Data_CellObjectStateConfig___Fwt_Core_BulkRendering_IBulkRenderer_System_Action_UnityEngine_GameObject__
-  commentId: M:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(System.Int32,Fwt.Core.Collections.FixedList8{Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig}@,Fwt.Core.BulkRendering.IBulkRenderer,System.Action{UnityEngine.GameObject})
-  name.vb: ExtractCellObjectConfig(Integer, FixedList8(Of CellObjectStateConfig), IBulkRenderer, Action(Of GameObject))
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(int, out Fwt.Core.Collections.FixedList8<Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig>, Fwt.Core.BulkRendering.IBulkRenderer, System.Action<UnityEngine.GameObject>)
-  fullName.vb: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(Integer, Fwt.Core.Collections.FixedList8(Of Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig), Fwt.Core.BulkRendering.IBulkRenderer, System.Action(Of UnityEngine.GameObject))
-  nameWithType: CellObjectConfigAuthoring.ExtractCellObjectConfig(int, out FixedList8<CellObjectStateConfig>, IBulkRenderer, Action<GameObject>)
-  nameWithType.vb: CellObjectConfigAuthoring.ExtractCellObjectConfig(Integer, FixedList8(Of CellObjectStateConfig), IBulkRenderer, Action(Of GameObject))
-- uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(System.Int32,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{Fwt.Core.BulkRendering.BulkRenderItemSettings}@,System.Collections.Generic.List{UnityEngine.Matrix4x4}@,Fwt.Core.BulkRendering.IBulkRenderer,System.Action{UnityEngine.GameObject})
-  name: ExtractCellObjectConfig(int, ref List<int>, ref List<int>, ref List<BulkRenderItemSettings>, ref List<Matrix4x4>, IBulkRenderer, Action<GameObject>)
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_System_Int32_System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_Fwt_Core_BulkRendering_BulkRenderItemSettings___System_Collections_Generic_List_UnityEngine_Matrix4x4___Fwt_Core_BulkRendering_IBulkRenderer_System_Action_UnityEngine_GameObject__
-  commentId: M:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(System.Int32,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{Fwt.Core.BulkRendering.BulkRenderItemSettings}@,System.Collections.Generic.List{UnityEngine.Matrix4x4}@,Fwt.Core.BulkRendering.IBulkRenderer,System.Action{UnityEngine.GameObject})
-  name.vb: ExtractCellObjectConfig(Integer, List(Of Integer), List(Of Integer), List(Of BulkRenderItemSettings), List(Of Matrix4x4), IBulkRenderer, Action(Of GameObject))
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(int, ref System.Collections.Generic.List<int>, ref System.Collections.Generic.List<int>, ref System.Collections.Generic.List<Fwt.Core.BulkRendering.BulkRenderItemSettings>, ref System.Collections.Generic.List<UnityEngine.Matrix4x4>, Fwt.Core.BulkRendering.IBulkRenderer, System.Action<UnityEngine.GameObject>)
-  fullName.vb: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(Integer, System.Collections.Generic.List(Of Integer), System.Collections.Generic.List(Of Integer), System.Collections.Generic.List(Of Fwt.Core.BulkRendering.BulkRenderItemSettings), System.Collections.Generic.List(Of UnityEngine.Matrix4x4), Fwt.Core.BulkRendering.IBulkRenderer, System.Action(Of UnityEngine.GameObject))
-  nameWithType: CellObjectConfigAuthoring.ExtractCellObjectConfig(int, ref List<int>, ref List<int>, ref List<BulkRenderItemSettings>, ref List<Matrix4x4>, IBulkRenderer, Action<GameObject>)
-  nameWithType.vb: CellObjectConfigAuthoring.ExtractCellObjectConfig(Integer, List(Of Integer), List(Of Integer), List(Of BulkRenderItemSettings), List(Of Matrix4x4), IBulkRenderer, Action(Of GameObject))
-- uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig*
-  name: ExtractCellObjectConfig
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig
+- uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring(System.Int32)
+  name: GetStateAuthoring(int)
+  href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_GetStateAuthoring_System_Int32_
+  commentId: M:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring(System.Int32)
+  name.vb: GetStateAuthoring(Integer)
+  fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring(int)
+  fullName.vb: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring(Integer)
+  nameWithType: CellObjectConfigAuthoring.GetStateAuthoring(int)
+  nameWithType.vb: CellObjectConfigAuthoring.GetStateAuthoring(Integer)
+- uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring*
+  name: GetStateAuthoring
+  href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_GetStateAuthoring_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig
-  nameWithType: CellObjectConfigAuthoring.ExtractCellObjectConfig
+  fullName: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring
+  nameWithType: CellObjectConfigAuthoring.GetStateAuthoring
 - uid: Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.Name
   name: Name
   href: api/Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_Name
@@ -61005,35 +60966,22 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.CollectLODs
   nameWithType: CellObjectPrefabAuthoring.CollectLODs
-- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateConfig(Fwt.Core.BulkRendering.IBulkRenderer)
-  name: ExtractCellObjectStateConfig(IBulkRenderer)
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_ExtractCellObjectStateConfig_Fwt_Core_BulkRendering_IBulkRenderer_
-  commentId: M:Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateConfig(Fwt.Core.BulkRendering.IBulkRenderer)
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateConfig(Fwt.Core.BulkRendering.IBulkRenderer)
-  nameWithType: CellObjectPrefabAuthoring.ExtractCellObjectStateConfig(IBulkRenderer)
-- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateConfig*
-  name: ExtractCellObjectStateConfig
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_ExtractCellObjectStateConfig_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateConfig
+- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD(System.Int32)
+  name: GetLOD(int)
+  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_GetLOD_System_Int32_
+  commentId: M:Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD(System.Int32)
+  name.vb: GetLOD(Integer)
+  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD(int)
+  fullName.vb: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD(Integer)
+  nameWithType: CellObjectPrefabAuthoring.GetLOD(int)
+  nameWithType.vb: CellObjectPrefabAuthoring.GetLOD(Integer)
+- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD*
+  name: GetLOD
+  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_GetLOD_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateConfig
-  nameWithType: CellObjectPrefabAuthoring.ExtractCellObjectStateConfig
-- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs(Fwt.Core.BulkRendering.IBulkRenderer,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{Fwt.Core.BulkRendering.BulkRenderItemSettings}@,System.Collections.Generic.List{UnityEngine.Matrix4x4}@)
-  name: ExtractCellObjectStateLODConfigs(IBulkRenderer, ref List<int>, ref List<BulkRenderItemSettings>, ref List<Matrix4x4>)
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_ExtractCellObjectStateLODConfigs_Fwt_Core_BulkRendering_IBulkRenderer_System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_Fwt_Core_BulkRendering_BulkRenderItemSettings___System_Collections_Generic_List_UnityEngine_Matrix4x4___
-  commentId: M:Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs(Fwt.Core.BulkRendering.IBulkRenderer,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{Fwt.Core.BulkRendering.BulkRenderItemSettings}@,System.Collections.Generic.List{UnityEngine.Matrix4x4}@)
-  name.vb: ExtractCellObjectStateLODConfigs(IBulkRenderer, List(Of Integer), List(Of BulkRenderItemSettings), List(Of Matrix4x4))
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs(Fwt.Core.BulkRendering.IBulkRenderer, ref System.Collections.Generic.List<int>, ref System.Collections.Generic.List<Fwt.Core.BulkRendering.BulkRenderItemSettings>, ref System.Collections.Generic.List<UnityEngine.Matrix4x4>)
-  fullName.vb: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs(Fwt.Core.BulkRendering.IBulkRenderer, System.Collections.Generic.List(Of Integer), System.Collections.Generic.List(Of Fwt.Core.BulkRendering.BulkRenderItemSettings), System.Collections.Generic.List(Of UnityEngine.Matrix4x4))
-  nameWithType: CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs(IBulkRenderer, ref List<int>, ref List<BulkRenderItemSettings>, ref List<Matrix4x4>)
-  nameWithType.vb: CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs(IBulkRenderer, List(Of Integer), List(Of BulkRenderItemSettings), List(Of Matrix4x4))
-- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs*
-  name: ExtractCellObjectStateLODConfigs
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_ExtractCellObjectStateLODConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs
-  nameWithType: CellObjectPrefabAuthoring.ExtractCellObjectStateLODConfigs
+  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.GetLOD
+  nameWithType: CellObjectPrefabAuthoring.GetLOD
 - uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.LODs
   name: LODs
   href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabAuthoring_LODs
@@ -61081,18 +61029,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.ExtractCellObjectLodConfig
   nameWithType: CellObjectPrefabLODAuthoring.ExtractCellObjectLodConfig
-- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.MaxDistance
-  name: MaxDistance
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabLODAuthoring_MaxDistance
-  commentId: F:Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.MaxDistance
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.MaxDistance
-  nameWithType: CellObjectPrefabLODAuthoring.MaxDistance
-- uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.MinDistance
-  name: MinDistance
-  href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabLODAuthoring_MinDistance
-  commentId: F:Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.MinDistance
-  fullName: Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.MinDistance
-  nameWithType: CellObjectPrefabLODAuthoring.MinDistance
 - uid: Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.Renderers
   name: Renderers
   href: api/Fwt.HexTerrains.CellObjects.CellObjectPrefabLODAuthoring.html#Fwt_HexTerrains_CellObjects_CellObjectPrefabLODAuthoring_Renderers
@@ -61123,18 +61059,6 @@ references:
   commentId: T:Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig
   nameWithType: CellObjectLODConfig
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.MaxDistance
-  name: MaxDistance
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODConfig_MaxDistance
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.MaxDistance
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.MaxDistance
-  nameWithType: CellObjectLODConfig.MaxDistance
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.MinDistance
-  name: MinDistance
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODConfig_MinDistance
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.MinDistance
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.MinDistance
-  nameWithType: CellObjectLODConfig.MinDistance
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.RenderEntities
   name: RenderEntities
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODConfig.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODConfig_RenderEntities
@@ -61153,12 +61077,30 @@ references:
   commentId: T:Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings
   nameWithType: CellObjectLODSettings
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.CellItemIndex
+  name: CellItemIndex
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings_CellItemIndex
+  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.CellItemIndex
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.CellItemIndex
+  nameWithType: CellObjectLODSettings.CellItemIndex
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.CellItemState
+  name: CellItemState
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings_CellItemState
+  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.CellItemState
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.CellItemState
+  nameWithType: CellObjectLODSettings.CellItemState
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.HasVisuals
   name: HasVisuals
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings_HasVisuals
   commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.HasVisuals
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.HasVisuals
   nameWithType: CellObjectLODSettings.HasVisuals
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.LODIndex
+  name: LODIndex
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings_LODIndex
+  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.LODIndex
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.LODIndex
+  nameWithType: CellObjectLODSettings.LODIndex
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.VisualsCount
   name: VisualsCount
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings_VisualsCount
@@ -61305,6 +61247,15 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitRenderEntitiesLODs
   nameWithType: CellObjectLayer.InitRenderEntitiesLODs
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals(System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings},System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings})
+  name: InitVisuals(IList<CellObjectVisualItemSettings>, IList<CellObjectLODSettings>)
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_InitVisuals_System_Collections_Generic_IList_Fwt_HexTerrains_CellObjects_Data_CellObjectVisualItemSettings__System_Collections_Generic_IList_Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings__
+  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals(System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings},System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings})
+  name.vb: InitVisuals(IList(Of CellObjectVisualItemSettings), IList(Of CellObjectLODSettings))
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals(System.Collections.Generic.IList<Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings>, System.Collections.Generic.IList<Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings>)
+  fullName.vb: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals(System.Collections.Generic.IList(Of Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings), System.Collections.Generic.IList(Of Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings))
+  nameWithType: CellObjectLayer.InitVisuals(IList<CellObjectVisualItemSettings>, IList<CellObjectLODSettings>)
+  nameWithType.vb: CellObjectLayer.InitVisuals(IList(Of CellObjectVisualItemSettings), IList(Of CellObjectLODSettings))
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals*
   name: InitVisuals
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_InitVisuals_
@@ -61312,15 +61263,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals
   nameWithType: CellObjectLayer.InitVisuals
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals``2(``0,``1,System.Collections.Generic.IList{UnityEngine.Color32},System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings},System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings})
-  name: InitVisuals<TConfigsList, TStatesList>(TConfigsList, TStatesList, IList<Color32>, IList<CellObjectVisualItemSettings>, IList<CellObjectLODSettings>)
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_InitVisuals__2___0___1_System_Collections_Generic_IList_UnityEngine_Color32__System_Collections_Generic_IList_Fwt_HexTerrains_CellObjects_Data_CellObjectVisualItemSettings__System_Collections_Generic_IList_Fwt_HexTerrains_CellObjects_Data_CellObjectLODSettings__
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals``2(``0,``1,System.Collections.Generic.IList{UnityEngine.Color32},System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings},System.Collections.Generic.IList{Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings})
-  name.vb: InitVisuals(Of TConfigsList, TStatesList)(TConfigsList, TStatesList, IList(Of Color32), IList(Of CellObjectVisualItemSettings), IList(Of CellObjectLODSettings))
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals<TConfigsList, TStatesList>(TConfigsList, TStatesList, System.Collections.Generic.IList<UnityEngine.Color32>, System.Collections.Generic.IList<Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings>, System.Collections.Generic.IList<Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings>)
-  fullName.vb: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.InitVisuals(Of TConfigsList, TStatesList)(TConfigsList, TStatesList, System.Collections.Generic.IList(Of UnityEngine.Color32), System.Collections.Generic.IList(Of Fwt.HexTerrains.CellObjects.Data.CellObjectVisualItemSettings), System.Collections.Generic.IList(Of Fwt.HexTerrains.CellObjects.Data.CellObjectLODSettings))
-  nameWithType: CellObjectLayer.InitVisuals<TConfigsList, TStatesList>(TConfigsList, TStatesList, IList<Color32>, IList<CellObjectVisualItemSettings>, IList<CellObjectLODSettings>)
-  nameWithType.vb: CellObjectLayer.InitVisuals(Of TConfigsList, TStatesList)(TConfigsList, TStatesList, IList(Of Color32), IList(Of CellObjectVisualItemSettings), IList(Of CellObjectLODSettings))
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.Init``1(Fwt.HexTerrains.Data.HexTerrainSettings,``0)
   name: Init<TInitArgs>(HexTerrainSettings, TInitArgs)
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_Init__1_Fwt_HexTerrains_Data_HexTerrainSettings___0_
@@ -61413,86 +61355,47 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.StatesCountPerObject
   nameWithType: CellObjectLayer.StatesCountPerObject
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette(System.Collections.Generic.IList{UnityEngine.Color32})
-  name: UpdateColorPalette(IList<Color32>)
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_UpdateColorPalette_System_Collections_Generic_IList_UnityEngine_Color32__
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette(System.Collections.Generic.IList{UnityEngine.Color32})
-  name.vb: UpdateColorPalette(IList(Of Color32))
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette(System.Collections.Generic.IList<UnityEngine.Color32>)
-  fullName.vb: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette(System.Collections.Generic.IList(Of UnityEngine.Color32))
-  nameWithType: CellObjectLayer.UpdateColorPalette(IList<Color32>)
-  nameWithType.vb: CellObjectLayer.UpdateColorPalette(IList(Of Color32))
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette*
-  name: UpdateColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_UpdateColorPalette_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.UpdateColorPalette
-  nameWithType: CellObjectLayer.UpdateColorPalette
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.VisualsByLODLayer
-  name: VisualsByLODLayer
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_VisualsByLODLayer
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.VisualsByLODLayer
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.VisualsByLODLayer
-  nameWithType: CellObjectLayer.VisualsByLODLayer
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.VisualsByLOD
+  name: VisualsByLOD
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayer_VisualsByLOD
+  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.VisualsByLOD
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayer.VisualsByLOD
+  nameWithType: CellObjectLayer.VisualsByLOD
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset
   name: CellObjectLayerConfigAsset
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html
   commentId: T:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset
   nameWithType: CellObjectLayerConfigAsset
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs
-  name: BakeCellObjectConfigs()
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObjectConfigs
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs()
-  nameWithType: CellObjectLayerConfigAsset.BakeCellObjectConfigs()
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs*
-  name: BakeCellObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake
+  name: Bake()
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_Bake
+  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake()
+  nameWithType: CellObjectLayerConfigAsset.Bake()
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake*
+  name: Bake
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_Bake_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset.BakeCellObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings
-  name: BakeLODSettings()
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeLODSettings
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings()
-  nameWithType: CellObjectLayerConfigAsset.BakeLODSettings()
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings*
-  name: BakeLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeLODSettings_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake
+  nameWithType: CellObjectLayerConfigAsset.Bake
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject(Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring,System.Int32)
+  name: BakeCellObject(CellObjectConfigAuthoring, int)
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObject_Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_System_Int32_
+  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject(Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring,System.Int32)
+  name.vb: BakeCellObject(CellObjectConfigAuthoring, Integer)
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject(Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring, int)
+  fullName.vb: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject(Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring, Integer)
+  nameWithType: CellObjectLayerConfigAsset.BakeCellObject(CellObjectConfigAuthoring, int)
+  nameWithType.vb: CellObjectLayerConfigAsset.BakeCellObject(CellObjectConfigAuthoring, Integer)
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject*
+  name: BakeCellObject
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObject_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings
-  nameWithType: CellObjectLayerConfigAsset.BakeLODSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs
-  name: BakedObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectConfigs
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset.BakedObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs*
-  name: BakedObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset.BakedObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs
-  name: BakedObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectStateConfigs
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs
-  nameWithType: CellObjectLayerConfigAsset.BakedObjectStateConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs*
-  name: BakedObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectStateConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs
-  nameWithType: CellObjectLayerConfigAsset.BakedObjectStateConfigs
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject
+  nameWithType: CellObjectLayerConfigAsset.BakeCellObject
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedStatesLODSettings
   name: BakedStatesLODSettings
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedStatesLODSettings
@@ -61532,6 +61435,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BulkRenderer
   nameWithType: CellObjectLayerConfigAsset.BulkRenderer
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_CellItemPrefabs
+  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs
+  nameWithType: CellObjectLayerConfigAsset.CellItemPrefabs
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs*
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_CellItemPrefabs_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs
+  nameWithType: CellObjectLayerConfigAsset.CellItemPrefabs
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ClearBakedData
   name: ClearBakedData()
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ClearBakedData
@@ -61545,19 +61461,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ClearBakedData
   nameWithType: CellObjectLayerConfigAsset.ClearBakedData
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette
-  name: ColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ColorPalette
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette
-  nameWithType: CellObjectLayerConfigAsset.ColorPalette
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette*
-  name: ColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ColorPalette_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette
-  nameWithType: CellObjectLayerConfigAsset.ColorPalette
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CreateTerrainLayer
   name: CreateTerrainLayer()
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_CreateTerrainLayer
@@ -61571,58 +61474,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CreateTerrainLayer
   nameWithType: CellObjectLayerConfigAsset.CreateTerrainLayer
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs
-  name: GetCellObjectConfigs()
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectConfigs
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs()
-  nameWithType: CellObjectLayerConfigAsset.GetCellObjectConfigs()
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs*
-  name: GetCellObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset.GetCellObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs
-  name: GetCellObjectStateConfigs()
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectStateConfigs
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs()
-  nameWithType: CellObjectLayerConfigAsset.GetCellObjectStateConfigs()
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs*
-  name: GetCellObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectStateConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs
-  nameWithType: CellObjectLayerConfigAsset.GetCellObjectStateConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette
-  name: GetColorPalette()
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetColorPalette
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette()
-  nameWithType: CellObjectLayerConfigAsset.GetColorPalette()
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette*
-  name: GetColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetColorPalette_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette
-  nameWithType: CellObjectLayerConfigAsset.GetColorPalette
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount
-  name: GetLODLayersCount()
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetLODLayersCount
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount()
-  nameWithType: CellObjectLayerConfigAsset.GetLODLayersCount()
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount*
-  name: GetLODLayersCount
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetLODLayersCount_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount
-  nameWithType: CellObjectLayerConfigAsset.GetLODLayersCount
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetObjectStatesLODSettings
   name: GetObjectStatesLODSettings()
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetObjectStatesLODSettings
@@ -61662,19 +61513,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetVisualItemSettings
   nameWithType: CellObjectLayerConfigAsset.GetVisualItemSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances
-  name: LODDistances
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_LODDistances
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances
-  nameWithType: CellObjectLayerConfigAsset.LODDistances
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances*
-  name: LODDistances
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_LODDistances_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances
-  nameWithType: CellObjectLayerConfigAsset.LODDistances
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODSettings
   name: LODSettings
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_LODSettings
@@ -61714,69 +61552,25 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.MaxSubmeshesPerCell
   nameWithType: CellObjectLayerConfigAsset.MaxSubmeshesPerCell
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs
-  name: ObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ObjectConfigs
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset.ObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs*
-  name: ObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerItem
+  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem
+  nameWithType: CellObjectLayerConfigAsset.StatesCountPerItem
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem*
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerItem_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset.ObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject
-  name: StatesCountPerObject
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerObject
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject
-  nameWithType: CellObjectLayerConfigAsset.StatesCountPerObject
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject*
-  name: StatesCountPerObject
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerObject_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject
-  nameWithType: CellObjectLayerConfigAsset.StatesCountPerObject
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings
-  name: UseLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_UseLODSettings
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings
-  nameWithType: CellObjectLayerConfigAsset.UseLODSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings*
-  name: UseLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_UseLODSettings_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings
-  nameWithType: CellObjectLayerConfigAsset.UseLODSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODDistances
-  name: _LODDistances
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__LODDistances
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODDistances
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODDistances
-  nameWithType: CellObjectLayerConfigAsset._LODDistances
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem
+  nameWithType: CellObjectLayerConfigAsset.StatesCountPerItem
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODSettings
   name: _LODSettings
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__LODSettings
   commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODSettings
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODSettings
   nameWithType: CellObjectLayerConfigAsset._LODSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectConfigs
-  name: _bakedObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__bakedObjectConfigs
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectConfigs
-  nameWithType: CellObjectLayerConfigAsset._bakedObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectStateConfigs
-  name: _bakedObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__bakedObjectStateConfigs
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectStateConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectStateConfigs
-  nameWithType: CellObjectLayerConfigAsset._bakedObjectStateConfigs
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedStatesLODSettings
   name: _bakedStatesLODSettings
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__bakedStatesLODSettings
@@ -61795,36 +61589,24 @@ references:
   commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bulkRendererAsset
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bulkRendererAsset
   nameWithType: CellObjectLayerConfigAsset._bulkRendererAsset
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._colorPalette
-  name: _colorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__colorPalette
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._colorPalette
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._colorPalette
-  nameWithType: CellObjectLayerConfigAsset._colorPalette
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._cellItemPrefabs
+  name: _cellItemPrefabs
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__cellItemPrefabs
+  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._cellItemPrefabs
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._cellItemPrefabs
+  nameWithType: CellObjectLayerConfigAsset._cellItemPrefabs
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._maxSubmeshesPerCell
   name: _maxSubmeshesPerCell
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__maxSubmeshesPerCell
   commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._maxSubmeshesPerCell
   fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._maxSubmeshesPerCell
   nameWithType: CellObjectLayerConfigAsset._maxSubmeshesPerCell
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._objectConfigs
-  name: _objectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__objectConfigs
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._objectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._objectConfigs
-  nameWithType: CellObjectLayerConfigAsset._objectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerObject
-  name: _statesCountPerObject
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__statesCountPerObject
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerObject
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerObject
-  nameWithType: CellObjectLayerConfigAsset._statesCountPerObject
-- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._useLODSettings
-  name: _useLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__useLODSettings
-  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._useLODSettings
-  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._useLODSettings
-  nameWithType: CellObjectLayerConfigAsset._useLODSettings
+- uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerItem
+  name: _statesCountPerItem
+  href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.html#Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__statesCountPerItem
+  commentId: F:Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerItem
+  fullName: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerItem
+  nameWithType: CellObjectLayerConfigAsset._statesCountPerItem
 - uid: Fwt.HexTerrains.CellObjects.Data.CellObjectLayerGroup
   name: CellObjectLayerGroup
   href: api/Fwt.HexTerrains.CellObjects.Data.CellObjectLayerGroup.html
@@ -61995,58 +61777,6 @@ references:
   commentId: T:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig
   fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig
   nameWithType: ICellObjectLayerConfig
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeCellObjectConfigs
-  name: BakeCellObjectConfigs()
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakeCellObjectConfigs
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeCellObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeCellObjectConfigs()
-  nameWithType: ICellObjectLayerConfig.BakeCellObjectConfigs()
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeCellObjectConfigs*
-  name: BakeCellObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakeCellObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeCellObjectConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeCellObjectConfigs
-  nameWithType: ICellObjectLayerConfig.BakeCellObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeLODSettings
-  name: BakeLODSettings()
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakeLODSettings
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeLODSettings
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeLODSettings()
-  nameWithType: ICellObjectLayerConfig.BakeLODSettings()
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeLODSettings*
-  name: BakeLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakeLODSettings_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeLODSettings
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakeLODSettings
-  nameWithType: ICellObjectLayerConfig.BakeLODSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectConfigs
-  name: BakedObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakedObjectConfigs
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectConfigs
-  nameWithType: ICellObjectLayerConfig.BakedObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectConfigs*
-  name: BakedObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakedObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectConfigs
-  nameWithType: ICellObjectLayerConfig.BakedObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectStateConfigs
-  name: BakedObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakedObjectStateConfigs
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectStateConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectStateConfigs
-  nameWithType: ICellObjectLayerConfig.BakedObjectStateConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectStateConfigs*
-  name: BakedObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakedObjectStateConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectStateConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedObjectStateConfigs
-  nameWithType: ICellObjectLayerConfig.BakedObjectStateConfigs
 - uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BakedStatesLODSettings
   name: BakedStatesLODSettings
   href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_BakedStatesLODSettings
@@ -62086,71 +61816,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.BulkRenderer
   nameWithType: ICellObjectLayerConfig.BulkRenderer
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ColorPalette
-  name: ColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_ColorPalette
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ColorPalette
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ColorPalette
-  nameWithType: ICellObjectLayerConfig.ColorPalette
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ColorPalette*
-  name: ColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_ColorPalette_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ColorPalette
+- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.CellItemPrefabs
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_CellItemPrefabs
+  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.CellItemPrefabs
+  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.CellItemPrefabs
+  nameWithType: ICellObjectLayerConfig.CellItemPrefabs
+- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.CellItemPrefabs*
+  name: CellItemPrefabs
+  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_CellItemPrefabs_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.CellItemPrefabs
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ColorPalette
-  nameWithType: ICellObjectLayerConfig.ColorPalette
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectConfigs
-  name: GetCellObjectConfigs()
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetCellObjectConfigs
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectConfigs()
-  nameWithType: ICellObjectLayerConfig.GetCellObjectConfigs()
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectConfigs*
-  name: GetCellObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetCellObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectConfigs
-  nameWithType: ICellObjectLayerConfig.GetCellObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectStateConfigs
-  name: GetCellObjectStateConfigs()
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetCellObjectStateConfigs
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectStateConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectStateConfigs()
-  nameWithType: ICellObjectLayerConfig.GetCellObjectStateConfigs()
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectStateConfigs*
-  name: GetCellObjectStateConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetCellObjectStateConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectStateConfigs
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetCellObjectStateConfigs
-  nameWithType: ICellObjectLayerConfig.GetCellObjectStateConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetColorPalette
-  name: GetColorPalette()
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetColorPalette
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetColorPalette
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetColorPalette()
-  nameWithType: ICellObjectLayerConfig.GetColorPalette()
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetColorPalette*
-  name: GetColorPalette
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetColorPalette_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetColorPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetColorPalette
-  nameWithType: ICellObjectLayerConfig.GetColorPalette
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetLODLayersCount
-  name: GetLODLayersCount()
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetLODLayersCount
-  commentId: M:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetLODLayersCount
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetLODLayersCount()
-  nameWithType: ICellObjectLayerConfig.GetLODLayersCount()
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetLODLayersCount*
-  name: GetLODLayersCount
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetLODLayersCount_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetLODLayersCount
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetLODLayersCount
-  nameWithType: ICellObjectLayerConfig.GetLODLayersCount
+  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.CellItemPrefabs
+  nameWithType: ICellObjectLayerConfig.CellItemPrefabs
 - uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetObjectStatesLODSettings
   name: GetObjectStatesLODSettings()
   href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_GetObjectStatesLODSettings
@@ -62190,19 +61868,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.GetVisualItemSettings
   nameWithType: ICellObjectLayerConfig.GetVisualItemSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODDistances
-  name: LODDistances
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_LODDistances
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODDistances
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODDistances
-  nameWithType: ICellObjectLayerConfig.LODDistances
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODDistances*
-  name: LODDistances
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_LODDistances_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODDistances
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODDistances
-  nameWithType: ICellObjectLayerConfig.LODDistances
 - uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.LODSettings
   name: LODSettings
   href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_LODSettings
@@ -62242,45 +61907,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.MaxSubmeshesPerCell
   nameWithType: ICellObjectLayerConfig.MaxSubmeshesPerCell
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ObjectConfigs
-  name: ObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_ObjectConfigs
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ObjectConfigs
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ObjectConfigs
-  nameWithType: ICellObjectLayerConfig.ObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ObjectConfigs*
-  name: ObjectConfigs
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_ObjectConfigs_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ObjectConfigs
+- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerItem
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_StatesCountPerItem
+  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerItem
+  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerItem
+  nameWithType: ICellObjectLayerConfig.StatesCountPerItem
+- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerItem*
+  name: StatesCountPerItem
+  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_StatesCountPerItem_
+  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerItem
   isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.ObjectConfigs
-  nameWithType: ICellObjectLayerConfig.ObjectConfigs
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerObject
-  name: StatesCountPerObject
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_StatesCountPerObject
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerObject
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerObject
-  nameWithType: ICellObjectLayerConfig.StatesCountPerObject
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerObject*
-  name: StatesCountPerObject
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_StatesCountPerObject_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerObject
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerObject
-  nameWithType: ICellObjectLayerConfig.StatesCountPerObject
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.UseLODSettings
-  name: UseLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_UseLODSettings
-  commentId: P:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.UseLODSettings
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.UseLODSettings
-  nameWithType: ICellObjectLayerConfig.UseLODSettings
-- uid: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.UseLODSettings*
-  name: UseLODSettings
-  href: api/Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.html#Fwt_HexTerrains_CellObjects_Data_ICellObjectLayerConfig_UseLODSettings_
-  commentId: Overload:Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.UseLODSettings
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.UseLODSettings
-  nameWithType: ICellObjectLayerConfig.UseLODSettings
+  fullName: Fwt.HexTerrains.CellObjects.Data.ICellObjectLayerConfig.StatesCountPerItem
+  nameWithType: ICellObjectLayerConfig.StatesCountPerItem
 - uid: Fwt.HexTerrains.CellObjects.DataLayers
   name: Fwt.HexTerrains.CellObjects.DataLayers
   href: api/Fwt.HexTerrains.CellObjects.DataLayers.html
@@ -73644,6 +73283,40 @@ references:
   fullName.vb: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue).ColorPalette
   nameWithType: IInitColorMapCellValueDataLayerArgs<TValue>.ColorPalette
   nameWithType.vb: IInitColorMapCellValueDataLayerArgs(Of TValue).ColorPalette
+- uid: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.DefaultColor
+  name: DefaultColor
+  href: api/Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs_1_DefaultColor
+  commentId: P:Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.DefaultColor
+  fullName: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  fullName.vb: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+  nameWithType: IInitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  nameWithType.vb: IInitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+- uid: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.DefaultColor*
+  name: DefaultColor
+  href: api/Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs_1_DefaultColor_
+  commentId: Overload:Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.DefaultColor
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  fullName.vb: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+  nameWithType: IInitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  nameWithType.vb: IInitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+- uid: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled
+  name: IsColorMapEnabled
+  href: api/Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs_1_IsColorMapEnabled
+  commentId: P:Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled
+  fullName: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  fullName.vb: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
+  nameWithType: IInitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  nameWithType.vb: IInitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
+- uid: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled*
+  name: IsColorMapEnabled
+  href: api/Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs_1_IsColorMapEnabled_
+  commentId: Overload:Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  fullName.vb: Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
+  nameWithType: IInitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  nameWithType.vb: IInitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
 - uid: Fwt.HexTerrains.Data.ISerializableTerrainLayer
   name: ISerializableTerrainLayer
   href: api/Fwt.HexTerrains.Data.ISerializableTerrainLayer.html
@@ -74088,6 +73761,23 @@ references:
   fullName.vb: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs(Of TValue).ColorPalette
   nameWithType: InitColorMapCellValueDataLayerArgs<TValue>.ColorPalette
   nameWithType.vb: InitColorMapCellValueDataLayerArgs(Of TValue).ColorPalette
+- uid: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.DefaultColor
+  name: DefaultColor
+  href: api/Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_InitColorMapCellValueDataLayerArgs_1_DefaultColor
+  commentId: P:Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.DefaultColor
+  fullName: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  fullName.vb: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+  nameWithType: InitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  nameWithType.vb: InitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+- uid: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.DefaultColor*
+  name: DefaultColor
+  href: api/Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_InitColorMapCellValueDataLayerArgs_1_DefaultColor_
+  commentId: Overload:Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.DefaultColor
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  fullName.vb: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
+  nameWithType: InitColorMapCellValueDataLayerArgs<TValue>.DefaultColor
+  nameWithType.vb: InitColorMapCellValueDataLayerArgs(Of TValue).DefaultColor
 - uid: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.DefaultValue
   name: DefaultValue
   href: api/Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_InitColorMapCellValueDataLayerArgs_1_DefaultValue
@@ -74139,6 +73829,23 @@ references:
   fullName.vb: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs(Of TValue).IsApplySourceTexture
   nameWithType: InitColorMapCellValueDataLayerArgs<TValue>.IsApplySourceTexture
   nameWithType.vb: InitColorMapCellValueDataLayerArgs(Of TValue).IsApplySourceTexture
+- uid: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled
+  name: IsColorMapEnabled
+  href: api/Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_InitColorMapCellValueDataLayerArgs_1_IsColorMapEnabled
+  commentId: P:Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled
+  fullName: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  fullName.vb: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
+  nameWithType: InitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  nameWithType.vb: InitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
+- uid: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled*
+  name: IsColorMapEnabled
+  href: api/Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_InitColorMapCellValueDataLayerArgs_1_IsColorMapEnabled_
+  commentId: Overload:Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.IsColorMapEnabled
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  fullName.vb: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
+  nameWithType: InitColorMapCellValueDataLayerArgs<TValue>.IsColorMapEnabled
+  nameWithType.vb: InitColorMapCellValueDataLayerArgs(Of TValue).IsColorMapEnabled
 - uid: Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs`1.IsFillWithRandomValues
   name: IsFillWithRandomValues
   href: api/Fwt.HexTerrains.Data.InitColorMapCellValueDataLayerArgs-1.html#Fwt_HexTerrains_Data_InitColorMapCellValueDataLayerArgs_1_IsFillWithRandomValues
@@ -76725,6 +76432,14 @@ references:
   fullName.vb: Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer(Of TCellValue).InitColorPalette
   nameWithType: ColorMapCellValueDataLayer<TCellValue>.InitColorPalette
   nameWithType.vb: ColorMapCellValueDataLayer(Of TCellValue).InitColorPalette
+- uid: Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer`1.IsColorMapEnabled
+  name: IsColorMapEnabled
+  href: api/Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer-1.html#Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_1_IsColorMapEnabled
+  commentId: F:Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer`1.IsColorMapEnabled
+  fullName: Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer<TCellValue>.IsColorMapEnabled
+  fullName.vb: Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer(Of TCellValue).IsColorMapEnabled
+  nameWithType: ColorMapCellValueDataLayer<TCellValue>.IsColorMapEnabled
+  nameWithType.vb: ColorMapCellValueDataLayer(Of TCellValue).IsColorMapEnabled
 - uid: Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer`1.IsDisposableItems
   name: IsDisposableItems
   href: api/Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer-1.html#Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer_1_IsDisposableItems
@@ -84174,22 +83889,22 @@ references:
   fullName.vb: Fwt.HexTerrains.HexTerrainLayerExtensions.FillWithRandomValues(Of TValue)(Fwt.HexTerrains.DataLayers.CellValueDataLayer(Of TValue), TValue, TValue)
   nameWithType: HexTerrainLayerExtensions.FillWithRandomValues<TValue>(CellValueDataLayer<TValue>, TValue, TValue)
   nameWithType.vb: HexTerrainLayerExtensions.FillWithRandomValues(Of TValue)(CellValueDataLayer(Of TValue), TValue, TValue)
-- uid: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer*
-  name: InitColoredDataLayer
-  href: api/Fwt.HexTerrains.HexTerrainLayerExtensions.html#Fwt_HexTerrains_HexTerrainLayerExtensions_InitColoredDataLayer_
-  commentId: Overload:Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer
+- uid: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer*
+  name: InitColorMapDataLayer
+  href: api/Fwt.HexTerrains.HexTerrainLayerExtensions.html#Fwt_HexTerrains_HexTerrainLayerExtensions_InitColorMapDataLayer_
+  commentId: Overload:Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer
   isSpec: "True"
-  fullName: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer
-  nameWithType: HexTerrainLayerExtensions.InitColoredDataLayer
-- uid: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer``1(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer{``0},Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs{``0})
-  name: InitColoredDataLayer<TValue>(ColorMapCellValueDataLayer<TValue>, IInitColorMapCellValueDataLayerArgs<TValue>)
-  href: api/Fwt.HexTerrains.HexTerrainLayerExtensions.html#Fwt_HexTerrains_HexTerrainLayerExtensions_InitColoredDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__
-  commentId: M:Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer``1(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer{``0},Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs{``0})
-  name.vb: InitColoredDataLayer(Of TValue)(ColorMapCellValueDataLayer(Of TValue), IInitColorMapCellValueDataLayerArgs(Of TValue))
-  fullName: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer<TValue>(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer<TValue>, Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs<TValue>)
-  fullName.vb: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColoredDataLayer(Of TValue)(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer(Of TValue), Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue))
-  nameWithType: HexTerrainLayerExtensions.InitColoredDataLayer<TValue>(ColorMapCellValueDataLayer<TValue>, IInitColorMapCellValueDataLayerArgs<TValue>)
-  nameWithType.vb: HexTerrainLayerExtensions.InitColoredDataLayer(Of TValue)(ColorMapCellValueDataLayer(Of TValue), IInitColorMapCellValueDataLayerArgs(Of TValue))
+  fullName: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer
+  nameWithType: HexTerrainLayerExtensions.InitColorMapDataLayer
+- uid: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer``1(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer{``0},Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs{``0})
+  name: InitColorMapDataLayer<TValue>(ColorMapCellValueDataLayer<TValue>, IInitColorMapCellValueDataLayerArgs<TValue>)
+  href: api/Fwt.HexTerrains.HexTerrainLayerExtensions.html#Fwt_HexTerrains_HexTerrainLayerExtensions_InitColorMapDataLayer__1_Fwt_HexTerrains_DataLayers_ColorMapCellValueDataLayer___0__Fwt_HexTerrains_Data_IInitColorMapCellValueDataLayerArgs___0__
+  commentId: M:Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer``1(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer{``0},Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs{``0})
+  name.vb: InitColorMapDataLayer(Of TValue)(ColorMapCellValueDataLayer(Of TValue), IInitColorMapCellValueDataLayerArgs(Of TValue))
+  fullName: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer<TValue>(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer<TValue>, Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs<TValue>)
+  fullName.vb: Fwt.HexTerrains.HexTerrainLayerExtensions.InitColorMapDataLayer(Of TValue)(Fwt.HexTerrains.DataLayers.ColorMapCellValueDataLayer(Of TValue), Fwt.HexTerrains.Data.IInitColorMapCellValueDataLayerArgs(Of TValue))
+  nameWithType: HexTerrainLayerExtensions.InitColorMapDataLayer<TValue>(ColorMapCellValueDataLayer<TValue>, IInitColorMapCellValueDataLayerArgs<TValue>)
+  nameWithType.vb: HexTerrainLayerExtensions.InitColorMapDataLayer(Of TValue)(ColorMapCellValueDataLayer(Of TValue), IInitColorMapCellValueDataLayerArgs(Of TValue))
 - uid: Fwt.HexTerrains.HexTerrainLayerExtensions.InitDataLayer*
   name: InitDataLayer
   href: api/Fwt.HexTerrains.HexTerrainLayerExtensions.html#Fwt_HexTerrains_HexTerrainLayerExtensions_InitDataLayer_

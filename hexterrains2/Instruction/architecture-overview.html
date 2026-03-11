@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-      <title>HexTerrains Framework – Core Architecture Concept | Hex Terrains Framework </title>
+      <title>HexTerrains Framework Architecture | Hex Terrains Framework </title>
       <meta name="viewport" content="width=device-width">
-      <meta name="title" content="HexTerrains Framework – Core Architecture Concept | Hex Terrains Framework ">
+      <meta name="title" content="HexTerrains Framework Architecture | Hex Terrains Framework ">
     
     
       <link rel="shortcut icon" href="../favicon.ico">
@@ -77,95 +77,334 @@
         <div class="article row grid-right">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="hexterrains-framework--core-architecture-concept">HexTerrains Framework – Core Architecture Concept</h1>
+<h1 id="hexterrains-framework-architecture">HexTerrains Framework Architecture</h1>
 
-<h2 id="overview">Overview</h2>
-<p>At the heart of the HexTerrains Framework is a <strong>single Terrain Entity</strong>.<br>
-This entity does not directly store terrain logic or visuals. Instead, it acts as a <strong>container and coordinator</strong> for structured terrain layers.</p>
-<p>The terrain is built using a three-level hierarchy:</p>
-<pre><code class="lang-csharp">Terrain Entity
-└── Terrain Layer Groups
-   └── Terrain Layers
-</code></pre>
-<p>This layered approach keeps the system modular, scalable, and easy to extend.</p>
+<p>This page explains the overall architecture of the HexTerrains framework: how a terrain is represented, how data is stored, how it becomes visuals, and how to reason about the system when adding new features.</p>
+<p>The core idea is <strong>data-driven terrain</strong>:</p>
+<ol>
+<li>Store <strong>a value per cell</strong> (int/float/bool/struct).</li>
+<li>Convert those values into <strong>derived data</strong> (metrics, color maps, mesh sources, instances).</li>
+<li>Render or otherwise consume the derived data.</li>
+</ol>
 <hr>
-<h2 id="1-terrain-entity">1. Terrain Entity</h2>
-<p>The <strong>Terrain Entity</strong> is a single ECS entity that represents the entire hex terrain.</p>
-<p>It:</p>
-<ul>
-<li>Defines terrain dimensions (width, height, chunk size)</li>
-<li>Holds global settings</li>
-<li>Owns all terrain layer groups</li>
-<li>Acts as the root of all terrain-related systems</li>
-</ul>
+<h2 id="1-the-object-model-terrainentity--hexterrainlayergroup--hexterrainlayer--datalayer">1. The object model: <code>TerrainEntity</code> → <code>HexTerrainLayerGroup</code> → <code>HexTerrainLayer</code> → <code>DataLayer</code></h2>
+<h3 id="11-terrainentity-unity-ecs-entity">1.1 <code>TerrainEntity</code> (Unity ECS <code>Entity</code>)</h3>
 <p><img src="images/TerrainEntity.png" alt="Terrain Entity Components"></p>
-<hr>
-<h2 id="2-terrain-layer-groups">2. Terrain Layer Groups</h2>
-<p>A <strong>Terrain Layer Group</strong> is a logical category of terrain functionality.</p>
-<p>Each group contains one or more related terrain layers.</p>
-<p>Examples of possible layer groups:</p>
+<p>A terrain is an ECS entity that carries:</p>
 <ul>
-<li>ChunkMesh Layer Group (procedural generated mesh per chunk)</li>
-<li>CellObject Layer Group (static visual item per cell, instanced objects like trees)</li>
-<li>CellEntity Layer Group (ECS Entity per cell)</li>
-<li>CellRegion Layer Group (Region index per cell, like Country or Province)</li>
-<li>GeoPlast Layer Group (volumetric simulation like ground or water)</li>
-</ul>
-<p>A layer group:</p>
+<li><code>HexTerrain</code> (<code>IComponentData</code>) — the terrain’s <code>HexTerrainSettings</code> (grid size, chunk size, hex layout, connectivity, etc.).</li>
+<li>Managed “component object” layers/groups (classes implementing <code>IComponentData</code>) such as:
 <ul>
-<li>Organizes related systems</li>
-<li>Controls update order within the group</li>
-<li>Manages shared behavior between its layers</li>
+<li><code>ChunksGridLayer</code></li>
+<li><code>ChunkMeshLayerGroup</code></li>
+<li><code>GeoPlastLayerGroup</code></li>
+<li><code>CellRegionLayerGroup</code></li>
+<li><code>CellObjectLayerGroup</code>, <code>CellEntityLayerGroup</code>, etc. (depending on what the terrain supports)</li>
 </ul>
-<p>Think of a Layer Group as a <strong>department</strong> inside the terrain.</p>
+</li>
+</ul>
+<p>Access pattern in the codebase is typically:</p>
+<ul>
+<li><code>EntityManager.TryGetComponentData&lt;HexTerrain&gt;(terrainEntity, out var terrain)</code></li>
+<li><code>EntityManager.TryGetComponentObject&lt;ChunkMeshLayerGroup&gt;(terrainEntity, out var group)</code></li>
+</ul>
+<p>The <code>HexTerrainAPI</code> / <code>IHexTerrainAPI</code> exists to hide ECS details from gameplay/editor tools and provide “get/set cell value” operations.</p>
+<h3 id="12-hexterrainlayergroup-a-group-of-layers">1.2 <code>HexTerrainLayerGroup</code> (a group of layers)</h3>
 <p><img src="images/LayerGroups.png" alt="Layer Groups"></p>
-<hr>
-<h2 id="3-terrain-layers">3. Terrain Layers</h2>
-<p>A <strong>Terrain Layer</strong> is where actual terrain logic and data live.</p>
-<p>Each layer represents a specific aspect of the terrain.</p>
+<p><code>HexTerrainLayerGroup</code> is a <code>HexTerrainLayer</code> that owns a list of child layers.</p>
+<p>Key properties of a layer group:</p>
+<ul>
+<li>It holds multiple layers of the same conceptual type (e.g., multiple surfaces, multiple geo-plast layers).</li>
+<li>Layers can be retrieved by <code>HexTerrainLayerReference</code> (by index, by name, or both).</li>
+<li>Groups often implement orchestration methods such as “update all children” (sync, simulation, metrics calculation, mesh generation).</li>
+</ul>
 <p>Examples:</p>
 <ul>
-<li>Ground surface layer</li>
-<li>Water surface layer</li>
-<li>Roads layer</li>
-<li>Nature CellObject layer</li>
-<li>Countries layer</li>
-<li>Water GeoPlast layer (water flow simulation)</li>
+<li><code>ChunkMeshLayerGroup : HexTerrainLayerGroup&lt;ChunkMeshLayer&gt;</code></li>
+<li><code>GeoPlastLayerGroup : HexTerrainLayerGroup&lt;GeoPlastLayer&gt;</code></li>
+<li><code>CellRegionLayerGroup : HexTerrainLayerGroup&lt;CellRegionLayer&gt;</code></li>
 </ul>
-<p>A Terrain Layer typically contains:</p>
+<h3 id="13-hexterrainlayer-a-single-feature-module">1.3 <code>HexTerrainLayer</code> (a single feature module)</h3>
+<p><img src="images/CellMineralsLayerConfigAsset.png" alt="Hex Terrain Layer Config"></p>
+<p>A <code>HexTerrainLayer</code> is the unit of behavior and ownership. A layer:</p>
 <ul>
-<li>One or more Data Layers (per-cell data storage)</li>
-<li>Chunk-based dirty tracking</li>
-<li>Job scheduling logic</li>
-<li>Rendering or simulation logic</li>
+<li>Owns some data (usually multiple <code>DataLayer</code> instances).</li>
+<li>Knows how to initialize itself from <code>HexTerrainSettings</code>.</li>
+<li>Knows how to recalculate derived outputs (often via jobs).</li>
+<li>Implements lifecycle hooks:
+<ul>
+<li><code>Init(...)</code></li>
+<li><code>SetAllDirty(...)</code></li>
+<li><code>Cleanup()</code> / <code>CleanupAsync(...)</code></li>
+<li><code>CompleteAllJobs()</code></li>
+<li>Optionally <code>CalculateColorMap(...)</code></li>
+<li>Optionally <code>SerializeLayer(...)</code> / <code>DeserializeLayer(...)</code> (via <code>ISerializableTerrainLayer</code>)</li>
 </ul>
-<p>Layers are independent from each other but operate within their group’s context.</p>
-<blockquote>
-<p>Think of a Terrain Layer as a <strong>specialized system</strong> responsible for one aspect of the terrain.
-For example, <code>ChunkMeshLayer</code> has a HeightMap (float value per cell), a BiomeMap (int value per cell), and a Transparency Map (bool value per cell). It generates a mesh per chunk and renders them on screen, so you can have a terrain surface.
-It is possible to have any amounts of layers inside the same <code>TerrainLayerGroup</code>, so you can have one layer for Ground, one layer for Water, one layer for Roads, one for Clouds, and so on.</p>
-</blockquote>
+</li>
+</ul>
+<h3 id="14-datalayer-the-storage--job-synchronization-primitive">1.4 <code>DataLayer</code> (the storage + job synchronization primitive)</h3>
+<p>A <code>DataLayer</code> is the low-level storage building block. The important behaviors are:</p>
+<ul>
+<li>Stores the data (usually in native containers).</li>
+<li>Tracks job dependencies:
+<ul>
+<li><code>PrepareToRead()</code> / <code>PrepareToWrite()</code> for job scheduling</li>
+<li><code>OpenToRead()</code> / <code>OpenToWrite()</code> for immediate (main-thread) access</li>
+<li><code>AddReadDependency(...)</code> / <code>AddWriteDependency(...)</code></li>
+</ul>
+</li>
+<li>Tracks dirtiness:
+<ul>
+<li><code>IsDirty</code> and versioning</li>
+<li>Chunk-level dirty state via “dirty chunk grids” (see below)</li>
+</ul>
+</li>
+</ul>
+<p>HexTerrains layers typically use chunk-aware data layers:</p>
+<ul>
+<li><code>CellValueDataLayer&lt;T&gt;</code> — <strong>one value per cell</strong></li>
+<li><code>ColorMapCellValueDataLayer&lt;T&gt;</code> — <strong>one value per cell + derived per-cell color map</strong></li>
+<li><code>ChunkValueDataLayer&lt;T&gt;</code> — <strong>one value per chunk</strong></li>
+</ul>
 <hr>
-<h2 id="why-this-structure">Why This Structure?</h2>
-<p>This hierarchy provides:</p>
+<h2 id="2-maps-thinking-in-per-cell-values-and-per-chunk-processing">2. “Maps”: thinking in per-cell values and per-chunk processing</h2>
+<h3 id="21-per-cell-values-cellvaluedatalayert">2.1 Per-cell values (<code>CellValueDataLayer&lt;T&gt;</code>)</h3>
+<p>Most terrain features are expressed as:</p>
 <ul>
-<li>Clear separation of responsibilities</li>
-<li>High modularity</li>
-<li>Easy extensibility</li>
-<li>Controlled update order</li>
-<li>Safe data management</li>
-<li>Scalable simulation and rendering</li>
+<li><code>T valuePerCell</code></li>
+<li>indexed by <code>cellIndex</code> (<code>0..settings.CellsCount-1</code>)</li>
 </ul>
-<p>Instead of building one monolithic terrain system, the framework builds many focused layers that work together under one Terrain Entity.</p>
+<p>Common examples:</p>
+<ul>
+<li><code>ChunkMeshLayer.HeightMap : ColorMapCellValueDataLayer&lt;float&gt;</code><br>
+“Height value per cell”</li>
+<li><code>ChunkMeshLayer.BiomeMap : ColorMapCellValueDataLayer&lt;int&gt;</code><br>
+“Biome index per cell”</li>
+<li><code>CellRegionLayer.CellRegionMap : ColorMapCellValueDataLayer&lt;int&gt;</code><br>
+“Region index per cell”</li>
+<li><code>GeoPlastLayer.AmountMap / DensityMap / VolumeMap : ColorMapCellValueDataLayer&lt;float&gt;</code><br>
+“Material-like scalar fields per cell”</li>
+</ul>
+<p>This is the mental model: <strong>a grid of numbers</strong>.</p>
+<h3 id="22-chunked-updates-why-chunkvaluemaps-exist">2.2 Chunked updates (why “ChunkValueMaps” exist)</h3>
+<p>Even though values are per-cell, the terrain is processed in chunks for performance:</p>
+<ul>
+<li>Mesh generation is chunk-based (one mesh per chunk).</li>
+<li>Visibility is chunk-based (a chunk is visible or not).</li>
+<li>Dirty tracking is chunk-based (only recompute what changed).</li>
+</ul>
+<p>So the framework keeps:</p>
+<ul>
+<li>A per-cell data array/list</li>
+<li>Plus metadata that marks <em>which chunks</em> are affected by edits</li>
+</ul>
+<p>This is why “cell maps” usually sit on top of a chunked data layer base:</p>
+<ul>
+<li><code>HexTerrainNativeListChunkedDataLayer&lt;T&gt;</code> (HexTerrains) extends a generic chunked data layer (Core)</li>
+<li>It stores <code>Settings</code> and supports chunk dirty grids + “dirty chunk hash sets”</li>
+<li>It can merge dirty chunks across dependent maps (“if either input changed, recompute this output chunk”)</li>
+</ul>
+<p>For chunk-only data (one item per chunk), the framework uses:</p>
+<ul>
+<li><code>ChunkValueDataLayer&lt;T&gt;</code> — conceptually a <code>T valuePerChunk</code>, indexed by <code>chunkIndex</code></li>
+</ul>
+<p>Example usage:</p>
+<ul>
+<li><code>VisualChunkMeshLayer.MeshDatas : ChunkValueDataLayer&lt;MeshDataArray&gt;</code><br>
+“One mesh-data buffer per chunk (intermediate or final)”</li>
+</ul>
 <hr>
-<h2 id="mental-model-summary">Mental Model Summary</h2>
+<h2 id="3-how-values-turn-into-visuals-the-repeating-pattern">3. How values turn into visuals (the repeating pattern)</h2>
+<p>Almost every “feature” in HexTerrains follows this pipeline:</p>
+<ol>
+<li><strong>Authoritative per-cell values</strong> are edited (brushes, simulation, tools, loading).</li>
+<li>The edited data layers mark the affected <strong>chunks as dirty</strong>.</li>
+<li>Layers schedule jobs to compute <strong>derived data</strong> only for dirty chunks.</li>
+<li>A renderer consumes derived data:
 <ul>
-<li><strong>Terrain Entity</strong> → The world container</li>
-<li><strong>Layer Groups</strong> → Categories of functionality</li>
-<li><strong>Terrain Layers</strong> → Concrete implementations (rendering, objects, simulation)</li>
-<li><strong>Data Layers (inside layers)</strong> → Actual per-cell data storage</li>
+<li>Procedural chunk meshes</li>
+<li>Instanced objects</li>
+<li>ECS entities</li>
+<li>Color map textures (view modes)</li>
 </ul>
-<p>This structure allows the terrain to grow in complexity without becoming unmanageable.</p>
+</li>
+</ol>
+<p>The important point: <strong>rendering is not the data</strong>. Rendering is <em>a consumer</em> of data.</p>
+<hr>
+<h2 id="4-example-surface-rendering-via-chunkmeshlayer--visualchunkmeshlayer">4. Example: surface rendering via <code>ChunkMeshLayer</code> / <code>VisualChunkMeshLayer</code></h2>
+<h3 id="41-chunkmeshlayer-per-cell-surface-data--metrics">4.1 <code>ChunkMeshLayer</code>: per-cell surface data + metrics</h3>
+<p>A <code>ChunkMeshLayer</code> owns:</p>
+<ul>
+<li><code>HeightMap : ColorMapCellValueDataLayer&lt;float&gt;</code></li>
+<li><code>BiomeMap : ColorMapCellValueDataLayer&lt;int&gt;</code></li>
+<li><code>TransparencyMap : CellValueDataLayer&lt;bool&gt;</code></li>
+<li><code>CellMetricsMap : CellMetricsDataLayer</code> (derived)</li>
+</ul>
+<p>Typical flow:</p>
+<ol>
+<li>Change <code>HeightMap</code> and/or <code>BiomeMap</code></li>
+<li>Recompute <code>CellMetricsMap</code> with <code>CalcCellMetrics(...)</code></li>
+<li>Optionally compute color maps (<code>CalculateColorMap(...)</code>) for view/debug</li>
+</ol>
+<p><code>CellMetricsMap</code> is the bridge from “values” to “geometry”: it caches per-cell transforms/positions/heights needed by mesh generation and object placement.</p>
+<h3 id="42-visualchunkmeshlayer-turning-cell-metrics-into-meshes">4.2 <code>VisualChunkMeshLayer</code>: turning cell metrics into meshes</h3>
+<p>A <code>VisualChunkMeshLayer</code> extends <code>ChunkMeshLayer</code> and adds chunk-level rendering outputs:</p>
+<ul>
+<li><code>ChunkMeshSources</code> (per chunk intermediate mesh source data)</li>
+<li><code>ChunkMeshes</code> (per chunk <code>Mesh</code>)</li>
+<li>Optional <code>MeshDatas</code> (per chunk mesh data buffers)</li>
+</ul>
+<p>Key stages:</p>
+<ul>
+<li><code>CalcDirtyMeshSources(...)</code><br>
+Marks chunk mesh sources dirty when their underlying cell data changed.</li>
+<li><code>CalcMeshSources(chunksGridLayer, ...)</code><br>
+For visible dirty chunks: schedule mesh generation jobs.</li>
+<li><code>CreateChunkMeshes(...)</code><br>
+Convert mesh source data into <code>Mesh</code> objects (or mesh-data buffers), then draw.</li>
+</ul>
+<p>Rendering step:</p>
+<ul>
+<li>Uses <code>ChunksGridLayer.ChunkVisibility</code> to draw only visible chunks.</li>
+<li>Uses view mode → render config selection (<code>RenderConfigs</code> / <code>DefaultRenderConfig</code>).</li>
+</ul>
+<hr>
+<h2 id="5-example-one-value-per-cell-shown-as-an-object-via-cellobjectlayer">5. Example: “one value per cell shown as an object” via <code>CellObjectLayer</code></h2>
+<p>The “cell item” family treats each cell as a slot that can hold a discrete thing:</p>
+<ul>
+<li><code>int itemIndex</code> per cell (what object is here?)</li>
+<li>plus optional state + transform per cell (how it looks and where it sits within the cell)</li>
+</ul>
+<p><code>CellObjectLayer</code> is a consumer that:</p>
+<ul>
+<li>reads per-cell item data</li>
+<li>computes per-cell transforms (often using <code>ChunkMeshLayer.CellMetricsMap</code>)</li>
+<li>emits instanced render items grouped by mesh/material for fast rendering</li>
+</ul>
+<p>This is the same architectural pattern:</p>
+<ul>
+<li><strong>Data</strong>: item index/state/transform per cell</li>
+<li><strong>Derived output</strong>: instance lists grouped for batching</li>
+<li><strong>Renderer</strong>: bulk instancing renderer</li>
+</ul>
+<p>See <a href="cell-item-layers.html">Cell Item Layers</a> for the detailed “cell item” design.</p>
+<hr>
+<h2 id="6-example-scalar-field-volume-via-geoplastlayer-rendered-through-a-surface-layer">6. Example: “scalar field volume” via <code>GeoPlastLayer</code> (rendered through a surface layer)</h2>
+<p>A <code>GeoPlastLayer</code> is a “material-like” simulation layer built from scalar fields:</p>
+<ul>
+<li><code>AmountMap</code> (how much “stuff” per cell)</li>
+<li><code>DensityMap</code> (density factor)</li>
+<li><code>VolumeMap</code> (derived: <code>Amount * Density</code>)</li>
+<li><code>BedrockHeightMap</code> / <code>CeilingHeightMap</code> (derived heights)</li>
+</ul>
+<p>Important architectural idea:</p>
+<ul>
+<li>GeoPlast does <strong>not</strong> need its own renderer type.</li>
+<li>It can be <strong>rendered onto an existing surface</strong> by writing/modifying the surface’s maps.</li>
+</ul>
+<p>That is why <code>GeoPlastLayer</code> exposes:</p>
+<ul>
+<li><code>RenderGeoPlast(ChunkMeshLayerGroup chunkMeshLayerList, ...)</code></li>
+</ul>
+<p>Conceptually:</p>
+<ol>
+<li>GeoPlast computes its own per-cell fields (<code>VolumeMap</code>, ceiling height, etc.).</li>
+<li>GeoPlast “projects” those fields onto a target <code>ChunkMeshLayer</code> (often by changing a height-like map, biome-like map, or both).</li>
+<li>The target surface then regenerates meshes as usual.</li>
+</ol>
+<p>So: <strong>GeoPlast changes values; <code>VisualChunkMeshLayer</code> turns values into meshes.</strong></p>
+<hr>
+<h2 id="7-example-index-per-cell-shown-as-a-color-via-cellregionlayer">7. Example: “index per cell shown as a color” via <code>CellRegionLayer</code></h2>
+<p>A <code>CellRegionLayer</code> provides a classic “index map” use case:</p>
+<ul>
+<li><code>CellRegionMap : ColorMapCellValueDataLayer&lt;int&gt;</code><br>
+Each cell stores a region index.</li>
+</ul>
+<p>Derived/secondary outputs:</p>
+<ul>
+<li><code>RegionCells : NativeParallelMultiHashMapDataLayer&lt;int, uint&gt;</code><br>
+“Which cells belong to region R?”</li>
+<li><code>RegionSizes : NativeListDataLayer&lt;uint&gt;</code><br>
+“How large is region R?”</li>
+</ul>
+<p>Visualization:</p>
+<ul>
+<li>Because <code>CellRegionMap</code> is a <code>ColorMapCellValueDataLayer&lt;int&gt;</code>, it can compute a <strong>per-cell color</strong> via a palette.</li>
+<li>That color map can be pushed into a texture and shown in a view mode.</li>
+</ul>
+<p>This matches the framework’s pattern:</p>
+<ul>
+<li><strong>Authoritative</strong>: region index per cell</li>
+<li><strong>Derived</strong>: color per cell, plus region membership structures</li>
+<li><strong>Consumer</strong>: view mode texture, minimap, debug overlay, gameplay queries, etc.</li>
+</ul>
+<hr>
+<h2 id="8-view-modes-show-me-a-particular-map">8. View modes: “show me a particular map”</h2>
+<p>View modes are a standardized way to visualize “a data layer’s color map” as a texture.</p>
+<p><code>UniversalViewModeConfigAsset</code> demonstrates the approach:</p>
+<ul>
+<li>It selects a target layer + target map type (height, biome, region, geo-plast amount, etc.).</li>
+<li>It fetches the corresponding <code>ColorMap</code> (<code>CellColorsDataLayer</code>) if that map has <code>IsColorMapEnabled == true</code>.</li>
+<li>It updates <code>Texture2D</code> buffers by applying the color map.</li>
+</ul>
+<p>So “view mode rendering” is not special rendering logic; it’s:</p>
+<ul>
+<li><strong>data layer</strong> → <strong>color map</strong> → <strong>texture</strong></li>
+</ul>
+<hr>
+<h2 id="9-architecture-diagram-mental-model">9. Architecture diagram (mental model)</h2>
+<p><img src="images/architecture-diagram.png" alt="Architecture Diagram"></p>
+<pre><code class="lang-mermaid">flowchart TD 
+TE[&quot;TerrainEntity (ECS entity)&quot;] --&gt; HT[&quot;HexTerrain (HexTerrainSettings)&quot;] 
+TE --&gt; CG[&quot;ChunksGridLayer (chunk metrics + visibility)&quot;]
+TE --&gt; GM[&quot;ChunkMeshLayerGroup&quot;] 
+GM --&gt; CM[&quot;ChunkMeshLayer / VisualChunkMeshLayer&quot;] 
+CM --&gt; HM[&quot;Per-cell maps: Heightmap, BiomeMap, TransparencyMap&quot;] 
+CM --&gt; MET[&quot;Derived per-cell: CellMetricsMap&quot;] 
+CM --&gt; MS[&quot;Per-chunk: ChunkMeshSources / ChunkMeshes / MeshDatas&quot;]
+TE --&gt; RG[&quot;CellRegionLayerGroup&quot;] 
+RG --&gt; RL[&quot;CellRegionLayer&quot;] 
+RL --&gt; RM[&quot;Per-cell: CellRegionMap (+ ColorMap)&quot;]
+TE --&gt; PG[&quot;GeoPlastLayerGroup&quot;] 
+PG --&gt; PL[&quot;GeoPlastLayer&quot;] 
+PL --&gt; PM[&quot;Per-cell: AmountMap, DensityMap, VolumeMap&quot;] 
+PL --&gt; PR[&quot;Writes into surface maps via RenderGeoPlast(...)&quot;]
+TE --&gt; OG[&quot;Cell item groups (e.g. CellObjectLayerGroup)&quot;] 
+OG --&gt; OL[&quot;CellObjectLayer / CellEntityLayer&quot;] 
+OL --&gt; OMAP[&quot;Per-cell: index/state/transform maps&quot;] 
+OL --&gt; OUT[&quot;Derived output: instances/entities&quot;]
+</code></pre>
+<hr>
+<h2 id="10-how-to-think-when-extending-hexterrains">10. How to think when extending HexTerrains</h2>
+<p>When adding a new feature, decide these four things up front:</p>
+<ol>
+<li><p><strong>What is the authoritative per-cell value?</strong><br>
+Example: “humidity per cell” (<code>float</code>), “road type per cell” (<code>int</code>), “blocked per cell” (<code>bool</code>).</p>
+</li>
+<li><p><strong>What derived data is needed?</strong><br>
+Example: a color map for debugging, a mesh overlay, an instance list, a region membership table, etc.</p>
+</li>
+<li><p><strong>Which existing consumer can render it?</strong></p>
+<ul>
+<li>Can it be shown as a color map texture? Use <code>ColorMapCellValueDataLayer&lt;T&gt;</code>.</li>
+<li>Can it be rendered as geometry? Project into a <code>ChunkMeshLayer</code> and let <code>VisualChunkMeshLayer</code> do mesh generation.</li>
+<li>Can it be rendered as repeated objects? Use a cell-item layer style (instancing/entities).</li>
+</ul>
+</li>
+<li><p><strong>What is the dirty propagation path?</strong><br>
+Make sure edits mark the right chunks dirty, and make derived jobs depend on the right source layers.</p>
+</li>
+</ol>
+<hr>
+<h2 id="11-summary">11. Summary</h2>
+<ul>
+<li>A terrain is an ECS <code>TerrainEntity</code>.</li>
+<li>It owns multiple <code>HexTerrainLayerGroup</code> components (surface layers, region layers, geo-plast layers, item layers, etc.).</li>
+<li>Each <code>HexTerrainLayer</code> owns one or more <code>DataLayer</code> instances.</li>
+<li>Most core gameplay/visual features reduce to: <strong>“a value per cell”</strong> plus a pipeline that converts it into visuals.</li>
+<li>Chunking + dirty tracking ensures only the affected chunks are recomputed.</li>
+<li>Rendering is a consumer of data: chunk meshes, instanced objects, ECS entities, and view-mode textures all read from the same underlying maps.</li>
+</ul>
 
 </article>
           </div>

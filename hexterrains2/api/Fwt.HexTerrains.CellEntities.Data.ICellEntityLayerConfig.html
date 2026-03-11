@@ -120,8 +120,8 @@
 </h3>
 
 
-  <a id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellEntities_" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellEntities" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellEntities">CellEntities</h4>
+  <a id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellItemPrefabs_" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CellItemPrefabs" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CellItemPrefabs">CellItemPrefabs</h4>
   <div class="markdown level1 summary"><p>Prefabs for cell item. Index = prefab index,
 so if in the items map there is an item with index 5,
 it will take the ItemPrefabs[5] prefab to instantiate it</p>
@@ -129,7 +129,7 @@ it will take the ItemPrefabs[5] prefab to instantiate it</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">List&lt;CellEntityConfigAuthoring&gt; CellEntities { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">List&lt;CellEntityConfigAuthoring&gt; CellItemPrefabs { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -148,17 +148,14 @@ it will take the ItemPrefabs[5] prefab to instantiate it</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeSize_" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeSize" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeSize">EntityConfigsRangeSize</h4>
-  <div class="markdown level1 summary"><p>Updated during baking.
-All entity prefabs are baked to the terrain entity into dedicated dynamic buffer,
-and because there is a list of layers, some of those entity prefab are for another layers,
-so this is the amount of entity prefabs in that combined list that are belong to this layer.</p>
+  <a id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_StatesCountPerItem_" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_StatesCountPerItem" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.StatesCountPerItem">StatesCountPerItem</h4>
+  <div class="markdown level1 summary"><p>Number of states per cell item. Used to calculate the amount of memory to allocate for cell item states.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">int EntityConfigsRangeSize { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">int StatesCountPerItem { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -171,62 +168,6 @@ so this is the amount of entity prefabs in that combined list that are belong to
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeStart_" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_EntityConfigsRangeStart" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.EntityConfigsRangeStart">EntityConfigsRangeStart</h4>
-  <div class="markdown level1 summary"><p>Updated during baking.
-All entity prefabs are baked to the terrain entity into dedicated dynamic buffer,
-and because there is a list of layers, some of those entity prefab are for another layers,
-so this is the first index of entity prefab in that combined list that are belong to this layer.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">int EntityConfigsRangeStart { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h3 id="methods">Methods
-</h3>
-
-
-  <a id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CreateTerrainLayer_" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_CreateTerrainLayer" data-uid="Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig.CreateTerrainLayer">CreateTerrainLayer()</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">HexTerrainLayer CreateTerrainLayer()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayer.html">HexTerrainLayer</a></td>
         <td></td>
       </tr>
     </tbody>

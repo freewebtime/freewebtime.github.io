@@ -9,7 +9,7 @@
       <meta name="viewport" content="width=device-width">
       <meta name="title" content="Class CellEntityLayer | Hex Terrains Framework ">
     
-    
+    <meta name="description" content="Represents a terrain layer that manages cell entities, providing functionality for initializing, updating, and cleaning up entity data associated with each cell. Supports asynchronous operations and integrates with Unity&#39;s Entity Component System (ECS) for efficient entity lifecycle management.">
       <link rel="shortcut icon" href="../favicon.ico">
       <link rel="stylesheet" href="../styles/docfx.vendor.min.css">
       <link rel="stylesheet" href="../styles/docfx.css">
@@ -81,7 +81,10 @@
 
 
   <h1 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer" class="text-break">Class CellEntityLayer</h1>
-  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 summary"><p>Represents a terrain layer that manages cell entities, providing functionality for initializing, updating, and
+cleaning up entity data associated with each cell. Supports asynchronous operations and integrates with Unity's
+Entity Component System (ECS) for efficient entity lifecycle management.</p>
+</div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
     <h5>Inheritance</h5>
@@ -257,6 +260,14 @@
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public class CellEntityLayer : CellItemLayer, IDisposable, ISerializableTerrainLayer</code></pre>
   </div>
+  <h5 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>CellEntityLayer is responsible for the creation, destruction, and state management of cell
+entities within a terrain layer. It utilizes an EntityManager to handle entity instances and supports job-based
+operations for performance optimization. This layer is typically used in scenarios where each terrain cell
+requires an associated entity, such as for gameplay logic, rendering, or interaction. Thread safety and job
+dependencies are managed internally to ensure correct operation when used in multithreaded
+environments.</p>
+</div>
   <h3 id="fields">Fields
 </h3>
 
@@ -267,7 +278,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public NativeList&lt;CellEntityConfig&gt; CellEntityConfigs</code></pre>
+    <pre><code class="lang-csharp hljs">public NativeList&lt;CellEntityStateConfig&gt; CellEntityConfigs</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -279,7 +290,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
+        <td><span class="xref">NativeList</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html">CellEntityStateConfig</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -399,6 +410,31 @@ That texture is expected to be used in materials or/and UI like minimap.</p>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">public int ColorMapTextureIndex { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_StatesCountPerEntityIndex_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex*"></a>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_StatesCountPerEntityIndex" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.StatesCountPerEntityIndex">StatesCountPerEntityIndex</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int StatesCountPerEntityIndex { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -539,58 +575,6 @@ Usually used to clean the dirty flags.</p>
   <div><a class="xref" href="Fwt.HexTerrains.CellItems.Data.CellItemLayer.html#Fwt_HexTerrains_CellItems_Data_CellItemLayer_Dispose">CellItemLayer.Dispose()</a></div>
 
 
-  <a id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_GetCellEntityConfigs_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_GetCellEntityConfigs_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__System_Int32_System_Int32_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.GetCellEntityConfigs(Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig},System.Int32,System.Int32)">GetCellEntityConfigs(NativeArray&lt;CellEntityConfig&gt;, int, int)</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual NativeSlice&lt;CellEntityConfig&gt; GetCellEntityConfigs(NativeArray&lt;CellEntityConfig&gt; cellEntityConfigs, int EntityConfigsRangeStart, int entityConfigsRangeSize)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
-        <td><span class="parametername">cellEntityConfigs</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">EntityConfigsRangeStart</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">entityConfigsRangeSize</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">NativeSlice</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <a id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init*"></a>
   <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings)">Init(HexTerrainSettings)</h4>
   <div class="markdown level1 summary"><p>Initializes/Reinitializes the CellEntities data.</p>
@@ -623,12 +607,12 @@ Usually used to clean the dirty flags.</p>
 
 
   <a id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_Unity_Collections_NativeArray_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig,Unity.Collections.NativeArray{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})">Init(HexTerrainSettings, ICellEntityLayerConfig, NativeArray&lt;CellEntityConfig&gt;)</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_Init_Fwt_HexTerrains_Data_HexTerrainSettings_Fwt_HexTerrains_CellEntities_Data_ICellEntityLayerConfig_Unity_Collections_NativeSlice_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.Init(Fwt.HexTerrains.Data.HexTerrainSettings,Fwt.HexTerrains.CellEntities.Data.ICellEntityLayerConfig,Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})">Init(HexTerrainSettings, ICellEntityLayerConfig, NativeSlice&lt;CellEntityStateConfig&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, ICellEntityLayerConfig args, NativeArray&lt;CellEntityConfig&gt; cellEntityConfigs)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Init(HexTerrainSettings settings, ICellEntityLayerConfig args, NativeSlice&lt;CellEntityStateConfig&gt; cellEntityConfigs)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -651,7 +635,7 @@ Usually used to clean the dirty flags.</p>
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">NativeArray</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
+        <td><span class="xref">NativeSlice</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html">CellEntityStateConfig</a>&gt;</td>
         <td><span class="parametername">cellEntityConfigs</span></td>
         <td></td>
       </tr>
@@ -660,7 +644,7 @@ Usually used to clean the dirty flags.</p>
 
 
   <a id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_InitCellEntitiesConfigs_" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_InitCellEntitiesConfigs_Unity_Collections_NativeSlice_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})">InitCellEntitiesConfigs(NativeSlice&lt;CellEntityConfig&gt;)</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_Data_CellEntityLayer_InitCellEntitiesConfigs_Unity_Collections_NativeSlice_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__" data-uid="Fwt.HexTerrains.CellEntities.Data.CellEntityLayer.InitCellEntitiesConfigs(Unity.Collections.NativeSlice{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})">InitCellEntitiesConfigs(NativeSlice&lt;CellEntityStateConfig&gt;)</h4>
   <div class="markdown level1 summary"><p>Copies an ItemConfigs from the given array.
 Does not change or cache the array, so it is safe to dispose it after this call.
 copyFrom array is expected to have the CellEntity indexes length, so there is one config per possible CellEntity index.
@@ -669,7 +653,7 @@ CellEntity.Index == index in copyFrom array.</p>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void InitCellEntitiesConfigs(NativeSlice&lt;CellEntityConfig&gt; copyFrom)</code></pre>
+    <pre><code class="lang-csharp hljs">public void InitCellEntitiesConfigs(NativeSlice&lt;CellEntityStateConfig&gt; copyFrom)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -682,7 +666,7 @@ CellEntity.Index == index in copyFrom array.</p>
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">NativeSlice</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
+        <td><span class="xref">NativeSlice</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html">CellEntityStateConfig</a>&gt;</td>
         <td><span class="parametername">copyFrom</span></td>
         <td><p>array of configs to copy into the ItemConfigs</p>
 </td>

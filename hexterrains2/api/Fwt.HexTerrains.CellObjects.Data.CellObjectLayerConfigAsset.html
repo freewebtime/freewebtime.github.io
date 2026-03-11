@@ -385,32 +385,6 @@ public class CellObjectLayerConfigAsset : CellItemLayerConfigAsset&lt;CellObject
 </h3>
 
 
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__LODDistances" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODDistances">_LODDistances</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of LOD distances for cell objects in this layer. Set each next distance to be greater than the previous one. Each distance corresponds to a LOD level, starting from 0. If UseLODSettings is true, this list will be used to create LOD settings for cell objects in this layer.&quot;)]
-[SerializeField]
-protected List&lt;float&gt; _LODDistances</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__LODSettings" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._LODSettings">_LODSettings</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
@@ -431,58 +405,6 @@ protected List&lt;CellObjectLayerLODSettings&gt; _LODSettings</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerLODSettings.html">CellObjectLayerLODSettings</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__bakedObjectConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectConfigs">_bakedObjectConfigs</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of baked cell object configs. This list is used to render cell objects in the scene. It is created from ObjectConfigs list during baking process, so don&#39;t forget to bake it before build.&quot;)]
-[SerializeField]
-protected List&lt;CellObjectConfig&gt; _bakedObjectConfigs</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectConfig.html">CellObjectConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__bakedObjectStateConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._bakedObjectStateConfigs">_bakedObjectStateConfigs</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Each Cell Object can have multiple states, each state can have different visuals. This is a list of all possible states for cell objects.&quot;)]
-[SerializeField]
-protected List&lt;CellObjectStateConfig&gt; _bakedObjectStateConfigs</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig.html">CellObjectStateConfig</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -548,7 +470,6 @@ protected List&lt;CellObjectVisualItemSettings&gt; _bakedVisualItemSettings</cod
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Tooltip(&quot;RenderEntitiesConfig that holds meshes, materials, and everything needed for rendering using Graphics.DrawMeshInstanced.&quot;)]
 [SerializeField]
-[FormerlySerializedAs(&quot;_renderEntities&quot;)]
 protected BulkRendererAsset _bulkRendererAsset</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
@@ -568,14 +489,14 @@ protected BulkRendererAsset _bulkRendererAsset</code></pre>
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__colorPalette" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._colorPalette">_colorPalette</h4>
+  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__cellItemPrefabs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._cellItemPrefabs">_cellItemPrefabs</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Filled during baking automatically. Color palette for the cell objects. Index in this list is the index of the Cell Object.&quot;)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of cell object config authorings. While baking data from this list is taken to be extract one cell object from one ObjectConfigAuthoring.&quot;)]
 [SerializeField]
-protected List&lt;Color32&gt; _colorPalette</code></pre>
+protected List&lt;CellObjectConfigAuthoring&gt; _cellItemPrefabs</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -587,7 +508,7 @@ protected List&lt;Color32&gt; _colorPalette</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Color32</span>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html">CellObjectConfigAuthoring</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -620,40 +541,15 @@ protected int _maxSubmeshesPerCell</code></pre>
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__objectConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._objectConfigs">_objectConfigs</h4>
+  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__statesCountPerItem" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerItem">_statesCountPerItem</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;List of cell object config authorings. While baking data from this list is taken to be extract one cell object from one ObjectConfigAuthoring.&quot;)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Number of states per cell cell item. Used to calculate the amount of memory to allocate for cell item states.&quot;)]
 [SerializeField]
-protected List&lt;CellObjectConfigAuthoring&gt; _objectConfigs</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html">CellObjectConfigAuthoring</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__statesCountPerObject" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._statesCountPerObject">_statesCountPerObject</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Number of states per cell object. Used to calculate the amount of memory to allocate for cell object states.&quot;)]
-[SerializeField]
-protected int _statesCountPerObject</code></pre>
+[FormerlySerializedAs(&quot;_statesCountPerObject&quot;)]
+protected int _statesCountPerItem</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -670,88 +566,8 @@ protected int _statesCountPerObject</code></pre>
       </tr>
     </tbody>
   </table>
-
-
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset__useLODSettings" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset._useLODSettings">_useLODSettings</h4>
-  <div class="markdown level1 summary"></div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If true, the LOD settings will be used for cell objects in this layer. This settings apply to all cell objects in the layer, instead of individual cell object settings.&quot;)]
-[SerializeField]
-protected bool _useLODSettings</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
 </h3>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectConfigs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectConfigs">BakedObjectConfigs</h4>
-  <div class="markdown level1 summary"><p>List of baked cell object configs. This list is used to render cell objects in the scene.
-It is created from ObjectConfigs list during baking process, so don't forget to bake it before build.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;CellObjectConfig&gt; BakedObjectConfigs { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectConfig.html">CellObjectConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectStateConfigs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedObjectStateConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedObjectStateConfigs">BakedObjectStateConfigs</h4>
-  <div class="markdown level1 summary"><p>Each Cell Object can have multiple states, each state can have different visuals.
-This is a list of all possible states for cell objects.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;CellObjectStateConfig&gt; BakedObjectStateConfigs { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig.html">CellObjectStateConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 
   <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakedStatesLODSettings_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakedStatesLODSettings*"></a>
@@ -834,16 +650,15 @@ All visual item settings are baked from the ObjectConfigs list during baking pro
   </table>
 
 
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ColorPalette_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ColorPalette" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ColorPalette">ColorPalette</h4>
-  <div class="markdown level1 summary"><p>Filled during baking automatically.
-Color palette for the cell objects.
-Index in this list is the index of the Cell Object.</p>
+  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_CellItemPrefabs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs*"></a>
+  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_CellItemPrefabs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.CellItemPrefabs">CellItemPrefabs</h4>
+  <div class="markdown level1 summary"><p>List of cell object config authorings.
+While baking data from this list is taken to be extract one cell object from one ObjectConfigAuthoring.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;Color32&gt; ColorPalette { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public List&lt;CellObjectConfigAuthoring&gt; CellItemPrefabs { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -855,36 +670,7 @@ Index in this list is the index of the Cell Object.</p>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Color32</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_LODDistances_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_LODDistances" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.LODDistances">LODDistances</h4>
-  <div class="markdown level1 summary"><p>List of LOD distances for cell objects in this layer.
-Set each next distance to be greater than the previous one.
-Each distance corresponds to a LOD level, starting from 0.
-If UseLODSettings is true, this list will be used to create LOD settings for cell objects in this layer.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;float&gt; LODDistances { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html">CellObjectConfigAuthoring</a>&gt;</td>
         <td></td>
       </tr>
     </tbody>
@@ -970,41 +756,14 @@ This settings apply to all cell objects in the layer.</p>
   </table>
 
 
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ObjectConfigs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ObjectConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ObjectConfigs">ObjectConfigs</h4>
-  <div class="markdown level1 summary"><p>List of cell object config authorings.
-While baking data from this list is taken to be extract one cell object from one ObjectConfigAuthoring.</p>
+  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerItem_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem*"></a>
+  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerItem" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerItem">StatesCountPerItem</h4>
+  <div class="markdown level1 summary"><p>Number of states per cell item. Used to calculate the amount of memory to allocate for cell item states.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public List&lt;CellObjectConfigAuthoring&gt; ObjectConfigs { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html">CellObjectConfigAuthoring</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerObject_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_StatesCountPerObject" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.StatesCountPerObject">StatesCountPerObject</h4>
-  <div class="markdown level1 summary"><p>Number of states per cell object. Used to calculate the amount of memory to allocate for cell object states.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public int StatesCountPerObject { get; set; }</code></pre>
+    <pre><code class="lang-csharp hljs">public int StatesCountPerItem { get; set; }</code></pre>
   </div>
   <h5 class="propertyValue">Property Value</h5>
   <table class="table table-bordered table-condensed">
@@ -1021,59 +780,52 @@ While baking data from this list is taken to be extract one cell object from one
       </tr>
     </tbody>
   </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_UseLODSettings_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_UseLODSettings" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.UseLODSettings">UseLODSettings</h4>
-  <div class="markdown level1 summary"><p>If true, the LOD settings will be used for cell objects in this layer.
-This settings apply to all cell objects in the layer, instead of individual cell object settings.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool UseLODSettings { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
 </h3>
 
 
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObjectConfigs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObjectConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObjectConfigs">BakeCellObjectConfigs()</h4>
+  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_Bake_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake*"></a>
+  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_Bake" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.Bake">Bake()</h4>
   <div class="markdown level1 summary"><p>Bakes the cell object configs from the ObjectConfigs list into BakedConfigs list.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Bake Cell Object Configs&quot;)]
-public virtual void BakeCellObjectConfigs()</code></pre>
+    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Bake&quot;)]
+public virtual void Bake()</code></pre>
   </div>
 
 
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeLODSettings_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeLODSettings" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeLODSettings">BakeLODSettings()</h4>
-  <div class="markdown level1 summary"><p>Bakes the LOD settings from the LODDistances list into LODSettings list.</p>
-</div>
+  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObject_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject*"></a>
+  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_BakeCellObject_Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_System_Int32_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.BakeCellObject(Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring,System.Int32)">BakeCellObject(CellObjectConfigAuthoring, int)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[ContextMenu(&quot;Bake LOD Settings&quot;)]
-public virtual void BakeLODSettings()</code></pre>
+    <pre><code class="lang-csharp hljs">protected virtual void BakeCellObject(CellObjectConfigAuthoring objAuthoring, int cellItemIndex)</code></pre>
   </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.html">CellObjectConfigAuthoring</a></td>
+        <td><span class="parametername">objAuthoring</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td><span class="parametername">cellItemIndex</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
 
 
   <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_ClearBakedData_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.ClearBakedData*"></a>
@@ -1114,110 +866,6 @@ protected virtual void ClearBakedData()</code></pre>
   </table>
   <h5 class="overrides">Overrides</h5>
   <div><a class="xref" href="Fwt.HexTerrains.Data.HexTerrainLayerConfigAsset-1.html#Fwt_HexTerrains_Data_HexTerrainLayerConfigAsset_1_CreateTerrainLayer">HexTerrainLayerConfigAsset&lt;CellObjectLayer&gt;.CreateTerrainLayer()</a></div>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectConfigs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectConfigs">GetCellObjectConfigs()</h4>
-  <div class="markdown level1 summary"><p>Returns the list of baked cell object configs.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual List&lt;CellObjectConfig&gt; GetCellObjectConfigs()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectConfig.html">CellObjectConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectStateConfigs_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetCellObjectStateConfigs" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetCellObjectStateConfigs">GetCellObjectStateConfigs()</h4>
-  <div class="markdown level1 summary"><p>Returns the list of baked cell object state configs.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual List&lt;CellObjectStateConfig&gt; GetCellObjectStateConfigs()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig.html">CellObjectStateConfig</a>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetColorPalette_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetColorPalette" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetColorPalette">GetColorPalette()</h4>
-  <div class="markdown level1 summary"><p>Returns the color palette for the cell objects.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual List&lt;Color32&gt; GetColorPalette()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Color32</span>&gt;</td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetLODLayersCount_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetLODLayersCount" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetLODLayersCount">GetLODLayersCount()</h4>
-  <div class="markdown level1 summary"><p>Returns the number of LOD layers defined for this layer.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual int GetLODLayersCount()</code></pre>
-  </div>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 
 
   <a id="Fwt_HexTerrains_CellObjects_Data_CellObjectLayerConfigAsset_GetObjectStatesLODSettings_" data-uid="Fwt.HexTerrains.CellObjects.Data.CellObjectLayerConfigAsset.GetObjectStatesLODSettings*"></a>

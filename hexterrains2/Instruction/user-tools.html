@@ -375,6 +375,7 @@
 <li>call <code>userToolsSm.Dispose()</code> (disposes disposable states)</li>
 <li>optionally <code>ClearStates()</code> if you need to rebuild the tool set</li>
 </ul>
+<p><img src="images/UserToolsDiagram.png" alt="User Tools Diagram"></p>
 <pre><code class="lang-mermaid">graph TD;
     A[&quot;Unity bootstrap (MonoBehaviour / system)&quot;] --&gt; B[&quot;Create UserToolsStateMachine&quot;] 
     B --&gt; C[&quot;Init(configAssets) → create states + apply config&quot;] 

@@ -115,32 +115,6 @@ public struct CellEntityConfigAuthoring</code></pre>
 </h3>
 
 
-  <h4 id="Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_Color" data-uid="Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.Color">Color</h4>
-  <div class="markdown level1 summary"><p>This color is used in minimap and colormaps</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;This color is used in minimap and colormaps&quot;)]
-public Color Color</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Color</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h4 id="Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_Name" data-uid="Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.Name">Name</h4>
   <div class="markdown level1 summary"><p>Name of the Cell Entity</p>
 </div>
@@ -167,14 +141,14 @@ public string Name</code></pre>
   </table>
 
 
-  <h4 id="Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_PrefabConfigs" data-uid="Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfigs">PrefabConfigs</h4>
-  <div class="markdown level1 summary"><p>Cell Entity prefabs palette. Index in this list = CellEntity.Index</p>
+  <h4 id="Fwt_HexTerrains_CellEntities_CellEntityConfigAuthoring_States" data-uid="Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.States">States</h4>
+  <div class="markdown level1 summary"><p>Prefab per state index. So if CellEntity is in state 2, it will take the prefab from PrefabConfigs[2] to display it.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Cell Entity prefabs palette. Index in this list = CellEntity.Index&quot;)]
-public List&lt;CellEntityConfigAuthoring.PrefabConfig&gt; PrefabConfigs</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Prefab per state index. So if CellEntity is in state 2, it will take the prefab from PrefabConfigs[2] to display it.&quot;)]
+public List&lt;GameObject&gt; States</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">
@@ -186,7 +160,7 @@ public List&lt;CellEntityConfigAuthoring.PrefabConfig&gt; PrefabConfigs</code></
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.html">CellEntityConfigAuthoring</a>.<a class="xref" href="Fwt.HexTerrains.CellEntities.CellEntityConfigAuthoring.PrefabConfig.html">PrefabConfig</a>&gt;</td>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">GameObject</span>&gt;</td>
         <td></td>
       </tr>
     </tbody>

@@ -116,32 +116,6 @@ public struct CellObjectConfigAuthoring</code></pre>
 </h3>
 
 
-  <h4 id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_Color" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.Color">Color</h4>
-  <div class="markdown level1 summary"><p>This color is used on minimap and color maps</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;This color is used on minimap and color maps&quot;)]
-public Color32 Color</code></pre>
-  </div>
-  <h5 class="fieldValue">Field Value</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">Color32</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
   <h4 id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_Name" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.Name">Name</h4>
   <div class="markdown level1 summary"><p>Name of the Cell Object</p>
 </div>
@@ -196,14 +170,13 @@ public List&lt;CellObjectPrefabAuthoring&gt; States</code></pre>
 </h3>
 
 
-  <a id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_System_Int32_Fwt_Core_Collections_FixedList8_Fwt_HexTerrains_CellObjects_Data_CellObjectStateConfig___Fwt_Core_BulkRendering_IBulkRenderer_System_Action_UnityEngine_GameObject__" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(System.Int32,Fwt.Core.Collections.FixedList8{Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig}@,Fwt.Core.BulkRendering.IBulkRenderer,System.Action{UnityEngine.GameObject})">ExtractCellObjectConfig(int, out FixedList8&lt;CellObjectStateConfig&gt;, IBulkRenderer, Action&lt;GameObject&gt;)</h4>
-  <div class="markdown level1 summary"><p>Extracts the CellItemConfig from the authoring data.</p>
-</div>
+  <a id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_GetStateAuthoring_" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring*"></a>
+  <h4 id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_GetStateAuthoring_System_Int32_" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.GetStateAuthoring(System.Int32)">GetStateAuthoring(int)</h4>
+  <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CellObjectConfig ExtractCellObjectConfig(int index, out FixedList8&lt;CellObjectStateConfig&gt; stateConfigs, IBulkRenderer bulkRenderer, Action&lt;GameObject&gt; registerPrefabForBakingCallback)</code></pre>
+    <pre><code class="lang-csharp hljs">public CellObjectPrefabAuthoring GetStateAuthoring(int stateIndex)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -217,24 +190,7 @@ public List&lt;CellObjectPrefabAuthoring&gt; States</code></pre>
     <tbody>
       <tr>
         <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>index of the cell item it will be registered under</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Fwt.Core.Collections.FixedList8-1.html">FixedList8</a>&lt;<a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectStateConfig.html">CellObjectStateConfig</a>&gt;</td>
-        <td><span class="parametername">stateConfigs</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Fwt.Core.BulkRendering.IBulkRenderer.html">IBulkRenderer</a></td>
-        <td><span class="parametername">bulkRenderer</span></td>
-        <td><p>bulk renderer to register meshes and materials in</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">GameObject</span>&gt;</td>
-        <td><span class="parametername">registerPrefabForBakingCallback</span></td>
+        <td><span class="parametername">stateIndex</span></td>
         <td></td>
       </tr>
     </tbody>
@@ -249,82 +205,7 @@ public List&lt;CellObjectPrefabAuthoring&gt; States</code></pre>
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectConfig.html">CellObjectConfig</a></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-
-
-  <a id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig*"></a>
-  <h4 id="Fwt_HexTerrains_CellObjects_CellObjectConfigAuthoring_ExtractCellObjectConfig_System_Int32_System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_System_Int32___System_Collections_Generic_List_Fwt_Core_BulkRendering_BulkRenderItemSettings___System_Collections_Generic_List_UnityEngine_Matrix4x4___Fwt_Core_BulkRendering_IBulkRenderer_System_Action_UnityEngine_GameObject__" data-uid="Fwt.HexTerrains.CellObjects.CellObjectConfigAuthoring.ExtractCellObjectConfig(System.Int32,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{System.Int32}@,System.Collections.Generic.List{Fwt.Core.BulkRendering.BulkRenderItemSettings}@,System.Collections.Generic.List{UnityEngine.Matrix4x4}@,Fwt.Core.BulkRendering.IBulkRenderer,System.Action{UnityEngine.GameObject})">ExtractCellObjectConfig(int, ref List&lt;int&gt;, ref List&lt;int&gt;, ref List&lt;BulkRenderItemSettings&gt;, ref List&lt;Matrix4x4&gt;, IBulkRenderer, Action&lt;GameObject&gt;)</h4>
-  <div class="markdown level1 summary"><p>Extracts the CellItemConfig from the authoring data.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="declaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public CellObjectConfig ExtractCellObjectConfig(int index, ref List&lt;int&gt; lodsPerState, ref List&lt;int&gt; renderEntitiesPerLod, ref List&lt;BulkRenderItemSettings&gt; renderEntities, ref List&lt;Matrix4x4&gt; renderEntityTransforms, IBulkRenderer bulkRenderer, Action&lt;GameObject&gt; registerPrefabForBakingCallback)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
-        <td><span class="parametername">index</span></td>
-        <td><p>index of the cell item it will be registered under</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td><span class="parametername">lodsPerState</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>&gt;</td>
-        <td><span class="parametername">renderEntitiesPerLod</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<a class="xref" href="Fwt.Core.BulkRendering.BulkRenderItemSettings.html">BulkRenderItemSettings</a>&gt;</td>
-        <td><span class="parametername">renderEntities</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.collections.generic.list-1">List</a>&lt;<span class="xref">Matrix4x4</span>&gt;</td>
-        <td><span class="parametername">renderEntityTransforms</span></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="Fwt.Core.BulkRendering.IBulkRenderer.html">IBulkRenderer</a></td>
-        <td><span class="parametername">bulkRenderer</span></td>
-        <td><p>render entities config to register meshes and materials in</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.action-1">Action</a>&lt;<span class="xref">GameObject</span>&gt;</td>
-        <td><span class="parametername">registerPrefabForBakingCallback</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="Fwt.HexTerrains.CellObjects.Data.CellObjectConfig.html">CellObjectConfig</a></td>
+        <td><a class="xref" href="Fwt.HexTerrains.CellObjects.CellObjectPrefabAuthoring.html">CellObjectPrefabAuthoring</a></td>
         <td></td>
       </tr>
     </tbody>

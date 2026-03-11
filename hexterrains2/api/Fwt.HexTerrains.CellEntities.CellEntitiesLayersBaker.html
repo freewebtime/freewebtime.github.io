@@ -534,12 +534,12 @@
 
 
   <a id="Fwt_HexTerrains_CellEntities_CellEntitiesLayersBaker_BakeCellEntities_" data-uid="Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities*"></a>
-  <h4 id="Fwt_HexTerrains_CellEntities_CellEntitiesLayersBaker_BakeCellEntities_Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_System_Int32_Unity_Entities_DynamicBuffer_Fwt_HexTerrains_CellEntities_Data_CellEntityConfig__" data-uid="Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset,System.Int32,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.CellEntities.Data.CellEntityConfig})">BakeCellEntities(CellEntityLayerConfigAsset, int, DynamicBuffer&lt;CellEntityConfig&gt;)</h4>
+  <h4 id="Fwt_HexTerrains_CellEntities_CellEntitiesLayersBaker_BakeCellEntities_Fwt_HexTerrains_CellEntities_Data_CellEntityLayerConfigAsset_System_Int32_Unity_Entities_DynamicBuffer_Fwt_HexTerrains_CellEntities_Data_CellEntityStateConfig__" data-uid="Fwt.HexTerrains.CellEntities.CellEntitiesLayersBaker.BakeCellEntities(Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset,System.Int32,Unity.Entities.DynamicBuffer{Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig})">BakeCellEntities(CellEntityLayerConfigAsset, int, DynamicBuffer&lt;CellEntityStateConfig&gt;)</h4>
   <div class="markdown level1 summary"></div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public virtual void BakeCellEntities(CellEntityLayerConfigAsset createArgs, int layerIndex, DynamicBuffer&lt;CellEntityConfig&gt; cellEntityConfigs)</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual (int configsRangeStart, int configsRangeSize) BakeCellEntities(CellEntityLayerConfigAsset layerConfig, int layerIndex, DynamicBuffer&lt;CellEntityStateConfig&gt; cellEntityConfigs)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-condensed">
@@ -553,7 +553,7 @@
     <tbody>
       <tr>
         <td><a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityLayerConfigAsset.html">CellEntityLayerConfigAsset</a></td>
-        <td><span class="parametername">createArgs</span></td>
+        <td><span class="parametername">layerConfig</span></td>
         <td></td>
       </tr>
       <tr>
@@ -562,8 +562,23 @@
         <td></td>
       </tr>
       <tr>
-        <td><span class="xref">DynamicBuffer</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityConfig.html">CellEntityConfig</a>&gt;</td>
+        <td><span class="xref">DynamicBuffer</span>&lt;<a class="xref" href="Fwt.HexTerrains.CellEntities.Data.CellEntityStateConfig.html">CellEntityStateConfig</a>&gt;</td>
         <td><span class="parametername">cellEntityConfigs</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>(<a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>, <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a>)</td>
         <td></td>
       </tr>
     </tbody>

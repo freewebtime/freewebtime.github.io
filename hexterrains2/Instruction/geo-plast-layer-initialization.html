@@ -109,6 +109,7 @@
 </li>
 </ul>
 <p>The key detail is that <code>args.Args.Value</code> can be any derived asset type (<code>VisualGeoPlastLayerConfigAsset</code>, <code>DynamicGeoPlastLayerConfigAsset</code>, <code>MaterialGeoPlastLayerConfigAsset</code>). Each runtime layer reads the “extra” fields via <code>is IVisualGeoPlastLayerConfig</code>, <code>is IInitDynamicGeoPlastLayerArgs</code>, etc.</p>
+<p><img src="images/GeoPlastLayerInitDiagram.png" alt="GeoPlast Layer Initialization"></p>
 <pre><code class="lang-mermaid">flowchart TD 
 A[&quot;Terrain entity has DynamicBuffer&lt;CreateGeoPlastLayerRequest&gt;&quot;] --&gt; B[&quot;GeoPlastLayerGroup.Init(...)&quot;] 
 B --&gt; C[&quot;CreateTerrainLayer(request) → request.Args.Value.CreateTerrainLayer()&quot;] 

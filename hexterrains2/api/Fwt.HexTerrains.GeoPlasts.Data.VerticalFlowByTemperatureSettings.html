@@ -122,7 +122,8 @@ public struct VerticalFlowByTemperatureSettings</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Base (max) value for vertical flow calculations. At ideal conditions, this is the amount of geo plast that will flow per tick.&quot;)]
+    <pre><code class="lang-csharp hljs">[Min(0)]
+[Tooltip(&quot;Base (max) value for vertical flow calculations. At ideal conditions, this is the amount of geo plast that will flow per tick.&quot;)]
 public float BaseFlow</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
@@ -143,12 +144,16 @@ public float BaseFlow</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_GeoPlasts_Data_VerticalFlowByTemperatureSettings_FlowMultiplierCurve" data-uid="Fwt.HexTerrains.GeoPlasts.Data.VerticalFlowByTemperatureSettings.FlowMultiplierCurve">FlowMultiplierCurve</h4>
-  <div class="markdown level1 summary"><p>Curve that defines how temperature affects vertical flow. The curve is evaluated with the cell temperature as input, and the output is a multiplier applied to the base flow. For example, a curve that peaks at a certain temperature can simulate processes like melting or evaporation, where flow increases with temperature up to a point and then decreases. The curve should be designed to reflect the desired relationship between temperature and vertical flow in the simulation.</p>
+  <div class="markdown level1 summary"><p>Curve that defines how temperature affects vertical flow. The curve is evaluated with the cell temperature as input, and the output is a multiplier applied to the base flow.
+For example, layer start evaporation at Temperature = 273, with a peak at 373 degrees, then setup the curve to be MinValue = 273, MaxValue = 373, InInverted = false.<br>
+This way, the Curve multiplier to flow will be 0 at temperatures below 273, then increase as temperature rises, reaching 1 (maximum flow) at 373 degrees, and it stays at 1 for higher temperatures.
+IsInverted makes the curve inverted, so in the same example, if IsInverted is true, the flow will be 1 at temperatures below 273, then decrease as temperature rises, reaching 0 at 373 degrees, and it stays at 0 for higher temperatures. This is an example of water that freezes at 273 degrees and evaporates at 373 degrees, so it has maximum flow at low temperatures, and no flow at high temperatures.
+The curve should be designed to reflect the desired relationship between temperature and vertical flow in the simulation.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Curve that defines how temperature affects vertical flow. The curve is evaluated with the cell temperature as input, and the output is a multiplier applied to the base flow. For example, a curve that peaks at a certain temperature can simulate processes like melting or evaporation, where flow increases with temperature up to a point and then decreases. The curve should be designed to reflect the desired relationship between temperature and vertical flow in the simulation.&quot;)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Curve that defines how temperature affects vertical flow. The curve is evaluated with the cell temperature as input, and the output is a multiplier applied to the Base Flow. \r\n\r\nFor example, layer starts evaporation at Temperature = 273, with a peak at 373 degrees, then setup the curve to be MinValue = 273, MaxValue = 373, InInverted = false. This way, the Curve multiplier to flow will be 0 at temperatures below 273, then increase as temperature rises, reaching 1 (maximum flow) at 373 degrees, and it stays at 1 for higher temperatures. IsInverted makes the curve inverted, so in the same example, if IsInverted is true, the flow will be 1 at temperatures below 273, then decrease as temperature rises, reaching 0 at 373 degrees, and it stays at 0 for higher temperatures. This is an example of water that starts freezing at 373 degrees and rises to max freezing speed at 273 degrees, so it has maximum flow at low temperatures, and no flow at high temperatures.\r\n\r\nThe curve should be designed to reflect the desired relationship between temperature and vertical flow in the simulation.&quot;)]
 public ExponentialCurve FlowMultiplierCurve</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>

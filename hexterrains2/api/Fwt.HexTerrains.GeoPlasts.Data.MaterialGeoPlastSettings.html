@@ -144,12 +144,14 @@ public DensityByTemperatureSettings DensityByTemperatureSettings</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_GeoPlasts_Data_MaterialGeoPlastSettings_DownFlowByTemperatureSettings" data-uid="Fwt.HexTerrains.GeoPlasts.Data.MaterialGeoPlastSettings.DownFlowByTemperatureSettings">DownFlowByTemperatureSettings</h4>
-  <div class="markdown level1 summary"><p>Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers. It is affected by the plast amount in the cell, as well as the temperature of the cell.</p>
+  <div class="markdown level1 summary"><p>Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers.
+It is affected by the plast Amount and Temperature of the cell (Temperature is evaluated as Heat / Amount).
+The Temperature value used as input for evaluating the FlowMultiplierCurve (it returns values from 0 to 1). The BaseFlow value is multiplied by FlowMultiplierCurve evaluation result and this is the FlowPotential in DOWN flow direction.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers. It is affected by the plast amount in the cell, as well as the temperature of the cell.&quot;)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers. \r\n\r\nIt is affected by the plast Amount and Temperature of the cell (Temperature is evaluated as Heat / Amount). \r\n\r\nThe Temperature value used as input for evaluating the FlowMultiplierCurve (it returns values from 0 to 1). The BaseFlow value is multiplied by FlowMultiplierCurve evaluation result and this is the FlowPotential in DOWN flow direction.&quot;)]
 [SerializeField]
 public VerticalFlowByTemperatureSettings DownFlowByTemperatureSettings</code></pre>
   </div>
@@ -225,12 +227,14 @@ public GeoPlastFlowSettings HeatFlowSettings</code></pre>
 
 
   <h4 id="Fwt_HexTerrains_GeoPlasts_Data_MaterialGeoPlastSettings_UpFlowByTemperatureSettings" data-uid="Fwt.HexTerrains.GeoPlasts.Data.MaterialGeoPlastSettings.UpFlowByTemperatureSettings">UpFlowByTemperatureSettings</h4>
-  <div class="markdown level1 summary"><p>Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers. It is affected by the plast amount in the cell, as well as the temperature of the cell.</p>
+  <div class="markdown level1 summary"><p>Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers.
+It is affected by the plast Amount and Temperature of the cell (Temperature is evaluated as Heat / Amount).
+The Temperature value used as input for evaluating the FlowMultiplierCurve (it returns values from 0 to 1). The BaseFlow value is multiplied by FlowMultiplierCurve evaluation result and this is the FlowPotential in UP flow direction.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers. It is affected by the plast amount in the cell, as well as the temperature of the cell.&quot;)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Settings that define the flow depending on the temperature for vertical flow. Vertical flow is a process of plast volume movement between layers. \r\n\r\nIt is affected by the plast Amount and Temperature of the cell (Temperature is evaluated as Heat / Amount). \r\n\r\nThe Temperature value used as input for evaluating the FlowMultiplierCurve (it returns values from 0 to 1). The BaseFlow value is multiplied by FlowMultiplierCurve evaluation result and this is the FlowPotential in UP flow direction.&quot;)]
 [SerializeField]
 public VerticalFlowByTemperatureSettings UpFlowByTemperatureSettings</code></pre>
   </div>

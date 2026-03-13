@@ -121,7 +121,7 @@ public struct ExponentialCurve</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Curve factor. 1 means linear, more than 1 - Convex curve, Between 0 and 1 - Concave curve, negative - inversed curve&quot;)]
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;Curve factor. 1 means linear, more than 1 - Convex curve, Between 0 and 1 - Concave curvee&quot;)]
 public float CurveFactor</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
@@ -146,7 +146,8 @@ public float CurveFactor</code></pre>
   <div class="markdown level1 conceptual"></div>
   <h5 class="declaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool IsInverted</code></pre>
+    <pre><code class="lang-csharp hljs">[Tooltip(&quot;If true, the output value will be inverted (1 - value) after curve calculation and before applying scale and offset&quot;)]
+public bool IsInverted</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-condensed">

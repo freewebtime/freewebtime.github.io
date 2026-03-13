@@ -77541,32 +77541,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.EnvironmentAPI.GetCellIndexUnderCursor
   nameWithType: EnvironmentAPI.GetCellIndexUnderCursor
-- uid: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPalette
-  name: GetHeightmapPalette()
-  href: api/Fwt.HexTerrains.EnvironmentAPI.html#Fwt_HexTerrains_EnvironmentAPI_GetHeightmapPalette
-  commentId: M:Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPalette
-  fullName: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPalette()
-  nameWithType: EnvironmentAPI.GetHeightmapPalette()
-- uid: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPalette*
-  name: GetHeightmapPalette
-  href: api/Fwt.HexTerrains.EnvironmentAPI.html#Fwt_HexTerrains_EnvironmentAPI_GetHeightmapPalette_
-  commentId: Overload:Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPalette
-  nameWithType: EnvironmentAPI.GetHeightmapPalette
-- uid: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPaletteBuffer
-  name: GetHeightmapPaletteBuffer()
-  href: api/Fwt.HexTerrains.EnvironmentAPI.html#Fwt_HexTerrains_EnvironmentAPI_GetHeightmapPaletteBuffer
-  commentId: M:Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPaletteBuffer
-  fullName: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPaletteBuffer()
-  nameWithType: EnvironmentAPI.GetHeightmapPaletteBuffer()
-- uid: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPaletteBuffer*
-  name: GetHeightmapPaletteBuffer
-  href: api/Fwt.HexTerrains.EnvironmentAPI.html#Fwt_HexTerrains_EnvironmentAPI_GetHeightmapPaletteBuffer_
-  commentId: Overload:Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPaletteBuffer
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.EnvironmentAPI.GetHeightmapPaletteBuffer
-  nameWithType: EnvironmentAPI.GetHeightmapPaletteBuffer
 - uid: Fwt.HexTerrains.EnvironmentAPI.GetHexTerrainPrefabConfigsBuffer*
   name: GetHexTerrainPrefabConfigsBuffer
   href: api/Fwt.HexTerrains.EnvironmentAPI.html#Fwt_HexTerrains_EnvironmentAPI_GetHexTerrainPrefabConfigsBuffer_
@@ -82852,32 +82826,6 @@ references:
   fullName.vb: Fwt.HexTerrains.HexTerrainAPI.GetGeoPlastVolume(Of TLayerGroup, TLayer)(Integer, Fwt.HexTerrains.Data.HexTerrainLayerReference)
   nameWithType: HexTerrainAPI.GetGeoPlastVolume<TLayerGroup, TLayer>(int, HexTerrainLayerReference)
   nameWithType.vb: HexTerrainAPI.GetGeoPlastVolume(Of TLayerGroup, TLayer)(Integer, HexTerrainLayerReference)
-- uid: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPalette
-  name: GetHeightmapPalette()
-  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetHeightmapPalette
-  commentId: M:Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPalette
-  fullName: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPalette()
-  nameWithType: HexTerrainAPI.GetHeightmapPalette()
-- uid: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPalette*
-  name: GetHeightmapPalette
-  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetHeightmapPalette_
-  commentId: Overload:Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPalette
-  nameWithType: HexTerrainAPI.GetHeightmapPalette
-- uid: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPaletteBuffer
-  name: GetHeightmapPaletteBuffer()
-  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetHeightmapPaletteBuffer
-  commentId: M:Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPaletteBuffer
-  fullName: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPaletteBuffer()
-  nameWithType: HexTerrainAPI.GetHeightmapPaletteBuffer()
-- uid: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPaletteBuffer*
-  name: GetHeightmapPaletteBuffer
-  href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetHeightmapPaletteBuffer_
-  commentId: Overload:Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPaletteBuffer
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.HexTerrainAPI.GetHeightmapPaletteBuffer
-  nameWithType: HexTerrainAPI.GetHeightmapPaletteBuffer
 - uid: Fwt.HexTerrains.HexTerrainAPI.GetHexTerrainPrefabConfigsBuffer*
   name: GetHexTerrainPrefabConfigsBuffer
   href: api/Fwt.HexTerrains.HexTerrainAPI.html#Fwt_HexTerrains_HexTerrainAPI_GetHexTerrainPrefabConfigsBuffer_
@@ -84401,32 +84349,6 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.IEnvironmentAPI.GetCellIndexUnderCursor
   nameWithType: IEnvironmentAPI.GetCellIndexUnderCursor
-- uid: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPalette
-  name: GetHeightmapPalette()
-  href: api/Fwt.HexTerrains.IEnvironmentAPI.html#Fwt_HexTerrains_IEnvironmentAPI_GetHeightmapPalette
-  commentId: M:Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPalette
-  fullName: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPalette()
-  nameWithType: IEnvironmentAPI.GetHeightmapPalette()
-- uid: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPalette*
-  name: GetHeightmapPalette
-  href: api/Fwt.HexTerrains.IEnvironmentAPI.html#Fwt_HexTerrains_IEnvironmentAPI_GetHeightmapPalette_
-  commentId: Overload:Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPalette
-  nameWithType: IEnvironmentAPI.GetHeightmapPalette
-- uid: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPaletteBuffer
-  name: GetHeightmapPaletteBuffer()
-  href: api/Fwt.HexTerrains.IEnvironmentAPI.html#Fwt_HexTerrains_IEnvironmentAPI_GetHeightmapPaletteBuffer
-  commentId: M:Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPaletteBuffer
-  fullName: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPaletteBuffer()
-  nameWithType: IEnvironmentAPI.GetHeightmapPaletteBuffer()
-- uid: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPaletteBuffer*
-  name: GetHeightmapPaletteBuffer
-  href: api/Fwt.HexTerrains.IEnvironmentAPI.html#Fwt_HexTerrains_IEnvironmentAPI_GetHeightmapPaletteBuffer_
-  commentId: Overload:Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPaletteBuffer
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.IEnvironmentAPI.GetHeightmapPaletteBuffer
-  nameWithType: IEnvironmentAPI.GetHeightmapPaletteBuffer
 - uid: Fwt.HexTerrains.IEnvironmentAPI.GetHexTerrainPrefabConfigsBuffer*
   name: GetHexTerrainPrefabConfigsBuffer
   href: api/Fwt.HexTerrains.IEnvironmentAPI.html#Fwt_HexTerrains_IEnvironmentAPI_GetHexTerrainPrefabConfigsBuffer_
@@ -85455,32 +85377,6 @@ references:
   fullName.vb: Fwt.HexTerrains.IHexTerrainAPI.GetGeoPlastVolume(Of TLayerGroup, TLayer)(Integer, String)
   nameWithType: IHexTerrainAPI.GetGeoPlastVolume<TLayerGroup, TLayer>(int, string)
   nameWithType.vb: IHexTerrainAPI.GetGeoPlastVolume(Of TLayerGroup, TLayer)(Integer, String)
-- uid: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPalette
-  name: GetHeightmapPalette()
-  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetHeightmapPalette
-  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPalette
-  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPalette()
-  nameWithType: IHexTerrainAPI.GetHeightmapPalette()
-- uid: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPalette*
-  name: GetHeightmapPalette
-  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetHeightmapPalette_
-  commentId: Overload:Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPalette
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPalette
-  nameWithType: IHexTerrainAPI.GetHeightmapPalette
-- uid: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPaletteBuffer
-  name: GetHeightmapPaletteBuffer()
-  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetHeightmapPaletteBuffer
-  commentId: M:Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPaletteBuffer
-  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPaletteBuffer()
-  nameWithType: IHexTerrainAPI.GetHeightmapPaletteBuffer()
-- uid: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPaletteBuffer*
-  name: GetHeightmapPaletteBuffer
-  href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetHeightmapPaletteBuffer_
-  commentId: Overload:Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPaletteBuffer
-  isSpec: "True"
-  fullName: Fwt.HexTerrains.IHexTerrainAPI.GetHeightmapPaletteBuffer
-  nameWithType: IHexTerrainAPI.GetHeightmapPaletteBuffer
 - uid: Fwt.HexTerrains.IHexTerrainAPI.GetHexTerrainPrefabConfigsBuffer*
   name: GetHexTerrainPrefabConfigsBuffer
   href: api/Fwt.HexTerrains.IHexTerrainAPI.html#Fwt_HexTerrains_IHexTerrainAPI_GetHexTerrainPrefabConfigsBuffer_
@@ -109224,18 +109120,6 @@ references:
   commentId: T:Fwt.HexTerrains.UserTools.UserToolsDataAuthoring
   fullName: Fwt.HexTerrains.UserTools.UserToolsDataAuthoring
   nameWithType: UserToolsDataAuthoring
-- uid: Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.Heightmaps
-  name: Heightmaps
-  href: api/Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.html#Fwt_HexTerrains_UserTools_UserToolsDataAuthoring_Heightmaps
-  commentId: F:Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.Heightmaps
-  fullName: Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.Heightmaps
-  nameWithType: UserToolsDataAuthoring.Heightmaps
-- uid: Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.IsAddHeightmaps
-  name: IsAddHeightmaps
-  href: api/Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.html#Fwt_HexTerrains_UserTools_UserToolsDataAuthoring_IsAddHeightmaps
-  commentId: F:Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.IsAddHeightmaps
-  fullName: Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.IsAddHeightmaps
-  nameWithType: UserToolsDataAuthoring.IsAddHeightmaps
 - uid: Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.IsAddTerrainPrefabConfigs
   name: IsAddTerrainPrefabConfigs
   href: api/Fwt.HexTerrains.UserTools.UserToolsDataAuthoring.html#Fwt_HexTerrains_UserTools_UserToolsDataAuthoring_IsAddTerrainPrefabConfigs

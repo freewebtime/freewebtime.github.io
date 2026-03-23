@@ -124,6 +124,33 @@ If the height is between levels at index 0 and 1, biome 1 is applied, etc.</p>
   </table>
 
 
+  <a id="Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesOffset_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset*"></a>
+  <h4 id="Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesOffset" data-uid="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset">AutoPaintBiomesOffset</h4>
+  <div class="markdown level1 summary"><p>If <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_IsAutoPaintBiomes">IsAutoPaintBiomes</a> is true, the biome map is calculated based on the height map and the biome level thresholds defined in <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesLevels">AutoPaintBiomesLevels</a>.
+The biome index calculated based on <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesLevels">AutoPaintBiomesLevels</a> is then offset by this value, so the final biome index applied to the biome map will be (calculated biome index + <a class="xref" href="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesOffset">AutoPaintBiomesOffset</a>).&quot;/&gt;</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="declaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">int AutoPaintBiomesOffset { get; set; }</code></pre>
+  </div>
+  <h5 class="propertyValue">Property Value</h5>
+  <table class="table table-bordered table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+
   <a id="Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_BiomeMapArgs_" data-uid="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.BiomeMapArgs*"></a>
   <h4 id="Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_BiomeMapArgs" data-uid="Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.BiomeMapArgs">BiomeMapArgs</h4>
   <div class="markdown level1 summary"><p>Settings for biome map (cell colors) initialization.</p>

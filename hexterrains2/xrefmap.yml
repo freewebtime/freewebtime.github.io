@@ -66088,15 +66088,15 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.Dispose
   nameWithType: ChunkMeshLayer.Dispose
-- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList{System.Int32},Unity.Collections.NativeList{System.Single},System.Collections.Generic.IList{System.Single})
-  name: FillBiomeByHeight(NativeList<int>, NativeList<float>, IList<float>)
-  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_FillBiomeByHeight_Unity_Collections_NativeList_System_Int32__Unity_Collections_NativeList_System_Single__System_Collections_Generic_IList_System_Single__
-  commentId: M:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList{System.Int32},Unity.Collections.NativeList{System.Single},System.Collections.Generic.IList{System.Single})
-  name.vb: FillBiomeByHeight(NativeList(Of Integer), NativeList(Of Single), IList(Of Single))
-  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList<int>, Unity.Collections.NativeList<float>, System.Collections.Generic.IList<float>)
-  fullName.vb: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList(Of Integer), Unity.Collections.NativeList(Of Single), System.Collections.Generic.IList(Of Single))
-  nameWithType: ChunkMeshLayer.FillBiomeByHeight(NativeList<int>, NativeList<float>, IList<float>)
-  nameWithType.vb: ChunkMeshLayer.FillBiomeByHeight(NativeList(Of Integer), NativeList(Of Single), IList(Of Single))
+- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList{System.Int32},Unity.Collections.NativeList{System.Single},System.Collections.Generic.IList{System.Single},System.Int32)
+  name: FillBiomeByHeight(NativeList<int>, NativeList<float>, IList<float>, int)
+  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_FillBiomeByHeight_Unity_Collections_NativeList_System_Int32__Unity_Collections_NativeList_System_Single__System_Collections_Generic_IList_System_Single__System_Int32_
+  commentId: M:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList{System.Int32},Unity.Collections.NativeList{System.Single},System.Collections.Generic.IList{System.Single},System.Int32)
+  name.vb: FillBiomeByHeight(NativeList(Of Integer), NativeList(Of Single), IList(Of Single), Integer)
+  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList<int>, Unity.Collections.NativeList<float>, System.Collections.Generic.IList<float>, int)
+  fullName.vb: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight(Unity.Collections.NativeList(Of Integer), Unity.Collections.NativeList(Of Single), System.Collections.Generic.IList(Of Single), Integer)
+  nameWithType: ChunkMeshLayer.FillBiomeByHeight(NativeList<int>, NativeList<float>, IList<float>, int)
+  nameWithType.vb: ChunkMeshLayer.FillBiomeByHeight(NativeList(Of Integer), NativeList(Of Single), IList(Of Single), Integer)
 - uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.FillBiomeByHeight*
   name: FillBiomeByHeight
   href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayer.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayer_FillBiomeByHeight_
@@ -66313,6 +66313,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesLevels
   nameWithType: ChunkMeshLayerConfigAsset.AutoPaintBiomesLevels
+- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
+  name: AutoPaintBiomesOffset
+  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_AutoPaintBiomesOffset
+  commentId: P:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
+  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
+  nameWithType: ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
+- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset*
+  name: AutoPaintBiomesOffset
+  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_AutoPaintBiomesOffset_
+  commentId: Overload:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
+  nameWithType: ChunkMeshLayerConfigAsset.AutoPaintBiomesOffset
 - uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.BiomeMapArgs
   name: BiomeMapArgs
   href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset_BiomeMapArgs
@@ -66436,6 +66449,12 @@ references:
   commentId: F:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._autoPaintBiomesLevels
   fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._autoPaintBiomesLevels
   nameWithType: ChunkMeshLayerConfigAsset._autoPaintBiomesLevels
+- uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._autoPaintBiomesOffset
+  name: _autoPaintBiomesOffset
+  href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__autoPaintBiomesOffset
+  commentId: F:Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._autoPaintBiomesOffset
+  fullName: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._autoPaintBiomesOffset
+  nameWithType: ChunkMeshLayerConfigAsset._autoPaintBiomesOffset
 - uid: Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset._biomeMapArgs
   name: _biomeMapArgs
   href: api/Fwt.HexTerrains.ChunkMehes.Data.ChunkMeshLayerConfigAsset.html#Fwt_HexTerrains_ChunkMehes_Data_ChunkMeshLayerConfigAsset__biomeMapArgs
@@ -66983,6 +67002,19 @@ references:
   isSpec: "True"
   fullName: Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesLevels
   nameWithType: IChunkMeshLayerConfig.AutoPaintBiomesLevels
+- uid: Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset
+  name: AutoPaintBiomesOffset
+  href: api/Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesOffset
+  commentId: P:Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset
+  fullName: Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset
+  nameWithType: IChunkMeshLayerConfig.AutoPaintBiomesOffset
+- uid: Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset*
+  name: AutoPaintBiomesOffset
+  href: api/Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_AutoPaintBiomesOffset_
+  commentId: Overload:Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.AutoPaintBiomesOffset
+  nameWithType: IChunkMeshLayerConfig.AutoPaintBiomesOffset
 - uid: Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.BiomeMapArgs
   name: BiomeMapArgs
   href: api/Fwt.HexTerrains.ChunkMehes.Data.IChunkMeshLayerConfig.html#Fwt_HexTerrains_ChunkMehes_Data_IChunkMeshLayerConfig_BiomeMapArgs
@@ -80843,6 +80875,19 @@ references:
   commentId: T:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings
   fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings
   nameWithType: VisualGeoPlastSettings
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.DefaultSettings
+  name: DefaultSettings
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastSettings_DefaultSettings
+  commentId: P:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.DefaultSettings
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.DefaultSettings
+  nameWithType: VisualGeoPlastSettings.DefaultSettings
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.DefaultSettings*
+  name: DefaultSettings
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastSettings_DefaultSettings_
+  commentId: Overload:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.DefaultSettings
+  isSpec: "True"
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.DefaultSettings
+  nameWithType: VisualGeoPlastSettings.DefaultSettings
 - uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.IsRenderZeroAsTransparent
   name: IsRenderZeroAsTransparent
   href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastSettings_IsRenderZeroAsTransparent
@@ -80855,6 +80900,12 @@ references:
   commentId: F:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.RenderMode
   fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.RenderMode
   nameWithType: VisualGeoPlastSettings.RenderMode
+- uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.RenderValueScale
+  name: RenderValueScale
+  href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastSettings_RenderValueScale
+  commentId: F:Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.RenderValueScale
+  fullName: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.RenderValueScale
+  nameWithType: VisualGeoPlastSettings.RenderValueScale
 - uid: Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.TransparencyTreshold
   name: TransparencyTreshold
   href: api/Fwt.HexTerrains.GeoPlasts.Data.VisualGeoPlastSettings.html#Fwt_HexTerrains_GeoPlasts_Data_VisualGeoPlastSettings_TransparencyTreshold
